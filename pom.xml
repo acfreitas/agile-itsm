@@ -1,0 +1,295 @@
+<!--    Copyright 2014 Modo Ágil                                                 -->
+
+<!--    Licensed under the Apache License, Version 2.0 (the "License");          -->
+<!--    you may not use this file except in compliance with the License.         -->
+<!--    You may obtain a copy of the License at                                  -->
+
+<!--        http://www.apache.org/licenses/LICENSE-2.0                           -->
+
+<!--    Unless required by applicable law or agreed to in writing, software      -->
+<!--    distributed under the License is distributed on an "AS IS" BASIS,        -->
+<!--    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!--    See the License for the specific language governing permissions and      -->
+<!--    limitations under the License.                                           -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.modoagil</groupId>
+	<artifactId>agile-itsm</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Agile ITSM - Parent POM</name>
+	<description>
+		Agile ITSM - A free ITSM Tool
+	</description>
+
+	<url>http://www.agileitsm.com.br</url>
+
+	<scm>
+		<url>https://github.com/modoagil/${project.artifactId}</url>
+		<connection>scm:git:git://github.com/modoagil/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:ssh//git@github.com/modoagil/${project.artifactId}.git</developerConnection>
+	</scm>
+
+	<organization>
+		<name>Modo Ágil</name>
+		<url>http://www.modoagil.com.br</url>
+	</organization>
+
+	<inceptionYear>2014</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>\u00A9 Copyright ${project.inceptionYear} ${project.organization.name}</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>manual</distribution>
+		</license>
+	</licenses>
+
+	<contributors>
+		<contributor>
+			<name>Bruno César Ribeiro e Silva</name>
+			<email>bruno@brunocesar.com</email>
+			<url>http://brunocesar.com</url>
+			<organization>${project.organization.name}</organization>
+			<organizationUrl>${project.organization.url}</organizationUrl>
+			<roles>
+				<role>coordinator</role>
+			</roles>
+			<timezone>-3</timezone>
+		</contributor>
+	</contributors>
+
+	<developers>
+		<developer>
+			<id>bruno.silva</id>
+			<name>Bruno César Ribeiro e Silva</name>
+			<email>bruno@brunocesar.com</email>
+			<url>http://brunocesar.com</url>
+			<organization>${project.organization.name}</organization>
+			<organizationUrl>${project.organization.url}</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+
+	<properties>
+		<java.source.version>1.7</java.source.version>
+		<java.target.version>${java.source.version}</java.target.version>
+		<java.compiler.version>1.7</java.compiler.version>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+
+		<!-- versões de dependências -->
+		<jstl.version>1.2</jstl.version>
+		<dozer.version>5.4.0</dozer.version>
+		<slf4j.version>1.7.7</slf4j.version>
+		<log4j.version>2.1</log4j.version>
+		<jsp-api.version>2.2</jsp-api.version>
+		<lombok.version>1.12.4</lombok.version>
+		<servlet-api.version>2.5</servlet-api.version>
+		<commons-lang.version>3.3.2</commons-lang.version>
+
+		<!-- versões de dependências de teste -->
+		<junit.version>4.11</junit.version>
+		<mockito.version>1.10.13</mockito.version>
+		<hamcrest-all.version>1.3</hamcrest-all.version>
+
+		<!-- versões de plugins -->
+		<maven-clean-plugin.version>2.6.1</maven-clean-plugin.version>
+		<maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+		<maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
+		<maven-jar-plugin.version>2.5</maven-jar-plugin.version>
+		<maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
+		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+		<maven-scm-plugin.version>1.9.2</maven-scm-plugin.version>
+		<maven-source-plugin.version>2.4</maven-source-plugin.version>
+		<maven-war-plugin.version>2.5</maven-war-plugin.version>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.config</include>
+					<include>**/*.template</include>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/*.xml</exclude>
+					<exclude>**/*.config</exclude>
+					<exclude>**/*.template</exclude>
+					<exclude>**/*.properties</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
+		<!-- plugins comuns a todos os projetos -->
+		<plugins>
+			<!-- http://maven.apache.org/plugins/maven-clean-plugin/ -->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${maven-clean-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>auto-clean</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<debug>false</debug>
+					<optimize>true</optimize>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<compilerVersion>${java.compiler.version}</compilerVersion>
+				</configuration>
+			</plugin>
+
+			<!-- http://maven.apache.org/plugins/maven-resources-plugin/ -->
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven-resources-plugin.version}</version>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!-- http://maven.apache.org/plugins/maven-war-plugin/ -->
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${maven-war-plugin.version}</version>
+					<configuration>
+						<archiveClasses>true</archiveClasses>
+						<resourceEncoding>${project.build.sourceEncoding}</resourceEncoding>
+						<failOnMissingWebXml>false</failOnMissingWebXml> <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
+						<webResources>
+							<resource>
+								<directory>src/main/resources</directory>
+								<targetPath>WEB-INF/classes</targetPath>
+								<filtering>true</filtering>
+							</resource>
+						</webResources>
+						<archive>
+							<index>true</index>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!-- plugins de report -->
+	<reporting>
+		<plugins>
+			<!-- http://maven.apache.org/plugins/maven-javadoc-plugin/ -->
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
+				<configuration>
+					<use>false</use>
+					<linksource>true</linksource>
+					<verbose>true</verbose>
+					<links>
+						<link>http://java.sun.com/javase/7/docs/api/</link>
+					</links>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<!-- agile itsm modules -->
+	<modules>
+		<module>agile-itsm-core</module>
+		<module>agile-itsm-data</module>
+		<module>agile-itsm-dto</module>
+		<module>agile-itsm-flow</module>
+		<module>agile-itsm-service</module>
+		<module>agile-itsm-web</module>
+	</modules>
+
+	<!-- projects common dependencies -->
+	<dependencies>
+		<!-- test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>${hamcrest-all.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- log dependencies -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<!-- meta-programming -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- apache commons dependencies -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang.version}</version>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${servlet-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
