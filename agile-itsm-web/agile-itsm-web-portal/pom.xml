@@ -22,7 +22,7 @@
 	<packaging>war</packaging>
 	<artifactId>agile-itsm-web-portal</artifactId>
 
-	<name>Agile ITSM - Web Portal</name>
+	<name>Agile ITSM - Web Portal Module</name>
 
 	<scm>
 		<url>https://github.com/modoagil/agile-itsm/${project.parent.artifactId}/${project.artifactId}</url>

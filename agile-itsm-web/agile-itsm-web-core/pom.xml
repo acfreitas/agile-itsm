@@ -21,7 +21,7 @@
 	</parent>
 	<artifactId>agile-itsm-web-core</artifactId>
 
-	<name>Agile ITSM - Web Core</name>
+	<name>Agile ITSM - Web Core Module</name>
 
 	<scm>
 		<url>https://github.com/modoagil/agile-itsm/${project.parent.artifactId}/${project.artifactId}</url>
