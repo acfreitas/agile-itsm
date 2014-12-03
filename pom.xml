@@ -96,7 +96,7 @@
 
 		<!-- test dependencies version -->
 		<junit.version>4.11</junit.version>
-		<mockito.version>1.10.13</mockito.version>
+		<mockito.version>1.10.14</mockito.version>
 		<hamcrest-all.version>1.3</hamcrest-all.version>
 
 		<!-- plugins version -->
@@ -428,5 +428,27 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>jcenter</id>
+			<name>bintray-jcenter</name>
+			<url>http://jcenter.bintray.com</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>jcenter</id>
+			<name>bintray-jcenter-plugins</name>
+			<url>http://jcenter.bintray.com</url>
+			</pluginRepository>
+	</pluginRepositories>
 
 </project>
