@@ -1,8 +1,8 @@
-# Agile ITSM
+# Agile ITSM | [![Build Status](https://travis-ci.org/modoagil/agile-itsm.svg)](https://travis-ci.org/modoagil/agile-itsm)
 Agile ITSM - A free ITSM Tool for agile environments based on [ITIL][] best practices and agile culture 
 
 ## Origin
-Agile ITSM is a fork of [citsmart][] (available on Google Code under GNU GPL v2 licence) will consider agile approaches and good practices for software construction.
+Agile ITSM is a fork of [citsmart][] (available on Google Code under GNU GPL v2 licence) will consider agile approaches and good practices for software construction. Updates in citsmart may be brought to this repository.
 
 Before release version 1.0.0, Agile ITSM will be in constant refactoring/modification to be able to technological updates on original [citsmart][] technologies.
 
