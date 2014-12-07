@@ -12,10 +12,10 @@
 <!--    See the License for the specific language governing permissions and      -->
 <!--    limitations under the License.                                           -->
 <FindBugsFilter>
-	<Match>
-		<Bug pattern="NP_ALWAYS_NULL"/>
-	</Match>
-	<Match>
-		<Bug pattern="NP_ALWAYS_NULL_EXCEPTION"/>
-	</Match>
+    <Match>
+        <Bug pattern="NP_ALWAYS_NULL"/>
+    </Match>
+    <Match>
+        <Bug pattern="NP_ALWAYS_NULL_EXCEPTION"/>
+    </Match>
 </FindBugsFilter>

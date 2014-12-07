@@ -12,443 +12,445 @@
 <!--    See the License for the specific language governing permissions and      -->
 <!--    limitations under the License.                                           -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.com.modoagil</groupId>
-	<artifactId>agile-itsm</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>br.com.modoagil</groupId>
+    <artifactId>agile-itsm</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-	<name>Agile ITSM - Parent POM</name>
-	<description>
-		Agile ITSM - A free ITSM Tool
-	</description>
+    <name>Agile ITSM - Parent POM</name>
+    <description>
+        Agile ITSM - A free ITSM Tool
+    </description>
 
-	<url>http://www.agileitsm.com.br</url>
+    <url>http://www.agileitsm.com.br</url>
 
-	<scm>
-		<url>https://github.com/modoagil/${project.artifactId}</url>
-		<connection>scm:git:git://github.com/modoagil/${project.artifactId}.git</connection>
-		<developerConnection>scm:git:ssh//git@github.com/modoagil/${project.artifactId}.git</developerConnection>
-	</scm>
+    <scm>
+        <url>https://github.com/modoagil/${project.artifactId}</url>
+        <connection>scm:git:git://github.com/modoagil/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh//git@github.com/modoagil/${project.artifactId}.git</developerConnection>
+    </scm>
 
-	<organization>
-		<name>Modo Ágil</name>
-		<url>http://www.modoagil.com.br</url>
-	</organization>
+    <organization>
+        <name>Modo Ágil</name>
+        <url>http://www.modoagil.com.br</url>
+    </organization>
 
-	<inceptionYear>2014</inceptionYear>
+    <inceptionYear>2014</inceptionYear>
 
-	<licenses>
-		<license>
-			<name>\u00A9 Copyright ${project.inceptionYear} ${project.organization.name}</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
-			<distribution>manual</distribution>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>\u00A9 Copyright ${project.inceptionYear} ${project.organization.name}</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>manual</distribution>
+        </license>
+    </licenses>
 
-	<contributors>
-		<contributor>
-			<name>Bruno César Ribeiro e Silva</name>
-			<email>bruno@brunocesar.com</email>
-			<url>http://brunocesar.com</url>
-			<organization>${project.organization.name}</organization>
-			<organizationUrl>${project.organization.url}</organizationUrl>
-			<roles>
-				<role>coordinator</role>
-			</roles>
-			<timezone>-3</timezone>
-		</contributor>
-	</contributors>
+    <contributors>
+        <contributor>
+            <name>Bruno César Ribeiro e Silva</name>
+            <email>bruno@brunocesar.com</email>
+            <url>http://brunocesar.com</url>
+            <organization>${project.organization.name}</organization>
+            <organizationUrl>${project.organization.url}</organizationUrl>
+            <roles>
+                <role>coordinator</role>
+            </roles>
+            <timezone>-3</timezone>
+        </contributor>
+    </contributors>
 
-	<developers>
-		<developer>
-			<id>bruno.silva</id>
-			<name>Bruno César Ribeiro e Silva</name>
-			<email>bruno@brunocesar.com</email>
-			<url>http://brunocesar.com</url>
-			<organization>${project.organization.name}</organization>
-			<organizationUrl>${project.organization.url}</organizationUrl>
-			<roles>
-				<role>developer</role>
-			</roles>
-			<timezone>-3</timezone>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <id>bruno.silva</id>
+            <name>Bruno César Ribeiro e Silva</name>
+            <email>bruno@brunocesar.com</email>
+            <url>http://brunocesar.com</url>
+            <organization>${project.organization.name}</organization>
+            <organizationUrl>${project.organization.url}</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>-3</timezone>
+        </developer>
+    </developers>
 
-	<properties>
-		<java.source.version>1.7</java.source.version>
-		<java.target.version>${java.source.version}</java.target.version>
-		<java.compiler.version>${java.target.version}</java.compiler.version>
+    <properties>
+        <java.source.version>1.7</java.source.version>
+        <java.target.version>${java.source.version}</java.target.version>
+        <java.compiler.version>${java.target.version}</java.compiler.version>
 
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
 
-		<!-- dependencies version -->
-		<jstl.version>1.2</jstl.version>
-		<dozer.version>5.4.0</dozer.version>
-		<slf4j.version>1.7.7</slf4j.version>
-		<log4j.version>2.1</log4j.version>
-		<jsp-api.version>2.2</jsp-api.version>
-		<lombok.version>1.12.4</lombok.version>
-		<servlet-api.version>2.5</servlet-api.version>
-		<commons-lang.version>3.3.2</commons-lang.version>
+        <!-- dependencies version -->
+        <jstl.version>1.2</jstl.version>
+        <dozer.version>5.4.0</dozer.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <log4j.version>2.1</log4j.version>
+        <jsp-api.version>2.2</jsp-api.version>
+        <lombok.version>1.14.8</lombok.version>
+        <servlet-api.version>2.5</servlet-api.version>
+        <commons-lang.version>3.3.2</commons-lang.version>
 
-		<!-- test dependencies version -->
-		<junit.version>4.11</junit.version>
-		<mockito.version>1.10.14</mockito.version>
-		<hamcrest-all.version>1.3</hamcrest-all.version>
+        <!-- test dependencies version -->
+        <junit.version>4.11</junit.version>
+        <mockito.version>1.10.14</mockito.version>
+        <hamcrest-all.version>1.3</hamcrest-all.version>
 
-		<!-- plugins version -->
-		<cobertura-maven-plugin.version>2.6</cobertura-maven-plugin.version>
-		<findbugs-maven-plugin.version>3.0.0</findbugs-maven-plugin.version>
-		<maven-changes-plugin.version>2.11</maven-changes-plugin.version>
-		<maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
-		<maven-checkstyle-plugin.version>2.13</maven-checkstyle-plugin.version>
-		<maven-clean-plugin.version>2.6.1</maven-clean-plugin.version>
-		<maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
-		<maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
-		<maven-jar-plugin.version>2.5</maven-jar-plugin.version>
-		<maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
-		<maven-pmd-plugin.version>3.3</maven-pmd-plugin.version>
-		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-		<maven-scm-plugin.version>1.9.2</maven-scm-plugin.version>
-		<maven-site-plugin.version>3.4</maven-site-plugin.version>
-		<maven-source-plugin.version>2.4</maven-source-plugin.version>
-		<maven-surefire-report-plugin.version>2.18</maven-surefire-report-plugin.version>
-		<maven-war-plugin.version>2.5</maven-war-plugin.version>
-		<sonar-maven-plugin.version>2.4</sonar-maven-plugin.version>
-		<taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
-	</properties>
+        <!-- plugins version -->
+        <cobertura-maven-plugin.version>2.6</cobertura-maven-plugin.version>
+        <findbugs-maven-plugin.version>3.0.0</findbugs-maven-plugin.version>
+        <maven-changes-plugin.version>2.11</maven-changes-plugin.version>
+        <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
+        <maven-checkstyle-plugin.version>2.13</maven-checkstyle-plugin.version>
+        <maven-clean-plugin.version>2.6.1</maven-clean-plugin.version>
+        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+        <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
+        <maven-jar-plugin.version>2.5</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
+        <maven-pmd-plugin.version>3.3</maven-pmd-plugin.version>
+        <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+        <maven-scm-plugin.version>1.9.2</maven-scm-plugin.version>
+        <maven-site-plugin.version>3.4</maven-site-plugin.version>
+        <maven-source-plugin.version>2.4</maven-source-plugin.version>
+        <maven-surefire-report-plugin.version>2.18</maven-surefire-report-plugin.version>
+        <maven-war-plugin.version>2.5</maven-war-plugin.version>
+        <sonar-maven-plugin.version>2.4</sonar-maven-plugin.version>
+        <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
+    </properties>
 
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-				<includes>
-					<include>**/*.xml</include>
-					<include>**/*.config</include>
-					<include>**/*.template</include>
-					<include>**/*.properties</include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>false</filtering>
-				<excludes>
-					<exclude>**/*.xml</exclude>
-					<exclude>**/*.config</exclude>
-					<exclude>**/*.template</exclude>
-					<exclude>**/*.properties</exclude>
-				</excludes>
-			</resource>
-		</resources>
+    <build>
+        <defaultGoal>install</defaultGoal>
 
-		<plugins>
-			<!-- http://maven.apache.org/plugins/maven-clean-plugin/ -->
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>${maven-clean-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>auto-clean</id>
-						<phase>initialize</phase>
-						<goals>
-							<goal>clean</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.config</include>
+                    <include>**/*.template</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/*.xml</exclude>
+                    <exclude>**/*.config</exclude>
+                    <exclude>**/*.template</exclude>
+                    <exclude>**/*.properties</exclude>
+                </excludes>
+            </resource>
+        </resources>
 
-			<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
-				<configuration>
-					<debug>false</debug>
-					<optimize>true</optimize>
-					<source>${java.source.version}</source>
-					<target>${java.target.version}</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
-					<compilerVersion>${java.compiler.version}</compilerVersion>
-				</configuration>
-			</plugin>
+        <plugins>
+            <!-- http://maven.apache.org/plugins/maven-clean-plugin/ -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven-clean-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
-			<!-- http://maven.apache.org/plugins/maven-resources-plugin/ -->
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>${maven-resources-plugin.version}</version>
-			</plugin>
+            <!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <debug>false</debug>
+                    <optimize>true</optimize>
+                    <source>${java.source.version}</source>
+                    <target>${java.target.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <compilerVersion>${java.compiler.version}</compilerVersion>
+                </configuration>
+            </plugin>
 
-			<!-- http://maven.apache.org/plugins/maven-surefire-plugin/ -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.12.2</version>
-				<configuration>
-					<argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
-				</configuration>
-			</plugin>
-		</plugins>
+            <!-- http://maven.apache.org/plugins/maven-resources-plugin/ -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+            </plugin>
 
-		<pluginManagement>
-			<plugins>
-				<!-- http://mojo.codehaus.org/findbugs-maven-plugin/ -->
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>findbugs-maven-plugin</artifactId>
-					<version>${findbugs-maven-plugin.version}</version>
-					<configuration>
-						<effort>Max</effort>
-						<failOnError>true</failOnError>
-						<threshold>Low</threshold>
-						<xmlOutput>true</xmlOutput>
-						<includeFilterFile>findbugs-include.xml</includeFilterFile>
-					</configuration>
-					<executions>
-						<execution>
-						<id>analyze-compile</id>
-						<phase>compile</phase>
-						<goals>
-							<goal>check</goal>
-						</goals>
-						</execution>
-					</executions>
-				</plugin>
+            <!-- http://maven.apache.org/plugins/maven-surefire-plugin/ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.2</version>
+                <configuration>
+                    <argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
 
-				<!-- http://maven.apache.org/plugins/maven-war-plugin/ -->
-				<plugin>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>${maven-war-plugin.version}</version>
-					<configuration>
-						<archiveClasses>true</archiveClasses>
-						<resourceEncoding>${project.build.sourceEncoding}</resourceEncoding>
-						<failOnMissingWebXml>false</failOnMissingWebXml> <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
-						<webResources>
-							<resource>
-								<directory>src/main/resources</directory>
-								<targetPath>WEB-INF/classes</targetPath>
-								<filtering>true</filtering>
-							</resource>
-						</webResources>
-						<archive>
-							<index>true</index>
-							<manifest>
-								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-							</manifest>
-						</archive>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+        <pluginManagement>
+            <plugins>
+                <!-- http://mojo.codehaus.org/findbugs-maven-plugin/ -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>${findbugs-maven-plugin.version}</version>
+                    <configuration>
+                        <effort>Max</effort>
+                        <failOnError>true</failOnError>
+                        <threshold>Low</threshold>
+                        <xmlOutput>true</xmlOutput>
+                        <includeFilterFile>findbugs-include.xml</includeFilterFile>
+                    </configuration>
+                    <executions>
+                        <execution>
+                        <id>analyze-compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        </execution>
+                    </executions>
+                </plugin>
 
-	<reporting>
-		<plugins>
-			<!-- http://mojo.codehaus.org/cobertura-maven-plugin/ -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>${cobertura-maven-plugin.version}</version>
-				<configuration>
-					<formats>
-						<format>html</format>
-						<format>xml</format>
-					</formats>
-					<excludes>
-						<exclude>**/*Test.class</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
+                <!-- http://maven.apache.org/plugins/maven-war-plugin/ -->
+                <plugin>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin.version}</version>
+                    <configuration>
+                        <archiveClasses>true</archiveClasses>
+                        <resourceEncoding>${project.build.sourceEncoding}</resourceEncoding>
+                        <failOnMissingWebXml>false</failOnMissingWebXml> <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
+                        <webResources>
+                            <resource>
+                                <directory>src/main/resources</directory>
+                                <targetPath>WEB-INF/classes</targetPath>
+                                <filtering>true</filtering>
+                            </resource>
+                        </webResources>
+                        <archive>
+                            <index>true</index>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
-			<!-- http://mojo.codehaus.org/findbugs-maven-plugin/ -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>${findbugs-maven-plugin.version}</version>
-				<configuration>
-					<effort>Max</effort>
-					<failOnError>true</failOnError>
-					<threshold>Low</threshold>
-				</configuration>
-			</plugin>
+    <reporting>
+        <plugins>
+            <!-- http://mojo.codehaus.org/cobertura-maven-plugin/ -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>${cobertura-maven-plugin.version}</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                    <excludes>
+                        <exclude>**/*Test.class</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
 
-			<!-- http://maven.apache.org/plugins/maven-changes-plugin/ -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-changes-plugin</artifactId>
-				<version>${maven-changes-plugin.version}</version>
-				<configuration>
-					<xmlPath>src/site/changes.xml</xmlPath>
-				</configuration>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>changes-report</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
+            <!-- http://mojo.codehaus.org/findbugs-maven-plugin/ -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>${findbugs-maven-plugin.version}</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <failOnError>true</failOnError>
+                    <threshold>Low</threshold>
+                </configuration>
+            </plugin>
 
-			<!-- http://maven.apache.org/plugins/maven-changelog-plugin/ -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-changelog-plugin</artifactId>
-				<version>${maven-changelog-plugin.version}</version>
-			</plugin>
+            <!-- http://maven.apache.org/plugins/maven-changes-plugin/ -->
+            <plugin>
+                <artifactId>maven-changes-plugin</artifactId>
+                <version>${maven-changes-plugin.version}</version>
+                <configuration>
+                    <xmlPath>src/site/changes.xml</xmlPath>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>changes-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
 
-			<!-- http://maven.apache.org/plugins/maven-checkstyle-plugin/ -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>${maven-checkstyle-plugin.version}</version>
-			</plugin>
+            <!-- http://maven.apache.org/plugins/maven-changelog-plugin/ -->
+            <plugin>
+                <artifactId>maven-changelog-plugin</artifactId>
+                <version>${maven-changelog-plugin.version}</version>
+            </plugin>
 
-			<!-- http://maven.apache.org/plugins/maven-javadoc-plugin/ -->
-			<plugin>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.version}</version>
-				<configuration>
-					<use>false</use>
-					<linksource>true</linksource>
-					<verbose>true</verbose>
-					<links>
-						<link>http://java.sun.com/javase/7/docs/api/</link>
-					</links>
-				</configuration>
-			</plugin>
+            <!-- http://maven.apache.org/plugins/maven-checkstyle-plugin/ -->
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <configuration>
+                    <consoleOutput>true</consoleOutput>
+                    <configLocation>https://raw.github.com/modoagil/agile-itsm/master/checkstyle.xml</configLocation>
+                    <failsOnError>false</failsOnError>
+                    <maxAllowedViolations>3</maxAllowedViolations>
+                </configuration>
+            </plugin>
 
-			<!-- http://maven.apache.org/plugins/maven-pmd-plugin/ -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>${maven-pmd-plugin.version}</version>
-				<configuration>
-					<targetJdk>${java.target.version}</targetJdk>
-					<minimumTokens>100</minimumTokens>
-					<sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-				</configuration>
-			</plugin>
+            <!-- http://maven.apache.org/plugins/maven-javadoc-plugin/ -->
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+                <configuration>
+                    <use>false</use>
+                    <linksource>true</linksource>
+                    <verbose>true</verbose>
+                    <links>
+                        <link>http://java.sun.com/javase/7/docs/api/</link>
+                    </links>
+                </configuration>
+            </plugin>
 
-			<!-- http://maven.apache.org/plugins/maven-site-plugin/ -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>${maven-site-plugin.version}</version>
-			</plugin>
+            <!-- http://maven.apache.org/plugins/maven-pmd-plugin/ -->
+            <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${maven-pmd-plugin.version}</version>
+                <configuration>
+                    <targetJdk>${java.target.version}</targetJdk>
+                    <minimumTokens>100</minimumTokens>
+                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                </configuration>
+            </plugin>
 
-			<!-- http://maven.apache.org/surefire/maven-surefire-report-plugin/ -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>${maven-surefire-report-plugin.version}</version>
-				<configuration>
-					<showSuccess>false</showSuccess>
-					<argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
-				</configuration>
-			</plugin>
+            <!-- http://maven.apache.org/plugins/maven-site-plugin/ -->
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven-site-plugin.version}</version>
+            </plugin>
 
-			<!-- http://mojo.codehaus.org/taglist-maven-plugin/ -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>taglist-maven-plugin</artifactId>
-				<version>${taglist-maven-plugin.version}</version>
-			</plugin>
-		</plugins>
-	</reporting>
+            <!-- http://maven.apache.org/surefire/maven-surefire-report-plugin/ -->
+            <plugin>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${maven-surefire-report-plugin.version}</version>
+                <configuration>
+                    <showSuccess>false</showSuccess>
+                    <argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
+                </configuration>
+            </plugin>
 
-	<!-- agile itsm modules -->
-	<modules>
-		<module>agile-itsm-core</module>
-		<module>agile-itsm-data</module>
-		<module>agile-itsm-dto</module>
-		<module>agile-itsm-flow</module>
-		<module>agile-itsm-service</module>
-		<module>agile-itsm-web</module>
-	</modules>
+            <!-- http://mojo.codehaus.org/taglist-maven-plugin/ -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+                <version>${taglist-maven-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </reporting>
 
-	<!-- projects common dependencies -->
-	<dependencies>
-		<!-- test dependencies -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>${mockito.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-all</artifactId>
-			<version>${hamcrest-all.version}</version>
-			<scope>test</scope>
-		</dependency>
+    <!-- agile itsm modules -->
+    <modules>
+        <module>agile-itsm-core</module>
+        <module>agile-itsm-data</module>
+        <module>agile-itsm-dto</module>
+        <module>agile-itsm-flow</module>
+        <module>agile-itsm-service</module>
+        <module>agile-itsm-web</module>
+    </modules>
 
-		<!-- log dependencies -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
+    <!-- projects common dependencies -->
+    <dependencies>
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>${hamcrest-all.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-		<!-- meta-programming -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-			<scope>provided</scope>
-		</dependency>
+        <!-- log dependencies -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
 
-		<!-- apache commons dependencies -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>${commons-lang.version}</version>
-		</dependency>
-	</dependencies>
+        <!-- meta-programming -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>servlet-api</artifactId>
-				<version>${servlet-api.version}</version>
-				<scope>provided</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+        <!-- apache commons dependencies -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang.version}</version>
+        </dependency>
+    </dependencies>
 
-	<repositories>
-		<repository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>jcenter</id>
-			<name>bintray-jcenter</name>
-			<url>http://jcenter.bintray.com</url>
-		</repository>
-	</repositories>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>jcenter</id>
-			<name>bintray-jcenter-plugins</name>
-			<url>http://jcenter.bintray.com</url>
-			</pluginRepository>
-	</pluginRepositories>
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>jcenter</id>
+            <name>bintray-jcenter</name>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>jcenter</id>
+            <name>bintray-jcenter-plugins</name>
+            <url>http://jcenter.bintray.com</url>
+            </pluginRepository>
+    </pluginRepositories>
 
 </project>
