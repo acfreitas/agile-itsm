@@ -29,4 +29,12 @@
         <developerConnection>scm:git:ssh//git@github.com/modoagil/${project.parent.artifactId}/${project.artifactId}.git</developerConnection>
     </scm>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
