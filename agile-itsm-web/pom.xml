@@ -12,27 +12,27 @@
 <!--    See the License for the specific language governing permissions and      -->
 <!--    limitations under the License.                                           -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>br.com.modoagil</groupId>
-		<artifactId>agile-itsm</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-	<packaging>pom</packaging>
-	<artifactId>agile-itsm-web</artifactId>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>br.com.modoagil</groupId>
+        <artifactId>agile-itsm</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <packaging>pom</packaging>
+    <artifactId>agile-itsm-web</artifactId>
 
-	<name>Agile ITSM - Web Aggregator</name>
+    <name>Agile ITSM - Web Aggregator</name>
 
-	<scm>
-		<url>https://github.com/modoagil/${project.parent.artifactId}/${project.artifactId}</url>
-		<connection>scm:git:git://github.com/modoagil/${project.parent.artifactId}/${project.artifactId}.git</connection>
-		<developerConnection>scm:git:ssh//git@github.com/modoagil/${project.parent.artifactId}/${project.artifactId}.git</developerConnection>
-	</scm>
+    <scm>
+        <url>https://github.com/modoagil/${project.parent.artifactId}/${project.artifactId}</url>
+        <connection>scm:git:git://github.com/modoagil/${project.parent.artifactId}/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh//git@github.com/modoagil/${project.parent.artifactId}/${project.artifactId}.git</developerConnection>
+    </scm>
 
-	<modules>
-		<module>agile-itsm-rest</module>
-		<module>agile-itsm-web-core</module>
-		<module>agile-itsm-web-portal</module>
-	</modules>
+    <modules>
+        <module>agile-itsm-rest</module>
+        <module>agile-itsm-web-core</module>
+        <module>agile-itsm-web-portal</module>
+    </modules>
 </project>
