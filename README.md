@@ -1,4 +1,4 @@
-# Agile ITSM | [![Build Status](https://travis-ci.org/modoagil/agile-itsm.svg)](https://travis-ci.org/modoagil/agile-itsm)
+# Agile ITSM | [![Build Status](https://travis-ci.org/agile-itsm/agile-itsm.svg?branch=master)](https://travis-ci.org/agile-itsm/agile-itsm)
 Agile ITSM - A free ITSM Tool for agile environments based on [ITIL][] best practices and agile culture 
 
 ## Origin
@@ -19,7 +19,7 @@ Agile ITSM is not being built to be compatible with [citsmart][]. Data model wil
 Don't worry, Agile ITSM is being updated to make it easier to evolve it and adopt it.
 
 ## :warning: WARNING
-Because the origin of the project, you are not encouraged to use it in a production environment before version 1.0.0, which will be the first release version.
+Due the origin of the project, you are not encouraged to use it in a production environment before version 1.0.0, which will be the first release version.
 
 ## Licence
 Agile ITSM is released under version 2.0 of the [Apache License][].
