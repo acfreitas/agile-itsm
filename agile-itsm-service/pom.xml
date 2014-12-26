@@ -32,12 +32,6 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>agile-itsm-service</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>agile-itsm-data</artifactId>
             <version>${project.version}</version>
         </dependency>

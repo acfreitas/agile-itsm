@@ -13,11 +13,3 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-/**
- * Domain model support artifacts
- *
- * @since 24/12/2014
- * @author Bruno César Ribeiro e Silva - <a href="mailto:bruno@brunocesar.com">bruno@brunocesar.com</a>
- */
-package br.com.agileitsm.model.support;
-
