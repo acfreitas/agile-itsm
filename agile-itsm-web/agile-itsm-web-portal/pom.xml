@@ -36,6 +36,18 @@
             <artifactId>agile-itsm-web-core</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>agile-itsm-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>agile-itsm-flow</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

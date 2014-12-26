@@ -29,4 +29,18 @@
         <developerConnection>scm:git:ssh//git@github.com/modoagil/${project.parent.artifactId}/${project.artifactId}.git</developerConnection>
     </scm>
 
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>agile-itsm-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>agile-itsm-data</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
