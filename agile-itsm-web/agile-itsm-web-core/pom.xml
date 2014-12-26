@@ -32,7 +32,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>agile-itsm-web-core</artifactId>
+            <artifactId>agile-itsm-core</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
