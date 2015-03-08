@@ -1,0 +1,53 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>10</idVisao>
+  <descricao>$visao.listagemFluxoTrabalho</descricao>
+  <tipoVisao>TS</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>WorkFlowList</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>$visao.listagemFluxoTrabalho</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>10</idGrupoVisao>
+          <idCamposObjetoNegocio>875</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.id</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>5</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDFLUXO</nomeDB>
+          <nomeTabelaDB>FLUXO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>10</idGrupoVisao>
+          <idCamposObjetoNegocio>877</idCamposObjetoNegocio>
+          <descricaoNegocio>$workflow.descricao</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>70</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>DESCRICAO</nomeDB>
+          <nomeTabelaDB>FLUXO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

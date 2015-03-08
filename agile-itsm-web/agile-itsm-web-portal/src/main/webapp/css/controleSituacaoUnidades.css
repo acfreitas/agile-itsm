@@ -1,0 +1,39 @@
+OPTION.optAguardando
+{
+    BACKGROUND-COLOR: #808080;
+    border: outset;   
+    border-width: thin;    
+}
+OPTION.optAgrupador
+{
+    BACKGROUND-COLOR: #F0F0F8;
+    border: outset;
+    border-width: thin;    
+}
+OPTION.optLivre
+{
+    BACKGROUND-COLOR: #E0EFEF
+	/*Cor Original   #99ffcc */
+}
+OPTION.optInterditada
+{
+    BACKGROUND-COLOR: #ff9966
+}
+OPTION.optPacienteAcomodado
+{
+    BACKGROUND-COLOR: #FAEBD7
+	/*Cor Original  #ffff66 */
+}
+OPTION.optReservado
+{
+    BACKGROUND-COLOR: #38B0DE
+	/*Cor Original  #add8e6 */
+}
+OPTION.optManutencao
+{
+    BACKGROUND-COLOR: #cc9999
+}
+OPTION.optOutras
+{
+    BACKGROUND-COLOR: #eee8aa
+}

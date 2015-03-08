@@ -1,0 +1,30 @@
+/* Hack */
+.modal-body 
+{
+   max-height:80%;
+}
+.modal
+{
+   width:80%;
+   margin-left: -40%; 
+}
+
+#conteudoiframeCadastrarProblema .modal-body{
+	max-height: 700px;
+}
+
+iframe{
+	border: 1px solid #9BA5A5!important;
+}
+
+#iframeCadastrarProblema{
+	border: 0px!important;
+	width: 99%!important;
+	min-height: 690px!important;
+	height: auto;
+}
+
+.:after {
+	color: #FF0000;
+	content: "*";
+}

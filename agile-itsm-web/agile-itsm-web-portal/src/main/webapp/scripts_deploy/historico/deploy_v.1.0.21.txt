@@ -1,0 +1,85 @@
+alter table os add quantidade int;
+alter table os  add idospai int;
+alter table os add constraint fk_reference_619 foreign key (idospai) references os (idos) on delete restrict on update restrict;
+
+--Cleon 28092012
+ALTER TABLE gruposempregados
+ADD COLUMN enviaemail char(1) after idempregado;
+
+create table gruposemails(
+idgrupo int(11) not null,
+idempregado int(11),
+nome varchar(80),
+email varchar(200) not null,
+primary key (idgrupo, email));
+
+create table complexidade
+(
+   idcomplexidadecontrato int(11) not null,
+   idcontrato           int(11),
+   complexidade         char(1) not null,
+   valorcomplexidade    decimal(10,2),
+   deleted              char(1)
+);
+alter table complexidade
+   add primary key (idcomplexidadecontrato);
+
+ALTER TABLE atividadesservicocontrato ADD COLUMN `hora` INT(11) NULL  AFTER `deleted` , ADD COLUMN `quantidade` INT(11) NULL  AFTER `hora` , ADD COLUMN `periodo` CHAR(5) NULL  AFTER `quantidade` , ADD COLUMN `tipocusto` CHAR(1) NULL  AFTER `periodo` , ADD COLUMN `formula` TEXT NULL  AFTER `tipocusto` ;
+ 
+ALTER TABLE atividadesos ADD COLUMN `formula` TEXT NULL  AFTER `qtdeexecutada` ;
+
+
+2º Alterações nas DinamicViews
+ 
+- Criação da nova visão para cadastro da complexidade
+ 
+Importar XML da nova visão criada para cadastrar complexidade na tela de cadastro de serviço. Como é uma nova visão creio que basta apenas importar o XML VisaodeComplexidadeporContrato que está em anexo.
+ 
+- Alteração na visão de contrato para se relacionar com a visão criada anteriormente
+ 
+Para facilitar segue o print Visão Contrato_001 de como deve ficar a configuração da visão de contrato
+ 
+- Alteração na visão Atividades do Serviço (conforme o contrato)
+ 
+Para facilitar também a configuração segue os prints compactados de cada novo botão que deve ser criado.
+ 
+- Criação dos scripts da visão Atividades do Serviço (Conforme o contrato)
+ 
+Cliente:
+ Ao carregar a tela
+ addEvent(document.form.TIPOCUSTO, "change", avaliaTipoCusto, false);
+ 
+ Ao recuperar
+ geraFormula();
+ avaliaTipoCusto();
+ 
+Servidor:
+ Ao Inserir
+ mapFields.put("IDSERVICOCONTRATO", mapFields.get("SESSION.DINAMICVIEWS_SAVEINFO"));
+var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+var atividadesServicoContratoService = new importNames.AtividadesServicoContratoServiceEjb();
+var tipoCusto = mapFields.get("TIPOCUSTO");
+if(tipoCusto=='F'){
+ var custoCalculado =atividadesServicoContratoService.calculaFormula(mapFields);
+ mapFields.put("CUSTOATIVIDADE", custoCalculado);
+}
+ 
+Ao atualizar
+mapFields.put("IDSERVICOCONTRATO", mapFields.get("SESSION.DINAMICVIEWS_SAVEINFO"));
+
+var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+var atividadesServicoContratoService = new importNames.AtividadesServicoContratoServiceEjb();
+var resp = atividadesServicoContratoService.atualizaObservacao(mapFields);
+if(resp){
+  dinamicViewDto.setMsgRetorno("Registrado gravado com sucesso! Observação atualizada nas OS's em criação.");
+}
+var tipoCusto = mapFields.get("TIPOCUSTO");
+if(tipoCusto=='F'){
+ var custoCalculado =atividadesServicoContratoService.calculaFormula(mapFields);
+ mapFields.put("CUSTOATIVIDADE", custoCalculado);
+}
+
+
+

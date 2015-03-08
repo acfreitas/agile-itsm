@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<menu-config>
+
+	<root-menu description="Cadastros" path="">
+		<menu-itens>
+			<item-menu description="Colaborador" path="pages/empregado/empregado.load"/>
+			<item-menu description="Cliente" path="pages/cliente/cliente.load"/>
+			<item-menu description="Contrato" path="pages/contratos/contratos.load"/>
+			<item-menu description="Atividades Periódicas" path="pages/atividadePeriodica/atividadePeriodica.load"/>
+			<item-menu description="Funcionalidade" path="pages/funcionalidade/funcionalidade.load" />
+			<item-menu description="Grupo de Acesso" path="pages/manutencaoGrupoAcesso/manutencaoGrupoAcesso.load"/>
+			<item-menu description="Atividades" path="pages/atividades/atividades.load"/>
+			<item-menu description="Painel de Atividades" path="pages/painelAtividades/painelAtividades.load"/>
+			<item-menu description="Projeto" path="pages/projeto/projeto.load"/>
+			<item-menu description="Usuário" path="pages/usuario/usuario.load"/>
+			<item-menu description="Questionário" path="produtos/citquestionario/indexcitquestionario.jsp"/>
+		</menu-itens>				
+	</root-menu>
+	
+	<root-menu description="Contrato" path="">
+		<menu-itens>
+			<item-menu description="Informações do Contrato" path="pages/informacoesContrato/informacoesContrato.load"/>
+			<item-menu description="Configurações do Contrato" path="pages/informacoesContratosConfig/informacoesContratosConfig.load"/>
+		</menu-itens>				
+	</root-menu>
+
+	<root-menu description="Atividades Periódicas" path="">
+		<menu-itens>
+			<item-menu description="Cadastro" path="pages/atividadePeriodica/atividadePeriodica.load"/>
+			<item-menu description="Agenda" path="pages/agendaAtvPeriodicas/agendaAtvPeriodicas.load"/>
+		</menu-itens>	
+	</root-menu>
+	
+	<root-menu description="O.S." path="">
+		<menu-itens>
+			<item-menu description="O.S." path="pages/os/os.load"/>
+			<item-menu description="Aceite O.S." path="pages/aceiteOS/aceiteOS.load"/>
+			<item-menu description="Homologação O.S." path="pages/homologacaoOS/homologacaoOS.load"/>
+			<item-menu description="Fluxo de Trabalho" path="">
+				<menu-itens>
+					<item-menu description="Demanda Avulsa (para colaborador)" path="pages/demanda/demanda.load"/>
+					<item-menu description="Carteira de Trabalho" path="pages/execucaoDemanda/execucaoDemanda.load"/>
+					<item-menu description="Registrar TimeSheet Avulso" path="pages/timeSheet/timeSheetAvulso.load"/>
+				</menu-itens>				
+			</item-menu>			
+		</menu-itens>				
+	</root-menu>	
+	
+	<root-menu description="Financeiro" path="">
+		<menu-itens>
+			<item-menu description="Consultar OS(s) Finalizadas e Homologadas" path="pages/osFinanceiro/osFinanceiro.load"/>
+		</menu-itens>				
+	</root-menu>	
+	
+	<root-menu description="Gestão" path="">
+		<menu-itens>
+			<item-menu description="Custos Adicionais do Projeto" path="pages/custoAdicionalProjeto/custoAdicionalProjeto.load"/>
+		</menu-itens>
+	</root-menu>	
+	
+	<root-menu description="Consultas" path="">
+		<menu-itens>
+			<item-menu description="Consultar Meu TimeSheet" path="pages/consultaMeuTimeSheet/consultaMeuTimeSheet.load"/>
+		</menu-itens>				
+	</root-menu>	
+	
+	<root-menu description="Relatórios" path="">
+		<menu-itens>
+			<item-menu description="Relatório de Atividades" path="pages/relatorioAtividades/relatorioAtividades.load"/>
+		</menu-itens>				
+	</root-menu>		
+	
+</menu-config>

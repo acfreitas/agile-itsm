@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+
+
+.table-primary tbody tr.selectable td {
+  cursor: default;
+}
+.table-primary tbody tr.selected td,
+.table-primary tbody tr.selectable:hover td{
+background: #E5E5E5;
+box-shadow: 0 0 0 1px #d8d8d8 inset;
+-webkit-box-shadow: 0 0 0 1px #d8d8d8 inset;
+-moz-box-shadow: 0 0 0 1px #d8d8d8 inset;
+}
+
+#produto span{
+color: #7C7C7C;
+font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+font-size: 14px;
+}
+#produto h5{
+color: #333333;
+}
+

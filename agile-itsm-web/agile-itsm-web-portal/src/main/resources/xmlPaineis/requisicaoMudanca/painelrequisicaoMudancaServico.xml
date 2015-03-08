@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<PAINEL description='	' classNameProcessParameters="br.com.centralit.citgerencial.processparameters.ProcessParametersGeral">
+	<ITEM name='rel01' file='xmlsRequisicao/mudanca/mudancaPorServico.xml' top='0' heigth='850' width='1080' left='0'/>
+	
+	<PARAMETERS>
+        <PARAM name='dataInicial' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datainicio' fix='false' mandatory='true' reload='true' />
+        <PARAM name='dataFinal' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datafim' fix='false' mandatory='true' default='{TODAY}'/>
+        
+         <PARAM name='situacaoMudanca' type='String' typeHTML='select' size='0'  value='' description='citcorpore.comum.situacaoMudanca' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='*' text='-- Todas --'/>
+            <OPTION value='Registrada' text='citcorpore.comum.registrada'/>
+            <OPTION value='Proposta' text='perfil.aguardandoAprovacao'/>
+            <OPTION value='Aprovada' text='citcorpore.comum.aprovada'/>
+            <OPTION value='Planejada' text='citcorpore.comum.planejada'/>
+            <OPTION value='EmExecucao' text='citcorpore.comum.emExecucao'/>
+            <OPTION value='Executada' text='perfil.executada'/>
+            <OPTION value='Suspensa' text='citcorpore.comum.suspensa'/>
+            <OPTION value='Cancelada' text='perfil.cancelada'/>
+            <OPTION value='Rejeitada' text='citcorpore.comum.rejeitada'/>
+            <OPTION value='Resolvida' text='citcorpore.comum.resolvida'/>
+            <OPTION value='Reaberta' text='citcorpore.comum.reaberta'/>
+            <OPTION value='Concluida' text='citcorpore.comum.concluida'/>
+        </PARAM>
+
+		<PARAM name='idtipomudanca' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='citcorpore.comum.tipo' fix='false' mandatory='false' reload='false' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idtipomudanca, nometipomudanca
+                  FROM tipomudanca
+                  where dataFim is null
+                ORDER BY nometipomudanca
+            </OPTIONS>
+        </PARAM>
+        
+        <PARAM name='impacto' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='solicitacaoServico.impacto' fix='false' mandatory='false' reload='false' onload='true'>
+            <OPTION value='*' text='citcorpore.comum.todos'/>
+            <OPTION value='B' text='citcorpore.comum.baixa'/>        
+            <OPTION value='M' text='citcorpore.comum.media'/>
+            <OPTION value='A' text='citcorpore.comum.alta'/>
+        </PARAM>
+        
+        <PARAM name='urgencia' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='solicitacaoServico.urgencia' fix='false' mandatory='false' reload='false' onload='true'>
+            <OPTION value='*' text='citcorpore.comum.todos'/>
+            <OPTION value='B' text='citcorpore.comum.baixa'/>        
+            <OPTION value='M' text='citcorpore.comum.media'/>
+            <OPTION value='A' text='citcorpore.comum.alta'/>
+        </PARAM>
+
+	</PARAMETERS>
+		
+</PAINEL>

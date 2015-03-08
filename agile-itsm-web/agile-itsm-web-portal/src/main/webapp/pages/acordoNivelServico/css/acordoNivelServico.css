@@ -1,0 +1,43 @@
+
+		.table {
+			border-left: 1px solid #ddd;
+		}
+
+		.table th {
+			border: 1px solid #ddd;
+			padding: 4px 10px;
+			border-left: none;
+			background: #eee;
+		}
+
+		.table td {
+			border: 1px solid #ddd;
+			padding: 4px 10px;
+			border-top: none;
+			border-left: none;
+		}
+
+		.formRelacionamentos div{
+			float: left;
+			width: 99%;
+			border: 1px solid #ccc;
+			padding: 5px;
+		}
+
+		.ui-tabs .ui-tabs-nav li a{
+			background-color: #fff !important;
+		}
+
+		.ui-state-active{
+			background-color: #aaa ;
+		}
+
+		#tabs div{
+			background-color: #fff;
+		}
+
+		div#main_container {
+			margin: 10px 10px 10px 10px;
+		}
+
+	

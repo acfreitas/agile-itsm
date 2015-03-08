@@ -1,0 +1,53 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>67</idVisao>
+  <descricao>$visao.pesquisaJustificativaMudanca</descricao>
+  <tipoVisao>TS</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>pesquisaJustificativaMudanca</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>$visao.pesquisaJustificativaMudanca</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>223</idGrupoVisao>
+          <idCamposObjetoNegocio>10002</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.codigo</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>5</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDJUSTIFICATIVAMUDANCA</nomeDB>
+          <nomeTabelaDB>JUSTIFICATIVAMUDANCA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>223</idGrupoVisao>
+          <idCamposObjetoNegocio>10003</idCamposObjetoNegocio>
+          <descricaoNegocio>$citcorpore.comum.descricao</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>DESCRICAOJUSTIFICATIVA</nomeDB>
+          <nomeTabelaDB>JUSTIFICATIVAMUDANCA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

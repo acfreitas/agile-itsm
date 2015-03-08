@@ -66,6 +66,8 @@
         <java.source.version>1.7</java.source.version>
         <java.target.version>${java.source.version}</java.target.version>
         <java.compiler.version>${java.target.version}</java.compiler.version>
+		
+		<fail.on.violation>false</fail.on.violation>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
@@ -127,8 +129,8 @@
                         </executions>
                         <configuration>
                             <consoleOutput>true</consoleOutput>
-                            <failsOnError>true</failsOnError>
-                            <failOnViolation>true</failOnViolation>
+                            <failsOnError>${fail.on.violation}</failsOnError>
+                            <failOnViolation>${fail.on.violation}</failOnViolation>
                             <configLocation>/checkstyle/checkstyle.xml</configLocation>
                             <headerLocation>/checkstyle/class-header.txt</headerLocation>
                             <suppressionsLocation>/checkstyle/suppressions.xml</suppressionsLocation>
@@ -142,9 +144,9 @@
                         <version>${findbugs-maven-plugin.version}</version>
                         <configuration>
                             <effort>Max</effort>
-                            <failOnError>true</failOnError>
+                            <failOnError>${fail.on.violation}</failOnError>
                             <threshold>Low</threshold>
-                            <xmlOutput>true</xmlOutput>
+                            <xmlOutput>${fail.on.violation}</xmlOutput>
                             <includeFilterFile>findbugs-include.xml</includeFilterFile>
                         </configuration>
                         <executions>
@@ -341,7 +343,7 @@
                 <version>${findbugs-maven-plugin.version}</version>
                 <configuration>
                     <effort>Max</effort>
-                    <failOnError>true</failOnError>
+                    <failOnError>${fail.on.violation}</failOnError>
                     <threshold>Low</threshold>
                 </configuration>
             </plugin>
@@ -377,7 +379,7 @@
                     <configLocation>/checkstyle/checkstyle.xml</configLocation>
                     <headerLocation>/checkstyle/class-header.txt</headerLocation>
                     <suppressionsLocation>/checkstyle/suppressions.xml</suppressionsLocation>
-                    <failsOnError>true</failsOnError>
+                    <failsOnError>${fail.on.violation}</failsOnError>
                 </configuration>
             </plugin>
 

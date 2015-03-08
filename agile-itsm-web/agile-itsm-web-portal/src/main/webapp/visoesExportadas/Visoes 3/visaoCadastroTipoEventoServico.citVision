@@ -1,0 +1,117 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>30</idVisao>
+  <descricao>$visao.CadastroTipoEventoServico</descricao>
+  <tipoVisao>ED</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>CadastroTipoEventoServico</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <idGrupoVisao>2015</idGrupoVisao>
+      <idVisao>30</idVisao>
+      <descricaoGrupoVisao>$visao.CadastroTipoEventoServico</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>2015</idGrupoVisao>
+          <idCamposObjetoNegocio>1248</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.codigo</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDTIPOEVENTOSERVICO</nomeDB>
+          <nomeTabelaDB>TIPOEVENTOSERVICO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>2015</idGrupoVisao>
+          <idCamposObjetoNegocio>1249</idCamposObjetoNegocio>
+          <descricaoNegocio>$citcorpore.comum.descricao</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>70</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>NOMETIPOEVENTOSERVICO</nomeDB>
+          <nomeTabelaDB>TIPOEVENTOSERVICO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+  <colVisoesRelacionadas class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+      <idVisaoRelacionada>1245</idVisaoRelacionada>
+      <idVisaoPai>30</idVisaoPai>
+      <idVisaoFilha>31</idVisaoFilha>
+      <ordem>0</ordem>
+      <titulo>$visao.listagem</titulo>
+      <situacao>A</situacao>
+      <tipoVinculacao>1</tipoVinculacao>
+      <acaoEmSelecaoPesquisa>RP</acaoEmSelecaoPesquisa>
+      <identificacaoVisaoFilha>ListagemTipoEventoServico</identificacaoVisaoFilha>
+    </br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+  </colVisoesRelacionadas>
+  <colScripts class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>2016</idScriptsVisao>
+      <idVisao>30</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONDELETE</scryptType>
+      <script>var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+var tipoEventoServico = new importNames.TipoEventoServicoServiceEjb();
+
+var flag = tipoEventoServico.tipoEventoVinculadoServico(mapFields);
+
+ if(flag){
+   dinamicViewsDto.abortFuncaoPrincipal = true;
+   dinamicViewsDto.msgRetorno = &quot;$centroResultado.naoPodeSerExcluido.possuiRelacionamentos&quot;;
+ }
+ </script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+  </colScripts>
+  <colBotoes class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>2613</idBotaoAcaoVisao>
+      <idVisao>30</idVisao>
+      <texto>$botaoacaovisao.gravar_dados</texto>
+      <acao>1</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>0</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>2614</idBotaoAcaoVisao>
+      <idVisao>30</idVisao>
+      <texto>$botaoacaovisao.limpar_dados</texto>
+      <acao>2</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>1</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>2615</idBotaoAcaoVisao>
+      <idVisao>30</idVisao>
+      <texto>$botaoacaovisao.excluir</texto>
+      <acao>3</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>2</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+  </colBotoes>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

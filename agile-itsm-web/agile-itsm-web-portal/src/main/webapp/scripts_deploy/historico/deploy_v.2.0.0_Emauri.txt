@@ -1,0 +1,343 @@
+create table nagiosconexao
+(
+   idnagiosconexao      int not null,
+   nome                 varchar(255) not null,
+   nomejndi             varchar(255),
+   criadopor            varchar(40),
+   modificadopor        varchar(40),
+   datacriacao          date,
+   ultmodificacao       date,
+   primary key (idnagiosconexao)
+)ENGINE = InnoDB;
+
+create table eventomonitoramento
+(
+   ideventomonitoramento int not null,
+   nomeevento           varchar(255) not null,
+   detalhamento         text,
+   criadopor            varchar(40),
+   modificadopor        varchar(40),
+   datacriacao          date,
+   ultmodificacao       date,
+   primary key (ideventomonitoramento)
+)ENGINE = InnoDB;
+
+alter table recurso add idnagiosconexao int;
+
+alter table recurso add constraint fk_ref_rec_nagios foreign key (idnagiosconexao)
+      references nagiosconexao (idnagiosconexao) on delete restrict on update restrict;
+	  
+alter table recurso add hostName varchar(255);
+alter table recurso add serviceName varchar(255);
+
+alter table recurso add horaInicioFunc varchar(5);
+alter table recurso add horaFimFunc varchar(5);
+
+alter table recurso add idCalendario int;
+
+alter table recurso add constraint fk_ref_rec_calend foreign key (idCalendario)
+      references calendario (idCalendario) on delete restrict on update restrict;
+
+alter table recurso add statusaberturainc varchar(255);
+alter table recurso add idsolicitante int;
+alter table recurso add constraint fk_ref_solic_rec foreign key (idsolicitante)
+      references empregados (idempregado);
+alter table recurso add emailaberturainc varchar(255);
+alter table recurso add descricaoabertinc text;
+alter table recurso add impacto CHAR(1);
+alter table recurso add urgencia CHAR(1);
+alter table recurso add idgrupo int;
+alter table recurso add constraint fk_ref_grp_rec foreign key (idgrupo)
+      references grupo (idgrupo);
+alter table recurso add idorigem int;
+alter table recurso add constraint fk_ref_orig_rec foreign key (idorigem)
+      references origematendimento (idorigem);
+alter table recurso add idservicocontrato int;	  
+alter table recurso add constraint fk_ref_sc_rec foreign key (idservicocontrato)
+      references servicocontrato (idservicocontrato) on delete restrict on update restrict;
+alter table recurso add ideventomonitoramento int;
+alter table recurso add constraint fk_ref_evt_rec foreign key (ideventomonitoramento)
+      references eventomonitoramento (ideventomonitoramento) on delete restrict on update restrict;
+alter table recurso add iditemconfiguracao int;
+alter table recurso add constraint fk_ref_ic_rec foreign key (iditemconfiguracao)
+      references itemconfiguracao (iditemconfiguracao) on delete restrict on update restrict;
+alter table recurso add statusalerta varchar(255);
+alter table recurso add emailsalerta text;
+alter table recurso add descricaoalerta text; 
+
+create table solicitacaoservicoevtmon
+(
+   idsolicitacaoservico bigint not null,
+   ideventomonitoramento int not null,
+   idrecurso            int,
+   nomehost             varchar(255),
+   nomeservice          varchar(255),
+   infoadd              text,
+   primary key (idsolicitacaoservico, ideventomonitoramento)
+)ENGINE = InnoDB;
+
+alter table solicitacaoservicoevtmon add constraint fk_ref_ssevtmon foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico) on delete restrict on update restrict;
+
+alter table solicitacaoservicoevtmon add constraint fk_ref_evtmon foreign key (ideventomonitoramento)
+      references eventomonitoramento (ideventomonitoramento) on delete restrict on update restrict;
+
+alter table solicitacaoservicoevtmon add constraint fk_ref_recevtmon foreign key (idrecurso)
+      references recurso (idrecurso) on delete restrict on update restrict;
+	  
+alter table recurso add constraint fk_ref_grprec foreign key (idgruporecurso)
+      references gruporecursos (idgruporecurso) on delete restrict on update restrict;
+      
+alter table nagiosconexao add deleted char(1);
+alter table AcordoServicoContrato add idrecurso INT;
+alter table AcordoServicoContrato add constraint fk_ref_asc_rec foreign key (idrecurso)
+      references recurso (idrecurso) on delete restrict on update restrict;
+      
+create table externalconnection
+(
+   idexternalconnection int not null,
+   nome                 varchar(80) not null,
+   tipo                 char(1) not null,
+   urljdbc              varchar(255),
+   jdbcdbname           varchar(255),
+   jdbcdriver           varchar(255),
+   jdbcuser             varchar(255),
+   jdbcpassword         varchar(255),
+   filename             varchar(500),
+   primary key (idexternalconnection)
+)ENGINE = InnoDB;
+
+create table importconfig
+(
+   idimportconfig       int not null,
+   tipo                 char(1) not null,
+   idexternalconnection int,
+   tabelaorigem         varchar(255),
+   tabeladestino        varchar(255),
+   filtroorigem         text,
+   primary key (idimportconfig)
+) ENGINE = InnoDB;
+
+alter table importconfig add constraint fk_ref_impconx foreign key (idexternalconnection)
+      references externalconnection (idexternalconnection) on delete restrict on update restrict;
+
+create table importconfigcampos
+(
+   idimportconfigcampo  int not null,
+   idimportconfig       int not null,
+   origem               varchar(255),
+   destino              varchar(255),
+   script               text,
+   primary key (idimportconfigcampo)
+) ENGINE = InnoDB;
+
+alter table importconfigcampos add constraint fk_ref_impcp_imp foreign key (idimportconfig)
+      references importconfig (idimportconfig) on delete restrict on update restrict;
+      
+alter table importconfig add nome varchar(100);
+
+alter table externalconnection add schemadb varchar(255);
+alter table externalconnection add deleted char(1);
+
+CREATE TABLE `situacaosolservico` (
+  `situacao` varchar(20) NOT NULL,
+  `nome` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`situacao`)
+) ENGINE=InnoDB;
+
+INSERT INTO `situacaosolservico` (`situacao`,`nome`) VALUES ('Cancelada','Canceled');
+INSERT INTO `situacaosolservico` (`situacao`,`nome`) VALUES ('EmAndamento','In Progress');
+INSERT INTO `situacaosolservico` (`situacao`,`nome`) VALUES ('Fechada','Closed');
+INSERT INTO `situacaosolservico` (`situacao`,`nome`) VALUES ('Reaberta','Reopened');
+INSERT INTO `situacaosolservico` (`situacao`,`nome`) VALUES ('ReClassificada','Reclassified');
+INSERT INTO `situacaosolservico` (`situacao`,`nome`) VALUES ('Resolvida','Resolved');
+INSERT INTO `situacaosolservico` (`situacao`,`nome`) VALUES ('Suspensa','Suspended');
+
+ALTER TABLE atividadeperiodica ADD idrequisicaomudanca INT;
+alter table atividadeperiodica add constraint fk_ref_reqmud foreign key (idrequisicaomudanca)
+      references requisicaomudanca (idrequisicaomudanca);
+ALTER TABLE atividadeperiodica ADD blackout CHAR(1);
+
+alter table problema add idgrupo INT;
+alter table problema add idservico INT;
+alter table problema add idcontrato INT;
+alter table problema add idservicocontrato INT;
+alter table problema add idprioridade INT;
+alter table problema add datahoralimite timestamp;
+alter table problema add datahorasolicitacao timestamp;
+alter table problema add prazoHH INT;
+alter table problema add prazoMM INT;
+alter table problema add slaACombinar CHAR(1);
+
+CREATE TABLE `servico_hist` (
+  `idhistoricoservico` bigint(20) NOT NULL,
+  `idservico` bigint(20) NOT NULL,
+  `idcategoriaservico` int(11) NOT NULL,
+  `idsituacaoservico` int(11) NOT NULL,
+  `idtiposervico` int(11) DEFAULT NULL,
+  `idimportancianegocio` int(11) DEFAULT NULL,
+  `idempresa` bigint(20) NOT NULL,
+  `idtipoeventoservico` int(11) DEFAULT NULL,
+  `idtipodemandaservico` int(11) DEFAULT NULL,
+  `idlocalexecucaoservico` int(11) DEFAULT NULL,
+  `nomeservico` varchar(500) NOT NULL,
+  `detalheservico` text,
+  `objetivo` text,
+  `passosservico` text,
+  `datainicio` date DEFAULT NULL,
+  `linkprocesso` varchar(500) DEFAULT NULL,
+  `descricaoprocesso` text,
+  `tipodescprocess` char(1) DEFAULT NULL,
+  `dispportal` char(1) DEFAULT NULL,
+  `quadroorientportal` text,
+  `deleted` char(1) DEFAULT NULL,
+  `detalhesServico` varchar(255) DEFAULT NULL,
+  `siglaAbrev` varchar(150) DEFAULT NULL,
+  `idbaseconhecimento` int(11) DEFAULT NULL,
+  `idtemplatesolicitacao` int(11) DEFAULT NULL,
+  `idtemplateacompanhamento` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idhistoricoservico`)
+) ENGINE=InnoDB;
+
+alter table servico_hist add criadoEm Timestamp;
+alter table servico_hist add criadoPor varchar(25);
+alter table servico_hist add modificadoEm Timestamp;
+alter table servico_hist add modificadoPor varchar(25);
+alter table servico_hist add conteudodados text;
+
+alter table acordonivelservico add tempoauto DECIMAL(15,3);
+alter table acordonivelservico add idprioridadeauto1 INT;
+alter table acordonivelservico add idprioridadeauto2 INT;
+alter table acordonivelservico add idprioridadeauto3 INT;
+alter table acordonivelservico add idprioridadeauto4 INT;
+alter table acordonivelservico add idprioridadeauto5 INT;
+alter table acordonivelservico add idgrupo1 INT;
+alter table acordonivelservico add idgrupo2 INT;
+alter table acordonivelservico add idgrupo3 INT;
+alter table acordonivelservico add idgrupo4 INT;
+alter table acordonivelservico add idgrupo5 INT;
+
+create table planomelhoria
+(
+   idplanomelhoria      int not null,
+   idfornecedor         int,
+   idcontrato           int,
+   titulo               varchar(100) not null,
+   datainicio           date not null,
+   datafim              date,
+   objetivo             text,
+   visaogeral           text,
+   escopo               text,
+   visao                text,
+   missao               text,
+   datacriacao          date,
+   notas                text,
+   criadopor            varchar(40),
+   modificadopor        varchar(40),
+   ultmodificacao       date,
+   situacao             char(1),
+   primary key (idplanomelhoria)
+)ENGINE=InnoDB;
+
+/*==============================================================*/
+/* Index: ix_pm_forn                                            */
+/*==============================================================*/
+create index ix_pm_forn on planomelhoria
+(
+   idfornecedor
+);
+
+/*==============================================================*/
+/* Index: ix_pm_contrato                                        */
+/*==============================================================*/
+create index ix_pm_contrato on planomelhoria
+(
+   idcontrato,
+   idfornecedor
+);
+
+create table objetivoplanomelhoria
+(
+   idobjetivoplanomelhoria int not null,
+   idplanomelhoria      int not null,
+   tituloobjetivo       varchar(255) not null,
+   detalhamento         text,
+   resultadoesperado    text,
+   medicao              varchar(255),
+   responsavel          varchar(255),
+   criadopor            varchar(40),
+   modificadopor        varchar(40),
+   datacriacao          date,
+   ultmodificacao       date,
+   primary key (idobjetivoplanomelhoria)
+)ENGINE=InnoDB;
+
+/*==============================================================*/
+/* Index: ix_obj_pm_id                                          */
+/*==============================================================*/
+create index ix_obj_pm_id on objetivoplanomelhoria
+(
+   idplanomelhoria
+);
+
+alter table objetivoplanomelhoria add constraint fk_ref_objplm foreign key (idplanomelhoria)
+      references planomelhoria (idplanomelhoria) on delete restrict on update restrict;
+
+	  
+create table acaoplanomelhoria
+(
+   idacaoplanomelhoria  int not null,
+   idplanomelhoria      int not null,
+   idobjetivoplanomelhoria int not null,
+   tituloacao           varchar(255) not null,
+   detalhamentoacao     text,
+   datainicio           date,
+   datafim              date,
+   responsavel          varchar(255),
+   dataconclusao        date,
+   criadopor            varchar(40),
+   modificadopor        varchar(40),
+   datacriacao          date,
+   ultmodificacao       date,
+   primary key (idacaoplanomelhoria)
+)ENGINE=InnoDB;
+
+/*==============================================================*/
+/* Index: ix_act_pm_id                                          */
+/*==============================================================*/
+create index ix_act_pm_id on acaoplanomelhoria
+(
+   idobjetivoplanomelhoria
+);
+
+alter table acaoplanomelhoria add constraint fk_ref_plmact foreign key (idplanomelhoria)
+      references planomelhoria (idplanomelhoria) on delete restrict on update restrict;
+
+alter table acaoplanomelhoria add constraint fk_ref_objact foreign key (idobjetivoplanomelhoria)
+      references objetivoplanomelhoria (idobjetivoplanomelhoria) on delete restrict on update restrict;
+
+create table objetivomonitoramento
+(
+   idobjetivomonitoramento int not null,
+   idobjetivoplanomelhoria int not null,
+   titulomonitoramento  varchar(255) not null,
+   fatorcriticosucesso  varchar(255),
+   kpi                  varchar(255),
+   metrica              text,
+   medicao              text,
+   relatorios           text,
+   responsavel          varchar(255),
+   criadopor            varchar(40),
+   modificadopor        varchar(40),
+   datacriacao          date,
+   ultmodificacao       date,
+   primary key (idobjetivomonitoramento)
+)ENGINE=InnoDB;
+
+alter table objetivomonitoramento add constraint fk_ref_objmn foreign key (idobjetivoplanomelhoria)
+      references objetivoplanomelhoria (idobjetivoplanomelhoria) on delete restrict on update restrict;
+
+	  
+alter table baseconhecimento add gerenciamentoDisponibilidade CHAR(1);
+alter table baseconhecimento add direitoAutoral CHAR(1);
+alter table baseconhecimento add legislacao CHAR(1);

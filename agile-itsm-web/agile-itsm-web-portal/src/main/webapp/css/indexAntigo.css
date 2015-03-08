@@ -1,0 +1,70 @@
+/*@media screen , print {*/
+	
+	div#cabecalho
+	{
+		height: 67px;
+		width: 1110px;
+		border: 0px solid red;
+		padding: 0 0 0 2px;
+		background-color: #E7FDFF;
+		
+	}
+
+	div#logo
+	{
+		height: 100%;
+		width: 29%;
+		border: 0px solid pink;
+		text-align: left;
+		padding: 0 0 0 2px;
+		float:left;
+	}
+	
+	div#informacao
+	{
+		height: 100%;
+		width: 70%;
+		border: 0px solid red;
+		text-align: right;
+		padding: 0px 3px 0 0px;
+		color:#00A4AE;
+		font-weight: bold;
+		font-size: 12px;
+		font-family: sans-serif;
+		float: left;
+	}
+
+	.corFundo
+	{
+		background-color: #008B8B;				/*  verde */
+	}
+	
+	div#conteudo
+	{
+		width: 100%;
+		border: 0px solid #008B8B;
+		height: 87%;
+		padding: 0px 0px 0px 0px;
+	}
+
+	div#menu
+	{
+		width: 200px;
+		border:0px solid blue;
+		float:	left;
+		height: 100%;
+		padding: 0px 0px 0px 0px;
+	}
+	
+	div#formulario
+	{
+		width: 565px;
+		border: 0px solid red;
+		height: 100%;
+		float: left;
+		
+		
+	}
+	
+
+/*}*/

@@ -1,0 +1,2 @@
+FluxoService fluxoService = (FluxoService) ServiceLocator.getInstance().getService(FluxoService.class, null);
+fluxoService.criaStruturaDeArquivoXml("D:\\CentralIT\\CITCorpore\\Fluxo\\SolicitacaoServico.bpmn2");

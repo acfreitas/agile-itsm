@@ -1,0 +1,4 @@
+.tab_header ul, .tabs-wrap ul {
+	height: auto !important;
+	border: 0 !important;
+}

@@ -1,0 +1,165 @@
+select:focus {
+	border-color: rgba(82, 168, 236, 0.8) !important;
+	outline: 0px none !important;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px
+		rgba(82, 168, 236, 0.6) !important;
+}
+
+.ui-layout-center, .ui-layout-east, .ui-layout-east .ui-layout-content {
+	padding: 0;
+	overflow: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+h4 {
+	margin: 0 0 0 0;
+}
+
+.cell-title {
+	font-weight: bold;
+}
+
+.cell-effort-driven {
+	text-align: center;
+}
+
+.autocomplete {
+	width: 420px !important;
+}
+
+.add-on {
+	border-radius: 1px !important;
+}
+
+.toggler-west-closed {
+	background: url(/citsmart/imagens/go-rt-off.gif) no-repeat center;
+}
+
+.toggler-west-closed:hover {
+	background: url(/citsmart/imagens/go-rt-on.gif) no-repeat center;
+}
+
+.toggler-east-closed {
+	background: url(/citsmart/imagens/go-lt-off.gif) no-repeat center;
+}
+
+.toggler-east-closed:hover {
+	background: url(/citsmart/imagens/go-lt-on.gif) no-repeat center;
+}
+
+span.button-close-west {
+	background: url(/citsmart/imagens/go-lt-off.gif) no-repeat center;
+}
+
+span.button-close-west:hover {
+	background: url(/citsmart/imagens/go-lt-on.gif) no-repeat center;
+}
+
+span.button-close-east {
+	background: url(/citsmart/imagens/go-rt-off.gif) no-repeat center;
+}
+
+span.button-close-east:hover {
+	background: url(/citsmart/imagens/go-rt-on.gif) no-repeat center;
+}
+
+.col_98 {
+	width: 98%;
+}
+
+.tabFormulario tr {
+	width: 50%;
+}
+
+.tabFormulario td {
+	width: 70%;
+}
+
+.tabFormulario th {
+	width: 30%;
+}
+
+.form {
+	width: 100%;
+	float: right;
+}
+
+.formHead {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.formBody {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.formRelacionamentos div {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.formFooter {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.divEsquerda {
+	float: left;
+	width: 47%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.divDireita {
+	float: right;
+	width: 47%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	background-color: #fff !important;
+}
+
+.ui-state-active {
+	background-color: #aaa;
+}
+
+.ui-state-hover {
+	background-color: #ccc !important;
+}
+
+#divTituloSolicitacao {
+	text-align: center;
+}
+
+fieldset {
+	line-height: 1;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-left: 0;
+	background: none repeat scroll 0 0 transparent;
+	outline: 0 none;
+	padding: 0;
+	vertical-align: baseline;
+	letter-spacing: 0;
+	border-right: none;
+	border-left: none;
+}
+
+#barraFerramentasProblemas ul li.li_menu {
+	height: 65px !important;
+}

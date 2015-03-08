@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PAINEL description='Painel de Informações sobre Mudanças'>
+	<ITEM file='xmlPaineis/mudancas/painelImpactoMudanca.xml' description='painel.impactoMudanca'/>
+	<ITEM file='xmlPaineis/mudancas/painelAtualizacoesNaoAutorizadas.xml' description='painel.attIC'/>
+</PAINEL>

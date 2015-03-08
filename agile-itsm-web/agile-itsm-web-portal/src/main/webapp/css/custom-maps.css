@@ -1,0 +1,59 @@
+/**
+ * CSS para resetar alguns comportamentos do Google Maps em conjunto com o BootStrap e outros utilitários
+ *
+ * @author bruno.ribeiro - <a href="mailto:bruno.ribeiro@centrait.com.br">bruno.ribeiro@centrait.com.br</a>
+ * @date 12/09/2014
+ */
+img[src*="gstatic.com/"],
+img[src*="googleapis.com/"] {
+	max-width: none;
+}
+
+#map-area img,
+#map_canvas img,
+.google-maps img {
+	max-width: none
+}
+
+.no-key, .no-connection {
+	font-size: 16px;
+	margin: 0 !important;
+	text-align: center;
+}
+
+.no-key {
+	color: #c09853 !important;
+	background-color: #fcf8e3 !important;
+	border: 1px solid #fbeed5 !important;
+}
+
+.no-key a {
+	color: #c09853 !important;
+}
+
+.no-connection {
+	color: #b94a48 !important;
+	background-color: #f2dede !important;
+	border-color: #eed3d7 !important;
+}
+
+.box-div {
+	border: 1px solid #d8d8d8;
+	-webkit-border-radius: 6px;
+	   -moz-border-radius: 6px;
+			border-radius: 6px;
+	padding: 5px;
+}
+
+.label-box-div {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.map-area {
+	background: #e5e5e5;
+}
+
+.badge-naodirecionada {
+	background-color: #3d003d;
+}

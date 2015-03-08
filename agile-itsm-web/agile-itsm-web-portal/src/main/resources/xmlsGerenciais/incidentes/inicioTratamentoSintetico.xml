@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<ItemInformation type='SERVICE' description='painel.inicioTratamentoDesempenho' defaultVisualization='T' report='true' graph='false' reportPageLayout='P' title='painel.inicioTratamentoDesempenho' hDetailSpacing='40'>
+	<CLASS class="br.com.centralit.citgerencial.generateservices.incidentes.GenerateServiceInicioTratamentoSintetico"></CLASS>
+	<FIELDS>
+		<FIELD name='prioridade' type='java.lang.String' width='100px' title='menu.nome.prioridade' totals='false' count='false' decimals='0' mask=''/>
+        <FIELD name='total' type='java.lang.Integer' width='100px' title='Qtde total' totals='true' count='true' decimals='0' mask=''/>
+        <FIELD name='noPrazo' type='java.lang.Integer' width='100px' title='Qtde no prazo' totals='false' count='false' decimals='0' mask=''/>        
+        <FIELD name='percentual' type='java.lang.String' width='100px' title='Percentual' totals='false' count='false' decimals='0' mask=''/>   
+	</FIELDS>
+	<GRAPHS>
+		<GRAPH type='Pizza3D' legend='false'/>
+		<GRAPH type='Pizza2D' legend='false'/>
+		<GRAPH type='Barra3D' legend='false'/>
+		<GRAPH type='Barra2D' legend='false'/>
+		<GRAPH type='Linha3D' legend='false'/>
+		<GRAPH type='Linha2D' legend='false'/>
+	</GRAPHS>
+	<GROUPS>
+		<GROUP fieldName='prioridade' spacingLeft='0'/>
+	</GROUPS>
+	<SUMMARY>
+	</SUMMARY>
+</ItemInformation>

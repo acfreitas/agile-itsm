@@ -1,0 +1,39 @@
+/**
+ * CSS da tela de cadastro de Unidade
+ *
+ * @author bruno.ribeiro - <a href="mailto:bruno.ribeiro@centrait.com.br">bruno.ribeiro@centrait.com.br</a>
+ * @date 12/09/2014
+ */
+.table {
+	border-left: 1px solid #ddd;
+}
+
+.table th {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+}
+
+.table td {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-top: none;
+	border-left: none;
+}
+
+.label-btn-coordinates {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+#btnUpdateUnidadeLocation.disabled {
+	cursor: not-allowed;
+	opacity: .65;
+}
+
+.map-area {
+	height: 276px;
+	background: #e5e5e5;
+}

@@ -1,0 +1,157 @@
+.inicio h3 {
+	color:#96CA65;
+}
+.content-area {
+	border-left: 1px solid #D8D8D8;
+	border-right: 1px solid #D8D8D8;
+	border-bottom: 1px solid #D8D8D8;
+	padding: 5px 17px;
+}
+.content-area .row-fluid {
+	margin: 3px 0;
+}
+.content-area:first-child {
+	border-top: 1px solid #D8D8D8;
+}
+.content-area.alternado {
+	background-color:#FAFAFA;
+}
+.content-row {
+	display: block;
+	margin: 0.15em 0;
+	cursor: default;
+}
+.content-row > div {
+	color:#60893D;
+	font-size: 85%;
+	line-height: 10px;
+}
+.content-row > span {
+	color:#7B7B7B;
+}
+.content-row span.servico{
+	color:#7B7B7B;
+}
+.content-row span.escuro-negrito {
+	font-weight: bold;
+}
+.content-row span.verde-normal {
+	color:#96CA65;
+}	
+.content-row span.verde-negrito{	
+	font-weight: bold;
+	color:#96CA65;
+}	
+.content-row span.prioridade{	
+	font-weight: bold;
+}
+.content-row span.prioridade.Alta{	
+	color:#BB2727;
+}
+.content-row span.prioridade.Media{	
+	color:#EDAB00;
+}
+.content-row span.prioridade.Baixa{	
+	color:#316796;
+}
+.content-row button.btn, .content-row input[type="submit"].btn, .content-row .btn-group.btn-block .dropdown-toggle {
+	line-height: 15px;
+}
+.content-row .btn .caret {
+	margin-top: 6px;
+}
+.inicio, .fim {
+	margin: 2px 0;
+}
+.filtro {
+	margin: 10px 0 !important;
+    padding: 15px;
+	border: 1px solid #D8D8D8;
+	background: rgb(252,252,252); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,252,252,1) 0%, rgba(245,245,245,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(245,245,245,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(245,245,245,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(245,245,245,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(245,245,245,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(252,252,252,1) 0%,rgba(245,245,245,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+}
+.filtro .input-append{
+	margin: 0px !important;
+	display: inline !important;
+}
+.w15 {
+	width: 100px;
+	 margin: 0 0 0 5px;
+}
+
+.dropdownFiltro {
+/* 	margin: 10px 0 !important;
+    padding: 15px;
+	border: 1px solid #D8D8D8;
+	background: rgb(252,252,252); Old browsers
+	background: -moz-linear-gradient(top, rgba(252,252,252,1) 0%, rgba(245,245,245,1) 100%); FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(245,245,245,1))); Chrome,Safari4+
+	background: -webkit-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(245,245,245,1) 100%); Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(245,245,245,1) 100%); Opera 11.10+
+	background: -ms-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(245,245,245,1) 100%); IE10+
+	background: linear-gradient(to bottom, rgba(252,252,252,1) 0%,rgba(245,245,245,1) 100%); W3C
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#f5f5f5',GradientType=0 ); IE6-9 */
+	visibility: hidden;
+	top: 23px;
+	position: absolute;
+	right: 0;
+	width: 500%;
+	
+	background: #fff;
+	border: 1px solid #c8c8c8;
+	margin: 8px 0 0;
+	-webkit-border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	border-radius: 0 0 0 0;
+	z-index: 1000;
+	
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+}
+
+.dropdownFiltro label {
+	color:#60893D;
+	line-height: 10px;
+	text-overflow: ellipsis;
+	overflow:hidden;
+}
+
+.visualizaFiltro {
+	visibility: visible;
+}
+
+.dropdownFiltro.pull-right {
+	-webkit-border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	border-radius: 0 0 0 0;
+}
+
+.filtro-toogle ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-left: 1px solid #d8d8d8;
+	border-right: 1px solid #ffffff;
+}
+
+.dropdownFiltro.pull-right:after {
+	left: auto;
+	right: 7px;
+	margin: 0;
+}
+
+.dropdownFiltro.pull-right:before {
+	left: auto;
+	right: 12px;
+}
+
+.modalDescricao {
+  width: 820px;
+  left: 40%;
+}

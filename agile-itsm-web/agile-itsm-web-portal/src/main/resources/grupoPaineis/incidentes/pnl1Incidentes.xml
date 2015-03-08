@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PAINEL description='Painel de Informações sobre Incidentes'>
+	<ITEM file='xmlPaineis/incidentes/painel001Incidentes.xml' description='painel.monitoramentoIncidente'/>
+	<ITEM file='xmlPaineis/requisicoes/painel001Requisicoes.xml' description='painel.monitoramentoReq'/>
+	<ITEM file='xmlPaineis/incidentes/painelInicioTratamento.xml' description='painel.inicioTratamentoDesempenho'/>
+	<ITEM file='xmlPaineis/incidentes/painelSLA.xml' description='painel.qualidadeAtendimento'/>
+	<ITEM file='xmlPaineis/incidentes/painelControleSLA.xml' description='painel.controleSLA'/>
+	<ITEM file='xmlPaineis/incidentes/painelControleHorario.xml' description='painel.controleHorario'/>
+	<ITEM file='xmlPaineis/incidentes/painel002Incidentes.xml' description='painel.pesqSatisfacao'/>
+    <ITEM file='xmlPaineis/requisicoesProdutos/painelRequisicoesProdGeral.xml' description='Requisições de produtos e serviços'/>
+    <!--<ITEM file='xmlPaineis/requisicoesProdutos/painelRequisicoesPorUnidade.xml' description='painel.reqProdUnidade'/>-->
+</PAINEL>

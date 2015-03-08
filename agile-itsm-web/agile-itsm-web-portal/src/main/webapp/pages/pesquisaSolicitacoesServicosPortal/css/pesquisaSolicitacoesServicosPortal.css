@@ -1,0 +1,32 @@
+*  	.table {
+		border-left:1px solid #ddd;
+	} */
+	div.main_container .box {
+		border: 0px solid #D8D8D8 !important;
+		border-top: none !important;
+/*  		margin-top: 0!important;  */
+		border-radius: 0 !important;
+	}
+	select {
+		width: 98%!important;
+	}
+
+ 	.table th {
+		border:1px solid #ddd;
+		padding:4px 10px;
+		border-left:none;
+		background:#eee;
+		word-wrap:break-word;
+	}
+	.labelOverflowTresPontinhos label {text-overflow: ellipsis;overflow: hidden;white-space: nowrap; font-weight: bold;}
+
+	.inner{
+		margin: 15px;
+	}
+
+/* 	.table td {
+		border:1px solid #ddd !important;
+		padding:4px 10px !important;
+		border-top:none !important;
+		border-left:none !important;
+	}   */

@@ -1,0 +1,53 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>14</idVisao>
+  <descricao>$visao.listagemTipoEventoServico</descricao>
+  <tipoVisao>TS</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>ListagemTipoEventoServico</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>$visao.listagemTipoEventoServico</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>14</idGrupoVisao>
+          <idCamposObjetoNegocio>2295</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.codigo</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDTIPOEVENTOSERVICO</nomeDB>
+          <nomeTabelaDB>TIPOEVENTOSERVICO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>14</idGrupoVisao>
+          <idCamposObjetoNegocio>2296</idCamposObjetoNegocio>
+          <descricaoNegocio>$citcorpore.comum.descricao</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>NOMETIPOEVENTOSERVICO</nomeDB>
+          <nomeTabelaDB>TIPOEVENTOSERVICO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

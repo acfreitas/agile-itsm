@@ -1,0 +1,22 @@
+@import url("./classes.css");
+@import url("./tags.css");
+@import url("./ids.css");
+@import url("./relatorio.css");
+
+@media screen
+{
+
+	div#filtro1 {
+		position: absolute;
+		left : 300px;
+		top :230px;
+		z-index: 2;
+		border: 1px solid #006FA8;
+		width: 300px;
+		background: #FFFFFF;
+		text-align: center;
+		
+	}
+
+
+}

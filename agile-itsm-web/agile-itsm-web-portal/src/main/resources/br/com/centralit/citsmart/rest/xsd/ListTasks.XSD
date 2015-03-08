@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="Message.xsd" />
+
+    <xsd:element name="ListTasks" type="CtListTasks">
+        <xsd:annotation>
+            <xsd:documentation>
+                Sistema externo solicita a lista de tarefas da carteira de trabalho do
+                usuário
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="ListTasksResp" type="CtListTasksResp">
+        <xsd:annotation>
+            <xsd:documentation>
+                CITSmart retorna a lista de tarefas
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="CtListTasks">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessage">
+                <xsd:sequence>
+                    <xsd:element name="ListarIncidentes"
+                        type="xsd:string" nillable="false" />
+                    <xsd:element name="ListarRequisicoes"
+                        type="xsd:string" nillable="false" />
+                    <xsd:element name="ListarCompras" type="xsd:string"
+                        nillable="false" />
+                    <xsd:element name="ListarViagens" type="xsd:string"
+                        nillable="false" />
+                    <xsd:element name="ListarRH" type="xsd:string"
+                        nillable="false" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtListTasksResp">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessageResp">
+                <xsd:sequence>
+                    <xsd:element name="qtdeTarefas" type="xsd:int"
+                        nillable="false" />
+                    <xsd:group ref="Tarefas" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:group name="Tarefas">
+        <xsd:sequence>
+            <xsd:element name="Tarefa" type="TarefaFluxoDTO" />
+        </xsd:sequence>
+    </xsd:group>
+
+</xsd:schema>

@@ -1,0 +1,62 @@
+--Emauri31082012
+create table gruporecursos
+(
+   idgruporecurso       int not null,
+   nomegruporecurso     varchar(70) not null,
+   situacao             char(1) not null,
+   deleted              char(1)
+) ENGINE = InnoDB;
+
+alter table gruporecursos
+   add primary key (idgruporecurso);
+
+create table recurso
+(
+   idrecurso            int not null,
+   idgruporecurso       int not null,
+   idrecursopai         int,
+   nomerecurso          varchar(150) not null,
+   datainicio           date not null,
+   datafim              date,
+   tipoatualizacao      char(1) not null,
+   deleted              char(1)
+) ENGINE = InnoDB;
+
+alter table recurso
+   add primary key (idrecurso);
+
+alter table recurso add constraint fk_reference_603 foreign key (idgruporecurso)
+      references gruporecursos (idgruporecurso) on delete restrict on update restrict;
+
+alter table recurso add constraint fk_reference_605 foreign key (idrecursopai)
+      references recurso (idrecurso) on delete restrict on update restrict;
+
+create table apuracaovaloresrecurso
+(
+   idapuracaovaloresrecurso int not null,
+   idrecurso            int not null,
+   valorinicio          decimal(15,3) not null,
+   deleted              char(1)
+) ENGINE = InnoDB;
+
+alter table apuracaovaloresrecurso
+   add primary key (idapuracaovaloresrecurso);
+
+alter table apuracaovaloresrecurso add constraint fk_reference_606 foreign key (idrecurso)
+      references recurso (idrecurso) on delete restrict on update restrict;
+
+create table faixavaloresrecurso
+(
+   idfaixavaloresrecurso integer not null,
+   idrecurso            int not null,
+   valorinicio          decimal(15,3),
+   valorfim             decimal(15,3),
+   cor                  varchar(20),
+   descricao            varchar(80)
+) ENGINE = InnoDB;
+
+alter table faixavaloresrecurso
+   add primary key (idfaixavaloresrecurso);
+ 
+alter table faixavaloresrecurso add constraint fk_reference_604 foreign key (idrecurso)
+      references recurso (idrecurso) on delete restrict on update restrict;

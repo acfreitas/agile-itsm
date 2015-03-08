@@ -1,0 +1,48 @@
+package br.com.centralit.citcorpore.bean;
+
+import br.com.centralit.bpm.dto.ExecucaoFluxoDTO;
+
+public class ExecucaoProblemaDTO extends ExecucaoFluxoDTO {
+	private Integer idProblema;
+	private Integer idFase;
+	private Integer prazoHH;
+	private Integer prazoMM;
+	private Integer seqReabertura;
+	
+	
+	public Integer getIdProblema() {
+		return idProblema;
+	}
+	public void setIdProblema(Integer idProblema) {
+		this.idProblema = idProblema;
+	}
+	
+	public Integer getIdFase(){
+		return this.idFase;
+	}
+	public void setIdFase(Integer parm){
+		this.idFase = parm;
+	}
+
+	public Integer getPrazoHH(){
+		return this.prazoHH;
+	}
+	public void setPrazoHH(Integer parm){
+		this.prazoHH = parm;
+	}
+
+	public Integer getPrazoMM(){
+		return this.prazoMM;
+	}
+	public void setPrazoMM(Integer parm){
+		this.prazoMM = parm;
+	}
+	
+	public Integer getSeqReabertura() {
+		return seqReabertura;
+	}
+	public void setSeqReabertura(Integer seqReabertura) {
+		this.seqReabertura = seqReabertura;
+	}
+	
+}

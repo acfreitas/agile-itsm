@@ -1,0 +1,15 @@
+--Flavio 03092012
+ALTER TABLE `servico` ADD INDEX `index_nome` (`nomeservico`(255) ASC) ;
+
+--Maycon 30082012
+create table osatividadeperiodica
+(
+   idatividadeperiodica integer,
+   idos                 integer
+);
+alter table osatividadeperiodica add constraint fk_reference_579 foreign key (idatividadeperiodica)
+      references atividadeperiodica (idatividadeperiodica) on delete restrict on update restrict;
+alter table osatividadeperiodica add constraint fk_reference_580 foreign key (idos)
+      references os (idos) on delete restrict on update restrict;
+   
+alter table programacaoatividade add  idatividadesos  integer;

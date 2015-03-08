@@ -1,0 +1,15 @@
+
+			.linhaGrid {
+				border: 1px solid black;
+				background-color: #D6E7FF;
+			}
+
+			body {
+				background-color: white;
+				background-image: url("");
+			}
+
+			.campoEsquerda {
+				padding-left: 20px;
+			}
+		

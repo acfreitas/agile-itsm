@@ -1,0 +1,351 @@
+TABLE.example
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-COLLAPSE: collapse
+}
+TABLE.example TH
+{
+    BORDER-RIGHT: #aaaaaa 1px solid;
+    PADDING-RIGHT: 15px;
+    BORDER-TOP: #aaaaaa 1px solid;
+    PADDING-LEFT: 15px;
+    PADDING-BOTTOM: 2px;
+    BORDER-LEFT: #aaaaaa 1px solid;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: #aaaaaa 1px solid
+}
+TABLE.example TD
+{
+    BORDER-RIGHT: #aaaaaa 1px solid;
+    PADDING-RIGHT: 15px;
+    BORDER-TOP: #aaaaaa 1px solid;
+    PADDING-LEFT: 15px;
+    PADDING-BOTTOM: 2px;
+    BORDER-LEFT: #aaaaaa 1px solid;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: #aaaaaa 1px solid
+}
+TABLE.example THEAD TH
+{
+    BACKGROUND-COLOR: #ccccff
+}
+TABLE.example TFOOT TD
+{
+    BACKGROUND-COLOR: #ffccff
+}
+TABLE.example TR.tbody_header
+{
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #dddddd;
+    TEXT-ALIGN: center
+}
+TABLE.example A.pagelink
+{
+    BORDER-RIGHT: #666666 1px solid;
+    PADDING-RIGHT: 5px;
+    BORDER-TOP: #666666 1px solid;
+    PADDING-LEFT: 5px;
+    MARGIN: 0px 5px;
+    BORDER-LEFT: #666666 1px solid;
+    BORDER-BOTTOM: #666666 1px solid
+}
+TABLE.example A.currentpage
+{
+    BACKGROUND-COLOR: yellow
+}
+TR.alternate
+{
+    BACKGROUND-COLOR: #f4fff4
+}
+TH.table-sortable
+{
+    BACKGROUND-POSITION: left center;
+    PADDING-LEFT: 12px;
+    BACKGROUND-IMAGE: url(../imagens/SortTable/05_unsorted.gif);
+    CURSOR: pointer;
+    BACKGROUND-REPEAT: no-repeat
+}
+TH.table-sorted-asc
+{
+    BACKGROUND-POSITION: left center;
+    BACKGROUND-IMAGE: url(../imagens/SortTable/05_ascending.gif);
+    BACKGROUND-REPEAT: no-repeat
+}
+TH.table-sorted-desc
+{
+    BACKGROUND-POSITION: left center;
+    BACKGROUND-IMAGE: url(../imagens/SortTable/05_descending.gif);
+    BACKGROUND-REPEAT: no-repeat
+}
+TH.table-filtered
+{
+    BACKGROUND-POSITION: left center;
+    BACKGROUND-IMAGE: url(../imagens/SortTable/filter.gif);
+    BACKGROUND-REPEAT: no-repeat
+}
+SELECT.table-autofilter
+{
+    FONT-SIZE: smaller
+}
+TABLE.altstripe TR.alternate2
+{
+    BACKGROUND-COLOR: #ccffff
+}
+TABLE.sort01 TH.table-sortable
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/01_unsorted.gif)
+}
+TABLE.sort01 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/01_ascending.gif)
+}
+TABLE.sort01 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/01_descending.gif)
+}
+TABLE.sort02 TH.table-sortable
+{
+    PADDING-LEFT: 16px;
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort02 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/02_ascending.gif)
+}
+TABLE.sort02 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/02_descending.gif)
+}
+TABLE.sort03 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort03 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/03_ascending.gif)
+}
+TABLE.sort03 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/03_descending.gif)
+}
+TABLE.sort04 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort04 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/04_ascending.gif)
+}
+TABLE.sort04 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/04_descending.gif)
+}
+TABLE.sort05 TH.table-sortable
+{
+    PADDING-LEFT: 16px;
+    BACKGROUND-IMAGE: url(../imagens/SortTable/05_unsorted.gif)
+}
+TABLE.sort05 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/05_ascending.gif)
+}
+TABLE.sort05 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/05_descending.gif)
+}
+TABLE.sort06 TH.table-sortable
+{
+    PADDING-LEFT: 16px;
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort06 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/06_ascending.gif)
+}
+TABLE.sort06 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/06_descending.gif)
+}
+TABLE.sort07 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort07 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/07_ascending.gif)
+}
+TABLE.sort07 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/07_descending.gif)
+}
+TABLE.sort08 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort08 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/08_ascending.gif)
+}
+TABLE.sort08 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/08_descending.gif)
+}
+TABLE.sort09 TH.table-sortable
+{
+    PADDING-LEFT: 30px;
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort09 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/09_ascending.gif)
+}
+TABLE.sort09 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/09_descending.gif)
+}
+TABLE.sort10 TH.table-sortable
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/10_unsorted.gif)
+}
+TABLE.sort10 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/10_ascending.gif)
+}
+TABLE.sort10 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/10_descending.gif)
+}
+TABLE.sort11 TH.table-sortable
+{
+    PADDING-LEFT: 24px;
+    BACKGROUND-IMAGE: url(../imagens/SortTable/11_unsorted.gif)
+}
+TABLE.sort11 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/11_ascending.gif)
+}
+TABLE.sort11 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/11_descending.gif)
+}
+TABLE.sort12 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort12 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/12_ascending.gif)
+}
+TABLE.sort12 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/12_descending.gif)
+}
+TABLE.sort13 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort13 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/13_ascending.gif)
+}
+TABLE.sort13 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/13_descending.gif)
+}
+TABLE.sort14 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort14 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/14_ascending.gif)
+}
+TABLE.sort14 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/14_descending.gif)
+}
+TABLE.sort15 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort15 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/15_ascending.gif)
+}
+TABLE.sort15 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/15_descending.gif)
+}
+TABLE.sort16 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort16 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/16_ascending.gif)
+}
+TABLE.sort16 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/16_descending.gif)
+}
+TABLE.sort17 TH.table-sortable
+{
+    BACKGROUND-IMAGE: none
+}
+TABLE.sort17 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/17_ascending.gif)
+}
+TABLE.sort17 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/17_descending.gif)
+}
+TABLE.sort18 TH.table-sortable
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/18_unsorted.gif)
+}
+TABLE.sort18 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/18_ascending.gif)
+}
+TABLE.sort18 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/18_descending.gif)
+}
+TABLE.sort19 TH.table-sortable
+{
+    PADDING-LEFT: 24px;
+    BACKGROUND-IMAGE: url(../imagens/SortTable/19_unsorted.gif)
+}
+TABLE.sort19 TH.table-sorted-asc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/19_ascending.gif)
+}
+TABLE.sort19 TH.table-sorted-desc
+{
+    BACKGROUND-IMAGE: url(../imagens/SortTable/19_descending.gif)
+}
+.iconset
+{
+    BORDER-RIGHT: #666666 1px solid;
+    BORDER-TOP: #cccccc 1px solid;
+    MARGIN: 5px;
+    BORDER-LEFT: #cccccc 1px solid;
+    WIDTH: 100px;
+    CURSOR: pointer;
+    BORDER-BOTTOM: #666666 1px solid;
+    TEXT-ALIGN: center
+}
+.iconset IMG
+{
+    MARGIN: 3px
+}
+TR.doc_section
+{
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #dddddd;
+    TEXT-ALIGN: center
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<redirects>
+	<redirect aba="PADRAO" situacao="P" include="/pages/contratoQuestionarios/respostaPadraoFechar.jsp" />
+	<redirect aba="PADRAO" situacao="R" include="/pages/requisicaoQuestionario/respostaPadraoFechar.jsp" />
+</redirects>

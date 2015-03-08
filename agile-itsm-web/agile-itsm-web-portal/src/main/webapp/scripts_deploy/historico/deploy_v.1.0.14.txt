@@ -1,0 +1,131 @@
+_ALTER TABLE `solicitacaoservico` ADD COLUMN `idbaseconhecimento` INT NULL  AFTER `dataHoraCaptura` , 
+  ADD CONSTRAINT `idbaseconhecimento`
+  FOREIGN KEY (`idbaseconhecimento` )
+  REFERENCES `baseconhecimento` (`idbaseconhecimento` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+, ADD INDEX `idbaseconhecimento` (`idbaseconhecimento` ASC) ;_
+
+
+--Valdoilo 06092012
+ALTER TABLE usuario ADD COLUMN ldap CHAR(1) AFTER status;
+
+update usuario set ldap='S' where ldap is null;
+
+--BRENO--06/09/2012
+
+alter table categoriaproblema
+   drop primary key;
+drop table if exists categoriaproblema;
+/*==============================================================*/
+/* Table: categoriaproblema                                     */
+/*==============================================================*/
+create table categoriaproblema
+(
+   idcategoriaproblema  int not null,
+   cat_idcategoriaproblema int,
+   idcategoriaproblemapai int not null,
+   nomecategoria        int not null
+);
+alter table categoriaproblema
+   add primary key (idcategoriaproblema);
+alter table categoriaproblema add constraint fk_reference_617 foreign key (cat_idcategoriaproblema)
+      references categoriaproblema (idcategoriaproblema) on delete restrict on update restrict;
+ 
+alter table problema
+   drop primary key;
+drop table if exists problema;
+/*==============================================================*/
+/* Table: problema                                              */
+/*==============================================================*/
+create table problema
+(
+   idproblema           int not null,
+   status               varchar(40),
+   prioridade           int(1),
+   idcriador            int,
+   idproprietario       int,
+   titulo               varchar(255),
+   descricao            varchar(1000),
+   idcategoriaproblema  int,
+   impacto              varchar(10),
+   urgencia             varchar(10),
+   proativoreativo      varchar(15),
+   datahoralimitesolucionar date,
+   msgerroassociada     varchar(1000),
+   idproblemaitemconfiguracao int,
+   idproblemamudanca    int,
+   idproblemaincidente  int,
+   datahorainicio       date,
+   datahorafim          date,
+   solucaodefinitiva    varchar(4000),
+   adicionarbdce        varchar(1),
+   statusbaseconhecimento varchar(1),
+   idpastabaseconhecimento int,
+   causaraiz            varchar(4000),
+   solucaocontorno      varchar(4000),
+   idbaseconhecimento   int,
+   severidade           varchar(15)
+);
+alter table problema
+   add primary key (idproblema);
+alter table problema add constraint fk_reference_612 foreign key (idproblemaitemconfiguracao)
+      references problemaitemconfiguracao (idproblemaitemconfiguracao) on delete restrict on update restrict;
+alter table problema add constraint fk_reference_614 foreign key (idproblemamudanca)
+      references problemamudanca (idproblemamudanca) on delete restrict on update restrict;
+alter table problema add constraint fk_reference_616 foreign key (idcategoriaproblema)
+      references categoriaproblema (idcategoriaproblema) on delete restrict on update restrict;
+ 
+ 
+drop table if exists problemaitemconfiguracao;
+/*==============================================================*/
+/* Table: problemaitemconfiguracao                              */
+/*==============================================================*/
+create table problemaitemconfiguracao
+(
+   idproblemaitemconfiguracao int not null,
+   idproblema           int not null,
+   iditemconfiguracao   int not null,
+   descricaoproblema    varchar(255)
+);
+alter table problemaitemconfiguracao
+   add primary key (idproblemaitemconfiguracao);
+alter table problemaitemconfiguracao add constraint fk_reference_610 foreign key (iditemconfiguracao)
+      references itemconfiguracao (iditemconfiguracao) on delete restrict on update restrict;
+alter table problemaitemconfiguracao add constraint fk_reference_613 foreign key (idproblema)
+      references problema (idproblema) on delete restrict on update restrict;
+ 
+alter table problemamudanca
+   drop primary key;
+drop table if exists problemamudanca;
+/*==============================================================*/
+/* Table: problemamudanca                                       */
+/*==============================================================*/
+create table problemamudanca
+(
+   idproblemamudanca    int not null,
+   idproblema           int not null,
+   idrequisicaomudanca  int not null
+);
+alter table problemamudanca
+   add primary key (idproblemamudanca);
+alter table problemamudanca add constraint fk_reference_611 foreign key (idrequisicaomudanca)
+      references requisicaomudanca (idrequisicaomudanca) on delete restrict on update restrict;
+alter table problemamudanca add constraint fk_reference_615 foreign key (idproblema)
+      references problema (idproblema) on delete restrict on update restrict;
+
+
+--Flavio 06/09/2012--
+
+ALTER TABLE `portal` ADD COLUMN `coluna` INT(11) NULL  AFTER `hora` ;
+
+CREATE TABLE `opiniao` (
+  `idopiniao` int(11) NOT NULL AUTO_INCREMENT,
+  `idusuario` int(11) DEFAULT NULL,
+  `idsolicitacao` int(11) DEFAULT NULL,
+  `tipo` varchar(50) DEFAULT NULL,
+  `observacoes` varchar(250) DEFAULT NULL,
+  `data` date DEFAULT NULL,
+  `hora` time DEFAULT NULL,
+  PRIMARY KEY (`idopiniao`)
+) ENGINE=InnoDB;

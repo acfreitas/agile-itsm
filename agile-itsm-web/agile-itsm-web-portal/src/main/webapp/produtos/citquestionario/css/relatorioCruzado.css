@@ -1,0 +1,99 @@
+@import url("./classes.css");
+@import url("./tags.css");
+@import url("./ids.css");
+@import url("./relatorio.css");
+
+@media screen
+{	
+
+	div#filtro1 {
+		position: absolute;
+		left : 350px;
+		top :730px;
+		z-index: 2;
+		border: 1px solid #006FA8;
+		width: 300px;
+		background: #FFFFFF;
+		text-align: center;
+		
+	}
+	
+	div#dvCbos
+	{
+		
+  		margin            	:0px;
+	    border            	:0px solid #008B8B;
+	    width       		:580px;
+	}
+	
+			
+	
+	#tituloParametro
+	{
+		
+		font-weight: bold;
+		font-size: 11px;
+		color: #0038A8;
+		font-family: Tahoma, Arial, Helvetica, sans-serif;
+		text-decoration: none;
+		width: 175px;
+		padding: 5px 5px 5px 25px;
+		
+	}
+	
+	div#caixa
+	{
+		width         	:400px;
+    	padding         :0px 0 0 25px;
+    	border			:0px solid red;
+    	
+    	 
+	}
+	div#dvCpsDesc
+	{
+		
+		float		:left;
+	}
+
+	div#dvCpsDescValor
+	{
+		
+		float		:left;
+	}
+	
+	div#caixaSelect
+	{
+		width         	:100px;
+    	text-align    	:left;
+    	padding         :0px 0 0 8px;
+    	border			:0px solid red;
+	}
+		
+	div#dvLimites
+	{
+		
+  		margin            	:0px 0px 2px 0px;
+	   	background-color  	:#E5F0F6;
+	    border            	:1px solid #006FA8;
+	    text-align		  	:left;
+	    width       		:297px;
+	}
+	
+	#grafico
+	{
+		width         	:160px;
+		text-align    	:left;
+		color         	:#0038A8;
+		border			:0px solid red;
+		float			:left;
+		padding			:2px 0px 0px 5px; 
+	}
+
+	
+	div#caixaFiltro
+	{
+		width         	:120px;
+    	padding         :0px 0 0 8px;
+    	border			:0px solid red;
+	}
+}

@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+
+
+	fechar = function(){
+		parent.fecharSolicitacao();
+	}

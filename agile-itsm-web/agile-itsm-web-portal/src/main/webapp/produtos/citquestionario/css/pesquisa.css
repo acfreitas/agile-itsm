@@ -1,0 +1,147 @@
+@import url("./classes.css");
+@import url("./tags.css");
+@import url("./ids.css");
+
+@media screen
+{
+  	div#subTitulo
+	{
+	    FONT-WEIGHT: bold;
+	    FONT-SIZE: 14px;
+	    color: #FFFFFF;
+	    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+	    BACKGROUND-COLOR: #0038A8;
+	    TEXT-ALIGN: center;
+	    width: 100%;
+	    padding-top: 5px;
+	    margin: 5px 0 0 0;
+	    border: 0px solid green;
+	}
+	
+  	.subTituloGeral
+	{
+	    FONT-WEIGHT: bold;
+	    FONT-SIZE: 14px;
+	    color: #FFFFFF;
+	    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+	    BACKGROUND-COLOR: #0038A8;
+	    TEXT-ALIGN: center;
+	    width: 100%;
+	    padding-top: 5px;
+	    margin: 5px 0 0 0;
+	    border: 0px solid green;
+	}	
+
+	table#tabFormulario
+	{
+		padding: 5px 0 0 0;
+	}
+
+	table#tabResultado
+	{
+		padding: 1px 0 0 1px;
+		width: 100%;
+		
+		border: 0px solid red;
+	}
+		
+	table#tabResultadoGrande
+	{
+		padding: 5px 0 0 5px;
+		width: 90%;
+	}
+	
+	.tituloPesquisa
+	{
+	    font-weight: bold;
+	    font-size: 12px;
+	    color: #000000;
+	    font-family: Tahoma, Arial, Helvetica, sans-serif;
+	    text-decoration: none;
+	    background-color: #99AFDC;
+	    text-align: center;
+	
+	}
+	.linhaSubtituloGrid
+	{
+	    
+	    font-size		:12px;
+	    color			:#000000;
+	    font-family		:Arial;
+	    background-color: #d3d3d3;
+	    BORDER-RIGHT: thin outset;
+	    BORDER-TOP: thin outset;
+	    BORDER-LEFT: thin outset;
+	    BORDER-BOTTOM: thin outset;	    
+		
+	}	
+	.linhaSubtitulo
+	{
+	    
+	    font-size		:12px;
+	    color			:#000000;
+	    font-family		:Arial;
+	    background-color: #008b8b;
+		
+	}
+	.linhaSubtitulo2
+	{
+	    
+	    font-size		:12px;
+	    color			:#000000;
+	    font-family		:Arial;
+	    background-color: #99AFDC;
+	    width: 101px;
+	    text-align: center;
+		
+	}
+	.linhaResultado
+	{
+	    
+	    font-size		:11px;
+	    color			:#000000;
+	    font-family		:Arial;
+	    width: 101.5px;
+		
+	}
+	.linhaBranca
+	{
+	    font-weight		:bold;
+	    font-size		:11px;
+	    color			:#000000;
+	    font-family		:Tahoma, Arial, Helvetica, sans-serif;
+	    background		:#FFFFFF; 	
+		
+	}
+	.linhaAmarela
+	{
+	    font-weight		:bold;
+	    font-size		:9px;
+	    color			:#000000;
+	    font-family		:Tahoma, Arial, Helvetica, sans-serif;
+	    background		:#FEF8D0; 
+		
+	}
+	
+	.dragme{
+		position:absolute;
+		z-index: 2;
+	}
+	
+	.campoVencidos{
+		background: #FF5151
+	}	
+	a.linkmigalha:link, a.linkmigalha:active, a.linkmigalha:visited{
+		font-family: Arial, Helvetica, sans-serif; 
+		font-size: 11px; 
+		color: #666666;
+		text-decoration: none;
+	}	
+	a.linkmigalha:hover{
+		font-family: Arial, Helvetica, sans-serif; 
+		font-size: 11px; 
+		color: #666666;
+		text-decoration: underline;
+	}		
+}
+

@@ -1,0 +1,403 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>29</idVisao>
+  <descricao>$requisitosla.sla</descricao>
+  <tipoVisao>ED</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>ReqSLA</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <idGrupoVisao>613</idGrupoVisao>
+      <idVisao>29</idVisao>
+      <descricaoGrupoVisao>$requisitosla.sla</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2682</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.id</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>5</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDREQUISITOSLA</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2683</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.solicitante</descricaoNegocio>
+          <tipoNegocio>RELATION</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>S</tipoLigacao>
+          <filtro>datafim IS NULL ${TERMO_PESQUISA}</filtro>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <idObjetoNegocioLigacao>109</idObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacao>863</idCamposObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacaoVinc>861</idCamposObjetoNegocioLigacaoVinc>
+          <idCamposObjetoNegocioLigacaoOrder>863</idCamposObjetoNegocioLigacaoOrder>
+          <descricaoRelacionamento>$requisitosla.solicitante</descricaoRelacionamento>
+          <nomeDB>IDEMPREGADO</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+          <nomeTabelaDBLigacao>EMPREGADOS</nomeTabelaDBLigacao>
+          <nomeDBLigacao>NOMEPROCURA</nomeDBLigacao>
+          <nomeDBLigacaoVinc>IDEMPREGADO</nomeDBLigacaoVinc>
+          <nomeDBLigacaoOrder>NOMEPROCURA</nomeDBLigacaoOrder>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2684</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.requisitadoEm</descricaoNegocio>
+          <tipoNegocio>DATE</tipoNegocio>
+          <ordem>3</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>REQUISITADOEM</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2685</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.assunto</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>4</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>ASSUNTO</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2686</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.detalhamento</descricaoNegocio>
+          <tipoNegocio>TEXTAREA</tipoNegocio>
+          <ordem>5</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>DETALHAMENTO</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2687</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.situacao</descricaoNegocio>
+          <tipoNegocio>SELECT</tipoNegocio>
+          <ordem>6</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>150</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>A#$requisitosla.ativo</string>
+            <string>I#$requisitosla.inativo</string>
+            <string>P#$requisitosla.planejamento</string>
+            <string>R#$requisitosla.emrevisao</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>793</idValorVisaoCamposNegocio>
+              <idGrupoVisao>613</idGrupoVisao>
+              <idCamposObjetoNegocio>2687</idCamposObjetoNegocio>
+              <valor>A#$requisitosla.ativo</valor>
+              <situacao>A</situacao>
+              <descricao>$requisitosla.ativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>794</idValorVisaoCamposNegocio>
+              <idGrupoVisao>613</idGrupoVisao>
+              <idCamposObjetoNegocio>2687</idCamposObjetoNegocio>
+              <valor>I#$requisitosla.inativo</valor>
+              <situacao>A</situacao>
+              <descricao>$requisitosla.inativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>795</idValorVisaoCamposNegocio>
+              <idGrupoVisao>613</idGrupoVisao>
+              <idCamposObjetoNegocio>2687</idCamposObjetoNegocio>
+              <valor>P#$requisitosla.planejamento</valor>
+              <situacao>A</situacao>
+              <descricao>$requisitosla.planejamento</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>796</idValorVisaoCamposNegocio>
+              <idGrupoVisao>613</idGrupoVisao>
+              <idCamposObjetoNegocio>2687</idCamposObjetoNegocio>
+              <valor>R#$requisitosla.emrevisao</valor>
+              <situacao>A</situacao>
+              <descricao>$requisitosla.emrevisao</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+          <nomeDB>SITUACAO</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2688</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.criadopor</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>7</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>CRIADOPOR</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2689</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.criadoem</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>8</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>CRIADOEM</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2690</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.modificadopor</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>9</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>MODIFICADOPOR</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>2691</idCamposObjetoNegocio>
+          <descricaoNegocio>$requisitosla.modificadoem</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>10</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>MODIFICADOEM</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>613</idGrupoVisao>
+          <idCamposObjetoNegocio>3771</idCamposObjetoNegocio>
+          <descricaoNegocio>xxxx</descricaoNegocio>
+          <tipoNegocio>HTML</tipoNegocio>
+          <ordem>11</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>200</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode>&lt;td&gt;
+&lt;button type=&quot;button&quot; name=&quot;btnCriaSLA&quot; onclick=&quot;criaSLA()&quot;&gt;
+$requisitosla.criarsla
+&lt;/button&gt;
+&lt;/td&gt;</htmlCode>
+          <nomeDB>DELETED</nomeDB>
+          <nomeTabelaDB>REQUISITOSLA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+  <colVisoesRelacionadas class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+      <idVisaoRelacionada>249</idVisaoRelacionada>
+      <idVisaoPai>29</idVisaoPai>
+      <idVisaoFilha>3</idVisaoFilha>
+      <ordem>0</ordem>
+      <titulo>$requisitosla.pesquisasla</titulo>
+      <situacao>A</situacao>
+      <tipoVinculacao>1</tipoVinculacao>
+      <acaoEmSelecaoPesquisa>RP</acaoEmSelecaoPesquisa>
+      <colVinculosVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.VinculoVisaoDTO>
+          <idVisaoRelacionada>249</idVisaoRelacionada>
+          <seq>0</seq>
+          <tipoVinculo>1</tipoVinculo>
+          <idGrupoVisaoPai>613</idGrupoVisaoPai>
+          <idCamposObjetoNegocioPai>14</idCamposObjetoNegocioPai>
+          <idCamposObjetoNegocioPaiNN>14</idCamposObjetoNegocioPaiNN>
+          <nomeTabelaPai>ACORDONIVELSERVICO</nomeTabelaPai>
+          <nomeTabelaPaiNN>ACORDONIVELSERVICO</nomeTabelaPaiNN>
+          <nomeDBPai>IDACORDONIVELSERVICO</nomeDBPai>
+          <nomeDBPaiNN>IDACORDONIVELSERVICO</nomeDBPaiNN>
+          <controle>P</controle>
+        </br.com.centralit.citcorpore.metainfo.bean.VinculoVisaoDTO>
+      </colVinculosVisao>
+      <identificacaoVisaoFilha>PesqReqSLA</identificacaoVisaoFilha>
+    </br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+  </colVisoesRelacionadas>
+  <colScripts class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>403</idScriptsVisao>
+      <idVisao>29</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONUPDATE                      </scryptType>
+      <script>var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.citframework.util);
+
+var utilDatas = new importNames.UtilDatas();
+
+var modificadoEm = utilDatas.formatTimestampUS(utilDatas.getDataHoraAtual());
+
+mapFields.put(&quot;MODIFICADOEM&quot;, modificadoEm);
+
+var modificadoPor = userLogged.getNomeUsuario();
+
+mapFields.put(&quot;MODIFICADOPOR&quot;, modificadoPor);
+
+var importCategoria = JavaImporter();
+importCategoria.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+var requisitoSLAServiceEjb = new importCategoria.RequisitoSLAServiceEjb();
+var idEmpregadoValido = requisitoSLAServiceEjb.verificaIdSolicitante(mapFields);
+ if(idEmpregadoValido!=&quot;0&quot;){
+   mapFields.put(&quot;IDEMPREGADO&quot;, idEmpregadoValido);
+ } else {
+   dinamicViewDto.abortFuncaoPrincipal = true;
+   dinamicViewDto.msgRetorno = &quot;Escolha corretamente o solicitante!&quot;;
+ }</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>404</idScriptsVisao>
+      <idVisao>29</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONCREATE                      </scryptType>
+      <script>var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.citframework.util);
+
+var utilDatas = new importNames.UtilDatas();
+
+var criadoEm = utilDatas.formatTimestampUS(utilDatas.getDataHoraAtual());
+var modificadoEm = utilDatas.formatTimestampUS(utilDatas.getDataHoraAtual());
+
+mapFields.put(&quot;CRIADOEM&quot;, criadoEm);
+mapFields.put(&quot;MODIFICADOEM&quot;, modificadoEm);
+
+var criadoPor = userLogged.getNomeUsuario();
+var modificadoPor = userLogged.getNomeUsuario();
+
+mapFields.put(&quot;CRIADOPOR&quot;, criadoPor);
+mapFields.put(&quot;MODIFICADOPOR&quot;, modificadoPor);
+
+var importCategoria = JavaImporter();
+importCategoria.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+var requisitoSLAServiceEjb = new importCategoria.RequisitoSLAServiceEjb();
+var idEmpregadoValido = requisitoSLAServiceEjb.verificaIdSolicitante(mapFields);
+ if(idEmpregadoValido!=&quot;0&quot;){
+   mapFields.put(&quot;IDEMPREGADO&quot;, idEmpregadoValido);
+ } else {
+   dinamicViewDto.abortFuncaoPrincipal = true;
+   dinamicViewDto.msgRetorno = &quot;Escolha corretamente o solicitante!&quot;;
+ }</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+  </colScripts>
+  <colBotoes class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>520</idBotaoAcaoVisao>
+      <idVisao>29</idVisao>
+      <texto>$botaoacaovisao.gravar_dados</texto>
+      <acao>1</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>0</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>521</idBotaoAcaoVisao>
+      <idVisao>29</idVisao>
+      <texto>$botaoacaovisao.limpar_dados</texto>
+      <acao>2</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>1</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>522</idBotaoAcaoVisao>
+      <idVisao>29</idVisao>
+      <texto>$botaoacaovisao.excluir</texto>
+      <acao>3</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>2</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+  </colBotoes>
+  <colHtmlCode class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.HtmlCodeVisaoDTO>
+      <idHtmlCodeVisao>13</idHtmlCodeVisao>
+      <idVisao>29</idVisao>
+      <htmlCodeType>END                           </htmlCodeType>
+      <htmlCode>&lt;script&gt;
+function criaSLA(){
+    if (document.form.IDREQUISITOSLA.value == &apos;&apos;){
+        alert(&apos;$requisitosla.msgcriarsla&apos;);
+        return;
+    }
+    var idRequisito = document.form.IDREQUISITOSLA.value;
+    var assuntoRequisito = document.form.ASSUNTO.value;
+    window.open(&apos;/citsmart/pages/acordoNivelServico/acordoNivelServico.load?idRequisitoSla=&apos;+idRequisito+&apos;&amp;assunto=&apos;+assuntoRequisito);
+}
+&lt;/script&gt;</htmlCode>
+    </br.com.centralit.citcorpore.metainfo.bean.HtmlCodeVisaoDTO>
+  </colHtmlCode>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

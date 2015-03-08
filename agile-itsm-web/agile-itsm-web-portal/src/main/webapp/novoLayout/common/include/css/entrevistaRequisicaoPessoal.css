@@ -1,0 +1,33 @@
+#modal_ficha{
+	width: 955px!important;
+	margin-left: -49%; 
+	top: 1%!important;
+	margin-top: 0px!important;
+}
+#modal_ficha .modal-body{
+	max-height: 705px!important;
+	overflow: auto!important;
+}
+
+#modal_curriculo{
+	width: 1600px!important;
+	margin-left: -49%; 
+	top: 1%!important;
+	margin-top: 0px!important;
+}
+#modal_curriculo .modal-body{
+	max-height: 705px!important;
+	overflow: auto!important;
+}
+
+#modal_historicoCandidato{
+			width: 950px!important;
+			margin-left: -49%; 
+			top: 1%!important;
+			margin-top: 0px!important;
+}
+		
+#modal_historicoCandidato .modal-body{
+			max-height: 750px!important;
+			overflow: auto!important;
+}

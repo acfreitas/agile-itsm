@@ -1,0 +1,59 @@
+.table {
+	border-left: 1px solid #ddd;
+}
+
+.table th {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+}
+
+.table td {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-top: none;
+	border-left: none;
+}
+
+div.main_container .box {
+	margin-top: -0.3em!important;
+}
+
+textarea#txtJustificacaoFalha {
+	border: 1px solid #d0d0d0;
+	background-color: white;
+}
+
+table#tabelaCabecalhoJustificacaoFalhas {
+	border: black solid 1px;
+}
+
+table#tabelaCabecalhoJustificacaoFalhas tr td {
+	padding: 10px;
+	margin: 10px;
+	border: black solid 1px;
+}
+
+table#tabelaJustificacao {
+	border: black solid 1px;
+	width: 100%;
+}
+
+table#tabelaJustificacao tr td {
+	padding: 10px;
+	margin: 10px;
+	border: black solid 1px;
+	width: 25%;
+}
+
+table#tabelaFalhas tr td {
+	padding: 10px;
+	margin: 10px;
+	background: #ccc;
+}
+
+table#tabelaFalhas thead {
+	font-size: large;
+	font-family: fantasy;
+}

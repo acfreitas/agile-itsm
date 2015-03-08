@@ -1,0 +1,63 @@
+/*  ============ MySQL  ============*/
+/*==============================================================*/
+/* Table: "categoriaproduto" */
+/*==============================================================*/
+CREATE TABLE categoriaproduto
+(
+idCategoria int not null,
+idCategoriaPai int,
+nomeCategoria varchar(100) not null,
+situacao char(1) not null,
+PRIMARY KEY (idCategoria)
+) ENGINE = innodb;
+
+ALTER TABLE categoriaproduto ADD FOREIGN KEY (idCategoriaPai) REFERENCES categoriaproduto (idCategoria);
+
+ALTER TABLE categoriaproduto ADD CONSTRAINT `fk_categoriaproduto` FOREIGN KEY (idCategoriaPai) REFERENCES categoriaproduto (idCategoria);
+
+
+/*==============================================================*/
+/* Table: "criterioavaliacao" */
+/*==============================================================*/
+CREATE TABLE criterioavaliacao
+(
+idCriterio int not null,
+descricao varchar(100) not null,
+limiteValor int,
+aplicavelCotacao char(1),
+aplicavelAvaliacaoSolicitante char(1),
+aplicavelAvaliacaoComprador char(1),
+PRIMARY KEY (idCriterio)
+) ENGINE = innodb;
+
+
+
+/* ============ ORACLE ============*/
+
+/*==============================================================*/
+/* Table: "CATEGORIAPRODUTO" */
+/*==============================================================*/
+CREATE TABLE CATEGORIAPRODUTO
+(
+IDCATEGORIA INT NOT NULL,
+IDCATEGORIAPAI INT,
+NOMECATEGORIA VARCHAR(100) NOT NULL,
+SITUACAO CHAR(1) NOT NULL,
+PRIMARY KEY (IDCATEGORIA)
+)
+ALTER TABLE CATEGORIAPRODUTO ADD CONSTRAINT `FK_CATEGORIAPRODUTO` FOREIGN KEY (IDCATEGORIAPAI) REFERENCES CATEGORIAPRODUTO (IDCATEGORIA);
+
+
+/*==============================================================*/
+/* Table: "CATEGORIAPRODUTO" */
+/*==============================================================*/
+CREATE TABLE CRITERIOAVALIACAO
+(
+IDCRITERIO INT NOT NULL,
+DESCRICAO VARCHAR(100) NOT NULL,
+LIMITEVALOR INT,
+APLICAVELCOTACAO CHAR(1),
+APLICAVELAVALIACAOSOLICITANTE CHAR(1),
+APLICAVELAVALIACAOCOMPRADOR CHAR(1),
+PRIMARY KEY (IDCRITERIO)
+)

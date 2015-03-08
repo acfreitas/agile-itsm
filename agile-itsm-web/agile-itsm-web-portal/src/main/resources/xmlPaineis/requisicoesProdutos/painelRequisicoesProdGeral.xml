@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<PAINEL description='	' classNameProcessParameters="br.com.centralit.citgerencial.processparameters.ProcessParametersGeral">
+	<ITEM name='rel01' file='xmlsGerenciais/requisicoesProdutos/requisicoesProdGeral.xml' top='0' heigth='850' width='1100' left='0'/>
+	
+	<PARAMETERS>
+        <PARAM name='dataInicial' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datainicio' fix='false' mandatory='false' reload='true' />
+        <PARAM name='dataFinal' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datafim' fix='false' mandatory='false' default='{TODAY}'/>
+        <PARAM name='numero' type='java.lang.Integer' size='10'  value='' description='citcorpore.comum.numero' fix='false' mandatory='false' reload='false' />
+        <PARAM name='produto' type='java.lang.String' size='85'  value='' description='itemRequisicaoProduto.especificacoes' fix='false' mandatory='false' reload='false' />
+
+        <PARAM name='idCentroCusto' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='centroResultado.custo' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idCentroResultado, nomeCentroResultado
+                  FROM centroresultado
+                ORDER BY nomeCentroResultado
+            </OPTIONS>
+        </PARAM>
+        
+         <PARAM name='idProjeto' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='requisicaoProduto.projeto' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idProjeto, nomeProjeto
+                  FROM projetos
+                ORDER BY nomeProjeto
+            </OPTIONS>
+        </PARAM>
+                
+        <PARAM name='idEnderecoEntrega' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='requisicaoProduto.enderecoEntrega' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT e.idEndereco, concat(e.logradouro, ' ',  e.numero, ' ', e.complemento, ' ',e.bairro, ' - ', c.nomeCidade, ' - ', uf.siglaUf)
+                  FROM endereco e 
+                      INNER JOIN unidade unid ON unid.idEndereco = e.idEndereco 
+                       LEFT JOIN cidades c ON c.idCidade = e.idCidade 
+                       LEFT JOIN ufs uf on uf.idUf = c.idUf 
+                  WHERE unid.aceitaEntregaProduto = 'S' 
+                ORDER BY unid.nome
+            </OPTIONS>
+        </PARAM> 
+        
+        <PARAM name='situacaoItem' type='java.lang.String' typeHTML='select' size='0'  value='' description='citcorpore.comum.situacao' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='*' text='citcorpore.comum.todos'/>
+	        <OPTION value='AguardandoValidacao' text='Aguardando validação'/>
+	        <OPTION value='Inviabilizado' text='Inviabilizado'/>
+	        <OPTION value='AguardandoAutorizacaoCompra' text='Aguardando autorização de compra'/>
+	        <OPTION value='CompraNaoAutorizada' text='Compra não autorizada'/>
+	        <OPTION value='AguardandoCotacao' text='Aguardando cotação'/>
+	        <OPTION value='AguardandoAprovacaoCotacao' text='Aguardando aprovação da cotação'/>
+	        <OPTION value='CotacaoNaoAprovada' text='Cotação não aprovada'/>
+	        <OPTION value='AguardandoPedido' text='Aguardando pedido de compra'/>
+	        <OPTION value='AguardandoEntrega' text='Aguardando entrega'/>
+	        <OPTION value='AguardandoInspecao' text='Aguardando inspeção'/>
+	        <OPTION value='InspecaoRejeitada' text='Inspeção rejeitada'/>
+	        <OPTION value='Cancelado' text='Cancelado'/>
+	        <OPTION value='Finalizado' text='Finalizado'/>
+        </PARAM>
+                        
+        <PARAM name='idContrato' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='contrato.contrato' fix='false' mandatory='false' reload='false' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idcontrato, numero
+                  FROM contratos
+                WHERE deleted IS NULL or deleted = 'n'
+                ORDER BY numero
+            </OPTIONS>
+        </PARAM> 
+        
+        <PARAM name='idPrioridade' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='prioridade.prioridade' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idPrioridade, nomePrioridade
+                  FROM prioridade
+                ORDER BY nomePrioridade
+            </OPTIONS>
+        </PARAM> 
+        
+        <PARAM name='idOrigem' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='citcorpore.comum.origem' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idOrigem, descricao
+                  FROM origematendimento
+                  WHERE datafim IS NULL
+                ORDER BY descricao
+            </OPTIONS>
+        </PARAM>
+        
+        <PARAM name='topList' type='java.lang.String' typeHTML='select' size='0'  value='' description='citcorpore.comum.topList' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='10' text='citcorpore.comum.dezprimeiros'/>        
+            <OPTION value='20' text='citcorpore.comum.vinteprimeiros'/>
+            <OPTION value='50' text='citcorpore.comum.cinquentaprimeiros'/>
+            <OPTION value='100' text='citcorpore.comum.cemprimeiros'/>
+            <OPTION value='200' text='citcorpore.comum.topList200'/>
+            <OPTION value='500' text='citcorpore.comum.topList500'/>
+            <OPTION value='*' text='citcorpore.comum.todos'/>
+        </PARAM>
+        		
+	</PARAMETERS>
+		
+</PAINEL>

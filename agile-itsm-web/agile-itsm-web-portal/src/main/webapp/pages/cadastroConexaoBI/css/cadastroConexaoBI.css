@@ -1,0 +1,33 @@
+#divBotoes {
+	background-color: #F6F6F6!important;
+	padding: 10px!important;
+	border: 1px solid #D8D8D8 !important;
+}
+
+#importacao input{
+	display: inline;
+	float: left;
+	margin-top: 0px;
+	margin-left: 1px;
+}
+
+.importacaoLabel {
+	display: inline-flex;
+}
+
+#divConexao {
+	background-color: #F6F6F6!important;
+	padding: 20px!important;
+	border: 1px solid #D8D8D8 !important;
+	margin-bottom: 10px!important;
+}
+
+
+#divConexao h5 {
+	margin-top: -10px!important;
+	margin-bottom: 10px!important;
+}
+
+#nomeCliente{
+	margin-bottom: 20px!important;
+}

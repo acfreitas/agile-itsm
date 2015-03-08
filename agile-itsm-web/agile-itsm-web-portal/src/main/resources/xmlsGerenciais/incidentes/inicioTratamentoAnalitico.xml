@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<ItemInformation type='SERVICE' description='painel.inicioTratamento' defaultVisualization='T' report='true' graph='false' reportPageLayout='L' title='painel.inicioTratamento' hDetailSpacing='40'>
+	<CLASS class="br.com.centralit.citgerencial.generateservices.incidentes.GenerateServiceInicioTratamentoAnalitico"></CLASS>
+	<FIELDS>
+		<FIELD name='numero' type='java.lang.String' width='7%' title='citcorpore.comum.numero' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='solicitane' type='java.lang.String' width='18%' title='colaborador.solicitante' totals='false' count='true' decimals='0' mask=''/>
+		<FIELD name='contrato' type='java.lang.String' width='8%' title='contrato.contrato' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='dataHoraSol' type='java.lang.String' width='8%' title='solicitacaoServico.datahoraabertura' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='dataHoraLimite' type='java.lang.String' width='8%' title='solicitacaoServico.datahoralimite' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='dataHoraFim' type='java.lang.String' width='8%' title='citcorpore.comum.dataHoraFim' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='prioridade' type='java.lang.String' width='4%' title='menu.nome.prioridade' totals='false' count='false' decimals='0' mask=''/>
+        <FIELD name='dataHoraCaptura' type='java.lang.String' width='8%' title='solicitacaoServico.dataHoraCaptura' totals='false' count='false' decimals='0' mask=''/>
+        <FIELD name='prazoCaptura' type='java.lang.String' width='11%' title='solicitacaoServico.prazoCaptura' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='tempoCaptura' type='java.lang.String' width='6%' title='citcorpore.comum.tempoCaptura' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='noPrazo' type='java.lang.String' width='4%' title='sla.avaliacao.noprazo' totals='false' count='false' decimals='0' mask=''/>
+	</FIELDS>
+	<GRAPHS>
+		<GRAPH type='Pizza3D' legend='false'/>
+		<GRAPH type='Pizza2D' legend='false'/>
+		<GRAPH type='Barra3D' legend='false'/>
+		<GRAPH type='Barra2D' legend='false'/>
+		<GRAPH type='Linha3D' legend='false'/>
+		<GRAPH type='Linha2D' legend='false'/>
+	</GRAPHS>
+	<GROUPS>
+		<GROUP fieldName='sla' spacingLeft='0'/>
+	</GROUPS>
+	<SUMMARY>
+	</SUMMARY>
+</ItemInformation>

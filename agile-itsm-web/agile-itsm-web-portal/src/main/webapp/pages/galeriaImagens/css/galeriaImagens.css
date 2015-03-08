@@ -1,0 +1,19 @@
+
+div#main_container {
+	margin: 10px 10px 10px 10px;
+
+}
+.innerAll {
+  padding: 15px;
+  position: relative;
+}
+.box-generic {
+  border: 1px solid #d8d8d8;
+  padding: 15px;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 1px 0 0 #f7f7f7, 0 5px 4px -4px #d8d8d8;
+  -moz-box-shadow: 0 1px 0 0 #f7f7f7, 0 5px 4px -4px #d8d8d8;
+  -webkit-box-shadow: 0 1px 0 0 #f7f7f7, 0 5px 4px -4px #d8d8d8;
+}
+

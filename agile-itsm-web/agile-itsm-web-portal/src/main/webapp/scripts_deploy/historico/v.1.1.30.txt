@@ -1,0 +1,59 @@
+/* 					    MYSQL                                  */
+
+/*==============================================================*/
+/* Table: catalagoservico                                     */
+/*==============================================================*/
+create table catalagoservico  (
+   idcatalgoservico   integer      not null,
+   idcontrato         integer,
+   datainicio         date,
+   datafim            date,
+   obs                text,
+   nomeservico        character(150),
+	PRIMARY KEY (idcatalgoservico)
+
+)ENGINE=InnoDB;
+
+alter table catalagoservico
+   add constraint ak_key_1_catalago unique (idcatalgoservico);
+	  
+	  
+/*==============================================================*/
+drop table servcontratocatalagoserv;
+create table servcontratocatalagoserv (
+    idservicocontrato bigint,
+    idcatalgoservico int
+)  ENGINE=InnoDB;
+
+alter table servcontratocatalagoserv
+   add constraint fk_servcont_servicoc foreign key (idservicocontrato)
+      references servicocontrato (idservicocontrato);
+
+alter table servcontratocatalagoserv
+   add constraint fk_servcont_reference_catalago foreign key (idcatalgoservico)
+      references catalagoservico (idcatalgoservico);
+
+	  
+/* 					    ORACLE                                  */
+
+	  
+/*==============================================================*/
+/* Table: servcontratocatalagoserv                            */
+/*==============================================================*/
+create table servcontratocatalagoserv  (
+   idservicocontrato  integer,
+   idcatalgoservico   integer
+);
+
+alter table servcontratocatalagoserv
+   add constraint fk_servcont_reference_servicoc foreign key (idservicocontrato)
+      references citsmart.servicocontrato (idservicocontrato);
+
+alter table servcontratocatalagoserv
+   add constraint fk_servcont_reference_catalago foreign key (idcatalgoservico)
+      references catalagoservico (idcatalgoservico);
+
+	  
+	  
+	  
+	  

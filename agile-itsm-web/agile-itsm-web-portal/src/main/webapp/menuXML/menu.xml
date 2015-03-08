@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<menus>
+	<menuSuperior>
+		<menu>
+			<nome>Relatório</nome>
+			<descricao>Relatórios do CITSmart</descricao>
+			<ordem>51</ordem>
+			<menuRapido>null</menuRapido>
+			<link />
+			<imagem>graph.png</imagem>
+			<horizontal>N</horizontal>
+			<subMenu0>
+				<menu>
+					<nome>Usuário</nome>
+					<descricao>Cadastro de Usuário</descricao>
+					<ordem>30</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/usuario/usuario.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Gantt</nome>
+					<descricao>Gantt de Solicitações</descricao>
+					<ordem>52</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/ganttSolicitacaoServico/ganttSolicitacaoServico.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Gráficos e Relatórios (Painel)</nome>
+					<descricao>Gráficos e Relatórios (Painel)</descricao>
+					<ordem>53</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/painel/painel.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Gráfico Tempo Real</nome>
+					<descricao>Gráfico em Tempo Real</descricao>
+					<ordem>54</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/monitoramentoServicos/monitoramentoServicos.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Quantitativo</nome>
+					<descricao>Quantitativo</descricao>
+					<ordem>55</ordem>
+					<menuRapido>null</menuRapido>
+					<link>pages/relatorioQuantitativo/relatorioQuantitativo.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Quantitativo por Serviço</nome>
+					<descricao>Relatório Quantitativo de Serviço</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/relatorioQuantitativoPorServico/relatorioQuantitativoPorServico.load
+					</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Base Conhecimento</nome>
+					<descricao>Relatório de Base de Conhecimento</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/relatorioBaseConhecimento/relatorioBaseConhecimento.load
+					</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Utilização de USTs</nome>
+					<descricao>Relatório de Utilização de UTSs</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/relatorioOrdemServicoUst/relatorioOrdemServicoUst.load
+					</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Acompanhamento USTs</nome>
+					<descricao>Relatório de Acompanhamento USTs</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/relatorioAcompanhamento/relatorioAcompanhamento.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+			</subMenu0>
+		</menu>
+		<menu>
+			<nome>Gestão de Contratos</nome>
+			<descricao>Gestão de Contratos</descricao>
+			<ordem>18</ordem>
+			<menuRapido>null</menuRapido>
+			<link />
+			<imagem>documents.png</imagem>
+			<horizontal>N</horizontal>
+			<subMenu0>
+				<menu>
+					<nome>Administração de Contratos</nome>
+					<descricao>Administração de Contratos</descricao>
+					<ordem>20</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/informacoesContrato/informacoesContrato.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+			</subMenu0>
+		</menu>
+		<menu>
+			<nome>Gestão de Processos</nome>
+			<descricao>Gerenciamento de Processos da ITIL</descricao>
+			<ordem>0</ordem>
+			<menuRapido>null</menuRapido>
+			<link />
+			<imagem>graph.png</imagem>
+			<horizontal>N</horizontal>
+			<subMenu0>
+				<menu>
+					<nome>Gerência de Configuração</nome>
+					<descricao>Gestão da Configuração</descricao>
+					<ordem>44</ordem>
+					<menuRapido>null</menuRapido>
+					<link />
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1>
+						<menu>
+							<nome>Criar Item de Configuração</nome>
+							<descricao>Cadastro de Item Configuração</descricao>
+							<ordem>47</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/itemConfiguracao/itemConfiguracao.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Cadastrar Softwares Inst / Des</nome>
+							<descricao>Cadastro de Softwares Instalação/Desinstalação
+							</descricao>
+							<ordem>49</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/baseItemConfiguracao/baseItemConfiguracao.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Característica Item Configuração</nome>
+							<descricao>Cadastro de Característica</descricao>
+							<ordem>50</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/caracteristica/caracteristica.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Criar Tipo Item Configuração</nome>
+							<descricao>Cadastro de Tipo de Item Configuração</descricao>
+							<ordem>48</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/tipoItemConfiguracao/tipoItemConfiguracao.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Realizar Inventário</nome>
+							<descricao>Inventários dos Itens de Configuração</descricao>
+							<ordem>46</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/inventario/inventario.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Pesquisar Item Configuração</nome>
+							<descricao>Relatório de Item de Configuração</descricao>
+							<ordem>45</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/pesquisaItemConfiguracao/pesquisaItemConfiguracao.load
+							</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Mapa Desenho Serviço</nome>
+							<descricao>Mapa Desenho Serviço</descricao>
+							<ordem>9</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/mapaDesenhoServico/mapaDesenhoServico.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+					</subMenu1>
+				</menu>
+				<menu>
+					<nome>Gerência Base Conhecimento</nome>
+					<descricao>Gestão da Base do Conhecimento</descricao>
+					<ordem>56</ordem>
+					<menuRapido>null</menuRapido>
+					<link />
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1>
+						<menu>
+							<nome>Criar Pasta</nome>
+							<descricao>Cadastro de Pasta</descricao>
+							<ordem>60</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/pasta/pasta.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Criar Base de Conhecimento</nome>
+							<descricao>Base de Conhecimento</descricao>
+							<ordem>59</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/baseConhecimento/baseConhecimento.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Cadastrar Palavras Gêmeas</nome>
+							<descricao>Cadastro de Palavras Correspondentes</descricao>
+							<ordem>58</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/palavraGemea/palavraGemea.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Pesquisa Base de Conhecimento</nome>
+							<descricao>pesquisa base de conhecimento</descricao>
+							<ordem>57</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/baseConhecimentoView/baseConhecimentoView.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+					</subMenu1>
+				</menu>
+				<menu>
+					<nome>Gerência de Mudanças</nome>
+					<descricao>Gestão de Mudanças</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link />
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Gerência de Problemas</nome>
+					<descricao>Gestão de Problema</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link />
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Gerência de Catálogo de Serviços</nome>
+					<descricao>Gerência de Catálogo de Serviços</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/dinamicViews/dinamicViews.load?identificacao=CadastroServico
+					</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Gerência de Nível de Serviço</nome>
+					<descricao>Gerência de Nível de Serviço</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link />
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+			</subMenu0>
+		</menu>
+		<menu>
+			<nome>Gerência Incidentes/Requisições</nome>
+			<descricao>Gestão de Incidentes/Requisições</descricao>
+			<ordem>0</ordem>
+			<menuRapido>null</menuRapido>
+			<link />
+			<imagem />
+			<horizontal>N</horizontal>
+			<subMenu0>
+				<menu>
+					<nome>Atividade Periódica</nome>
+					<descricao>Cadastro de Atividades Periódicas</descricao>
+					<ordem>21</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/atividadePeriodica/atividadePeriodica.load</link>
+					<imagem>documents.png</imagem>
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Agenda Ativ. Periódicas</nome>
+					<descricao>Atividades Periódicas</descricao>
+					<ordem>34</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/agendaAtvPeriodicas/agendaAtvPeriodicas.load</link>
+					<imagem>documents.png</imagem>
+					<horizontal>S</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Registro Incidentes/Req. de Serviços</nome>
+					<descricao>Registro de Incidentes e Requisições de Serviço
+					</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/gerenciamentoServicos/gerenciamentoServicos.load</link>
+					<imagem>graph.png</imagem>
+					<horizontal>S</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Minhas Requisições</nome>
+					<descricao>Acompanhamento de Suas Requisições</descricao>
+					<ordem>7</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/resumoSolicitacoesServicos/resumoSolicitacoesServicos.load
+					</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Grupo Ativ. Periódica</nome>
+					<descricao>Grupo Atividade Periódica</descricao>
+					<ordem>15</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/dinamicViews.load?identificacao=grupoAtividadePeriodica
+					</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Pesquisa Sol. Serviços</nome>
+					<descricao>Pesquisa Solicitações de Serviço</descricao>
+					<ordem>6</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/pages/pesquisaSolicitacoesServicos/pesquisaSolicitacoesServicos.load
+					</link>
+					<imagem>magnifying_glass.png</imagem>
+					<horizontal>S</horizontal>
+					<subMenu1 />
+				</menu>
+			</subMenu0>
+		</menu>
+		<menu>
+			<nome>Configurações e Parametrizações</nome>
+			<descricao>Configurações e Parametrizações</descricao>
+			<ordem>0</ordem>
+			<menuRapido>null</menuRapido>
+			<link />
+			<imagem>strategy.png</imagem>
+			<horizontal>N</horizontal>
+			<subMenu0>
+				<menu>
+					<nome>Criar Comando</nome>
+					<descricao>Cadastro de Comando</descricao>
+					<ordem>34</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/comando/comando.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Comando do Sistema Operacional</nome>
+					<descricao>Cadastro de Comando do Sistema Operacional</descricao>
+					<ordem>33</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/comandoSistemaOperacional/comandoSistemaOperacional.load
+					</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Parâmetros CITSmart</nome>
+					<descricao>Cadastro de Parâmetros do CITSmart</descricao>
+					<ordem>63</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/parametroCorpore/parametroCorpore.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Visões e Meta dados</nome>
+					<descricao>Visões e Meta dados</descricao>
+					<ordem>40</ordem>
+					<menuRapido>null</menuRapido>
+					<link />
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1>
+						<menu>
+							<nome>Manutenção de Visões</nome>
+							<descricao>Manutenção de Visões</descricao>
+							<ordem>41</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/visaoAdm/visaoAdm.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Carrega Meta Dados</nome>
+							<descricao>Carrega Meta Dados</descricao>
+							<ordem>42</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/dataBaseMetaDados/dataBaseMetaDados.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Criar Questionário</nome>
+							<descricao>Cria Questionário</descricao>
+							<ordem>43</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/questionario/questionario.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+					</subMenu1>
+				</menu>
+				<menu>
+					<nome>Processamento Batch</nome>
+					<descricao>Processamento de Arquivo Batch</descricao>
+					<ordem>62</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/processamentoBatch/processamentoBatch.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+			</subMenu0>
+		</menu>
+		<menu>
+			<nome>Cadastros Gerais</nome>
+			<descricao>Cadastros Gerais do sistema</descricao>
+			<ordem>0</ordem>
+			<menuRapido>null</menuRapido>
+			<link />
+			<imagem>pencil.png</imagem>
+			<horizontal>N</horizontal>
+			<subMenu0>
+				<menu>
+					<nome>Pessoas</nome>
+					<descricao>Cadastros Gerais de Pessoas</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link />
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1>
+						<menu>
+							<nome>Colaborador</nome>
+							<descricao>Cadastro de Colaborador</descricao>
+							<ordem>31</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/empregado/empregado.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Jornada de Trabalho</nome>
+							<descricao>Jornada de Trabalho</descricao>
+							<ordem>24</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/jornadaTrabalho/jornadaTrabalho.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Cargos</nome>
+							<descricao>Cadastro de Cargos</descricao>
+							<ordem>28</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/cargos/cargos.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+					</subMenu1>
+				</menu>
+				<menu>
+					<nome>Menu</nome>
+					<descricao>Cadastro de Menu</descricao>
+					<ordem>35</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/menu/menu.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Perfil Acesso</nome>
+					<descricao>Cadastro de Perfil de Acesso</descricao>
+					<ordem>23</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/perfilAcesso/perfilAcesso.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Sistema Operacional</nome>
+					<descricao>Cadastro de Sistema Operacional</descricao>
+					<ordem>36</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/sistemaOperacional/sistemaOperacional.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Tipo de Unidade</nome>
+					<descricao>Cadastro de Tipo de Unidade</descricao>
+					<ordem>26</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/tipoUnidade/tipoUnidade.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Unidade</nome>
+					<descricao>Cadastro de Unidade</descricao>
+					<ordem>27</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/unidade/unidade.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Empresa</nome>
+					<descricao>Cadastro de Empresa</descricao>
+					<ordem>37</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/empresa/empresa.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Cadastrar Grupo</nome>
+					<descricao>Cadastro de Grupo</descricao>
+					<ordem>29</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/grupo/grupo.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Clientes</nome>
+					<descricao>Cadastro de Clientes</descricao>
+					<ordem>38</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/dinamicViews/dinamicViews.load?idVisao=21</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Fornecedor</nome>
+					<descricao>Cadastro de Fornecedores</descricao>
+					<ordem>39</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/dinamicViews/dinamicViews.load?idVisao=23</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Modelo de E-mail</nome>
+					<descricao>Modelo de E-mail</descricao>
+					<ordem>16</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/modeloEmail/modeloEmail.load</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Cadastro de Contratos</nome>
+					<descricao>Cadastro de Contratos</descricao>
+					<ordem>19</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/dinamicViews/dinamicViews.load?idVisao=20</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Causa Incidentes</nome>
+					<descricao>Causa de Incidentes</descricao>
+					<ordem>14</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/dinamicViews/dinamicViews.load?identificacao=causaIncidente
+					</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Categoria Solução</nome>
+					<descricao>Categoria Solução</descricao>
+					<ordem>17</ordem>
+					<menuRapido>null</menuRapido>
+					<link>/dinamicViews/dinamicViews.load?identificacao=categoriaSolucao
+					</link>
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1 />
+				</menu>
+				<menu>
+					<nome>Serviços</nome>
+					<descricao>Cadastros gerais de serviços</descricao>
+					<ordem>0</ordem>
+					<menuRapido>null</menuRapido>
+					<link />
+					<imagem />
+					<horizontal>N</horizontal>
+					<subMenu1>
+						<menu>
+							<nome>Justificação de Falhas</nome>
+							<descricao>Justificativa das Falhas dos Itens de Configuração
+							</descricao>
+							<ordem>3</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/justificacaoFalhas/justificacaoFalhas.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Eventos</nome>
+							<descricao>Cadastro de Eventos</descricao>
+							<ordem>4</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/eventoItemConfig/eventoItemConfig.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Calendário</nome>
+							<descricao>Calendário</descricao>
+							<ordem>25</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/calendario/calendario.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Tipo Serviço</nome>
+							<descricao>Cadastro de tipo de serviço</descricao>
+							<ordem>5</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/tipoServico/tipoServico.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Local Exec. Serviço</nome>
+							<descricao>Local de Execução do Serviço</descricao>
+							<ordem>4</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/dinamicViews/dinamicViews.load?identificacao=LocalExecucaoServicos
+							</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Tipo Evento Serviço</nome>
+							<descricao>Tipo de Eventos do Serviço</descricao>
+							<ordem>1</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/dinamicViews/dinamicViews.load?identificacao=CadastroTipoEventoServico
+							</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Tipo Solicitação Serviço</nome>
+							<descricao>Tipo de Solicitação de Serviço</descricao>
+							<ordem>6</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/dinamicViews/dinamicViews.load?identificacao=TipoSolicitacaoServico
+							</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Justificativa Solicitação</nome>
+							<descricao>Justificativa Solicitação</descricao>
+							<ordem>13</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/dinamicViews.load?identificacao=justificativaSolicitacao
+							</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Categoria Serviço</nome>
+							<descricao>Cadastro de Categoria Serviço</descricao>
+							<ordem>8</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/categoriaServico/categoriaServico.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Condição de Operação</nome>
+							<descricao>Cadastro da Condição Operação</descricao>
+							<ordem>10</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/condicaoOperacao/condicaoOperacao.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Importância Negócio</nome>
+							<descricao>Cadastro de Importância Negócio</descricao>
+							<ordem>11</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/importanciaNegocio/importanciaNegocio.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+						<menu>
+							<nome>Prioridade</nome>
+							<descricao>Cadastro de Prioridade</descricao>
+							<ordem>12</ordem>
+							<menuRapido>null</menuRapido>
+							<link>/prioridade/prioridade.load</link>
+							<imagem />
+							<horizontal>N</horizontal>
+							<subMenu2 />
+						</menu>
+					</subMenu1>
+				</menu>
+			</subMenu0>
+		</menu>
+	</menuSuperior>
+</menus>

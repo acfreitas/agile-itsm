@@ -1,0 +1,49 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>59</idVisao>
+  <descricao>$visao.visaoEmpresa</descricao>
+  <tipoVisao>TS</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>Empresa</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>$visao.visaoEmpresa</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>66</idGrupoVisao>
+          <idCamposObjetoNegocio>2163</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.id</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>0</tamanho>
+          <decimais>0</decimais>
+          <formula></formula>
+          <visivel>N</visivel>
+          <nomeDB>IDSITUACAODEMANDA</nomeDB>
+          <nomeTabelaDB>SITUACAODEMANDA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>66</idGrupoVisao>
+          <idCamposObjetoNegocio>2164</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.nomeSituacao</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>70</tamanho>
+          <decimais>0</decimais>
+          <formula></formula>
+          <visivel>S</visivel>
+          <nomeDB>NOMESITUACAO</nomeDB>
+          <nomeTabelaDB>SITUACAODEMANDA</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

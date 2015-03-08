@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<ItemInformation type='SERVICE' description='painel.controleSLA' defaultVisualization='G:Pizza2D' report='true' graph='true' reportPageLayout='L' title='painel.controleSLA' hDetailSpacing='40'>
+	<CLASS class="br.com.centralit.citgerencial.generateservices.incidentes.ControleGenerateSLA"></CLASS>
+	<FIELDS>
+		<FIELD name='sla' type='java.lang.String' width='50px' title='citcorpore.comum.tipo' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='perc' type='java.lang.Double' width='50px' title='%' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='numero' type='java.lang.Double' width='50px' title='citcorpore.comum.quantidade' totals='true' count='false' decimals='0' mask=''/>
+	</FIELDS>
+	<GRAPHS>
+		<GRAPH type='Pizza3D' legend='false'/>
+		<GRAPH type='Pizza2D' legend='false'/>
+		<GRAPH type='Barra3D' legend='false'/>
+		<GRAPH type='Barra2D' legend='false'/>
+		<GRAPH type='Linha3D' legend='false'/>
+		<GRAPH type='Linha2D' legend='false'/>
+	</GRAPHS>
+	<GROUPS>
+	</GROUPS>	
+	<SUMMARY>
+	</SUMMARY>
+</ItemInformation>

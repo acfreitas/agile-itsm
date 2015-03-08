@@ -1,0 +1,66 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: verdana;
+}
+
+body {
+	background: #E5E5E5;
+	
+}
+
+#wrap {
+	margin: 0 auto;
+	width: 980px;
+	background: url('../imagens/bordas_laterais.png');
+	background-color: #E5E5E5;
+	background-repeat: repeat-y;
+	display:block;
+}
+
+#header {}
+
+#top {
+	height: 140px;
+	background:url('../imagens/top.png');
+	background-repeat: no-repeat;
+}
+
+#menu {
+	text-align: center;
+	height: 25px;
+}
+
+#migalha {
+	height: 25px;
+	line-height:25px;
+	padding:0 10px;
+}
+
+#migalha label{
+	color:#444;
+	font-size:12px;
+	font-weight:bold;
+	
+}
+
+#content {
+	min-height: 400px;
+}
+
+#footer {
+	width: 940px;
+	height: 20px;
+	text-align: center;
+	font-size: 11px;
+	float: right;
+}
+
+#header, #top, #menu, #migalha, #content {
+	width: 940px;
+	margin: 0 auto;
+}
+
+.tabela_retorno_pesquisa{
+	background-color: #CECECE;
+	width: 100%;

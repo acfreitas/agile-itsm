@@ -1,0 +1,49 @@
+.tableLess {
+	  font-family: arial, helvetica !important;
+	  font-size: 10pt !important;
+	  cursor: default !important;
+	  margin: 0 !important;
+	  background: white !important;
+	  border-spacing: 0  !important;
+	  width: 100%  !important;
+	  overflow: hidden;
+	  margin: 10px 0 0 10px ;
+	}
+
+	.tableLess tbody {
+	  background: transparent  !important;
+	}
+
+	.tableLess * {
+	  margin: 0 !important;
+	  vertical-align: middle !important;
+	  padding: 2px !important;
+	}
+
+	.tableLess tr th {
+	  font-weight: bold  !important;
+	  background: #fff url(../../imagens/title-bg.gif) repeat-x left bottom  !important;
+	  text-align: center  !important;
+	}
+
+	.tableLess tbody tr:ACTIVE {
+	  background-color: #fff  !important;
+	}
+
+	.tableLess tbody tr:HOVER {
+	  background-color: #e7e9f9 ;
+	  /* cursor: pointer; */
+	}
+
+	.tableLess th {
+	  border: 1px solid #BBB  !important;
+	  padding: 6px  !important;
+	}
+
+	.tableLess td{
+		border: 1px solid #BBB  !important;
+		padding: 6px 10px  !important;
+		max-width: 250px;
+		padding: 6px 10px !important;
+		text-overflow: ellipsis;
+	}

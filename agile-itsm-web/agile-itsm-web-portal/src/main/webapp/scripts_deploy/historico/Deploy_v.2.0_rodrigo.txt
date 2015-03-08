@@ -1,0 +1,182 @@
+/* MYSQL */
+	--Criação da tabela de revisão de acordos
+	CREATE  TABLE revisarsla (
+	`idrevisarsla` BIGINT(20) NOT NULL ,
+	`idacordonivelservico` BIGINT(20) NOT NULL ,
+	`datarevisao` DATE NOT NULL ,
+	`detalherevisao` TEXT NULL DEFAULT NULL ,
+	`observacao` VARCHAR(200) NULL DEFAULT NULL ,
+	`deleted` CHAR(1) NULL DEFAULT NULL ,
+  	
+  	PRIMARY KEY (`idrevisarsla`)) ENGINE = InnoDB;
+
+	ALTER TABLE `camposobjetonegocio` ADD COLUMN `precisiondb` BIGINT(20) NOT NULL DEFAULT 0 AFTER `situacao` ; 
+
+
+
+/* ORACLE */
+  --Criação da tabela de revisão de acordos
+    CREATE  TABLE REVISARSLA 
+	(
+	  IDREVISARSLA BIGINT(20) NOT NULL,
+	  IDACORDONIVELSERVICO BIGINT(20) NOT NULL,
+	  DATAREVISAO DATE NOT NULL,
+	  DETALHEREVISAO CLOB NULL DEFAULT NULL,
+	  OBSERVACAO VARCHAR(200) NULL DEFAULT NULL,
+	  DELETED CHAR(1 BYTE)  NULL DEFAULT NULL
+	);
+  	
+	ALTER TABLE REVISARSLA ADD PRIMARY KEY (IDREVISARSLA);
+	
+	ALTER TABLE CAMPOSOBJETONEGOCIO ADD (PRECISIONDB NUMBER(20, 0) DEFAULT 0 NOT NULL);
+ 
+ 
+ 
+ ===================== Implementação da Matriz de Prioridade ==============================
+ 
+ 
+/******************** BANCO MYSQL ***********************/
+CREATE TABLE impacto (`idImpacto` INT(11) NOT NULL ,  `nivelImpacto` VARCHAR(100) NOT NULL ,  PRIMARY KEY (`idImpacto`) )ENGINE = InnoDB;
+
+/******************** INSERT A BAIXO PARA A ANAC ***********************/
+INSERT INTO `impacto` (`idImpacto`, `nivelImpacto`) VALUES ('1', 'Altíssimo');INSERT INTO `impacto` (`idImpacto`, 
+`nivelImpacto`) VALUES ('2', 'Alto');INSERT INTO `impacto` (`idImpacto`, `nivelImpacto`) VALUES ('3', 'Elevado');INSERT 
+INTO `impacto` (`idImpacto`, `nivelImpacto`) VALUES ('4', 'Médio');INSERT INTO `impacto` (`idImpacto`, `nivelImpacto`) 
+VALUES ('5', 'Baixo');
+
+
+CREATE TABLE `urgencia` (`idUrgencia` INT(11) NOT NULL ,  `nivelUrgencia` VARCHAR(100) NOT NULL ,  PRIMARY KEY (`idUrgencia`) )ENGINE = InnoDB;
+
+/******************** INSERT A BAIXO PARA A ANAC ***********************/
+INSERT INTO `urgencia` (`idUrgencia`, `nivelUrgencia`) VALUES ('1', 'Crítica');INSERT INTO `urgencia` (`idUrgencia`, 
+`nivelUrgencia`) VALUES ('2', 'Alta');INSERT INTO `urgencia` (`idUrgencia`, `nivelUrgencia`) VALUES ('3', 
+'Média');INSERT INTO `urgencia` (`idUrgencia`, `nivelUrgencia`) VALUES ('4', 'Baixa');
+
+
+
+CREATE TABLE `matrizprioridade` (
+  `idMatrizPrioridade` int(11) NOT NULL,
+  `idImpacto` int(11) NOT NULL,
+  `idUrgencia` int(11) NOT NULL,
+  `valorPrioridade` int(11) NOT NULL,
+  `idcontrato` int(11) DEFAULT NULL,
+  `deleted` char(1) DEFAULT NULL,
+  PRIMARY KEY (`idMatrizPrioridade`)
+) ENGINE=InnoDB;
+
+
+ALTER TABLE `matrizprioridade`   ADD CONSTRAINT `fk_impacto`  FOREIGN KEY (`idImpacto` )  REFERENCES `impacto` 
+(`idImpacto` )  ON DELETE RESTRICT  ON UPDATE RESTRICT,   ADD CONSTRAINT `fk_urgencia`  FOREIGN KEY (`idUrgencia` )  
+REFERENCES `urgencia` (`idUrgencia` )  ON DELETE RESTRICT  ON UPDATE RESTRICT, ADD INDEX `fk_impacto_idx` (`idImpacto` 
+ASC) , ADD INDEX `fk_urgencia_idx` (`idUrgencia` ASC);
+
+
+/******************** INSERT A BAIXO PARA A ANAC ***********************/
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (1,1,4,2,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (2,1,3,2,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (3,1,2,1,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (4,1,1,1,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (5,2,4,3,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (6,2,3,2,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (7,2,2,2,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (8,2,1,1,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (9,3,4,3,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (10,3,3,3,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (11,3,2,2,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (12,3,1,2,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (13,4,4,4,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (14,4,3,3,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (15,4,2,3,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (16,4,1,2,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (17,5,4,5,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (18,5,3,4,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (19,5,2,3,NULL,'');
+INSERT INTO `matrizprioridade` (`idMatrizPrioridade`,`idImpacto`,`idUrgencia`,`valorPrioridade`,`idcontrato`,`deleted`) 
+
+VALUES (20,5,1,3,NULL,'');
+
+
+
+/******************* ORACLE ************************/
+
+CREATE TABLE IMPACTO(
+	IDIMPACTO INT NOT NULL,
+	NIVELIMPACTO VARCHAR2 (100) NOT NULL,
+	PRIMARY KEY (IDIMPACTO));
+
+CREATE TABLE URGENCIA (
+	IDURGENCIA INT NOT NULL,
+	NIVELURGENCIA VARCHAR2 (100) NOT NULL,
+	PRIMARY KEY (IDURGENCIA));
+
+CREATE TABLE MATRIZPRIORIDADE (
+	IDMATRIZPRIORIDADE INT NOT NULL,
+	IDIMPACTO INT NOT NULL,
+  	IDURGENCIA INT NOT NULL,
+  	VALORPRIORIDADE INT NOT NULL,
+  	IDCONTRATO INT DEFAULT NULL,
+  	DELETED CHAR(1) DEFAULT NULL,
+	PRIMARY KEY (IDMATRIZPRIORIDADE));
+
+ALTER TABLE MATRIZPRIORIDADE ADD CONSTRAINT FK_IMPACTO FOREIGN KEY (IDIMPACTO) REFERENCES IMPACTO(IDIMPACTO);
+ALTER TABLE MATRIZPRIORIDADE ADD CONSTRAINT FK_URGENCIA FOREIGN KEY (IDURGENCIA) REFERENCES URGENCIA(IDURGENCIA);
+
+
+
+===============================
+
+/* DINAMIC VIEWS */
+
+Caso o cliente utilize o parâmetro ID 104 (CALCULAR_PRIORIDADE_SOLICITACAO_DINAMICAMENTE) atividado com valor "S", deve-se 
+configurar a visão Acordo de Nível de Serviço (Contrato), as combos de Impacto e Urgência para a seguinte forma:
+
+Combo Impacto: 
+1 Altíssimo          
+2 Alto 
+3 Elevado 
+4 Médio
+5 Baixo 
+
+Combo Urgência:
+1 Crítica 
+2 Alta
+3 Média
+4 Baixa

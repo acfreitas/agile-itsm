@@ -1,0 +1,60 @@
+@CHARSET "ISO-8859-1";
+            .emExecucao{
+                background-color: blue;
+                color: white;
+                font-size: 6px;
+                font-weight: normal;
+            }
+            .suspenso{
+                background-color: gray;
+                font-size: 6px;
+                font-weight: normal;
+            }
+            .executado{
+                background-color: green !important;
+                color: white !important;
+                font-size: 6px;
+                font-weight: normal;
+
+            }
+            .agendado{
+                background-color: #8EC657;
+                color: black;
+                font-size: 6px;
+                font-weight: normal;
+            }
+            .atrasado{
+                background-color: #DD4133;
+                color: #ffff00;
+                font-size: 6px;
+                font-weight: normal;
+            }
+           .fc-event{
+           height: 35px !important;
+           }
+           body {
+			background-color: white;
+			background-image: url("");
+		}
+		div{
+		border: 0px!important;
+		}
+		.ui-dialog .ui-dialog-content {
+			padding: 1 !important;
+		}
+		td{
+			vertical-align: top !important;
+			}
+			
+			
+			
+			
+/*
+Pedro Lino
+23/10/2013 - Sol. 120948
+*Para sobrepor o padding do atualiza-antigo.css que está 0%
+*Estava sem margem
+*/
+.ui-dialog .ui-dialog-content {
+	padding: 1% !important;
+}			

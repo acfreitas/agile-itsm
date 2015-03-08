@@ -1,0 +1,20 @@
+.divTotal{
+	border: 1px solid #d8d8d8;
+}
+.divlateral {
+	border-right: 1px solid #d8d8d8;
+}
+
+div{
+	margin-left: 0% !important;
+	margin-right:  0% !important;
+} 
+
+label{
+	display: inline;
+	margin-left: 5px;
+	word-wrap: break-word;
+}
+.historico{
+  	font-size: 24px;
+}

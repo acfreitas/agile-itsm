@@ -1,0 +1,38 @@
+
+
+.linhaSubtituloGrid
+{
+    color           :#000000;
+    background-color: #d3d3d3;
+    BORDER-RIGHT: thin outset;
+    BORDER-TOP: thin outset;
+    BORDER-LEFT: thin outset;
+    BORDER-BOTTOM: thin outset;
+    FONT-WEIGHT: bold;
+    padding: 5px 0px 5px 5px;
+
+}
+.linhaGrid{
+    border: 1px solid black;
+    background-color:  #F2F2F2;
+    vertical-align: middle;
+}
+    .table {
+        border-left:1px solid #ddd;
+        width: 100%;
+    }
+
+    .table th {
+        border:1px solid #ddd;
+        padding:4px 10px;
+        border-left:none;
+        background:#eee;
+    }
+
+    .table td {
+        border:1px solid #ddd;
+        padding:4px 10px;
+        border-top:none;
+        border-left:none;
+    }
+

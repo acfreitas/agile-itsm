@@ -1,0 +1,154 @@
+.table {
+	border-left: 1px solid #ddd;
+}
+
+.table th {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+}
+
+.table td {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-top: none;
+	border-left: none;
+}
+
+#comentario {
+	display: block;
+	box-shadow: 0 0 2px 0 #555555 inset;
+	-moz-box-sizing: border-box;
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.05);
+	border: 0 none;
+	box-shadow: 0 0 2px 0 #DDDDDD inset;
+	margin-top: 3px;
+	width: 541px;
+	height: 137px;
+	width: 100% !important;
+}
+
+.tv {
+	z-index: 10;
+	overflow: auto;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	width: 15%;
+	height: 51%;
+	position: auto;
+	display: block;
+	-moz-background-clip: padding; /* Firefox 3.6 */
+	-webkit-background-clip: padding; /* Safari 4? Chrome 6? */
+	-moz-box-shadow: 3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	top: 8px;
+	left: 0px;
+	float: left;
+	bottom: 8px;
+	border: 0px solid rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0px rgba(0, 0, 0, 0.3)
+
+
+}
+
+div.pastas{
+
+	background: none repeat scroll 0 0 padding-box #F7F7F7;
+	padding: 0px 10px 5px;
+	z-index: 10;
+	overflow: auto;
+	margin-left: 2px;
+	margin-bottom: 5px;
+	width: 95%;
+	height: 100%;
+	position: auto;
+	display: block;
+	-moz-background-clip: padding; /* Firefox 3.6 */
+	-webkit-background-clip: padding; /* Safari 4? Chrome 6? */
+	-moz-box-shadow: 3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	top: 8px;
+	left: 0px;
+	float: left;
+	bottom: 8px;
+	border: 0px solid rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3)
+
+}
+
+div.baseconhecimento{
+
+	background: none repeat scroll 0 0 padding-box #F7F7F7;
+	border: 0px solid rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+	display: block;
+	/* margin: 10px 10px 10px 17%; */
+	/* padding: 20px 10px 5px; */
+	position: relative;
+	width: auto;
+	/* height: 98%!important; */
+	min-height: 98%!important;
+	margin-left: 3px!important;
+	margin-right: 3px!important;
+
+}
+
+div.principal{
+
+	padding-bottom: 50px;
+	height: 180%;
+
+}
+
+.container_16{
+
+	width: 92%;
+	margin-left: 4%;
+	margin-right: 4%;
+
+	letter-spacing: -4px;
+}
+
+#tituloconhecimento.text{
+	font-size: 20px;
+	box-shadow: 0 0 0 0 #DDDDDD inset;
+	font-style: italic;
+    font-weight: bold;
+    font-family: Lucida Grande;
+    border: 0px;
+    background: none;
+
+}
+
+#conhecimento.section{
+
+	padding-top: 0px;
+
+}
+
+.iconsFAQ{
+	 background: url("/citsmart/imagens/question-balloon.png") no-repeat scroll 0 0 transparent !important;
+		 font-weight: bold !important;
+}
+.manipulaDiv{
+  color: #777C86;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-left: 2px;
+
+
+}
+.manipulaDiv:HOVER{
+  color: #A6CE39;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+
+
+}

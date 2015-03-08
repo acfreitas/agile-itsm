@@ -1,0 +1,102 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>0</idVisao>
+  <descricao>Listagem de Serviços em Criação</descricao>
+  <tipoVisao>TS</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>ListagemServicosCriacao</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>Listagem de Serviços em Criação</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>30</idGrupoVisao>
+          <idCamposObjetoNegocio>1149</idCamposObjetoNegocio>
+          <descricaoNegocio>Código do Serviço</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>5</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>30</idGrupoVisao>
+          <idCamposObjetoNegocio>1155</idCamposObjetoNegocio>
+          <descricaoNegocio>Nome do Serviço</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>70</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>30</idGrupoVisao>
+          <idCamposObjetoNegocio>1158</idCamposObjetoNegocio>
+          <descricaoNegocio>Data de Implantação</descricaoNegocio>
+          <tipoNegocio>DATE</tipoNegocio>
+          <ordem>3</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>30</idGrupoVisao>
+          <idCamposObjetoNegocio>1151</idCamposObjetoNegocio>
+          <descricaoNegocio>Situação do Serviço</descricaoNegocio>
+          <tipoNegocio>RELATION</tipoNegocio>
+          <ordem>4</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>40</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>S</tipoLigacao>
+          <filtro>${TERMO_PESQUISA}</filtro>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <idObjetoNegocioLigacao>158</idObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacao>1171</idCamposObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacaoVinc>1169</idCamposObjetoNegocioLigacaoVinc>
+          <idCamposObjetoNegocioLigacaoOrder>1171</idCamposObjetoNegocioLigacaoOrder>
+          <descricaoRelacionamento>Situação do Serviço</descricaoRelacionamento>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+  <colVisoesRelacionadas class="list"/>
+  <colScripts class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONSQLWHERESEARCH</scryptType>
+      <script>sqlWhere = sqlWhere + &quot; AND IDSITUACAOSERVICO = 1 &quot;;</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+  </colScripts>
+  <colBotoes class="list"/>
+  <colHtmlCode class="list"/>
+  <mapScripts>
+    <entry>
+      <string>S#ONSQLWHERESEARCH</string>
+      <string>sqlWhere = sqlWhere + &quot; AND IDSITUACAOSERVICO = 1 &quot;;</string>
+    </entry>
+  </mapScripts>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

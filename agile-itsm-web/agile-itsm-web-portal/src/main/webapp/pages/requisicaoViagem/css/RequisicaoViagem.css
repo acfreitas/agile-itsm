@@ -1,0 +1,56 @@
+@CHARSET "ISO-8859-1";
+
+.destacado {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+	font-size: 14px;
+}
+
+.table tr td:last-child {
+	text-align: center;
+}
+
+div#main_container {
+	margin: 0px 0px 0px 0px;
+}
+
+.container_16 {
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	letter-spacing: -4px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-top: 0;
+}
+
+.radio, 
+.checkbox {
+	padding-left: 20px;
+}
+
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+    margin-left: 10px;
+}
+.radio.inline,
+.checkbox.inline {
+	padding-top: 0;
+}
+
+.input-container {
+	display: block;
+	overflow: hidden;
+}
+.btn-container {
+	float: right;
+	margin-left: 20px;
+	margin-top: 24px;
+}
+
+.autocomplete {
+	max-height: 150px !important;
+}

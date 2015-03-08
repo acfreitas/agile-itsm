@@ -1,0 +1,30 @@
+--Valdoilo28082012
+ALTER TABLE `citsmart`.`os` MODIFY COLUMN `datainicio` DATE DEFAULT NULL,
+ MODIFY COLUMN `datafim` DATE DEFAULT NULL;
+
+ALTER TABLE `citsmart`.`os` ENGINE = InnoDB;
+
+ALTER TABLE `citsmart`.`atividadesos` ENGINE = InnoDB;
+
+--Valdoilo 28082012
+ALTER TABLE `citsmart`.`os` ADD COLUMN `quantidadeglosasanterior` INT(11) AFTER `obsfinalizacao`;
+
+--Thays 30082012
+ALTER TABLE `citsmart`.`perfilacessomenu` DROP COLUMN `altera` ,
+CHANGE COLUMN `inclui` `grava` CHAR(1) NOT NULL ;
+
+--Maycon 30082012
+create table osatividadeperiodica
+(
+   idatividadeperiodica integer,
+   idos                 integer
+);
+
+alter table osatividadeperiodica add constraint fk_reference_579 foreign key (idatividadeperiodica)
+      references atividadeperiodica (idatividadeperiodica) on delete restrict on update restrict;
+
+alter table osatividadeperiodica add constraint fk_reference_580 foreign key (idos)
+      references os (idos) on delete restrict on update restrict;
+	  
+	    
+alter table programacaoatividade add  idatividadesos  integer;

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<title>Pie and Donut Charts</title>
+
+<link class="include" rel="stylesheet" type="text/css" href="jquery.jqplot.min.css" />
+<link rel="stylesheet" type="text/css" href="examples.min.css" />
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.min.css" />
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemejqPlot.min.css" />
+
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../excanvas.js"></script><![endif]-->
+<script class="include" type="text/javascript" src="jquery.min.js"></script>
+		<!-- Example scripts go here -->
+<style type="text/css">
+	.jqplot-data-label { /*color: #444;*/
+		/*      font-size: 1.1em;*/
+		
+	}
+</style>
+
+</head>
+<body>
+
+	<div class="example-content">
+		<div id="chart1" style="height: 300px; width: 500px;"></div>
+		<pre class="code prettyprint brush: js"></pre>
+
+		<script class="code" type="text/javascript">
+			$(document).ready(
+					function() {
+						var dados =	[ [ 'Heavy Industry',  12 ],
+						           	  [ 'Retail',           9 ],
+									  [ 'Light Industry',  14 ],
+									  [ 'Out of home',     16 ], 
+									  [ 'Commuting',        7 ],
+									  [ 'Orientation',     90 ] ];
+						plotaGrafico(dados);
+						function plotaGrafico(dados){
+								
+							var plot1 = jQuery.jqplot('chart1', [ dados ], {
+
+								series : [ {
+									dragable : {
+										color : '#ff3366',
+										constrainTo : 'x'
+									},
+									trendline : {
+										color : '#cccccc'
+									}
+								}, {
+									isDragable : false,
+									trendline : {
+										show : false
+									}
+								} ],
+
+								seriesDefaults : {
+									// Make this a pie chart.
+									renderer : jQuery.jqplot.PieRenderer,
+									rendererOptions : {
+										// Put data labels on the pie slices.
+										// By default, labels show the percentage of the slice.
+										showDataLabels : true
+									}
+								},
+								legend : {
+									show : true,
+									location : 'e'
+								}
+							});
+						}
+					});
+		</script>
+
+		<!-- End example scripts -->
+
+		<!-- Don't touch this! -->
+
+
+		<script class="include" type="text/javascript" src="jquery.jqplot.min.js"></script>
+		<!-- End Don't touch this! -->
+
+		<!-- Additional plugins go here -->
+
+		<script class="include" language="javascript" type="text/javascript" src="plugins/jqplot.pieRenderer.min.js"></script>
+
+		<!-- End additional plugins -->
+
+
+	</div>
+
+</body>
+
+
+</html>

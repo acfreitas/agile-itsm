@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:cat="http://www.centralit.com.br/citsmart/services/catalogmsg"
+    targetNamespace="http://www.centralit.com.br/services/CITSmartIntegration.XSD"
+    xmlns="http://www.centralit.com.br/services/CITSmartIntegration.XSD"
+    version="1.00">
+
+    <xs:element name="Login" type="CtLogin">
+        <xs:annotation>
+            <xs:documentation>
+                <cat:Event>Sistema externo solicita autenticação de
+                    usuário no CITSmart</cat:Event>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="LoginResp" type="CtLoginResp">
+        <xs:annotation>
+            <xs:documentation>
+                <cat:Event>CITSmart retorna ID da sessão</cat:Event>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="AddServiceRequest" type="CtAddServiceRequest">
+        <xs:annotation>
+            <xs:documentation>
+                <cat:Event>Sistema externo solicita a inclusão de uma
+                    solicitação de serviço no CITSmart</cat:Event>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="AddServiceRequestResp" type="CtAddServiceRequestResp">
+        <xs:annotation>
+            <xs:documentation>
+                <cat:Event>CITSmart retorna inclusão de solicitação de
+                    serviço</cat:Event>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <!-- Definicao do DataSegment da mensagem -->
+
+    <xs:complexType name="CtLogin">
+        <xs:sequence>
+            <xs:element name="UserName" type="xs:string"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Login do usuário</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Password" type="xs:string"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Senha do usuário</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CtLoginResp">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="Error" type="CtError"
+                    nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <cat:FieldName>Erro na operação no CITSmart
+                            </cat:FieldName>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="SessionID" type="xs:string"
+                    nillable="false">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <cat:FieldName>Identificador da sessão
+                            </cat:FieldName>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CtAddServiceRequest">
+        <xs:sequence>
+            <xs:element name="SessionID" type="xs:string"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>ID da sessão</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ServiceRequestSource" type="CtServiceRequest"
+                minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Informações da solicitação de
+                            serviço no sistema origem</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CtAddServiceRequestResp">
+        <xs:sequence>
+            <xs:element name="DateTime" type="xs:dateTime"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Data e hora de processamento no
+                            CITSmart</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="OperationID" type="xs:integer"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Identificador da operação no
+                            CITSmart</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:choice>
+                <xs:element name="Error" type="CtError">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <cat:FieldName>Erro na operação no CITSmart
+                            </cat:FieldName>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="ServiceRequestDest" type="CtServiceRequest">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <cat:FieldName>Detalhamento da solicitação
+                                de serviço criada no CITSmart
+                            </cat:FieldName>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CtServiceRequest">
+        <xs:sequence>
+            <xs:element name="Number" type="xs:string"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Identificador da solicitação de
+                            serviço</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Type" type="StServiceRequestType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Tipo da solicitação de serviço
+                        </cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Description" type="xs:string"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Descrição do serviço a ser
+                            executado</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StartDateTime" type="xs:dateTime"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Data e hora de registro do
+                            chamado</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StartSLA" type="xs:dateTime"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Data e hora de início do SLA
+                        </cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="EndSLA" type="xs:dateTime"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Data e hora de encerramento do
+                            SLA</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Urgency" type="StServiceRequestPriority"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Urgência</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Impact" type="StServiceRequestPriority"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Impacto</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GroupId" type="xs:string"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Identificador do grupo
+                            responsável pela execução</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="UserID" type="xs:string"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Identificador do usuário
+                            solicitante</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Contact" type="CtContact"
+                minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Informações do solicitante
+                        </cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Service" type="CtService"
+                minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Informações do serviço a ser
+                            executado</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CtContact">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Nome do contato</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Department" type="xs:string"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Departamento de lotação do
+                            contato</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Email" type="xs:string"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Email do contato</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PhoneNumber" type="xs:string"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Telefone do contato
+                        </cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CtService">
+        <xs:sequence>
+            <xs:element name="Code" type="xs:string"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Identificador do servico no
+                            catálogo</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Description" type="xs:string"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Nome do serviço no catálogo
+                        </cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CtError">
+        <xs:sequence>
+            <xs:element name="Code" type="xs:string"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Identificador do erro
+                        </cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Description" type="xs:string"
+                nillable="false">
+                <xs:annotation>
+                    <xs:documentation>
+                        <cat:FieldName>Descrição do erro</cat:FieldName>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definicao do tipos simples do evento -->
+
+    <xs:simpleType name="StServiceRequestType">
+        <xs:annotation>
+            <xs:documentation>
+                <cat:TypeDesc>Tipo da solicitação de serviço: R -
+                    Requisição; I - Incidente</cat:TypeDesc>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="R" />
+            <xs:enumeration value="I" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="StServiceRequestPriority">
+        <xs:annotation>
+            <xs:documentation>
+                <cat:TypeDesc>H - (High) Alta, M - (Medium) Média, L -
+                    Baixa</cat:TypeDesc>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="H" />
+            <xs:enumeration value="M" />
+            <xs:enumeration value="L" />
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

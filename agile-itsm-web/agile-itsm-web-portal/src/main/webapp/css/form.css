@@ -1,0 +1,36 @@
+/* Esse arquivo contém os estilos mais utilizados em formulários */
+table {
+	border-spacing: 8px;
+	margin: 10px 0 0 0;
+}
+
+.tableInterna {
+	border: 1px;
+	border-spacing: 0px;
+	background-color: #CECECE;
+	min-width: 3cm;
+}
+
+.formLabel {
+	font-size: 12px;
+	vertical-align: middle;
+	float: right;
+}
+
+.formText {
+	background: #F7F4E3;
+	background: url("images/default/input_bg.gif") repeat-x scroll left top
+		transparent;
+	border: medium none;
+	height: 15px;
+	padding: 4px 0;
+	vertical-align: middle;
+}
+
+.formHeader {
+	
+}
+
+#tab_container {
+	margin: 0 auto;
+}

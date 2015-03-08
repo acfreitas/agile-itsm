@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<ItemInformation type='SERVICE' description='citcorpore.comum.qualidadeAtendimentoSLA' defaultVisualization='P' report='true' graph='false' reportPageLayout='L' title='citcorpore.comum.qualidadeAtendimentoSLA' hDetailSpacing='40'>
+	<CLASS class="br.com.centralit.citgerencial.generateservices.incidentes.GenerateSLA"></CLASS>
+	<FIELDS>
+		<FIELD name='sla' type='java.lang.String' width='50px' title='gerenciaservico.sla' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='numero' type='java.lang.String' width='50px' title='citcorpore.comum.numero' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='solicitane' type='java.lang.String' width='80px' title='colaborador.solicitante' totals='false' count='true' decimals='0' mask=''/>
+		<FIELD name='contrato' type='java.lang.String' width='50px' title='contrato.contrato' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='dataHoraSol' type='java.lang.String' width='70px' title='solicitacaoServico.datahoraabertura' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='dataHoraLimite' type='java.lang.String' width='70px' title='solicitacaoServico.datahoralimite' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='dataHoraFim' type='java.lang.String' width='70px' title='citcorpore.comum.dataHoraFim' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='prioridade' type='java.lang.String' width='15px' title='menu.nome.prioridade' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='tempoCaptura' type='java.lang.String' width='50px' title='citcorpore.comum.tempoCaptura' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='atraso' type='java.lang.String' width='50px' title='tarefa.atraso' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='situacao' type='java.lang.String' width='50px' title='centroResultado.situacao' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='tempoAtend' type='java.lang.String' width='50px' title='citcorpore.comum.tempoUtilAtend' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='noPrazo' type='java.lang.String' width='50px' title='sla.avaliacao.noprazo' totals='false' count='false' decimals='0' mask=''/>
+	</FIELDS>
+	<GRAPHS>
+		<GRAPH type='Pizza3D' legend='false'/>
+		<GRAPH type='Pizza2D' legend='false'/>
+		<GRAPH type='Barra3D' legend='false'/>
+		<GRAPH type='Barra2D' legend='false'/>
+		<GRAPH type='Linha3D' legend='false'/>
+		<GRAPH type='Linha2D' legend='false'/>
+	</GRAPHS>
+	<GROUPS>
+		<GROUP fieldName='sla' spacingLeft='0'/>
+	</GROUPS>
+	<SUMMARY>
+	</SUMMARY>
+</ItemInformation>

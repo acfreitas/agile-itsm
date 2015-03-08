@@ -1,0 +1,185 @@
+@import url("./classes.css");
+@import url("./tags.css");
+@import url("./ids.css");
+
+@media screen
+{	
+	div#div_folhaImpressao 
+	{
+		height:100%;
+		width: 100%;
+		border: 0px solid black;
+		padding: 30px 30px 30px 30px;
+	}
+	
+	div#div_areaUtil 
+	{
+		height:100%;
+		width: 100%;
+		padding: 10px 10px 10px 10px;
+		border: 1px solid black;
+	}
+	div#quadro
+	{
+	    margin  :0mm 0 0 0;
+	    border: 0px solid red;
+		border: 0px solid #003300;
+		width: 100%;
+		height: 100%;
+	}
+	  
+	#cabecalho 
+	{
+		width: 100%;
+		height: 80px;
+		border: 0px solid gren;
+	}
+	
+	#div_brasao 
+	{
+	
+		float: left;
+		width: 20%;
+		height: 80px;
+		margin: 0px;
+		border: 0px solid red;
+	}
+	
+	#inf_Sistema 
+	{
+		
+		float: right;
+		padding: 5mm 0 0 0;
+		width: 75%;
+		height: 80px;
+		border: 0px solid pink;
+		text-align: right;
+		font-size: 12px;
+		font-style: italic;
+	}
+	
+	div#div_titulo01 
+	{
+		margin: -8px 0px 2px 0;
+		width: 100%;
+		height: 4mm;
+		text-align: center;
+		font-weight: bold;
+		font-size: 14px;
+		border: 0px solid #003300;
+		float: left;
+	}
+	
+	div#graph_02
+	{
+		width: 100%;
+		border: 1px solid black;
+		padding: 10px 10px 10px 10px;
+	}
+	
+	.titulo
+	{
+	    font-weight: bold;
+	    font-size: 14px;
+	    color: #FFFFFF;
+	    background: #0038A8;
+	   	text-align: center;
+	    width: 100%;
+	    padding-top: 0px;
+	    
+	}
+
+	  #tipoMensagem
+  	{
+	    width   :100%;
+	    float   :left;
+	    margin  :0 0.5mm 1mm 0;
+  	}
+  
+	th.resultado 
+	{
+	
+		font-weight: bold;
+		fonte-size:12px;
+		text-align: center;
+		background-color: #B2C3E5;
+	}
+
+	.tituloPesquisa
+	{
+	    font-weight: bold;
+	    font-size: 12px;
+	    color: #006666;
+	    font-family: Tahoma, Arial, Helvetica, sans-serif;
+	    text-decoration: none;
+	
+	}
+	.linhaSubtitulo
+	{
+	    
+	    font-size		:12px;
+	    color			:#000000;
+	    font-family		:Arial;
+	    background-color: #99AFDC;
+		
+	}
+	
+	.coluna_01
+	{
+	
+		background-Color: #FFFFFF;
+		text-align: left;
+		padding: 0 3px 0  0px;
+
+	}
+
+	.colunaDescricao_01
+	{
+	
+		background-Color: #FFFFFF;
+		text-align: left;
+		padding: 0 0px 0  2px;
+	}
+
+	.coluna_02
+	{
+	
+		background-Color: #E5EBF6;
+		text-align: left;
+		padding: 0 3px 0  0px;
+
+	}
+
+	.colunaDescricao_02
+	{
+	
+		
+		background-Color: #E5EBF6;
+		text-align: left;
+		padding: 0 0px 0  2px;
+	}
+	
+	.linhaTotal 
+	{
+		text-align: right;
+		border-top-width: 1px !important;
+		font-weight: bold;
+		padding: 0 3px 0  0px;
+	}
+	.linhaTotal01
+	{
+
+		font-weight: bold;
+		
+	}
+	
+	div#div_rodape {
+	width: 100%;
+	border: 0px solid red;
+	height: 54px;
+	float: left;
+	margin: 2mm 0mm 0mm 0mm;
+}
+	
+
+}

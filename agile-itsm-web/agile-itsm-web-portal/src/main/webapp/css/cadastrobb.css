@@ -1,0 +1,29 @@
+
+
+@import url("./classes.css");
+@import url("./tags.css");
+@import url("./ids.css");
+
+@media screen
+{
+	table#tabFormulario{
+		
+		padding: 5px 0 0 0;
+		
+	}
+
+	table#tabControle{
+		
+		}
+
+	.campoObrigatorio
+{
+    font-weight		:bold;
+    font-size		:9px;
+    color			:#006666;
+    font-family		:Tahoma, Arial, Helvetica, sans-serif;
+    text-decoration	:none;
+    width			:250px;
+    padding			:3px 0 0 0;
+}
+}

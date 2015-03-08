@@ -1,0 +1,249 @@
+{
+	"propriedades": [
+		{	
+			"id":	"nome",
+			"nome": "desenhoFluxo.nome",
+			"tipo": "text",
+			"tamanhoMaximo": "50"
+		},
+		{	
+			"id":	"documentacao",
+			"nome": "desenhoFluxo.descricao",
+			"tamanho": "100",
+			"tipo": "textarea"
+		},
+		{	
+			"id":	"acaoEntrada",
+			"nome": "desenhoFluxo.acaoEntrada",
+			"tamanho": "100",
+			"tipo": "textarea"
+		},
+		{	
+			"id":	"acaoSaida",
+			"nome": "desenhoFluxo.acaoSaida",
+			"tamanho": "100",
+			"tipo": "textarea"
+		},
+		{	
+			"id":	"tipoInteracao",
+			"nome": "desenhoFluxo.tipoInteracao",
+			"tipo": "select",
+			"tamanho": "100",
+			"opcoes": [
+				{"id": "U", "texto": "desenhoFluxo.tipoInteracao.url"},
+				{"id": "V", "texto": "desenhoFluxo.tipoInteracao.visao"}
+			],
+			"valorDefault": "U"
+		},
+		{	
+			"id":	"interacao",
+			"nome": "desenhoFluxo.tipoInteracao.identificacao",
+			"tipo": "text",
+			"tamanhoMaximo": "150"
+		},
+		{	
+			"id":	"url",
+			"nome": "desenhoFluxo.tipoInteracao.url",
+			"tipo": "text",
+			"tamanhoMaximo": "150"
+		},
+		{	
+			"id":	"visao",
+			"nome": "desenhoFluxo.tipoInteracao.visao",
+			"tipo": "text",
+			"tamanhoMaximo": "200"
+		},
+		{	
+			"id":	"grupos",
+			"nome": "desenhoFluxo.grupos",
+			"tipo": "text",
+			"tamanhoMaximo": "200"
+		},
+		{	
+			"id":	"usuarios",
+			"nome": "desenhoFluxo.usuarios",
+			"tipo": "text",
+			"tamanhoMaximo": "200"
+		},
+		{	
+			"id":	"script",
+			"nome": "desenhoFluxo.codigoScript",
+			"tamanho": "100",
+			"tipo": "textarea"
+		},
+        {   
+            "id":   "multiplasInstancias",
+            "nome": "desenhoFluxo.tipoInstancia",
+            "tipo": "select",
+            "tamanho": "230",
+            "opcoes": [
+                {"id": "N", "texto": "desenhoFluxo.tipoInstancia.unica"},
+                {"id": "S", "texto": "desenhoFluxo.tipoInstancia.varias"},
+                {"id": "U", "texto": "desenhoFluxo.tipoInstancia.porUsuario"}
+            ],            
+            "valorDefault": "N"
+        },
+		{	
+			"id":	"condicao",
+			"nome": "desenhoFluxo.condicao",
+			"tamanho": "100",
+			"tipo": "textarea"
+		},
+		{	
+			"id":	"modeloEmail",
+			"nome": "desenhoFluxo.modeloEmail",
+			"tipo": "text",
+			"tamanhoMaximo": "20"
+		},
+        {   
+            "id":   "destinatariosEmail",
+            "nome": "desenhoFluxo.destinatarios",
+            "tamanho": "100",
+            "tipo": "textarea"
+        },		
+        {   
+            "id":   "template",
+            "nome": "desenhoFluxo.template",
+            "tipo": "text",
+            "tamanhoMaximo": "40"
+        },
+        {   
+            "id":   "condicaoDisparo",
+            "nome": "desenhoFluxo.condicaoDisparo",
+            "tamanho": "100",
+            "tipo": "textarea"
+        },       
+        {   
+            "id":   "intervalo",
+            "nome": "desenhoFluxo.intervaloExecucao",
+            "tipo": "num",
+            "tamanho": "40",
+            "tamanhoMaximo": "10"
+        },
+        {   
+            "id":   "contabilizaSLA",
+            "nome": "desenhoFluxo.contabilizaSLA",
+            "tipo": "select",
+            "tamanho": "70",
+            "opcoes": [
+                {"id": "S", "texto": "desenhoFluxo.contabilizaSLA.sim"},
+                {"id": "N", "texto": "desenhoFluxo.contabilizaSLA.nao"}
+            ],
+            "valorDefault": "S"
+        },
+        {   
+            "id":   "percExecucao",
+            "nome": "desenhoFluxo.percentualExecucao",
+            "tipo": "dec",
+            "tamanho": "40",
+            "tamanhoMaximo": "10"
+        }],
+	"elementos": [
+		{	
+			"tipoElemento":	"inicio",
+			"label":	"desenhoFluxo.elemento.inicio",
+			"icone": "inicio_24x24.gif",
+			"imagem": "inicio.png",
+			"borda": "false",
+			"ajustavel": "false",
+			"larguraPadrao": "32",
+			"alturaPadrao": "32",
+			"lstPropriedades": [
+			]
+			
+		},
+		{	
+			"tipoElemento":	"tarefa",
+			"label":	"desenhoFluxo.elemento.tarefa",
+			"icone": "tarefa_24x24.gif",
+			"imagem": "tarefa_24x24.gif",
+			"borda": "true",
+			"ajustavel": "true",
+			"larguraPadrao": "140",
+			"alturaPadrao": "65",
+			"lstPropriedades": [
+					"nome",
+					"documentacao",
+					"multiplasInstancias",
+                    "contabilizaSLA",
+                    "percExecucao",
+					"grupos",
+					"usuarios",
+					"tipoInteracao",
+					"interacao",
+					"template",
+					"acaoEntrada",
+					"acaoSaida"
+			]
+		},		
+		{	
+			"tipoElemento":	"email",
+			"label":	"desenhoFluxo.elemento.email",
+			"icone": "email_24x24.gif",
+			"imagem": "email_32x32.png",
+			"borda": "false",
+			"ajustavel": "false",
+			"larguraPadrao": "31",
+			"alturaPadrao": "22",
+			"lstPropriedades": [
+					"modeloEmail",
+					"destinatariosEmail",
+					"grupos",
+					"usuarios"
+			]
+		},		
+		{	
+			"tipoElemento":	"script",
+			"label":	"desenhoFluxo.elemento.script",
+			"icone": "script_24x24.gif",
+			"imagem": "script_24x24.gif",
+			"borda": "true",
+			"ajustavel": "true",
+			"larguraPadrao": "140",
+			"alturaPadrao": "65",
+			"lstPropriedades": [
+					"nome",
+					"script",
+			]
+		},
+        {   
+            "tipoElemento": "evento",
+            "label":    "desenhoFluxo.elemento.evento",
+            "icone": "evento_24x24.png",
+            "imagem": "evento.png",
+            "borda": "false",
+            "ajustavel": "false",
+            "larguraPadrao": "32",
+            "alturaPadrao": "32",
+            "lstPropriedades": [
+                    "condicaoDisparo",
+                    "intervalo",
+            ]
+        },		
+		{	
+			"tipoElemento":	"porta",
+			"label":	"desenhoFluxo.elemento.decisao",
+			"icone": "porta_24x24.gif",
+			"borda": "false",
+			"ajustavel": "false",
+			"larguraPadrao": "42",
+			"alturaPadrao": "42",
+			"imagem": "porta.png",
+			"lstPropriedades": [
+			]
+			
+		},
+		{	
+			"tipoElemento":	"finalizacao",
+			"label":	"desenhoFluxo.elemento.finalizacao",
+			"larguraPadrao": "32",
+			"alturaPadrao": "32",
+			"icone": "fim_24x24.gif",
+			"borda": "false",
+			"ajustavel": "false",
+			"imagem": "fim.png",
+			"lstPropriedades": [
+			]
+		}
+	]
+}

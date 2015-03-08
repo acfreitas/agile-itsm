@@ -1,0 +1,57 @@
+{
+	"elementos": [
+		{	
+			"id":	"inicio",
+			"nome":	"Início",
+			"icone": "inicio_16x16.png",
+			"imagem": "inicio.png",
+			"propriedades": [
+			]
+			
+		},
+		{	
+			"id":	"tarefa",
+			"nome":	"Tarefa",
+			"icone": "tarefa_16x16.png",
+			"imagem": "tarefa.png",
+			"propriedades": [
+				{
+					"nome",
+					"documentacao",
+					"acaoEntrada",
+					"acaoSaida",
+					"tipoInteracao",
+					"interacao"
+				},
+			]
+		},		
+		{	
+			"id":	"script",
+			"nome":	"Script",
+			"icone": "script_16x16.png",
+			"imagem": "script.png",
+			"propriedades": [
+				{
+					"nome",
+					"codigo",
+				},
+			]
+		},
+		{	
+			"id":	"porta",
+			"nome":	"Decisão",
+			"icone": "porta_16x16.png",
+			"imagem": "porta.png",
+			"propriedades": [
+			]
+			
+		},
+		{	
+			"id":	"fim",
+			"nome":	"Finalização",
+			"icone": "fim_16x16.png",
+			"imagem": "fim.png",
+			"propriedades": [
+			]
+			
+		},

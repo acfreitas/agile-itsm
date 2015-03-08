@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PAINEL description='Painel de Informações sobre Mudanças'>
+	<ITEM file='xmlPaineis/requisicaoMudanca/painelrequisicaoMudancaImpacto.xml' description='painel.requisicaoMudancaImpacto'/>
+	<ITEM file='xmlPaineis/requisicaoMudanca/painelrequisicaoMudancaSLA.xml' description='painel.requisicaoMudancaSla'/>
+	<ITEM file='xmlPaineis/requisicaoMudanca/painelrequisicaoMudancaRisco.xml' description='painel.requisicaoMudancaRisco'/>
+	<ITEM file='xmlPaineis/requisicaoMudanca/painelrequisicaoMudancaServico.xml' description='painel.requisicaoMudancaServico'/>
+</PAINEL>

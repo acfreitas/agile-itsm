@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<PAINEL description='	' classNameProcessParameters="br.com.centralit.citgerencial.processparameters.ProcessParametersGeral">
+	<ITEM name='rel01' file='xmlsGerenciais/incidentes/pesquisasatisfacao.xml' top='0' heigth='500' width='700' left='0'/>
+	
+	<PARAMETERS>
+        <PARAM name='dataInicial' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datainicio' fix='false' mandatory='true' reload='true' />
+        <PARAM name='dataFinal' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datafim' fix='false' mandatory='true' default='{TODAY}'/>
+        
+        <PARAM name='classificacao' type='java.lang.String' typeHTML='select' size='0'  value='' description='citcorpore.comum.classificacao' fix='false' mandatory='false' reload='false' onload='true'>
+            <OPTION value='*' text='citcorpore.comum.todos'/>
+            <OPTION value='I' text='citcorpore.comum.somenteIncidentes'/>        
+            <OPTION value='R' text='citcorpore.comum.somenteRequisicoes'/>
+        </PARAM>
+        
+        <PARAM name='idContrato' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='contrato.contrato' fix='false' mandatory='false' reload='false' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idcontrato, numero
+                  FROM contratos
+                WHERE deleted IS NULL or deleted = 'n'
+                ORDER BY numero
+            </OPTIONS>
+        </PARAM>        
+                
+        <PARAM name='idPrioridade' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='prioridade.prioridade' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idPrioridade, nomePrioridade
+                  FROM prioridade
+                ORDER BY nomePrioridade
+            </OPTIONS>
+        </PARAM> 
+        
+        <PARAM name='idServico' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='citcorpore.comum.servico' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idServico, nomeServico
+                  FROM servico
+                  WHERE deleted IS NULL or deleted = 'n'
+                ORDER BY nomeServico
+            </OPTIONS>
+        </PARAM>
+        
+        <PARAM name='idUnidade' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='citcorpore.comum.unidade' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idUnidade, nome
+                  FROM unidade
+                  WHERE datafim IS NULL
+                ORDER BY nome
+            </OPTIONS>
+        </PARAM> 
+        
+         <PARAM name='idOrigem' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='citcorpore.comum.origem' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idOrigem, descricao
+                  FROM origematendimento
+                  WHERE datafim IS NULL
+                ORDER BY descricao
+            </OPTIONS>
+        </PARAM>
+        
+	</PARAMETERS>
+		
+</PAINEL>

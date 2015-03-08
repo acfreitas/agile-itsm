@@ -1,0 +1,95 @@
+ MYSQL
+  --Inclusão campo privacidade em baseconhecimento
+  ALTER TABLE baseconhecimento ADD COLUMN privacidade VARCHAR(45) NULL;
+  
+   --Inclusão campo situacao em baseconhecimento
+  ALTER TABLE baseconhecimento ADD COLUMN situacao VARCHAR(45) NULL;
+
+--Criação da tabela eventomonitoramento
+  CREATE  TABLE eventomonitoramento (
+	  ideventomonitoramento INT(11) NOT NULL,
+	  nomeevento VARCHAR(255) NOT NULL,
+	  detalhamento TEXT NULL,
+	  criadopor VARCHAR(255) NULL,
+	  modificadopor VARCHAR(255) NULL,
+	  datacriacao DATE NULL,
+	  ultmodificacao DATE NULL,
+	  PRIMARY KEY (ideventomonitoramento)
+	);
+	
+--Criação da tabela eventomonitconhecimento
+CREATE  TABLE eventomonitconhecimento (
+  ideventomonitoramento INT(11) NOT NULL ,
+  idbaseconhecimento INT(11) NOT NULL ,
+  PRIMARY KEY (ideventomonitoramento, idbaseconhecimento) );
+  
+  
+  ORACLE
+  --Inclusão campo privacidade em baseconhecimento
+  ALTER TABLE BASECONHECIMENTO ADD (PRIVACIDADE VARCHAR(45) NULL);
+  
+  --Inclusão campo situacao em baseconhecimento
+  ALTER TABLE BASECONHECIMENTO ADD (SITUACAO VARCHAR(45) NULL);
+  
+  --Criação da tabela eventomonitoramento
+  CREATE  TABLE EVENTOMONITORAMENTO (
+	  IDEVENTOMONITORAMENTO INT(11) NOT NULL,
+	  NOMEEVENTO VARCHAR(255) NOT NULL,
+	  DETALHAMENTO CLOB NULL,
+	  CRIADOPOR VARCHAR(255) NULL,
+	  MODIFICADOPOR VARCHAR(255) NULL,
+	  DATACRIACAO DATE NULL,
+	  ULTMODIFICACAO DATE NULL,
+	  PRIMARY KEY (IDEVENTOMONITORAMENTO)
+);
+
+CREATE  TABLE conhecimentoic (
+  iditemconfiguracao INT(11) NOT NULL ,
+  idbaseconhecimento INT(11) NOT NULL ,
+  PRIMARY KEY (iditemconfiguracao, idbaseconhecimento) ) ENGINE=InnoDB;
+      
+    alter table conhecimentoic
+       add constraint fk_ref_conhic_icc foreign key (iditemconfiguracao)
+          references itemconfiguracao (iditemconfiguracao);
+    alter table conhecimentoic
+       add constraint fk_ref_conhic_bc foreign key (idbaseconhecimento)
+          references baseconhecimento (idbaseconhecimento);
+
+
+CREATE  TABLE conhecimentoproblema (
+  idproblema INT(11) NOT NULL ,
+  idbaseconhecimento INT(11) NOT NULL ,
+  PRIMARY KEY (idproblema, idbaseconhecimento) ) ENGINE=InnoDB;
+    alter table conhecimentoproblema
+       add constraint fk_ref_conhpb_icc foreign key (idproblema)
+          references problema (idproblema);
+    alter table conhecimentoproblema
+       add constraint fk_ref_conhpb_bc foreign key (idbaseconhecimento)
+          references baseconhecimento (idbaseconhecimento);
+
+  
+  CREATE  TABLE conhecimentomudanca (
+  idrequisicaomudanca INT(11) NOT NULL ,
+  idbaseconhecimento INT(11) NOT NULL ,
+  PRIMARY KEY (idrequisicaomudanca, idbaseconhecimento) ) ENGINE=InnoDB;
+    alter table conhecimentomudanca
+       add constraint fk_ref_conhmd_icc foreign key (idrequisicaomudanca)
+          references requisicaomudanca (idrequisicaomudanca);
+    alter table conhecimentomudanca
+       add constraint fk_ref_conhmud_bc foreign key (idbaseconhecimento)
+          references baseconhecimento (idbaseconhecimento);  
+
+  CREATE  TABLE conhecimentosolicitacaoservico (
+  idsolicitacaoservico BIGINT(20) NOT NULL ,
+  idbaseconhecimento INT(11) NOT NULL ,
+  PRIMARY KEY (idsolicitacaoservico, idbaseconhecimento) ) ENGINE=InnoDB;
+    alter table conhecimentosolicitacaoservico
+       add constraint fk_ref_conhss_icc foreign key (idsolicitacaoservico)
+          references solicitacaoservico (idsolicitacaoservico);
+    alter table conhecimentosolicitacaoservico
+       add constraint fk_ref_conhss_bc foreign key (idbaseconhecimento)
+          references baseconhecimento (idbaseconhecimento); 
+          
+
+  
+

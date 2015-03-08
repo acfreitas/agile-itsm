@@ -1,0 +1,205 @@
+/* 
+ * 
+ */17/12 MySQL
+ */
+
+/==============================================================/
+/* Table: tipoitemconfiguracao                                  */
+/==============================================================/
+ALTER TABLE tipoitemconfiguracao ADD COLUMN categoria INT NULL ;
+
+
+/==============================================================/
+/* Table: itemconfiguracao                                  */
+/==============================================================/
+ALTER TABLE itemconfiguracao
+  ADD COLUMN familia varchar(250) DEFAULT NULL,
+  ADD COLUMN classe varchar(250) DEFAULT NULL,
+  ADD COLUMN localidade varchar(250) DEFAULT NULL,
+  ADD COLUMN status int(11) DEFAULT NULL,
+  ADD COLUMN criticidade int(11) DEFAULT NULL,
+  ADD COLUMN numeroSerie varchar(45) DEFAULT NULL,
+  ADD COLUMN idMudanca int(11) DEFAULT NULL,
+  ADD COLUMN idProblema int(11) DEFAULT NULL,
+  ADD COLUMN IdIncidente int(11) DEFAULT NULL,
+  ADD COLUMN idMidiaSoftware int(11) DEFAULT NULL,
+  ADD COLUMN impacto varchar(255) DEFAULT NULL,
+  ADD COLUMN urgencia varchar(255) DEFAULT NULL,
+  ADD COLUMN idbaseconhecimento int(11) DEFAULT NULL;
+
+alter table itemconfiguracao add constraint fk_idbaseconhecimento_itemconfiguracao foreign key (idbaseconhecimento)
+     references baseconhecimento (idbaseconhecimento) on delete restrict on update restrict;
+     
+
+ALTER TABLE itemconfiguracao 
+  ADD CONSTRAINT fk_grupoitemconfiguracao
+  FOREIGN KEY (idgrupoitemconfiguracao )
+  REFERENCES grupoitemconfiguracao (idGrupoItemConfiguracao )
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
+
+ALTER TABLE itemconfiguracao DROP FOREIGN KEY fk_grupoitemconfiguracao ;
+
+
+/==============================================================/
+/* Table: historicoitemconfiguracao                                  */
+/==============================================================/
+CREATE TABLE historicoic (
+  idhistoricoic int(11) NOT NULL,
+  iditemconfiguracao int(11) NOT NULL,
+  identificacao varchar(400) NOT NULL,
+  iditemconfiguracaopai int(11) DEFAULT NULL,
+  idtipoitemconfiguracao int(11) DEFAULT NULL,
+  idgrupoitemconfiguracao int(11) DEFAULT NULL,
+  idproprietario int(11) DEFAULT NULL,
+  versao varchar(250) DEFAULT NULL,
+  familia varchar(250) DEFAULT NULL,
+  idfamiliaitemconfiguracao int(11) DEFAULT NULL,
+  classe varchar(250) DEFAULT NULL,
+  idclasseitemconfiguracao int(11) DEFAULT NULL,
+  localidade varchar(250) DEFAULT NULL,
+  status int(11) DEFAULT NULL,
+  criticidade int(11) DEFAULT NULL,
+  numeroSerie varchar(45) DEFAULT NULL,
+  dataExpiracao date DEFAULT NULL,
+  idMudanca int(11) DEFAULT NULL,
+  idProblema int(11) DEFAULT NULL,
+  IdIncidente int(11) DEFAULT NULL,
+  idautoralteracao int(11) NOT NULL,
+  datahoraalteracao timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  baseline varchar(30) DEFAULT NULL,
+  restauracao int(11) DEFAULT NULL,
+  idMidiaSoftware int(11) DEFAULT NULL,
+  impacto varchar(255) DEFAULT NULL,
+  urgencia varchar(255) DEFAULT NULL,
+  historicoVersao float DEFAULT NULL,
+  PRIMARY KEY (idhistoricoic),
+  KEY fk_itemconfiguracao (iditemconfiguracao),
+  KEY fk_autoralteracao (idautoralteracao),
+  KEY fk_familiaitemconfiguracao (idfamiliaitemconfiguracao),
+  KEY fk_classeitemconfiguracao (idclasseitemconfiguracao)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+
+/==============================================================/
+/* Table: historicovalor                                  */
+/==============================================================/
+CREATE TABLE historicovalor (
+  idhistoricovalor int(11) NOT NULL,
+  idvalor int(11) NOT NULL,
+  iditemconfiguracao int(11) DEFAULT NULL,
+  idcaracteristica int(11) DEFAULT NULL,
+  valorstr varchar(4000) DEFAULT NULL,
+  valorlongo text,
+  valordecimal decimal(18,4) DEFAULT NULL,
+  valordate date DEFAULT NULL,
+  idbaseitemconfiguracao int(11) DEFAULT NULL,
+  datahoraalteracao timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  idautoralteracao int(11) NOT NULL,
+  baseline varchar(30) DEFAULT NULL,
+  idHistoricoIC int(11) DEFAULT NULL,
+  PRIMARY KEY (idhistoricovalor),
+  KEY fk_valor (idvalor)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+
+/==============================================================/
+/* Table: itemconfiguracao  solicitacao servico                                */
+/==============================================================/
+create table itemcfgsolicitacaoserv  (
+  iditemconfiguracao integer,
+  idsolicitacaoservico integer,
+  datainicio        date,
+  datafim           date
+) ENGINE=InnoDB
+
+alter table itemcfgsolicitacaoserv
+  add constraint fk_itemcfgs_reference_itemconf foreign key (iditemconfiguracao)
+     references itemconfiguracao (iditemconfiguracao);
+
+alter table itemcfgsolicitacaoserv
+  add constraint fk_itemcfgs_reference_solicita foreign key (idsolicitacaoservico)
+     references solicitacaoservico (idsolicitacaoservico);
+
+
+/==============================================================/
+/* Table: grupo itemconfiguracao                                  */
+/==============================================================/
+ALTER TABLE grupoitemconfiguracao ADD COLUMN idGrupoItemConfiguracaoPai INT(11) NULL  AFTER emailGrupoItemConfiguracao ;
+
+
+CREATE TABLE midiasoftware (
+  idmidiasoftware int(11) NOT NULL,
+  nome varchar(200) NOT NULL,
+  endfisico varchar(500) DEFAULT NULL,
+  versao varchar(20) DEFAULT NULL,
+  endlogico varchar(200) DEFAULT NULL,
+  licencas int(11) DEFAULT NULL,
+  idmidia int(11) DEFAULT NULL,
+  idtiposoftware int(11) DEFAULT NULL,
+  datainicio date DEFAULT NULL,
+  datafim date DEFAULT NULL,
+  PRIMARY KEY (idmidiasoftware),
+  KEY fk_midia (idmidia),
+  KEY fk_tiposoftware (idtiposoftware)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1$$
+
+CREATE TABLE midia (
+  idmidia int(11) NOT NULL,
+  nome varchar(200) DEFAULT NULL,
+  midiacol varchar(45) DEFAULT NULL,
+  PRIMARY KEY (idmidia)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+
+
+/==============================================================/
+/* Table: valorservicocontrato                                  */
+/==============================================================/
+
+create table valorservicocontrato
+(
+  idservicocontrato    int,
+  idservico            int,
+  valorServico         decimal(10,2),
+  datainicio           date,
+  datafim              date,
+  idvalorservicocontrato integer not null
+);
+
+alter table valorservicocontrato
+  add primary key (idvalorservicocontrato);
+
+alter table valorservicocontrato add constraint fk_reference_665 foreign key (idservicocontrato)
+     references citsmart.servicocontrato (idservicocontrato) on delete restrict on update restrict;
+     
+     
+/==============================================================/
+/* Table: imagem servico relacionado 'desenhoEstrategicoServico' */
+/==============================================================/
+CREATE TABLE imagemservicorelacionado (
+  idimagemservicorelacionado int(11) NOT NULL,
+  idservico int(11) DEFAULT NULL,
+  idservicorelacionado int(11) DEFAULT NULL,
+  posx int(11) DEFAULT NULL,
+  posy int(11) DEFAULT NULL,
+  descricao varchar(256) DEFAULT NULL,
+  caminhoimagem varchar(256) DEFAULT NULL,
+  idimagemservicorelacionadopai int(11) DEFAULT NULL,
+  PRIMARY KEY (idimagemservicorelacionado),
+  KEY INDEX_IMAGEMITEMSERVICO (idservico),
+  KEY INDEX_IMAGEMSERVICORELACIONADO (idservicorelacionado),
+  KEY INDEX_IMAGEMSERVICORELACIONADOPAI (idimagemservicorelacionadopai)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='imagemservicorelacionado'$$
+
+
+/==============================================================/
+/* Table: notificacaoServico */
+/==============================================================/
+CREATE  TABLE notificacaoservico (
+  idNotificacao INT NULL ,
+  idServico INT NULL)
+ENGINE = InnoDB;
+
+
+ALTER TABLE notificacao ADD COLUMN origemnotificacao CHAR NOT NULL, ADD COLUMN idContrato INT ;

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" language="java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioMudancaItemConfiguracao_subreport3" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="5df149db-d0e6-4156-b874-efb2bb3ca4f1">
+	<property name="ireport.zoom" value="2.3579476910000063"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="LabelTitulo" class="java.lang.String"/>
+	<parameter name="LabelID" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="idItemConfiguracao" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idItemConfiguracao]]></fieldDescription>
+	</field>
+	<field name="identificacao" class="java.lang.String">
+		<fieldDescription><![CDATA[identificacao]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.Integer">
+		<fieldDescription><![CDATA[status]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement uuid="d4f12f25-dde9-4cb8-af8f-c59488f57c3b" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="19" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement uuid="05d69102-3d57-4411-bfdb-ecfccb5cdaa9" positionType="Float" stretchType="RelativeToBandHeight" x="50" y="0" width="462" height="20"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{LabelTitulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="99294dd7-0820-46d2-9cb0-a7c4a7c81eaf" positionType="Float" stretchType="RelativeToBandHeight" x="5" y="0" width="45" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{LabelID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="91734f89-71c6-4cad-b158-e1322000d631" x="512" y="-1" width="43" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="992e6cec-7de0-4a98-9010-ced354d46bb7" positionType="Float" stretchType="RelativeToBandHeight" x="5" y="0" width="45" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idItemConfiguracao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8933adf4-02e4-4313-89fb-6d55de38d82e" positionType="Float" stretchType="RelativeToBandHeight" x="50" y="0" width="462" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{identificacao}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="8526d48a-5acd-4897-bc45-90a39c95f3af" x="512" y="0" width="43" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{status} == null || $F{status} == "1"  ? "Ativo" : "Inativo"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" language="java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioOrdemServico" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="0" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="80ad91c6-80ab-4797-8186-cc88451a6c14">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.652892561983471"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="NOME_EMPRESA" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="contratoNumero" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="nomeFantasia" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dataInicio" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="dataFim" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="CIDADE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DATA_HORA" class="java.sql.Timestamp" isForPrompting="false"/>
+	<parameter name="NOME_USUARIO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="descricaoFatura" class="java.lang.String"/>
+	<parameter name="totalQuantidadeDemanda" class="java.lang.Double"/>
+	<parameter name="totalUstPrevista" class="java.lang.Double"/>
+	<parameter name="totalUstRealizadas" class="java.lang.Double"/>
+	<parameter name="totalUstGlosadas" class="java.lang.Double"/>
+	<parameter name="totalUstTotal" class="java.lang.Double"/>
+	<parameter name="totalValorAutorizado" class="java.lang.Double"/>
+	<parameter name="totalUstPrevistoPerido" class="java.lang.Double"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Program Files\\jboss\\server\\default\\deploy\\CitCorpore.war\\tamplateJasper\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="observacao" class="java.lang.String"/>
+	<parameter name="percentualGlosa" class="java.lang.String"/>
+	<parameter name="valorGlosa" class="java.lang.String"/>
+	<parameter name="aprovacaoGestor" class="java.lang.String"/>
+	<parameter name="aprovacaoFiscal" class="java.lang.String"/>
+	<parameter name="APLICACAO" class="java.lang.String"/>
+	<parameter name="NOME_CLIENTE" class="java.lang.String"/>
+	<parameter name="ano" class="java.lang.String"/>
+	<parameter name="nomeMoeda" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[numero]]></fieldDescription>
+	</field>
+	<field name="quantidadeDemanda" class="java.lang.Double">
+		<fieldDescription><![CDATA[quantidadeDemanda]]></fieldDescription>
+	</field>
+	<field name="ustRealizada" class="java.lang.Double">
+		<fieldDescription><![CDATA[ustRealizada]]></fieldDescription>
+	</field>
+	<field name="totalglosasAtividades" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalglosasAtividades]]></fieldDescription>
+	</field>
+	<field name="ustTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[ustTotal]]></fieldDescription>
+	</field>
+	<field name="valorAutorizado" class="java.lang.Double">
+		<fieldDescription><![CDATA[valorAutorizado]]></fieldDescription>
+	</field>
+	<field name="servico" class="java.lang.String">
+		<fieldDescription><![CDATA[servico]]></fieldDescription>
+	</field>
+	<field name="listaFaturaApuracaoANS" class="java.lang.Object">
+		<fieldDescription><![CDATA[listaFaturaApuracaoANS]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="52" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="d303d7c7-412d-45bb-a493-33b35f1d3a98" key="textField-1" x="0" y="28" width="535" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NOME_CLIENTE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="222" splitType="Stretch">
+			<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue() == 1)]]></printWhenExpression>
+			<frame>
+				<reportElement uuid="6c8043e8-fcb2-4455-8a41-7ff85eb5ca2a" key="frame-1" positionType="Float" stretchType="RelativeToTallestObject" mode="Opaque" x="0" y="7" width="535" height="81" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textField>
+					<reportElement uuid="9b2260aa-f930-4c2c-860d-81bb60013741" key="staticText-60" positionType="Float" x="29" y="3" width="207" height="16"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.relatorioMensalServicos}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="c224cb65-33a1-4765-89db-94f15b9f4f1a" key="staticText-61" positionType="Float" x="15" y="31" width="61" height="15"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.contrato}+" "+$R{citcorporeRelatorio.comum.n}+":"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="636b8f4e-813b-4862-b1be-6b2f50273ed8" key="textField-37" positionType="Float" x="76" y="31" width="188" height="15"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{contratoNumero}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="73461ed3-8e18-487a-9b4f-a8142f103f57" key="staticText-60" positionType="Float" x="34" y="15" width="207" height="16"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.resultadosGlobais}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement uuid="0b8b85bb-3b20-4555-a81e-d2f91b94d028" x="388" y="59" width="86" height="12"/>
+					<textElement>
+						<font fontName="SansSerif" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{dataFim}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="636b8f4e-813b-4862-b1be-6b2f50273ed8" key="textField-37" positionType="Float" x="76" y="46" width="66" height="15"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{ano}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="c224cb65-33a1-4765-89db-94f15b9f4f1a" key="staticText-61" positionType="Float" x="15" y="46" width="61" height="15"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.ano}+":"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement uuid="1f260008-c001-460e-b803-e7bbd8d355a4" key="line-1" positionType="Float" stretchType="RelativeToTallestObject" x="265" y="7" width="1" height="81" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement uuid="06e6587e-03b1-40d8-a486-86cf4debd19a" key="staticText-6" positionType="Float" x="341" y="50" width="47" height="12"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.inicio}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="5a178ca3-d9cb-49b9-9f63-4544e9868693" key="textField-38" positionType="Float" x="0" y="65" width="264" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomeFantasia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="8471e932-bda0-457a-be33-d339ad25244a" key="textField-41" positionType="Float" x="389" y="50" width="85" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataInicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8c88001a-cdba-433a-9169-975d2c42f6f6" key="staticText-4" positionType="Float" x="341" y="10" width="116" height="16"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.periodoValidacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8feac845-34cc-444e-9702-e21197a7fbc0" key="staticText-6" positionType="Float" x="341" y="66" width="47" height="12"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.final}+":"]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="4eb77c64-201c-40ed-8581-6654bf3a2add" positionType="Float" x="221" y="100" width="152" height="16"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantidade}+" ("+$P{nomeMoeda}+")"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="411788ad-bb66-465a-a8f1-5cbadcb8e5a2" positionType="Float" x="373" y="100" width="162" height="16"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.valorFinanceiro}+" R\\$"]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="63dcb624-d407-4751-a761-eff2614b2844" positionType="Float" x="221" y="116" width="152" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstPrevista}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="88a9d0c7-dc11-4435-b45b-90d5be0e3f83" positionType="Float" x="373" y="116" width="162" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstPrevistoPerido}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="6f69df85-da14-47d5-918f-5c576c9ceed1" positionType="Float" x="221" y="132" width="152" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstTotal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern=" #,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="e3a6a80b-8fc8-4955-b573-57086cb2724a" positionType="Float" x="373" y="132" width="162" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalValorAutorizado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="26520d22-03de-40a1-8af3-2b59e1a50ba4" key="" positionType="Float" mode="Transparent" x="1" y="100" width="220" height="16"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.historico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8d8bcbc8-8779-49b1-b231-525c02556d8b" key="" positionType="Float" mode="Transparent" x="1" y="116" width="220" height="16"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="none">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.totalPrevistoPeriodo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9d575759-eb9f-4109-9da1-275c151e3d71" key="" positionType="Float" mode="Transparent" x="1" y="132" width="220" height="16"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="none">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.totalAprovadoPeriodo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a9c0e025-820c-459c-927f-a67951d1e047" key="staticText-58" positionType="Float" x="0" y="169" width="313" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.listaOrdensServicosAtestadasPeriodo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56ec457e-98a0-4995-b3aa-0e3604184134" key="staticText-58" positionType="Float" x="0" y="185" width="88" height="37"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.os}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="92557a49-005a-4203-a254-27a87545e1bd" key="staticText-58" positionType="Float" x="88" y="185" width="54" height="37"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.tarefa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="201d4222-4fe3-4379-b98f-623cdb7b136c" key="staticText-58" positionType="Float" x="142" y="185" width="60" height="37"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantidadeDemanda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f23f0e9c-764f-4475-bbaa-3bd64bb6dbf2" key="staticText-58" positionType="Float" x="202" y="185" width="75" height="37"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.valorPrevisto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ded37204-ec08-4393-a3d7-dbbbbb2829c4" key="staticText-58" positionType="Float" x="277" y="185" width="72" height="37"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.valorRealizado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f9d9d34c-a01d-41a6-92dd-5aae78a62d12" key="staticText-58" positionType="Float" x="349" y="185" width="56" height="37"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.valorGlosado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f7dceb20-5f21-4892-871d-11bdde1908d3" key="staticText-58" positionType="Float" x="405" y="185" width="53" height="37"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.valorTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="62ecbe3c-ead7-4537-be98-e2bb3e52d497" key="staticText-58" positionType="Float" x="458" y="185" width="76" height="37"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.valorAutorizado}+" R\\$"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="77189484-5979-43ba-89f4-9463300d28c1" positionType="Float" x="0" y="0" width="88" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="50ed53fa-85b0-44d4-a7ad-cb844ec2462c" positionType="Float" x="88" y="0" width="54" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servico}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="e1f3cbc2-46f8-4ec0-b614-11fcc2f06e09" positionType="Float" x="142" y="0" width="60" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantidadeDemanda}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="f883d478-a720-4522-935f-8626baf8e0eb" positionType="Float" x="202" y="0" width="75" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantidadeDemanda}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern=" #,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="fadcf0d4-353d-40c1-8c94-e823d7abc3e7" positionType="Float" x="277" y="0" width="72" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ustRealizada}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern=" #,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="54ef9290-bb58-40b4-ac3f-df1d5e09e9f7" positionType="Float" x="349" y="0" width="56" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalglosasAtividades}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern=" #,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="aacf7145-5a41-4f05-9727-4aeb9055bc66" positionType="Float" x="458" y="0" width="76" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorAutorizado}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern=" #,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="1b1369b2-02a6-4614-a163-96c45856cf20" positionType="Float" x="405" y="0" width="53" height="16"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ustTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Prevent"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement uuid="2842391e-65e4-4929-b7f8-95c4b2e42af8" x="433" y="6" width="100" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.pagina}+" "+$V{PAGE_NUMBER}+"   /    "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="0aacaa84-f2a3-41a7-9e72-572234f5aceb" x="507" y="6" width="36" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="291" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b245adf2-36c4-4329-af02-929346d2a8d2" key="staticText-58" x="0" y="0" width="142" height="19"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.totalOS}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="a1cb9d2e-5b07-4382-b994-e8d01ed9d2b2" x="142" y="0" width="60" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalQuantidadeDemanda}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="4836dbaf-9744-4e2a-adc7-f94fe5fbf3e9" x="202" y="0" width="75" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstPrevista}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="d92a5081-d1cd-4a4c-9d5b-fc936d3cc955" x="277" y="0" width="72" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstRealizadas}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="e0577def-6a69-4fe2-b959-34257d3e90d2" x="349" y="0" width="56" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstGlosadas}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="6fe81caa-26dc-4c9a-923a-c97d59f5023c" x="405" y="0" width="53" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="16e4bb92-acb7-475f-9c8b-6d6043d61fe9" x="458" y="0" width="76" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalValorAutorizado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c192b4dd-d78b-46ec-a178-4ff54e4eadfe" key="staticText-58" x="0" y="19" width="277" height="19"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.qualidadeBaseCalculo}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="d92a5081-d1cd-4a4c-9d5b-fc936d3cc955" x="277" y="19" width="72" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstRealizadas}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="16e4bb92-acb7-475f-9c8b-6d6043d61fe9" x="458" y="19" width="76" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalValorAutorizado}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="e0577def-6a69-4fe2-b959-34257d3e90d2" x="349" y="19" width="56" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstGlosadas}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="6fe81caa-26dc-4c9a-923a-c97d59f5023c" x="405" y="19" width="53" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="6fe81caa-26dc-4c9a-923a-c97d59f5023c" x="405" y="38" width="53" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="d92a5081-d1cd-4a4c-9d5b-fc936d3cc955" x="277" y="38" width="72" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstRealizadas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8276b03d-a843-4cbc-8bf3-e754986cee7c" key="staticText-58" x="0" y="38" width="277" height="19"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.totalAtestado}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="16e4bb92-acb7-475f-9c8b-6d6043d61fe9" x="458" y="38" width="76" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalValorAutorizado}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement uuid="e0577def-6a69-4fe2-b959-34257d3e90d2" x="349" y="38" width="56" height="19"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalUstGlosadas}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="e6109ae1-4bfd-4534-8da6-eb462f30eab2" x="0" y="84" width="532" height="10"/>
+				<subreportParameter name="REPORT_LOCALE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_LOCALE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="percentualGlosa">
+					<subreportParameterExpression><![CDATA[$P{percentualGlosa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="observacao">
+					<subreportParameterExpression><![CDATA[$P{observacao}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="valorGlosa">
+					<subreportParameterExpression><![CDATA[$P{valorGlosa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$F{listaFaturaApuracaoANS}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "RelatorioFaturaContrato_subrelatorioFatura.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement uuid="bc523eb2-cf2c-4904-9a63-588091d93131" key="staticText-58" x="0" y="68" width="313" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.analiseDesempenhoQualidadeContratoAnexoVI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="afc2d22f-e153-4ed5-ae69-82c878afbcd3" key="staticText-58" positionType="FixRelativeToBottom" x="0" y="107" width="129" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.aprovacaoFiscal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="51dfd4d6-cead-4ddb-9ec7-5697073cc4bc" key="staticText-58" positionType="FixRelativeToBottom" x="0" y="124" width="129" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.aoGestorContrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3c61d59f-2218-4c83-b0cd-0aa8cb1cb355" positionType="FixRelativeToBottom" x="176" y="161" width="199" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.fiscalContratoCarimboData}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement uuid="cbfbb00c-ab7b-4aa7-ada7-a75230d1eaf3" positionType="FixRelativeToBottom" x="0" y="220" width="535" height="71"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement uuid="e4169941-a6ac-4a8d-a30c-a6f29e289c69" positionType="FixRelativeToBottom" x="176" y="41" width="197" height="29"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.gestorContratoCarimboData}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="8fb4b1df-a3ba-4427-93b8-7ae90cced002" positionType="FixRelativeToBottom" x="0" y="16" width="535" height="20"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+					<textElement textAlignment="Justified">
+						<font fontName="SansSerif" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{aprovacaoGestor}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement uuid="36a1527c-0f15-44d3-8888-3cd3d0c8e5e8" key="staticText-58" positionType="FixRelativeToBottom" x="0" y="204" width="129" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.atestadoGestor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5c382114-d649-4abf-948a-382bb062d4ec" key="staticText-58" positionType="FixRelativeToBottom" x="0" y="220" width="129" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.aoProposto}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement uuid="cbfbb00c-ab7b-4aa7-ada7-a75230d1eaf3" positionType="FixRelativeToBottom" x="-1" y="124" width="535" height="71"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="8fb4b1df-a3ba-4427-93b8-7ae90cced002" positionType="FixRelativeToBottom" x="0" y="16" width="535" height="20"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+					<textElement textAlignment="Justified">
+						<font fontName="SansSerif" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{aprovacaoFiscal}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

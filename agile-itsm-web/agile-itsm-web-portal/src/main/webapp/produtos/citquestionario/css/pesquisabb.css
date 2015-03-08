@@ -1,0 +1,44 @@
+
+@import url("./classes.css");
+@import url("./tags.css");
+@import url("./ids.css");
+
+@media screen
+{
+  	div#subTitulo
+	{
+	    FONT-WEIGHT: bold;
+	    FONT-SIZE: 10px;
+	    TEXT-TRANSFORM: uppercase;
+	    COLOR: white;
+	    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+	    BACKGROUND-COLOR: darkcyan;
+	    TEXT-ALIGN: center;
+	    width: 100%;
+	    height: 22px;
+	    padding-top: 5px;
+	    margin: 5px 0 0 0;
+	}
+
+	table#tabFormulario
+	{
+		padding: 5px 0 0 0;
+	}
+
+	table#tabResultado
+	{
+		padding: 0px 0 0 0;
+		width: 100%;
+	}
+
+	.tituloPesquisa
+{
+    font-weight: bold;
+    font-size: 12px;
+    color: #006666;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+
+}
+}
+

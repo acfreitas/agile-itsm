@@ -1,0 +1,579 @@
+/*  ============ MySQL  ============*/
+
+/* Adicionando os campos: tipopessoa, idEndereco, telefone e fax */
+alter table fornecedor
+    add column tipopessoa char(1);
+
+alter table fornecedor
+    add column idendereco int(11);
+
+alter table fornecedor
+    add column telefone varchar(20);
+
+alter table fornecedor
+    add column fax varchar(20);
+
+alter table fornecedor
+    add column cpfcnpj varchar(14) after cnpj;
+
+alter table fornecedor
+    add column nome varchar(70) after nomefantasia;
+
+/* Associando as tabelas Fornecedor e Endereco */
+alter table fornecedor
+    add constraint fk_endereco
+        foreign key(idendereco) references endereco(idendereco);
+		
+<<thays.araujo>>
+/*  ============ MySQL  ============*/
+/* criado campo aceitaentregaproduto na tabela  unidade*/
+ALTER TABLE unidade ADD COLUMN aceitaentregaproduto CHAR(1) NULL  AFTER email ;
+
+/* Criação da tabela  endereco*/
+CREATE  TABLE endereco (
+
+  idendereco INT(11) NOT NULL ,
+
+  logradouro VARCHAR(200) NULL ,
+
+   numero  VARCHAR(200) NULL ,
+
+   complemento  VARCHAR(200) NULL ,
+
+   bairro  VARCHAR(200) NULL ,
+
+   idcidade  INT(11) NULL ,
+
+   idpais  INT(11) NULL ,
+
+   cep  VARCHAR(8) NULL ,
+
+  PRIMARY KEY ( idendereco ) )
+
+ENGINE = InnoDB;
+
+/* Associando a  tabela unidade com a tabela  endereco*/
+ALTER TABLE unidade  ADD COLUMN  idendereco  INT NULL  AFTER  aceitaentregaproduto  , 
+
+  ADD CONSTRAINT  idendereco 
+
+  FOREIGN KEY ( idendereco  )
+
+  REFERENCES  endereco  ( idendereco  )
+
+  ON DELETE NO ACTION
+
+  ON UPDATE NO ACTION
+
+, ADD INDEX  idendereco  ( idendereco  ASC) ;
+
+/* Criação da pais*/		
+CREATE  TABLE   pais  (
+
+   idpais  INT NOT NULL ,
+
+   nomepais  VARCHAR(245) NULL ,
+
+  PRIMARY KEY ( idpais ) 
+  )
+  ENGINE = InnoDB;
+  
+  /* Associação da tabela ufs com a tabela  pais*/	
+  ALTER TABLE   ufs  ADD COLUMN   idpais  INT(11) NULL DEFAULT NULL  , 
+
+  ADD CONSTRAINT  idpais 
+
+  FOREIGN KEY ( idpais  )
+
+  REFERENCES   pais  ( idpais  )
+
+  ON DELETE NO ACTION
+
+  ON UPDATE NO ACTION
+
+, ADD INDEX  idpais  ( idpais  ASC) ;
+
+*/Acresentado campo iduf na tabela endereco*/
+ALTER TABLE  endereco  ADD COLUMN  iduf  INT(11) NULL  AFTER  cep  ;
+
+/* thiago.monteiro */
+/* =============== MYSQL =============== */
+
+/* TABELA ALCADA */
+create table alcada(
+    idalcada int(11) not null,
+    nomealcada varchar(70) not null,
+    situacao char(1) not null,
+    tipoalcada varchar(20)
+) engine=InnoDB;
+
+/* CHAVE PRIMARIA IDALCADA */
+alter table alcada
+    add primary key(idalcada);
+
+/* TABELA CENTRORESULTADO */
+create table centroresultado(
+    idcentroresultado int(11) not null,
+    codigocentroresultado varchar(25),
+    nomecentroresultado varchar(200) not null,
+    idcentroresultadopai int(11),
+    permiterequisicaoproduto char(1),
+    situacao char(1)
+) engine=InnoDB;
+
+
+/* CHAVE PRIMARIA IDCENTRORESULTADO */
+alter table centroresultado
+    add primary key(idcentroresultado);
+
+/* CHAVE ESTRANGEIRA IDCENTRORESULTADOPAI */ 
+alter table centroresultado
+    add constraint fk_centrores_centrores
+        foreign key(idcentroresultadopai) references centroresultado(idcentroresultado);
+
+/* TABELA ALCADACENTRORESULTADO */
+create table alcadacentroresultado(
+    idalcadacentrocusto int(11) not null,
+    idcentroresultado int(11) not null,
+    idempregado int(11),
+    idalcada int(11),
+    datainicio date not null,
+    datafim date
+) engine=InnoDB;
+
+
+/* CHAVE PRIMARIA ALCADACENTRORESULTADO */
+alter table alcadacentroresultado
+    add primary key(idalcadacentrocusto, idcentroresultado);
+
+/* CHAVE ESTRANGEIRA IDCENTRORESULTADO */
+alter table alcadacentroresultado
+    add constraint fk_alcadacentrores_centrores
+        foreign key(idcentroresultado) references centroresultado(idcentroresultado);
+
+/* CHAVE ESTRANGEIRA IDEMPREGADO */
+alter table alcadacentroresultado
+    add constraint fk_alcadacentrores_emp
+        foreign key(idempregado) references empregados(idempregado);
+
+/* CHAVE ESTRANGEIRA IDALCADA */
+alter table alcadacentroresultado
+    add constraint fk_alccentrores_alc
+        foreign key(idalcada) references alcada(idalcada);
+
+/* thiago.monteiro */
+        
+/* CORRECAO DO NOME DA CHAVE PRIMARIA DA TABELA DE ALCADACENTRORESULTADO */
+alter table alcadacentroresultado
+    change idalcadacentrocusto idalcadacentroresultado int(11) not null;
+        
+<<thays.araujo>>
+Mysql
+CREATE  TABLE  justificativaparecer  (
+
+   idjustificativa  INT NOT NULL ,
+
+   descricaojustificativa  VARCHAR(100) NULL ,
+
+   situacao  CHAR(1) NULL ,
+
+  PRIMARY KEY ( idjustificativa ) ) 
+ENGINE = InnoDB ;
+
+/*==============================================================*/
+/* Table: parecer                                               */
+/*==============================================================*/
+create table parecer
+(
+   idparecer            int not null,
+   idjustificativa      int,
+   idalcada             int,
+   idresponsavel        int not null,
+   datahoraparecer      timestamp not null,
+   complementojustificativa text,
+   aprovado             char(1) not null
+)
+ENGINE = InnoDB;
+
+alter table parecer
+   add primary key (idparecer);
+
+alter table parecer add constraint fk_reference_35 foreign key (idjustificativa)
+      references justificativaparecer (idjustificativa) on delete restrict on update restrict;
+
+alter table parecer add constraint fk_reference_650 foreign key (idalcada)
+      references alcada (idalcada) on delete restrict on update restrict;
+
+/* ADICIONANDO AS COLUNAS: NOMECONTATO, INSCRICAOESTADUAL E INSCRICAOMUNICIPAL NA TABELA DE FORNECEDOR */
+
+alter table fornecedor
+    add column nomecontato varchar(100);
+
+alter table fornecedor
+    add column inscricaoestadual varchar(25);
+
+alter table fornecedor
+    add column inscricaomunicipal varchar(25);
+    
+
+/* =============== MYSQL =============== */
+
+drop table if exists limitealcada;
+
+/*==============================================================*/
+/* Table: limitealcada                                          */
+/*==============================================================*/
+create table limitealcada
+(
+   idlimitealcada       int not null,
+   idalcada             int not null,
+   idgrupo              int not null,
+   tipolimite           char(1) comment 'F - Por faixa de valores
+            Q - Qualquer valor
+            ',
+   qualificacaofornecedor char not null comment 'H - Homologado
+            N - Não homologado
+            Q - Qualquer',
+   abrangenciacentrocusto varchar(20) not null comment 'T - Todos
+            R - Somente o responsável',
+   limitevaloritem      numeric(11,2),
+   limitevalormensal    numeric(11,2),
+   situacao             char not null
+);
+
+alter table limitealcada
+   add primary key (idlimitealcada);
+
+alter table limitealcada add constraint fk_reference_647 foreign key (idalcada)
+      references alcada (idalcada) on delete restrict on update restrict;
+
+alter table limitealcada add constraint fk_reference_649 foreign key (idgrupo)
+      references grupo (idgrupo) on delete restrict on update restrict;
+      
+      
+
+/*==============================================================*/
+/* Table: produto                                               */
+/*==============================================================*/
+create table produto
+(
+   idproduto            int not null,
+   idtipoproduto        int not null,
+   idmarca              int,
+   modelo               varchar(25),
+   precomercado         numeric(8,2),
+   detalhes             text,
+   codigoproduto        varchar(25),
+   situacao             char(1) not null,
+   complemento          varchar(100)
+);
+
+alter table produto
+   add primary key (idproduto);
+
+alter table produto add constraint fk_reference_671 foreign key (idtipoproduto)
+      references tipoproduto (idtipoproduto) on delete restrict on update restrict;
+
+alter table produto add constraint fk_reference_672 foreign key (idmarca)
+      references marca (idmarca) on delete restrict on update restrict;
+
+
+
+
+/* ============ ORACLE ============*/
+
+/* Adicionando os campos: tipopessoa, idEndereco, telefone e fax */
+
+ALTER TABLE FORNECEDOR
+    ADD (TIPOPESSOA CHAR(1) );
+
+ALTER TABLE FORNECEDOR
+    ADD (IDENDERECO INT);
+
+ALTER TABLE FORNECEDOR
+    ADD (TELEFONE VARCHAR2(20) );
+
+ALTER TABLE FORNECEDOR
+    ADD (FAX VARCHAR2(20) );
+
+ALTER TABLE FORNECEDOR
+    ADD (CPFCNPJ VARCHAR2(14) );
+
+ALTER TABLE FORNECEDOR
+    ADD (NOME VARCHAR2(70) );
+
+/* Associando as tabelas Fornecedor e Endereco */
+ALTER TABLE FORNECEDOR
+    ADD CONSTRAINT FK_ENDERECO
+        FOREIGN KEY(IDENDERECO) REFERENCES ENDERECO(IDENDERECO);
+        
+        
+        
+ // Cleon
+ 
+CREATE TABLE marca(
+idmarca int primary key,
+idFabricante int,
+nomeMarca varchar(100),
+situacao char(1));
+
+ALTER TABLE marca ADD  CONSTRAINT fk_idfornecedor
+FOREIGN KEY (idFabricante) 
+REFERENCES fornecedor (idfornecedor);
+
+CREATE TABLE unidademedida(
+idUnidadeMedida INT PRIMARY KEY,
+nomeUnidadeMedida VARCHAR(100),
+siglaUnidadeMedida VARCHAR(10),
+situacao CHAR(1));
+
+/* ============ ORACLE ============*/
+
+
+CREATE TABLE MARCA(
+IDMARCA INT PRIMARY KEY,
+IDFABRICANTE INT,
+NOMEMARCA VARCHAR(100),
+SITUACAO CHAR(1));
+
+ALTER TABLE MARCA ADD  CONSTRAINT FK_IDFORNECEDOR
+FOREIGN KEY (IDFABRICANTE) 
+REFERENCES FORNECEDOR (IDFORNECEDOR);
+
+CREATE TABLE UNIDADEMEDIDA(
+IDUNIDADEMEDIDA INT PRIMARY KEY,
+NOMEUNIDADEMEDIDA VARCHAR(100),
+SIGLAUNIDADEMEDIDA VARCHAR(10),
+SITUACAO CHAR(1));
+
+<<thays.araujo>>
+/* ============ ORACLE ============*/
+/* criado campo aceitaentregaproduto na tabela  unidade*/
+ALTER TABLE UNIDADE ADD ( ACEITAENTREGAPRODUTO CHAR(1) NULL  ) ;
+
+/* Criação da tabela  endereco*/
+CREATE TABLE ENDERECO(
+IDENDERECO INT NOT NULL,
+LOGRADOURO VARCHAR2(200) NULL,
+NUMERO VARCHAR2(200) NULL,
+COMPLEMENTO VARCHAR2(200) NULL,
+BAIRRO VARCHAR(200) NULL,
+IDCIDADE INT NULL,
+IDPAIS INT NULL,
+CEP VARCHAR2(8) NULL
+);
+/* Associando a  tabela fornecedor com a tabela  endereco*/
+ALTER TABLE FORNECEDOR
+ADD PRIMARY KEY (IDENDERECO);
+
+/* Associando a  tabela unidade com a tabela  endereco*/
+ALTER TABLE UNIDADE  ADD (  IDENDERECO  INT NULL);
+
+ALTER TABLE UNIDADE  
+
+  ADD CONSTRAINT  IDENDERECO 
+
+  FOREIGN KEY ( IDENDERECO  )
+
+  REFERENCES  ENDERECO  ( IDENDERECO  );
+  
+  
+/* Criação da  tabela pais */
+ CREATE  TABLE   PAIS  (
+
+   IDPAIS  INT NOT NULL ,
+
+   NOME  VARCHAR(245) NULL ,
+
+  PRIMARY KEY ( IDPAIS ) 
+  );
+  
+
+/* Associando a  tabela ufs com a tabela  pais*/  
+  ALTER TABLE   UFS  ADD (   IDPAIS  INT NULL );
+
+  ALTER TABLE   UFS     
+
+  ADD CONSTRAINT  IDPAIS 
+
+  FOREIGN KEY ( IDPAIS  )
+
+  REFERENCES   PAIS  ( IDPAIS  ) ;
+  
+
+*/Acresentado campo iduf na tabela endereco*/
+ALTER TABLE  ENDERECO  ADD (  IDUF  INT NULL);  
+
+
+/* thiago.monteiro */
+/* =============== ORACLE =============== */
+
+/* TABELA ALCADA */
+CREATE TABLE ALCADA(
+    IDALCADA INT NOT NULL,
+    NOMEALCADA VARCHAR2(70) NOT NULL,
+    SITUACAO CHAR(1) NOT NULL,
+    TIPOALCADA VARCHAR(20)
+);
+
+/* CHAVE PRIMARIA IDALCADA */
+ALTER TABLE ALCADA
+    ADD PRIMARY KEY(IDALCADA);
+
+/* TABELA CENTRORESULTADO */
+CREATE TABLE CENTRORESULTADO(
+    IDCENTRORESULTADO INT NOT NULL,
+    CODIGOCENTRORESULTADO VARCHAR2(25),
+    NOMECENTRORESULTADO VARCHAR2(200) NOT NULL,
+    IDCENTRORESULTADOPAI INT,
+    PERMITEREQUISICAOPRODUTO CHAR(1),
+    SITUACAO CHAR(1)
+);
+
+/* CHAVE PRIMARIA IDCENTRORESULTADO */
+ALTER TABLE CENTRORESULTADO
+    ADD PRIMARY KEY (IDCENTRORESULTADO);
+
+/* CHAVE ESTRANGEIRA IDCENTRORESULTADOPAI */ 
+ALTER TABLE CENTRORESULTADO
+    ADD CONSTRAINT FK_CENTRORES_CENTRORES
+        FOREIGN KEY(IDCENTRORESULTADOPAI) REFERENCES CENTRORESULTADO(IDCENTRORESULTADO);
+
+/* TABELA ALCADACENTRORESULTADO */
+CREATE TABLE ALCADACENTRORESULTADO(
+    IDALCADACENTROCUSTO INT NOT NULL,
+    IDCENTRORESULTADO INT NOT NULL,
+    IDEMPREGADO INT,
+    IDALCADA INT,
+    DATAINICIO DATE NOT NULL,
+    DATAFIM DATE
+);
+
+/* CHAVE PRIMARIA ALCADACENTRORESULTADO */
+ALTER TABLE ALCADACENTRORESULTADO
+    ADD PRIMARY KEY(IDALCADACENTROCUSTO, IDCENTRORESULTADO);
+
+/* CHAVE ESTRANGEIRA IDCENTRORESULTADO */
+ALTER TABLE ALCADACENTRORESULTADO
+    ADD CONSTRAINT FK_ALCADACENTRORES_CENTRORES
+        FOREIGN KEY(IDCENTRORESULTADO) REFERENCES CENTRORESULTADO(IDCENTRORESULTADO);
+
+/* CHAVE ESTRANGEIRA IDEMPREGADO */
+ALTER TABLE ALCADACENTRORESULTADO
+    ADD CONSTRAINT FK_ALCADACENTRORES_EMP
+        FOREIGN KEY(IDEMPREGADO) REFERENCES EMPREGADOS(IDEMPREGADO);
+
+/* CHAVE ESTRANGEIRA IDALCADA */
+ALTER TABLE ALCADACENTRORESULTADO
+   ADD CONSTRAINT FK_ALCCENTRORES_ALC
+       FOREIGN KEY(IDALCADA) REFERENCES ALCADA(IDALCADA);
+
+ /* thiago.monteiro */
+        
+/* CORRECAO DO NOME DA CHAVE PRIMARIA DA TABELA DE ALCADACENTRORESULTADO */
+
+ALTER TABLE ALCADACENTRORESULTADO
+    RENAME COLUMN IDALCADACENTROCUSTO TO IDALCADACENTRORESULTADO;
+
+/* ADICIONANDO AS COLUNAS: NOMECONTATO, INSCRICAOESTADUAL E INSCRICAOMUNICIPAL NA TABELA DE FORNECEDOR */
+
+ALTER TABLE FORNECEDOR
+    ADD NOMECONTATO VARCHAR2(100);   
+
+ALTER TABLE FORNECEDOR
+    ADD INSCRICAOESTADUAL VARCHAR2(25);
+
+ALTER TABLE FORNECEDOR
+    ADD COLUMN INSCRICAOMUNICIPAL VARCHAR(25);
+       FOREIGN KEY(IDALCADA) REFERENCES ALCADA(IDALCADA);
+
+<<thays.araujo>>
+/* =============== ORACLE =============== */
+
+CREATE  TABLE JUSTIFICATIVAPARECER (
+
+  IDJUSTIFICATIVA INT NOT NULL ,
+
+  DESCRICAOJUSTIFICATIVA VARCHAR(100) NULL ,
+
+  SITUACAO CHAR(1) NULL ,
+
+  PRIMARY KEY (IDJUSTIFICATIVA) );	
+
+
+CREATE TABLE PARECER
+(
+   IDPARECER            INT NOT NULL,
+   IDJUSTIFICATIVA      INT,
+   IDALCADA             INT,
+   IDRESPONSAVEL        INT NOT NULL,
+   DATAHORAPARECER      TIMESTAMP NOT NULL,
+   COMPLEMENTOJUSTIFICATIVA TEXT,
+   APROVADO             CHAR(1) NOT NULL
+);
+
+ALTER TABLE PARECER
+   ADD PRIMARY KEY (IDPARECER);
+
+ALTER TABLE PARECER ADD CONSTRAINT FK_REFERENCE_35 FOREIGN KEY (IDJUSTIFICATIVA)
+      REFERENCES JUSTIFICATIVAPARECER (IDJUSTIFICATIVA) ;
+
+ALTER TABLE PARECER ADD CONSTRAINT FK_REFERENCE_650 FOREIGN KEY (IDALCADA)
+      REFERENCES ALCADA (IDALCADA) ;  
+
+
+/* =============== ORACLE =============== */
+
+CREATE TABLE LIMITEALCADA
+(
+   IDLIMITEALCADA       INT NOT NULL,
+   IDALCADA             INT NOT NULL,
+   IDGRUPO              INT NOT NULL,
+   TIPOLIMITE           CHAR(1) COMMENT 'F - POR FAIXA DE VALORES
+            Q - QUALQUER VALOR
+            ',
+   QUALIFICACAOFORNECEDOR CHAR NOT NULL COMMENT 'H - HOMOLOGADO
+            N - NÃO HOMOLOGADO
+            Q - QUALQUER',
+   ABRANGENCIACENTROCUSTO VARCHAR(20) NOT NULL COMMENT 'T - TODOS
+            R - SOMENTE O RESPONSÁVEL',
+   LIMITEVALORITEM      NUMERIC(8,2),
+   LIMITEVALORMENSAL    NUMERIC(8,2),
+   SITUACAO             CHAR NOT NULL
+);
+
+ALTER TABLE LIMITEALCADA
+   ADD PRIMARY KEY (IDLIMITEALCADA);
+
+ALTER TABLE LIMITEALCADA ADD CONSTRAINT FK_REFERENCE_647 FOREIGN KEY (IDALCADA)
+      REFERENCES ALCADA (IDALCADA) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE LIMITEALCADA ADD CONSTRAINT FK_REFERENCE_649 FOREIGN KEY (IDGRUPO)
+      REFERENCES GRUPO (IDGRUPO) ON DELETE RESTRICT ON UPDATE RESTRICT;
+      
+ 
+ 
+/*==============================================================*/
+/* TABLE: PRODUTO                                               */
+/*==============================================================*/
+CREATE TABLE PRODUTO
+(
+   IDPRODUTO            INT NOT NULL,
+   IDTIPOPRODUTO        INT NOT NULL,
+   IDMARCA              INT,
+   MODELO               VARCHAR(25),
+   PRECOMERCADO         NUMERIC(8,2),
+   DETALHES             CLOB,
+   CODIGOPRODUTO        VARCHAR(25),
+   SITUACAO             CHAR(1) NOT NULL,
+   COMPLEMENTO          VARCHAR(100)
+);
+
+ALTER TABLE PRODUTO
+   ADD PRIMARY KEY (IDPRODUTO);
+
+ALTER TABLE PRODUTO ADD CONSTRAINT FK_REFERENCE_671 FOREIGN KEY (IDTIPOPRODUTO)
+      REFERENCES TIPOPRODUTO (IDTIPOPRODUTO);
+
+ALTER TABLE PRODUTO ADD CONSTRAINT FK_REFERENCE_672 FOREIGN KEY (IDMARCA)
+      REFERENCES MARCA (IDMARCA);

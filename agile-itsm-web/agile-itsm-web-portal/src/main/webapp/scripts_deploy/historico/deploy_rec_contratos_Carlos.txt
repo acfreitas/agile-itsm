@@ -1,0 +1,674 @@
+/* 					 SCRIPT MYSQL CARLOS                        */
+
+/*---------------------------SCRIPT CRIAÇÃO NOVAS TABELAS--------------------*/
+
+drop table if exists endereco;
+
+/*==============================================================*/
+/* Table: endereco                                              */
+/*==============================================================*/
+create table endereco
+(
+   idendereco           int not null,
+   logradouro           varchar(200) not null,
+   numero               varchar(20),
+   complemento          varchar(200),
+   bairro               varchar(200),
+   idcidade             int,
+   idpais               int,
+   cep                  varchar(8),
+   iduf                 int
+);
+
+alter table endereco
+   add primary key (idendereco);
+
+drop table if exists unidademedida;
+
+/*==============================================================*/
+/* Table: unidademedida                                         */
+/*==============================================================*/
+create table unidademedida
+(
+   idunidademedida      int not null,
+   nomeunidademedida    varchar(100) not null,
+   siglaunidademedida   varchar(10) not null,
+   situacao             char(1) not null
+);
+
+alter table unidademedida
+   add primary key (idunidademedida);
+
+drop table if exists centroresultado;
+
+/*==============================================================*/
+/* Table: centroresultado                                       */
+/*==============================================================*/
+create table centroresultado
+(
+   idcentroresultado    int not null,
+   codigocentroresultado varchar(25) not null,
+   nomecentroresultado  varchar(200) not null,
+   idcentroresultadopai int,
+   permiterequisicaoproduto char(1),
+   situacao             char(1) not null
+);
+
+alter table centroresultado
+   add primary key (idcentroresultado);
+
+drop table if exists categoriaproduto;
+
+/*==============================================================*/
+/* Table: categoriaproduto                                      */
+/*==============================================================*/
+create table categoriaproduto
+(
+   idcategoria          int not null,
+   idcategoriapai       int,
+   nomecategoria        varchar(100) not null,
+   situacao             char(1) not null
+);
+
+alter table categoriaproduto
+   add primary key (idcategoria);
+
+alter table categoriaproduto add constraint fk_reference_670 foreign key (idcategoriapai)
+      references categoriaproduto (idcategoria) on delete restrict on update restrict;
+
+drop table if exists tipoproduto;
+
+/*==============================================================*/
+/* Table: tipoproduto                                           */
+/*==============================================================*/
+create table tipoproduto
+(
+   idtipoproduto        int not null,
+   idcategoria          int,
+   idunidademedida      int,
+   nomeproduto          varchar(100) not null,
+   situacao             char(1) not null,
+   aceitarequisicao     char(1) not null
+);
+
+alter table tipoproduto
+   add primary key (idtipoproduto);
+
+alter table tipoproduto add constraint fk_reference_658 foreign key (idcategoria)
+      references categoriaproduto (idcategoria) on delete restrict on update restrict;
+
+alter table tipoproduto add constraint fk_reference_664 foreign key (idunidademedida)
+      references unidademedida (idunidademedida) on delete restrict on update restrict;
+
+drop table if exists relacionamentoproduto;
+
+/*==============================================================*/
+/* Table: relacionamentoproduto                                 */
+/*==============================================================*/
+create table relacionamentoproduto
+(
+   idtipoproduto        int not null,
+   idtipoprodutorelacionado int not null,
+   tiporelacionamento   char(1) comment 'A - Acessório
+            S - Produto semelhante'
+);
+
+alter table relacionamentoproduto
+   add primary key (idtipoproduto, idtipoprodutorelacionado);
+
+alter table relacionamentoproduto add constraint fk_reference_654 foreign key (idtipoproduto)
+      references tipoproduto (idtipoproduto) on delete restrict on update restrict;
+
+alter table relacionamentoproduto add constraint fk_reference_655 foreign key (idtipoprodutorelacionado)
+      references tipoproduto (idtipoproduto) on delete restrict on update restrict;
+
+drop table if exists marca;
+
+/*==============================================================*/
+/* Table: marca                                                 */
+/*==============================================================*/
+create table marca
+(
+   idmarca              int not null,
+   idfabricante         int,
+   nomemarca            varchar(100) not null,
+   situacao             char(1) not null
+);
+
+alter table marca
+   add primary key (idmarca);
+
+alter table marca add constraint fk_marca_forn foreign key (idfabricante)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+
+drop table if exists produto;
+
+/*==============================================================*/
+/* Table: produto                                               */
+/*==============================================================*/
+create table produto
+(
+   idproduto            int not null,
+   idtipoproduto        int not null,
+   idmarca              int,
+   modelo               varchar(25),
+   precomercado         numeric(8,2),
+   detalhes             text,
+   codigoproduto        varchar(25),
+   situacao             char(1) not null,
+   complemento          varchar(100)
+);
+
+alter table produto
+   add primary key (idproduto);
+
+alter table produto add constraint fk_reference_671 foreign key (idtipoproduto)
+      references tipoproduto (idtipoproduto) on delete restrict on update restrict;
+
+alter table produto add constraint fk_reference_672 foreign key (idmarca)
+      references marca (idmarca) on delete restrict on update restrict;
+
+drop table if exists fornecedorproduto;
+
+/*==============================================================*/
+/* Table: fornecedorproduto                                     */
+/*==============================================================*/
+create table fornecedorproduto
+(
+   idfornecedorproduto  int not null,
+   idfornecedor         int not null,
+   idtipoproduto        int not null,
+   idmarca              int,
+   datainicio           date not null,
+   datafim              date
+);
+
+alter table fornecedorproduto
+   add primary key (idfornecedorproduto);
+
+alter table fornecedorproduto add constraint fk_reference_660 foreign key (idfornecedor)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+alter table fornecedorproduto add constraint fk_reference_665 foreign key (idtipoproduto)
+      references tipoproduto (idtipoproduto) on delete restrict on update restrict;
+
+alter table fornecedorproduto add constraint fk_reference_675 foreign key (idmarca)
+      references marca (idmarca) on delete restrict on update restrict;
+
+drop table if exists pais;
+
+/*==============================================================*/
+/* Table: pais                                                  */
+/*==============================================================*/
+create table pais
+(
+   idpais               int not null,
+   nomepais             varchar(200) not null
+);
+
+alter table pais
+   add primary key (idpais);
+
+drop table if exists citsmart.requisicaoproduto;
+
+/*==============================================================*/
+/* Table: requisicaoproduto                                     */
+/*==============================================================*/
+create table citsmart.requisicaoproduto
+(
+   idsolicitacaoservico int not null,
+   idprojeto            int,
+   idcentrocusto        int,
+   idenderecoentrega    int,
+   finalidade           char(1) not null comment 'C - Atendimento ao cliente
+            I - Uso interno',
+   rejeitada            char(1) not null
+);
+
+alter table citsmart.requisicaoproduto
+   add primary key (idsolicitacaoservico);
+
+alter table citsmart.requisicaoproduto add constraint fk_reference_622 foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico) on delete restrict on update restrict;
+
+alter table citsmart.requisicaoproduto add constraint fk_reference_626 foreign key (idprojeto)
+      references projetos (idprojeto) on delete restrict on update restrict;
+
+alter table citsmart.requisicaoproduto add constraint fk_reference_646 foreign key (idcentrocusto)
+      references centroresultado (idcentroresultado) on delete restrict on update restrict;
+
+alter table citsmart.requisicaoproduto add constraint fk_reference_668 foreign key (idenderecoentrega)
+      references endereco (idendereco) on delete restrict on update restrict;
+
+drop table if exists citsmart.itemrequisicaoproduto;
+
+/*==============================================================*/
+/* Table: itemrequisicaoproduto                                 */
+/*==============================================================*/
+create table citsmart.itemrequisicaoproduto
+(
+   iditemrequisicaoproduto int not null,
+   idsolicitacaoservico int not null,
+   idparecervalidacao   int,
+   idparecerautorizacao int,
+   iditemcotacao        int,
+   idcategoriaproduto   int,
+   idunidademedida      int,
+   idproduto            int,
+   descricaoitem        varchar(200) not null,
+   especificacoes       longtext,
+   quantidade           numeric(8,2) not null,
+   marcapreferencial    varchar(100),
+   precoaproximado      numeric(8,2),
+   situacao             varchar(20),
+   percvariacaopreco    numeric(8,2),
+   qtdeaprovada         numeric(8,2),
+   tipoatendimento      char(1) not null comment 'C - Cotação
+            E - Estoque',
+   tipoidentificacao    char(1) not null
+);
+
+alter table citsmart.itemrequisicaoproduto
+   add primary key (iditemrequisicaoproduto);
+
+alter table citsmart.itemrequisicaoproduto add constraint fk_reference_625 foreign key (idsolicitacaoservico)
+      references citsmart.requisicaoproduto (idsolicitacaoservico) on delete restrict on update restrict;
+
+alter table citsmart.itemrequisicaoproduto add constraint fk_reference_643 foreign key (idparecervalidacao)
+      references parecer (idparecer) on delete restrict on update restrict;
+
+alter table citsmart.itemrequisicaoproduto add constraint fk_reference_644 foreign key (idpareceidparecerautorizacao)
+      references parecer (idparecer) on delete restrict on update restrict;
+
+alter table citsmart.itemrequisicaoproduto add constraint fk_reference_653 foreign key (iditemcotacao)
+      references itemcotacao (iditemcotacao) on delete restrict on update restrict;
+
+alter table citsmart.itemrequisicaoproduto add constraint fk_reference_669 foreign key (idproduto)
+      references produto (idproduto) on delete restrict on update restrict;
+
+alter table citsmart.itemrequisicaoproduto add constraint fk_reference_676 foreign key (idunidademedida)
+      references unidademedida (idunidademedida) on delete restrict on update restrict;
+
+alter table citsmart.itemrequisicaoproduto add constraint fk_reference_677 foreign key (idcategoriaproduto)
+      references categoriaproduto (idcategoria) on delete restrict on update restrict;
+
+drop table if exists justificativaparecer;
+
+/*==============================================================*/
+/* Table: justificativaparecer                                  */
+/*==============================================================*/
+create table justificativaparecer
+(
+   idjustificativa      int not null,
+   descricaojustificativa varchar(100) not null,
+   situacao             char(1)
+);
+
+alter table justificativaparecer
+   add primary key (idjustificativa);
+
+drop table if exists alcada;
+
+/*==============================================================*/
+/* Table: alcada                                                */
+/*==============================================================*/
+create table alcada
+(
+   idalcada             int not null,
+   nomealcada           varchar(70) not null,
+   situacao             char(1) not null,
+   tipoalcada           varchar(20) comment 'C - Autorização de compras'
+);
+
+alter table alcada
+   add primary key (idalcada);
+
+drop table if exists parecer;
+
+/*==============================================================*/
+/* Table: parecer                                               */
+/*==============================================================*/
+create table parecer
+(
+   idparecer            int not null,
+   idjustificativa      int,
+   idalcada             int,
+   idresponsavel        int not null,
+   datahoraparecer      timestamp not null,
+   complementojustificativa text,
+   aprovado             char(1) not null
+);
+
+alter table parecer
+   add primary key (idparecer);
+
+alter table parecer add constraint fk_reference_35 foreign key (idjustificativa)
+      references justificativaparecer (idjustificativa) on delete restrict on update restrict;
+
+alter table parecer add constraint fk_reference_650 foreign key (idalcada)
+      references alcada (idalcada) on delete restrict on update restrict;
+
+drop table if exists limitealcada;
+
+/*==============================================================*/
+/* Table: limitealcada                                          */
+/*==============================================================*/
+create table limitealcada
+(
+   idlimitealcada       int not null,
+   idalcada             int not null,
+   idgrupo              int not null,
+   tipolimite           char(1) comment 'F - Por faixa de valores
+            Q - Qualquer valor
+            ',
+   qualificacaofornecedor char not null comment 'H - Homologado
+            N - Não homologado
+            Q - Qualquer',
+   abrangenciacentrocusto varchar(20) not null comment 'T - Todos
+            R - Somente o responsável',
+   limitevaloritem      numeric(8,2),
+   limitevalormensal    numeric(8,2),
+   situacao             char not null
+);
+
+alter table limitealcada
+   add primary key (idlimitealcada);
+
+alter table limitealcada add constraint fk_reference_647 foreign key (idalcada)
+      references alcada (idalcada) on delete restrict on update restrict;
+
+alter table limitealcada add constraint fk_reference_649 foreign key (idgrupo)
+      references grupo (idgrupo) on delete restrict on update restrict;
+
+drop table if exists alcadacentroresultado;
+
+/*==============================================================*/
+/* Table: alcadacentroresultado                                 */
+/*==============================================================*/
+create table alcadacentroresultado
+(
+   idalcadacentroresultado int not null,
+   idcentroresultado    int not null,
+   idempregado          int not null,
+   idalcada             int not null,
+   datainicio           date not null,
+   datafim              date
+);
+
+alter table alcadacentroresultado
+   add primary key (idalcadacentroresultado);
+
+alter table alcadacentroresultado add constraint fk_reference_662 foreign key (idcentroresultado)
+      references centroresultado (idcentroresultado) on delete restrict on update restrict;
+
+alter table alcadacentroresultado add constraint fk_reference_663 foreign key (idempregado)
+      references empregados (idempregado) on delete restrict on update restrict;
+
+alter table alcadacentroresultado add constraint fk_reference_673 foreign key (idalcada)
+      references alcada (idalcada) on delete restrict on update restrict;
+
+drop table if exists cotacao;
+
+/*==============================================================*/
+/* Table: cotacao                                               */
+/*==============================================================*/
+create table cotacao
+(
+   idcotacao            int not null,
+   identificacao        varchar(100),
+   idempresa            int not null,
+   idresponsavel        int not null,
+   situacao             varchar(20) not null,
+   datahoracadastro     timestamp not null,
+   observacoes          text,
+   datafinalprevista    date,
+   pesopreco            int,
+   pesoprazoentrega     int,
+   pesoprazopagto       int,
+   pesotaxajuros        int,
+   pesoprazogarantia    int
+);
+
+alter table cotacao
+   add primary key (idcotacao);
+
+alter table cotacao add constraint fk_reference_633 foreign key (idempresa)
+      references empresa (idempresa) on delete restrict on update restrict;
+
+
+drop table if exists itemcotacao;
+
+/*==============================================================*/
+/* Table: itemcotacao                                           */
+/*==============================================================*/
+create table itemcotacao
+(
+   iditemcotacao        int not null,
+   idcotacao            int,
+   idprojeto            int,
+   idcentrocusto        int,
+   idproduto            int,
+   quantidade           numeric(8,2),
+   percvariacaopreco    numeric(8,2),
+   situacao             varchar(20),
+   datahoralimite       timestamp
+);
+
+alter table itemcotacao
+   add primary key (iditemcotacao);
+
+alter table itemcotacao add constraint fk_reference_25 foreign key (idcotacao)
+      references cotacao (idcotacao) on delete restrict on update restrict;
+
+alter table itemcotacao add constraint fk_reference_651 foreign key (idprojeto)
+      references projetos (idprojeto) on delete restrict on update restrict;
+
+alter table itemcotacao add constraint fk_reference_652 foreign key (idcentrocusto)
+      references centroresultado (idcentroresultado) on delete restrict on update restrict;
+
+alter table itemcotacao add constraint fk_reference_674 foreign key (idproduto)
+      references produto (idproduto) on delete restrict on update restrict;
+
+drop table if exists criterioavaliacao;
+
+/*==============================================================*/
+/* Table: criterioavaliacao                                     */
+/*==============================================================*/
+create table criterioavaliacao
+(
+   idcriterio           int not null,
+   descricao            varchar(100) not null,
+   aplicavelcotacao     char(1) not null,
+   aplicavelavaliacaosolicitante char(1) not null,
+   aplicavelavaliacaocomprador char(1) not null,
+   aplicavelqualificacaofornecedor char(1) not null
+);
+
+alter table criterioavaliacao
+   add primary key (idcriterio);
+
+drop table if exists criteriocotacao;
+
+/*==============================================================*/
+/* Table: criteriocotacao                                       */
+/*==============================================================*/
+create table criteriocotacao
+(
+   idcotacao            int not null,
+   idcriterio           int not null,
+   peso                 int not null
+);
+
+alter table criteriocotacao
+   add primary key (idcotacao, idcriterio);
+
+alter table criteriocotacao add constraint fk_reference_24 foreign key (idcotacao)
+      references cotacao (idcotacao) on delete restrict on update restrict;
+
+alter table criteriocotacao add constraint fk_reference_33 foreign key (idcriterio)
+      references criterioavaliacao (idcriterio) on delete restrict on update restrict;
+
+drop table if exists criterioavaliacao;
+
+drop table if exists avaliacaocotacao;
+
+/*==============================================================*/
+/* Table: avaliacaocotacao                                      */
+/*==============================================================*/
+create table avaliacaocotacao
+(
+   idcriterio           int not null,
+   idfornecedor         int not null,
+   iditemcotacao        int not null,
+   avaliacao            int not null
+);
+
+alter table avaliacaocotacao
+   add primary key (idcriterio, idfornecedor, iditemcotacao);
+
+alter table avaliacaocotacao add constraint fk_reference_36 foreign key (idcriterio)
+      references criterioavaliacao (idcriterio) on delete restrict on update restrict;
+
+alter table avaliacaocotacao add constraint fk_reference_37 foreign key (idfornecedor, iditemcotacao)
+      references coletapreco (idfornecedor, iditemcotacao) on delete restrict on update restrict;
+
+drop table if exists coletapreco;
+
+/*==============================================================*/
+/* Table: coletapreco                                           */
+/*==============================================================*/
+create table coletapreco
+(
+   idfornecedor         int not null,
+   iditemcotacao        int not null,
+   idparecer            int,
+   idpedido             int,
+   idresponsavel        int not null,
+   datacoleta           date not null,
+   datavalidade         date,
+   preco                numeric(8,2) not null,
+   valoracrescimo       numeric(8,2) not null,
+   valordesconto        numeric(8,2) not null,
+   valorfrete           numeric(8,2) not null,
+   prazoentrega         int not null,
+   prazomediopagto      numeric(4,2) not null,
+   taxajuros            numeric(4,2) not null,
+   prazogarantia        int not null,
+   quantidadecotada     numeric(8,2) not null,
+   situacao             varchar(20) not null,
+   colocacao            int,
+   quantidadecompra     numeric(8,2)
+);
+
+alter table coletapreco
+   add primary key (idfornecedor, iditemcotacao);
+
+alter table coletapreco add constraint fk_reference_28 foreign key (iditemcotacao)
+      references itemcotacao (iditemcotacao) on delete restrict on update restrict;
+
+alter table coletapreco add constraint fk_reference_47 foreign key (idpedido)
+      references pedidocompra (idpedido) on delete restrict on update restrict;
+
+alter table coletapreco add constraint fk_reference_634 foreign key (idparecer)
+      references parecer (idparecer) on delete restrict on update restrict;
+
+alter table coletapreco add constraint fk_reference_635 foreign key (idresponsavel)
+      references empregados (idempregado) on delete restrict on update restrict;
+
+alter table coletapreco add constraint fk_reference_636 foreign key (idfornecedor)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+drop table if exists fornecedorcotacao;
+
+/*==============================================================*/
+/* Table: fornecedorcotacao                                     */
+/*==============================================================*/
+create table fornecedorcotacao
+(
+   idcotacao            int not null,
+   idfornecedor         int not null
+);
+
+alter table fornecedorcotacao
+   add primary key (idcotacao, idfornecedor);
+
+alter table fornecedorcotacao add constraint fk_reference_684 foreign key (idcotacao)
+      references cotacao (idcotacao) on delete restrict on update restrict;
+
+alter table fornecedorcotacao add constraint fk_reference_685 foreign key (idfornecedor)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+	  
+
+/*----------------------------SCRIPT CRIAÇÃO DE NOVAS COLUNAS-------------------------*/
+
+
+-- bpm_elementofluxo
+alter table bpm_elementofluxo add template varchar(40);
+
+-- servico
+alter table servico add idtemplatesolicitacao int;
+alter table servico add idtemplateacompanhamento int;
+
+alter table servico add constraint fk_reference_641 foreign key (idtemplatesolicitacao)
+      references citsmart.templatesolicitacaoservico (idtemplate) on delete restrict on update restrict;
+
+alter table servico add constraint fk_reference_642 foreign key (idtemplateacompanhamento)
+      references citsmart.templatesolicitacaoservico (idtemplate) on delete restrict on update restrict;
+
+-- fornecedor
+alter table fornecedor add telefone varchar(20);
+alter table fornecedor add fax varchar(20);
+alter table fornecedor add nomeContato varchar(100);
+alter table fornecedor add inscricaoEstadual varchar(25);
+alter table fornecedor add inscricaoMunicipal varchar(25);
+alter table fornecedor add idendereco int;
+alter table fornecedor add constraint fk_forn_end foreign key (idendereco)
+      references endereco (idendereco) on delete restrict on update restrict;
+
+-- unidade
+alter table unidade add idendereco int;
+alter table unidade add aceitaentregaproduto char(1);
+alter table unidade add constraint fk_unid_end foreign key (idendereco)
+      references endereco (idendereco) on delete restrict on update restrict;
+
+-- ufs
+alter table ufs add idpais int;
+alter table ufs add constraint fk_uf_pais foreign key (idpais)
+      references pais (idpais) on delete restrict on update restrict;	
+	  
+	  
+	  
+/*------------------------SCRIPT INSERÇÃO DE DADOS----------------------------*/
+
+INSERT INTO `pais` (`idpais`,`nomepais`) VALUES (1,'Brasil');
+update ufs set idpais = 1;
+
+INSERT INTO `bpm_tipofluxo` (`idtipofluxo`,`nomefluxo`,`descricao`) VALUES (5,'RequisicaoProduto','Requisição de Produto');
+
+INSERT INTO `bpm_fluxo` (`idfluxo`,`versao`,`idtipofluxo`,`variaveis`,`conteudoxml`,`datainicio`,`datafim`) VALUES (12,'1.0',5,'solicitacaoServico;solicitacaoServico.situacao;solicitacaoServico.grupoAtual;solicitacaoServico.grupoNivel1',NULL,'2012-11-12',NULL);
+
+INSERT INTO `bpm_elementofluxo` (`idelemento`,`idfluxo`,`tipoelemento`,`subtipo`,`nome`,`documentacao`,`tipointeracao`,`url`,`visao`,`grupos`,`usuarios`,`acaoentrada`,`acaosaida`,`script`,`textoemail`,`nomefluxoencadeado`,`posx`,`posy`,`altura`,`largura`,`modeloemail`,`template`) VALUES (75,12,'Inicio','','','','','','','','','','','','','',15,21,32,32,'','');
+INSERT INTO `bpm_elementofluxo` (`idelemento`,`idfluxo`,`tipoelemento`,`subtipo`,`nome`,`documentacao`,`tipointeracao`,`url`,`visao`,`grupos`,`usuarios`,`acaoentrada`,`acaosaida`,`script`,`textoemail`,`nomefluxoencadeado`,`posx`,`posy`,`altura`,`largura`,`modeloemail`,`template`) VALUES (76,12,'Tarefa','','Validar requisição','Validar requisição','U','pages/solicitacaoServico/solicitacaoServico.load','','#{solicitacaoServico.grupoAtual}','','','','','','',136,5,65,140,'','ValidacaoRequisicaoProduto');
+INSERT INTO `bpm_elementofluxo` (`idelemento`,`idfluxo`,`tipoelemento`,`subtipo`,`nome`,`documentacao`,`tipointeracao`,`url`,`visao`,`grupos`,`usuarios`,`acaoentrada`,`acaosaida`,`script`,`textoemail`,`nomefluxoencadeado`,`posx`,`posy`,`altura`,`largura`,`modeloemail`,`template`) VALUES (77,12,'Tarefa','','Autorizar cotação','Autorizar cotação','U','pages/solicitacaoServico/solicitacaoServico.load','',NULL,'script:#{execucaoFluxo}.recuperaLoginAutorizadores();','','','','','',450,18,65,140,'','AutorizacaoCotacao');
+INSERT INTO `bpm_elementofluxo` (`idelemento`,`idfluxo`,`tipoelemento`,`subtipo`,`nome`,`documentacao`,`tipointeracao`,`url`,`visao`,`grupos`,`usuarios`,`acaoentrada`,`acaosaida`,`script`,`textoemail`,`nomefluxoencadeado`,`posx`,`posy`,`altura`,`largura`,`modeloemail`,`template`) VALUES (78,12,'Tarefa','','Acompanhamento requisição','Acompanhamento requisição','U','pages/solicitacaoServico/solicitacaoServico.load','',NULL,'','','','','','',545,289,65,140,'','AcompanhamentoRequisicaoProduto');
+INSERT INTO `bpm_elementofluxo` (`idelemento`,`idfluxo`,`tipoelemento`,`subtipo`,`nome`,`documentacao`,`tipointeracao`,`url`,`visao`,`grupos`,`usuarios`,`acaoentrada`,`acaosaida`,`script`,`textoemail`,`nomefluxoencadeado`,`posx`,`posy`,`altura`,`largura`,`modeloemail`,`template`) VALUES (79,12,'Tarefa','','Complementar dados da requisicão','Complementar dados da requisicão','U','pages/solicitacaoServico/solicitacaoServico.load','',NULL,'script:#{execucaoFluxo}.recuperaLoginResponsaveis();','','','','','',137,237,65,140,'','CriacaoRequisicaoProduto');
+INSERT INTO `bpm_elementofluxo` (`idelemento`,`idfluxo`,`tipoelemento`,`subtipo`,`nome`,`documentacao`,`tipointeracao`,`url`,`visao`,`grupos`,`usuarios`,`acaoentrada`,`acaosaida`,`script`,`textoemail`,`nomefluxoencadeado`,`posx`,`posy`,`altura`,`largura`,`modeloemail`,`template`) VALUES (80,12,'Porta','','','','','','','','','','','','','',345,105,42,42,'','');
+INSERT INTO `bpm_elementofluxo` (`idelemento`,`idfluxo`,`tipoelemento`,`subtipo`,`nome`,`documentacao`,`tipointeracao`,`url`,`visao`,`grupos`,`usuarios`,`acaoentrada`,`acaosaida`,`script`,`textoemail`,`nomefluxoencadeado`,`posx`,`posy`,`altura`,`largura`,`modeloemail`,`template`) VALUES (81,12,'Porta','','','','','','','','','','','','','',185,104,42,42,'','');
+INSERT INTO `bpm_elementofluxo` (`idelemento`,`idfluxo`,`tipoelemento`,`subtipo`,`nome`,`documentacao`,`tipointeracao`,`url`,`visao`,`grupos`,`usuarios`,`acaoentrada`,`acaosaida`,`script`,`textoemail`,`nomefluxoencadeado`,`posx`,`posy`,`altura`,`largura`,`modeloemail`,`template`) VALUES (82,12,'Finalizacao','','','','','','','','','','','','','',1023,104,32,32,'','');
+	  
+INSERT INTO `bpm_sequenciafluxo` (`idelementoorigem`,`idelementodestino`,`idfluxo`,`nomeclasseorigem`,`nomeclassedestino`,`condicao`,`idconexaoorigem`,`idconexaodestino`,`bordax`,`borday`,`posicaoalterada`,`nome`) VALUES (75,76,12,NULL,NULL,'!#{solicitacaoServico}.atendida();',1,3,91.5,37.25,'N','não atendida');
+INSERT INTO `bpm_sequenciafluxo` (`idelementoorigem`,`idelementodestino`,`idfluxo`,`nomeclasseorigem`,`nomeclassedestino`,`condicao`,`idconexaoorigem`,`idconexaodestino`,`bordax`,`borday`,`posicaoalterada`,`nome`) VALUES (76,81,12,NULL,NULL,'',2,0,206,87,'N','');
+INSERT INTO `bpm_sequenciafluxo` (`idelementoorigem`,`idelementodestino`,`idfluxo`,`nomeclasseorigem`,`nomeclassedestino`,`condicao`,`idconexaoorigem`,`idconexaodestino`,`bordax`,`borday`,`posicaoalterada`,`nome`) VALUES (78,82,12,NULL,NULL,'#{solicitacaoServico}.finalizada();',1,2,1042,323,'S','finalizada');
+INSERT INTO `bpm_sequenciafluxo` (`idelementoorigem`,`idelementodestino`,`idfluxo`,`nomeclasseorigem`,`nomeclassedestino`,`condicao`,`idconexaoorigem`,`idconexaodestino`,`bordax`,`borday`,`posicaoalterada`,`nome`) VALUES (79,76,12,NULL,NULL,'',3,3,125,161,'S','');
+INSERT INTO `bpm_sequenciafluxo` (`idelementoorigem`,`idelementodestino`,`idfluxo`,`nomeclasseorigem`,`nomeclassedestino`,`condicao`,`idconexaoorigem`,`idconexaodestino`,`bordax`,`borday`,`posicaoalterada`,`nome`) VALUES (80,77,12,NULL,NULL,'#{execucaoFluxo}.exigeAutorizacao();',1,2,459.5,110.5,'N','exige autorização');
+INSERT INTO `bpm_sequenciafluxo` (`idelementoorigem`,`idelementodestino`,`idfluxo`,`nomeclasseorigem`,`nomeclassedestino`,`condicao`,`idconexaoorigem`,`idconexaodestino`,`bordax`,`borday`,`posicaoalterada`,`nome`) VALUES (80,78,12,NULL,NULL,'!#{execucaoFluxo}.exigeAutorizacao();',2,3,364,320,'S','não exige autorização');
+INSERT INTO `bpm_sequenciafluxo` (`idelementoorigem`,`idelementodestino`,`idfluxo`,`nomeclasseorigem`,`nomeclassedestino`,`condicao`,`idconexaoorigem`,`idconexaodestino`,`bordax`,`borday`,`posicaoalterada`,`nome`) VALUES (81,79,12,NULL,NULL,'#{execucaoFluxo}.requisicaoRejeitada();',2,0,206.5,191.5,'N','rejeitada');
+INSERT INTO `bpm_sequenciafluxo` (`idelementoorigem`,`idelementodestino`,`idfluxo`,`nomeclasseorigem`,`nomeclassedestino`,`condicao`,`idconexaoorigem`,`idconexaodestino`,`bordax`,`borday`,`posicaoalterada`,`nome`) VALUES (81,80,12,NULL,NULL,'!#{execucaoFluxo}.requisicaoRejeitada();',1,3,286,125.5,'N','não rejeitada');
+
+
+INSERT INTO `templatesolicitacaoservico` (`idtemplate`,`nometemplate`,`nomeclasseservico`,`nomeclassefluxo`,`urlrecuperacao`,`nomeclassedto`,`nomeclasseaction`,`identificacao`,`scriptaposrecuperacao`,`habilitadirecionamento`,`habilitasituacao`,`habilitasolucao`,`alturadiv`,`habilitaurgenciaimpacto`,`habilitanotificacaoemail`) VALUES (1,'Requisição Produto','br.com.centralit.citcorpore.negocio.RequisicaoProdutoServiceEjb','br.com.centralit.citcorpore.bpm.negocio.ExecucaoRequisicaoProduto','/pages/requisicaoProduto/requisicaoProduto.load','br.com.centralit.citcorpore.bean.RequisicaoProdutoDTO','br.com.centralit.citcorpore.ajaxForms.RequisicaoProduto','CriacaoRequisicaoProduto','','N','N','N',600,'N','N');
+INSERT INTO `templatesolicitacaoservico` (`idtemplate`,`nometemplate`,`nomeclasseservico`,`nomeclassefluxo`,`urlrecuperacao`,`nomeclassedto`,`nomeclasseaction`,`identificacao`,`scriptaposrecuperacao`,`habilitadirecionamento`,`habilitasituacao`,`habilitasolucao`,`alturadiv`,`habilitaurgenciaimpacto`,`habilitanotificacaoemail`) VALUES (2,'Validação Requisição Produto','br.com.centralit.citcorpore.negocio.RequisicaoProdutoServiceEjb','br.com.centralit.citcorpore.bpm.negocio.ExecucaoRequisicaoProduto','/pages/validacaoRequisicaoProduto/validacaoRequisicaoProduto.load','br.com.centralit.citcorpore.bean.RequisicaoProdutoDTO','br.com.centralit.citcorpore.ajaxForms.RequisicaoProduto','ValidacaoRequisicaoProduto',NULL,'N','N','N',650,'N','N');
+INSERT INTO `templatesolicitacaoservico` (`idtemplate`,`nometemplate`,`nomeclasseservico`,`nomeclassefluxo`,`urlrecuperacao`,`nomeclassedto`,`nomeclasseaction`,`identificacao`,`scriptaposrecuperacao`,`habilitadirecionamento`,`habilitasituacao`,`habilitasolucao`,`alturadiv`,`habilitaurgenciaimpacto`,`habilitanotificacaoemail`) VALUES (3,'Autorização Cotação','br.com.centralit.citcorpore.negocio.RequisicaoProdutoServiceEjb','br.com.centralit.citcorpore.bpm.negocio.ExecucaoRequisicaoProduto','/pages/autorizacaoCotacao/autorizacaoCotacao.load','br.com.centralit.citcorpore.bean.RequisicaoProdutoDTO','br.com.centralit.citcorpore.ajaxForms.RequisicaoProduto','AutorizacaoCotacao',NULL,'N','N','N',650,'N','N');
+INSERT INTO `templatesolicitacaoservico` (`idtemplate`,`nometemplate`,`nomeclasseservico`,`nomeclassefluxo`,`urlrecuperacao`,`nomeclassedto`,`nomeclasseaction`,`identificacao`,`scriptaposrecuperacao`,`habilitadirecionamento`,`habilitasituacao`,`habilitasolucao`,`alturadiv`,`habilitaurgenciaimpacto`,`habilitanotificacaoemail`) VALUES (4,'Acompanhamento Requisição Produto','br.com.centralit.citcorpore.negocio.RequisicaoProdutoServiceEjb','br.com.centralit.citcorpore.bpm.negocio.ExecucaoRequisicaoProduto','/pages/acompRequisicaoProduto/acompRequisicaoProduto.load','br.com.centralit.citcorpore.bean.RequisicaoProdutoDTO','br.com.centralit.citcorpore.ajaxForms.RequisicaoProduto','AcompanhamentoRequisicaoProduto',NULL,'N','N','N',650,'N','N');

@@ -1,0 +1,98 @@
+/*@media screen , print {*/
+
+body
+{
+    margin 			:0;
+    padding  		:0;
+    
+}
+  
+body *
+{
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica;
+    text-align  :left;
+}
+
+div#paginaTotal
+{
+	width: 978px;
+	height: 430px;
+	border: 0px solid red;
+}
+div#paginaInterna
+{
+	width: 450px;
+	height: 350px;
+	border: 0px solid red;
+}
+div#cabecalho
+{
+	width: 978px;
+	height: 90px;
+	/*background-color: #FEF159;*/
+	border: 0px solid red;
+	float: left;
+	
+}
+
+div#areautil
+{
+	width: 980px;
+	height: 340px;
+	border: 0px solid green;
+}
+
+div#menu1
+{
+	width: 170px;
+	height: 360px;
+	float: left;
+	background: #20b2aa;
+	            
+}
+
+div#formularioMenor
+{
+	width: 550px;
+	
+	
+	float:left;
+	
+	
+}
+
+div#formularioIndex
+{
+	width: 808px;
+	
+	
+	float:left;
+	
+	
+}
+.menu{
+	font-size: 12px;
+	font-weight: bold;
+	width: 150px;
+	
+	
+}
+
+div#rodape
+{
+	width: 778px;
+	height: 17px;
+	background: #F9DD16;
+	color: #0038A8;
+	text-align: right;
+	font-size: 11px;
+	float: left;
+	
+}
+
+	
+.menuBorda1
+{
+	border: 1px solid #000000;
+}

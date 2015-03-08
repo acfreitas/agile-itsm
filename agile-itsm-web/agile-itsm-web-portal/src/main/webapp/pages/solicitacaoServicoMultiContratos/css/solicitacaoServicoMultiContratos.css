@@ -1,0 +1,484 @@
+.modal-body 
+{
+   /* max-height:70%; */
+   max-height: 550px!important;
+   overflow: auto!important;
+}
+.modal
+{
+  /*  height:80%; */
+   width:80%;
+   margin-left: -40%; 
+   margin-top: 1%!important;
+   top: 1%!important;
+}
+@media (max-width: 768px) {
+   .modal
+   {
+    width:90%;
+    margin-left: 2%; 
+   }
+}
+
+
+[data-toggle="collapse-widget"] .collapse-toggle:before{
+	color:#8EC657!important;
+}
+.span4 {
+    width: 835px!important;
+}
+.greenInput{
+	color: #8EC68D!important;
+}
+/* #content{
+	border: 1px solid #D8D8D8!important;
+	width: 1140px!important;
+	min-height: 600px!important;	
+} */
+
+/* 
+Motivo: Comentado por destruir o layout responsivo
+Autor flavio.santana
+23/10/2013 13:45
+
+[class*="span"]{margin-left:0px!important;} 
+*/
+.wysihtml5-sandbox{
+	
+	width: 700px!important;
+	height: 110px!important;
+}
+
+.input-append .add-on:last-child, .input-append 
+.btn:last-child, .input-append .btn-group:last-child > .dropdown-toggle{
+	border-radius:1px!important;
+}
+
+.input-append .add-on, .input-prepend .add-on, 
+.input-append .btn, .input-prepend .btn, .input-append 
+.btn-group > .dropdown-toggle, .input-prepend .btn-group > .dropdown-toggle{
+	border-radius:1px!important;
+}
+
+.glyphicons.btn-mini{
+	  padding: 4px 6px 1px 33px!important;
+}
+body > .container-fluid.fixed{
+	/* border: 0px!important; */
+	width: 57.5%!important;
+}
+
+[class*="span"]{
+	margin-left: 0px!important;
+}
+/* .menu-right #menu {
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8!important;
+    border-bottom: 1px solid #D8D8D8!important;
+    left: auto;
+    right: 25px!important;
+} */
+.menu-hidden #menu{
+	display: block!important;
+}
+ 
+#menu{
+	top:14px!important;
+	padding: 0;
+	height: 6900px!important;
+
+}
+
+/* #modal_novaSolicitacao{
+	display: none;
+	width: 1100px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	
+}
+
+#modal_baseConhecimento{
+	
+	width: 1291px!important;
+	left: 22%!important;
+	z-index: 10001!important;
+	top: 26%!important;
+}
+#modal_problema{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	top: 30%;
+}
+#modal_itemConfiguracao{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	top: 30%;
+}
+#modal_mudanca{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	top: 30%;
+}
+#modal_anexo{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	top: 30%;
+}
+#modal_script{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	top: 30%;
+}
+
+#modal_ocorrencia{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	top: 20%;
+}
+#modal_cadastroCategoriaOcorrencia{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+}
+
+#modal_cadastroOrigemOcorrencia{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+}
+
+#modal_incidentesRelacionados{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+}
+#modal_agenda{
+	
+	width: 1000px!important;
+	left: 35%!important;
+	top: 50%!important;
+	z-index: 10003!important;
+	top: 30%;
+
+}
+#modal_novaSolicitacaoFilho{
+		width: 1260px!important;
+	left: 22%!important;
+ 	top: 0%!important;
+	z-index: 10003!important;
+}
+#modal_lookupSolicitante{
+	
+	width: 580px!important;
+	left: 35%!important;
+	top: 50%!important;
+	z-index: 10003!important;
+
+}
+
+#modal_lookupProblema{
+	
+	width: 580px!important;
+	left: 35%!important;
+	top: 200px!important;
+	z-index: 10003!important;
+
+}
+
+#modal_novoColaborador{
+	
+	width: 1000px!important;
+	left: 35%!important;
+	top: 50%!important;
+	z-index: 10003!important;
+
+}
+#modal_novoColaborador .modal-body{
+	max-height: 500px!important;
+}
+
+#modal_listaRelacionarIncidentes{
+	
+	width: 1000px!important;
+	left: 35%!important;
+	top: 200px!important;
+	z-index: 10003!important;
+}
+
+#modal_listaSolicitacoesMesmoSolicitante{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	top: 30%;
+}
+
+#modal_pesquisaItemConfiguracao{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	top: 2%!important;
+}
+
+#modal_informacaoItemConfiguracao{
+	
+	width: 1000px!important;
+	left: 30%!important;
+	z-index: 10001!important;
+	top: 2%!important;
+}
+
+#modal_editarCadastrarProblema{
+	
+	width: 1193px!important;
+	left: 24%!important;
+	z-index: 10001!important;
+	top: 2%!important;
+}
+#modal_editarCadastrarMudanca{
+	
+	width: 1193px!important;
+	left: 24%!important;
+	z-index: 10001!important;
+	top: 2%!important;
+}
+#modal_novaSolicitacao .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_agenda .modal-body{
+	max-height: 500px;
+	overflow: auto!important;
+}
+
+#modal_problema .modal-body{
+	max-height: 500px;
+	overflow: auto!important;
+}
+#modal_mudanca .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_modal_incidentesRelacionados .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_itemConfiguracao .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_baseConhecimento .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_script .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_anexo .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_ocorrencia .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_listaRelacionarIncidentes .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_novaSolicitacaoFilho .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_listaSolicitacoesMesmoSolicitante .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_pesquisaItemConfiguracao .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_informacaoItemConfiguracao .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_editarCadastrarProblema .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_editarCadastrarMudanca .modal-body{
+	max-height: 700px;
+	overflow: auto!important;
+}
+#modal_pesquisaSolucaoBaseConhecimento{
+	width: 900px!important;
+	left: 24%!important;
+	z-index: 10001!important;
+	
+}
+#modal_pesquisaSolucaoBaseConhecimento .modal-body{
+		max-height: 500px;
+		overflow: auto!important;
+
+	} */
+/* #modal_cadastroCategoriaOcorrencia .modal-body{
+	max-height: 500px;
+}
+#modal_cadastroOrigemOcorrencia .modal-body{
+	max-height: 500px;
+} */
+iframe{
+	/* border: 0px!important; */
+}
+div.dropdown-menu{
+	z-index: 100000!important;
+
+	}
+#divUpload_uploadAnexos{
+	border: 0px!important;
+}
+#divRelacaoOcorrencias{
+	width: 100%; 
+	height: 100%; 
+	overflow: auto
+}
+
+.hasSubmenu{
+	cursor: pointer!important;
+}
+
+.bootbox{
+	top: 15%!important;
+}
+#btnPesquisaSolUsuario{
+	margin-left: 20px!important;
+}
+#informacoesUsuario{
+	width: 540px!important;
+	
+}
+.trSolicitacaoUsuario{
+	cursor: pointer!important;
+}
+
+.inativo{
+	display: none!important;
+}
+.ativo{
+	display: block!important;
+}
+
+/* 
+Motivo: Comentado por destruir o layout responsivo
+Autor flavio.santana
+23/10/2013 13:45
+
+.label.large {
+height: 28px!important;
+padding: 0 50px!important;
+line-height: 29px!important;
+background: #e5e5e5!important;
+color: #64625f!important;
+text-shadow: 0 1px 0 #fff!important;
+margin-left: 10px;
+}
+*/ 
+#divNomeDoServico{
+	width: 93%!important;
+}
+#tdResultadoSLAPrevisto{
+	font-size: 16px!important;
+
+}
+
+.slimScrollDiv{
+	height: auto!important;
+}
+
+#divBotoes{
+	background-color: #F6F6F6!important;
+	padding: 17px!important;
+	border: 1px solid #D8D8D8 !important;	
+
+}
+:required {
+	box-shadow: none; 
+}
+
+/* #modal_origem{
+	
+	width: 900px!important;
+	left: 35%!important;
+	z-index: 10001!important;
+	top: 50%!important;
+} */
+
+/* #modal_origem .modal-body{
+	max-height: 370px;
+} */
+.iframeSemBorda{
+	border: 0px!important;
+}
+#btnCadastroOrigem{
+	margin-left: 4px!important;
+}
+
+.profile{
+	font-size: 11px!important;
+}
+/*
+Motivo: Comentado por permitir tamanho fixo de modals
+Autor flavio.santana
+23/10/2013 13:45
+ 
+#modal_novaSolicitacaoFilho{
+	width: 1260px!important;
+	left: 41%!important;
+ 	top: 0%!important;
+	z-index: 10003!important;
+}
+
+#modal_baseConhecimento{
+	
+	width: 1260px!important;
+	left: 41%!important;
+	z-index: 10001!important;
+	top: 0%!important;
+}
+*/
+.campoObrigatorio:after {
+	color: #FF0000;
+	content: "*";
+}
+#POPUP_ITEM_REQUISICAO{
+	width: 750px!important;
+	height: 400px!important;
+}
+
+#btnPesqAvancada{
+	margin-left: 5px!important;
+}
+#btnLimparServico{
+	margin-left: 5px!important;
+}
+
+.autocomplete{
+	width: 420px !important;
+}

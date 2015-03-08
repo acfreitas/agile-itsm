@@ -1,0 +1,101 @@
+.modal-body{max-height:550px!important;overflow:auto!important;}
+.modal{width:80%;margin-left:-40%;margin-top:1%!important;top:1%!important;}
+@media (max-width:768px){.modal{width:90%;margin-left:2%;}
+}
+[data-toggle="collapse-widget"] .collapse-toggle:before{color:#8EC657!important;}
+.span4{width:835px!important;}
+.greenInput{color:#8EC68D!important;}
+input[type="text"]{height:28px!important;}
+.wysihtml5-sandbox{width:100%!important;height:110px!important;}
+.input-append .add-on:last-child, .input-append
+.btn:last-child, .input-append .btn-group:last-child > .dropdown-toggle{border-radius:1px!important;}
+.input-append .add-on, .input-prepend .add-on,
+.input-append .btn, .input-prepend .btn, .input-append
+.btn-group > .dropdown-toggle, .input-prepend .btn-group > .dropdown-toggle{border-radius:1px!important;}
+.glyphicons.btn-mini{padding:4px 6px 1px 33px!important;}
+body > .container-fluid.fixed{width:57.5%!important;}
+/* 
+Motivo: Comentado por destruir o layout responsivo
+Autor flavio.santana
+23/10/2013 13:45
+
+[class*="span"]{margin-left:0px!important;} 
+*/
+.menu-hidden #menu{display:block!important;}
+#menu{top:14px!important;padding:0;height:570px!important;}
+iframe{}
+div.dropdown-menu{z-index:100000!important;}
+#divUpload_uploadAnexos{border:0px!important;}
+#divRelacaoOcorrencias{width:100%;height:100%;overflow:auto}
+.hasSubmenu{cursor:pointer!important;}
+.bootbox{top:15%!important;}
+#btnPesquisaSolUsuario{margin-left:20px!important;}
+#informacoesUsuario{width:540px!important;}
+.trSolicitacaoUsuario{cursor:pointer!important;}
+.inativo{display:none!important;}
+.ativo{display:block!important;}
+/* 
+Motivo: Comentado por destruir o layout responsivo
+Autor flavio.santana
+23/10/2013 13:45
+.label.large{height:28px!important;padding:0 50px!important;line-height:29px!important;background:#e5e5e5!important;color:#64625f!important;text-shadow:0 1px 0 #fff!important;margin-left:10px;} 
+*/ 
+#divNomeDoServico{width:93%!important;}
+#tdResultadoSLAPrevisto{font-size:16px!important;}
+.slimScrollDiv{height:auto!important;}
+#divBotoes{background-color:#F6F6F6!important;padding:17px!important;border:1px solid #D8D8D8 !important;}
+:required{box-shadow:none;}
+.iframeSemBorda{border:0px!important;}
+#btnCadastroOrigem{margin-left:4px!important;}
+/* Desenvolvedor: Pedro Lino - Data: 23/10/2013 - Horário: 17:07 - ID Citsmart: 120948 - 
+ * Motivo/Comentário: Aumentei tamanho da DIV profile para colocar a informação "tarefa atual" */
+.profile{font-size:11px!important; height: 145px!important; }
+
+/*
+Motivo: Comentado por permitir tamanho fixo de modals
+Autor flavio.santana
+23/10/2013 13:45
+ 
+#modal_novaSolicitacaoFilho{width:1260px!important;left:41%!important;top:0%!important;z-index:10003!important;}
+#modal_baseConhecimento{width:1260px!important;left:41%!important;z-index:10001!important;top:0%!important;}
+*/
+.campoObrigatorio:after{color:#FF0000;content:"*";}
+#POPUP_ITEM_REQUISICAO{width:750px!important;height:400px!important;}
+.personalizado #content  { /* min-height: 800px !important; */}
+.personalizado .margin-bottom-none {margin: 20px 0 !important;}
+.menu-right #menu {margin-right:10px;border-right: 1px solid #d8d8d8;}
+.personalizado #menu { width: 218px; z-index:9999 !important;}
+#btnPesqAvancada{margin-left: 5px!important;}
+#btnLimparServico{margin-left: 5px!important;}
+
+#observacao.faketextarea, #descricao.faketextarea, #detalhamentoCausa.faketextarea, #resposta.faketextarea {
+	width: 100%;
+	height: 110px;
+	border: 1px solid #9BA5A5;
+	background-color: #eee;
+	color: #999;
+	padding: 4px 6px;
+	box-sizing: border-box;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+	box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+	margin-bottom: 10px;
+	overflow:auto;
+}
+
+#btnPesquisar, #btnLimpar {
+	background-color: #8ec657!important;
+	color: #fff;
+	margin-bottom: 10px;
+	
+}
+
+ #btnLimpar {
+ 	margin-left: 1em;
+ }
+ #pesqLockupLOOKUP_SOLICITANTE_NOME, #pesqLockupLOOKUP_SOLICITANTE_EMAIL{
+ 	width: 400px; 
+ }

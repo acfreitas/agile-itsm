@@ -1,0 +1,54 @@
+
+	.table {
+		border-left:1px solid #ddd;
+	}
+
+	.table th {
+		border:1px solid #ddd;
+		padding:4px 10px;
+		border-left:none;
+		background:#eee;
+	}
+
+	.table td {
+		border:1px solid #ddd;
+		padding:4px 10px;
+		border-top:none;
+		border-left:none;
+	}
+
+	.cancelar {
+		color: #FF0000;
+		content: "*";
+	}
+
+
+
+/* Desenvolvedor: Pedro Lino - Data: 31/10/2013 - Horário: 10:00 - ID Citsmart: 120948 -
+* Motivo/Comentário: Paginação com layout antigo / Layout com as cores padrao */
+
+/* Paginação */
+	#itenPaginacaoColaborador ul li {
+		padding:  0px!important;
+
+	}
+
+	#itenPaginacaoColaborador ul li font {
+		padding:  6px!important;
+		background-color: white!important;
+		border: 2px  solid #ddd!important;
+
+	}
+	#itenPaginacaoColaborador ul li font:HOVER {
+		border: 2px  solid #74AF3B!important;
+
+	}
+
+	#itenPaginacaoColaborador ul li font a{
+		color: #74AF3B!important;
+	}
+
+
+
+
+

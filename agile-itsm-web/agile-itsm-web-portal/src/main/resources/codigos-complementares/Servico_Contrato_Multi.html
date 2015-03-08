@@ -1,0 +1,25 @@
+<tr>
+<td colspan='2'>
+<br><br>
+<b>Serviços que receberão a configuração</b>
+<br>
+<label class='marcaTodos'><input  type='checkbox' id='marcatodos' name='marcatodos' onclick='marcarTodosCheckbox();'>Marcar Todos</label>
+<br><br>
+executeClass=br.com.centralit.citcorpore.metainfo.complementos.ComplementoServicoContrato
+</td>
+</tr>
+<script>
+	function marcarTodosCheckbox() {
+		var itens = document.form.idServico;
+		var marcar = document.form.marcatodos;
+		for ( var i = 0; i < itens.length; i++) {
+			if (marcar.checked) {
+				if (!itens[i].checked) {
+					itens[i].checked = true;
+				}
+			} else {
+				itens[i].checked = false;
+			}
+		}
+	}
+</script>

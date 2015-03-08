@@ -1,0 +1,14 @@
+.ui-datepicker {
+  width: 20em;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+background: #fafafa;
+border-color: #fafafa; 
+color: #797979;
+}
+
+.ui-widget-header {
+ background: #E6ECEF; 
+ color: #4F4F4F; 
+}

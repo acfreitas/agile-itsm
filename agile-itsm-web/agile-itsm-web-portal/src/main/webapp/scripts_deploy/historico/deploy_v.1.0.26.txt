@@ -1,0 +1,266 @@
+/*MYSQL DEPLOY 1.1.26*/
+
+CREATE  TABLE categoriapost (
+  idcategoriapost INT NOT NULL ,
+  idcategoriapostPai INT NULL ,
+  nomecategoria VARCHAR(255) NULL ,
+  datainicio DATE NULL ,
+  datafim DATE NULL ,
+  PRIMARY KEY (idcategoriapost) )
+ENGINE = InnoDB;
+
+CREATE  TABLE post (
+  idPost INT NOT NULL ,
+  titulo VARCHAR(255) NULL ,
+  descricao TEXT NULL ,
+  conteudo TEXT NULL ,
+  imagem VARCHAR(255) NULL ,
+  idCategoriaPost INT NULL ,
+  dataInicio DATE NULL ,
+  dataFim DATE NULL ,
+  PRIMARY KEY (idPost) ,
+  INDEX fk_post_1_idx (idCategoriaPost ASC) ,
+  CONSTRAINT fk_post_1
+    FOREIGN KEY (idCategoriaPost)
+    REFERENCES categoriapost (idcategoriapost)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE  TABLE testecitsmart (   
+  idtestecitsmart INT NOT NULL,   
+  classe VARCHAR(250) NULL ,   
+  metodo VARCHAR(255) NULL ,   
+  resultado VARCHAR(250) NULL ,   
+  data_hora DATETIME NULL ,   
+PRIMARY KEY (idtestecitsmart) ) ENGINE = InnoDB; 
+
+
+create table localidade  (
+  idlocalidade       integer  primary key                       not null,
+  nomelocalidade     varchar(255),
+  datainicio         date,
+  datafim            date
+)engine = innodb;
+
+create table localidadeunidade  (
+  idlocalidadeunidade integer  primary key                       not null,
+  idunidade          integer                         not null,
+  idlocalidade       integer                         not null,
+  datainicio         date,
+  datafim            date
+)engine = innodb;
+
+alter table contatosolicitacaoservico add column idlocalidade integer;
+
+alter table contatosolicitacaoservico add constraint fk_reference_622 foreign key (idlocalidade) references localidade (idlocalidade) ;
+
+alter table portal modify hora timestamp;
+
+alter table opiniao modify hora timestamp;
+
+ALTER TABLE usuario ADD COLUMN ultimoacessoportal DATE NULL DEFAULT NULL;
+
+alter table localidadeunidade  add constraint fk_localid_reference_unidade foreign key (idunidade)  
+references unidade (idunidade);
+
+alter table localidadeunidade add constraint fk_localida_reference_localida foreign key (idlocalidade) 
+references localidade (idlocalidade);
+
+alter table caracteristica modify sistema char(1);
+
+alter table caracteristica change column tipo tipo CHAR(2) null;
+
+alter table contatosolicitacaoservico change column localizacaofisica localizacaofisica text null;
+
+alter table menu change column link link varchar(256) null;
+
+alter table usuario change column senha senha varchar(300) null;
+
+alter table atividadesservicocontrato add (hora decimal );
+
+alter table atividadesservicocontrato change column hora hora decimal default null;
+
+alter table atividadesservicocontrato add (column1 varchar(20) );
+
+alter table atividadesservicocontrato add (quantidade int );
+
+alter table atividadesservicocontrato add (periodo char varying(5) );
+
+
+alter table atividadesservicocontrato add (tipocusto varchar(1) );
+
+alter table atividadesservicocontrato add (formula text );
+
+alter table atividadesos add (formula text );
+
+alter table baseconhecimento  change column versao versao varchar(45) null;
+
+alter table itemconfiguracao drop column idunidade; 
+
+alter table itemconfiguracao drop column sistema; 
+
+alter table itemconfiguracao drop column idusuario; 
+
+alter table itemconfiguracao drop column idempresa;
+
+alter table itemconfiguracao add (idgrupoitemconfiguracao integer);
+
+alter table tipoitemconfiguracao modify sistema char(1);
+
+alter table itemconfiguracaoevento add (linhacomandolinux varchar(255));
+
+/*ORACLE DEPLOY 1.1.26*/
+
+
+CREATE TABLE LOCALIDADE  (
+  IDLOCALIDADE       INTEGER                         NOT NULL,
+  NOMELOCALIDADE     VARCHAR2(255),
+  DATAINICIO         DATE,
+  DATAFIM            DATE
+);
+
+CREATE TABLE LOCALIDADEUNIDADE  (
+  IDLOCALIDADEUNIDADE INTEGER                         NOT NULL,
+  IDUNIDADE          INTEGER                         NOT NULL,
+  IDLOCALIDADE       INTEGER                         NOT NULL,
+  DATAINICIO         DATE,
+  DATAFIM            DATE
+);
+
+alter table  requisicaomudancaservico 
+   add constraint fk_requisic_reference_servico foreign key ( idservico )
+      references  servico  ( idservico );	  
+      
+      
+ /*==============================================================*/
+/* Table:  solicitacaoservicomudanca                             */
+/*==============================================================*/     
+create table solicitacaoservicomudanca  (
+   idrequisicaomudanca integer,
+   idsolicitacaoservico integer
+);
+
+alter table solicitacaoservicomudanca
+   add constraint fk_solicita_reference_requisic foreign key (idrequisicaomudanca)
+      references requisicaomudanca (idrequisicaomudanca);
+
+alter table solicitacaoservicomudanca
+   add constraint fk_solicita_reference_solmud foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico);
+	  
+	  
+
+CREATE  TABLE TESTECITSMART (   
+  IDTESTECITSMART INT NOT NULL,   
+  CLASSE VARCHAR2(250) NULL ,   
+  METODO VARCHAR2(255) NULL ,   
+  RESULTADO VARCHAR2(250) NULL ,   
+  DATA_HORA DATE NULL ,   
+PRIMARY KEY (IDTESTECITSMART) ); 
+
+CREATE TABLE CATEGORIAPOST(
+	IDCATEGORIAPOST INT NOT NULL,
+	IDCATEGORIAPOSTPAI INT DEFAULT NULL,
+	NOMECATEGORIA VARCHAR2 (255) DEFAULT NULL,
+	DATAINICIO DATE,
+	DATAFIM DATE DEFAULT NULL,
+	PRIMARY KEY (IDCATEGORIAPOST)
+);
+
+CREATE TABLE POST(
+	IDPOST INT NOT NULL,
+	TITULO VARCHAR2 (255) NOT NULL,
+	DESCRICAO CLOB DEFAULT NULL,
+	CONTEUDO CLOB DEFAULT NULL,
+	IMAGEM VARCHAR2 (255) DEFAULT NULL,
+	IDCATEGORIAPOST INT DEFAULT NULL,
+	DATAINICIO DATE,
+	DATAFIM DATE DEFAULT NULL,
+	PRIMARY KEY (IDPOST)
+);
+
+ALTER TABLE CONTATOSOLICITACAOSERVICO ADD IDLOCALIDADE integer;
+
+ALTER TABLE CONTATOSOLICITACAOSERVICO ADD CONSTRAINT FK_REFERENCE_622 FOREIGN KEY (IDLOCALIDADE) REFERENCES LOCALIDADE (IDLOCALIDADE) ;
+
+ALTER TABLE LOCALIDADE  ADD CONSTRAINT PK_LOCALIDADE PRIMARY KEY (IDLOCALIDADE);
+
+ALTER TABLE POST ADD CONSTRAINT FK_POST_1 FOREIGN KEY (IDCATEGORIAPOST) REFERENCES CATEGORIAPOST(IDCATEGORIAPOST);
+
+ALTER TABLE PORTAL MODIFY HORA TIMESTAMP;
+
+ALTER TABLE OPINIAO MODIFY HORA TIMESTAMP;
+
+ALTER TABLE USUARIO ADD ULTIMOACESSOPORTAL DATE DEFAULT NULL;
+
+ALTER TABLE LOCALIDADEUNIDADE  ADD CONSTRAINT PK_LOCALIDADEUNIDADE PRIMARY KEY (IDLOCALIDADEUNIDADE);
+
+ALTER TABLE LOCALIDADEUNIDADE  ADD CONSTRAINT FK_LOCALIDA_REFERENCE_UNIDADE FOREIGN KEY (IDUNIDADE)     REFERENCES UNIDADE (IDUNIDADE);
+
+ALTER TABLE LOCALIDADEUNIDADE ADD CONSTRAINT FK_LOCALIDA_REFERENCE_LOCALIDA FOREIGN KEY (IDLOCALIDADE) REFERENCES LOCALIDADE (IDLOCALIDADE);
+
+ALTER TABLE CARACTERISTICA MODIFY SISTEMA CHAR(1);
+
+ALTER TABLE CARACTERISTICA MODIFY (TIPO NULL);
+
+ALTER TABLE MENU MODIFY (LINK NULL);
+
+ALTER TABLE CONTATOSOLICITACAOSERVICO MODIFY (LOCALIZACAOFISICA NULL);
+
+ALTER TABLE USUARIO MODIFY (SENHA NULL);
+
+ALTER TABLE ATIVIDADESSERVICOCONTRATO ADD (HORA DECIMAL );
+
+ALTER TABLE ATIVIDADESSERVICOCONTRATO MODIFY HORA DEFAULT NULL;
+
+ALTER TABLE ATIVIDADESSERVICOCONTRATO ADD (COLUMN1 VARCHAR2(20) );
+
+ALTER TABLE ATIVIDADESSERVICOCONTRATO ADD (QUANTIDADE INT );
+
+ALTER TABLE ATIVIDADESSERVICOCONTRATO ADD (PERIODO CHAR VARYING(5) );
+
+ALTER TABLE ATIVIDADESSERVICOCONTRATO ADD (TIPOCUSTO VARCHAR2(1) );
+
+ALTER TABLE ATIVIDADESSERVICOCONTRATO ADD (FORMULA CLOB );
+
+ALTER TABLE ATIVIDADESOS ADD (FORMULA CLOB );
+
+ALTER TABLE BASECONHECIMENTO  MODIFY (VERSAO NULL);
+
+ALTER TABLE ITEMCONFIGURACAO DROP COLUMN IDUNIDADE; 
+
+ALTER TABLE ITEMCONFIGURACAO DROP COLUMN SISTEMA; 
+
+ALTER TABLE ITEMCONFIGURACAO DROP COLUMN IDUSUARIO; 
+
+ALTER TABLE ITEMCONFIGURACAO DROP COLUMN IDEMPRESA;
+
+ALTER TABLE ITEMCONFIGURACAO ADD (IDGRUPOITEMCONFIGURACAO NUMBER);
+
+ALTER TABLE  REQUISICAOMUDANCASERVICO 
+   ADD CONSTRAINT FK_REQUISIC_REFERENCE_SERVICO FOREIGN KEY ( IDSERVICO )
+      REFERENCES  SERVICO  ( IDSERVICO );	
+ 
+ /*==============================================================*/
+/* Table:  SOLICITACAOSERVICOMUDANCA                             */
+/*==============================================================*/      
+      
+CREATE TABLE SOLICITACAOSERVICOMUDANCA  (
+   IDREQUISICAOMUDANCA INTEGER,
+   IDSOLICITACAOSERVICO INTEGER
+);
+
+ALTER TABLE SOLICITACAOSERVICOMUDANCA
+   ADD CONSTRAINT FK_SOLICITA_REFERENCE_REQUISIC FOREIGN KEY (IDREQUISICAOMUDANCA)
+      REFERENCES REQUISICAOMUDANCA (IDREQUISICAOMUDANCA);
+
+ALTER TABLE SOLICITACAOSERVICOMUDANCA
+   ADD CONSTRAINT FK_SOLICITA_REFERENCE_SOLPRO FOREIGN KEY (IDSOLICITACAOSERVICO)
+      REFERENCES SOLICITACAOSERVICO (IDSOLICITACAOSERVICO);
+
+        
+===============================
+ALTER TABLE TIPOITEMCONFIGURACAO MODIFY SISTEMA CHAR(1);
+
+ALTER TABLE ITEMCONFIGURACAOEVENTO ADD (LINHACOMANDOLINUX VARCHAR2(255));

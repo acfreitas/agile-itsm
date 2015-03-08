@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Notification_GetByUserResp>
+    <DateTime>2001-12-31T12:00:00</DateTime>
+    <OperationID>0</OperationID>
+    <Error>
+        <Code>Code</Code>
+        <Description>Description</Description>
+    </Error>
+    <amount>0</amount>
+    <Notification>
+        <Number>0</Number>
+        <TaskId>0</TaskId>
+        <Type>0</Type>
+        <Date>99/99/9999</Date>
+    </Notification>
+</Notification_GetByUserResp>

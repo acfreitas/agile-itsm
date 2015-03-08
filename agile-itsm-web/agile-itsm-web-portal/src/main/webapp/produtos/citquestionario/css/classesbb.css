@@ -1,0 +1,48 @@
+
+@media screen , print {
+	.campoEsquerda {
+		font-weight: bold;
+		font-size: 11px;
+		color: #006666;
+		font-family: Tahoma, Arial, Helvetica, sans-serif;
+		text-decoration: none;
+		width: 150px;
+	}
+	.maior {
+		width: 300px;
+	}
+	.campoEsquerda02 {
+		font-weight: bold;
+		font-size: 11px;
+		color: #006666;
+		font-family: Tahoma, Arial, Helvetica, sans-serif;
+		text-decoration: none;
+		width: 200px;
+	}
+	input.campoTexto,select,textarea {
+		border: 1px solid black;
+		margin: 0px;
+		padding: 0 2px 0 2px;
+	}
+	
+	
+	/* Formatações CSS utilizadas pelo controle ImagesUploader */
+	#dvImagens {
+		padding: 10px;
+		width: 560px;
+		height: 300px;
+		overflow: auto;
+		border: 1px solid;
+	}
+	.dvImg {
+		border: 1px solid;
+		padding: 5px;
+		float: left;
+		margin: 0px 10px 10px 0px;
+		text-align: center;
+	}
+	.imagem {
+		width: 120px;
+		height: 120px;
+	}
+}

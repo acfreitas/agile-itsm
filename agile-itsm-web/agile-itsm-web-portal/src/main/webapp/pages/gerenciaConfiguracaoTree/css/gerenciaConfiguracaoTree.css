@@ -1,0 +1,314 @@
+#btnVoltar {
+	position: absolute;
+	right: 10px;
+}
+
+#jsTreeIC {
+	display: block;
+	width: 99%;
+	padding: 7px;
+	background: none repeat scroll 0 0 padding-box #F7F7F7;
+	border: 0 solid rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+	overflow: auto;
+	position: absolute;
+	top: 0;
+}
+
+#treeTop {
+	position: relative;
+	height: 100%;
+}
+
+#FRAME_OPCOES {
+	display: block;
+	float: left;
+	margin-top: 5px;
+	float: left;
+	margin-left: 10px;
+	padding: 7px;
+	background: none repeat scroll 0 0 padding-box #F7F7F7;
+	border: 0 solid rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+	width: 98% !important;
+	height: 98% !important;
+	min-height: 98% !important;
+}
+
+#principalInf {
+	display: block;
+	float: left;
+	height: 40px;
+	width: 99.9%;
+	background: #F1F1F1;
+	float: left;
+}
+
+#cabecalhoInf label {
+	display: block;
+	float: left;
+	margin-left: 7px;
+}
+
+#cabecalhoInf b {
+	margin: 0px 5px;
+}
+
+#cabecalhoInf label input {
+	display: block;
+	padding: 5px;
+	background: #CCCCCC;
+	width: 99.8%;
+}
+
+#itemConfiguracaoCorpo {
+	display: block;
+	float: left;
+	margin-top: 5px;
+}
+
+#itemConfiguracaoCorpo {
+	display: block;
+	width: 99.9%;
+	float: left;
+}
+
+#cabecalhoInf {
+	display: block;
+	float: left;
+	width: 1220px;
+}
+
+.win {
+	background-image: url("/citsmart/imagens/windows.png") !important;
+}
+
+.linux {
+	background-image: url("/citsmart/imagens/linux.png") !important;
+}
+
+a.l .jstree-icon {
+	background-image: url("/citsmart/imagens/linux.png") !important;
+}
+
+a.w .jstree-icon {
+	background-image: url("/citsmart/imagens/windows.png") !important;
+}
+
+#legenda {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+}
+
+.jstree ul li ul li a { /* max-width:200px !important ; */
+	overflow: hidden !important; /* text-overflow: ellipsis !important; */
+}
+
+.jstree li[rel="grupo"]>a {
+	color: blue;
+	font-weight: bold;
+}
+
+.jstree li[rel="grupoRelacionado"]>a {
+	color: slategray;
+	font-weight: 400;
+}
+
+.jstree li[rel="item"]>a {
+	color: black;
+}
+
+.jstree li[rel="itemRelacionado"]>a {
+	color: black;
+}
+
+.hidden {
+	display: none;
+}
+
+.margin10 {
+	margin: 10px;
+}
+
+.hidden {
+	display: none;
+}
+
+.pageList {
+	margin-bottom: 20px;
+	min-height: 64px;
+}
+
+.list:HOVER {
+	background-color: #e7e9f9;
+	cursor: pointer;
+	background-image: none;
+}
+
+.list>* {
+	border: none;
+	border-radius: 0;
+	box-sizing: border-box;
+	display: -webkit-box;
+	height: 32px;
+	margin: 0;
+}
+
+.list>:first-child {
+	-webkit-box-align: center;
+	-webkit-box-flex: 1;
+	-moz-box-align: center;
+	-moz-box-flex: 1;
+	display: -webkit-box;
+	display: -moz-box;
+}
+
+.pageList .tit''le {
+	width: 40%;
+}
+
+.url {
+	-webkit-margin-start: 7px;
+	-moz-margin-start: 7px;
+	-ms-margin-start: 7px;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*Legedas*/
+.leg td {
+	padding: 4px 0 !important;
+	line-height: 4px;
+	font-weight: bold;
+}
+
+.prod {
+	background: blue;
+}
+
+.grup {
+	background: green;
+}
+
+.ic {
+	background: red;
+}
+
+.ic_rel {
+	background: black;
+	width: 20px;
+	height: 20px;
+}
+
+.wh20 {
+	width: 20px;
+	height: 20px;
+}
+
+.ic_crit {
+	background-image: url("/citsmart/imagens/b.gif");
+	background-repeat: no-repeat;
+	width: 6px;
+	height: 20px;
+}
+
+.wind {
+	background-image: url("/citsmart/imagens/windows.png");
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+.linux {
+	background-image: url("/citsmart/imagens/linux.png");
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+}
+/*Legenda TreeView color*/
+.lAtivado {
+	color: #4D90FE !important;
+}
+
+.lDesativado {
+	color: #D14836 !important;
+}
+
+.lEmManutencao {
+	color: #FF7F00 !important;
+}
+
+.lImplantacao {
+	color: #15C !important;
+}
+
+.lHomologacao {
+	color: #1E68BF !important;
+}
+
+.lArquivado {
+	color: #5A5A5A !important;
+}
+
+.lEmDesenvolvimento {
+	color: #7BB600 !important;
+}
+
+.lvalidar {
+	color: #990000 !important;
+}
+
+/*Legenda Background*/
+.bAtivado {
+	background: #4D90FE !important;
+}
+
+.bDesativado {
+	background: #D14836 !important;
+}
+
+.bEmManutencao {
+	background: #FF7F00 !important;
+}
+
+.bImplantacao {
+	background: #15C !important;
+}
+
+.bHomologacao {
+	background: #1E68BF !important;
+}
+
+.bArquivado {
+	background: #5A5A5A !important;
+}
+
+.bEmDesenvolvimento {
+	background: #7BB600 !important;
+}
+
+.bValidarItem {
+	background: #990000 !important;
+}
+
+.manipulaDiv {
+	color: #6A6A6A;
+	cursor: pointer;
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-left: 2px;
+}
+
+.manipulaDiv:HOVER {
+	color: #A6CE39;
+	cursor: pointer;
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	margin-top: 15px;
+}

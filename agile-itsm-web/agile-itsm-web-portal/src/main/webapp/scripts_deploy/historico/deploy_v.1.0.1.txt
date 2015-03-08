@@ -1,0 +1,424 @@
+--Carlos Santos
+alter table citsmart.modelosemails add identificador varchar(20);
+
+--Carlos Santos 16072012
+alter table citsmart.servicocontrato add idgrupoexecutor int;
+alter table citsmart.servicocontrato add constraint fk_reference_559 foreign key (idgrupoexecutor)
+      references citsmart.grupo (idgrupo) on delete restrict on update restrict;
+
+
+--Carlos Santos 16072012
+alter table citsmart.ocorrenciasolicitacao add iditemtrabalho int;
+alter table citsmart.ocorrenciasolicitacao add constraint fk_ref_itemtrabalho foreign key (iditemtrabalho)
+      references citsmart.bpm_itemtrabalhofluxo (iditemtrabalho) on delete restrict on update restrict;
+
+--Carlos Santos 18072012
+alter table citsmart.servicocontrato add idcalendario int;
+alter table citsmart.servicocontrato add constraint fk_reference_560 foreign key (idcalendario)
+references citsmart.calendario (idcalendario) on delete restrict on update restrict;
+
+--Emauri 19072012
+ALTER TABLE citsmart.solicitacaoservico ADD idCalendario INT;
+ALTER TABLE citsmart.solicitacaoservico ADD houveMudanca char(1);
+ALTER TABLE citsmart.solicitacaoservico ADD slaACombinar char(1);
+ALTER TABLE citsmart.solicitacaoservico ADD prazohhAnterior SMALLINT;
+ALTER TABLE citsmart.solicitacaoservico ADD prazommAnterior SMALLINT;
+
+alter table citsmart.solicitacaoservico add constraint fk_reference_561 foreign key (idcalendario)
+      references citsmart.calendario (idcalendario) on delete restrict on update restrict;
+
+create index fk_ref_sol_servData on citsmart.solicitacaoservico
+(
+   datahorasolicitacao,
+   idsolicitante
+);
+
+create index fk_ref_sol_servCTRData on citsmart.solicitacaoservico
+(
+   datahorasolicitacao,
+   idservicocontrato
+);
+
+ALTER TABLE citsmart.servicocontrato ADD permSLATempoACombinar char(1);
+ALTER TABLE citsmart.servicocontrato ADD permMudancaSLA char(1);
+ALTER TABLE citsmart.servicocontrato ADD permMudancaCalendario char(1);
+
+--Emauri 20072012
+create table citsmart.processamentobatch
+(
+   idprocessamentobatch int not null,
+   descricao            varchar(70) not null,
+   expressaocron        varchar(40) not null,
+   conteudo             text,
+   tipo                 char(1) not null,
+   situacao             char(1) not null
+);
+
+alter table citsmart.processamentobatch
+   add primary key (idprocessamentobatch);
+
+create table citsmart.execucaobatch
+(
+   idexecucaobatch      int not null,
+   idprocessamentobatch int not null,
+   conteudo             text not null,
+   datahora             timestamp not null
+);
+
+alter table citsmart.execucaobatch
+   add primary key (idexecucaobatch);
+
+--Cleison Ferreira 21072012
+ALTER TABLE `citsmart`.`usuario` CHANGE COLUMN `senha` `senha` VARCHAR(300) CHARACTER SET 'latin1' NOT NULL;
+UPDATE `citsmart`.`usuario` SET `senha`='d033e22ae348aeb5660fc2140aec35850c4da997' WHERE `idusuario`='1';
+
+
+--Carlos Santos 20072012
+alter table citsmart.solicitacaoservico add tempodecorridohh smallint;
+alter table citsmart.solicitacaoservico add tempodecorridomm smallint;
+alter table citsmart.solicitacaoservico add datahorasuspensao timestamp null default null;
+alter table citsmart.solicitacaoservico add datahorareativacao timestamp null default null;
+alter table citsmart.ocorrenciasolicitacao modify column categoria varchar(10);
+alter table citsmart.permissoesfluxo add reativar char(1);
+
+--Carlos Santos 21072012
+create table citsmart.justificativasolicitacao
+(
+   idjustificativa      int not null,
+   descricaojustificativa varchar(100) not null,
+   suspensao            char(1) not null,
+   situacao            char(1) not null
+);
+alter table citsmart.justificativasolicitacao
+   add primary key (idjustificativa);
+alter table citsmart.ocorrenciasolicitacao add complementojustificativa text;
+alter table citsmart.ocorrenciasolicitacao add idjustificativa int;
+alter table citsmart.ocorrenciasolicitacao add constraint fk_reference_562 foreign key (idjustificativa)
+      references citsmart.justificativasolicitacao (idjustificativa) on delete restrict on update restrict;
+alter table citsmart.atividadeperiodica add idsolicitacaoservico int;
+alter table citsmart.atividadeperiodica add constraint fk_reference_563 foreign key (idsolicitacaoservico)
+      references citsmart.solicitacaoservico (idsolicitacaoservico) on delete restrict on update restrict;
+      
+alter table citsmart.permissoesfluxo add alterarsla char(1);   
+alter table citsmart.ocorrenciasolicitacao
+   drop primary key;
+alter table citsmart.ocorrenciasolicitacao
+   drop primary key;
+drop table if exists citsmart.ocorrenciasolicitacao;
+/*==============================================================*/
+/* Table: ocorrenciasolicitacao                                 */
+/*==============================================================*/
+create table citsmart.ocorrenciasolicitacao
+(
+   idocorrencia         int not null,
+   idjustificativa      int,
+   idsolicitacaoservico bigint,
+   iditemtrabalho       bigint,
+   dataregistro         date,
+   horaregistro         varchar(5),
+   registradopor        varchar(100),
+   descricao            varchar(200),
+   datainicio           date,
+   datafim              date,
+   complementojustificativa text,
+   dadossolicitacao     text,
+   informacoescontato   text,
+   categoria            varchar(20),
+   origem               char(1),
+   tempogasto           smallint,
+   ocorrencia           text
+);
+alter table citsmart.ocorrenciasolicitacao
+   add primary key (idocorrencia);
+alter table citsmart.ocorrenciasolicitacao add constraint fk_reference_562 foreign key (idjustificativa)
+      references citsmart.justificativasolicitacao (idjustificativa) on delete restrict on update restrict;
+alter table citsmart.ocorrenciasolicitacao add constraint fk_reference_564 foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico) on delete restrict on update restrict;
+alter table citsmart.ocorrenciasolicitacao add constraint fk_reference_565 foreign key (iditemtrabalho)
+      references bpm_itemtrabalhofluxo (iditemtrabalho) on delete restrict on update restrict;
+      
+alter table citsmart.bpm_atribuicaofluxo modify column tipo varchar(20); 
+
+
+--Emauri 22072012
+ALTER TABLE citsmart.justificativasolicitacao add deleted char(1);
+ALTER TABLE bpm_atribuicaofluxo MODIFY tipo varchar(20);
+create table citsmart.visaopersonalizada
+(
+   idvisao              bigint not null,
+   personalizada         char(1),
+   datamodif            date not null
+);
+alter table citsmart.visaopersonalizada
+   add primary key (idvisao);
+alter table citsmart.visaopersonalizada add constraint fk_reference_566 foreign key (idvisao)
+      references visao (idvisao) on delete restrict on update restrict;
+
+--Emauri 23072012
+ALTER TABLE citsmart.permissoesfluxo ADD reabrir char(1);
+
+--Emauri 23072012
+ALTER TABLE citsmart.grupoatvperiodica ADD deleted char(1);
+
+--Emauri 25072012
+alter table citsmart.tipoeventoservico add deleted char(1);
+alter table citsmart.tipodemandaservico add deleted char(1);
+alter table citsmart.localexecucaoservico add deleted char(1);
+alter table citsmart.baseconhecimento add versao varchar(45) not null;
+
+--Valdoilo 02082012
+create table citsmart.palavragemea (
+  idpalavragemea INT NOT NULL ,
+  palavra VARCHAR(256) NOT NULL ,
+  palavracorrespondente VARCHAR(256) NOT NULL ,
+  PRIMARY KEY (idpalavragemea) );
+
+--Emauri 02082012
+ALTER TABLE solicitacaoservico ADD impacto CHAR(1);
+ALTER TABLE solicitacaoservico ADD urgencia CHAR(1);
+
+--Valdoilo 03082012
+ALTER TABLE citsmart.usuario CHANGE COLUMN login login VARCHAR(256), CHANGE COLUMN nome nome VARCHAR(256);
+
+--Rodrigo Engelberg 06082012
+alter table jornadatrabalho add datainicio date;
+alter table jornadatrabalho add datafim date;
+
+
+--Emauri 13082012
+ALTER TABLE acordonivelservico ADD impacto CHAR(1);
+ALTER TABLE acordonivelservico ADD urgencia CHAR(1);
+ALTER TABLE acordonivelservico ADD permiteMudarImpUrg CHAR(1);
+
+--Emauri 14082012
+ALTER TABLE empregados ADD vinculaAContratos CHAR(1);
+
+create table contratoscolaboradores
+(
+   idempregado          int not null,
+   idcontrato           int not null
+);
+
+alter table contratoscolaboradores
+   add primary key (idempregado, idcontrato);
+
+alter table contratoscolaboradores add constraint fk_reference_568 foreign key (idempregado)
+      references empregados (idempregado) on delete restrict on update restrict;
+
+alter table contratoscolaboradores add constraint fk_reference_569 foreign key (idcontrato)
+      references contratos (idcontrato) on delete restrict on update restrict;
+	  
+CREATE  TABLE `citsmart`.`portal` (
+  `idportal` INT NOT NULL ,
+  `iditem` INT NULL ,
+  `posicaox` DOUBLE NULL ,
+  `posicaoy` DOUBLE NULL ,
+  `idusuario` INT NOT NULL ,
+  `largura` DOUBLE NULL ,
+  `altura` DOUBLE NULL ,
+  `data` DATE NULL ,
+  `hora` TIME NULL ,
+  PRIMARY KEY (`idportal`) );
+
+create table unidadesaccservicos
+(
+   idunidade            int not null,
+   idservico            bigint not null
+);
+
+alter table unidadesaccservicos
+   add primary key (idunidade, idservico);
+
+alter table unidadesaccservicos add constraint fk_reference_570 foreign key (idunidade)
+      references unidade (idunidade) on delete restrict on update restrict;
+
+alter table unidadesaccservicos add constraint fk_reference_571 foreign key (idservico)
+      references servico (idservico) on delete restrict on update restrict;
+
+CREATE  TABLE `citsmart`.`requisicaomudanca` (
+  `idrequisicaomudanca` INT NOT NULL ,
+  `idproprietario` INT NOT NULL ,
+  `idsolicitante` INT NOT NULL ,
+  `tipo` VARCHAR(255) NULL ,
+  `categoria` VARCHAR(255) NULL ,
+  `motivo` VARCHAR(255) NULL ,
+  `nivelimportancianegocio` VARCHAR(255) NULL ,
+  `classificacao` VARCHAR(255) NULL ,
+  `nivelimpacto` VARCHAR(255) NULL ,
+  `analiseimpacto` VARCHAR(3000) NULL ,
+  `dataconclusao` DATE NULL ,
+  `dataaceitacao` DATE NULL ,
+  `datavotacao` DATE NULL ,
+  `datainicio` DATE NULL ,
+  `datatermino` DATE NULL ,
+  `titulo` VARCHAR(255) NULL ,
+  `descricao` VARCHAR(255) NULL ,
+  `risco` VARCHAR(255) NULL ,
+  `estimativacusto` DOUBLE NULL ,
+  `planoreversao` VARCHAR(3000) NULL ,
+  `status` VARCHAR(45) NULL ,
+  `prioridade` VARCHAR(45) NULL ,
+  PRIMARY KEY (`idRequisicaoMudanca`) );
+
+ALTER TABLE `acordonivelservico` ADD COLUMN `idFormula` INT(11)  NULL ;
+
+ALTER TABLE acordonivelservicocontrato ADD idFormula INT;
+alter table acordonivelservicocontrato add constraint fk_reference_573 foreign key (idformula)
+      references formula (idformula) on delete restrict on update restrict;
+                  
+create table formula
+(
+   idformula            int not null,
+   identificador        varchar(120) not null,
+   nome                 varchar(120) not null,
+   conteudo             text,
+   datacriacao          date
+);
+
+alter table formula
+   add primary key (idformula);
+
+/*==============================================================*/
+/* Index: ix_identificador                                      */
+/*==============================================================*/
+create unique index ix_identificador on formula
+(
+   identificador
+);
+
+ALTER TABLE acordonivelservico ADD idFormula INT;
+alter table acordonivelservico add constraint fk_reference_572 foreign key (idformula)
+      references formula (idformula) on delete restrict on update restrict;
+	  
+alter table categoriaservico  add nomeCategoriaServicoConcatenado varchar(1024);
+
+--Valdoilo 24082012
+CREATE TABLE `citsmart`.`contratosgrupos` (
+  `idgrupo` INTEGER UNSIGNED NOT NULL,
+  `idcontrato` INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY (`idgrupo`, `idcontrato`)
+);
+ENGINE = InnoDB;
+
+/*==============================================================*/
+alter table categoriamudanca
+drop primary key;
+drop table if exists categoriamudanca;
+/*==============================================================*/
+/* Table: categoriamudanca */
+/*==============================================================*/
+create table categoriamudanca
+(
+idcategoriamudanca int not null,
+idcategoriamudancapai int,
+nomecategoria varchar(100)
+);
+alter table categoriamudanca
+add primary key (idcategoriamudanca);
+/*==============================================================*/
+alter table requisicaomudanca
+drop primary key;
+drop table if exists requisicaomudanca;
+/*==============================================================*/
+/* Table: requisicaomudanca */
+/*==============================================================*/
+create table requisicaomudanca
+(
+idrequisicaomudanca int not null,
+idproprietario int not null,
+idsolicitante int not null,
+tipo varchar(25),
+categoria varchar(255),
+motivo varchar(255),
+nivelimportancianegocio varchar(255),
+classificacao varchar(255),
+nivelimpacto varchar(255),
+analiseimpacto varchar(3000),
+dataconclusao date,
+dataaceitacao date,
+datavotacao date,
+datainicio date,
+datatermino date,
+titulo varchar(255),
+descricao varchar(255),
+risco varchar(255),
+estimativacusto double,
+planoreversao varchar(3000),
+status varchar(45),
+prioridade int,
+enviaemailcriacao varchar(1),
+enviaemailfinalizacao varchar(1),
+enviaemailacoes varchar(1),
+exibirquadromudancas varchar(1)
+);
+alter table requisicaomudanca
+add primary key (idrequisicaomudanca);
+
+/*==============================================================*/
+alter table requisicaomudancaitemconfiguracao
+drop primary key;
+drop table if exists requisicaomudancaitemconfiguracao;
+/*==============================================================*/
+/* Table: requisicaomudancaitemconfiguracao */
+/*==============================================================*/
+create table requisicaomudancaitemconfiguracao
+(
+idrequisicaomudancaitemconfiguracao int not null,
+idrequisicaomudanca int,
+iditemconfiguracao int,
+descricao varchar(100)
+);
+alter table requisicaomudancaitemconfiguracao
+add primary key (idrequisicaomudancaitemconfiguracao);
+alter table requisicaomudancaitemconfiguracao add constraint fk_reference_574 foreign key (idrequisicaomudanca)
+references requisicaomudanca (idrequisicaomudanca) on delete restrict on update restrict;
+alter table requisicaomudancaitemconfiguracao add constraint fk_reference_575 foreign key (iditemconfiguracao)
+references itemconfiguracao (iditemconfiguracao) on delete restrict on update restrict;
+
+/*==============================================================*/
+alter table requisicaomudancaservico
+drop primary key;
+drop table if exists requisicaomudancaservico;
+/*==============================================================*/
+/* Table: requisicaomudancaservico */
+/*==============================================================*/
+create table requisicaomudancaservico
+(
+idrequisicaomudancaservico int not null,
+idrequisicaomudanca int not null,
+idservico int not null
+);
+alter table requisicaomudancaservico
+add primary key (idrequisicaomudancaservico);
+alter table requisicaomudancaservico add constraint fk_reference_576 foreign key (idrequisicaomudanca)
+references requisicaomudanca (idrequisicaomudanca) on delete restrict on update restrict;
+alter table requisicaomudancaservico add constraint fk_reference_578 foreign key (idservico)
+references servico (idservico) on delete restrict on update restrict;
+
+ALTER TABLE `citsmart_homologacao`.`solicitacaoservico` ADD COLUMN `dataHoraCaptura` TIMESTAMP NULL DEFAULT NULL  AFTER `tempoAtendimentoMM` ;
+
+ALTER TABLE `citsmart_homologacao`.`solicitacaoservico` ADD COLUMN `tempoCapturaHH` SMALLINT(6) NULL DEFAULT NULL  AFTER `urgencia` , ADD COLUMN `tempoCapturaMM` SMALLINT(6) NULL DEFAULT NULL  AFTER `tempoCapturaHH` , ADD COLUMN `tempoAtrasoHH` SMALLINT(6) NULL DEFAULT NULL  AFTER `tempoCapturaMM` , ADD COLUMN `tempoAtrasoMM` SMALLINT(6) NULL DEFAULT NULL  AFTER `tempoAtrasoHH` , ADD COLUMN `tempoAtendimentoHH` SMALLINT(6) NULL DEFAULT NULL  AFTER `tempoAtrasoMM` , ADD COLUMN `tempoAtendimentoMM` SMALLINT(6) NULL DEFAULT NULL  AFTER `tempoAtendimentoHH` ;
+
+
+
+create table prioridadeacordonivelservico
+(
+   idunidade            int not null,
+   idacordonivelservico bigint not null,
+   idprioridade         bigint,
+   datainicio           date not null,
+   datafim              date
+)ENGINE=InnoDB;
+
+alter table prioridadeacordonivelservico
+   add primary key (idunidade, idacordonivelservico);
+
+alter table prioridadeacordonivelservico add constraint fk_ref2_579 foreign key (idacordonivelservico)
+      references acordonivelservico (idacordonivelservico) on delete restrict on update restrict;
+
+alter table prioridadeacordonivelservico add constraint fk_ref2_580 foreign key (idprioridade)
+      references prioridade (idprioridade) on delete restrict on update restrict;
+
+alter table prioridadeacordonivelservico add constraint fk_ref2_581 foreign key (idunidade)
+      references unidade (idunidade) on delete restrict on update restrict;
+

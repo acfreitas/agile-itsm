@@ -1,0 +1,14 @@
+.h170 {
+	height: 170px;
+}
+
+fieldset legend {
+	border-bottom: 1px solid;
+	margin-bottom: 15px;
+}
+
+
+		.:after {
+			color: #FF0000;
+			content: "*";
+		}

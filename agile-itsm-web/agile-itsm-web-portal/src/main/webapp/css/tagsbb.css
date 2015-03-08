@@ -1,0 +1,43 @@
+@media screen, print
+{
+  body
+  {
+    margin 			:0;
+    padding  		:0;
+    
+  }
+  
+  body *
+  {
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica;
+    text-align  :left;
+  }
+
+	a,
+	a:active,
+	a:visited
+	{
+	  text-decoration	:none;
+	  color				:#009966;
+	  font-size			:11px;
+	  font-weight		:bold;
+	  font-family		:Tahoma, Arial, Helvetica, sans-serif; 
+	}
+
+	a:hover
+	{
+	  text-decoration	:underline;
+	  color				:#00cc99;
+	  font-size			:11px;
+	  font-weight		:bold;
+	  font-family		:Tahoma, Arial, Helvetica, sans-serif; 
+	}
+
+  form
+  {
+    margin  :0px;
+    padding :0px;
+  }
+
+}

@@ -1,0 +1,66 @@
+
+/* =============== MYSQL =============== */
+drop table if exists templatesolicitacaoservico;
+
+/*==============================================================*/
+/* Table: templatesolicitacaoservico                            */
+/*==============================================================*/
+create table templatesolicitacaoservico
+(
+   idtemplate           int not null,
+   identificacao        varchar(40) not null,
+   nometemplate         varchar(200) not null,
+   nomeclassedto        varchar(255) not null,
+   nomeclasseaction     varchar(255) not null,
+   nomeclasseservico    varchar(255) not null,
+   nomeclassefluxo      varchar(255) not null,
+   urlrecuperacao       varchar(255) not null,
+   scriptaposrecuperacao text,
+   habilitadirecionamento char(1),
+   habilitasituacao     char(1),
+   habilitasolucao      char(1),
+   alturadiv            int,
+   habilitaurgenciaimpacto char(1),
+   habilitanotificacaoemail char(1)
+);
+
+alter table templatesolicitacaoservico
+   add primary key (idtemplate);
+
+alter table servico add constraint fk_reference_641 foreign key (idtemplatesolicitacao)
+      references templatesolicitacaoservico (idtemplate) on delete restrict on update restrict;
+
+alter table servico add constraint fk_reference_642 foreign key (idtemplateacompanhamento)
+      references templatesolicitacaoservico (idtemplate) on delete restrict on update restrict;
+
+ENGINE = InnoDB;
+
+/*==============================================================*/
+/* Table: TEMPLATESOLICITACAOSERVICO                            */
+/*==============================================================*/
+CREATE TABLE TEMPLATESOLICITACAOSERVICO
+(
+   IDTEMPLATE           INT NOT NULL,
+   IDENTIFICACAO        VARCHAR(40) NOT NULL,
+   NOMECLASSEDTO        VARCHAR(255) NOT NULL,
+   NOMECLASSEACTION     VARCHAR(255) NOT NULL,
+   NOMECLASSESERVICO    VARCHAR(255) NOT NULL,
+   NOMECLASSEFLUXO      VARCHAR(255) NOT NULL,
+   URLRECUPERACAO       VARCHAR(255) NOT NULL,
+   SCRIPTAPOSRECUPERACAO TEXT,
+   HABILITADIRECIONAMENTO CHAR(1),
+   HABILITASITUACAO     CHAR(1),
+   HABILITASOLUCAO      CHAR(1),
+   ALTURADIV            INT,
+   HABILITAURGENCIAIMPACTO CHAR(1),
+   HABILITANOTIFICACAOEMAIL CHAR(1)
+);
+
+ALTER TABLE TEMPLATESOLICITACAOSERVICO
+   ADD PRIMARY KEY (IDTEMPLATE);
+
+ALTER TABLE SERVICO ADD CONSTRAINT FK_REFERENCE_641 FOREIGN KEY (IDTEMPLATESOLICITACAO)
+      REFERENCES TEMPLATESOLICITACAOSERVICO (IDTEMPLATE) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE SERVICO ADD CONSTRAINT FK_REFERENCE_642 FOREIGN KEY (IDTEMPLATEACOMPANHAMENTO)
+      REFERENCES TEMPLATESOLICITACAOSERVICO (IDTEMPLATE) ON DELETE RESTRICT ON UPDATE RESTRICT;

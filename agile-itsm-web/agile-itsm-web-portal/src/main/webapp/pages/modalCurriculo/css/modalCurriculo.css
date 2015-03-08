@@ -1,0 +1,95 @@
+.total {
+	border: 1px solid #D8D8D8;
+}
+
+.divBoton {
+	border-bottom: 1px solid #D8D8D8;
+}
+
+#modal_curriculo {
+	width: 99% !important;
+	margin-left: -49%;
+	top: 40% !important;
+}
+
+#modal_curriculo .modal-body {
+	max-height: 610px;
+	overflow: auto !important;
+}
+
+#modal_listaNegra .modal-body {
+	max-height: 500px;
+	overflow: auto !important;
+}
+
+label {
+	display: inline;
+	margin-left: 5px;
+}
+
+.titulo {
+	font-family: arial; verdana;
+	font-size: 16pt;
+}
+
+#frameModalCurriculo {
+	width: 99% !important;
+}
+
+.tipoCandidato {
+	color: #5d665b;
+	font-size: 16px;
+	font-family: Verdana, Geneva, Arial, sans-serif;
+	background-color: #e8eae8;
+}
+
+div {
+	word-wrap: break-word;
+}
+
+#divDadosPessoais p {
+	line-height: 1.2em;
+	margin: 0;
+}
+
+#divHistoricoProfissional p {
+	line-height: 100%;
+}
+
+#divHistoricoProfissional h4,li {
+	font-family: Verdana, Arial;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: black;
+}
+#foto {
+	float: left;
+	margin-right: 20px;
+}
+#divDadosPessoaisContainer {
+	overflow: hidden;
+}
+#nomeCandidato{
+	font-size: 25px;
+	padding-bottom: 3px;
+	text-indent: -2px;
+}
+#divFoto{
+	width: 120px;
+	height: auto;
+}
+#divInfoCandidatos{
+	padding: 0px;
+}
+.row-ultima-atualizacao {
+	border-top: 1px solid;
+	margin-top: 10px;
+	padding-top: 10px;
+	text-align: right;
+}
+@media print {
+	.p-dados-anexos {
+		display: none;
+	}
+}

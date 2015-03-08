@@ -1,0 +1,217 @@
+body {
+	-webkit-user-select: none;
+	font-family: sans-serif;
+}
+
+div table tr{
+	padding: 3px;
+	margin: 10px;	
+}
+
+#menu {
+	
+	width: 99%;
+	height: 55px;
+	margin-left: 7px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3)
+}
+
+#itens li{
+	display: inline;
+	padding: 5px;
+	margin: 0px;
+	list-style: none;
+	float: left;
+}
+
+#opcoes li{
+	display: inline;
+	padding: 5px;
+	margin: 0px;
+	list-style: none;
+	float: right;
+}
+
+.icone {
+	 padding: 3px;
+	width: 35px;
+	height: 40px;
+	cursor: pointer; 
+	  margin-top: -2px;  
+}
+
+.icone:HOVER {
+	/* background-color: gray; */
+	padding-bottom:2px;
+	border-bottom: 3px solid black;
+	cursor: pointer;
+}
+
+#mapaServicos {
+	padding: 10px;
+	margin-left: 8px;
+	background-color: white;
+	/* border: 2px solid #E0E6E9; */
+	width: 98%;
+	min-height: 95%!important;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+}
+
+.titulo_servico {
+	padding: 0px;
+	margin: 0px;
+	font-size: x-large;
+	width: 100%;
+	position: absolute;
+	background-color: scrollbar;
+}
+
+#descricaoServico{
+	font-size: small;
+}
+
+.popup {
+	
+	
+/* 	position: absolute;
+	top: 7%;
+	left: 7%;
+	
+	display:none;
+	
+	padding: 10px;
+	width: auto;
+	height: 85%;
+	border: 1px solid #d0d0d0;
+	background-color: scrollbar;
+	
+	 overflow:auto; */
+}
+
+.carregando {
+	text-align: center;
+	font-size: x-large;
+	
+	position: absolute;
+	display: none;
+	
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #d0d0d0;
+	background-color: white;
+	
+	opacity:0.65;
+	-moz-opacity: 0.65;
+	filter: alpha(opacity=65);
+}
+
+a{
+	text-decoration: underline;
+}
+
+select{
+	width: 100%;	
+}
+
+textarea {
+	border: 1px solid #d0d0d0;	
+	background-color: white;
+}
+
+#msg {
+	color: #000099;
+	font-style: italic;
+	font-size: small;
+}
+
+#msg_erro{
+	color: #990000;
+	font-style: italic;
+	font-size: small;
+}#nomeServico{
+	color: #848C97;
+	margin-left: 20%
+}
+#divNomeServico{
+	
+}
+
+#growls {
+  z-index: 500000;
+  position: fixed; }
+  #growls.default {
+    top: 10px;
+    right: 100px; }
+  #growls.tl {
+    top: 10px;
+    left: 10px; }
+  #growls.tr {
+    top: 10px;
+    right: 10px; }
+  #growls.bl {
+    bottom: 10px;
+    left: 10px; }
+  #growls.br {
+    bottom: 10px;
+    right: 10px; }
+
+.growl {
+  opacity: 0.8;
+  position: relative;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out; }
+  .growl.growl-incoming {
+    opacity: 0; }
+  .growl.growl-outgoing {
+    opacity: 0; }
+  .growl.growl-small {
+    width: 200px;
+    padding: 5px;
+    margin: 5px; }
+  .growl.growl-medium {
+    width: 250px;
+    padding: 10px;
+    margin: 10px; }
+  .growl.growl-large {
+    width: 300px;
+    padding: 15px;
+    margin: 15px; }
+  .growl.growl-default {
+    color: white;
+    background: #7f8c8d; }
+  .growl.growl-error {
+    color: white;
+    background: #c0392b; }
+  .growl.growl-notice {
+    color: white;
+    moz-box-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+	-webkit-box-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+    border: 1px solid #666666;
+	background: #aaaaaa;
+	background: #aaaaaa linear-gradient(top, rgba(0,0,0,0.25), rgba(0,0,0,0));
+	background: #aaaaaa -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.25)), to(rgba(0,0,0,0)));
+	background: #aaaaaa -moz-linear-gradient(top, rgba(0,0,0,0.25), rgba(0,0,0,0));
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #333333;
+    }
+  .growl.growl-warning {
+    color: white;
+    background: #f39c12; }
+  .growl .growl-close {
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    font-family: helvetica, verdana, sans-serif; }
+  .growl .growl-title {
+    font-size: 18px;
+    line-height: 24px; }
+  .growl .growl-message {
+    font-size: 14px;
+    line-height: 18px; }

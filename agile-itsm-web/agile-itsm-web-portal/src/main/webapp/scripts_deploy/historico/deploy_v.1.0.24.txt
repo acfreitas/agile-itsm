@@ -1,0 +1,44 @@
+/* MYSQL */
+
+CREATE  TABLE testecitsmart (   
+  idtestecitsmart INT NOT NULL,   
+  classe VARCHAR(250) NULL ,   
+  metodo VARCHAR(255) NULL ,   
+  resultado VARCHAR(250) NULL ,   
+  data_hora DATETIME NULL ,   
+PRIMARY KEY (idtestecitsmart) ); 
+
+ALTER TABLE atividadesservicocontrato CHANGE COLUMN hora DECIMAL NULL DEFAULT NULL;
+
+ALTER TABLE caracteristica CHANGE COLUMN sistema char(1);
+ALTER TABLE tipoitemconfiguracao CHANGE COLUMN sistema char(1);
+
+
+/* ORACLE */
+
+CREATE  TABLE TESTECITSMART (   
+  IDTESTECITSMART INT NOT NULL,   
+  CLASSE VARCHAR2(250) NULL ,   
+  METODO VARCHAR2(255) NULL ,   
+  RESULTADO VARCHAR2(250) NULL ,   
+  DATA_HORA DATE NULL ,   
+PRIMARY KEY (IDTESTECITSMART) ); 
+
+ALTER TABLE caracteristica MODIFY sistema char(1);
+ALTER TABLE tipoitemconfiguracao MODIFY sistema char(1);
+
+ALTER TABLE atividadesservicocontrato MODIFY hora DECIMAL;
+ALTER TABLE atividadesservicocontrato MODIFY hora NULL;
+ALTER TABLE ATIVIDADESSERVICOCONTRATO MODIFY HORA DEFAULT NULL;
+                              
+
+/* Dinamic views OS 19/10/2012*/
+
+var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+var acordoNivelServicoContratoService = new importNames.AcordoNivelServicoContratoServiceEjb();
+var flag = acordoNivelServicoContratoService.verificaDataContrato(mapFields);
+if(!flag){
+	dinamicViewDto.abortFuncaoPrincipal = true;
+	dinamicViewDto.msgRetorno = "A data inicial do SLA é maior que a data final do contrato.";
+}

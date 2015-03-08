@@ -1,0 +1,512 @@
+<tr>
+<td colspan='2'>
+<div id='divByDisponibilidade' style='display:none'>
+	<br>
+	<b>$sla.acordoservicodisponibilidade</b><br>
+	<table>
+		<tr>
+			<td>
+				$sla.indicedisponibilidade:
+			</td>
+			<td>
+				<input type='TEXT' name='DISPONIBILIDADE' size='5' maxlength='5' class='Format[Money]'/>
+			</td>
+			<td>
+				%
+			</td>
+		</tr>
+	</table>
+</div>
+<div id='divByDiversos' style='display:none'>
+	<br>
+	<b>ACORDO DE SERVIÇO</b><br>
+	<table>
+		<tr>
+			<td>
+				Valor Limite:
+			</td>
+			<td>
+				<input type='TEXT' name='VALORLIMITE' size='15' maxlength='15' class='Format[Money]'/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Unidade (do Valor Limite):
+			</td>
+			<td>
+				<input type='TEXT' name='UNIDADEVALORLIMITE' size='50' maxlength='150'/>
+			</td>
+		</tr>	
+		<tr>
+			<td>
+				Glosa:
+			</td>
+			<td>
+				<textarea rows="5" cols="100" name='DETALHEGLOSA' style='border:1px solid black;'></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Limite da Glosa:
+			</td>
+			<td>
+				<textarea rows="5" cols="100" name='DETALHELIMITEGLOSA' style='border:1px solid black;'></textarea>
+			</td>
+		</tr>					
+	</table>	
+</div>
+<div id='divByFalhaRepetitiva' style='display:none'>
+	<br>
+	<b>ACORDO DE SERVIÇO POR FALHA REPETITIVA</b><br>
+	<div id="divQuantidadeGlosa" style="padding-top:10px">
+		<input type='hidden' id='VALORAJUSTESERIALIZADO' name='VALORAJUSTESERIALIZADO'/>
+		<table id="tabelaQuantidadeGlosa" >
+			<tr>
+				<td>
+					<span>Quantidade de Glosas: </span>
+				</td>
+				<td>
+					<input type='TEXT' name='QUANTIDADEFALHAS' size='2' maxlength='2' class='Format[Numero]'/>
+				</td>
+				<td>
+					<span>Percentual de desconto: </span>
+				</td>
+				<td>
+					<input type='TEXT' name='VALORAJUSTE' size='5' maxlength='5' class='Format[Money]'/>
+				</td>
+				<td>
+					<span> % </span>
+				</td>
+				<td>
+					<img title="Adicionar nova quantiade" src="/citsmart/imagens/add.png" onclick="addQuantidade();" border="0" style="cursor:pointer">
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div id='divByResultadosEsperados' style='display:none'>
+	<br>
+	<b>RESULTADOS ESPERADOS E NÍVEIS DE QUALIDADE EXIGIDOS</b><br>
+	<div id="divResultados" style="padding-top:10px">
+		<input type='hidden' id='RESULTADOSESPERADOSSERIALIZADO' name='RESULTADOSESPERADOSSERIALIZADO'/>
+		<table id="tabelaResultadosEsperados">
+			<tr>
+				<td>
+					<span style='text-align: center; font-weight: bold;'>Resultados esperados</span>
+				</td>
+				<td>
+					<span style='text-align: center; font-weight: bold;'>Limites</span>
+				</td>
+				<td>
+					<span style='text-align: center; font-weight: bold;'>Glosa</span>
+				</td>
+				<td>
+					<span style='text-align: center; font-weight: bold;'>Limite Glosa</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea maxlength="1000" rows="4" cols="80" name='DESCRICAORESULTADOS' style='border:1px solid black;'></textarea>
+				</td>
+				<td>
+					<textarea maxlength="200" rows="4" cols="20" name='LIMITES' style='border:1px solid black;'></textarea>
+				</td>
+				<td>
+					<textarea maxlength="200" rows="4" cols="20" name='GLOSA' style='border:1px solid black;'></textarea>
+				</td>
+				<td>
+					<textarea maxlength="200" rows="4" cols="20" name='LIMITEGLOSA' style='border:1px solid black;'></textarea>
+				</td>
+				<td>
+					<img title="Adicionar nova linha" src="/citsmart/imagens/add.png" onclick="addLinha();" border="0" style="cursor:pointer">
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div id='divByTempos' style='display:none'>
+	<br>
+	<b>$sla.alvostempo</b><br>
+	<table border="1" width="100%">
+		<tr>
+			<td>
+				&nbsp;
+			</td>
+			<td colspan='2' style='text-align: center; background-color: gray; border:1px solid black;'>
+				<b>--- 1 ---</b>
+			</td>
+			<td colspan='2' style='text-align: center; background-color: gray; border:1px solid black;'>
+				<b>--- 2 ---</b>
+			</td>
+			<td colspan='2' style='text-align: center; background-color: gray; border:1px solid black;'>
+				<b>--- 3 ---</b>
+			</td>
+			<td colspan='2' style='text-align: center; background-color: gray; border:1px solid black;'>
+				<b>--- 4 ---</b>
+			</td>
+			<td colspan='2' style='text-align: center; background-color: gray; border:1px solid black;'>
+				<b>--- 5 ---</b>
+			</td>												
+		</tr>
+		<tr>
+			<td>
+				$sla.captura
+			</td>
+			<td>
+				<input type='text' name='HH-1-1' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-1-1' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>
+			<td>
+				<input type='text' name='HH-1-2' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-1-2' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>
+			<td>
+				<input type='text' name='HH-1-3' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-1-3' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>
+			<td>
+				<input type='text' name='HH-1-4' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-1-4' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>
+			<td>
+				<input type='text' name='HH-1-5' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-1-5' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>												
+		</tr>
+		<tr>
+			<td>
+				$sla.resolucao
+			</td>
+			<td>
+				<input type='text' name='HH-2-1' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-2-1' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>
+			<td>
+				<input type='text' name='HH-2-2' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-2-2' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>
+			<td>
+				<input type='text' name='HH-2-3' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-2-3' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>
+			<td>
+				<input type='text' name='HH-2-4' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-2-4' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>
+			<td>
+				<input type='text' name='HH-2-5' size='2' maxlength="2" class='Format[Number]'/>hrs
+			</td>
+			<td>
+				<input type='text' name='MM-2-5' size='2' maxlength="2" class='Format[Number]'/>min
+			</td>												
+		</tr>				
+	</table>
+	<br>
+	<b>$sla.automacao</b><br>
+	<table border="1" width="100%">
+		<tr>
+			<td>
+				$sla.actiontime
+			</td>
+			<td>
+executeClass=br.com.centralit.citcorpore.metainfo.complementos.ComplementoSLA_TempoAuto			
+			</td>			
+		</tr>
+		<tr>
+			<td colspan="2">
+				<fieldset>
+					<label>$sla.action</label>
+					<table>
+						<tr>
+							<td>
+								$sla.prioridade
+							</td>
+							<td>
+								<select name="IDPRIORIDADEAUTO1" id="IDPRIORIDADEAUTO1">
+executeClass=br.com.centralit.citcorpore.metainfo.complementos.ComplementoSLA_Prioridade
+								</select>
+							</td>
+							<td>
+								$sla.grupo
+							</td>
+							<td>
+								<select name="IDGRUPO1" id="IDGRUPO1">
+executeClass=br.com.centralit.citcorpore.metainfo.complementos.ComplementoSLA_Grupos
+								</select>
+							</td>												
+						</tr>
+					</table>
+				</fieldset>
+			</td>			
+		</tr>		
+	</table>	
+executeClass=br.com.centralit.citcorpore.metainfo.complementos.ComplementoSLA
+</div>
+</td>
+</tr>
+<script type="text/javascript" src="../../cit/objects/ValorAjusteGlosaDTO.js"></script>
+<script type="text/javascript" src="../../cit/objects/ResultadosEsperadosDTO.js"></script>
+<script>
+
+	function avaliaTipoSLA(){
+		document.getElementById('divByDisponibilidade').style.display = 'none';
+		document.getElementById('divByTempos').style.display = 'none';
+		document.getElementById('divByDiversos').style.display = 'none';
+		document.getElementById('divByFalhaRepetitiva').style.display = 'none';
+		document.getElementById('divByResultadosEsperados').style.display = 'none';
+		
+		if (document.form.TIPO.value == 'D'){
+			document.getElementById('divByDisponibilidade').style.display = 'block';
+		}
+		if (document.form.TIPO.value == 'T'){
+			document.getElementById('divByTempos').style.display = 'block';
+		}
+		if (document.form.TIPO.value == 'V'){
+			document.getElementById('divByDiversos').style.display = 'block';
+		}
+		if (document.form.TIPO.value == 'F'){
+			document.getElementById('divByFalhaRepetitiva').style.display = 'block';
+		}
+		if (document.form.TIPO.value == 'R'){
+			document.getElementById('divByResultadosEsperados').style.display = 'block';
+		}
+	}
+	
+	var flag = false;
+	
+	function carregaValores(){
+		
+		var obj = document.form.VALORAJUSTESERIALIZADO.value;
+		var objValorAjuste = new Array();
+		objValorAjuste = ObjectUtils.deserializeCollectionFromStringSemQuebraEnter(obj);
+		if(objValorAjuste != null && objValorAjuste.length != 0 && flag == false){
+			var size = objValorAjuste.length;
+			if(size>1){
+				for(var i=0;i<size-1;i++){
+					addQuantidade();
+				}
+				for(var i=0; i<size;i++){
+					var ValorAjusteGlosaDTO = new CIT_ValorAjusteGlosaDTO();
+					ValorAjusteGlosaDTO = objValorAjuste[i];
+					document.form.QUANTIDADEFALHAS[i].value = ObjectUtils.decodificaEnter(ValorAjusteGlosaDTO.quantidadeFalhas);
+					document.form.VALORAJUSTE[i].value = ObjectUtils.decodificaEnter(ValorAjusteGlosaDTO.valorAjuste);
+				}
+				 flag = true;
+			}else{
+				var ValorAjusteGlosaDTO = new CIT_ValorAjusteGlosaDTO();
+				ValorAjusteGlosaDTO = objValorAjuste[0];
+				document.form.QUANTIDADEFALHAS.value = ObjectUtils.decodificaEnter(ValorAjusteGlosaDTO.quantidadeFalhas);
+				document.form.VALORAJUSTE.value = ObjectUtils.decodificaEnter(ValorAjusteGlosaDTO.valorAjuste);
+			}
+		}
+		
+	}
+	
+	var flag = false;
+	
+	function carregaResultados(){
+		
+		var objres = document.form.RESULTADOSESPERADOSSERIALIZADO.value;
+		var objResultado = new Array();
+		objResultado = ObjectUtils.deserializeCollectionFromStringSemQuebraEnter(objres);
+		if(objResultado != null && objResultado.length != 0 && flag == false){
+			var size = objResultado.length;
+			if(size>1){
+				for(var i=0;i<size-1;i++){
+					addLinha();
+				}
+				for(var i=0; i<size;i++){
+					var ResultadosEsperadosDTO = new CIT_ResultadosEsperadosDTO();
+					ResultadosEsperadosDTO = objResultado[i];
+					document.form.DESCRICAORESULTADOS[i].value = ResultadosEsperadosDTO.descricaoResultados;
+					document.form.LIMITES[i].value = ObjectUtils.decodificaEnter(ResultadosEsperadosDTO.limites);
+					document.form.GLOSA[i].value = ObjectUtils.decodificaEnter(ResultadosEsperadosDTO.glosa);
+					document.form.LIMITEGLOSA[i].value = ObjectUtils.decodificaEnter(ResultadosEsperadosDTO.limiteGlosa);
+				}
+				 flag = true;
+			}else{
+				var ResultadosEsperadosDTO = new CIT_ResultadosEsperadosDTO();
+				ResultadosEsperadosDTO = objResultado[0];
+				document.form.DESCRICAORESULTADOS.value = ObjectUtils.decodificaEnter(ResultadosEsperadosDTO.descricaoResultados);
+				document.form.LIMITES.value = ObjectUtils.decodificaEnter(ResultadosEsperadosDTO.limites);
+				document.form.GLOSA.value = ObjectUtils.decodificaEnter(ResultadosEsperadosDTO.glosa);
+				document.form.LIMITEGLOSA.value = ObjectUtils.decodificaEnter(ResultadosEsperadosDTO.limiteGlosa);
+			}
+		}
+		
+	}
+	
+	var cont = 0;
+	
+	function addQuantidade() {
+		
+		var tabela = document.getElementById('tabelaQuantidadeGlosa');
+		var lastRow = tabela.rows.length;
+		
+		var row = tabela.insertRow(lastRow);
+		cont++;
+		
+		var coluna = row.insertCell(0);
+		coluna.innerHTML = '<span>Quantidade de Glosas: </span>';
+		
+		coluna = row.insertCell(1);
+		coluna.innerHTML = '<input type="TEXT" name="QUANTIDADEFALHAS" size="2" maxlength="2" class="Format[Numero]"/>';
+		
+		coluna = row.insertCell(2);
+		coluna.innerHTML = '<span>Percentual de desconto: </span>';
+		
+		coluna = row.insertCell(3);
+		coluna.innerHTML = '<input type="TEXT" name="VALORAJUSTE" size="5" maxlength="5" class="Format[Money]"/>';
+		
+		coluna = row.insertCell(4);
+		coluna.innerHTML = '<span> % </span>';
+		
+		coluna = row.insertCell(5);
+		coluna.innerHTML = '<img title="Remover quantiade" src="/citsmart/imagens/delete.png" onclick="removeQuantidade(\'tabelaQuantidadeGlosa\', this.parentNode.parentNode.rowIndex);" border="0" style="cursor:pointer">';
+		
+		coluna = row.insertCell(6);
+		coluna.innerHTML = '<img title="Adicionar nova quantiade" src="/citsmart/imagens/add.png" onclick="addQuantidade();" border="0" style="cursor:pointer">';
+				
+	}
+	
+	var cont = 0;
+	
+	function addLinha() {
+		
+		var tabela = document.getElementById('tabelaResultadosEsperados');
+		var lastRow = tabela.rows.length;
+		
+		var row = tabela.insertRow(lastRow);
+		cont++;
+		
+		var coluna = row.insertCell(0);
+		coluna.innerHTML = "<textarea maxlength='1000' rows='4' cols='80' name='DESCRICAORESULTADOS' style='border:1px solid black;'></textarea>";
+		
+		coluna = row.insertCell(1);
+		coluna.innerHTML = "<textarea maxlength='200' rows='4' cols='20' name='LIMITES' style='border:1px solid black;'></textarea>";
+		
+		coluna = row.insertCell(2);
+		coluna.innerHTML = "<textarea maxlength='200' rows='4' cols='20' name='GLOSA' style='border:1px solid black;'></textarea>";
+		
+		coluna = row.insertCell(3);
+		coluna.innerHTML = "<textarea maxlength='200' rows='4' cols='20' name='LIMITEGLOSA' style='border:1px solid black;'></textarea>";
+		
+		coluna = row.insertCell(4);
+		coluna.innerHTML = '<img title="Remover quantiade" src="/citsmart/imagens/delete.png" onclick="removeQuantidade(\'tabelaResultadosEsperados\', this.parentNode.parentNode.rowIndex);" border="0" style="cursor:pointer">';
+		
+		coluna = row.insertCell(5);
+		coluna.innerHTML = "<img title='Adicionar nova linha' src='/citsmart/imagens/add.png' onclick='addLinha();' border='0' style='cursor:pointer'>";
+				
+	}
+	
+	function removeQuantidade(idTabela, rowIndex){
+		HTMLUtils.deleteRow(idTabela, rowIndex);
+	}
+	
+	/**
+	 * Gravando informações sobre quantidade e valores de falhas repetitivas
+	 */
+	function gravar() {
+		serializa();
+		serializaResultados();
+	}
+	
+	function serializa() {
+		var contadorAux = 0;
+		var objValorAjuste = new Array();
+		if(document.form.QUANTIDADEFALHAS.length == undefined){
+			objValorAjuste[contadorAux] = getValorAjusteUnicaLinha();
+			contadorAux = contadorAux + 1;
+		}else{
+			var count = document.form.QUANTIDADEFALHAS.length;
+			for ( var i = 0; i < count; i++) {
+				objValorAjuste[contadorAux] = getValorAjuste(i);
+				contadorAux = contadorAux + 1;
+			}
+		}
+		var valorAjusteSerializados = ObjectUtils.serializeObjects(objValorAjuste);
+		document.form.VALORAJUSTESERIALIZADO.value = valorAjusteSerializados;
+		return true;
+	}
+	
+	function getValorAjusteUnicaLinha(){
+		var ValorAjusteGlosaDTO = new CIT_ValorAjusteGlosaDTO();
+		ValorAjusteGlosaDTO.quantidadeFalhas = document.form.QUANTIDADEFALHAS.value;
+ 		ValorAjusteGlosaDTO.valorAjuste = document.form.VALORAJUSTE.value;
+ 		return ValorAjusteGlosaDTO;
+	}
+	
+	function getValorAjuste(seq) {
+		var ValorAjusteGlosaDTO = new CIT_ValorAjusteGlosaDTO();
+		ValorAjusteGlosaDTO.sequence = seq;
+		ValorAjusteGlosaDTO.quantidadeFalhas = document.form.QUANTIDADEFALHAS[seq].value;
+	 	ValorAjusteGlosaDTO.valorAjuste = document.form.VALORAJUSTE[seq].value;
+		return ValorAjusteGlosaDTO;
+	}
+	
+	/** Fim de quantidade e valores de falhas repetitivas
+	*/
+	
+	/**
+	 * Gravando informações sobre resultados esperados
+	 */
+	
+	function serializaResultados() {
+		var contadorAux = 0;
+		var objValorResultado = new Array();
+		if(document.form.DESCRICAORESULTADOS.length == undefined){
+			objValorResultado[contadorAux] = getResultadoUnicaLinha();
+			contadorAux = contadorAux + 1;
+		}else{
+			var count = document.form.DESCRICAORESULTADOS.length;
+			for ( var i = 0; i < count; i++) {
+				objValorResultado[contadorAux] = getResultadosEsperados(i);
+				contadorAux = contadorAux + 1;
+			}
+		}
+		var valorResultadoSerializados = ObjectUtils.serializeObjects(objValorResultado);
+		document.form.RESULTADOSESPERADOSSERIALIZADO.value = valorResultadoSerializados;
+		return true;
+	}
+	
+	function getResultadoUnicaLinha(){
+		var ResultadosEsperadosDTO = new CIT_ResultadosEsperadosDTO();
+		ResultadosEsperadosDTO.descricaoResultados = document.form.DESCRICAORESULTADOS.value;
+		ResultadosEsperadosDTO.limites = document.form.LIMITES.value;
+		ResultadosEsperadosDTO.glosa = document.form.GLOSA.value;
+		ResultadosEsperadosDTO.limiteGlosa = document.form.LIMITEGLOSA.value;
+ 		return ResultadosEsperadosDTO;
+	}
+	
+	function getResultadosEsperados(seq) {
+		var ResultadosEsperadosDTO = new CIT_ResultadosEsperadosDTO();
+		ResultadosEsperadosDTO.sequence = seq;
+	 	ResultadosEsperadosDTO.descricaoResultados = document.form.DESCRICAORESULTADOS[seq].value;
+		ResultadosEsperadosDTO.limites = document.form.LIMITES[seq].value;
+		ResultadosEsperadosDTO.glosa = document.form.GLOSA[seq].value;
+		ResultadosEsperadosDTO.limiteGlosa = document.form.LIMITEGLOSA[seq].value;
+		return ResultadosEsperadosDTO;
+	}
+	
+	/** Fim de resultados esperados
+	*/
+	
+</script>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<PAINEL description='	' classNameProcessParameters="br.com.centralit.citgerencial.processparameters.ProcessParametersGeral">
+	<ITEM name='rel01' file='xmlsGerenciais/mudancas/atualizacoesNaoAutorizadas.xml' top='0' heigth='850' width='1060' left='0'/>
+	
+	<PARAMETERS>
+        <PARAM name='dataInicial' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datainicio' fix='false' mandatory='true' reload='true' />
+        <PARAM name='dataFinal' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datafim' fix='false' mandatory='true' default='{TODAY}'/>
+        
+        <PARAM name='idGrupoItemConfiguracaoPai' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='itemConfiguracaoTree.ciclo' fix='false' mandatory='false' reload='false' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>       
+            <OPTION value='998' text='citcorpore.comum.producao'/>
+            <OPTION value='999' text='citcorpore.comum.homologacao'/>
+            <OPTION value='997' text='citcorpore.comum.desenvolvimento'/>
+        </PARAM>
+
+        <PARAM name='situacao' type='java.lang.String' typeHTML='select' size='0'  value='' description='itemConfiguracaoTree.statusIC' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>      
+            <option value="1" text='gerenciaConfiguracaoTree.legenda.ativado'/>
+            <option value="2" text='gerenciaConfiguracaoTree.legenda.desativado'/>
+            <option value="3" text='gerenciaConfiguracaoTree.legenda.emManutencao'/>
+            <option value="4" text='gerenciaConfiguracaoTree.legenda.implantacao'/>
+            <option value="5" text='gerenciaConfiguracaoTree.legenda.homologacao'/>
+            <option value="6" text='gerenciaConfiguracaoTree.legenda.emDesenvolvimento'/>
+            <option value="7" text='gerenciaConfiguracaoTree.legenda.arquivado'/>
+        </PARAM>
+                
+        <PARAM name='idCriticidade' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='citcorpore.comum.criticidade' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todas'/>        
+            <option value="1" text="citcorpore.comum.critica"/>
+            <option value="2" text="citcorpore.comum.alta"/>
+            <option value="3" text="citcorpore.comum.media"/>
+            <option value="4" text="citcorpore.comum.baixa"/>
+        </PARAM>
+        
+        <PARAM name='idTipoItemConfiguracao' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='itemConfiguracaoTree.tipoItemConfiguracao' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idtipoitemconfiguracao, nometipoitemconfiguracao
+                  FROM tipoitemconfiguracao
+                  WHERE datafim IS NULL
+                ORDER BY nometipoitemconfiguracao
+            </OPTIONS>
+        </PARAM>
+
+
+	</PARAMETERS>
+		
+</PAINEL>

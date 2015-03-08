@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <display-name>CITSMart</display-name>
+
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>Mensagens</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>br.com.centralit.citcorpore.util.CorporeContextListener</listener-class>
+    </listener>
+    <listener>
+        <display-name>Controle de Sessao de Usuarios.</display-name>
+        <listener-class>br.com.centralit.citcorpore.util.ControleSessaoListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>org.quartz.ee.servlet.QuartzInitializerListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>config-file</param-name>
+        <param-value>quartz.properties</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+    </listener>
+    <context-param>
+        <param-name>resteasy.scan</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resteasy-resources1</param-name>
+        <param-value>br.com.centralit.citsmart.rest.resource.RestDataResources</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resteasy-resources2</param-name>
+        <param-value>br.com.centralit.citsmart.rest.resource.RestOperationResources</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resteasy-resources3</param-name>
+        <param-value>br.com.centralit.citsmart.rest.resource.RestMobileResources</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resteasy-resources4</param-name>
+        <param-value>br.com.centralit.citsmart.rest.resource.RestBICitsmartResource</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>filtroSeguranca</filter-name>
+        <filter-class>br.com.centralit.citcorpore.util.FiltroSegurancaCITSmart</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>filtroSeguranca</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>citAjax-invoker</servlet-name>
+        <servlet-class>br.com.centralit.citajax.servlet.CITServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>citAjax-invoker</servlet-name>
+        <url-pattern>/cit/*</url-pattern>
+        <url-pattern>*.event</url-pattern>
+        <url-pattern>*.find</url-pattern>
+        <url-pattern>*.get</url-pattern>
+        <url-pattern>*.load</url-pattern>
+        <url-pattern>*.restore</url-pattern>
+        <url-pattern>*.save</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>citCorpore-invoker</servlet-name>
+        <servlet-class>br.com.centralit.citcorpore.metainfo.servlet.ServletDinamic</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>citCorpore-invoker</servlet-name>
+        <url-pattern>*.extern</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>citCorpore-getFile</servlet-name>
+        <servlet-class>br.com.centralit.citcorpore.metainfo.servlet.ServletGetFile</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>citCorpore-getFile</servlet-name>
+        <url-pattern>*.getFile</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>600</session-timeout>
+    </session-config>
+
+    <!-- Configurando as paginas de erro do sistema -->
+    <error-page>
+        <error-code>403</error-code>
+        <location>/pages/comuns/acessonegado.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pages/error/erro404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/pages/error/erro500.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.*</exception-type>
+        <location>/pages/start/start.load</location>
+    </error-page>
+
+    <servlet>
+        <servlet-name>resteasy-servlet</servlet-name>
+        <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>resteasy-servlet</servlet-name>
+        <url-pattern>/mobile/*</url-pattern>
+        <url-pattern>/services/*</url-pattern>
+        <url-pattern>/services/data/*</url-pattern>
+        <url-pattern>/services/bicitsmart/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>DWR Servlet</display-name>
+        <servlet-name>dwr-invoker</servlet-name>
+        <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>activeReverseAjaxEnabled</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dwr-invoker</servlet-name>
+        <url-pattern>/dwr/*</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

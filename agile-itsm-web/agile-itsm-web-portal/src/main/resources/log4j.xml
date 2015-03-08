@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[${project.artifactId}] %d{HH:mm:ss-SSS} [%t] %p %C{1}(%L): %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="asyncConsoleAppender" class="org.apache.log4j.AsyncAppender">
+        <appender-ref ref="consoleAppender" />
+    </appender>
+
+    <logger name="br.com.centralit">
+        <level value="${log4j.level}" />
+    </logger>
+
+    <logger name="br.com.citframework">
+        <level value="${log4j.level}" />
+    </logger>
+
+    <root>
+        <priority value="${third.log4j.level}" />
+        <appender-ref ref="asyncConsoleAppender" />
+    </root>
+
+</log4j:configuration>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<processamentos>
+	<processamentoBatch>
+		<batch>
+			<descricao>
+				Execução da Rotina de Inventario
+			</descricao>
+			<conteudo>
+				br.com.centralit.citcorpore.quartz.job.DisparaInventario
+			</conteudo>
+			<tipo>
+				C
+			</tipo>
+			<situacao>
+				A
+			</situacao>
+		</batch>
+		<batch>
+			<descricao>
+				Verifica e avisa a data de expiração de um item de configuração
+			</descricao>
+			<conteudo>
+				br.com.centralit.citcorpore.quartz.job.VerificaValidadeLicenca
+			</conteudo>
+			<tipo>
+				C
+			</tipo>
+			<situacao>
+				A
+			</situacao>
+		</batch>
+		<batch>
+			<descricao>
+				Backup LogDados
+			</descricao>
+			<conteudo>
+				br.com.centralit.citcorpore.quartz.job.ExecutaBackupLogDados
+			</conteudo>
+			<tipo>
+				C
+			</tipo>
+			<situacao>
+				A
+			</situacao>
+		</batch>
+		<batch>
+			<descricao>
+				Replicar o conteúdo do campo descricao da tabela solicitacaoservico para o campo descricaosemformatacao
+			</descricao>
+			<conteudo>
+				br.com.centralit.citcorpore.quartz.job.EventoPopulaDescricaoSolicitacao
+			</conteudo>
+			<tipo>
+				C
+			</tipo>
+			<situacao>
+				A
+			</situacao>
+		</batch>
+				<batch>
+			<descricao>
+				Replicar o conteudo do campo conteudo da  tabela base conhecimento para o campo conteudosemformatcao
+			</descricao>
+			<conteudo>
+				br.com.centralit.citcorpore.quartz.job.EventoPopulaConteudoBaseConhecimento
+			</conteudo>
+			<tipo>
+				C
+			</tipo>
+			<situacao>
+				A
+			</situacao>
+		</batch>
+		<batch>
+			<descricao>
+				Atualiza nomeProcura dos empregados
+			</descricao>
+			<conteudo>
+				br.com.centralit.citcorpore.quartz.job.AtualizaNomeProcuraEmpregados
+			</conteudo>
+			<tipo>
+				C
+			</tipo>
+			<situacao>
+				A
+			</situacao>
+		</batch>
+	</processamentoBatch>
+</processamentos>

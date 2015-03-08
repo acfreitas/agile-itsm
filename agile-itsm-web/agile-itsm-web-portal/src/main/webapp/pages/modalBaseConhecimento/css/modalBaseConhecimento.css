@@ -1,0 +1,68 @@
+    .ui-layout-center ,
+    .ui-layout-east ,
+    .ui-layout-east .ui-layout-content {
+        padding:        0;
+        overflow:       hidden;
+    }
+    .hidden {
+        display:        none;
+    }
+    h2.loading {
+        border:         0;
+        font-size:      24px;
+        font-weight:    normal;
+        margin:         30% 0 0 40%;
+    }
+    .cell-title {
+        font-weight: bold;
+    }
+    .cell-effort-driven {
+        text-align: center;
+    }
+
+	.toggler-west-closed		{ background: url(${ctx}/imagens/go-rt-off.gif) no-repeat center; }
+	.toggler-west-closed:hover	{ background: url(${ctx}/imagens/go-rt-on.gif)  no-repeat center; }
+	.toggler-east-closed		{ background: url(${ctx}/imagens/go-lt-off.gif) no-repeat center; }
+	.toggler-east-closed:hover	{ background: url(${ctx}/imagens/go-lt-on.gif)  no-repeat center; }
+
+	span.button-close-west			{ background: url(${ctx}/imagens/go-lt-off.gif) no-repeat center; }
+	span.button-close-west:hover	{ background: url(${ctx}/imagens/go-lt-on.gif)  no-repeat center; }
+	span.button-close-east			{ background: url(${ctx}/imagens/go-rt-off.gif) no-repeat center; }
+	span.button-close-east:hover	{ background: url(${ctx}/imagens/go-rt-on.gif)  no-repeat center; }
+
+	.table {
+		border-left:1px solid #ddd;
+	}
+
+	.table th {
+		border:1px solid #ddd;
+		padding:4px 10px;
+		border-left:none;
+		background:#eee;
+	}
+
+	.table td {
+		border:1px solid #ddd;
+		padding:4px 10px;
+		border-top:none;
+		border-left:none;
+	}
+	
+	.table {
+	border-left:1px solid #ddd;
+	}
+
+	.table th {
+	border:1px solid #ddd;
+	padding:4px 10px;
+	border-left:none;
+	background:#eee;
+	}
+
+	.table td {
+	border:1px solid #ddd;
+	padding:4px 10px;
+	border-top:none;
+	border-left:none;
+	}
+	

@@ -1,0 +1,168 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>56</idVisao>
+  <descricao>$menu.nome.tipoSolicitacaoServico</descricao>
+  <tipoVisao>ED</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>TipoSolicitacaoServico</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <idGrupoVisao>971</idGrupoVisao>
+      <idVisao>56</idVisao>
+      <descricaoGrupoVisao>$menu.nome.tipoSolicitacaoServico</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>971</idGrupoVisao>
+          <idCamposObjetoNegocio>3116</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.codigo</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDTIPODEMANDASERVICO</nomeDB>
+          <nomeTabelaDB>TIPODEMANDASERVICO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>971</idGrupoVisao>
+          <idCamposObjetoNegocio>3117</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.nomeTipoDemandaServico</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>70</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>NOMETIPODEMANDASERVICO</nomeDB>
+          <nomeTabelaDB>TIPODEMANDASERVICO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>971</idGrupoVisao>
+          <idCamposObjetoNegocio>3118</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.classificacao</descricaoNegocio>
+          <tipoNegocio>SELECT</tipoNegocio>
+          <ordem>3</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>200</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>I#$requisitosla.incidente</string>
+            <string>O#$requisitosla.ordem_servico</string>
+            <string>R#$requisitosla.requisicao</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>1581</idValorVisaoCamposNegocio>
+              <idGrupoVisao>971</idGrupoVisao>
+              <idCamposObjetoNegocio>3118</idCamposObjetoNegocio>
+              <valor>I#$requisitosla.incidente</valor>
+              <situacao>A</situacao>
+              <descricao>$requisitosla.incidente</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>1582</idValorVisaoCamposNegocio>
+              <idGrupoVisao>971</idGrupoVisao>
+              <idCamposObjetoNegocio>3118</idCamposObjetoNegocio>
+              <valor>O#$requisitosla.ordem_servico</valor>
+              <situacao>A</situacao>
+              <descricao>$requisitosla.ordem_servico</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>1583</idValorVisaoCamposNegocio>
+              <idGrupoVisao>971</idGrupoVisao>
+              <idCamposObjetoNegocio>3118</idCamposObjetoNegocio>
+              <valor>R#$requisitosla.requisicao</valor>
+              <situacao>A</situacao>
+              <descricao>$requisitosla.requisicao</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+          <nomeDB>CLASSIFICACAO</nomeDB>
+          <nomeTabelaDB>TIPODEMANDASERVICO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+  <colVisoesRelacionadas class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+      <idVisaoRelacionada>427</idVisaoRelacionada>
+      <idVisaoPai>56</idVisaoPai>
+      <idVisaoFilha>43</idVisaoFilha>
+      <ordem>0</ordem>
+      <titulo>$visao.pesquisaSolServico</titulo>
+      <situacao>A</situacao>
+      <tipoVinculacao>1</tipoVinculacao>
+      <acaoEmSelecaoPesquisa>RP</acaoEmSelecaoPesquisa>
+      <identificacaoVisaoFilha>PesquisaTipoSolicitacaoServico</identificacaoVisaoFilha>
+    </br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+  </colVisoesRelacionadas>
+  <colScripts class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>837</idScriptsVisao>
+      <idVisao>56</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONDELETE                      </scryptType>
+      <script>var importTipoServico = JavaImporter();
+
+importTipoServico.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+
+var tipoServicoServiceEjb = new importTipoServico .TipoDemandaServicoServiceEjb();
+
+var existe= tipoServicoServiceEjb .existeCadastroServicoVinculado(mapFields);
+
+if (existe){
+ dinamicViewsDto.abortFuncaoPrincipal = true;
+   
+dinamicViewsDto.msgRetorno = &quot;$exclusao.comun.cadastroServico&quot;;
+
+}</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+  </colScripts>
+  <colBotoes class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>915</idBotaoAcaoVisao>
+      <idVisao>56</idVisao>
+      <texto>$botaoacaovisao.gravar_dados</texto>
+      <acao>1</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>0</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>916</idBotaoAcaoVisao>
+      <idVisao>56</idVisao>
+      <texto>$botaoacaovisao.limpar_dados</texto>
+      <acao>2</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>1</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>917</idBotaoAcaoVisao>
+      <idVisao>56</idVisao>
+      <texto>$botaoacaovisao.excluir</texto>
+      <acao>3</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>2</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+  </colBotoes>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

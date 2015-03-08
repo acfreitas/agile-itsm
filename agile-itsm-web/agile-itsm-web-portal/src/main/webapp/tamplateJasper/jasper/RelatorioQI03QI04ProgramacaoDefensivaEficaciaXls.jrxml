@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" language="java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioQI03QI04ProgramacaoDefensivaEficaciaXls" pageWidth="1100" pageHeight="842" columnWidth="1100" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a46e26d7-c56c-49fd-85c8-74797fe575d6">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="fec416c5-15d6-439a-8730-3931a1c7f111"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Program Files\\jboss\\server\\default\\deploy\\CitCorpore.war\\tamplateJasper\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TITULO_RELATORIO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CIDADE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DATA_HORA" class="java.sql.Timestamp" isForPrompting="false"/>
+	<parameter name="NOME_USUARIO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dataInicio" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="dataFim" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR_1" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/citsmart/tamplateJasper/jasper/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="contrato" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="nomeResponsavelAtual" class="java.lang.String"/>
+	<parameter name="Logo" class="java.io.File">
+		<parameterDescription><![CDATA[Logomarca]]></parameterDescription>
+	</parameter>
+	<parameter name="idItemConfig" class="java.lang.String"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<parameter name="TOTAL_SOLICITACOES" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="idEmpregado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idEmpregado]]></fieldDescription>
+	</field>
+	<field name="funcionario" class="java.lang.String">
+		<fieldDescription><![CDATA[funcionario]]></fieldDescription>
+	</field>
+	<field name="qtdeencaminhadas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[qtdeencaminhadas]]></fieldDescription>
+	</field>
+	<field name="qtdeexito" class="java.lang.Integer">
+		<fieldDescription><![CDATA[qtdeexito]]></fieldDescription>
+	</field>
+	<field name="totalPorExecutantePorcentagem" class="java.lang.String">
+		<fieldDescription><![CDATA[totalPorExecutantePorcentagem]]></fieldDescription>
+	</field>
+	<field name="porcentagemExecutadaExito" class="java.lang.Double">
+		<fieldDescription><![CDATA[porcentagemExecutadaExito]]></fieldDescription>
+	</field>
+	<variable name="totalEncaminhada" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{qtdeencaminhadas}]]></variableExpression>
+	</variable>
+	<variable name="totalExito" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{qtdeexito}]]></variableExpression>
+	</variable>
+	<variable name="totalPorcentagemExecutadaExito" class="java.lang.Double">
+		<variableExpression><![CDATA[$V{totalEncaminhada} == null || $V{totalEncaminhada}.doubleValue() == 0 ? 0 : ($V{totalExito}.doubleValue() / $V{totalEncaminhada}.doubleValue())*100]]></variableExpression>
+	</variable>
+	<variable name="porcentagem" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[(100*($F{qtdeexito}.doubleValue()/$F{qtdeencaminhadas}.doubleValue()))]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="29" splitType="Stretch">
+			<frame>
+				<reportElement uuid="22bebef5-66ca-4f77-a202-7fd4a3b92bdb" mode="Opaque" x="0" y="0" width="1100" height="29" backcolor="#CCCCCC"/>
+				<textField>
+					<reportElement uuid="aa5aef64-48cc-4de6-9877-73b6992fe6a7" x="100" y="0" width="1000" height="29"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{TITULO_RELATORIO}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement uuid="d79da48d-0edb-4637-bd49-38c9ca8216bf" stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="23" isRemoveLineWhenBlank="true"/>
+					<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="121" splitType="Stretch">
+			<printWhenExpression><![CDATA[( $V{PAGE_NUMBER} > 1 ? false : true)]]></printWhenExpression>
+			<textField>
+				<reportElement uuid="657354f8-cffb-4277-ba77-bf6f983fce91" key="staticText-32" positionType="Float" x="0" y="20" width="133" height="18">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{dataInicio}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.periodo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="40321b1b-b4f3-44cf-adaa-15600c252ae4" x="245" y="20" width="134" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataFim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6ac0df05-6de8-4044-80dc-59dc03a9031c" key="staticText-33" positionType="Float" x="229" y="20" width="16" height="18">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{dataInicio}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.a}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a080ac11-756e-4bfe-9c32-f810bfe7097d" x="133" y="20" width="96" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataInicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8e53797d-3996-4375-a4fe-2535412dcc72" mode="Opaque" x="0" y="0" width="1100" height="20" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.filtros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="657354f8-cffb-4277-ba77-bf6f983fce91" key="staticText-32" positionType="Float" x="0" y="38" width="133" height="18">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{dataInicio}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.contrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2c45ad53-eaa7-4284-a435-02b67682fa8e" x="133" y="38" width="246" height="18"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{contrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="657354f8-cffb-4277-ba77-bf6f983fce91" key="staticText-32" positionType="Float" mode="Transparent" x="0" y="101" width="569" height="20" backcolor="#CCCCCC">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{dataInicio}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.nomeFuncionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="657354f8-cffb-4277-ba77-bf6f983fce91" key="staticText-32" positionType="Float" x="569" y="101" width="162" height="20">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{dataInicio}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantidadeEncaminhada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="657354f8-cffb-4277-ba77-bf6f983fce91" key="staticText-32" positionType="Float" x="731" y="101" width="171" height="20">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{dataInicio}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantidadeExecutada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="657354f8-cffb-4277-ba77-bf6f983fce91" key="staticText-32" positionType="Float" x="902" y="101" width="198" height="20">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{dataInicio}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.executadasComExito} + " %"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="69c715db-2859-4668-9c39-3aa1cbd67cd0" x="0" y="0" width="568" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{funcionario}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a5013419-2267-4acb-ab26-9ceae6475a34" x="569" y="0" width="162" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{qtdeencaminhadas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="ee12ea4b-62b8-46dd-b954-c9d4ed7a5d8e" x="731" y="0" width="171" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{qtdeexito}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="f894086b-e457-4a3d-9851-a44169388067" x="902" y="0" width="198" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{porcentagemExecutadaExito} == null ? "0" : $F{porcentagemExecutadaExito}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<lastPageFooter>
+		<band height="33">
+			<textField>
+				<reportElement uuid="65ca27f9-8ddc-43d6-a527-1dee8f11c2aa" x="569" y="0" width="162" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{totalEncaminhada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0e25622e-db97-47d9-b482-9b9254142b26" x="731" y="0" width="171" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{totalExito}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+				<reportElement uuid="3a16ce98-5bb6-43ca-bd78-7ac9f638a13b" x="902" y="0" width="198" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{totalPorcentagemExecutadaExito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="657354f8-cffb-4277-ba77-bf6f983fce91" key="staticText-32" positionType="Float" x="0" y="0" width="568" height="20">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{dataInicio}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.TotalGeral}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

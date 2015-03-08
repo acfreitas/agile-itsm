@@ -1,0 +1,234 @@
+TD.bordaNaoSelecionaProntuario {
+
+	padding: 5px;
+}
+
+TD.bordaNaoSelecionaProntuario:hover {
+
+	BACKGROUND-COLOR: #D7DDE1;
+	COLOR: white;
+}
+
+TD.bordaSelecionaProntuario {
+	MARGIN-TOP: 1px;
+	MARGIN-BOTTOM: 1px;
+	MARGIN-LEFT: 1px;
+
+	BACKGROUND-COLOR: #D7DDE1;
+	COLOR: #868D97;
+
+	padding: 5px;
+}
+
+DIV.divProntuario {
+	BORDER-RIGHT: thin outset;
+	BORDER-TOP: thin outset;
+	MARGIN: 1px;
+	BORDER-LEFT: thin outset;
+	BORDER-BOTTOM: thin outset
+}
+
+INPUT.campoReadOnly {
+	BORDER-RIGHT: 1px solid;
+	BORDER-TOP: 1px solid;
+	BORDER-LEFT: 1px solid;
+	BORDER-BOTTOM: 1px solid;
+	BACKGROUND-COLOR: lightgrey
+}
+
+.linhaGrid {
+	border: 1px solid black;
+	background-color: #D6E7FF;
+}
+
+.ui-layout-center,.ui-layout-east,.ui-layout-east .ui-layout-content {
+	padding: 0;
+	overflow: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+.ui-widget-header {
+	padding: 7px 15px 9px;
+}
+
+h2.loading {
+	border: 0;
+	font-size: 24px;
+	font-weight: normal;
+	margin: 30% 0 0 40%;
+}
+
+.cell-title {
+	font-weight: bold;
+}
+
+.cell-effort-driven {
+	text-align: center;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+body{
+	background-color: transparent;
+	font-family: arial;
+	text-align: center;
+}
+
+#estruturaContrato{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: #f7f7f7;
+	text-align: center;
+}
+#estruturaContrato #topo{
+	display: block;
+	margin: 0 auto;
+ 	width: 99.8%; 
+	float: left;
+	margin-left: 20px\0/;
+}
+
+#estruturaContrato #topo fieldset{
+	/*padding: 1px;
+	margin: 1px;*/
+	width: 100%;
+	border: 1px solid #999;
+	margin-top: -15px !important;	
+}
+
+#estruturaContrato #topo fieldset label{
+	display: block;
+	float: left;
+	width: 10px;
+	/*margin-right: 5px;*/
+}
+
+#estruturaContrato #topo fieldset label.showAlertas{
+	display: block;
+	float: left;	
+	width: 325px;
+	text-align: right;
+	margin-top: -30px !important;	
+}
+
+#estruturaContrato #topo fieldset label.numeroContrato{
+	width: 380px;
+}
+
+#estruturaContrato #topo fieldset label.numeroContrato input{
+	width: 350px !important;
+}
+
+#estruturaContrato #topo fieldset label.idContrato{
+	width: 200px;
+}
+
+#estruturaContrato #topo fieldset label.novo{
+	width: 80px;
+}
+
+#estruturaContrato #topo fieldset label.voltar{
+	width: auto;
+	height: 30px;
+}
+
+#estruturaContrato #topo fieldset label.labelSeparador{
+	width: 100%;
+	height:1px;
+
+}
+
+#estruturaContrato #topo fieldset legend{
+	font-size: 13px;
+	letter-spacing: 2px;
+	color: #666;
+	/*margin-left: 10px;*/
+	background-color: #f2f2f2;
+	/*padding: 1px;*/
+}
+
+#estruturaContrato #corpo{
+	display: block;
+	width: 100%;
+	float: left;	
+	height: auto;
+	/*padding: 3px;
+	margin: 3px;	
+	margin-top: 5px;*/
+	background-color: transparent;
+	margin-left: 20px\0/;
+}
+#estruturaContrato #corpo #esquerda{
+	display: inline;
+	width: 149px;
+	float: right;		
+	height: auto;	
+	border: none;
+	/*padding-top:0.5em;*/
+	padding-left:0.5em;
+	position:fixed;
+	right: -0.2em;
+	background:#f1f1f1;
+	z-index: 1000;
+	/*margin-top:1em;*/
+	opacity: 0.9;
+		-moz-background-clip: padding;     /* Firefox 3.6 */
+	-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+	background-clip: padding-box;
+  	-moz-box-shadow:    1px 1px 2px 3px #ccc;
+ 	 -webkit-box-shadow: 1px 1px 2px 3px #ccc;
+  	box-shadow:       0 0 1px rgba(0, 0, 0, 0.1);
+  	border: 1px solid rgba(0,0,0,0.02);
+
+}
+
+#estruturaContrato #corpo #esquerda label.imgSeta{
+	display: block;
+	float: left;
+	height: 16px;
+	width: 16px;
+	margin: 0;
+	position: absolute;
+	left:-22px;
+		background:#f1f1f1;
+	z-index: 1000;
+	opacity: 0.9;
+	top:0;
+		-moz-background-clip: padding;     /* Firefox 3.6 */
+	-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+	background-clip: padding-box;
+  	-moz-box-shadow:    1px 1px 2px 3px #ccc;
+ 	 -webkit-box-shadow: 1px 1px 2px 3px #ccc;
+  	box-shadow:       0 0 1px rgba(0, 0, 0, 0.1);
+  	border: 1px solid rgba(0,0,0,0.02);
+}
+
+#estruturaContrato #corpo #esquerda #tblMenuProntuario{
+	margin-top: 10px;
+	padding: 2px;
+}
+
+#estruturaContrato #corpo #esquerda #tblMenuProntuario{
+
+}
+
+#estruturaContrato #corpo #esquerda #tblMenuProntuario tr td:hover{
+	color: black;
+}
+
+#estruturaContrato #corpo #direita{
+	display: block;
+	width: auto;
+	float: left;	
+	height: auto;	
+	border: 1px solid #485260;
+	/*padding: 5px;*/
+}

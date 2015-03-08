@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Notification_GetReasonsResp>
+    <DateTime>2001-12-31T12:00:00</DateTime>
+    <OperationID>0</OperationID>
+    <Error>
+        <Code>Code</Code>
+        <Description>Description</Description>
+    </Error>
+    <Amount>0</Amount>
+    <Reason>
+        <Id>0</Id>
+        <Desc>Desc</Desc>
+    </Reason>
+</Notification_GetReasonsResp>

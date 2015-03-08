@@ -1,0 +1,759 @@
+/* MYSQL*/
+alter table contatosolicitacaoservico change column telefonecontato telefonecontato varchar(70) null;
+
+/*ORACLE*/
+ALTER TABLE CONTATOSOLICITACAOSERVICO MODIFY (TELEFONECONTATO NULL);
+/* MYSQL */
+
+
+/*==============================================================*/
+/* Table: "categoriamudanca"                            */
+/*==============================================================*/
+create table categoriamudanca  (
+   idcategoriamudanca integer not null,
+   idtipofluxo       INT(11),
+   idmodeloemailcriacao INT(11),
+   idmodeloemailfinalizacao INT(11),
+   idmodeloemailacoes INT(11),
+   idgruponivel1      INT(11),
+   idgrupoexecutor   INT(11),
+   idcalendario      INT(11),
+   idcategoriamudancapai INT(11),
+   nomecategoria      varchar(100),
+   datainicio         date,
+   datafim            date
+)
+ENGINE = InnoDB;
+
+alter table categoriamudanca
+   add constraint pk_categoriamudanca primary key (idcategoriamudanca);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_bpm_tipo foreign key (idtipofluxo)
+      references bpm_tipofluxo (idtipofluxo);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_modelose foreign key (idmodeloemailcriacao)
+      references modelosemails (idmodeloemail);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_modelose_01 foreign key (idmodeloemailfinalizacao)
+      references modelosemails (idmodeloemail);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_modelose_02 foreign key (idmodeloemailacoes)
+      references modelosemails (idmodeloemail);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_grupo foreign key (idgruponivel1)
+      references grupo (idgrupo);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_grupo_01 foreign key (idgrupoexecutor)
+      references grupo (idgrupo);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_calendar foreign key (idcalendario)
+      references calendario (idcalendario);	 
+	  
+
+/*==============================================================*/
+/* Table: "requisicaomudanca"                                   */
+/*==============================================================*/
+create table requisicaomudanca  (
+   idrequisicaomudanca integer                        not null,
+   idproprietario     integer                         not null,
+   idsolicitante      integer                         not null,
+   tipo            varchar(25),
+   idcategoriamudanca integer,
+   idgruponivel1      INT(11),
+   idgrupoatual       INT(11),
+   idcalendario       INT(11),
+   motivo             varchar(255),
+   nivelimportancianegocio varchar(255),
+   classificacao      varchar(255),
+   nivelimpacto       varchar(255),
+   analiseimpacto     varchar(3000),
+   datahoraconclusao  timestamp,
+   dataaceitacao     date,
+   datavotacao        date,
+   datahorainicio     timestamp,
+   datahoratermino    timestamp,
+   titulo           varchar(255),
+   descricao          varchar(255),
+   risco              varchar(255),
+   estimativacusto   Double,
+   planoreversao     varchar(3000),
+   status            varchar(45),
+   prioridade        integer,
+   enviaemailcriacao  varchar(1),
+   enviaemailfinalizacao varchar(1),
+   enviaemailacoes    varchar(1),
+   exibirquadromudancas varchar(1),
+   seqreabertura      smallint,
+   datahoracaptura    timestamp,
+   datahorareativacao timestamp,
+   datahorasuspensao  timestamp,
+   tempodecorridohh   smallint,
+   tempodecorridomm   smallint,
+   prazohh            smallint,
+   prazomm           smallint,
+   tempoatendimentohh smallint,
+   tempoatendimentomm smallint,
+   tempoatrasohh      smallint,
+   tempoatrasomm      smallint,
+   tempocapturahh     smallint,
+   tempocapturamm     smallint,
+   fase            varchar(20)
+)
+ENGINE = InnoDB;
+
+alter table requisicaomudanca
+   add constraint pk_requisicaomudanca primary key (idrequisicaomudanca);
+
+alter table requisicaomudanca
+   add constraint fk_requisic_reference_categoria foreign key (idcategoriamudanca)
+      references categoriamudanca (idcategoriamudanca);
+
+alter table requisicaomudanca
+   add constraint fk_requisic_reference_grupo foreign key (idgruponivel1)
+      references grupo (idgrupo);
+
+alter table requisicaomudanca
+   add constraint fk_requisic_reference_grupo_01 foreign key (idgrupoatual)
+      references grupo (idgrupo);
+
+alter table requisicaomudanca
+   add constraint fk_requisic_reference_calendar foreign key (idcalendario)
+      references calendario (idcalendario);
+	  
+	  ALTER TABLE requisicaomudanca ADD COLUMN nivelurgencia VARCHAR(255) NULL  AFTER fase ;
+	 
+
+/*==============================================================*/
+/* Table:  execucaomudanca                             */
+/*==============================================================*/
+create table execucaomudanca  (
+   idexecucao         integer not null,
+   idinstanciafluxo   BIGINT(20) not null,
+   idrequisicaomudanca INT(11) not null,
+   idfluxo           BIGINT(20) not null,
+   seqreabertura     smallint
+)
+ENGINE = InnoDB;
+
+
+alter table execucaomudanca
+   add constraint pk_execucaomudanca primary key (idexecucao);
+
+alter table execucaomudanca 
+add constraint fk_execucao_reference_bpm_inst foreign key (idinstanciafluxo) 
+references bpm_instanciafluxo (idinstancia);
+
+
+alter table execucaomudanca
+add constraint fk_execucao_reference_requisic foreign key (idrequisicaomudanca)
+  references requisicaomudanca (idrequisicaomudanca);
+
+alter table execucaomudanca
+add constraint fk_execucao_reference_bpm_flux foreign key (idfluxo)
+references bpm_fluxo (idfluxo);	  
+	  
+
+/*==============================================================*/
+/* Table:  ocorrenciamudanca                                    */
+/*==============================================================*/
+create table ocorrenciamudanca  (
+   idocorrencia      integer                         not null,
+    iditemtrabalho      BIGINT(20),
+    idjustificativa     INT(11),
+    idrequisicaomudanca  INT(11),
+    dataregistro        date,
+    horaregistro        varchar(5),
+    registradopor       varchar(100),
+    descricao           varchar(200),
+    datainicio          date,
+    datafim             date,
+    complementojustificativa   	LONGTEXT,
+    dadosmudanca         	LONGTEXT,
+    informacoescontato   	LONGTEXT,
+    categoria           varchar(20),
+    origem              char(1),
+    tempogasto          smallint,
+    ocorrencia           	LONGTEXT
+)
+ENGINE = InnoDB;
+
+alter table  ocorrenciamudanca 
+   add constraint pk_ocorrenciamudanca primary key ( idocorrencia );
+
+alter table  ocorrenciamudanca 
+   add constraint fk_ocorrenc_reference_bpm_item foreign key ( iditemtrabalho )
+      references  bpm_itemtrabalhofluxo  ( iditemtrabalho );
+
+alter table  ocorrenciamudanca 
+   add constraint fk_ocorrenc_reference_justific foreign key ( idjustificativa )
+      references justificativasolicitacao  ( idjustificativa );
+
+alter table  ocorrenciamudanca 
+   add constraint fk_ocorrenc_reference_requisic foreign key ( idrequisicaomudanca )
+      references  requisicaomudanca  ( idrequisicaomudanca ); 
+
+
+/*==============================================================*/
+/* Table:  requisicaomudancaitemconfigura                       */
+/*==============================================================*/
+create table  requisicaomudancaitemconfiguracao   (
+    idrequisicaomudancaitemconfiguracao  integer    not null,
+    idrequisicaomudanca  INt(11),
+    iditemconfiguracao  INt(11),
+    descricao           varchar(100)
+)
+ENGINE = InnoDB;
+
+alter table  requisicaomudancaitemconfiguracao 
+   add constraint pk_requisicaomudancaitemconfig primary key ( idrequisicaomudancaitemconfiguracao );
+
+alter table  requisicaomudancaitemconfiguracao 
+   add constraint fk_requisic_reference_requisic foreign key ( idrequisicaomudanca )
+      references  requisicaomudanca  ( idrequisicaomudanca );
+
+alter table  requisicaomudancaitemconfiguracao 
+   add constraint fk_requisic_reference_itemconf foreign key ( iditemconfiguracao )
+      references  itemconfiguracao  ( iditemconfiguracao );
+
+
+/*==============================================================*/
+/* Table:  requisicaomudancaservico                             */
+/*==============================================================*/
+create table  requisicaomudancaservico   (
+    idrequisicaomudancaservico  integer  not null,
+    idrequisicaomudanca  INT(11)  not null,
+    idservico           BIGINT(20) not null
+)
+ENGINE = InnoDB;
+
+alter table  requisicaomudancaservico 
+   add constraint pk_requisicaomudancaservico primary key ( idrequisicaomudancaservico );
+
+alter table  requisicaomudancaservico 
+   add constraint fk_requisic_reference_requisic foreign key ( idrequisicaomudanca )
+      references  requisicaomudanca  ( idrequisicaomudanca );
+
+alter table  requisicaomudancaservico 
+   add constraint fk_requisic_reference_servico foreign key ( idservico )
+      references  servico  ( idservico );	  
+	  
+
+/*==============================================================*/
+/* Alteracao :  Itemconfiguracao                                */
+/*==============================================================*/
+
+ALTER TABLE itemconfiguracao 
+ADD COLUMN idproprietario int;
+
+ALTER TABLE itemconfiguracao
+ADD column dataexpiracao date;
+
+ALTER TABLE itemconfiguracao
+ADD CONSTRAINT fk_idproprietario foreign key (idproprietario)
+REFERENCES empregados (idempregado);
+
+ALTER TABLE grupoitemconfiguracao
+ADD COLUMN email varchar(50);
+
+ALTER TABLE itemconfiguracao
+ADD COLUMN versao varchar(50);
+
+/*==============================================================*/
+/* Inserção de Processamentobatch                           */
+/*==============================================================*/
+
+INSERT INTO processamentobatch
+(idprocessamentobatch, descricao, expressaocron,  conteudo, tipo, situacao)
+VALUES
+(4, 'Verifica e avisa a data de expiração de um item de configuração', '0 45 23 * * ? *', 'br.com.centralit.citcorpore.quartz.job.VerificaValidadeLicenca',
+'C', 'A');
+
+INSERT INTO modelosemails
+(idmodeloemail, titulo, texto, situacao, identificador)
+VALUES
+(6,'Validade do Item configuração - ${IDENTIFICACAO}',
+'Informamos que o item de configura&ccedil;&atilde;o identificado como ${IDENTIFICACAO} expirar&aacute; no dia&nbsp;${DATAEXPIRACAO}.<br /><br /><br />Atenciosamente,<br /><br />Central IT Tecnologia da Informa&ccedil;&atilde;o Ltda.<br />',
+'A','');
+
+/*==============================================================*/
+/* Table:  categoriaocorrencia                                  */
+/*==============================================================*/
+
+create table categoriaocorrencia(
+    id int(11) not null,
+    nome varchar(20) not null,
+    dataInicio date not null,
+    dataFim date
+
+) engine=InnoDB;
+
+/*===================================*/
+/* Alteracao: categoriaocorrencia    */
+/*===================================*/
+
+alter table categoriaocorrencia
+	add primary key(id);
+
+/*==============================================================*/
+/* Table:  origemocorrencia                                     */
+/*==============================================================*/
+
+create table origemocorrencia(
+    id int(11) not null,
+    nome varchar(20) not null,
+    dataInicio date not null,
+    dataFim date
+
+) engine=InnoDB;
+
+/*===================================*/
+/* Alteracao: origemocorrencia       */
+/*===================================*/
+
+alter table origemocorrencia
+	add primary key(id);
+	
+/*===================================*/
+/* Alteracao: ocorrenciasolicitacao  */
+/*===================================*/
+
+alter table ocorrenciasolicitacao 
+	add column idcategoriaocorrencia int not null;
+
+alter table ocorrenciasolicitacao 
+	add column idorigemocorrencia int not null;
+
+alter table ocorrenciasolicitacao
+	add constraint fk_categoriaocorrencia foreign key(idcategoriaocorrencia) references categoriaocorrencia(id);
+
+alter table ocorrenciasolicitacao
+	add constraint fk_origemocorrencia foreign key(idorigemocorrencia) references origemocorrencia(id);
+	
+
+>>thays.araujo
+/*==============================================================*/
+/* Table: "lingua"                                 */
+/*==============================================================*/
+
+CREATE  TABLE lingua (
+
+  idlingua INT NOT NULL ,
+
+  nome VARCHAR(245) NULL ,
+
+  sigla VARCHAR(245) NULL ,
+
+  datainicio DATE NULL ,
+
+  datafim DATE NULL ,
+
+  PRIMARY KEY (`idlingua`) )
+
+ENGINE = InnoDB;
+
+/*==============================================================*/
+/* Table: "dicionario"                                 */
+/*==============================================================*/
+CREATE  TABLE dicionario (
+
+  iddicionario INT NOT NULL ,
+
+  nome VARCHAR(245) NULL ,
+
+  valor VARCHAR(245) NULL ,
+
+  idlingua INT NULL ,
+
+  PRIMARY KEY (iddicionario) ,
+
+  INDEX idlingua (idlingua ASC) ,
+
+  CONSTRAINT idlingua
+
+    FOREIGN KEY (idlingua )
+
+    REFERENCES lingua (idlingua`)
+)
+
+ENGINE = InnoDB;
+
+/* Oracle */
+
+
+
+/*==============================================================*/
+/* Table: "categoriamudanca"                                 */
+/*==============================================================*/
+
+CREATE TABLE CATEGORIAMUDANCA  (
+   IDCATEGORIAMUDANCA INT NOT NULL,
+   IDTIPOFLUXO   NUMBER(19,0),
+   IDMODELOEMAILCRIACAOnumber NUMBER(19,0),
+   IDMODELOEMAILFINALIZACAO NUMBER(19,0),
+   IDMODELOEMAILACOES NUMBER(19,0),
+   IDGRUPONIVEL1     NUMBER(19,0),
+   IDGRUPOEXECUTOR  NUMBER(19,0),
+   IDCALENDARIO      NUMBER(19,0),
+   IDCATEGORIAMUDANCAPAI NUMBER(19,0),
+   NOMECATEGORIA     VARCHAR2 (255) DEFAULT 'NULL',
+   DATAINICIO         DATE,
+   DATAFIM           DATE DEFAULT NULL,
+   	PRIMARY KEY (IDCATEGORIAMUDANCA)
+);
+
+ALTER TABLE CATEGORIAMUDANCA
+   ADD CONSTRAINT FK_CATEGORI_REFERENCE_BPM_TIPO FOREIGN KEY (IDTIPOFLUXO)
+      REFERENCES BPM_TIPOFLUXO (IDTIPOFLUXO);
+	  
+	  
+	  ALTER TABLE CATEGORIAMUDANCA
+   ADD CONSTRAINT FK_CATEGORI_REFERENCE_MODELOSE FOREIGN KEY (IDMODELOEMAILCRIACAO)
+      REFERENCES MODELOSEMAILS (IDMODELOEMAIL);
+	  
+	  ALTER TABLE CATEGORIAMUDANCA
+   ADD CONSTRAINT IDMODELOEMAILFINALIZACAO FOREIGN KEY (IDMODELOEMAILFINALIZACAO)
+      REFERENCES MODELOSEMAILS (IDMODELOEMAIL);
+	  
+	  ALTER TABLE CATEGORIAMUDANCA
+   ADD CONSTRAINT IDMODELOEMAILACOES FOREIGN KEY (IDMODELOEMAILACOES)
+      REFERENCES MODELOSEMAILS (IDMODELOEMAIL);
+	  
+	  ALTER TABLE CATEGORIAMUDANCA
+   ADD CONSTRAINT FK_CATEGORI_REFERENCE_GRUPO FOREIGN KEY (IDGRUPONIVEL1)
+      REFERENCES GRUPO (IDGRUPO);
+	  
+	  ALTER TABLE CATEGORIAMUDANCA
+   ADD CONSTRAINT IDGRUPOEXECUTOR FOREIGN KEY (IDGRUPOEXECUTOR)
+      REFERENCES GRUPO (IDGRUPO);
+	  
+	  ALTER TABLE CATEGORIAMUDANCA
+   ADD CONSTRAINT FK_CATEGORI_REFERENCE_CALENDAR FOREIGN KEY (IDCALENDARIO)
+      REFERENCES CALENDARIO (IDCALENDARIO);
+
+/*==============================================================*/
+/* Table: "requisicaomudanca"                                   */
+/*==============================================================*/	  
+	  
+	 CREATE TABLE REQUISICAOMUDANCA  (
+   IDREQUISICAOMUDANCA INT NOT NULL,
+   IDPROPRIETARIO     INT  NOT NULL,
+   IDSOLICITANTE      INT  NOT NULL,
+   TIPO               VARCHAR2 (25) DEFAULT 'NULL' ,
+   IDCATEGORIAMUDANCA NUMBER(19,0) ,
+   IDGRUPONIVEL1      NUMBER(19,0),
+   IDGRUPOATUAL       NUMBER(19,0),
+   IDCALENDARIO       NUMBER(19,0),
+   MOTIVO             VARCHAR2 (255) DEFAULT 'NULL' ,
+   NIVELIMPORTANCIANEGOCIO VARCHAR2 (255) DEFAULT 'NULL',
+   CLASSIFICACAO     VARCHAR2 (255) DEFAULT 'NULL',
+   NIVELIMPACTO      VARCHAR2 (255) DEFAULT 'NULL',
+   ANALISEIMPACTO     VARCHAR2(3000) DEFAULT 'NULL',
+   DATAHORACONCLUSAO  TIMESTAMP,
+   DATAACEITACAO     DATE,
+   DATAVOTACAO        DATE,
+   DATAHORAINICIO     TIMESTAMP,
+   DATAHORATERMINO    TIMESTAMP,
+   TITULO            VARCHAR2 (255) DEFAULT 'NULL',
+   DESCRICAO          VARCHAR2 (255) DEFAULT 'NULL',
+   RISCO              VARCHAR2 (255) DEFAULT 'NULL',
+   ESTIMATIVACUSTO   NUMBER(19,0),
+   PLANOREVERSAO    VARCHAR2 (3000) DEFAULT 'NULL' ,
+   STATUS          VARCHAR2 (45) DEFAULT 'NULL' ,
+   PRIORIDADE        INT,
+   ENVIAEMAILCRIACAO CHAR(1) ,
+   ENVIAEMAILFINALIZACAO CHAR(1),
+   ENVIAEMAILACOES   CHAR(1),
+   EXIBIRQUADROMUDANCAS CHAR(1),
+   SEQREABERTURA      SMALLINT,
+   DATAHORACAPTURA    TIMESTAMP,
+   DATAHORAREATIVACAO TIMESTAMP,
+   DATAHORASUSPENSAO  TIMESTAMP,
+   TEMPODECORRIDOHH   SMALLINT,
+   TEMPODECORRIDOMM   SMALLINT,
+   PRAZOHH            SMALLINT,
+   PRAZOMM            SMALLINT,
+   TEMPOATENDIMENTOHH SMALLINT,
+   TEMPOATENDIMENTOMM SMALLINT,
+   TEMPOATRASOHH      SMALLINT,
+   TEMPOATRASOMM      SMALLINT,
+   TEMPOCAPTURAHH     SMALLINT,
+   TEMPOCAPTURAMM     SMALLINT,
+   FASE               VARCHAR2 (20) DEFAULT 'NULL' ,
+  PRIMARY KEY (IDREQUISICAOMUDANCA)
+);
+
+
+
+ALTER TABLE REQUISICAOMUDANCA
+   ADD CONSTRAINT FK_REQUISIC_REFERENCE_CATEGORIA FOREIGN KEY (IDCATEGORIAMUDANCA)
+      REFERENCES CATEGORIAMUDANCA (IDCATEGORIAMUDANCA);
+
+ALTER TABLE REQUISICAOMUDANCA
+   ADD CONSTRAINT FK_REQUISIC_REFERENCE_GRUPO FOREIGN KEY (IDGRUPONIVEL1)
+      REFERENCES GRUPO (IDGRUPO);
+
+ALTER TABLE REQUISICAOMUDANCA
+   ADD CONSTRAINT FK_REQUISIC_REFERENCE_GRUPO_01 FOREIGN KEY (IDGRUPOATUAL)
+      REFERENCES GRUPO (IDGRUPO);
+
+ALTER TABLE REQUISICAOMUDANCA
+   ADD CONSTRAINT FK_REQUISIC_REFERENCE_CALENDAR FOREIGN KEY (IDCALENDARIO)
+      REFERENCES CALENDARIO (IDCALENDARIO);
+	  
+	  ALTER TABLE REQUISICAOMUDANCA ADD COLUMN NIVELURGENCIA VARCHAR2(255) DEFAULT 'NULL' ;
+    
+    ALTER TABLE requisicaomudanca ADD ( NIVELURGENCIA VARCHAR2(255) DEFAULT 'NULL' ) ;
+
+/*==============================================================*/
+/* Table:  EXECUCAOMUDANCA                             */
+/*==============================================================*/
+CREATE TABLE EXECUCAOMUDANCA  (
+   IDEXECUCAO         INT NOT NULL,
+   IDINSTANCIAFLUXO   NUMBER(19,0) NOT NULL,
+   IDREQUISICAOMUDANCA NUMBER(38,0) NOT NULL,
+   IDFLUXO           NUMBER(19,0) NOT NULL,
+   SEQREABERTURA     SMALLINT,
+   PRIMARY KEY (IDEXECUCAO)
+);
+
+ALTER TABLE EXECUCAOMUDANCA 
+ADD CONSTRAINT FK_EXECUCAO_REFERENCE_BPM_INST FOREIGN KEY (IDINSTANCIAFLUXO) 
+REFERENCES BPM_INSTANCIAFLUXO (IDINSTANCIA);
+
+
+ALTER TABLE EXECUCAOMUDANCA
+ADD CONSTRAINT FK_EXECUCAO_REFERENCE_REQUISIC FOREIGN KEY (IDREQUISICAOMUDANCA)
+  REFERENCES REQUISICAOMUDANCA (IDREQUISICAOMUDANCA);
+
+ALTER TABLE EXECUCAOMUDANCA
+ADD CONSTRAINT FK_EXECUCAO_REFERENCE_BPM_FLUX FOREIGN KEY (IDFLUXO)
+REFERENCES BPM_FLUXO (IDFLUXO);	 
+
+/*==============================================================*/
+/* Table:  ocorrenciamudanca                                    */
+/*==============================================================*/
+	  
+	  CREATE TABLE OCORRENCIAMUDANCA  (
+   IDOCORRENCIA     INT NOT NULL,
+    IDITEMTRABALHO      NUMBER(19,0),
+    IDJUSTIFICATIVA     NUMBER(19,0),
+    IDREQUISICAOMUDANCA  NUMBER(19,0),
+    DATAREGISTRO        DATE,
+    HORAREGISTRO      VARCHAR2 (5) DEFAULT 'NULL' ,
+    REGISTRADOPOR     VARCHAR2 (100) DEFAULT 'NULL' ,
+    DESCRICAO        VARCHAR2 (200) DEFAULT 'NULL' ,
+    DATAINICIO          DATE,
+    DATAFIM             DATE,
+    COMPLEMENTOJUSTIFICATIVA   	CLOB,
+    DADOSMUDANCA         	CLOB,
+    INFORMACOESCONTATO   	CLOB,
+    CATEGORIA        VARCHAR2 (20) DEFAULT 'NULL'   ,
+    ORIGEM              CHAR(1),
+    TEMPOGASTO          SMALLINT,
+    OCORRENCIA           	CLOB,
+    PRIMARY KEY (IDOCORRENCIA)
+);
+
+ALTER TABLE  OCORRENCIAMUDANCA 
+   ADD CONSTRAINT FK_OCORRENC_REFERENCE_BPM_ITEM FOREIGN KEY ( IDITEMTRABALHO )
+      REFERENCES  BPM_ITEMTRABALHOFLUXO  ( IDITEMTRABALHO );
+	  
+	  ALTER TABLE  OCORRENCIAMUDANCA 
+   ADD CONSTRAINT FK_OCORRENC_REFERENCE_JUSTIFIC FOREIGN KEY ( IDJUSTIFICATIVA )
+      REFERENCES JUSTIFICATIVASOLICITACAO  ( IDJUSTIFICATIVA );
+	  
+	  
+ALTER TABLE  OCORRENCIAMUDANCA 
+   ADD CONSTRAINT FK_OCORRENC_REFERENCE_REQUISIC FOREIGN KEY ( IDREQUISICAOMUDANCA )
+      REFERENCES  REQUISICAOMUDANCA  ( IDREQUISICAOMUDANCA );
+	  
+/*==============================================================*/
+/* Table:  requisicaomudancaitemconfigura                       */
+/*==============================================================*/
+	  
+CREATE TABLE  RQMUDANCAITEMCONFIGURACAO  (
+    IDRQMUDANCAITEMCONFIGURACAO  INT NOT NULL,
+    IDREQUISICAOMUDANCA  INT NOT NULL,
+    IDITEMCONFIGURACAO  NUMBER(19,0),
+    DESCRICAO           VARCHAR2 (100) DEFAULT 'NULL',
+    PRIMARY KEY (IDRQMUDANCAITEMCONFIGURACAO)
+);
+
+ALTER TABLE  RQMUDANCAITEMCONFIGURACAO 
+   ADD CONSTRAINT FK_REQUISIC_REFERENCE_REQUISIC FOREIGN KEY ( IDREQUISICAOMUDANCA )
+      REFERENCES  REQUISICAOMUDANCA  ( IDREQUISICAOMUDANCA );
+
+ALTER TABLE  RQMUDANCAITEMCONFIGURACAO 
+   ADD CONSTRAINT FK_REQUISIC_REFERENCE_ITEMCONF FOREIGN KEY ( IDITEMCONFIGURACAO )
+      REFERENCES  ITEMCONFIGURACAO  ( IDITEMCONFIGURACAO );	 
+/*==============================================================*/
+/* Table:  requisicaomudancaservico                             */
+/*==============================================================*/ 
+	  
+CREATE TABLE  REQUISICAOMUDANCASERVICO   (
+    IDREQUISICAOMUDANCASERVICO  INT  NOT NULL,
+    IDREQUISICAOMUDANCA  INT,
+    IDSERVICO          NUMBER(19,0),
+    PRIMARY KEY (IDREQUISICAOMUDANCASERVICO)
+)
+;
+
+ALTER TABLE  REQUISICAOMUDANCASERVICO 
+   ADD CONSTRAINT FK_REQUISIC_REFERENCE_REQUISIC FOREIGN KEY ( IDREQUISICAOMUDANCA )
+      REFERENCES  REQUISICAOMUDANCA  ( IDREQUISICAOMUDANCA );
+
+ALTER TABLE  REQUISICAOMUDANCASERVICO 
+   ADD CONSTRAINT FK_REQUISIC_REFERENCE_SERVICO FOREIGN KEY ( IDSERVICO )
+      REFERENCES  SERVICO  ( IDSERVICO );	  
+
+/*==============================================================*/
+/* Alteracao Itemconfiguracao 		                            */
+/*==============================================================*/
+
+ALTER TABLE itemconfiguracao 
+ADD idproprietario int;
+
+ALTER TABLE itemconfiguracao
+ADD dataexpiracao date;
+
+ALTER TABLE itemconfiguracao
+ADD CONSTRAINT fk_idproprietario FOREIGN KEY (idproprietario)
+REFERENCES empregados (idempregado);
+
+ALTER TABLE grupoitemconfiguracao
+ADD email varchar(50);
+
+ALTER TABLE itemconfiguracao
+ADD versao varchar(50);
+
+/*==============================================================*/
+/* Inserção de Processamentobatch                               */
+/*==============================================================*/
+
+INSERT INTO processamentobatch
+(idprocessamentobatch, descricao, expressaocron,  conteudo, tipo, situacao)
+VALUES
+(4, 'Verifica e avisa a data de expiração de um item de configuração', '0 45 23 * * ? *', 'br.com.centralit.citcorpore.quartz.job.VerificaValidadeLicenca',
+'C', 'A');
+
+INSERT INTO modelosemails
+(idmodeloemail, titulo, texto, situacao, identificador)
+VALUES
+(6,'Validade do Item configuração - ${IDENTIFICACAO}',
+'Informamos que o item de configura&ccedil;&atilde;o identificado como ${IDENTIFICACAO} expirar&aacute; no dia&nbsp;${DATAEXPIRACAO}.<br /><br /><br />Atenciosamente,<br /><br />Central IT Tecnologia da Informa&ccedil;&atilde;o Ltda.<br />',
+'A','');
+
+ALTER TABLE categoriaservico ADD datainicio DATE NOT NULL;
+ALTER TABLE categoriaservico ADD datafim DATE;
+ALTER TABLE categoriaservico ADD nomeCategoriaServicoConcatenado VARCHAR(520);
+
+/*================================*/
+/* Table: categoriaocorrencia     */
+/*================================*/
+
+CREATE TABLE CATEGORIAOCORRENCIA(
+	ID INTEGER NOT NULL,
+	NOME VARCHAR2(20) NOT NULL,
+	DATAINICIO DATE NOT NULL,
+	DATAFIM DATE
+);
+
+/*=====================================*/
+/* Alteracao: categoriaocorrencia      */
+/*=====================================*/
+
+ALTER TABLE CATEGORIAORIGEM ADD PRIMARY KEY(ID);
+
+/*============================*/
+/* Table: origemocorrencia    */
+/*============================*/
+
+CREATE TABLE ORIGEMOCORRENCIA(
+	ID INTEGER NOT NULL,
+	NOME VARCHAR2(20) NOT NULL,
+	DATAINICIO DATE NOT NULL,
+	DATAFIM DATE
+);
+
+/*================================*/
+/* Alteracao: origemocorrencia    */
+/*================================*/
+
+ALTER TABLE ORIGEMOCORRENCIA ADD PRIMARY KEY(ID);
+
+/*=====================================*/
+/* Alteracao: ocorrenciasolicitacao    */
+/*=====================================*/
+
+ALTER TABLE OCORRENCIASOLICITACAO
+	ADD COLUMN IDCATEGORIAOCORRENCIA INT NOT NULL;
+
+ALTER TABLE OCORRENCIASOLICITACAO
+	ADD COLUMN IDORIGEMOCORRENCIA INT NOT NULL;
+
+ALTER TABLE OCORRENCIASOLICITACAO
+	ADD CONSTRAINT FK_CATEGORIAOCORRENCIA FOREIGN KEY(IDCATEGORIAOCORRENCIA)
+REFERENCES CATEGORIAOCORRENCIA(ID);
+
+ALTER TABLE OCORRENCIASOLICITACAO
+	ADD CONSTRAINT FK_ORIGEMOCORRENCIA FOREIGN KEY(IDORIGEMOCORRENCIA)
+REFERENCES ORIGEMOCORRENCIA(ID);
+'A','');
+
+ALTER TABLE categoriaservico ADD datainicio DATE NOT NULL;
+ALTER TABLE categoriaservico ADD datafim DATE;
+ALTER TABLE categoriaservico ADD nomeCategoriaServicoConcatenado VARCHAR(520);
+'A','');
+
+ALTER TABLE categoriaservico ADD datainicio DATE NOT NULL;
+ALTER TABLE categoriaservico ADD datafim DATE;
+ALTER TABLE categoriaservico ADD nomeCategoriaServicoConcatenado VARCHAR(520);
+
+
+>>thays.araujo
+/*==============================================================*/
+/* Table:  LINGUA                             */
+/*==============================================================*/ 
+CREATE  TABLE LINGUA (
+
+  IDLINGUA INT NOT NULL ,
+
+  NOME VARCHAR(245) NULL ,
+
+  SIGLA VARCHAR(245) NULL ,
+
+  DATAINICIO DATE NULL ,
+
+  DATAFIM DATE NULL ,
+
+  PRIMARY KEY (IDLINGUA) );
+  
+ /*==============================================================*/
+/* Table:  DICIONARIO                             */
+/*==============================================================*/ 
+  
+  CREATE  TABLE DICIONARIO (
+
+  IDDICIONARIO INT NOT NULL ,
+
+  NOME VARCHAR(245) NULL ,
+
+  VALOR VARCHAR(245) NULL ,
+
+  IDLINGUA INT NULL ,
+
+  PRIMARY KEY (IDDICIONARIO) ,
+
+  CONSTRAINT IDLINGUA
+
+    FOREIGN KEY (IDLINGUA )
+
+    REFERENCES LINGUA (IDLINGUA)
+);

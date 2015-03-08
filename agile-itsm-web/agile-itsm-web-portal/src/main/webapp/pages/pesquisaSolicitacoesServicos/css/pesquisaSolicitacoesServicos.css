@@ -1,0 +1,35 @@
+
+div.main_container .box {
+	border: 0px solid #D8D8D8 !important;
+	border-top: none !important;
+	border-radius: 0 !important;
+}
+
+select {
+	width: 98%!important;
+}
+
+.autocomplete{
+	width: 420px !important;
+   }
+
+	.table th {
+	border:1px solid #ddd;
+	padding:4px 10px;
+	border-left:none;
+	background:#eee;
+	word-wrap:break-word;
+}
+.labelOverflowTresPontinhos label {text-overflow: ellipsis;overflow: hidden;white-space: nowrap; font-weight: bold;}
+
+.inner{
+	margin: 15px;
+}
+
+
+
+div#main_container {
+	margin: 10px 10px 10px 10px;  
+
+}
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<ItemInformation type='SERVICE_BUFFER' description='Requisições de produtos e serviços' defaultVisualization='T' report='true' graph='false' reportPageLayout='L' title='Requisições de produtos e serviços' hDetailSpacing='40'>
+	<CLASS class="br.com.centralit.citgerencial.generateservices.requisicoesProdutos.GenerateServiceRequisicoesProdGeral"></CLASS>
+	<FIELDS>
+	</FIELDS>
+	<GROUPS>
+	</GROUPS>	
+	<SUMMARY>
+	</SUMMARY>
+</ItemInformation>

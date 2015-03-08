@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" language="java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioPesquisaSolicitacaoServico" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="BlankPage" columnWidth="782" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="3e9fc1da-3865-49d2-aaca-8c60290ca8ce">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="TITULO_RELATORIO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CIDADE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DATA_HORA" class="java.sql.Timestamp" isForPrompting="false"/>
+	<parameter name="NOME_USUARIO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dataInicial" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="dataFinal" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:\\Program Files\\jboss\\server\\default\\deploy\\CitTesteRelatorio.war\\tamplateJasper\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="numero" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="situacao" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="prioridade" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="grupoSolucionador" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="fase" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="origem" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="tipo" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="nomeSolicitante" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="nomeItemConfiguracao" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="quantidade" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="contrato" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="nomeContato" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="unidade" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="exibirCampoDescricao" class="java.lang.String"/>
+	<parameter name="Logo" class="java.io.File">
+		<parameterDescription><![CDATA[Logomarca]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dataFinal" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataFinal]]></fieldDescription>
+	</field>
+	<field name="dataInicial" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataInicial]]></fieldDescription>
+	</field>
+	<field name="situacao" class="java.lang.String">
+		<fieldDescription><![CDATA[situacao]]></fieldDescription>
+	</field>
+	<field name="prioridade" class="java.lang.Integer">
+		<fieldDescription><![CDATA[prioridade]]></fieldDescription>
+	</field>
+	<field name="acaoFluxo" class="java.lang.String">
+		<fieldDescription><![CDATA[acaoFluxo]]></fieldDescription>
+	</field>
+	<field name="alterarSituacao" class="java.lang.String">
+		<fieldDescription><![CDATA[alterarSituacao]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="colArquivosUpload" class="java.util.Collection">
+		<fieldDescription><![CDATA[colArquivosUpload]]></fieldDescription>
+	</field>
+	<field name="complementoJustificativa" class="java.lang.String">
+		<fieldDescription><![CDATA[complementoJustificativa]]></fieldDescription>
+	</field>
+	<field name="dadosStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dadosStr]]></fieldDescription>
+	</field>
+	<field name="dataHoraTermino" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraTermino]]></fieldDescription>
+	</field>
+	<field name="dataHoraInicio" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraInicio]]></fieldDescription>
+	</field>
+	<field name="dataHoraTerminoAgendada" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraTerminoAgendada]]></fieldDescription>
+	</field>
+	<field name="dataHoraReativacao" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraReativacao]]></fieldDescription>
+	</field>
+	<field name="dataHoraSolicitacao" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraSolicitacao]]></fieldDescription>
+	</field>
+	<field name="dataHoraSolicitacaoStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dataHoraSolicitacaoStr]]></fieldDescription>
+	</field>
+	<field name="dataHoraSuspensao" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraSuspensao]]></fieldDescription>
+	</field>
+	<field name="demanda" class="java.lang.String">
+		<fieldDescription><![CDATA[demanda]]></fieldDescription>
+	</field>
+	<field name="descrSituacao" class="java.lang.String">
+		<fieldDescription><![CDATA[descrSituacao]]></fieldDescription>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[descricao]]></fieldDescription>
+	</field>
+	<field name="emailContato" class="java.lang.String">
+		<fieldDescription><![CDATA[emailContato]]></fieldDescription>
+	</field>
+	<field name="enviaEmailAcoes" class="java.lang.String">
+		<fieldDescription><![CDATA[enviaEmailAcoes]]></fieldDescription>
+	</field>
+	<field name="enviaEmailCriacao" class="java.lang.String">
+		<fieldDescription><![CDATA[enviaEmailCriacao]]></fieldDescription>
+	</field>
+	<field name="enviaEmailFinalizacao" class="java.lang.String">
+		<fieldDescription><![CDATA[enviaEmailFinalizacao]]></fieldDescription>
+	</field>
+	<field name="escalar" class="java.lang.String">
+		<fieldDescription><![CDATA[escalar]]></fieldDescription>
+	</field>
+	<field name="grupoAtual" class="java.lang.String">
+		<fieldDescription><![CDATA[grupoAtual]]></fieldDescription>
+	</field>
+	<field name="idCalendario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idCalendario]]></fieldDescription>
+	</field>
+	<field name="idContatoRequisicaoLiberacao" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idContatoRequisicaoLiberacao]]></fieldDescription>
+	</field>
+	<field name="idContrato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idContrato]]></fieldDescription>
+	</field>
+	<field name="idFaseAtual" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idFaseAtual]]></fieldDescription>
+	</field>
+	<field name="idGrupoAtual" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idGrupoAtual]]></fieldDescription>
+	</field>
+	<field name="idGrupoDestino" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idGrupoDestino]]></fieldDescription>
+	</field>
+	<field name="idGrupoNivel1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idGrupoNivel1]]></fieldDescription>
+	</field>
+	<field name="idJustificativa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idJustificativa]]></fieldDescription>
+	</field>
+	<field name="idResponsavel" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idResponsavel]]></fieldDescription>
+	</field>
+	<field name="idRequisicaoLiberacao" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idRequisicaoLiberacao]]></fieldDescription>
+	</field>
+	<field name="idSolicitante" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idSolicitante]]></fieldDescription>
+	</field>
+	<field name="idTarefa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idTarefa]]></fieldDescription>
+	</field>
+	<field name="idTipoDemandaServico" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idTipoDemandaServico]]></fieldDescription>
+	</field>
+	<field name="idUnidade" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idUnidade]]></fieldDescription>
+	</field>
+	<field name="idUsuarioDestino" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idUsuarioDestino]]></fieldDescription>
+	</field>
+	<field name="nomeTarefa" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeTarefa]]></fieldDescription>
+	</field>
+	<field name="nomeContato" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeContato]]></fieldDescription>
+	</field>
+	<field name="prazoHH" class="java.lang.Integer">
+		<fieldDescription><![CDATA[prazoHH]]></fieldDescription>
+	</field>
+	<field name="prazoMM" class="java.lang.Integer">
+		<fieldDescription><![CDATA[prazoMM]]></fieldDescription>
+	</field>
+	<field name="registroexecucao" class="java.lang.String">
+		<fieldDescription><![CDATA[registroexecucao]]></fieldDescription>
+	</field>
+	<field name="seqReabertura" class="java.lang.Integer">
+		<fieldDescription><![CDATA[seqReabertura]]></fieldDescription>
+	</field>
+	<field name="telefoneContato" class="java.lang.String">
+		<fieldDescription><![CDATA[telefoneContato]]></fieldDescription>
+	</field>
+	<field name="tempoDecorridoHH" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tempoDecorridoHH]]></fieldDescription>
+	</field>
+	<field name="tempoDecorridoMM" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tempoDecorridoMM]]></fieldDescription>
+	</field>
+	<field name="nivelUrgencia" class="java.lang.String">
+		<fieldDescription><![CDATA[nivelUrgencia]]></fieldDescription>
+	</field>
+	<field name="nomeSolicitante" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeSolicitante]]></fieldDescription>
+	</field>
+	<field name="tempoAtendimentoHH" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tempoAtendimentoHH]]></fieldDescription>
+	</field>
+	<field name="tempoAtendimentoMM" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tempoAtendimentoMM]]></fieldDescription>
+	</field>
+	<field name="titulo" class="java.lang.String">
+		<fieldDescription><![CDATA[titulo]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[status]]></fieldDescription>
+	</field>
+	<field name="dataHoraCaptura" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraCaptura]]></fieldDescription>
+	</field>
+	<field name="nomeGrupoAtual" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeGrupoAtual]]></fieldDescription>
+	</field>
+	<field name="dataHoraInicioAgendada" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraInicioAgendada]]></fieldDescription>
+	</field>
+	<field name="dataHoraConclusao" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraConclusao]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<frame>
+				<reportElement uuid="f5f11654-a8bb-4c64-94d6-cb4b0d7e1d01" key="frame-3" positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="782" height="127" isRemoveLineWhenBlank="true" forecolor="#CCCCCC" backcolor="#EFEFEF"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField>
+					<reportElement uuid="d439f16e-de9d-4aa3-a7b1-f7da6c14c059" key="staticText-47" positionType="Float" stretchType="RelativeToBandHeight" x="8" y="88" width="69" height="18" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf($P{nomeContato}!= null && !$P{nomeContato}.equals(""))]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.contato}+":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="956a70e1-434a-44c4-97e4-b47cbc237286" key="staticText-39" positionType="Float" stretchType="RelativeToBandHeight" x="8" y="54" width="44" height="18" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf($P{numero}!= null)]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.numero}+":"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement uuid="d8abf006-b287-4909-8991-e7e1bb2eb618" key="textField-50" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="782" height="34" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{TITULO_RELATORIO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="985263de-ada1-45cd-b672-733a7ed556f1" key="staticText-32" positionType="Float" stretchType="RelativeToBandHeight" x="8" y="37" width="44" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.periodo}+":"]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement uuid="672d9ce9-c5df-4848-9c05-9318214784bc" key="textField-51" positionType="Float" stretchType="RelativeToBandHeight" x="47" y="37" width="51" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{dataInicial}]]></textFieldExpression>
+					<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy" : "dd/MM/yyyy")]]></patternExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="724aebc9-090a-4286-acb2-93605a4a7355" key="staticText-33" positionType="Float" stretchType="RelativeToBandHeight" x="87" y="37" width="12" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.a}]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement uuid="fcb7eb6f-9743-4d79-92a5-45cd3dd6eda3" key="textField-52" positionType="Float" stretchType="RelativeToBandHeight" x="99" y="37" width="60" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{dataFinal}]]></textFieldExpression>
+					<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy" : "dd/MM/yyyy")]]></patternExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="e342619f-9cdd-490c-a250-d07809de971f" key="staticText-52" positionType="Float" stretchType="RelativeToBandHeight" x="8" y="71" width="44" height="18" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf($P{contrato}!= null)]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.contrato}+":"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="b40f7371-a841-420d-995b-dd408a309ed3" key="textField-67" positionType="Float" stretchType="RelativeToBandHeight" x="47" y="71" width="120" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{contrato}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="b0287d7e-0da8-48ef-89ad-de174b30a0d4" key="textField-54" positionType="Float" stretchType="RelativeToBandHeight" x="47" y="54" width="58" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{numero}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="564985fb-72a9-4de1-aace-324d2946a8d9" key="textField-56" positionType="Float" stretchType="RelativeToBandHeight" x="47" y="105" width="78" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{situacao}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="6fe827ad-eaa9-427c-8924-072287cc99ba" key="staticText-41" positionType="Float" stretchType="RelativeToBandHeight" x="8" y="105" width="46" height="18" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf($P{situacao}!= null)]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.situacao}+":"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="640db862-98c9-4689-b3be-68e881d65054" key="textField-59" positionType="Float" stretchType="RelativeToBandHeight" x="399" y="54" width="155" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{grupoSolucionador}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="d148e6ac-f34f-4d5b-b4b3-18af907e7ba8" key="staticText-44" positionType="Float" stretchType="RelativeToBandHeight" x="316" y="54" width="103" height="18" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf($P{grupoSolucionador}!= null)]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.grupoSolucionador}+":"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="1e412aea-f364-4bf6-aabd-c6d9bae60e99" key="textField-60" positionType="Float" stretchType="RelativeToBandHeight" x="361" y="37" width="77" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{prioridade}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="e98c4ea7-729f-4bf6-ba12-ed0b8ec817a9" key="staticText-45" positionType="Float" stretchType="RelativeToBandHeight" x="316" y="37" width="54" height="18" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf($P{prioridade}!= null)]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.prioridade}+":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="2278f63f-deec-47df-9745-01a588ed1d4a" key="staticText-46" positionType="Float" stretchType="RelativeToBandHeight" x="316" y="71" width="54" height="18" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf($P{nomeSolicitante}!= null)]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.solicitante}+":"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="29cfa147-a2e9-4245-8367-d2804515dc78" key="textField-61" positionType="Float" stretchType="RelativeToBandHeight" x="362" y="71" width="192" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{nomeSolicitante}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="0be7fe62-dee2-45e8-a610-97f8d5cd678e" positionType="Float" stretchType="RelativeToBandHeight" x="47" y="88" width="152" height="18"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{nomeContato}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="c6ab9ce6-7790-4bb3-b072-93639240ddfa" positionType="Float" x="353" y="88" width="100" height="18"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{unidade}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="25483496-a64b-4474-9a11-97eee89627e3" key="staticText-47" positionType="Float" x="316" y="88" width="45" height="18" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf($P{unidade}!= null)]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.unidade}+":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="985263de-ada1-45cd-b672-733a7ed556f1" key="staticText-32" positionType="Float" stretchType="RelativeToBandHeight" x="8" y="26" width="44" height="15" isRemoveLineWhenBlank="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.filtros}+":"]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement uuid="d79da48d-0edb-4637-bd49-38c9ca8216bf" stretchType="RelativeToBandHeight" x="4" y="3" width="101" height="23" isRemoveLineWhenBlank="true"/>
+					<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="88" splitType="Stretch">
+			<frame>
+				<reportElement uuid="65d5fbf8-6208-4016-ab4b-ecee24f8fa63" key="frame-2" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="782" height="86" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#EFEFEF"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="1f909c3b-40b6-404e-b2b3-8132fdcf3947" key="textField-33" positionType="Float" x="18" y="0" width="55" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{idRequisicaoLiberacao}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="f07f9ac4-de4d-4e26-beb4-ccbd8be61fbd" key="staticText-16" positionType="Float" x="2" y="31" width="57" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.solicitante}+":"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="829ff67d-5cbf-4c0c-9e10-2b571a9e75e9" key="textField-35" positionType="Float" x="47" y="31" width="206" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nomeSolicitante}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="13815b0e-8f29-4a5f-9d90-52dd5acb1e0d" key="staticText-17" positionType="Float" x="87" y="0" width="38" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.situacao}+":"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="6145dd49-3a50-4477-9ddb-d053c019926a" key="textField-36" positionType="Float" x="125" y="0" width="56" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[( $F{status}.equals("EmExecucao") ? "Em Execução" : ($F{status}.equals("Concluida") ? "Concluída" : $F{status}))]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement uuid="44be240a-f4d8-4c02-8c85-c0fc103e1b03" key="textField-24" positionType="Float" x="317" y="0" width="85" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dataHoraCaptura}]]></textFieldExpression>
+					<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy HH:mm:ss" : "dd/MM/yyyy HH:mm:ss")]]></patternExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="122365dc-f133-4ca7-8106-639c8d725534" key="staticText-26" positionType="Float" x="484" y="0" width="107" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.dataHoraConclusao}+":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="684fb63c-34f5-4541-973c-c9d00baa126a" key="staticText-36" positionType="Float" x="240" y="0" width="77" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.dataHoraCaptura}+":"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement uuid="c5a2a47b-24ee-4e0c-9a86-60aeef44de72" key="textField-64" positionType="Float" x="346" y="15" width="77" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dataHoraInicioAgendada}]]></textFieldExpression>
+					<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy HH:mm:ss" : "dd/MM/yyyy HH:mm:ss")]]></patternExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="b0d8458a-5560-4b05-a59d-8cbf36e06555" key="staticText-49" positionType="Float" x="240" y="15" width="121" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.dataHoraInicioAgendada}+":"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="a2d06967-6b48-4e05-8111-ae81b4cac987" key="staticText-50" positionType="Float" x="484" y="15" width="131" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.dataHoraTerminoAgendada}+":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="41d8156e-1094-4066-a191-5d998bd743b3" key="staticText-53" positionType="Float" x="2" y="15" width="43" height="18" isRemoveLineWhenBlank="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.titulo}+":"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="3b980e1a-f984-496e-a8dc-bbd5cc454bed" key="textField-68" positionType="Float" x="537" y="31" width="126" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nomeGrupoAtual}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="d6208efb-2beb-4469-9078-da6cafe18fcd" key="staticText-54" positionType="Float" x="484" y="31" width="106" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.grupoAtual}+":"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="81f135b4-76ab-4427-b557-0f6721bf6055" key="textField-69" positionType="Float" x="28" y="15" width="200" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="">
+					<reportElement uuid="a4d7f007-1d9a-4214-84e0-39e8121b7f66" x="602" y="15" width="83" height="18"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dataHoraTerminoAgendada}]]></textFieldExpression>
+					<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy HH:mm:ss" : "dd/MM/yyyy HH:mm:ss")]]></patternExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="09585e07-18ed-4eaa-8857-772811ca5e12" key="staticText-22" positionType="Float" x="2" y="0" width="16" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.n}+":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="5dade464-cfbb-44aa-a29a-8ad7062dc2d4" x="286" y="31" width="100" height="18"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{prioridade}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="f07f9ac4-de4d-4e26-beb4-ccbd8be61fbd" key="staticText-16" positionType="Float" x="240" y="31" width="57" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.prioridade}+":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="c8f99a17-5e3c-4efe-acfe-253cd50f5066" key="staticText-54" positionType="Float" x="2" y="49" width="43" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true">
+						<printWhenExpression><![CDATA[$P{exibirCampoDescricao}.equals( "S" )]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.descricao}+":"]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement uuid="5e21e4f4-f5e8-4fa3-91b1-b4780e9c7667" key="textField-25" positionType="Float" x="568" y="0" width="84" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dataHoraConclusao}]]></textFieldExpression>
+					<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy HH:mm:ss" : "dd/MM/yyyy HH:mm:ss")]]></patternExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="93ee785b-f6e9-4c8d-9403-6e5337b1b2fe" x="45" y="49" width="378" height="18">
+						<printWhenExpression><![CDATA[$P{exibirCampoDescricao}.equals( "S" )]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<line>
+				<reportElement uuid="37754817-8427-4d69-a2e9-4ba8a115161c" key="line-6" x="0" y="5" width="783" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="b6c5d3cb-8fc2-4aaa-9700-b354b12caf90" key="staticText-29" mode="Opaque" x="319" y="10" width="62" height="18"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.impressoPor}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="984348bd-2f59-431c-8c03-981e131aed26" key="textField-45" mode="Opaque" x="7" y="10" width="58" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CIDADE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="5bcabc1b-40b4-41b9-93c1-3a7a9bb85dec" key="textField-46" mode="Opaque" x="367" y="10" width="177" height="18"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NOME_USUARIO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement uuid="ad93ca7b-4c8c-4caf-b96f-f1f9a6491656" key="textField-48" mode="Opaque" x="47" y="10" width="117" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATA_HORA}]]></textFieldExpression>
+				<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy HH:mm:ss" : "dd/MM/yyyy HH:mm:ss")]]></patternExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2842391e-65e4-4929-b7f8-95c4b2e42af8" x="661" y="7" width="76" height="18"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.pagina}+"   "+$V{PAGE_NUMBER}+"  /  "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="0aacaa84-f2a3-41a7-9e72-572234f5aceb" x="738" y="7" width="36" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="14" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="979bd3e4-0a8f-4b39-a941-68add258c38e" key="textField-63" x="724" y="0" width="57" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3df178d0-6057-4408-b680-bae0f2774d1e" key="staticText-48" x="629" y="0" width="116" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{quantidade}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantidadeRegistro}+":"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

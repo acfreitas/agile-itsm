@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Notification_GetByUser>
+    <SessionID>SessionID</SessionID>
+    <MessageID>MessageID</MessageID>
+    <NotificationType>0</NotificationType>
+    <OnlyApproval>S</OnlyApproval>
+</Notification_GetByUser>

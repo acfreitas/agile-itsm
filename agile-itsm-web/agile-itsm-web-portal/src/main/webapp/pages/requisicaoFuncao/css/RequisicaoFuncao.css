@@ -1,0 +1,80 @@
+@CHARSET "ISO-8859-1";
+
+.destacado {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+	font-size: 14px;
+}
+
+.table {
+	border-left: 1px solid #ddd;
+	width: 100%;
+}
+
+.table th {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+}
+
+.table td {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-top: none;
+	border-left: none;
+}
+
+.table1 {
+	
+}
+
+.table1 th {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	background: #eee;
+}
+
+.table1 td {
+	
+}
+
+div#main_container {
+	margin: 0px 0px 0px 0px;
+}
+
+.container_16 {
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	letter-spacing: -4px;
+}
+
+.marginInterna{
+	margin: 5px;
+}
+
+.marginTop{
+	margin-top: 34px;
+}
+
+.alignCheck{
+	display: block;
+	float: left;"
+}
+
+table th{
+white-space: nowrap;
+text-overflow: ellipsis;
+max-width: 100px;
+overflow: hidden;
+}
+
+table tr td{
+white-space: nowrap;
+text-overflow: ellipsis;
+max-width: 100px;
+overflow: hidden;
+}
+

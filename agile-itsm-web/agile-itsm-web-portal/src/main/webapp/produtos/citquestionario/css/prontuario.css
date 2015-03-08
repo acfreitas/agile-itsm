@@ -1,0 +1,258 @@
+@import url("./classes.css");
+@import url("./ids.css");
+
+/* CSS Menus - Horizontal CSS Menu with Dropdown and Popout Menus - 20050131 */
+
+/* Begin CSS Popout Menu */
+
+#menu{
+width:100%;
+float:left;
+}
+
+#menu a, #menu h2{
+font:bold 11px/16px arial,helvetica,sans-serif;
+display:block;
+border-width:1px;
+border-style:solid;
+border-color:#ccc #888 #555 #bbb;
+white-space:nowrap;
+margin:0;
+padding:1px 0 1px 3px;
+width:160px
+}
+
+#menu h2{
+color:#fff;
+background: #000 url(../imagens/menuBB.gif) no-repeat 100% 100%;
+text-transform:uppercase
+}
+
+#menu a{
+background:#ededed;
+text-decoration:none;
+}
+
+#menu a, #menu a:visited{
+color:#3399ff;
+}
+
+#menu a:hover{
+color:#000084;
+background:#ededed;
+}
+
+#menu a:active{
+color:#000084;
+background:#ededed;
+}
+
+#menu ul{
+list-style:none;
+margin:0;
+padding:0;
+float:left;
+width:9em;
+}
+
+#menu li{
+position:relative;
+}
+
+#menu ul ul{
+position:absolute;
+z-index:500;
+top:auto;
+display:none;
+}
+
+#menu ul ul ul{
+top:0;
+left:100%;
+}
+
+/* Begin non-anchor hover selectors */
+
+/* Enter the more specific element (div) selector
+on non-anchor hovers for IE5.x to comply with the
+older version of csshover.htc - V1.21.041022. It
+improves IE's performance speed to use the older
+file and this method */
+
+div#menu li:hover{
+cursor:pointer;
+z-index:100;
+}
+
+div#menu li:hover ul ul,
+div#menu li li:hover ul ul,
+div#menu li li li:hover ul ul,
+div#menu li li li li:hover ul ul
+{display:none;}
+
+div#menu li:hover ul,
+div#menu li li:hover ul,
+div#menu li li li:hover ul,
+div#menu li li li li:hover ul
+{display:block;}
+
+/* End of non-anchor hover selectors */
+
+/* Styling for Expand */
+
+#menu a.x, #menu a.x:visited{
+font-weight:bold;
+color:#000;
+background:#eee url(../imagens/menuBB.gif) no-repeat 100% 100%;
+}
+
+#menu a.x:hover{
+color:#fff;
+background:#000;
+}
+
+#menu a.x:active{
+color:#060;
+background:#ccc;
+}
+
+/* End CSS Popout Menu */
+
+ 
+#divLOOKUP_EMPREGADO_PRONTUARIO *
+{
+  	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica;
+	text-align  :left;  	
+}
+  
+a,a:active,a:visited
+{
+  	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #006FA8;
+	text-decoration: underline;
+}
+
+a:hover
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #006FA8;
+	text-decoration: underline;
+	font-weight		:bold;
+ 
+}
+
+/* Opcoes */
+#opcoes {
+	width: 500px;
+}
+#opcoes select {
+	font-size: 11px;
+	font-family	:Arial, Helvetica, sans-serif;		
+}
+#opcoes input {
+	  text-align        :center;
+      text-transform    :capitalize;
+      background-color  :#FFFFFF;
+      width             :90px;
+      border-right 		:2px solid #999999;
+	  border-bottom 	:2px solid #999999;
+      color             :#000000;
+      font-size			:10px;
+      height			:18px;
+      padding			:1px 1px 1px 1px;
+      font-weight		:bold; 	
+}
+#radio * {
+	  width				: 500px;
+	  text-align		: left;
+	  font-size			: 9px;
+	  color				: #FFFFFF;
+	  font-family		: Tahoma, Arial, Helvetica, sans-serif;
+	  text-decoration	: none;
+}
+#botoes input {
+      text-align        :center;
+      text-transform    :capitalize;
+      background-color  :#CCCCCC;
+      width             :90px;
+      border-right	 	:2px solid #999999;
+	  border-bottom 	:2px solid #999999;
+      color             :#000000;
+      font-size			:10px;
+      height			:18px;
+      padding			:1px 1px 1px 1px;
+      font-weight		:bold; 	
+}
+.botao {
+      text-align        :center;
+      text-transform    :capitalize;
+      background-color  :#CCCCCC;
+      width             :90px;
+      border-right  	:2px solid #999999;
+	  border-bottom 	:2px solid #999999;
+      color             :#000000;
+      font-size			:10px;
+      height			:18px;
+      padding			:1px 1px 1px 1px;
+      font-weight		:bold; 	
+}
+
+#inicio {
+	padding			:5px 0px 5px 0px;
+}
+
+/* Classes */
+.campoObrigatorio
+{
+    font-weight		:bold;
+    font-size		:9px;
+    color			:#0038A8;
+    font-family		:Tahoma, Arial, Helvetica, sans-serif;
+    text-decoration	:none;
+    width			:250px;
+    padding			:3px 0 0 0;
+}
+
+.tituloPesquisa
+{
+    font-weight: bold;
+    font-size: 12px;
+    color: #006666;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.linhaResultado
+{
+    font-size: 11px;
+	font-family	:Arial, Helvetica, sans-serif;
+}
+#aguarde {
+	width: 100px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #FFFFFF;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+	background:#000084;
+}
+
+#rte input {
+      text-align        :center;
+      text-transform    :capitalize;
+      background-color  :#CCCCCC;
+      width             :90px;
+      border-right	 	:2px solid #999999;
+	  border-bottom 	:2px solid #999999;
+      color             :#000000;
+      font-size			:10px;
+      height			:18px;
+      padding			:1px 1px 1px 1px;
+      font-weight		:bold; 
+}
+#rte * {
+	font-size: 11px;
+	font-family	:Arial, Helvetica, sans-serif;
+}

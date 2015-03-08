@@ -1,0 +1,108 @@
+FAVOR NÃO RODAR EM PRODUÇÃO.
+
+SCRIPTS NOVOS PARA MÓDULO OS - VALIDAÇÃO.
+
+Scripts Banco versão MySQL
+
+//Criar tabela de Valor ajuste:
+
+create table valorajusteglosa(
+   idservicocontrato    bigint(20) not null,
+   idacordonivelservico bigint(20) not null,
+   quantidadefalhas     int(11),
+   valorajuste          decimal(10,2),
+   deleted              char(1)
+);
+
+//Criar tabela de contagem de Glosa:
+
+create table glosaservicocontrato(
+   idglosaservicocontrato bigint(20) not null,
+   idservicocontrato    bigint(20) not null,
+   quantidadeglosa      int(11),
+   datafim              date
+);
+
+alter table glosaservicocontrato
+   add primary key (idglosaservicocontrato);
+
+//Criar tabela de Resultados Esperados:
+
+create table resultadosesperados(
+   idservicocontrato    bigint(20) not null,
+   idacordonivelservico bigint(20) not null,
+   descricaoresultados     varchar(1000),
+   limites          varchar(200),
+   glosa            varchar(200),
+   limiteglosa      varchar(200),
+   deleted              char(1);
+);
+
+-----------------------------------------------------------------------------------------------------------------
+
+Script da DinamicView
+
+Visão alterada: Acordo de Nível de Serviço (Contrato)
+
+Acrescentar em Scripts
+Lado Cliente:
+
+Ao inserir e Ao Atualizar:
+mapFields.put("RESULTADOSESPERADOSSERIALIZADO",document.form.RESULTADOSESPERADOSSERIALIZADO.value);
+
+Ao recuperar:
+carregaResultados();
+
+-----------------------------------------------------------------------------------------------------------------
+
+Lado Servidor:
+
+Ao inserir:
+var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+
+var acordoNivelServicoContratoService = new importNames.AcordoNivelServicoContratoServiceEjb();
+
+var flag = acordoNivelServicoContratoService.verificaDataContrato(mapFields);
+
+if(!flag){
+      dinamicViewDto.abortFuncaoPrincipal = true;
+      dinamicViewDto.msgRetorno = "A data inicial do SLA é maior que a data final do contrato.";
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+Adicionar no campo Tipo de Acordo a seguinte opção:
+
+Valor da opção: R
+Descrição da opção: OS - Resultados esperados
+
+Deve-se clicar duas vezes no campo Tipo de Acordo. Ao abrir a popup preencher os campos Valor da opção e Descrição da opção e clicar em Adicionar Opção.
+
+-----------------------------------------------------------------------------------------------------------------
+
+DETALHES IMPORTANTES:
+
+A tabela TipoServico deve ficar idêntica a tabela do banco de desenvolvimento bsb_desenvolvimento (Já validado com Emauri).
+IDTipoServico NomeTipoServico
+1			  A DEFINIR
+2			  ROTINEIRA
+3			  SUPORTE
+4			  DEMANDA
+
+
+A base utilizada para desenvolver foi a citsmart_bsb_desenvolvimento nela contém as configurações da DinamicView se caso necessitar ver como está configurado.
+
+-----------------------------------------------------------------------------------------------------------------
+
+Se caso ocorrer dúvidas segue meus contatos:
+Email: rodrigoengelberg@gmail.com
+Telefones: 62 8296-1444 e 64 9928-9030
+
+
+
+
+
+
+
+

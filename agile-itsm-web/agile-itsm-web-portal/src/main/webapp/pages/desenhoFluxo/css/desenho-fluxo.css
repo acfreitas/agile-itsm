@@ -1,0 +1,111 @@
+
+    .ui-layout-center ,
+    .ui-layout-east ,
+    .ui-layout-east .ui-layout-content {
+        padding:        0;
+        overflow:       hidden;
+    }
+    .hidden {
+        display:        none;
+    }
+    h2.loading {
+        border:         0;
+        font-size:      24px;
+        font-weight:    normal;
+        margin:         30% 0 0 40%;
+    }
+    #divElementos {
+    	border: 1px;
+    }
+
+.icone {
+	cursor: pointer;
+	border: 2px solid #E8E8E8;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	<strong>behavior:url(border-radius.htc);</strong>
+}
+.icone:hover {
+	border: 2px dashed #9ACD32;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	<strong>behavior:url(border-radius.htc);</strong>
+
+}
+.icone2 {
+	cursor: pointer;
+	border: 2px solid white;
+}
+.icone2:hover {
+	cursor: pointer;
+	border: 2px solid #9ACD32;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	<strong>behavior:url(border-radius.htc);</strong>
+}
+.tabela{
+	border: 2px solid #DDDDDD;
+}
+.th{
+	border: 1px solid #BBBBBB;
+	padding: 3px 3px 3px 3px !important;
+	height: 18px !important;
+	text-align: left;
+	background-color: #DDDDDD !important;
+}
+.tr{
+	font-size: 12px !important;
+}
+.tdIcone{
+	padding: 1px 1px 1px 1px !important;
+}
+.td{
+	border-left: 1px dotted silver;
+	border-right: 1px dotted silver;
+	border-top: 1px dotted silver;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+	z-index: 1;
+
+	white-space: nowrap;
+	cursor: default;
+}
+.trPropriedade{
+	height: 12px !important;
+	padding: 0px 0px 0px 0px !important;
+}
+.tdPropriedade{
+	border-left: 1px dotted silver !important;
+	border-right: 1px dotted silver !important;
+	border-top: 1px dotted silver !important;
+
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
+	vertical-align: middle !important;
+	z-index: 1 !important;
+	padding: 10px 5px 0px 5px !important;
+
+	white-space: nowrap !important;
+	cursor: default !important;
+	font-family:Arial !important;
+	font-size:11px !important;
+}
+.campoPropriedade{
+	font-family:Arial !important;
+	font-size:11px !important;
+	padding: 2px 2px 2px 2px !important;
+}
+.ui-layout-center {
+	top: 0px!important;
+}
+

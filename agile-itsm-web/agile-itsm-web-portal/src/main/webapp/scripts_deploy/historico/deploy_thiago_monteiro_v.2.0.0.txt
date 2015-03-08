@@ -1,0 +1,179 @@
+/*===============================================================================================*/    
+/*                 SCRIPT PARA MYSQL E ORACLE QUE ALTERA A ESTRUTURA DA TABELA FORNECEDOR        */
+/*===============================================================================================*/
+
+/* Autor: thiago.monteiro
+ * Data: 13-12-2012
+ * Funcao:
+ *     Adicionar as colunas nomecontato, inscricaoestadual e inscricaomunicipal
+ *     na tabela de fornecedor.
+ */
+
+/* =========== MYSQL =========== */
+        
+/* CORRECAO DO NOME DA CHAVE PRIMARIA DA TABELA DE ALCADACENTRORESULTADO */
+alter table alcadacentroresultado
+    change idalcadacentrocusto idalcadacentroresultado int(11) not null;        
+
+/* ADICIONANDO AS COLUNAS: NOMECONTATO, INSCRICAOESTADUAL E INSCRICAOMUNICIPAL NA TABELA DE FORNECEDOR */
+
+alter table fornecedor
+    add column nomecontato varchar(100);
+
+alter table fornecedor
+    add column inscricaoestadual varchar(25);
+
+alter table fornecedor
+    add column inscricaomunicipal varchar(25);
+    
+/* ========== ALTERANDO A CHAVE PRIMARIA DA TABELA DE ALCADACENTRORESULTADO ============= */
+
+alter table alcadacentroresultado
+    drop primary key;
+
+alter table alcadacentroresultado
+    change idcentroresultado idcentroresultado int(11);
+
+alter table alcadacentroresultado
+    add primary key(idalcadacentroresultado);
+
+/* ============== ALTERANDO PARA OBRIGATORIAS AS CHAVES: IDCENTRORESULTADO, IDEMPREGADO E IDALCADA ====================== */
+alter table alcadacentroresultado
+    change idcentroresultado idcentroresultado int(11) not null;
+
+alter table alcadacentroresultado
+    change idempregado idempregado int(11) not null;
+
+alter table alcadacentroresultado
+    change idalcada idalcada int(11) not null;
+
+/* =================================================================== */
+/*        RETIRANDO A CONSTRAINT fk_endereco                           */
+/* =================================================================== */
+/* 
+	MOTIVAÇÃO: A REMOÇÃO ESTÁ SENDO FEITA EM VIRTUDE DO FUNCIONAMENTO 
+	DA DYNAMIC VIEW QUE INSERE O VALOR -999 NA COLUNA IDENDERECO DA TABELA DE 
+	FORNECEDOR QUANDO NÃO SE INFORMA UM ENDEREÇO PARA O MESMO.
+	O CAMPO ENDEREÇO APRESENTA UMA COMBOBOX, CUJA AS OPÇÕES SÃO RESULTADO
+	DE UMA PESQUISA ASSOCIANDO A TABELA DE FORNECEDOR E DE ENDERECO.
+	A COLUNA IDENDERECO EM FORNECEDOR NÃO EXIGIA UM VALOR (NÃO ERA NOT NULL)
+	E PORTANTO NÃO OBRIGAVA O USUÁRIO A INFORMAR O ENDEREÇO. PORÉM O COMPORTAMENTO
+	DA DYNAMIC VIEW DE INSERIR -999 FERIA A CONSTRAINT fk_endereco POR NÃO HAVER 
+	NENHUM REGISTRO NA TABELA DE ENDERECO COM UMA CHAVE -999.
+*/
+
+alter table fonecedor
+    drop foreign key fk_endereco;
+
+
+/* =========== ORACLE =========== */
+        
+/* CORRECAO DO NOME DA CHAVE PRIMARIA DA TABELA DE ALCADACENTRORESULTADO */
+
+ALTER TABLE ALCADACENTRORESULTADO
+    RENAME COLUMN IDALCADACENTROCUSTO TO IDALCADACENTRORESULTADO;
+
+/* ADICIONANDO AS COLUNAS: NOMECONTATO, INSCRICAOESTADUAL E INSCRICAOMUNICIPAL NA TABELA DE FORNECEDOR */
+
+ALTER TABLE FORNECEDOR
+    ADD NOMECONTATO VARCHAR2(100);   
+
+ALTER TABLE FORNECEDOR
+    ADD INSCRICAOESTADUAL VARCHAR2(25);
+
+ALTER TABLE FORNECEDOR
+    ADD COLUMN INSCRICAOMUNICIPAL VARCHAR(25);
+
+/* ========== ALTERANDO A CHAVE PRIMARIA DA TABELA DE ALCADACENTRORESULTADO =============*/
+
+ALTER TABLE ALCADACENTRORESULTADO
+    DROP PRIMARY KEY;
+
+ALTER TABLE ALCADACENTRORESULTADO
+    MODIFY (IDCENTRORESULTADO INT NULL);
+
+ALTER TABLE ALCADACENTRORESULTADO
+   ADD PRIMARY KEY(IDALCADACENTRORESULTADO);
+   
+/* ============== ALTERANDO PARA OBRIGATORIAS AS CHAVES: IDCENTRORESULTADO, IDEMPREGADO E IDALCADA ====================== */
+
+ALTER TABLE ALCADACENTRORESULTADO
+    MODIFY (IDCENTRORESULTADO INT NOT NULL);
+
+ALTER TABLE ALCADACENTRORESULTADO
+    MODIFY (IDEMPREGADO INT NOT NULL);
+
+ALTER TABLE ALCADACENTRORESULTADO
+    MODIFY (IDALCADA INT NOT NULL);
+    
+/* =================================================================== */
+/*        RETIRANDO A CONSTRAINT fk_endereco                           */
+/* =================================================================== */
+/* 
+	MOTIVAÇÃO: A REMOÇÃO ESTÁ SENDO FEITA EM VIRTUDE DO FUNCIONAMENTO 
+	DA DYNAMIC VIEW QUE INSERE O VALOR -999 NA COLUNA IDENDERECO DA TABELA DE 
+	FORNECEDOR QUANDO NÃO SE INFORMA UM ENDEREÇO PARA O MESMO.
+	O CAMPO ENDEREÇO APRESENTA UMA COMBOBOX, CUJA AS OPÇÕES SÃO RESULTADO
+	DE UMA PESQUISA ASSOCIANDO A TABELA DE FORNECEDOR E DE ENDERECO.
+	A COLUNA IDENDERECO EM FORNECEDOR NÃO EXIGIA UM VALOR (NÃO ERA NOT NULL)
+	E PORTANTO NÃO OBRIGAVA O USUÁRIO A INFORMAR O ENDEREÇO. PORÉM O COMPORTAMENTO
+	DA DYNAMIC VIEW DE INSERIR -999 FERIA A CONSTRAINT fk_endereco POR NÃO HAVER 
+	NENHUM REGISTRO NA TABELA DE ENDERECO COM UMA CHAVE -999.
+*/
+
+ALTER TABLE FORNECEDOR
+    DROP CONSTRAINT FK_ENDERECO;
+
+    
+
+/*=========================================================================================*/    
+/*                 CONFIGURANDO A DYNAMIC VIEW DE FORNECEDOR                               */
+/*=========================================================================================*/
+
+Página: http://localhost:8080/citsmart/pages/visaoAdm/visaoAdm.load?idVisao=23
+
+1 - CONFIGURANDO O CAMPO CPF/CNPJ
+    1.1 - Objeto de Negócio: FORNECEDOR
+    1.2 - Tipo de Campo: Número
+    1.3 - Campo de Objeto de Negócio: CNPJ
+    1.4 - Descrição: CPF/CNPJ
+    1.5 - Tamanho: 14
+    1.6 - Obrigatório: Não
+    1.7 - Situação: Ativo
+    
+2 - CONFIGURANDO O CAMPO ENDEREÇO
+    1.1 - Objeto de Negócio: FORNECEDOR
+    1.2 - Tipo de Campo: Relacionamento com outro objeto de negócio
+    1.3 - IDENDERECO
+    1.4 - Descrição: ENDEREÇO
+    1.5 - Tamanho: 11
+    1.6 - Obrigatório: Não
+    1.7 - Descrição para o Relacionamento: ENDEREÇO
+    1.8 - Relacionamento (Objeto de Negócio): ENDERECO
+    1.9 - Campo do Objeto de Negócio para Apresentação - Relacionamento: LOGRADOURO
+    1.10 - Campo do Objeto de Negócio para Ligação - Relacionamento: IDENDERECO
+    1.11 - Campo do Objeto de Negócio para Ordem - Relacionamento: LOGRADOURO
+    1.12 - Tipo de campo a apresentar: LOOKUP
+    1.13 - Filtro Adicional (SQL): ${TERMO_PESQUISA}  
+
+
+3 - CONFIGURANDO O SCRIPT DE VERIFICAÇÃO DO COMPRIMENTO DO NÚMERO CPF/CNPJ
+    3.1 - Clique no botão Scripts, na janela que se abre clique na seção Servidor e logo após na opção Ao Inserir.
+    3.2 - Na área de texto cole o código a seguir:
+
+		var tipoPessoa = mapFields.get("TIPOPESSOA");
+		var numDoc = mapFields.get("CNPJ");
+		
+		if (tipoPessoa == "F") {
+		    if (numDoc.length() != 14) {
+		        dinamicViewDto.abortFuncaoPrincipal = true;
+		        dinamicViewDto.msgRetorno = "A quantidade de dígitos do CPF informado é inválida";
+		    }
+		}
+		
+		if (tipoPessoa == "J") {
+		    if (numDoc.length() != 18) {
+		        dinamicViewDto.abortFuncaoPrincipal = true;
+		        dinamicViewDto.msgRetorno = "A quantidade de dígitos do CNPJ informado é inválida";
+		    }
+		}

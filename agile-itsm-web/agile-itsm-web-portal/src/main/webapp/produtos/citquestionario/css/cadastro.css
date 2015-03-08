@@ -1,0 +1,48 @@
+
+@import url("./classes.css");
+@import url("./tags.css");
+@import url("./ids.css");
+
+@media screen
+{
+	table#tabFormulario{
+		
+		padding: 5px 0 0 0;
+		
+	}
+
+	table#tabControle{
+		text-align: center;
+		
+		}
+
+	.campoObrigatorio
+{
+    font-size		:9px;
+    color			:#008080;
+    font-family		:Tahoma, Arial, Helvetica, sans-serif;
+    text-decoration	:none;
+    width			:250px;
+    padding			:3px 0 0 0;
+}
+	.dragme{
+		position:absolute;
+		z-index: 2;
+	}
+	
+	a.linkmigalha:link, a.linkmigalha:active, a.linkmigalha:visited{
+		font-family: Arial, Helvetica, sans-serif; 
+		font-size: 11px; 
+		color: #666666;
+		text-decoration: none;
+	}	
+	a.linkmigalha:hover{
+		font-family: Arial, Helvetica, sans-serif; 
+		font-size: 11px; 
+		color: #666666;
+		text-decoration: underline;
+	}	
+	.tamanho10{
+		font-size		:9px;
+	}		
+}

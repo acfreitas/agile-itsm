@@ -1,0 +1,226 @@
+#btOk {
+	position: absolute;
+	top: 50%;
+	right: 6px;
+	+
+}
+
+.hidden {
+	display: none !important;
+}
+
+h4 {
+	margin: 0 0 0 0;
+}
+
+.cell-title {
+	font-weight: bold;
+}
+
+.cell-effort-driven {
+	text-align: center;
+}
+
+.tableLess tbody {
+	background: transparent !important;
+}
+
+.tableLess * {
+	margin: 0 !important;
+	vertical-align: middle !important;
+	padding: 2px !important;
+}
+
+.tableLess thead th {
+	font-weight: bold !important;
+	background: #fff url(../../imagens/title-bg.gif) repeat-x left bottom
+		!important;
+	text-align: center !important;
+}
+
+.tableLess tbody tr:ACTIVE {
+	background-color: #fff !important;
+}
+
+.tableLess tbody tr:HOVER {
+	background-color: #e7e9f9;
+	cursor: pointer;
+}
+
+.tableLess th {
+	border: 1px solid #BBB !important;
+	padding: 6px !important;
+}
+
+.tableLess td {
+	border: 1px solid #BBB !important;
+	padding: 6px 10px !important;
+}
+
+.sel {
+	display: none;
+	background: none !important;;
+	cursor: auto;
+	padding: 0;
+	margin: 0;
+}
+
+.sel td {
+	padding: 0;
+	margin: 0;
+}
+
+.table {
+	border-left: 1px solid #ddd;
+	width: 100%;
+	text-align: center;
+}
+
+.table th {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+}
+
+.table td {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-top: none;
+	border-left: none;
+	height: 10px;
+}
+
+.tabFormulario tr {
+	width: 50%;
+}
+
+.tableLess {
+	font-family: arial, helvetica !important;
+	font-size: 10pt !important;
+	cursor: default !important;
+	margin: 0 !important;
+	background: white !important;
+	border-spacing: 0 !important;
+	width: 100% !important;
+}
+
+.col_98 {
+	width: 98%;
+}
+
+.col_17 {
+	width: 17%;
+	position: relative;
+	border-right: 1px solid #eee;
+	margin-right: -1px;
+	display: block;
+	float: left;
+}
+
+.col_13 {
+	width: 14%;
+	position: relative;
+	border-right: 1px solid #eee;
+	margin-right: -1px;
+	display: block;
+	float: left;
+}
+
+.col_36 {
+	width: 36%;
+	position: relative;
+	border-right: 1px solid #eee;
+	margin-right: -1px;
+	display: block;
+	float: left;
+}
+
+.tabFormulario td {
+	width: 70%;
+}
+
+.tabFormulario th {
+	width: 30%;
+}
+
+.form {
+	width: 100%;
+	float: right;
+}
+
+.formHead {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.formBody {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.formRelacionamentos div {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.formFooter {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.divEsquerda {
+	float: left;
+	width: 47%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.divDireita {
+	float: right;
+	width: 47%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	background-color: #fff !important;
+}
+
+.ui-state-active {
+	background-color: #aaa;
+}
+
+#tabs div {
+	background-color: #fff;
+}
+
+.ui-state-hover {
+	background-color: #ccc !important;
+}
+
+#divTituloSolicitacao {
+	text-align: center;
+}
+
+#contentBaseline {
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0 !important;
+}
+
+.autocomplete{
+	width: 420px !important;
+}
+
+.add-on {
+	border-radius:1px!important;
+}

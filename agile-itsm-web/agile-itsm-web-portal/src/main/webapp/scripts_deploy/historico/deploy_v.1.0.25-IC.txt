@@ -1,0 +1,40 @@
+/* MYSQL */
+DROP TABLE baseitemconfiguracao;
+
+CREATE TABLE baseitemconfiguracao (
+	idbaseitemconfiguracao int(11),
+	idbaseitemconfiguracaopai int(11),
+	idtipoitemconfiguracao int(11),
+	nomebaseitemconfiguracao varchar(256),
+	executavel varchar(256),
+	datainicio date,
+	datafim date,
+	tipoexecucao char(1),
+	comando varchar(256),
+	PRIMARY KEY (idbaseitemconfiguracao),
+	FOREIGN KEY (idbaseitemconfiguracaopai) REFERENCES baseitemconfiguracao(idbaseitemconfiguracao),
+	FOREIGN KEY (idtipoitemconfiguracao) REFERENCES tipoitemconfiguracao(idtipoitemconfiguracao)
+);
+
+
+
+
+/* ORACLE */
+DROP TABLE "BASEITEMCONFIGURACAO" CASCADE CONSTRAINTS; 
+
+CREATE TABLE "BASEITEMCONFIGURACAO" (
+	"IDBASEITEMCONFIGURACAO" NUMBER(10, 0) NOT NULL ENABLE,
+	"IDBASEITEMCONFIGURACAOPAI" NUMBER(10, 0),
+	"IDTIPOITEMCONFIGURACAO" NUMBER(10, 0),
+	"NOMEBASEITEMCONFIGURACAO" VARCHAR2(256 BYTE),
+	"EXECUTAVEL" VARCHAR2(256 BYTE),
+	"DATAINICIO" DATE,
+	"DATAFIM" DATE, 
+	"TIPOEXECUCAO" CHAR(1 BYTE), 
+	"COMANDO" VARCHAR2(256 BYTE), 
+	PRIMARY KEY ("IDBASEITEMCONFIGURACAO"),
+	FOREIGN KEY ("IDTIPOITEMCONFIGURACAO")
+	  REFERENCES "TIPOITEMCONFIGURACAO" ("IDTIPOITEMCONFIGURACAO"),
+	FOREIGN KEY ("IDBASEITEMCONFIGURACAOPAI")
+    REFERENCES "BASEITEMCONFIGURACAO" ("IDBASEITEMCONFIGURACAO")
+);

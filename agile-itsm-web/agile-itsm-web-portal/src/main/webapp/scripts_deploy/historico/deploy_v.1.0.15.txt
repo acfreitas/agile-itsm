@@ -1,0 +1,36 @@
+ALTER TABLE glosaos ADD idacordonivelservico INT;
+
+alter table glosaos add constraint fk_reference_618 foreign key (idacordonivelservico)
+      references acordonivelservico (idacordonivelservico) on delete restrict on update restrict;
+
+ALTER TABLE `bpm_elementofluxo` ADD COLUMN `posx` DOUBLE NULL  AFTER `nomefluxoencadeado` , ADD 
+COLUMN `posy` DOUBLE NULL  AFTER `posx` , ADD COLUMN `altura` DOUBLE NULL  AFTER `posy` , ADD COLUMN `largura` DOUBLE 
+NULL  AFTER `altura` ;
+ 
+ALTER TABLE `bpm_elementofluxo` ADD COLUMN modeloemail varchar(20);
+ 
+ALTER TABLE `bpm_sequenciafluxo` ADD COLUMN `idconexaoorigem` SMALLINT NULL  AFTER `condicao` , 
+ADD COLUMN `idconexaodestino` SMALLINT NULL  AFTER `idconexaoorigem` , ADD COLUMN `bordax` DOUBLE NULL  AFTER 
+`idconexaodestino` , ADD COLUMN `borday` DOUBLE NULL  AFTER `bordax` ;
+ 
+alter table bpm_sequenciafluxo add posicaoalterada char(1);
+
+alter table bpm_sequenciafluxo add nome varchar(100);
+
+
+/*==============================================================*/
+/* Table: logdados                                              */
+/*==============================================================*/
+create table logdados
+(
+   idlog                integer(255) not null,
+   dtatualizacao        date,
+   operacao             varchar(100),
+   dados                text,
+   idusuario            integer,
+   localorigem          varchar(255),
+   nometabela           varchar(255),
+   dataLog timestamp
+);
+alter table logdados
+   add primary key (idlog);

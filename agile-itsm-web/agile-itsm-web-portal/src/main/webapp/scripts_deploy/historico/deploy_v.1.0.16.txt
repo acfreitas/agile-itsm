@@ -1,0 +1,6 @@
+ALTER TABLE bpm_objetoinstanciafluxo CHANGE COLUMN valor valor LONGTEXT;
+
+ALTER TABLE ocorrenciasolicitacao CHANGE COLUMN dadossolicitacao dadossolicitacao LONGTEXT;
+
+ALTER TABLE ocorrenciasolicitacao CHANGE COLUMN ocorrencia ocorrencia LONGTEXT;
+

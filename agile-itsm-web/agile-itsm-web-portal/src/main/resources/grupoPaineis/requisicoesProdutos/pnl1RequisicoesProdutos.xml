@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PAINEL description='Painel de Informações sobre Requisições de Produtos'>
+    <ITEM file='xmlPaineis/requisicoesProdutos/painelRequisicoesProdGeral.xml' description='painel.reqCC'/>
+    <ITEM file='xmlPaineis/requisicoesProdutos/painelRequisicoesPorUnidade.xml' description='painel.reqUnidade'/>
+</PAINEL>

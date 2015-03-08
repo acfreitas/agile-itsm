@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<ItemInformation type='SERVICE' description='Service Report' defaultVisualization='P' report='true' graph='false' reportPageLayout='L' title='citcorpore.comum.relatorioServico' hDetailSpacing='40'>
+	<CLASS class="br.com.centralit.citgerencial.generateservices.servicos.GenerateServiceRelatorioServicos"></CLASS>
+	<FIELDS>
+		<FIELD name='nomesituacaoservico' type='java.lang.String' width='120px' title='colaborador.situacao' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='nomeservico' type='java.lang.String' width='120px' title='visao.nomeServico' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='detalheservico' type='java.lang.String' width='120px' title='lookup.detalheServico' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='datainicio' type='java.sql.Date' width='70px' title='citcorpore.comum.datainicio' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='nometiposervico' type='java.lang.String' width='120px' title='painel.tipoServico' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='nomeimportancianegocio' type='java.lang.String' width='120px' title='importanciaNegocio.importanciaNegocio' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='nomeCategoriaServico' type='java.lang.String' width='120px' title='categoriaServico.categoriaServico' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='infoAdd' type='java.lang.String' width='120px' title='citcorpore.comum.informacaoAdicional' totals='false' count='false' decimals='0' mask=''/>
+	</FIELDS>
+	
+	<GRAPHS>
+		<GRAPH type='Pizza3D' legend='false'/>
+		<GRAPH type='Pizza2D' legend='false'/>
+		<GRAPH type='Barra3D' legend='false'/>
+		<GRAPH type='Barra2D' legend='false'/>
+		<GRAPH type='Linha3D' legend='false'/>
+		<GRAPH type='Linha2D' legend='false'/>
+	</GRAPHS>
+	<GROUPS>
+		<GROUP fieldName='nomesituacaoservico' spacingLeft='0'/>
+	</GROUPS>	
+	<SUMMARY>
+	</SUMMARY>
+</ItemInformation>

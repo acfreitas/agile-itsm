@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<redirects>
+    <redirect pathIn="/pages/painelAtendimento/painelAtendimento.load" pathOut="/painelAtendimento/painelAtendimento.jsp" />
+    <redirect pathIn="/pages/visualizacaoQuestionario/visualizacaoQuestionario.load" pathOut="/produtos/citquestionario/pages/visualizacaoQuestionario/visualizacaoQuestionario.jsp" />
+    <redirect pathIn="/pages/visualizarSubQuestionario/visualizarSubQuestionario.load" pathOut="/produtos/citquestionario/pages/visualizarSubQuestionario/visualizarSubQuestionario.jsp" />
+    <redirect pathIn="/pages/questionario/questionario.load" pathOut="/produtos/citquestionario/pages/questionario/questionario.jsp" />
+    <redirect pathIn="/pages/acessaQuestionario/acessaQuestionario.load" pathOut="/produtos/citquestionario/pages/iniciaQuestionario/iniciaQuestionario.jsp" />
+    <redirect pathIn="/pages/uploadExcluir/uploadExcluir.load" pathOut="/pages/upload/upload.jsp" />
+</redirects>

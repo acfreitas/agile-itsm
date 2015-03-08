@@ -1,0 +1,94 @@
+@media screen
+{
+	.dragme { position:relative; }
+		
+	div#div_subtitulo
+	{
+	    margin      :1mm 0px;
+	    width       :100%;
+	    height      :4mm;
+	    text-align  :left;
+	    font-weight :bold;
+	    font-size   :12px;
+	    border      :0px solid #003300;
+	    color       :#0038A8;
+	}
+
+	table#tabFormulario{
+		
+		padding		:5px 0 0 0px;
+		border     	:0px solid #003300;
+		width       :580px;
+		
+	}
+	
+  	
+	.campoEsquerdaRelatorio {
+			font-weight: bold;
+			font-size: 11px;
+			color: #0038A8;
+			font-family: Tahoma, Arial, Helvetica, sans-serif;
+			text-decoration: none;
+			width: 150px;
+			padding: 5px 5px 5px 25px;
+	}
+
+
+	
+	
+	
+
+	div#parametro
+	{
+		height				:20px;
+  		margin            	:0px 0px 2px 0px;
+	   	background-color  	:#E5F0F6;
+	    border            	:1px solid #006FA8;
+	    text-align		  	:left;
+	    width       		:298px;
+	}
+	div#parametro2
+	{
+		height				:40px;
+  		margin            	:0px 0px 2px 0px;
+	   	background-color  	:#E5F0F6;
+	    border            	:1px solid #006FA8;
+	    text-align		  	:left;
+	    width       		:298px;
+	}
+
+	label#grafico
+	{
+		width         	:150px;
+		text-align    	:right;
+		color         	:#0038A8;
+		border			:0px solid red;
+		float			:left;
+		padding			:2px 0px 0px 0px; 
+	}
+
+	div#caixaFiltro
+	{
+		width         	:80px;
+    	float         	:left;
+    	text-align    	:left;
+    	padding         :0px 0 0 8px;
+    	 border			:0px solid red;
+	}
+
+	div#div_subtitulo1
+  {
+    margin      :1mm 0px;
+    width       :300px;
+    height      :4mm;
+    text-align  :center;
+    font-weight :bold;
+    font-size   :12px;
+    border      :0px solid #003300;
+    color       :#0038A8;
+  }
+	
+
+	
+
+}

@@ -1,0 +1,31 @@
+*ALTER TABLE atividadesservicocontrato CHANGE COLUMN `hora` `hora` FLOAT NULL DEFAULT NULL;*
+
+*Visão: Atividade Serviço (conforme contrato)*
+Cliente:
+Validação
+ 
+var tipo = document.form.TIPOCUSTO.value;
+if(tipo == "F"){
+  if(validaCamposFormula() == false){
+   dinamicViewDto.abortFuncaoPrincipal = true;
+  }
+}else{
+  if(validaCustoAtividade() == false){
+   dinamicViewDto.abortFuncaoPrincipal = true;
+  }
+}
+
+*VISÃO Serviço de Contrato - Multi Serviços*
+*SERVIDOR - AO INSERIR*
+mapFields.put("IDCONTRATO", mapFields.get("SESSION.NUMERO_CONTRATO_EDICAO"));
+var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.metainfo.complementos);
+
+var complInsert = new importNames.ComplementoServicoContrato_Insert();
+var ret = complInsert.execute(dinamicViewDto, mapFields, transactionControler);
+dinamicViewDto.abortFuncaoPrincipal = true;
+
+*Atualizar Menu*
+Menu Pai: Relatório;
+Menu Filho: Quantitativo por Serviço
+Link: /relatorioQuantitativoPorServico/relatorioQuantitativoPorServico.load

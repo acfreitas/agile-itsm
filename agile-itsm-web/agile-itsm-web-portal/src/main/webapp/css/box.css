@@ -1,0 +1,69 @@
+/*
+    BOX TRILHOS
+*/
+
+.BoxTrilhos {margin-bottom: 25px;}
+.BoxTrilhos article {width: 168px; height: 216px; position: relative; margin: 0 25px 25px 0;}
+.BoxTrilhos article .bg {background-color:#000;opacity:0.60;-moz-opacity: 0.60; filter: alpha(opacity=60);position: absolute; top: 0; left: 0; width: 168px; height: 216px;}
+.BoxTrilhos article .play-trilhos {position: absolute; top: 68px;left: 50px;}
+.BoxTrilhos article.last {margin-right: 0px;}
+.BoxTrilhos article .thumb_trilho {border: 1px solid #dedede;display: block; width:166px; height: 214px;}
+.BoxTrilhos article.ativo {z-index: 10}
+.BoxTrilhos article .opcoes-filme {display: block;
+-webkit-box-shadow: 0px 0px 8px -5px #000000;-moz-box-shadow: 0px 0px 8px -5px #000000;box-shadow: 0px 0px 8px -5px #000000;
+-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;
+border: 1px solid #d1d1d1; background-color:#f3f6f6; width: 361px;}
+
+.BoxTrilhos article .fnd {position: absolute; z-index: 40; left: 193px; top: 40px; padding-bottom: 20px; background: url(../img/dot.png) repeat;}
+
+.BoxTrilhos article .seta {width: 23px; height: 37px; background: url(../img/sprite.png) no-repeat -114px -100px; display: block; left: 171px; top: 75px; position: absolute; z-index: 45;}
+
+.BoxTrilhos article .opcoes-filme header {padding: 14px 15px 14px; border-bottom: 1px solid #d8d8d8;}
+.BoxTrilhos article .opcoes-filme header h3 {color:#f1352e; font-size: 18px; font-weight: bold;line-height: 19px; margin-bottom: 9px;}
+.BoxTrilhos article .opcoes-filme header h3 a {color: #f1352e; }
+.BoxTrilhos article .opcoes-filme header h3 a:hover {color: #CC150E; /*text-decoration: underline;*/}
+.BoxTrilhos article .opcoes-filme header .duracao {color:#435d6a; margin-left: 8px;max-width: 300px;line-height: 14px;}
+
+.BoxTrilhos article .opcoes-filme .descricao {border-top: 1px solid #fff;padding: 14px 15px 14px;#padding-bottom: 8px; border-bottom: 1px solid #d8d8d8;}
+
+.BoxTrilhos article .opcoes-filme .sinopse {color:#435d6a; /*letter-spacing: -0.03em;*/ margin-bottom: 13px;}
+.BoxTrilhos article .opcoes-filme .ultimo-dia,
+.BoxTrilhos article .opcoes-filme .disponivel-data,
+.BoxTrilhos article .opcoes-filme .nao-disponivel {margin: 3px 0 0 25px; white-space: nowrap;}
+.BoxTrilhos article .opcoes-filme footer {border-top: 1px solid #fff;height: 30px;}
+.BoxTrilhos article .opcoes-filme footer a{height: 30px; line-height: 30px;color:#F0352E;}
+.BoxTrilhos article .opcoes-filme footer li {border-right: 1px solid #fff; border-left: 1px solid #d5d5d5; padding: 0 10px;}
+
+.BoxTrilhos article .opcoes-filme footer li.ver-preview { border-left: none;}
+.BoxTrilhos article .opcoes-filme footer li.ver-preview a{background: url(../img/seta-ver-preview.png) no-repeat 0 center; padding-left: 14px;}
+.BoxTrilhos article .opcoes-filme footer li.assistir-mais-tarde {}
+.BoxTrilhos article .opcoes-filme footer li.assistir-mais-tarde a {background: url(../img/ico-assistir-mais-tarde.png) no-repeat 0 -7px; padding-left: 18px;}
+.BoxTrilhos article .opcoes-filme footer li.assistir-mais-tarde a:hover {background-position: 0 -37px;}
+.BoxTrilhos article .opcoes-filme footer li.assistir-mais-tarde a.ativo {background-position: 0 -68PX;}
+.BoxTrilhos article .opcoes-filme footer li.sobre-filme a{background: url(../img/ico-sobre-filme.png) no-repeat 0 -7px; padding-left: 15px;}
+.BoxTrilhos article .opcoes-filme footer li.sobre-filme a:hover {background-position: 0 -37px;}
+.BoxTrilhos article .opcoes-filme footer li.sobre-filme {border-right: none;}
+
+.BoxTrilhos article .opcoes-filme footer li a:hover {text-decoration: underline;color: #cc150e;}
+
+.BoxTrilhos article .opcoes-filme footer .duplo li {padding: 0 29px;width: 121px;}
+.BoxTrilhos article .opcoes-filme footer .duplo li.assistir-mais-tarde {border-left: none;}
+
+.BoxTrilhos article .opcoes-filme .msg_filme_adicionado {margin-top: 0px; top: auto; bottom: -70px !important; #bottom: -80px !important;}
+.BoxTrilhos article .opcoes-filme .excluir_filme {margin-top: 0px; top: auto; bottom: -75px !important; #bottom: -85px !important; }
+
+.BoxTrilhos article .componentesTrilhos {display: none; position: absolute; width: 168px; height: 100%; z-index: 999; padding-right: 27px;}
+
+.BoxTrilhos article.left .componentesTrilhos {padding: 0 0 0 27px;right: 0;}
+.BoxTrilhos article.left .bg {right: 0px; left: auto;}
+.BoxTrilhos article.left .play-trilhos {left: auto; right: 50px;}
+.BoxTrilhos article.left .fnd {left: auto; right: 193px;}
+.BoxTrilhos article.left .seta {left: auto; right: 171px; background-position: -137px -100px;}
+.BoxTrilhos article .componentesTrilhos.trilhoTop .fnd {top: auto; bottom: 100px;}
+.BoxTrilhos article .componentesTrilhos.trilhoTop .seta {top: 24px;}
+
+.BoxTrilhos article .componentesTrilhos.trilhoTopForce .fnd {top: auto; bottom: 100px;}
+.BoxTrilhos article .componentesTrilhos.trilhoTopForce .seta {top: 24px;}
+/*
+    FIM BOX TRILHOS
+*/

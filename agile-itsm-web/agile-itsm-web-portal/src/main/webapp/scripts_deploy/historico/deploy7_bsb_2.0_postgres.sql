@@ -1,0 +1,1 @@
+ALTER TABLE solicitacaoservico ADD COLUMN descricaosemformatacao text;

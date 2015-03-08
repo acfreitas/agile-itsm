@@ -1,0 +1,175 @@
+/*
+
+Here's a demo stylesheet used to format a menu and its content.
+Feel free to alter the menu layout however you want!
+All you have to do is ensure the script has the correct CSS property name
+(like 'visibility' or 'display') that changes to show/hide menus.
+
+If you want to extend this layout, one good resource for UL/LI formatting is:
+    http://www.alistapart.com/articles/taminglists/
+Alternatively, you can use any other CSS dropdown layout instead. More here:
+    http://www.alvit.de/css-showcase/
+Consult your favourite CSS reference for customising fonts/borders/etc.
+
+Otherwise, you can just change the #RGB border/background colours where
+suitable to customise for your site -- easy :).
+
+*/
+
+
+
+/* HORIZONTAL FREESTYLE MENU LAYOUT */
+
+
+/* All <ul> tags in the menu including the first level */
+.menulist, .menulist  ul {
+width:700px;
+position:relative;
+ margin: 0 auto;
+ padding: 0;
+ list-style: none;
+ background: #F0F0F8 url(listmenu_o.png) left repeat-y;
+ font-weight: normal;
+}
+
+/* Submenus (<ul> tags) are hidden and absolutely positioned downwards from their parent */
+.menulist ul {
+ display: none;
+ position: absolute; 
+ top: 1.0em; margin-top: 13px; /* I'm using ems and px to allow people to zoom their font */
+ left: -1px;
+ width: 190px;
+ background: #F0F0F8;
+}
+
+/* Second and third etc. level submenus - position across from parent instead */
+.menulist ul ul {
+ top: -1px; margin-top: 0;
+ left: 178px;
+}
+
+/*
+ All menu items (<li> tags). 'float: left' lines them up horizontally, and they are
+ positioned relatively to correctly offset submenus. Also, they have overlapping borders.
+*/
+.menulist li {
+ float: left;
+ height: auto;
+ background: #F0F0F8;
+ display: block;
+ position: relative;
+ border: outset;
+ border-width: thin;
+ margin-right: -1px;
+ font-weight: normal;
+}
+.listSubMenu {
+ background: #F0F0F8 url(listmenu_o.png) left repeat-y;
+}
+
+/* Items in submenus - override float/border/margin from above, restoring default vertical style */
+.menulist ul li {
+ float: none;
+ margin: 0;
+ margin-bottom: -1px;
+ z-index:999;
+}
+.menulist ul>li:last-child {
+ margin-bottom: 1px; /* Mozilla fix */
+}
+
+/* Links inside the menu */
+.menulist a {
+ display: block;
+ padding: 3px 15px;
+ color: #000;
+ text-decoration: none;
+ font-weight: normal;
+ font-size: 13px;
+}
+
+.menulist a:visited {
+ display: block;
+ padding: 3px;
+ padding: 3px 15px;
+ color: #000;
+ text-decoration: none;
+ font-weight: normal;
+ font-size: 13px;
+}
+
+/* Lit  items: 'hover' is mouseover, 'highlighted' are parent items to visible menus */
+.menulist a:hover, .menulist a.highlighted:hover, .menulist a:focus {
+ color: #FFF;
+ background-color: #D7DDE1;
+ text-decoration: none;
+ font-weight: normal;
+ font-size: 13px;
+}
+.menulist a.highlighted {
+ color: #FFF;
+ background-color: #D7DDE1;
+ text-decoration: none;
+ font-weight: normal;
+ font-size: 13px;
+}
+
+/*
+ If you want per-item background images in your menu items, here's how to do it.
+ 1) Assign a unique ID tag to each link in your menu, like so: <a id="xyz" href="#">
+ 2) Copy and paste these next lines for each link you want to have an image:
+    .menulist a#xyz {
+      background-image: url(out.gif);
+    }
+    .menulist a#xyz:hover, .menulist a.highlighted#xyz, .menulist a:focus {
+     background-image: url(over.gif);
+    }
+*/
+
+/* Only style submenu indicators within submenus. */
+.menulist a .subind {
+ display: none;
+ text-decoration: none;
+}
+.menulist ul a .subind {
+ display: block;
+ float: right;
+}
+
+
+/* 'Escaped Comment' hack for horizontal menubar width in IE5/Mac */
+.menulist a {
+ float: left;
+ text-decoration: none;
+}
+.menulist ul a {
+ float: none;
+ text-decoration: none;
+}
+/* \*/
+.menulist a {
+ float: none;
+ text-decoration: none;
+}
+/* */
+
+
+/*
+ HACKS: IE/Win:
+ A small height on <li> and <a> tags and floating prevents gaps in menu.
+ * html affects <=IE6 and *:first-child+html affects IE7.
+ You may want to move these to browser-specific style sheets.
+*/
+*:first-child+html .menulist ul li {
+ float: left;
+ width: 100%;
+}
+
+* html .menulist ul li {
+ float: left;
+ height: 1%;
+}
+* html .menulist ul a {
+ height: 1%;
+}
+/* End Hacks */

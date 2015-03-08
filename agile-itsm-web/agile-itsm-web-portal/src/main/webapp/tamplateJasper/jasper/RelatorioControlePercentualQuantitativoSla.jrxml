@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" language="java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioControlePercentualQuantitativoSla" pageWidth="1224" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="1164" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="9bf5eadf-be46-4fc8-af7c-925af2fb0b72">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="842"/>
+	<property name="ireport.y" value="44"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<parameter name="TITULO_RELATORIO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NOME_USUARIO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dataInicio" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="dataFim" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/citsmart/tamplateJasper/jasper/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="contrato" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="numero" class="java.lang.Integer"/>
+	<parameter name="solicitante" class="java.lang.String"/>
+	<parameter name="prioridade" class="java.lang.String"/>
+	<parameter name="tipo" class="java.lang.String"/>
+	<parameter name="grupoSolucionador" class="java.lang.String"/>
+	<parameter name="CIDADE" class="java.lang.String"/>
+	<parameter name="DATA_HORA" class="java.sql.Timestamp"/>
+	<parameter name="tipoServico" class="java.lang.String"/>
+	<parameter name="origem" class="java.lang.String"/>
+	<parameter name="unidade" class="java.lang.String"/>
+	<parameter name="servico" class="java.lang.String"/>
+	<parameter name="situacao" class="java.lang.String"/>
+	<parameter name="classificacao" class="java.lang.String"/>
+	<parameter name="percentDentroSlaPrio1" class="java.lang.String"/>
+	<parameter name="percentDentroSlaPrio2" class="java.lang.String"/>
+	<parameter name="percentDentroSlaPrio3" class="java.lang.String"/>
+	<parameter name="percentDentroSlaPrio4" class="java.lang.String"/>
+	<parameter name="percentDentroSlaPrio5" class="java.lang.String"/>
+	<parameter name="percentForaSlaPrio1" class="java.lang.String"/>
+	<parameter name="percentForaSlaPrio2" class="java.lang.String"/>
+	<parameter name="percentForaSlaPrio3" class="java.lang.String"/>
+	<parameter name="percentForaSlaPrio4" class="java.lang.String"/>
+	<parameter name="percentForaSlaPrio5" class="java.lang.String"/>
+	<parameter name="totalPercentPri1" class="java.lang.String"/>
+	<parameter name="totalPercentPri2" class="java.lang.String"/>
+	<parameter name="totalPercentPri3" class="java.lang.String"/>
+	<parameter name="totalPercentPri4" class="java.lang.String"/>
+	<parameter name="totalPercentPri5" class="java.lang.String"/>
+	<parameter name="totalQuantPri1" class="java.lang.String"/>
+	<parameter name="totalQuantPri2" class="java.lang.String"/>
+	<parameter name="totalQuantPri3" class="java.lang.String"/>
+	<parameter name="totalQuantPri4" class="java.lang.String"/>
+	<parameter name="totalQuantPri5" class="java.lang.String"/>
+	<parameter name="quantDentroSlaPrio1" class="java.lang.String"/>
+	<parameter name="quantDentroSlaPrio2" class="java.lang.String"/>
+	<parameter name="quantDentroSlaPrio3" class="java.lang.String"/>
+	<parameter name="quantDentroSlaPrio4" class="java.lang.String"/>
+	<parameter name="quantDentroSlaPrio5" class="java.lang.String"/>
+	<parameter name="quantForaSlaPrio1" class="java.lang.String"/>
+	<parameter name="quantForaSlaPrio2" class="java.lang.String"/>
+	<parameter name="quantForaSlaPrio3" class="java.lang.String"/>
+	<parameter name="quantForaSlaPrio4" class="java.lang.String"/>
+	<parameter name="quantForaSlaPrio5" class="java.lang.String"/>
+	<parameter name="classificao" class="java.lang.String"/>
+	<parameter name="totalPrioridadeGeral" class="java.lang.String"/>
+	<parameter name="totalPrioridadeForaDoPrazo" class="java.lang.String"/>
+	<parameter name="totalPrioridadeDentroPrazo" class="java.lang.String"/>
+	<parameter name="percentualTotalPrioridadeForaSla" class="java.lang.String"/>
+	<parameter name="percentualTotalPrioridadeDentroSla" class="java.lang.String"/>
+	<parameter name="percentualTotalPrioridadeSla" class="java.lang.String"/>
+	<parameter name="Logo" class="java.io.File">
+		<parameterDescription><![CDATA[Logomarca]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="SLAStr" class="java.lang.String">
+		<fieldDescription><![CDATA[SLAStr]]></fieldDescription>
+	</field>
+	<field name="atrasoSLAStr" class="java.lang.String">
+		<fieldDescription><![CDATA[atrasoSLAStr]]></fieldDescription>
+	</field>
+	<field name="atrasoSLA" class="java.lang.Double">
+		<fieldDescription><![CDATA[atrasoSLA]]></fieldDescription>
+	</field>
+	<field name="dataHoraLimiteStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dataHoraLimiteStr]]></fieldDescription>
+	</field>
+	<field name="idSolicitacaoServico" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idSolicitacaoServico]]></fieldDescription>
+	</field>
+	<field name="nomeSolicitante" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeSolicitante]]></fieldDescription>
+	</field>
+	<field name="dataHoraSolicitacaoStr" class="java.lang.String">
+		<fieldDescription><![CDATA[dataHoraSolicitacaoStr]]></fieldDescription>
+	</field>
+	<field name="dataHoraFim" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[dataHoraFim]]></fieldDescription>
+	</field>
+	<field name="idPrioridade" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idPrioridade]]></fieldDescription>
+	</field>
+	<field name="situacao" class="java.lang.String">
+		<fieldDescription><![CDATA[situacao]]></fieldDescription>
+	</field>
+	<field name="tempoAtendimentoHH" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tempoAtendimentoHH]]></fieldDescription>
+	</field>
+	<field name="tempoAtendimentoMM" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tempoAtendimentoMM]]></fieldDescription>
+	</field>
+	<field name="SLAStr_1" class="java.lang.String">
+		<fieldDescription><![CDATA[SLAStr]]></fieldDescription>
+	</field>
+	<field name="nomeTipoDemandaServico" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeTipoDemandaServico]]></fieldDescription>
+	</field>
+	<field name="nomeServico" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeServico]]></fieldDescription>
+	</field>
+	<field name="grupoAtual" class="java.lang.String">
+		<fieldDescription><![CDATA[grupoAtual]]></fieldDescription>
+	</field>
+	<field name="contrato" class="java.lang.String">
+		<fieldDescription><![CDATA[contrato]]></fieldDescription>
+	</field>
+	<field name="prazo" class="java.lang.String"/>
+	<field name="nomeTipoServico" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="126" splitType="Stretch">
+			<frame>
+				<reportElement uuid="c9784280-c601-4a5b-abec-11d473354f70" key="frame-1" positionType="FixRelativeToBottom" stretchType="RelativeToTallestObject" mode="Opaque" x="1" y="1" width="1162" height="122" isPrintWhenDetailOverflows="true" forecolor="#CCCCCC" backcolor="#EFEFEF"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<image>
+					<reportElement uuid="d79da48d-0edb-4637-bd49-38c9ca8216bf" stretchType="RelativeToBandHeight" x="3" y="3" width="129" height="42" isRemoveLineWhenBlank="true"/>
+					<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
+				</image>
+			</frame>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="7dd7e6b6-10e7-4f67-ab13-7a6842a5bb85" key="textField-50" stretchType="RelativeToTallestObject" x="133" y="4" width="846" height="21" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TITULO_RELATORIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="aba4eaf9-3663-4b74-b9e8-37f38682a057" key="staticText-32" stretchType="RelativeToTallestObject" x="991" y="4" width="44" height="13">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{dataInicio}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.periodo}+":"]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement uuid="2b4aaf44-4b01-40a2-adc3-01c82124c2ce" key="textField-51" stretchType="RelativeToTallestObject" x="1035" y="4" width="51" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{dataInicio} == null ? "" : $P{dataInicio})]]></textFieldExpression>
+				<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy" : "dd/MM/yyyy")]]></patternExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="685d62c9-5e0e-4931-9663-8fd5adb416f0" key="staticText-33" stretchType="RelativeToTallestObject" x="1086" y="4" width="12" height="13">
+					<printWhenExpression><![CDATA[(Boolean.valueOf($P{dataInicio}!=null) || Boolean.valueOf($P{dataFim}!=null))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.a}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement uuid="453d958c-cd70-4d2d-8bb4-55970d437d93" key="textField-52" stretchType="RelativeToTallestObject" x="1099" y="4" width="60" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{dataFim} == null ? "" : $P{dataFim})]]></textFieldExpression>
+				<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy" : "dd/MM/yyyy")]]></patternExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" stretchType="RelativeToTallestObject" x="234" y="33" width="125" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{contrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="87db66fa-3fa3-4f38-9300-313ff3b5f01e" key="staticText-43" positionType="Float" stretchType="RelativeToTallestObject" x="140" y="33" width="94" height="13">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{contrato}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.contrato}+":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5949d347-dea1-49e2-ad33-9755ada6594e" key="staticText-43" positionType="Float" stretchType="RelativeToTallestObject" x="369" y="47" width="87" height="13">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{prioridade}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.prioridade}+":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5949d347-dea1-49e2-ad33-9755ada6594e" key="staticText-43" positionType="Float" stretchType="RelativeToTallestObject" x="370" y="61" width="86" height="13">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{prioridade}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.tipoServico}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3c9d2a33-037e-4c28-a590-6bd843e7a1f8" positionType="Float" stretchType="RelativeToTallestObject" x="457" y="61" width="198" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tipoServico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5949d347-dea1-49e2-ad33-9755ada6594e" key="staticText-43" positionType="Float" stretchType="RelativeToTallestObject" x="369" y="33" width="87" height="13">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{prioridade}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.servico}+":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5949d347-dea1-49e2-ad33-9755ada6594e" key="staticText-43" positionType="Float" stretchType="RelativeToTallestObject" x="369" y="74" width="87" height="13">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{prioridade}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.origem}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3c9d2a33-037e-4c28-a590-6bd843e7a1f8" positionType="Float" stretchType="RelativeToTallestObject" x="457" y="47" width="198" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prioridade}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3c9d2a33-037e-4c28-a590-6bd843e7a1f8" positionType="Float" stretchType="RelativeToTallestObject" x="457" y="33" width="198" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{servico}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3c9d2a33-037e-4c28-a590-6bd843e7a1f8" positionType="Float" stretchType="RelativeToTallestObject" x="457" y="74" width="198" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{origem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="87db66fa-3fa3-4f38-9300-313ff3b5f01e" key="staticText-43" positionType="Float" stretchType="RelativeToTallestObject" x="140" y="46" width="94" height="13">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{contrato}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.unidade}+":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="87db66fa-3fa3-4f38-9300-313ff3b5f01e" key="staticText-43" positionType="Float" stretchType="RelativeToTallestObject" x="140" y="59" width="94" height="13">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{contrato}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.situacao}+":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="87db66fa-3fa3-4f38-9300-313ff3b5f01e" key="staticText-43" positionType="Float" stretchType="RelativeToTallestObject" x="140" y="73" width="94" height="13">
+					<printWhenExpression><![CDATA[Boolean.valueOf($P{contrato}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.classificacao}+":"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" stretchType="RelativeToTallestObject" x="235" y="46" width="124" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{unidade}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" stretchType="RelativeToTallestObject" x="235" y="59" width="124" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{situacao}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="FixRelativeToBottom" stretchType="RelativeToTallestObject" x="235" y="72" width="124" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{classificao}]]></textFieldExpression>
+			</textField>
+			<elementGroup/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="179" splitType="Stretch">
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="2" y="0" width="232" height="28" backcolor="#999999"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.prioridade} + " 1"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="235" y="0" width="232" height="28" backcolor="#999999"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.prioridade}+" 2"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="467" y="0" width="232" height="28" backcolor="#999999"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.prioridade} + " 3"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="700" y="0" width="232" height="28" backcolor="#999999"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.prioridade} + " 4"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="932" y="0" width="232" height="28" backcolor="#999999"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.prioridade} + " 5"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="2" y="29" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="2" y="42" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.dentroSla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="2" y="55" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.foraSla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="2" y="68" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="113" y="29" width="60" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.percentual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="173" y="29" width="61" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantitavo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="113" y="42" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentDentroSlaPrio1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="113" y="55" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentForaSlaPrio1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="113" y="68" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPercentPri1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" mode="Transparent" x="173" y="42" width="61" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantDentroSlaPrio1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="173" y="68" width="61" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalQuantPri1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="173" y="55" width="61" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantForaSlaPrio1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="346" y="42" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentDentroSlaPrio2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="235" y="68" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="407" y="55" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantForaSlaPrio2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="346" y="68" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPercentPri2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="235" y="42" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.dentroSla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="235" y="29" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.tipo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" mode="Transparent" x="407" y="42" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantDentroSlaPrio2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="407" y="29" width="60" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantitavo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="346" y="55" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentForaSlaPrio2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="235" y="55" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.foraSla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="346" y="29" width="60" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.percentual}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="407" y="68" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalQuantPri2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" mode="Transparent" x="639" y="42" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantDentroSlaPrio3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="467" y="42" width="112" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.dentroSla}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="639" y="68" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalQuantPri3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="467" y="55" width="112" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.foraSla}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="639" y="55" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantForaSlaPrio3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="467" y="29" width="112" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.tipo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="579" y="68" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPercentPri3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="639" y="29" width="60" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantitavo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="579" y="29" width="60" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.percentual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="467" y="68" width="112" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.total}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="579" y="42" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentDentroSlaPrio3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="579" y="55" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentForaSlaPrio3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="811" y="68" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPercentPri4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="700" y="55" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.foraSla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="871" y="29" width="61" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantitavo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="811" y="42" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentDentroSlaPrio4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="700" y="68" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.total}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" mode="Transparent" x="871" y="42" width="61" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantDentroSlaPrio4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="1043" y="55" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentForaSlaPrio5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="871" y="55" width="61" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantForaSlaPrio4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="700" y="42" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.dentroSla}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="871" y="68" width="61" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalQuantPri4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="700" y="29" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="811" y="29" width="60" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.percentual}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="1043" y="68" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPercentPri5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="932" y="55" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.foraSla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="1103" y="29" width="60" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantitavo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="1043" y="42" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentDentroSlaPrio5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="932" y="68" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.total}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" mode="Transparent" x="1103" y="42" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantDentroSlaPrio5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="811" y="55" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentForaSlaPrio4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="1103" y="55" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantForaSlaPrio5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="932" y="42" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.dentroSla}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="1103" y="68" width="60" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalQuantPri5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="932" y="29" width="111" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="1043" y="29" width="60" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.percentual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="995" y="92" width="84" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.percentual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="885" y="118" width="110" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.TotalSladentro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="885" y="105" width="110" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.totaldeSlaFora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="885" y="131" width="110" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.totalGeral}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="1079" y="131" width="84" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPrioridadeGeral}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="1079" y="105" width="84" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPrioridadeForaDoPrazo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="1079" y="118" width="84" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPrioridadeDentroPrazo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="995" y="105" width="84" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentualTotalPrioridadeForaSla}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="995" y="118" width="84" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentualTotalPrioridadeDentroSla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4e42007f-fb86-447e-8038-0fc274acb6c1" mode="Opaque" x="1079" y="92" width="84" height="13" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.quantitavo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="2173382c-2b5b-41d8-a50e-42a64caf77ef" key="textField-53" positionType="Float" x="995" y="131" width="84" height="13"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{percentualTotalPrioridadeSla}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<line>
+				<reportElement uuid="890b6cb2-0a98-4771-9618-74eace3b482c" key="line-6" x="0" y="5" width="1164" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="aa6914d8-1065-420d-ae9c-0935083c1cd5" key="staticText-29" mode="Opaque" x="320" y="8" width="62" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.impressoPor}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="dab998e3-284b-484b-80d6-929e42c80805" key="textField-45" mode="Opaque" x="8" y="8" width="58" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CIDADE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="dee6d65d-b2f5-45e0-8f62-19be1b3f9d18" key="textField-46" mode="Opaque" x="383" y="8" width="177" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NOME_USUARIO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement uuid="112621b0-0c87-4e38-aa41-39792235d549" key="textField-48" mode="Opaque" x="48" y="8" width="117" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATA_HORA}]]></textFieldExpression>
+				<patternExpression><![CDATA[($P{REPORT_LOCALE}.toString().equals("en_US") ? "MM/dd/yyyy HH:mm:ss" : "dd/MM/yyyy HH:mm:ss")]]></patternExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="0aacaa84-f2a3-41a7-9e72-572234f5aceb" x="1123" y="8" width="36" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2842391e-65e4-4929-b7f8-95c4b2e42af8" x="1023" y="8" width="100" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.pagina}+"   "+$V{PAGE_NUMBER}+"   /    "]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

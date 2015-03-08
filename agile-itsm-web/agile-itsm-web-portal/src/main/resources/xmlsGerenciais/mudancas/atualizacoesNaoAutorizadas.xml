@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<ItemInformation type='SERVICE' description='citcorpore.comum.atualizacoesICNaoAutorizadas' defaultVisualization='T' report='true' graph='false' reportPageLayout='L' title='citcorpore.comum.atualizacoesICNaoAutorizadas' hDetailSpacing='40'>
+    <CLASS class="br.com.centralit.citgerencial.generateservices.mudancas.GenerateServiceAtualizacoesNaoAutorizadas"></CLASS>
+	<FIELDS>
+        <FIELD name='dataAlteracao' type='java.lang.String' width='60px' title='citcorpore.comum.dataHoraAtualizacao' totals='false' count='false' decimals='0' mask=''/>
+        <FIELD name='identificacao' type='java.lang.String' width='200px' title='citcorpore.comum.identificacao' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='dataCriacao' type='java.sql.Date' width='60px' title='citcorpore.comum.dataCriacao' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='dataExp' type='java.sql.Date' width='80px' title='pesquisaBaseConhecimento.dataExpiracao' totals='false' count='false' decimals='0' mask=''/>
+		<FIELD name='numserie' type='java.lang.String' width='80px' title='itemConfiguracaoTree.nSerie' totals='false' count='false' decimals='0' mask=''/>
+        <FIELD name='versao' type='java.lang.String' width='60px' title='itemConfiguracaoTree.versao' totals='false' count='false' decimals='0' mask=''/>
+        <FIELD name='situacao' type='java.lang.String' width='80px' title='citcorpore.comum.situacao' totals='false' count='true' decimals='0' mask=''/>
+	</FIELDS>
+	<GRAPHS>
+		<GRAPH type='Pizza3D' legend='false'/>
+		<GRAPH type='Pizza2D' legend='false'/>
+		<GRAPH type='Barra3D' legend='false'/>
+		<GRAPH type='Barra2D' legend='false'/>
+		<GRAPH type='Linha3D' legend='false'/>
+		<GRAPH type='Linha2D' legend='false'/>
+	</GRAPHS>
+	<GROUPS>
+	    <GROUP fieldName='dataAlteracao' spacingLeft='0'/> 
+	</GROUPS>	
+	<SUMMARY>
+	</SUMMARY>
+</ItemInformation>

@@ -1,0 +1,78 @@
+
+@media screen, print
+{
+
+  input[type="button"] { 
+  	text-align      :center;
+    text-transform  :capitalize;
+    background-color:#CCCCCC;
+   /* width           :90px; */
+    border-right  	:2px solid #999999;
+	border-bottom 	:2px solid #999999;
+    color           :#000000;
+    font-size		:10px;
+    height			:18px;
+    padding			:1px 1px 1px 1px;
+    font-weight		:bold;  
+  }	
+.btBB {
+	text-align      :center;
+    text-transform  :capitalize;
+    background-color:#CCCCCC;
+   /* width           :90px; */
+    border-right  	:2px solid #999999;
+	border-bottom 	:2px solid #999999;
+    color           :#000000;
+    font-size		:10px;
+    height			:18px;
+    padding			:1px 1px 1px 1px;
+    font-weight		:bold;  
+  }	
+
+  body
+  {
+    margin 			:0;
+    padding  		:0;
+    
+  }
+  
+  body *
+  {
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica;
+    text-align  :left;
+  }
+
+	a,
+	a:active
+	{
+	  	font-family: Arial, Helvetica, sans-serif; 
+		font-size: 11px; 
+		color: #194CB1;
+		font-weight		:bold;
+	}
+	
+	a:visited
+	{
+	  	font-family: Arial, Helvetica, sans-serif; 
+		font-size: 11px; 
+		color:#385388;
+		font-weight		:bold;
+	}
+
+	a:hover
+	{
+		font-family: Arial, Helvetica, sans-serif; 
+		font-size: 11px; 
+		color:  #194CB1;
+		font-weight		:bold;
+	 
+	}
+
+  form
+  {
+    margin  :0px;
+    padding :0px;
+  }
+
+}

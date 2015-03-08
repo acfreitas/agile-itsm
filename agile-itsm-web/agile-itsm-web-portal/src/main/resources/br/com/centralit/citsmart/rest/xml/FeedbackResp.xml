@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Notification_FeedbackResp>
+    <DateTime>2001-12-31T12:00:00</DateTime>
+    <OperationID>0</OperationID>
+    <Error>
+        <Code>Code</Code>
+        <Description>Description</Description>
+    </Error>
+</Notification_FeedbackResp>

@@ -1,0 +1,19 @@
+/* Hack */
+.modal-body 
+{
+   max-height:80%;
+}
+.modal
+{
+   width:80%;
+   margin-left: -40%; 
+}
+#frameSolicitacaoServico {
+	border: 0px!important;
+	width: 100%!important;
+	min-height: 690px!important;
+	height: auto;
+}
+#conteudoframeSolicitacaoServico{
+	data-scroll-height: 700px;
+}

@@ -1,0 +1,218 @@
+<tr>
+	<td>
+		<div id='divByCustoTotal' style='display: block'>
+			<div style="padding-top: 15px;">$requisitosla.custo_total:<span style="color: red">*</span></div>
+		</div>
+	<td>
+		<div id='divByCustoTotal2' style='display: block'>
+			<input onchange="geraFormula()" type='TEXT' id="custoatividade"	style="height: 20px; width: 120px; margin-top: 10px;"
+				name='CUSTOATIVIDADE' size='9' maxlength='9' class='Format[Money]' />
+		</div>
+	</td>
+</tr>
+<tr>
+	<td></td>
+	<td>
+		<div id='divByCustoFormula' style='display: none'>
+			<br>
+			<div style="float: left; padding-right: 10px; padding-top: 10px;">$eventoItemConfiguracao.hora:<span style="color: red">*</span></div>
+			<div style="width: 50px; float: left; padding-right: 10px;">
+				<input id="hora" name='HORA' onchange="geraFormula()" style="margin: 0;width: 50px; height: 20px;" 
+					type='TEXT' size='5' maxlength='5' class='Format[Money]' />
+			</div>
+			<div style="float: left; padding-right: 10px; padding-top: 10px;">$matrizvisao.complexidade:<span style="color: red">*</span></div>
+			<div style="width: 130px; float: left; padding-right: 10px;">
+				<select id="complexidade" name="COMPLEXIDADE"
+					onchange="geraFormula()" class="noClearCITAjax">
+					<option value="">$requisitosla.selecione</option>
+					<option value="B">$citcorpore.comum.complexidadeBaixa</option>
+					<option value="I">$citcorpore.comum.complexidadeIntermediaria</option>
+					<option value="M">$citcorpore.comum.complexidadeMediana</option>
+					<option value="A">$citcorpore.comum.complexidadeAlta</option>
+					<option value="E">$citcorpore.comum.complexidadeEspecialista</option>
+				</select>
+			</div>
+			<div style="float: left; padding-right: 10px; padding-top: 10px;">$citcorpore.comum.quantidade:<span style="color: red">*</span></div>
+			<div style="width: 50px; float: left; padding-right: 10px;">
+				<input id="quantidade" name='QUANTIDADE' style="margin: 0; width: 50px; height: 20px;"
+					type='TEXT' onchange="geraFormula()" size='5' maxlength='5' class='Format[Numero]' />
+			</div>
+			<div style="float: left; padding-right: 10px; padding-top: 10px;">$citcorpore.comum.periodo:<span style="color: red">*</span></div>
+			<div style="width: 130px; float: left; padding-right: 10px;">
+				<select id="periodo" name="PERIODO" onchange="geraFormula()" class="noClearCITAjax">
+					<option value="">$requisitosla.selecione</option>
+					<option value="1">$citcorpore.texto.periodo.mensal</option>
+					<option value="2">$citcorpore.texto.periodo.semanal</option>
+					<option value="3">$citcorpore.texto.periodo.diario</option>
+					<option value="4">$citcorpore.comum.diasUteis</option>
+					<option value="5">$citcorpore.comum.diasCorridos</option>
+				</select>
+			</div>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div id='divByCustoFormula2' style='display: none'>
+			<br>
+			<div>$formula.formula:</div>
+		</div>
+	</td>
+	<td>
+		<div id='divByCustoFormula3' style='display: none'>
+			<br>
+			<div id="formulaResult" style="font-weight: bold; font-size: 10pt;"></div>
+			<input type='hidden' id="formula" name="FORMULA"></input>
+			<div id="obs1" style="color: red; font-style: italic;">$citcorpore.comum.obsSelecionarPeriodoDiasUteis</div>
+			<div id="obs2" style="color: red; font-style: italic;">$citcorpore.comum.obsSelecionarPeriodoDiasCorridos</div>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div id="divComboServicoContrato" style="display: none;">
+			<br>
+			<div style="padding-right: 10px; padding-top: 10px;">$contrato.servicos_contrato: </div>
+		</div>
+	</td>
+	<td>
+		<input type='hidden' id='SERVICOCONTRATOSERIALIZADO' name='SERVICOCONTRATOSERIALIZADO'/>
+		<input type='hidden' id='IDSERVICOCONTRATOCONTABIL' name='IDSERVICOCONTRATOCONTABIL'/>
+		<div id="divComboServicoContrato2" style="width: 50%; padding-right: 10px; display: none;">
+			<br>
+			<select id="comboBoxServicoContrato" name="comboBoxServicoContrato" onchange="setaValorServicoContrato()" class="noClearCITAjax">
+				<option value="">$requisitosla.selecione</option>
+			</select>
+		</div>
+	</td>
+</tr>
+<script type="text/javascript" src="../../cit/objects/ServicoContratoDTO.js"></script>
+<script type="text/javascript">
+	
+	function validaCamposFormula(){
+		var hora = document.getElementById('hora').value;
+		var complexidade = document.getElementById('complexidade').value;
+		var quantidade = document.getElementById('quantidade').value;
+		var periodo = document.getElementById('periodo').value;
+		if(hora == "" || complexidade == "" || periodo == "" || ((periodo != 4 && quantidade == "") && (periodo != 5 && quantidade == ""))){
+			alert("A fórmula não está completa. Favor preencher todos os campos.");
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
+	function validaCustoAtividade(){
+		var custo = document.getElementById('custoatividade').value;
+		if(custo == ""){
+			alert("O custo da atividade não foi informado.");
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
+	function avaliaTipoCusto(){
+		document.getElementById('obs1').style.display = 'none';
+		document.getElementById('obs2').style.display = 'none';
+		document.getElementById('divByCustoTotal').style.display = 'none';
+		document.getElementById('divByCustoTotal2').style.display = 'none';
+		document.getElementById('divByCustoFormula').style.display = 'none';
+		document.getElementById('divByCustoFormula2').style.display = 'none';
+		document.getElementById('divByCustoFormula3').style.display = 'none';
+		if (document.form.TIPOCUSTO.value == 'C'){
+			document.getElementById('divByCustoTotal').style.display = 'block';
+			document.getElementById('divByCustoTotal2').style.display = 'block';
+			limparFormula();
+		}
+		if (document.form.TIPOCUSTO.value == 'F'){
+			document.getElementById('divByCustoFormula').style.display = 'block';
+			document.getElementById('divByCustoFormula2').style.display = 'block';
+			document.getElementById('divByCustoFormula3').style.display = 'block';
+			limparCusto();
+		}
+	}
+	
+	function avaliaContabil(){
+		var contabilizar = document.form.CONTABILIZAR.value;
+		if(contabilizar == 'S'){
+			carregaServicoContrato();
+			document.getElementById('divComboServicoContrato').style.display = 'block';
+			document.getElementById('divComboServicoContrato2').style.display = 'block';
+			var servicoContrato = document.form.IDSERVICOCONTRATOCONTABIL.value;
+			if(servicoContrato != null && servicoContrato != ""){
+				document.getElementById('comboBoxServicoContrato').value = servicoContrato;
+			}
+		}else{
+			document.getElementById('divComboServicoContrato').style.display = 'none';
+			document.getElementById('divComboServicoContrato2').style.display = 'none';
+		}
+	}
+	
+	function limparFormula(){
+		document.getElementById('hora').value = "";
+		document.getElementById('complexidade').value = "";
+		document.getElementById('quantidade').value = "";
+		document.getElementById('periodo').value = "";
+		document.getElementById('formula').value = "";
+	}
+	
+	function limparCusto(){
+		document.getElementById('custoatividade').value = "";
+	}
+	
+	function setaValorServicoContrato(){
+		var servicoContrato = document.getElementById('comboBoxServicoContrato').value;
+		document.getElementById('IDSERVICOCONTRATOCONTABIL').value = servicoContrato;
+	}
+	
+	function geraFormula(){
+		
+		var hora = document.getElementById('hora').value;
+		var complexidade = document.getElementById('complexidade').value;
+		var quantidade = "";
+		var periodo = document.getElementById('periodo').value;
+		
+			quantidade = document.getElementById('quantidade').value;
+			document.getElementById('quantidade').disabled = 0;
+		if(hora != "" && complexidade != "" && quantidade != "" && periodo != ""){
+			
+			var periodoText = document.getElementById('periodo').options[document.getElementById('periodo').selectedIndex].textContent;
+			
+			
+			var result = hora +" x "+ complexidade +" x "+ quantidade +" "+ periodoText;
+			
+			document.getElementById('formulaResult').innerHTML = result;
+			document.getElementById('formulaResult').style.display = 'block';
+			document.getElementById('formula').value = result;
+			
+		}else{
+			document.getElementById('obs1').style.display = 'none';
+			document.getElementById('obs2').style.display = 'none';
+			document.getElementById('formulaResult').style.display = 'none';
+		}
+	}
+	
+	var flag = false;
+	
+	function carregaServicoContrato(){
+		var objserv = document.form.SERVICOCONTRATOSERIALIZADO.value;
+		var objServico = new Array();
+		objServico = ObjectUtils.deserializeCollectionFromString(objserv);
+		if(objServico != null && objServico.length != 0 && flag == false){
+			var size = objServico.length;
+			for(var i=1; i<size;i++){
+				var ServicoContratoDTO = new CIT_ServicoContratoDTO();
+				ServicoContratoDTO = objServico[i];
+				var idServicoContrato = ServicoContratoDTO.idServicoContrato;
+				var nomeServicoContrato = ServicoContratoDTO.nomeServico;
+				
+				var o = new Option(nomeServicoContrato, idServicoContrato);
+				
+				document.getElementById('comboBoxServicoContrato').options[i] = o;
+			}
+			 flag = true;
+		}
+	}
+
+</script>

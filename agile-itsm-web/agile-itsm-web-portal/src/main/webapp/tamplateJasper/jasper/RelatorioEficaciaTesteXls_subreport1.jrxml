@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" language="java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioKpiProdutividade_subreport1" pageWidth="1100" pageHeight="802" columnWidth="1100" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="92fffa70-c80c-4c19-b055-2063d5ddc24d">
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="TotalitemComDefeito" class="java.lang.String"/>
+	<parameter name="MetaAtingida" class="java.lang.String"/>
+	<parameter name="internacionaliza_TotalItemComDefeito" class="java.lang.String"/>
+	<parameter name="internacionaliza_MetaAtingida" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="checkMostrarIncidentes" class="java.lang.String">
+		<fieldDescription><![CDATA[checkMostrarIncidentes]]></fieldDescription>
+	</field>
+	<field name="checkMostrarRequisicoes" class="java.lang.String">
+		<fieldDescription><![CDATA[checkMostrarRequisicoes]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="contrato" class="java.lang.String">
+		<fieldDescription><![CDATA[contrato]]></fieldDescription>
+	</field>
+	<field name="dataFim" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataFim]]></fieldDescription>
+	</field>
+	<field name="dataInicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataInicio]]></fieldDescription>
+	</field>
+	<field name="formatoArquivoRelatorio" class="java.lang.String">
+		<fieldDescription><![CDATA[formatoArquivoRelatorio]]></fieldDescription>
+	</field>
+	<field name="funcionario" class="java.lang.String">
+		<fieldDescription><![CDATA[funcionario]]></fieldDescription>
+	</field>
+	<field name="idContrato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idContrato]]></fieldDescription>
+	</field>
+	<field name="listaGeral" class="java.util.Collection">
+		<fieldDescription><![CDATA[listaGeral]]></fieldDescription>
+	</field>
+	<field name="listaSolicitacoesUsuario" class="java.util.Collection">
+		<fieldDescription><![CDATA[listaSolicitacoesUsuario]]></fieldDescription>
+	</field>
+	<field name="listaUsuarios" class="java.lang.String">
+		<fieldDescription><![CDATA[listaUsuarios]]></fieldDescription>
+	</field>
+	<field name="metaAtingida" class="java.lang.Double">
+		<fieldDescription><![CDATA[metaAtingida]]></fieldDescription>
+	</field>
+	<field name="nomeServico" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeServico]]></fieldDescription>
+	</field>
+	<field name="numeroSolicitacao" class="java.lang.Double">
+		<fieldDescription><![CDATA[numeroSolicitacao]]></fieldDescription>
+	</field>
+	<field name="tipoSolicitacao" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoSolicitacao]]></fieldDescription>
+	</field>
+	<field name="totalItemComDefeito" class="java.lang.Integer">
+		<fieldDescription><![CDATA[totalItemComDefeito]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<elementGroup>
+				<textField>
+					<reportElement uuid="a313807e-d492-4276-9baa-e51ac5e7390e" stretchType="RelativeToTallestObject" x="493" y="0" width="324" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{nomeServico}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<textField>
+				<reportElement uuid="0f185b4e-7cb3-4ea9-bb48-0d48ddda98c5" stretchType="RelativeToTallestObject" x="817" y="0" width="225" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tipoSolicitacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="262fa84e-dd31-4c60-8bac-01d394749046" stretchType="RelativeToTallestObject" x="292" y="0" width="201" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[((int)$F{numeroSolicitacao})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a52fd459-5308-47ae-88d4-98604d228125" stretchType="RelativeToTallestObject" x="0" y="0" width="292" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{funcionario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45">
+			<textField>
+				<reportElement uuid="859b573a-30cb-481a-8803-ff45ee751598" stretchType="RelativeToTallestObject" x="0" y="0" width="292" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{funcionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2b4b4fd7-7dc0-4dcf-902a-974aae1f6234" stretchType="RelativeToTallestObject" x="493" y="20" width="109" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{MetaAtingida}+"%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="859b573a-30cb-481a-8803-ff45ee751598" stretchType="RelativeToTallestObject" x="0" y="20" width="292" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{funcionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4a2ce2e6-51e3-431d-9706-80f0961fc899" stretchType="RelativeToTallestObject" x="292" y="20" width="201" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{internacionaliza_MetaAtingida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4418403b-b271-4cf4-ac8b-fed91aef72f4" stretchType="RelativeToTallestObject" x="292" y="0" width="201" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{internacionaliza_TotalItemComDefeito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8ea74e7d-4f4f-4c7d-af38-ba86bf50b49a" stretchType="RelativeToTallestObject" x="493" y="0" width="125" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{TotalitemComDefeito}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

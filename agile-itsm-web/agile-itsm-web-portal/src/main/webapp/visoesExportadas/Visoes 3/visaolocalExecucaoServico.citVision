@@ -1,0 +1,147 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>55</idVisao>
+  <descricao>$visao.localExecucaoServico</descricao>
+  <tipoVisao>ED</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>LocalExecucaoServicos</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <idGrupoVisao>387</idGrupoVisao>
+      <idVisao>55</idVisao>
+      <descricaoGrupoVisao>$visao.localExecucaoServico</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>387</idGrupoVisao>
+          <idCamposObjetoNegocio>2001</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.codigo</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDLOCALEXECUCAOSERVICO</nomeDB>
+          <nomeTabelaDB>LOCALEXECUCAOSERVICO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>387</idGrupoVisao>
+          <idCamposObjetoNegocio>2002</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.nomeLocalExecucao</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>70</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>NOMELOCALEXECUCAOSERVICO</nomeDB>
+          <nomeTabelaDB>LOCALEXECUCAOSERVICO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+  <colVisoesRelacionadas class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+      <idVisaoRelacionada>128</idVisaoRelacionada>
+      <idVisaoPai>55</idVisaoPai>
+      <idVisaoFilha>22</idVisaoFilha>
+      <ordem>0</ordem>
+      <titulo>$visao.pesquisaLocalExecucaoFluxo</titulo>
+      <situacao>A</situacao>
+      <tipoVinculacao>1</tipoVinculacao>
+      <acaoEmSelecaoPesquisa>RP</acaoEmSelecaoPesquisa>
+      <identificacaoVisaoFilha>ListagemLocalExecucaoServicos</identificacaoVisaoFilha>
+    </br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+  </colVisoesRelacionadas>
+  <colScripts class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>228</idScriptsVisao>
+      <idVisao>55</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONUPDATE                      </scryptType>
+      <script>var importCategoriaSolucao= JavaImporter();
+importCategoriaSolucao.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+
+var localExecuxaoServicoServiceEjb = new importCategoriaSolucao.LocalExecuxaoServicoServiceEjb();
+var descricaoValida = localExecuxaoServicoServiceEjb .verificaDescricaoDuplicadaAoAlterar(mapFields);
+ if(descricaoValida==&quot;0&quot;){
+   dinamicViewDto.abortFuncaoPrincipal = true;
+   dinamicViewDto.msgRetorno = &quot;Esta descrição já existe. Por favor, tente novamente.&quot;;
+ }</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>229</idScriptsVisao>
+      <idVisao>55</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONCREATE                      </scryptType>
+      <script>var importCategoriaSolucao= JavaImporter();
+importCategoriaSolucao.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+
+var localExecuxaoServicoServiceEjb = new importCategoriaSolucao.LocalExecuxaoServicoServiceEjb();
+var descricaoValida = localExecuxaoServicoServiceEjb.verificaDescricaoDuplicadaAoCriar(mapFields);
+ if(descricaoValida==&quot;0&quot;){
+   dinamicViewDto.abortFuncaoPrincipal = true;
+   dinamicViewDto.msgRetorno = &quot;Esta descrição já existe. Por favor, tente novamente.&quot;;
+ }</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>230</idScriptsVisao>
+      <idVisao>55</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONDELETE                      </scryptType>
+      <script>var importCategoria = JavaImporter();
+importCategoria.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+
+var localExecuxaoServicoServiceEjb = new importCategoria.LocalExecuxaoServicoServiceEjb();
+var temServico = localExecuxaoServicoServiceEjb.verificarSeLocalExecucaoServicoPossuiServico(mapFields);
+if(temServico==true){
+   dinamicViewsDto.abortFuncaoPrincipal = true;
+   dinamicViewsDto.msgRetorno= &quot;$citcorpore.comum.registroNaoPodeSerExcluido&quot;;
+}</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+  </colScripts>
+  <colBotoes class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>259</idBotaoAcaoVisao>
+      <idVisao>55</idVisao>
+      <texto>$botaoacaovisao.gravar_dados</texto>
+      <acao>1</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>0</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>260</idBotaoAcaoVisao>
+      <idVisao>55</idVisao>
+      <texto>$botaoacaovisao.limpar_dados</texto>
+      <acao>2</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>1</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>261</idBotaoAcaoVisao>
+      <idVisao>55</idVisao>
+      <texto>$botaoacaovisao.excluir</texto>
+      <acao>3</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>2</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+  </colBotoes>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

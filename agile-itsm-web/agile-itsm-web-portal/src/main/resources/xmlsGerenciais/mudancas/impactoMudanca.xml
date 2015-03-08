@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<ItemInformation type='SERVICE' description='citcorpore.comum.impactosMudancas' defaultVisualization='T' report='true' graph='false' reportPageLayout='L' title='citcorpore.comum.impactosMudancas' hDetailSpacing='40'>
+	<CLASS class="br.com.centralit.citgerencial.generateservices.mudancas.GenerateServiceImpactoMudanca"></CLASS>
+	<FIELDS>
+		<FIELD name='numero' type='java.lang.String' width='80px' title='lookup.numeroMudanca' totals='false' count='false' decimals='0' mask=''/>
+        <FIELD name='titulo' type='java.lang.String' width='150px' title='citcorpore.comum.tituloMudanca' totals='false' count='false' decimals='0' mask=''/> 
+        <FIELD name='dataSolic' type='java.lang.String' width='80px' title='citcorpore.comum.dataHoraCriacao' totals='false' count='false' decimals='0' mask=''/> 
+        <FIELD name='situacao' type='java.lang.String' width='80px' title='citcorpore.comum.situacao' totals='false' count='false' decimals='0' mask=''/>   
+        <FIELD name='dataConc' type='java.lang.String' width='80px' title='citcorpore.comum.dataHoraConclusao' totals='false' count='false' decimals='0' mask=''/>  
+        <FIELD name='identificacao' type='java.lang.String' width='80px' title='citcorpore.comum.identificacaoIC' totals='false' count='false' decimals='0' mask=''/>  
+        <FIELD name='situacaoIC' type='java.lang.String' width='80px' title='citcorpore.comum.situacaoICSituacao' totals='false' count='true' decimals='0' mask=''/> 
+	</FIELDS>
+	<GROUPS>
+	    <GROUP fieldName='numero' spacingLeft='0'/> 
+	</GROUPS>	
+	<SUMMARY>
+	</SUMMARY>
+</ItemInformation>

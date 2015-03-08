@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" language="java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioKpiProdutividade_subreport1" pageWidth="800" pageHeight="802" columnWidth="800" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="92fffa70-c80c-4c19-b055-2063d5ddc24d">
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="internacionaliza_TotalPorGrupo" class="java.lang.String"/>
+	<parameter name="internacionaliza_TotalEstourado" class="java.lang.String"/>
+	<parameter name="internacionaliza_QuantiudadeEstourada" class="java.lang.String"/>
+	<parameter name="internacionaliza_TotalExecutado" class="java.lang.String"/>
+	<parameter name="internacionaliza_QuatidadeExecutada" class="java.lang.String"/>
+	<parameter name="internacionaliza_NomeServico" class="java.lang.String"/>
+	<parameter name="internacionaliza_NumeroSolicitacao" class="java.lang.String"/>
+	<parameter name="TotalExecutadoFuncionario" class="java.lang.String"/>
+	<parameter name="TotalEstouradoFuncionario" class="java.lang.String"/>
+	<parameter name="internacionaliza_NaoEstrapolada" class="java.lang.String"/>
+	<parameter name="TotalReestimadoPorcentagemIndividual" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="checkMostrarIncidentes" class="java.lang.String">
+		<fieldDescription><![CDATA[checkMostrarIncidentes]]></fieldDescription>
+	</field>
+	<field name="checkMostrarRequisicoes" class="java.lang.String">
+		<fieldDescription><![CDATA[checkMostrarRequisicoes]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="contrato" class="java.lang.String">
+		<fieldDescription><![CDATA[contrato]]></fieldDescription>
+	</field>
+	<field name="dataFim" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataFim]]></fieldDescription>
+	</field>
+	<field name="dataInicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataInicio]]></fieldDescription>
+	</field>
+	<field name="formatoArquivoRelatorio" class="java.lang.String">
+		<fieldDescription><![CDATA[formatoArquivoRelatorio]]></fieldDescription>
+	</field>
+	<field name="funcionario" class="java.lang.String">
+		<fieldDescription><![CDATA[funcionario]]></fieldDescription>
+	</field>
+	<field name="grupo" class="java.lang.String">
+		<fieldDescription><![CDATA[grupo]]></fieldDescription>
+	</field>
+	<field name="idContrato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idContrato]]></fieldDescription>
+	</field>
+	<field name="listaGeral" class="java.util.Collection">
+		<fieldDescription><![CDATA[listaGeral]]></fieldDescription>
+	</field>
+	<field name="listaSolicitacoesUsuario" class="java.util.Collection">
+		<fieldDescription><![CDATA[listaSolicitacoesUsuario]]></fieldDescription>
+	</field>
+	<field name="listaUsuarios" class="java.lang.String">
+		<fieldDescription><![CDATA[listaUsuarios]]></fieldDescription>
+	</field>
+	<field name="nomeServico" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeServico]]></fieldDescription>
+	</field>
+	<field name="numeroSolicitacao" class="java.lang.Integer">
+		<fieldDescription><![CDATA[numeroSolicitacao]]></fieldDescription>
+	</field>
+	<field name="qtdReestimada" class="java.lang.Double">
+		<fieldDescription><![CDATA[qtdReestimada]]></fieldDescription>
+	</field>
+	<field name="qtdeExecutada" class="java.lang.Double">
+		<fieldDescription><![CDATA[qtdeExecutada]]></fieldDescription>
+	</field>
+	<field name="totalGrupoExecutadas" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalGrupoExecutadas]]></fieldDescription>
+	</field>
+	<field name="totalGrupoReestimada" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalGrupoReestimada]]></fieldDescription>
+	</field>
+	<field name="totalPorExecutante" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalPorExecutante]]></fieldDescription>
+	</field>
+	<field name="totalPorExecutantePorcentagem" class="java.lang.String">
+		<fieldDescription><![CDATA[totalPorExecutantePorcentagem]]></fieldDescription>
+	</field>
+	<field name="totalPorExecutanteReestimada" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalPorExecutanteReestimada]]></fieldDescription>
+	</field>
+	<field name="totalPorExecutanteReestimadaPorcentagem" class="java.lang.String">
+		<fieldDescription><![CDATA[totalPorExecutanteReestimadaPorcentagem]]></fieldDescription>
+	</field>
+	<field name="totalPorServicoPorcentagem" class="java.lang.String">
+		<fieldDescription><![CDATA[totalPorServicoPorcentagem]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement uuid="99525819-c1a5-4807-bfb0-7cdde22fa086" x="0" y="2" width="81" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{internacionaliza_NumeroSolicitacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4cdcad34-ca9a-44d1-ba89-60532dbc2ca4" x="55" y="2" width="341" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{internacionaliza_NomeServico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b53a02bd-d852-4841-81b5-62581c91fbd4" x="396" y="3" width="123" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{internacionaliza_QuatidadeExecutada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f2ada1b1-af21-4305-8e75-856fb0eaf9d8" x="519" y="3" width="124" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{internacionaliza_QuantiudadeEstourada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="15d6be98-79e2-4723-af6b-058c6402ac8d" x="643" y="3" width="157" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{internacionaliza_NaoEstrapolada}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement uuid="e995ea03-badf-4cfe-9543-185a7cf0622a" x="0" y="0" width="81" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{numeroSolicitacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a313807e-d492-4276-9baa-e51ac5e7390e" x="55" y="0" width="341" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nomeServico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="15a91fbf-b535-4d9c-abc1-63344845f1f1" x="396" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{qtdeExecutada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e76132cd-c7f2-49b4-ae2c-2d0c7f3edcde" x="643" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{totalPorServicoPorcentagem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e5bd3d89-18d1-439c-8d19-9a1e66bad748" x="519" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{qtdReestimada}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="23">
+			<staticText>
+				<reportElement uuid="af4881fa-0ef9-48c6-bc6a-11b91fb84470" x="367" y="0" width="29" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="933919fb-f99e-46fd-962f-ed5756d75a4d" x="490" y="0" width="29" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="7c31d96f-6a4a-496c-8097-0fd01408ce91" x="643" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{TotalReestimadoPorcentagemIndividual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2b93de90-c200-4a81-9c4d-7353da855e12" x="396" y="0" width="71" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{TotalExecutadoFuncionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5ad21c39-ba8f-4111-826a-832cd64c992b" x="519" y="0" width="71" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{TotalEstouradoFuncionario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

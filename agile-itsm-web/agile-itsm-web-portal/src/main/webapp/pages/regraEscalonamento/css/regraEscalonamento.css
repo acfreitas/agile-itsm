@@ -1,0 +1,197 @@
+
+.table {
+	border-left: 1px solid #ddd;
+}
+
+.table th {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+}
+
+.table td {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-top: none;
+	border-left: none;
+}
+
+.tableLess {
+	font-family: arial, helvetica !important;
+	font-size: 10pt !important;
+	cursor: default !important;
+	margin: 0 !important;
+	background: white !important;
+	border-spacing: 0 !important;
+	width: 100% !important;
+}
+
+.tableLess tbody {
+	background: transparent !important;
+}
+
+.tableLess * {
+	margin: 0 !important;
+	vertical-align: middle !important;
+	padding: 2px !important;
+}
+
+.tableLess thead th {
+	font-weight: bold !important;
+	background: #fff url(../../imagens/title-bg.gif) repeat-x left bottom
+		!important;
+	text-align: center !important;
+}
+
+.tableLess tbody tr:ACTIVE {
+	background-color: #fff !important;
+}
+
+.tableLess tbody tr:HOVER {
+	background-color: #e7e9f9;
+	cursor: pointer;
+}
+
+.tableLess th {
+	border: 1px solid #BBB !important;
+	padding: 6px !important;
+}
+
+.tableLess td {
+	border: 1px solid #BBB !important;
+	padding: 6px 10px !important;
+}
+
+.sel {
+	display: none;
+	background: none !important;;
+	cursor: auto;
+	padding: 0;
+	margin: 0;
+}
+
+.sel td {
+	padding: 0;
+	margin: 0;
+}
+
+.table {
+	border-left: 1px solid #ddd;
+}
+
+.table th {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+}
+
+.table td {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-top: none;
+	border-left: none;
+	text-align: center;
+}
+
+.sel-s {
+	padding-left: 20px !important;
+	border: 0px !important;
+	width: 50% !important;
+}
+
+.form {
+	width: 100%;
+	float: right;
+}
+
+.formHead {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.formBody {
+	float: left;
+	width: 99%;
+	border: none;
+	padding: 5px;
+}
+
+.formRelacionamentos div {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.formFooter {
+	float: left;
+	width: 99%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.divEsquerda {
+	float: left;
+	width: 47%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.divDireita {
+	float: right;
+	width: 47%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	background-color: #fff !important;
+}
+
+.ui-state-active {
+	background-color: #aaa;
+}
+
+#tabs div {
+	background-color: #fff;
+}
+
+.ui-state-hover {
+	background-color: #ccc !important;
+}
+
+#contentBaseline {
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0 !important;
+}
+
+.padd10 {
+	padding: 0 10px;
+}
+
+.lFloat {
+	float: left;
+}
+
+#divGrupoItemConfiguracao {
+	display: none;
+}
+
+.checkboxRegra {
+	display: inline-block;
+	padding: 4px 12px;
+	margin-bottom: 0;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 20px;
+}
+input.text, .textarea, .ui-multiselect, table input.text {
+	margin-top: 0 !important;
+	}
+
+

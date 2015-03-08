@@ -1,0 +1,236 @@
+/* MYSQL */
+create table requisitosla
+(
+   idrequisitosla       int not null,
+   idempregado          int,
+   requisitadoem        date,
+   assunto              varchar(200) not null,
+   detalhamento         text,
+   situacao             char(1) not null,
+   criadopor            varchar(30),
+   criadoem             timestamp,
+   modificadopor        varchar(30),
+   modificadoem         timestamp,
+   deleted              char(1)
+)ENGINE = InnoDB;
+
+alter table requisitosla
+   add primary key (idrequisitosla);
+
+alter table requisitosla add constraint fk_reference_552 foreign key (idempregado)
+      references empregados (idempregado) on delete restrict on update restrict;
+	  
+create table slarequisitosla
+(
+   idrequisitosla       int not null,
+   idacordonivelservico bigint not null,
+   datavinculacao       timestamp,
+   dataultmodificacao   timestamp,
+   deleted              char(1)
+)ENGINE = InnoDB;
+
+alter table slarequisitosla
+   add primary key (idrequisitosla, idacordonivelservico);
+
+alter table slarequisitosla add constraint fk_reference_553 foreign key (idrequisitosla)
+      references requisitosla (idrequisitosla) on delete restrict on update restrict;
+
+alter table slarequisitosla add constraint fk_reference_554 foreign key (idacordonivelservico)
+      references acordonivelservico (idacordonivelservico) on delete restrict on update restrict;	  
+	  
+alter table acordonivelservico add criadoEm timestamp;
+alter table acordonivelservico add criadoPor VARCHAR(30);
+alter table acordonivelservico add modificadoEm timestamp;
+alter table acordonivelservico add modificadoPor VARCHAR(30);
+
+create table acordonivelservico_hist
+(
+   idacordonivelservico_hist bigint not null,
+   idacordonivelservico bigint not null,
+   idservicocontrato    bigint,
+   idprioridadepadrao   bigint,
+   situacao             char(1) not null,
+   titulosla            varchar(500) not null,
+   disponibilidade      decimal(10 , 3),
+   descricaosla         text,
+   escoposla            text,
+   datainicio           date not null,
+   datafim              date,
+   avaliarem            date,
+   tipo                 char(1),
+   valorlimite          decimal(15,3),
+   detalheglosa         text,
+   detalhelimiteglosa   text,
+   unidadevalorlimite   varchar(150),
+   impacto              char(1),
+   urgencia             char(1),
+   permiteMudarImpUrg   char(1),
+   deleted              char(1),
+   criadoem             timestamp,
+   criadopor            varchar(30),
+   modificadoem         timestamp,
+   modificadopor        varchar(30),
+   conteudodados        text,
+   idformula            int
+)ENGINE = InnoDB;
+
+alter table acordonivelservico_hist
+   add primary key (idacordonivelservico_hist);
+
+alter table acordonivelservico_hist add constraint fk_reference_102 foreign key (idprioridadepadrao)
+      references prioridade (idprioridade) on delete restrict on update restrict;
+
+alter table acordonivelservico_hist add constraint fk_reference_91 foreign key (idservicocontrato)
+      references servicocontrato (idservicocontrato);
+
+CREATE TABLE contratos_hist (
+  idcontrato_hist int(11) NOT NULL,
+  idcontrato int(11) NOT NULL,
+  idcliente int(11) NOT NULL,
+  idmoeda int(11) DEFAULT NULL,
+  idfornecedor bigint(20) NOT NULL,
+  numero varchar(30) NOT NULL,
+  objeto text NOT NULL,
+  datacontrato date NOT NULL,
+  valorestimado decimal(18,3) DEFAULT NULL,
+  tipotempoestimado char(1) DEFAULT NULL,
+  tempoestimado int(11) DEFAULT NULL,
+  tipo char(1) NOT NULL,
+  situacao char(1) NOT NULL,
+  cotacaomoeda decimal(18,3) DEFAULT NULL,
+  cadastromanualusuario char(1) DEFAULT NULL,
+  deleted char(1) DEFAULT NULL,
+  idgruposolicitante int(11) DEFAULT NULL,
+  datafimcontrato date DEFAULT NULL,
+  criadoem             timestamp,
+  criadopor            varchar(30),
+  modificadoem         timestamp,
+  modificadopor        varchar(30),  
+  conteudodados        text,
+  PRIMARY KEY (idcontrato_hist),
+  KEY fk_reference_26_2 (idmoeda),
+  KEY fk_reference_3_2 (idcliente),
+  KEY fk_reference_60_2 (idfornecedor)
+) ENGINE=InnoDB;
+
+/* ORACLE */
+create table requisitosla
+(
+   idrequisitosla       int not null,
+   idempregado          int,
+   requisitadoem        date,
+   assunto              varchar2(200) not null,
+   detalhamento         clob,
+   situacao             char(1) not null,
+   criadopor            varchar2(30),
+   criadoem             timestamp,
+   modificadopor        varchar2(30),
+   modificadoem         timestamp,
+   deleted              char(1)
+);
+
+alter table requisitosla
+   add primary key (idrequisitosla);
+
+alter table requisitosla add constraint fk_reference_552_x foreign key (idempregado)
+      references empregados (idempregado);
+	  
+create table slarequisitosla
+(
+   idrequisitosla       int not null,
+   idacordonivelservico int not null,
+   datavinculacao       timestamp,
+   dataultmodificacao   timestamp,
+   deleted              char(1)
+);
+
+alter table slarequisitosla
+   add primary key (idrequisitosla, idacordonivelservico);
+
+alter table slarequisitosla add constraint fk_reference_553_x foreign key (idrequisitosla)
+      references requisitosla (idrequisitosla);
+
+alter table slarequisitosla add constraint fk_reference_554_x foreign key (idacordonivelservico)
+      references acordonivelservico (idacordonivelservico);
+	  
+alter table acordonivelservico add criadoEm timestamp;
+alter table acordonivelservico add criadoPor VARCHAR(30);
+alter table acordonivelservico add modificadoEm timestamp;
+alter table acordonivelservico add modificadoPor VARCHAR(30);	
+
+create table acordonivelservico_hist
+(
+   idacordonivelservico_hist int not null,
+   idacordonivelservico int not null,
+   idservicocontrato    int,
+   idprioridadepadrao   int,
+   situacao             char(1) not null,
+   titulosla            varchar2(500) not null,
+   disponibilidade      decimal(10 , 3),
+   descricaosla         clob,
+   escoposla            clob,
+   datainicio           date not null,
+   datafim              date,
+   avaliarem            date,
+   tipo                 char(1),
+   valorlimite          decimal(15,3),
+   detalheglosa         clob,
+   detalhelimiteglosa   clob,
+   unidadevalorlimite   varchar2(150),
+   impacto              char(1),
+   urgencia             char(1),
+   permiteMudarImpUrg   char(1),
+   deleted              char(1),
+   criadoem             timestamp,
+   criadopor            varchar2(30),
+   modificadoem         timestamp,
+   modificadopor        varchar2(30),
+   conteudodados        clob,
+   idformula            int
+);
+
+alter table acordonivelservico_hist
+   add primary key (idacordonivelservico_hist);
+
+alter table acordonivelservico_hist add constraint fk_reference_102_2 foreign key (idprioridadepadrao)
+      references prioridade (idprioridade);
+
+alter table acordonivelservico_hist add constraint fk_reference_91_2 foreign key (idservicocontrato)
+      references servicocontrato (idservicocontrato);
+
+CREATE TABLE contratos_hist (
+  idcontrato_hist int NOT NULL,
+  idcontrato int NOT NULL,
+  idcliente int NOT NULL,
+  idmoeda int DEFAULT NULL,
+  idfornecedor int NOT NULL,
+  numero varchar2(30) NOT NULL,
+  objeto clob NOT NULL,
+  datacontrato date NOT NULL,
+  valorestimado decimal(18,3) DEFAULT NULL,
+  tipotempoestimado char(1) DEFAULT NULL,
+  tempoestimado int DEFAULT NULL,
+  tipo char(1) NOT NULL,
+  situacao char(1) NOT NULL,
+  cotacaomoeda decimal(18,3) DEFAULT NULL,
+  cadastromanualusuario char(1) DEFAULT NULL,
+  deleted char(1) DEFAULT NULL,
+  idgruposolicitante int DEFAULT NULL,
+  datafimcontrato date DEFAULT NULL,
+  criadoem             timestamp,
+  criadopor            varchar2(30),
+  modificadoem         timestamp,
+  modificadopor        varchar2(30),  
+  conteudodados        clob,
+  PRIMARY KEY (idcontrato_hist)
+);
+
+alter table contratos_hist add constraint fk_reference_26_2 foreign key (idmoeda)
+      references MOEDAS (idmoeda);
+
+alter table contratos_hist add constraint fk_reference_3_2 foreign key (idcliente)
+      references CLIENTES (idcliente);
+
+alter table contratos_hist add constraint fk_reference_60_2 foreign key (idfornecedor)
+      references FORNECEDOR (idfornecedor);
+	  

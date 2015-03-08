@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="Notification_GetByUser" type="CtNotificationGetByUser">
+        <xsd:annotation>
+            <xsd:documentation>
+                Mobile solicita a lista de notificações do usuário
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Notification_GetByUserResp" type="CtNotificationGetByUserResp">
+        <xsd:annotation>
+            <xsd:documentation>
+                CITSmart retorna a lista de notificações do usuário
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Notification_GetById" type="CtNotificationGetById">
+        <xsd:annotation>
+            <xsd:documentation>
+                Mobile solicita detalhes de uma notificação
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Notification_GetByIdResp" type="CtNotificationGetByIdResp">
+        <xsd:annotation>
+            <xsd:documentation>
+                CITSmart retorna detalhes de uma notificação
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Notification_Feedback" type="CtNotificationFeedback">
+        <xsd:annotation>
+            <xsd:documentation>
+                Mobile informa feedkback de uma notificação
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Notification_FeedbackResp" type="CtNotificationFeedbackResp">
+        <xsd:annotation>
+            <xsd:documentation>
+                CITSmart retorna feedkback de uma notificação
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Notification_New" type="CtNotificationNew">
+        <xsd:annotation>
+            <xsd:documentation>
+                Mobile solicita inclusão de uma notificação
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Notification_NewResp" type="CtNotificationNewResp">
+        <xsd:annotation>
+            <xsd:documentation>
+                CITSmart retorna inclusão notificação
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Notification_GetReasons" type="CtNotificationGetReasons">
+        <xsd:annotation>
+            <xsd:documentation>
+                Mobile solicita justificativas possíveis para um feedback
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="Notification_GetReasonsResp" type="CtNotificationGetReasonsResp">
+        <xsd:annotation>
+            <xsd:documentation>
+                CITSmart retorna justificativas possíveis para um feedback
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="CtError">
+        <xsd:sequence>
+            <xsd:element name="Code" type="xsd:string"
+                nillable="false">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Identificador do erro
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Description" type="xsd:string"
+                nillable="false">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Descrição do erro
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtMessage">
+        <xsd:sequence>
+            <xsd:element name="SessionID" type="xsd:string"
+                nillable="false">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        ID da sessão
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MessageID" type="xsd:string"
+                nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Nome da operação
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtMessageResp">
+        <xsd:sequence>
+            <xsd:element name="DateTime" type="xsd:dateTime"
+                nillable="false">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Data e hora de processamento no CITSmart
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OperationID" type="xsd:integer"
+                nillable="false">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Identificador da operação no CITSmart
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Error" type="CtError"
+                nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Erro na operação no CITSmart
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationGetByUser">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessage">
+                <xsd:sequence>
+                    <xsd:element name="NotificationType"
+                        type="xsd:int" minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Indica o tipo de notificação que deve ser listada: 0=Todas; 1=Compras;
+                                2=Viagens; 3=RH; 4=Incidente; 5=Outras
+                                requisições
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="OnlyApproval" type="xsd:int"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Listar somente tarefas em aprovação: 0=Não; 1=Sim
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationGetByUserResp">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessageResp">
+                <xsd:sequence>
+                    <xsd:element name="Amount" type="xsd:int"
+                        minOccurs="1" maxOccurs="1" />
+                    <xsd:group ref="Notifications" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationGetById">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessage">
+                <xsd:sequence>
+                    <xsd:element name="TaskId" type="xsd:integer"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Identificador da tarefa dentro do fluxo da notificação
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationGetByIdResp">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessageResp">
+                <xsd:sequence>
+                    <xsd:element name="Site" type="xsd:string"
+                        minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="Notification" type="CtNotificationDetail"
+                        minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationFeedback">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessage">
+                <xsd:sequence>
+                    <xsd:element name="TaskId" type="xsd:integer"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Identificador da tarefa dentro do fluxo da notificação
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="Feedback" type="xsd:int"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Resposta: 0=NEGATIVO; 1=POSITIVO
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="ReasonId" type="xsd:int"
+                        minOccurs="0" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Justificativa
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="Comments" type="xsd:string"
+                        minOccurs="0" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Comentários
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationFeedbackResp">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessageResp">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationNew">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessage">
+                <xsd:sequence>
+                    <xsd:element name="Description" type="xsd:string"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Descrição da notificação
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationNewResp">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessageResp">
+                <xsd:sequence>
+                    <xsd:element name="Number" type="xsd:integer"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Número da notificação
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationGetReasons">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessage">
+                <xsd:sequence>
+                    <xsd:element name="TaskId" type="xsd:integer"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Identificador da tarefa dentro do fluxo da notificação
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationGetReasonsResp">
+        <xsd:complexContent>
+            <xsd:extension base="CtMessageResp">
+                <xsd:sequence>
+                    <xsd:element name="Amount" type="xsd:int"
+                        minOccurs="1" maxOccurs="1" />
+                    <xsd:group ref="Reasons" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:group name="Notifications">
+        <xsd:sequence>
+            <xsd:element name="Notification" type="CtNotification" />
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:complexType name="CtNotification">
+        <xsd:sequence>
+            <xsd:element name="Number" type="xsd:integer"
+                minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Número da notificação
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TaskId" type="xsd:integer"
+                minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Identificador da tarefa dentro do fluxo da notificação
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Type" type="xsd:int"
+                minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Tipo da notificação: 1=Compras; 2=Viagens; 3=RH; 4=Incidente; 5=Outras
+                        requisições
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Date" type="xsd:string"
+                minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Data em que a notificação foi criada
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="EndSLA" type="xsd:string"
+                minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Data e hora limite para atendimento
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeFlag" type="xsd:int"
+                minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Sinalização do tempo limite para execução:
+                        0 - Dentro do prazo (verde)
+                        1 - Falta menos de 1 hora (amarelo)
+                        2 - Atrasada (vermelho)
+                        3 - Suspensa (cinza)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Task" type="xsd:string"
+                minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Descrição da tarefa
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Service" type="xsd:string"
+                minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Descrição do serviço
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Waiting" type="xsd:int"
+                minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Marcação que indica se a notifcação ainda espera aprovação: 1 para
+                        positivo e 0 para negativo
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="CtNotificationDetail">
+        <xsd:complexContent>
+            <xsd:extension base="CtNotification">
+                <xsd:sequence>
+                    <xsd:element name="Description" type="xsd:string"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Descrição da notificação
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="Status" type="xsd:string"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Situação da notificação
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="TaskStatus" type="xsd:string"
+                        minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Situação da tarefa
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:group name="Reasons">
+        <xsd:sequence>
+            <xsd:element name="Reason" type="CtReason" />
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:complexType name="CtReason">
+        <xsd:sequence>
+            <xsd:element name="Id" type="xsd:int" minOccurs="1"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Id da justificativa
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Desc" type="xsd:string"
+                minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Descrição da justificativa
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<PAINEL description='	' classNameProcessParameters="br.com.centralit.citgerencial.processparameters.ProcessParametersGeral">
+	<ITEM name='rel01' file='xmlsRequisicao/mudanca/mudancaPorRisco.xml' top='0' heigth='850' width='1080' left='0'/>
+	
+	<PARAMETERS>
+        <PARAM name='dataInicial' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datainicio' fix='false' mandatory='true' reload='true' />
+        <PARAM name='dataFinal' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datafim' fix='false' mandatory='true' default='{TODAY}'/>
+        
+         <PARAM name='situacaoMudanca' type='String' typeHTML='select' size='0'  value='' description='citcorpore.comum.situacaoMudanca' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='*' text='-- Todas --'/>
+            <OPTION value='Registrada' text='citcorpore.comum.registrada'/>
+            <OPTION value='Proposta' text='perfil.aguardandoAprovacao'/>
+            <OPTION value='Aprovada' text='citcorpore.comum.aprovada'/>
+            <OPTION value='Planejada' text='citcorpore.comum.planejada'/>
+            <OPTION value='EmExecucao' text='citcorpore.comum.emExecucao'/>
+            <OPTION value='Executada' text='perfil.executada'/>
+            <OPTION value='Suspensa' text='citcorpore.comum.suspensa'/>
+            <OPTION value='Cancelada' text='perfil.cancelada'/>
+            <OPTION value='Rejeitada' text='citcorpore.comum.rejeitada'/>
+            <OPTION value='Resolvida' text='citcorpore.comum.resolvida'/>
+            <OPTION value='Reaberta' text='citcorpore.comum.reaberta'/>
+            <OPTION value='Concluida' text='citcorpore.comum.concluida'/>
+        </PARAM>
+        
+        <PARAM name='nivel' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='requisicaoMudanca.nivelRisco' fix='false' mandatory='false' reload='false' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>
+            <OPTION value='1' text='citcorpore.comum.baixo'/>        
+            <OPTION value='2' text='citcorpore.comum.medio'/>
+            <OPTION value='3' text='citcorpore.comum.alto'/>
+        </PARAM>
+       
+	</PARAMETERS>
+		
+</PAINEL>

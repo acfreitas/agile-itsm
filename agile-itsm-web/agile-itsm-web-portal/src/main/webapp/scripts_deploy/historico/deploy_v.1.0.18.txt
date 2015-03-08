@@ -1,0 +1,39 @@
+--Valdoilo12092012
+ALTER TABLE `contratos` ADD COLUMN `idgruposolicitante` INT(11) NULL  AFTER `deleted` ;
+
+--Flavio12092012
+ALTER TABLE `grupo` ADD COLUMN `abertura` VARCHAR(45) NULL  AFTER `sigla` , ADD COLUMN `encerramento` VARCHAR(45) NULL  AFTER `abertura` , ADD COLUMN `andamento` VARCHAR(45) NULL  AFTER `encerramento` ;
+
+alter table contadoracesso
+   drop primary key;
+drop table if exists contadoracesso;
+/*==============================================================*/
+/* Table: contadoracesso                                        */
+/*==============================================================*/
+create table contadoracesso
+(
+   idcontadoracesso     int not null,
+   idusuario            int,
+   idbaseconhecimento   int,
+   datahoraacesso       timestamp ,
+   contadoracesso       int 
+)
+ENGINE = InnoDB;
+alter table contadoracesso
+   add primary key (idcontadoracesso);
+ 
+alter table contadoracesso add constraint fk_reference_608 foreign key (idusuario)
+      references usuario (idusuario) on delete restrict on update restrict;
+ 
+alter table contadoracesso add constraint fk_reference_609 foreign key (idbaseconhecimento)
+      references baseconhecimento (idbaseconhecimento) on delete restrict on update restrict;
+ 
+ALTER TABLE `contadoracesso` CHANGE COLUMN `datahoraacesso` `datahoraacesso` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  ;
+ 
+ALTER TABLE `contadoracesso` CHANGE COLUMN `contadoracesso` `contadoracesso` INT(11) NOT NULL  ;
+
+--Valdoilo18092012
+update solicitacaoservico, empregados set solicitacaoservico.idunidade = empregados.idunidade 
+where solicitacaoservico.idsolicitante = empregados.idempregado;
+
+

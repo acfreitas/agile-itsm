@@ -1,0 +1,22 @@
+/* recebe o o foco na janela modal jqueryui */
+#modal_window {
+	width: 325px;
+	position: absolute;
+	left: 550px;
+	margin: 40px auto;
+	position:absolute;
+	z-index: 9999;
+	width: 325px;
+	margin: 0 auto;
+	display: block;
+}
+
+/* fundo do efeito de janela modal */
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}

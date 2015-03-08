@@ -1,0 +1,72 @@
+/**
+ * CSS para a tela de gestão de rotas
+ *
+ * @author bruno.ribeiro - <a href="mailto:bruno.ribeiro@centrait.com.br">bruno.ribeiro@centrait.com.br</a>
+ * @date 18/11/2014
+ */
+.bordeless-iframe {
+	border: 0px !important;
+}
+
+.modal-body {
+	max-height: 80%;
+}
+
+.modal {
+	width: 80%;
+	margin-left: -40%;
+}
+
+#modalSolicitacao .modal-body {
+	max-height: 700px;
+}
+
+.table {
+	border: 1px solid #8a8a8a;
+	border-radius: 3px;
+	display: table !important;
+	margin-left: 0 !important;
+	text-align: center;
+}
+
+.table-header {
+	background-color: #e0e0e0;
+	display: table-header-group;
+}
+
+.table-row {
+	display: table-row;
+}
+
+.table-cell {
+	border-left: 1px solid #8a8a8a;
+	border-top:  1px solid #8a8a8a;
+	display: table-cell;
+	padding: 3px 0;
+}
+
+.table-cell:nth-of-type(1) {
+	border-left: none;
+	width: 40px;
+}
+
+.table-caption-bottom {
+	caption-side: bottom;
+	border: 1px solid #8a8a8a;
+	border-top: none;
+	display: table-caption;
+	min-height: 40px;
+}
+
+.spinner {
+	width: 22px;
+}
+
+.ui-widget-content {
+	border: 1px solid #aaa !important;
+}
+
+img.ui-datepicker-trigger {
+	padding-left: 4px;
+	vertical-align: initial !important;
+}

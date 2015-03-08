@@ -1,0 +1,7 @@
+ MYSQL
+ALTER TABLE solicitacaoservico  ADD idSolicitacaoRelacionada INTEGER;
+
+
+  ORACLE
+ALTER TABLE solicitacaoservico  ADD idSolicitacaoRelacionada INTEGER;;
+  

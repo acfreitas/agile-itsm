@@ -1,0 +1,8 @@
+/*desenvolvedor: rcs (Rafael César Soyer)
+  data: 13/01/2015
+*/
+.ocorrenciaSolicitacaoTextoLongo{
+	width : 1080px; 
+	font-weight : bold; 
+	word-wrap : break-word;
+}

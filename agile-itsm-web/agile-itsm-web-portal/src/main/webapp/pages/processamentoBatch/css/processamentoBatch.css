@@ -1,0 +1,19 @@
+#divAgendamento {
+	background-color: #F6F6F6!important;
+	padding: 20px!important;
+	border: 1px solid #D8D8D8 !important;
+	margin-bottom: 10px!important;
+}
+
+#divAgendamento h5 {
+	margin-top: -10px!important;
+	margin-bottom: 10px!important;
+}
+
+#modal_Execucoes{
+	  /*  height:80%; */
+   width:70%!important;
+   margin-left: -40%!important; 
+   margin-top: 5%!important;
+   top: 1%!important;
+}

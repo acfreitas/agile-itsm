@@ -1,0 +1,17 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>24</idVisao>
+  <descricao>$sla.historicoauditoria</descricao>
+  <tipoVisao>EC</tipoVisao>
+  <situacao>A</situacao>
+  <classeName>br.com.centralit.citcorpore.metainfo.complementos.ComplementoSLA_MostrarHistAuditSLA.class</classeName>
+  <identificador>SLAHistoricoAuditoria</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>$sla.historicoauditoria</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

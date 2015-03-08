@@ -1,0 +1,189 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>49</idVisao>
+  <descricao>$visao.causaIncidentes</descricao>
+  <tipoVisao>ED</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>causaIncidente</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>$visao.causaIncidentes</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>379</idGrupoVisao>
+          <idCamposObjetoNegocio>488</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.codigo</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDCAUSAINCIDENTE</nomeDB>
+          <nomeTabelaDB>CAUSAINCIDENTE</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>379</idGrupoVisao>
+          <idCamposObjetoNegocio>490</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.causa</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>DESCRICAOCAUSA</nomeDB>
+          <nomeTabelaDB>CAUSAINCIDENTE</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>379</idGrupoVisao>
+          <idCamposObjetoNegocio>491</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.dataInicio</descricaoNegocio>
+          <tipoNegocio>DATE</tipoNegocio>
+          <ordem>3</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>0</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>DATAINICIO</nomeDB>
+          <nomeTabelaDB>CAUSAINCIDENTE</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>379</idGrupoVisao>
+          <idCamposObjetoNegocio>489</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.causaIncidentePai</descricaoNegocio>
+          <tipoNegocio>RELATION</tipoNegocio>
+          <ordem>4</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>C</tipoLigacao>
+          <filtro>(datafim IS NULL)</filtro>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <idObjetoNegocioLigacao>56</idObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacao>490</idCamposObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacaoVinc>488</idCamposObjetoNegocioLigacaoVinc>
+          <idCamposObjetoNegocioLigacaoOrder>490</idCamposObjetoNegocioLigacaoOrder>
+          <descricaoRelacionamento>$visao.causaIncidentePai</descricaoRelacionamento>
+          <nomeDB>IDCAUSAINCIDENTEPAI</nomeDB>
+          <nomeTabelaDB>CAUSAINCIDENTE</nomeTabelaDB>
+          <nomeTabelaDBLigacao>CAUSAINCIDENTE</nomeTabelaDBLigacao>
+          <nomeDBLigacao>DESCRICAOCAUSA</nomeDBLigacao>
+          <nomeDBLigacaoVinc>IDCAUSAINCIDENTE</nomeDBLigacaoVinc>
+          <nomeDBLigacaoOrder>DESCRICAOCAUSA</nomeDBLigacaoOrder>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+  <colVisoesRelacionadas class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+      <idVisaoRelacionada>120</idVisaoRelacionada>
+      <idVisaoPai>49</idVisaoPai>
+      <idVisaoFilha>16</idVisaoFilha>
+      <ordem>0</ordem>
+      <titulo>$visao.pesquisaCausaIncidentes</titulo>
+      <situacao>A</situacao>
+      <tipoVinculacao>1</tipoVinculacao>
+      <acaoEmSelecaoPesquisa>RP</acaoEmSelecaoPesquisa>
+      <identificacaoVisaoFilha>pesquisaCausaIncidentes</identificacaoVisaoFilha>
+    </br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+  </colVisoesRelacionadas>
+  <colScripts class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>189</idScriptsVisao>
+      <idVisao>49</idVisao>
+      <typeExecute>C</typeExecute>
+      <scryptType>ONUPDATE                      </scryptType>
+      <script></script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>190</idScriptsVisao>
+      <idVisao>49</idVisao>
+      <typeExecute>C</typeExecute>
+      <scryptType>ONCREATE                      </scryptType>
+      <script></script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>187</idScriptsVisao>
+      <idVisao>49</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONUPDATE                      </scryptType>
+      <script>var id = mapFields.get(&quot;IDCAUSAINCIDENTE&quot;);
+var idPai = mapFields.get(&quot;IDCAUSAINCIDENTEPAI&quot;);
+
+if(idPai != &quot;&quot;){
+  if(id == idPai){
+     dinamicViewDto.setMsgRetorno(&quot;Causa Incidente Pai e o mesmo que o atual. Favor, selecionar outra para prosseguir.&quot;);
+     dinamicViewDto.abortFuncaoPrincipal = true;
+  }
+}</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>188</idScriptsVisao>
+      <idVisao>49</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONCREATE                      </scryptType>
+      <script>var id = mapFields.get(&quot;IDCAUSAINCIDENTE&quot;);
+var idPai = mapFields.get(&quot;IDCAUSAINCIDENTEPAI&quot;);
+
+if(idPai != &quot;&quot;){
+  if(id == idPai){
+     dinamicViewDto.setMsgRetorno(&quot;Causa Incidente Pai e o mesmo que o atual. Favor, selecionar outra para prosseguir.&quot;);
+     dinamicViewDto.abortFuncaoPrincipal = true;
+  }
+}</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+  </colScripts>
+  <colBotoes class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>265</idBotaoAcaoVisao>
+      <idVisao>49</idVisao>
+      <texto>$botaoacaovisao.gravar_dados</texto>
+      <acao>1</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>0</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>266</idBotaoAcaoVisao>
+      <idVisao>49</idVisao>
+      <texto>$botaoacaovisao.limpar_dados</texto>
+      <acao>2</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>1</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>267</idBotaoAcaoVisao>
+      <idVisao>49</idVisao>
+      <texto>$botaoacaovisao.excluir</texto>
+      <acao>3</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>2</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+  </colBotoes>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

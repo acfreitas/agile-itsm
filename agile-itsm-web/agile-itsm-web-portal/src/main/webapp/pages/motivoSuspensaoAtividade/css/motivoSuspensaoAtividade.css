@@ -1,0 +1,132 @@
+.ui-button {
+    background-color: #9DCE6E !important;
+    background-image: linear-gradient(to bottom, #A8D37D, #8EC657) !important;
+    background-repeat: repeat-x !important;
+    border: 1px solid #8EC657 !important;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #74AF3B !important;
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) !important;
+    font-weight: 600 !important;
+    margin-bottom: 1em !important;
+    margin-right: 1em !important;
+    text-align: center;
+}
+
+.corner-all {
+background: #FFFFFF !important; 
+}
+
+
+#pag{
+	background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 1px 0 0 #F7F7F7, 0 5px 4px -4px #D8D8D8;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    margin-left: 0;
+    width: 480px !important;
+    border: 1px solid #DDDDDD;
+    display: block;
+    float: right;
+    height: 25px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-right:1.5em;
+
+}
+/* Desenvolvedor: Pedro Lino - Data: 31/10/2013 - Horário: 14:17 - ID Citsmart: 120948 - 
+* Motivo/Comentário: Retirado texto uppercase / capitalize */
+/* Paginação do findfield */
+#btfirst,#btprevius, #btnext, #btlast{
+	height:25px;
+	font-size: 11px;
+	text-transform: capitalize;
+	color: #8EC657 !important;
+	border-radius:0 !important;
+	border-right: solid 1px #DDD !important;
+	padding:5px !important;
+	margin-left:0 !important;
+	line-height: 1px;
+	border-top: none !important;
+	border-bottom: none !important;
+}
+#btfirst:hover,#btprevius:hover, #btnext:hover, #btlast:hover{
+background:#8EC657 !important;
+    
+border-color: #8EC657;
+    
+/* box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2) inset; */
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+#btnext {
+	border-left: solid 1px #DDD !important;
+	margin-left:15px !important;
+
+}
+#btprevius{
+	margin-right: 5px;
+}
+#btlast{
+	border: none !important;
+}
+
+#btfirst{
+	border-left: none !important;
+	border-right: none !important;
+}
+
+output{
+	margin-top:5px !important;
+	padding:5px !important;
+}
+
+button{
+	background-color: #9DCE6E;
+    background-image: linear-gradient(to bottom, #A8D37D, #8EC657);
+    background-repeat: repeat-x;
+    border: 1px solid #8EC657;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #74AF3B;
+    color: #FFFFFF;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+button:hover{
+	background: #C4E1A6 !important;
+}
+
+.tabbable{
+	width: 75% !important;
+}
+#divMensagemInsercao{
+	font-size: 15px !important;
+	padding: 10px !important;
+	
+}
+button.text_only{
+	margin:10px !important;
+}
+#POPUP_INFO_INSERCAO{
+	height: auto !important;
+}
+
+/*
+* Motivo: Adicionando Código específico para ie10
+* Autor: flavio.santana
+*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+/* CSS especifico para o IE10 aqui */
+   .ie10 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+   		min-height: 30px !important;
+		padding: 0 0 0 5px !important;
+		background: transparent;
+   }
+   .ie10 #POPUP_ITEMCONTROLEFINANCEIRO, .ie10 #iframeItemControleFinanceiro {
+   		height: 800px !important;
+   		overflow: hidden;
+   }
+   
+   .ie10 .textarea {
+   	content: Para melhor funcionamento utilize o firefox;
+   	width: 200px;
+   }
+}

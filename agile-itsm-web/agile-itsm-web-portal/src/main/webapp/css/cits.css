@@ -1,0 +1,655 @@
+.titulo3
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    COLOR: #003300;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.alerta
+{
+    FONT-SIZE: 12px;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.bordacabecalho
+{
+    BORDER-RIGHT: #d4d4d4 1px solid;
+    BORDER-LEFT: #d4d4d4 1px solid
+}
+.botao
+{
+    FONT-SIZE: 11px;
+    HEIGHT: 18px
+}
+.campo
+{
+    FONT-SIZE: 11px;
+    COLOR: #006633;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    HEIGHT: 18px
+}
+.label
+{
+    FONT-SIZE: 12px;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    HEIGHT: 18px;
+    BACKGROUND-COLOR: #f2f2f2
+}
+.label2
+{
+    FONT-SIZE: 12px;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    HEIGHT: 18px;
+    BACKGROUND-COLOR: #f2f2f2
+}
+.texto3
+{
+    FONT-SIZE: 12px;
+    COLOR: #003300;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.link
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #009966;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+.linkMenuCustoIndex
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.linkMenuCustoIndex:hover
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 12px;
+    COLOR: black;
+    text-decoration: none;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    background: #D7DDE1;
+}
+.link2
+{
+    FONT-SIZE: 11px;
+    COLOR: #009966;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+.login
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #ffffff;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif
+}
+.mercado
+{
+    FONT-SIZE: 11px;
+    COLOR: #006633;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #f0f4f2
+}
+.mercado2
+{
+    FONT-SIZE: 11px;
+    COLOR: #006633;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #dee7e2
+}
+.dataatual
+{
+    BORDER-TOP: #cccccc 1px solid;
+    FONT-SIZE: 11px;
+    VERTICAL-ALIGN: middle;
+    COLOR: #339999;
+    BORDER-BOTTOM: #cccccc 1px solid;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #ffffff;
+    TEXT-ALIGN: left;
+    TEXT-DECORATION: none
+}
+.profissional
+{
+    BORDER-TOP: #cccccc 1px solid;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    VERTICAL-ALIGN: middle;
+    COLOR: #339999;
+    BORDER-BOTTOM: #cccccc 1px solid;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #ffffff;
+    TEXT-ALIGN: right;
+    TEXT-DECORATION: none
+}
+.profissionallink
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    VERTICAL-ALIGN: middle;
+    COLOR: #339999;
+    FONT-STYLE: italic;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-ALIGN: right;
+    TEXT-DECORATION: none
+}
+.rodape
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10px;
+    COLOR: #ffffff;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #66cccc;
+    TEXT-ALIGN: center
+}
+.texto
+{
+    FONT-SIZE: 11px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.texto2
+{
+    FONT-SIZE: 12px;
+    COLOR: #32592b;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.textoespecialidades
+{
+    FONT-SIZE: 12px;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.textoSimples
+{
+    FONT-SIZE: 11px;
+    COLOR: #666600;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.textobusca
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #666600;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.textodica
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: black;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.textoRSS
+{
+    FONT-SIZE: 10px;
+    COLOR: #666600;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.textoautocomplete
+{
+    FONT-SIZE: 11px;
+    COLOR: black;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.textoautocompleteNegrito
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: black;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.textoesquerda
+{
+    FONT-SIZE: 11px;
+    COLOR: #666666;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.textomercado
+{
+    FONT-SIZE: 11px;
+    COLOR: #666600;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.textomenu
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #006666;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.tituloesquerda
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10px;
+    VERTICAL-ALIGN: middle;
+    TEXT-TRANSFORM: uppercase;
+    COLOR: #ffffff;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    HEIGHT: 15px;
+    BACKGROUND-COLOR: #009999;
+    TEXT-ALIGN: center
+}
+.titulomercado
+{
+    BORDER-RIGHT: #006666 1px solid;
+    BORDER-TOP: #006666 1px solid;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    TEXT-TRANSFORM: uppercase;
+    BORDER-LEFT: #006666 1px solid;
+    COLOR: #006666;
+    BORDER-BOTTOM: #006666 1px solid;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-ALIGN: center
+}
+.tituloespecialidades
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    COLOR: #cc6633;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.linkmenuesq
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #666666;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+.titulo
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    TEXT-TRANSFORM: uppercase;
+    COLOR: white;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: darkcyan;
+    TEXT-ALIGN: center
+}
+.tituloAgenda
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: white;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #6094a9;
+    TEXT-ALIGN: center
+}
+.tituloAba
+{
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	border-radius-top-left: 10px;
+	border-radius-top-right: 10px; 	
+    BORDER-RIGHT: black thin groove;
+    BORDER-TOP: thin groove;
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 14px;
+    MARGIN: 0px;
+    BORDER-LEFT: thin groove;
+    CURSOR: pointer;
+    COLOR: black;
+    BORDER-BOTTOM: silver thin inset;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: silver;
+    TEXT-ALIGN: center
+}
+.botaoDif
+{
+    BORDER-RIGHT: black thin groove;
+    BORDER-TOP: thin groove;
+    FONT-SIZE: 11px;
+    MARGIN: 0px;
+    BORDER-LEFT: thin groove;
+    CURSOR: pointer;
+    COLOR: black;
+    BORDER-BOTTOM: black thin inset;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: silver;
+    TEXT-ALIGN: center
+}
+.tituloAbaSelecionada
+{
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	border-radius-top-left: 10px;
+	border-radius-top-right: 10px; 
+    BORDER-RIGHT: black thin outset;
+    BORDER-TOP: thin outset;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 14px;
+    MARGIN: 1px 1px 0px;
+    BORDER-LEFT: thin outset;
+    CURSOR: pointer;
+    COLOR: white;
+    BORDER-BOTTOM: black thin;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #6094a9;
+    TEXT-ALIGN: center
+}
+.tituloAbaVertSelecionada
+{
+    BORDER-RIGHT: black thin;
+    BORDER-TOP: thin;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 14px;
+    MARGIN: 1px 1px 0px;
+    BORDER-LEFT: thin;
+    CURSOR: pointer;
+    COLOR: black;
+    BORDER-BOTTOM: black thin;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: lightgrey;
+    TEXT-ALIGN: center
+}
+.tituloAbaVertNaoSelecionada
+{
+    BORDER-RIGHT: black thin groove;
+    BORDER-TOP: thin outset;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 14px;
+    MARGIN: 1px 1px 0px;
+    BORDER-LEFT: thin outset;
+    CURSOR: pointer;
+    COLOR: white;
+    BORDER-BOTTOM: black thin outset;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: darkgray;
+    TEXT-ALIGN: center
+}
+.bt
+{
+    BORDER-RIGHT: black 1px outset;
+    BORDER-TOP: black 1px outset;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    BACKGROUND-IMAGE: url(../imagens/botaoFundo.jpg);
+    BORDER-LEFT: black 1px outset;
+    COLOR: white;
+    BORDER-BOTTOM: black 1px outset;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: transparent
+}
+.borda
+{
+    BORDER-RIGHT: darkcyan 1px solid;
+    BORDER-TOP: darkcyan 1px solid;
+    BORDER-LEFT: darkcyan 1px solid;
+    BORDER-BOTTOM: darkcyan 1px solid;
+    BACKGROUND-COLOR: white
+}
+.bordaSemTopo
+{
+    BORDER-RIGHT: darkcyan 1px solid;
+    BORDER-TOP: white 0px;
+    BORDER-LEFT: darkcyan 1px solid;
+    BORDER-BOTTOM: darkcyan 1px solid;
+    BACKGROUND-COLOR: white
+}
+.valor
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9px;
+    COLOR: black;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif
+}
+.tabelapopupIndex
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10px;
+    COLOR: black;
+    FONT-FAMILY: Arial, Tahoma;
+    background: #F0F0F8;
+}
+TD.tdMenu
+{
+    BORDER-RIGHT: 1px solid;
+    BORDER-TOP: 1px solid;
+    BORDER-LEFT: 1px solid;
+    BORDER-BOTTOM: #2f3030 1px solid;
+    background: #F0F0F8;
+}
+TD.tdMenu:hover
+{
+    BORDER-RIGHT: 1px solid;
+    BORDER-TOP: 1px solid;
+    BORDER-LEFT: 1px solid;
+    color: black;
+    BORDER-BOTTOM: #2f3030 1px solid;
+    background: #D7DDE1;
+}
+.tabelaBloqueio
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: black;
+    FONT-FAMILY: Arial, Tahoma;
+    BACKGROUND-COLOR: #98c7e7
+}
+.tituloJanelaAgenda
+{
+    BORDER-RIGHT: #ff6600 1px;
+    BORDER-TOP: #ff6600 1px;
+    FONT-SIZE: 12px;
+    BORDER-LEFT: #ff6600 1px;
+    COLOR: black;
+    BORDER-BOTTOM: #ff6600 1px;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #6094a9
+}
+.optionFundo
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: black;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: mediumturquoise
+}
+.optionPlanContas
+{
+    FONT-SIZE: 11px;
+    COLOR: black;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: lightyellow
+}
+.optionPlanContasGrupo
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: blue;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif
+}
+.campotextodestaque
+{
+    COLOR: blue;
+    BACKGROUND-COLOR: lightyellow
+}
+.infpago
+{
+    COLOR: blue;
+    BACKGROUND-COLOR: peachpuff
+}
+.MD_table_edit
+{
+    BORDER-RIGHT: thin groove;
+    BORDER-TOP: thin groove;
+    BORDER-LEFT: thin groove;
+    BORDER-BOTTOM: thin groove;
+    BACKGROUND-COLOR: lightyellow
+}
+.textoAux
+{
+    BORDER-RIGHT: thin groove;
+    BORDER-TOP: thin groove;
+    BORDER-LEFT: thin groove;
+    BORDER-BOTTOM: thin groove;
+    BACKGROUND-COLOR: lightyellow
+}
+LEGEND
+{
+    FONT-WEIGHT: bold;
+    COLOR: #017c7c;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    TEXT-ALIGN: center
+}
+FIELDSET
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    BORDER-LEFT-COLOR: #f6f6f6;
+    BORDER-BOTTOM-COLOR: #f6f6f6;
+    PADDING-BOTTOM: 5px;
+    MARGIN-LEFT: 8px;
+    BORDER-TOP-COLOR: #f6f6f6;
+    PADDING-TOP: 5px;
+    TEXT-ALIGN: center;
+    BORDER-RIGHT-COLOR: #f6f6f6
+}
+.dataContas
+{
+    FONT-SIZE: 12px;
+    COLOR: red;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: lightyellow
+}
+.linhaContasDestaque
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: lightgreen
+}
+.linhaContas1
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: lightyellow
+}
+.linhaContas2
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: lightgrey
+}
+.linhaContas3
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: lightgreen
+}
+.colunaDestaque
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: moccasin
+}
+.linhaContasPrinc
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: lightgrey
+}
+.linhaContasCancelada
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: tomato
+}
+.linhaContasPaga
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: lightblue
+}
+.bordaAtencao
+{
+    BORDER-RIGHT: red 1px solid;
+    BORDER-TOP: red 1px solid;
+    FONT-SIZE: 12px;
+    BORDER-LEFT: red 1px solid;
+    BORDER-BOTTOM: red 1px solid;
+    BACKGROUND-COLOR: white
+}
+.textoimpressaoRecibo
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 18px;
+    COLOR: black;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.textoMarcarConsulta
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: white;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.selectSemBorda
+{
+    BORDER-RIGHT: white solid;
+    BORDER-TOP: white solid;
+    MARGIN: 0px;
+    BORDER-LEFT: white ridge;
+    BORDER-BOTTOM: white solid;
+    BACKGROUND-COLOR: lightgoldenrodyellow
+}
+.prontuarioOdonto
+{
+	FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #009966;
+    FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;
+}
+.campoNumero
+{
+	
+}
+INPUT.campoTextoValor
+{	
+    TEXT-ALIGN: right;
+    FONT-FAMILY: Verdana;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 13px;
+    COLOR: black;
+    BACKGROUND-COLOR: #FFFFFF;
+    HEIGHT: 24px;
+}
+.tabelaCabecalho{
+	border-left: solid 1px gray;
+	border-top: solid 1px gray;
+	border-right: solid 1px gray;
+	background-color:#027993;
+}
+
+

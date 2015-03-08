@@ -1,0 +1,99 @@
+.marginless {
+  margin: 0 0 0px!important;
+}
+
+.navbar.main {
+  height: 75px!important; /* alterado para colocar a logo do citsmart, padrao era 34px */
+  /* background-color: #f2f3f4; 
+  box-shadow: 0 2px 0 0 #f0f0f0;*/
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+  margin: 0;
+  position: relative;
+}
+
+.navbar.main .topnav > li {
+  position: relative;
+  float: left;
+  height: 75px!important; /* alterado, pois a div com logo ficou maior */
+  line-height: 33px;
+  display: block;
+  padding: 0;
+  border-right: 1px solid #d8d8d8;
+  border-left: 1px solid #ffffff;
+}
+.nomain {
+  margin: 0;
+  position: relative;
+}
+.contentframe {
+	margin:  0;
+	padding: 0;
+}
+.controls {
+	/* color: #7c7c7c; */
+	margin: 5px 0;
+}
+.campoObrigatorio:after {
+	color:#FF0000;
+	content:"*";
+}
+
+.select { width: 400px; }
+
+#pag {
+background: none repeat scroll 0 0 #FFFFFF;
+box-shadow: 0 1px 0 0 #F7F7F7, 0 5px 4px -4px #D8D8D8;
+border-radius: 4px 4px 4px 4px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+display: inline-block;
+margin-left: 0;
+width: 480px !important;
+border: 1px solid #DDDDDD;
+display: block;
+float: right;
+height: 25px;
+margin-bottom: 5px;
+margin-top: 10px;
+margin-right: 1.5em;
+}
+#pag input[type="button"]{
+border: none;
+background: white;
+}
+#btfirst,#btprevius,#btnext,#btlast {
+height: 25px;
+font-size: 11px;
+text-transform: capitalize;
+color: #8EC657 !important;
+border-radius: 0 !important;
+border-right: solid 1px #DDD !important;
+padding: 5px !important;
+margin-left: 0 !important;
+line-height: 1px;
+}
+
+#btfirst:hover,#btprevius:hover,#btnext:hover,#btlast:hover {
+background: #8EC657 !important;
+border-color: #8EC657;
+box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2) inset;
+color: #FFFFFF !important;
+text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+#btprevius {
+margin-right: 5px;
+}
+#btnext {
+border-left: solid 1px #DDD !important;
+margin-left: 15px !important;
+}
+#btlast {
+border: none !important;
+}
+output {
+margin-top: 5px !important;
+padding: 5px !important;
+}
+.lockupCampoBotoes {
+margin-bottom: 10px;	
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioOrdemServico_subrelatorio_assinaturas" columnCount="2" printOrder="Horizontal" pageWidth="538" pageHeight="109" orientation="Landscape" columnWidth="269" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="91e03d85-f942-4d04-a81c-3b9ea00c2d99">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ATIVAR_ASSINATURA_PERSONALIZADA" class="java.lang.Boolean"/>
+	<field name="fase" class="java.lang.String"/>
+	<field name="papel" class="java.lang.String"/>
+	<field name="ordem" class="java.lang.Integer"/>
+	<field name="nomeResponsavel" class="java.lang.String"/>
+	<detail>
+		<band height="108" splitType="Immediate">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2ac72951-51ea-4c65-b118-61cce4a56438" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="266" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{fase} == null ? "vazio" : $F{fase}.toString())]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement uuid="9558cf1c-7993-4437-a82b-de6d96354575" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="20" width="266" height="85" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<line>
+					<reportElement uuid="d3dffbdc-6efa-42f1-8ae4-896aa35d4819" positionType="Float" x="19" y="47" width="228" height="1">
+						<printWhenExpression><![CDATA[($P{ATIVAR_ASSINATURA_PERSONALIZADA})]]></printWhenExpression>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.75"/>
+					</graphicElement>
+				</line>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="98bb975d-b5d4-489f-b767-6facd9c67a3f" positionType="Float" x="3" y="49" width="260" height="13" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{nomeResponsavel} == null ? new String() : $F{nomeResponsavel}.toString())]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="98bb975d-b5d4-489f-b767-6facd9c67a3f" positionType="Float" x="3" y="62" width="260" height="12" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{papel}.toString()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="821b1635-a422-41fa-bf5c-90a4b15b45c7" positionType="Float" stretchType="RelativeToTallestObject" x="3" y="74" width="260" height="9" isRemoveLineWhenBlank="true"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{citcorporeRelatorio.comum.carimboData}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

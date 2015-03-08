@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<PAINEL description='	' classNameProcessParameters="br.com.centralit.citgerencial.processparameters.ProcessParametersGeral">
+	<ITEM name='rel01' file='xmlsGerenciais/servicos/relServicos.xml' top='0' heigth='425' width='530' left='0'/>
+	
+	<PARAMETERS>
+        <PARAM name='dataInicial' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datainicio' fix='false' mandatory='true' reload='true' />
+        <PARAM name='dataFinal' type='java.sql.Date' size='10'  value='' description='citcorpore.comum.datafim' fix='false' mandatory='true' default='{TODAY}'/>
+                
+        <PARAM name='idTipoServico' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='painel.tipoServico' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idtiposervico, nometiposervico
+                  FROM tiposervico
+                  WHERE situacao = 'A'
+                ORDER BY nometiposervico
+            </OPTIONS>
+        </PARAM>
+        
+        <PARAM name='idImportanciaNegocio' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='importanciaNegocio.importanciaNegocio' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idimportancianegocio, nomeimportancianegocio
+                  FROM importancianegocio
+                  WHERE situacao = 'A'
+                ORDER BY nomeimportancianegocio
+            </OPTIONS>
+        </PARAM> 
+        
+        <PARAM name='idSituacaoServico' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='requisicaMudanca.status' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idsituacaoservico, nomesituacaoservico
+                  FROM situacaoservico
+                  WHERE datafim IS NULL
+                ORDER BY nomesituacaoservico
+            </OPTIONS>
+        </PARAM>   
+        
+        <PARAM name='idCategoriaServico' type='java.lang.Integer' typeHTML='select' size='0'  value='' description='servico.categoria' fix='false' mandatory='false' reload='true' onload='true'>
+            <OPTION value='-1' text='citcorpore.comum.todos'/>        
+            <OPTIONS type='SQL' onload='true'>
+                SELECT idCategoriaServico, nomeCategoriaServico
+                  FROM categoriaservico
+                  WHERE datafim IS NULL
+                ORDER BY nomeCategoriaServico
+            </OPTIONS>
+        </PARAM>                   
+        
+	</PARAMETERS>
+		
+</PAINEL>

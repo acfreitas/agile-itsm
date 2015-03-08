@@ -1,0 +1,153 @@
+
+
+body {
+	background-color: white;
+	background-image: url("");
+	}
+	.table {
+		border-left:1px solid #ddd;
+	}
+.linha{
+    background-color: #F1F1F1;
+    border-color: -moz-use-text-color;
+    border-right: thin outset;
+    border-style: outset;
+    border-width: thin;
+    color: #000000;
+    font-family: Arial;
+    font-size: 12px;
+}
+	.table th {
+		border:1px solid #ddd;
+		padding:4px 10px;
+		border-left:none;
+		background:#eee;
+	}
+
+	.table td {
+		border:1px solid #ddd;
+		padding:4px 10px;
+		border-top:none;
+		border-left:none;
+	}
+
+	.tableLess {
+	  font-family: arial, helvetica !important;
+	  font-size: 10pt !important;
+	  cursor: default !important;
+	  margin: 0 !important;
+	  background: white !important;
+	  border-spacing: 0  !important;
+	  width: 100%  !important;
+	}
+
+	.tableLess tbody {
+	  background: transparent  !important;
+	}
+
+	.tableLess * {
+	  margin: 0 !important;
+	  vertical-align: middle !important;
+	  padding: 2px !important;
+	}
+
+	.tableLess thead th {
+	  font-weight: bold  !important;
+	  background: #fff url(../../imagens/title-bg.gif) repeat-x left bottom  !important;
+	  text-align: center  !important;
+	}
+
+	.tableLess tbody tr:ACTIVE {
+	  background-color: #fff  !important;
+	}
+
+	.tableLess tbody tr:HOVER {
+	  background-color: #e7e9f9!important ;
+	  cursor: pointer;
+	}
+
+	.tableLess th {
+	  border: 1px solid #BBB  !important;
+	  padding: 6px  !important;
+	}
+
+	.tableLess td{
+	  border: 1px solid #BBB  !important;
+	  padding: 6px 10px  !important;
+	}
+	a{
+		font-size: 11px!important;
+
+	}
+td{
+font-size: 11px!important;
+
+}
+
+.frame{
+
+	background-color: white!important;
+	color: white;
+	min-height: 99%!important;
+}
+
+/* Thiago Fernandes - 29/10/2013 09:06 - Sol. 121468 - Adicionar campo obrigatorio questionario . */
+.campoObrigatorioQuestionario:after {
+	color: #FF0000;
+	content: "*";
+}
+
+.campoObrigatorioQuestionario {
+    font-size		:10px;
+    color			:black;
+    font-family		:Tahoma, Arial, Helvetica, sans-serif;
+    text-decoration	:none;
+   /*  width			:250px; */
+    padding			:3px 0 0 0;
+}
+
+.btnQuest{
+    background-color: #9DCE6E !important;
+    background-image: linear-gradient(to bottom, #A8D37D, #8EC657) !important;
+    background-repeat: repeat-x !important;
+    border: 1px solid #8EC657 !important;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 1px #74AF3B !important;
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) !important;
+    font-weight: 600 !important;
+    margin-bottom: 1em !important;
+    margin-right: 1em !important;
+    border-radius: 3px 3px 3px 3px;
+    padding: 0.4em;
+}.btnQuest:hover {
+	color:#FFF;
+	background: #A8D37D;
+}.btnQuest:link {
+	color:#FFF;
+}.btnQuest:active {
+	color:#FFF;
+	position:relative;
+	top:1px;
+}a:active{
+	color: #DFDFDF;
+}
+
+#idCategoriaQuestionarioAux{
+	background: none repeat scroll 0 0 #F2F2F2;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px 2px 2px 2px;
+    height: 32px;
+    margin-bottom: 0;
+    margin-right: 5px;
+    margin-top: 0;
+    padding: 5px;
+    width: 100%;
+
+}
+
+#btnVoltar {
+	margin-left: 848px !important;
+	position:inherit;
+}
+
+

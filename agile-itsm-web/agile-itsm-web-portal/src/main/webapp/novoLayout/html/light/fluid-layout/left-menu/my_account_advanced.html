@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
+<!--[if !IE]><!--><html><!-- <![endif]-->
+<head>
+	<title>Ergo - Admin &amp; App UI Template (v1.2)</title>
+	
+	<!-- Meta -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	
+	<!-- Bootstrap -->
+	<link href="../../../../common/bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link href="../../../../common/bootstrap/css/responsive.css" rel="stylesheet" />
+	
+	<!-- Glyphicons Font Icons -->
+	<link href="../../../../common/theme/css/glyphicons.css" rel="stylesheet" />
+	
+	<!-- Uniform Pretty Checkboxes -->
+	<link href="../../../../common/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
+	
+	<!-- Bootstrap Extended -->
+	<link href="../../../../common/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
+	<link href="../../../../common/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../../../../common/bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet">
+	<link href="../../../../common/bootstrap/extend/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
+	<link href="../../../../common/bootstrap/extend/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css" rel="stylesheet" />
+	
+	<!-- Select2 Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/forms/select2/select2.css" rel="stylesheet" />
+	
+	<!-- DateTimePicker Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/forms/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+	
+	<!-- JQueryUI -->
+	<link href="../../../../common/theme/scripts/plugins/system/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+	
+	<!-- MiniColors ColorPicker Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.css" rel="stylesheet" />
+	
+	<!-- Notyfy Notifications Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/notifications/notyfy/jquery.notyfy.css" rel="stylesheet" />
+	<link href="../../../../common/theme/scripts/plugins/notifications/notyfy/themes/default.css" rel="stylesheet" />
+	
+	<!-- Gritter Notifications Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/notifications/Gritter/css/jquery.gritter.css" rel="stylesheet" />
+	
+	<!-- Easy-pie Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/charts/easy-pie/jquery.easy-pie-chart.css" rel="stylesheet" />
+
+	<!-- Google Code Prettify Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/other/google-code-prettify/prettify.css" rel="stylesheet" />
+
+	<!-- Main Theme Stylesheet :: CSS -->
+	<link href="../../../../common/theme/css/style-light.css?1369753444" rel="stylesheet" />
+	
+	
+	<!-- LESS.js Library -->
+	<script src="../../../../common/theme/scripts/plugins/system/less.min.js"></script>
+</head>
+<body class="">
+	
+		<!-- Main Container Fluid -->
+	<div class="container-fluid fluid menu-left">
+		
+		<!-- Top navbar (note: add class "navbar-hidden" to close the navbar by default) -->
+		<div class="navbar main hidden-print">
+		
+			<!-- Wrapper -->
+			<div class="wrapper">
+			
+							
+								<!-- Menu Toggle Button -->
+				<button type="button" class="btn btn-navbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<!-- // Menu Toggle Button END -->
+								
+								<!-- Top Menu -->
+				<ul class="topnav pull-left tn1 hidden-phone">
+				
+										<!-- Themer -->
+					<li><a href="#themer" data-toggle="collapse" class="glyphicons eyedropper single-icon"><i></i></a></li>
+					<!-- // Themer END -->
+										
+										
+					<li class="dropdown dd-1 dd-2">
+						<a href="" data-toggle="dropdown">Notifications <span class="count">3</span></a>
+						<ul class="dropdown-menu pull-left">
+							<li><a href="#" class="glyphicons envelope"><i></i> New Email</a></li>
+                            <li><a href="#" class="glyphicons chat"><i></i> 5 Messages</a></li>
+                            <li><a href="#" class="glyphicons conversation"><i></i> 1 New Reply</a></li>
+						</ul>
+					</li>
+					
+				</ul>
+				<!-- // Top Menu END -->
+								
+				<!-- Top Menu Right -->
+				<ul class="topnav pull-right">
+				
+					<!-- Language menu -->
+					<li class="hidden-phone dropdown dd-1 dd-flags" id="lang_nav">
+						<a href="#" data-toggle="dropdown"><img src="../../../../common/theme/images/lang/en.png" alt="en" /></a>
+				    	<ul class="dropdown-menu pull-left">
+				      		<li class="active"><a href="?page=my_account_advanced&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=en" title="English"><img src="../../../../common/theme/images/lang/en.png" alt="English"> English</a></li>
+				      		<li><a href="?page=my_account_advanced&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=ro" title="Romanian"><img src="../../../../common/theme/images/lang/ro.png" alt="Romanian"> Romanian</a></li>
+				      		<li><a href="?page=my_account_advanced&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=it" title="Italian"><img src="../../../../common/theme/images/lang/it.png" alt="Italian"> Italian</a></li>
+				      		<li><a href="?page=my_account_advanced&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=fr" title="French"><img src="../../../../common/theme/images/lang/fr.png" alt="French"> French</a></li>
+				      		<li><a href="?page=my_account_advanced&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light&amp;lang=pl" title="Polish"><img src="../../../../common/theme/images/lang/pl.png" alt="Polish"> Polish</a></li>
+				    	</ul>
+					</li>
+					<!-- // Language menu END -->
+				
+					<!-- Dropdown -->
+					<li class="dropdown dd-1 visible-desktop">
+						<a href="" data-toggle="dropdown" class="glyphicons shield"><i></i>Get Help <span class="caret"></span></a>
+						<ul class="dropdown-menu pull-right">
+							
+							<li class="dropdown submenu">
+	                    		<a href="#" class="dropdown-toggle glyphicons bell" data-toggle="dropdown"><i></i>Level 2</a>
+								<ul class="dropdown-menu submenu-show submenu-hide pull-left">
+			                        <li class="dropdown submenu">
+			                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.1</a>
+										<ul class="dropdown-menu submenu-show submenu-hide pull-left">
+											<li><a href="#">Level 2.1.1</a></li>
+	                                    	<li><a href="#">Level 2.1.2</a></li>
+	                                    	<li><a href="#">Level 2.1.3</a></li>
+	                                    	<li><a href="#">Level 2.1.4</a></li>
+			                            </ul>
+			                        </li>
+			                        <li class="dropdown submenu">
+			                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.2</a>
+			                            <ul class="dropdown-menu submenu-show submenu-hide pull-left">
+											<li><a href="#">Level 2.2.1</a></li>
+			                                <li><a href="#">Level 2.2.2</a></li>
+			                            </ul>
+			                        </li>
+			                    </ul>
+			                </li>
+			                
+			                <li><a href="" class="glyphicons settings"><i></i>Some option</a></li>
+							<li><a href="" class="glyphicons bell"><i></i>Some other option</a></li>
+							<li><a href="" class="glyphicons bell"><i></i>Other option</a></li>
+			                
+						</ul>
+					</li>
+					<!-- // Dropdown END -->
+					
+					<!-- Profile / Logout menu -->
+					<li class="account dropdown dd-1">
+												<a data-toggle="dropdown" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons logout lock"><span class="hidden-phone">mosaicpro</span><i></i></a>
+						<ul class="dropdown-menu pull-right">
+							<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons cogwheel">Settings<i></i></a></li>
+							<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons camera">My Photos<i></i></a></li>
+							<li class="profile">
+								<span>
+									<span class="heading">Profile <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="pull-right">edit</a></span>
+									<span class="img"></span>
+									<span class="details">
+										<a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light">Mosaic Pro</a>
+										contact@mosaicpro.biz
+									</span>
+									<span class="clearfix"></span>
+								</span>
+							</li>
+							<li>
+								<span>
+									<a class="btn btn-default btn-mini pull-right" href="login.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light">Sign Out</a>
+								</span>
+							</li>
+						</ul>
+											</li>
+					<!-- // Profile / Logout menu END -->
+					
+				</ul>
+				<!-- // Top Menu Right END -->
+				
+								
+				<div class="clearfix"></div>
+			</div>
+			<!-- // Wrapper END -->
+			
+			<span class="toggle-navbar"></span>
+		</div>
+		<!-- Top navbar END -->
+		
+				<!-- Sidebar menu & content wrapper -->
+		<div id="wrapper">
+		
+		<!-- Sidebar Menu -->
+		<div id="menu" class="hidden-phone hidden-print">
+		
+			<!-- Brand -->
+			<a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="appbrand">Ergo <span>Admin UI Template (v1.2)</span></a>
+		
+			<!-- Scrollable menu wrapper with Maximum height -->
+			<div class="slim-scroll" data-scroll-height="800px">
+			
+			<!-- Sidebar Profile -->
+			<span class="profile">
+				<p>Welcome <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light">mosaicpro</a></p>
+				<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><img src="../../../../common/theme/images/avatar-style-light.jpg" alt="Avatar" /></a>
+				<span>
+					<ul>
+						<li><a href="" class="glyphicons lock"><i></i>Account</a></li>
+						<li><a href="" class="glyphicons keys"><i></i>Password</a></li>
+						<li><a href="" class="glyphicons eject"><i></i>Logout</a></li>
+					</ul>
+				</span>
+			</span>
+			<!-- // Sidebar Profile END -->
+			
+			<!-- Regular Size Menu -->
+			<ul class="menu-0">
+			
+								
+								<!-- Menu Regular Item -->
+				<li class="glyphicons display"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Dashboard</span></a></li>
+				
+				<!-- Components Submenu Level 1 -->
+				<li class="hasSubmenu glyphicons cogwheels">
+					<a data-toggle="collapse" href="#menu_components"><i></i><span>Components</span></a>
+					<ul class="collapse" id="menu_components">
+						
+						<!-- Components Submenu Level 2 -->
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_forms"><span>Forms</span></a>
+							<ul class="collapse" id="menu_forms">
+								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Form Wizards</span></a></li>
+								<li class=""><a href="form_elements.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Form Elements</span></a></li>
+								<li class=""><a href="form_validator.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Form Validator</span></a></li>
+								<li class=""><a href="file_managers.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>File Managers</span></a></li>
+							</ul>
+							<span class="count">4</span>
+						</li>
+						<!-- // Components Submenu Level 2 END -->
+						
+						<!-- Components Submenu Regular Items -->
+						<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>UI Elements</span></a></li>
+						<li class=""><a href="icons.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Icons</span></a></li>
+						<li class=""><a href="widgets.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Widgets</span></a></li>
+						<li class=""><a href="tabs.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Tabs</span></a></li>
+						<li class=""><a href="sliders.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Sliders</span></a></li>
+						<li class=""><a href="charts.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Charts</span></a></li>
+						<!-- // Components Submenu Regular Items END -->
+						
+						<!-- Components Submenu Level 2 -->
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_tables"><span>Tables</span></a>
+							<ul class="collapse" id="menu_tables">
+								<li class=""><a href="tables.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Tables</span></a></li>
+								<li class=""><a href="pricing_tables.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Pricing tables</span></a></li>
+							</ul>
+							<span class="count">2</span>
+						</li>
+						<!-- // Components Submenu Level 2 -->
+						
+						<!-- Components Submenu Regular Items -->
+						<li class=""><a href="grid.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Grid system</span></a></li>
+						<li class=""><a href="notifications.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Notifications</span></a></li>
+						<li class=""><a href="modals.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Modals</span></a></li>
+						<li class=""><a href="thumbnails.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Thumbnails</span></a></li>
+						<li class=""><a href="carousels.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Carousels</span></a></li>
+						<li class=""><a href="tour.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Page Tour</span></a></li>
+						<!-- // Components Submenu Regular Items END -->
+						
+					</ul>
+					<span class="count">18</span>
+				</li>
+				<!-- Components Submenu Level 1 END -->
+				
+				<!-- Exmaples Submenu Level 1 -->
+				<li class="hasSubmenu active">
+				
+					<a data-toggle="collapse" class="glyphicons luggage" href="#menu_examples"><i></i><span>Examples</span></a>
+					<ul class="collapse in" id="menu_examples">
+					
+						<!-- Account Submenu Level 2 -->
+						<li class="hasSubmenu active">
+							<a data-toggle="collapse" href="#menu_account"><i></i><span>Account</span></a>
+							<ul class="collapse in" id="menu_account">
+								<li class=" active"><a href="my_account_advanced.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Advanced profile</span></a></li>
+								<li class=""><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>My Account</span></a></li>
+								<li><a href="login.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Login</span></a></li>
+								<li><a href="signup.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Register</span></a></li>
+							</ul>
+							<span class="count">4</span>
+						</li>
+						<!-- // Account Submenu Level 2 END -->
+						
+						<!-- Landings Submenu Level 2 -->
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_landings"><i></i><span>Landing pages</span></a>
+							<ul class="collapse" id="menu_landings">
+								<li><a href="landing_page_1.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Landing #1</span></a></li>
+								<li><a href="landing_page_2.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Landing #2</span></a></li>
+							</ul>
+							<span class="count">2</span>
+						</li>
+						<!-- // Landings Submenu Level 2 END -->
+					
+						<!-- Examples Submenu Level 2 -->
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_gallery"><i></i><span>Photo Gallery</span></a>
+							<ul class="collapse" id="menu_gallery">
+								<li class=""><a href="gallery_1.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Regular</span></a></li>
+								<li class=""><a href="gallery_2.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Masonry</span></a></li>
+							</ul>
+							<span class="count">2</span>
+						</li>
+						<!-- // Examples Submenu Level 2 END -->
+						
+						<!-- Examples Submenu Level 2 -->
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_maps"><i></i><span>Maps</span></a>
+							<ul class="collapse" id="menu_maps">
+								<li class=""><a href="maps_vector.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Vector maps</span></a></li>
+								<li class=""><a href="maps_google.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Google maps</span></a></li>
+							</ul>
+							<span class="count">2</span>
+						</li>
+						<!-- // Examples Submenu Level 2 END -->
+						
+						<!-- Examples Submenu Regular Items -->
+						<li class=""><a href="invoice.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Invoice</span></a></li>
+						<li class=""><a href="faq.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>FAQ</span></a></li>
+						<li class=""><a href="calendar.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><i></i><span>Calendar</span></a></li>
+						<!-- // Examples Submenu Regular Items END -->
+						
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_ecommerce"><i></i><span>Online Shop</span></a>
+							
+							<!-- Closed by default -->
+							<ul class="collapse" id="menu_ecommerce">
+								<li class="hasSubmenu">
+									<a data-toggle="collapse" href="#menu_ecommerce_client"><i></i><span>Client interface</span></a>
+									<ul class="collapse" id="menu_ecommerce_client">
+										<li class=""><a href="shop_client_products.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Products</span></a></li>
+										<li class=""><a href="shop_client_product.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Product details</span></a></li>
+										<li class=""><a href="shop_client_cart.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Shopping cart</span></a></li>
+									</ul>
+									<span class="count">3</span>
+								</li>
+								<li class="hasSubmenu">
+									<a data-toggle="collapse" href="#menu_ecommerce_admin"><i></i><span>Management</span></a>
+									<ul class="collapse" id="menu_ecommerce_admin">
+										<li class=""><a href="shop_admin_products.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Products</span></a></li>
+										<li class=""><a href="shop_admin_product.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Add product</span></a></li>
+									</ul>
+									<span class="count">2</span>
+								</li>
+							</ul>
+							<span class="count">5</span>
+						</li>
+						
+						<li class=""><a href="bookings.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Bookings</span></a></li>
+						<li class=""><a href="finances.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Finances</span></a></li>
+						<li class=""><a href="pages.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Site Pages</span></a></li>
+						<li><a href="error.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Error page</span></a></li>
+						<li><a href="blank.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><span>Blank page</span></a></li>
+						
+					</ul>
+					<span class="count">21</span>
+				</li>
+				<!-- // Examples Submenu Level 1 END -->
+								
+			</ul>
+			<div class="clearfix"></div>
+			<!-- // Regular Size Menu END -->
+			
+			<ul class="menu-1">
+				<li class="hasSubmenu active">
+					<a class="glyphicons wifi_alt" href="#menu-recent-stats" data-toggle="collapse"><i></i><span>Recent stats</span></a>
+					<ul class="collapse in" id="menu-recent-stats">
+						<li><a class="glyphicons envelope" href="#"><i></i><span>5 New Emails</span></a></li>
+						<li><a class="glyphicons chat" href="#"><i></i><span>New Message on 19 Jan</span></a></li>
+						<li><a class="glyphicons user_add" href="#"><i></i><span>10 Users Subscribed</span></a></li>
+						<li><a class="glyphicons cart_in" href="#"><i></i><span>2 Orders worth of &dollar;239</span></a></li>
+						<li><a class="glyphicons single circle_plus" href="#"><i></i><span>View all</span></a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+			<div class="separator bottom"></div>
+			
+						<!-- Sidebar Stats Widgets -->
+			<div class="widget-sidebar-stats">
+				<strong>3,540</strong>
+				<span>Messages</span>
+				<span class="pull-right sparkline"></span>
+				<div class="clearfix"></div>
+			</div>
+			<div class="widget-sidebar-stats">
+				<strong>2,510,402</strong>
+				<span>Photos</span>
+				<span class="pull-right sparkline"></span>
+				<div class="clearfix"></div>
+			</div>
+			<div class="separator bottom"></div>
+			<!-- // Sidebar Stats Widgets END -->
+			
+			<!-- Stats Widget -->
+			<a href="" class="widget-stats widget-stats-2 widget-stats-easy-pie widget-sidebar-stats txt-single">
+				<div data-percent="90" class="easy-pie primary"><span class="value">90</span>%</div>
+				<span class="txt">Completed tasks</span>
+				<div class="clearfix"></div>
+			</a>
+			<!-- // Stats Widget END -->
+			
+			<div class="widget-sidebar-stats">
+				<h5>Generic widget</h5>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			</div>
+						
+						
+						
+			</div>
+			<!-- // Scrollable Menu wrapper with Maximum Height END -->
+			
+		</div>
+		<!-- // Sidebar Menu END -->
+				
+		<!-- Content -->
+		<div id="content"">
+	<!-- Breadcrumb -->
+<ul class="breadcrumb">
+	<li><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons home"><i></i> Ergo</a></li>
+	<li class="divider"></li>
+	<li>Forms</li>
+	<li class="divider"></li>
+	<li>Demo Forms</li>
+</ul>
+<!-- // Breadcrumb END -->
+
+<h3 class="heading-mosaic">Advanced profile</h3>
+<div class="innerLR">
+
+	<!-- Widget -->
+	<div class="widget widget-tabs widget-tabs-double-2 border-bottom-none">
+	
+		<!-- Widget heading -->
+		<div class="widget-head border-bottom">
+			<ul>
+				<li class="active"><a class="glyphicons display" href="#overview" data-toggle="tab"><i></i>Overview</a></li>
+				<li><a class="glyphicons edit" href="#edit-account" data-toggle="tab"><i></i>Edit account</a></li>
+				<li><a class="glyphicons luggage" href="#projects" data-toggle="tab"><i></i>Projects</a></li>
+			</ul>
+		</div>
+		<!-- // Widget heading END -->
+		
+		<div class="widget-body">
+		
+			<form class="form-horizontal" style="margin: 0;">
+				<div class="tab-content" style="padding: 0;">
+				
+					<div class="tab-pane active widget-body-regular padding-none-TB" id="overview">
+					
+						<div class="row-fluid row-merge innerTB">
+							<div class="span3 center">
+							
+								<div class="innerR">
+									<!-- Profile Photo -->
+									<a href="" class="thumb"><img data-src="holder.js/300x200" alt="Profile" /></a>
+									<div class="separator bottom"></div>
+									<!-- // Profile Photo END -->
+									
+									<!-- Social Icons -->
+									<a href="" class="glyphicons standard primary facebook"><i></i></a>
+									<a href="" class="glyphicons standard twitter"><i></i></a>
+									<a href="" class="glyphicons standard linked_in"><i></i></a>
+									<div class="clearfix separator bottom"></div>
+									<!-- // Social Icons END -->
+									
+									<!-- Twitter Section -->
+									<h5 class="glyphicons single twitter"><i></i> Latest from Twitter</h5>
+									<section class="twitter-feed">
+										<div class="row-fluid">
+											<div class="span12">
+												<div class="tweet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nunc lorem, rutrum non porta. <span class="label label-inverse">01/11/2012</span></div>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</section>
+									<!-- Twitter Section END -->
+									
+								</div>
+								
+							</div>
+							<div class="span9">
+							
+								<div class="row-fluid innerL">
+									<div class="span7">
+									
+										<!-- About -->
+										<h4>Mr.Awesome</h4>
+										<div class="menubar links primary">
+											<ul>
+												<li>Website:</li>
+												<li><a href="">www.mosaicpro.biz</a></li>
+												<li>Other:</li>
+												<li><a href="">www.other.biz</a></li>
+											</ul>
+										</div>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis porta purus, pulvinar mattis nulla tempus ut. Curabitur quis dui orci. Ut nisi dolor, dignissim a aliquet quis, vulputate id dui. Proin ultrices ultrices ligula, dictum varius turpis faucibus non. Curabitur faucibus ultrices nunc, nec aliquet leo tempor cursus.</p>
+										<!-- // About END -->
+									
+									</div>
+									<div class="span5">
+								
+										<!-- Bio -->
+										<h4>Bio <span>Personal information</span></h4>
+										<div class="separator bottom"></div>
+										<ul class="unstyled icons">
+											<li class="glyphicons birthday_cake"><i></i> <span class="label">10</span> <span class="label">July</span> <span class="label">1986</span></li>
+											<li class="glyphicons tie"><i></i> Working at <a href="http://www.mosaicpro.biz">MosaicPro</a></li>
+											<li class="glyphicons certificate"><i></i> Adobe Photoshop Certification</li>
+											<li class="glyphicons microphone"><i></i> English :: French :: Italian :: Romanian :: Polish</li>
+										</ul>
+										<!-- // Bio END -->
+										
+									</div>
+								</div>
+								
+								<div class="innerL innerT">
+									<div class="alert alert-primary">
+										<a class="close" data-dismiss="alert">&times;</a>
+										<p>Integer quis tempor mi. Donec venenatis dui in neque fringilla at iaculis libero ullamcorper. In velit sem, sodales id hendrerit ac, fringilla et est. Pellentesque at justo urna, eu pharetra tortor. Aenean aliquam, tellus vel suscipit luctus.</p>
+									</div>
+								</div>
+								
+								<div class="innerL">
+									<div class="row-fluid">
+										<div class="span7">
+										
+											<!-- Latest Orders/List Widget -->
+											<div class="widget margin-bottom-none" data-toggle="collapse-widget">
+											
+												<!-- Widget Heading -->
+												<div class="widget-head">
+													<h4 class="heading">Last orders</h4>
+													<a href="" class="details pull-right">view all</a>
+												</div>
+												<!-- // Widget Heading -->
+												
+												<div class="widget-body list products">
+													<ul>
+														
+														<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">10 items<br/><strong>&euro;5,900.00</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+														
+																												<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">Product name<br/><strong>&euro;2,900</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+																												<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">Product name<br/><strong>&euro;2,900</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+																												<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">Product name<br/><strong>&euro;2,900</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+																												<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">Product name<br/><strong>&euro;2,900</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+																												
+													</ul>
+												</div>
+											</div>
+											<!-- // Latest Orders/List Widget END -->
+										
+										</div>
+										<div class="span5">
+											
+											<div class="widget" data-toggle="collapse-widget">
+				
+												<!-- Widget Heading -->
+												<div class="widget-head">
+													<h4 class="heading glyphicons history"><i></i>Activity</h4>
+													<a href="" class="details pull-right">view all</a>
+												</div>
+												<!-- // Widget Heading END -->
+												
+												<div class="widget-body list">
+													<ul>
+													
+														<!-- List item -->
+														<li>
+															<span>Sales today</span>
+															<span class="count">&euro;5,900</span>
+														</li>
+														<!-- // List item END -->
+														
+																												<!-- List item -->
+														<li>
+															<span>Some other stats</span>
+															<span class="count">11,064</span>
+														</li>
+														<!-- // List item END -->
+																												<!-- List item -->
+														<li>
+															<span>Some other stats</span>
+															<span class="count">27,386</span>
+														</li>
+														<!-- // List item END -->
+																												
+													</ul>
+												</div>
+											</div>
+											
+											<div class="widget" data-toggle="collapse-widget">
+				
+												<!-- Widget Heading -->
+												<div class="widget-head">
+													<h4 class="heading glyphicons history"><i></i>Widget</h4>
+												</div>
+												<!-- // Widget Heading END -->
+												
+												<div class="widget-body">
+													Curabitur quis dui orci. Ut nisi dolor, dignissim a aliquet quis, vulputate id dui. Proin ultrices ultrices ligula, dictum varius turpis faucibus non. Curabitur faucibus ultrices nunc, nec aliquet leo tempor cursus.
+												</div>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					
+					</div>
+				
+					<!-- Tab content -->
+					<div class="tab-pane widget-body-regular" id="edit-account">
+					
+						<div class="widget widget-tabs widget-tabs-vertical row-fluid row-merge margin-none">
+	
+							<!-- Widget heading -->
+							<div class="widget-head span3">
+								<ul>
+									<li class="active"><a class="glyphicons pencil" href="#account-details" data-toggle="tab"><i></i>Account details</a></li>
+									<li><a class="glyphicons settings" href="#account-settings" data-toggle="tab"><i></i>Account settings</a></li>
+									<li><a class="glyphicons eye_open" href="#privacy-settings" data-toggle="tab"><i></i>Privacy settings</a></li>
+								</ul>
+							</div>
+							<!-- // Widget heading END -->
+							
+							<div class="widget-body span9">
+							
+								<div class="tab-content">
+								<div class="tab-pane active" id="account-details">
+							
+								<!-- Row -->
+								<div class="row-fluid">
+								
+									<!-- Column -->
+									<div class="span6">
+									
+										<!-- Group -->
+										<div class="control-group">
+											<label class="control-label">First name</label>
+											<div class="controls">
+												<input type="text" value="John" class="span10" />
+												<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="First name is mandatory"><i></i></span>
+											</div>
+										</div>
+										<!-- // Group END -->
+										
+										<!-- Group -->
+										<div class="control-group">
+											<label class="control-label">Last name</label>
+											<div class="controls">
+												<input type="text" value="Doe" class="span10" />
+												<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Last name is mandatory"><i></i></span>
+											</div>
+										</div>
+										<!-- // Group END -->
+										
+										<!-- Group -->
+										<div class="control-group">
+											<label class="control-label">Date of birth</label>
+											<div class="controls">
+												<div class="input-append">
+													<input type="text" id="datepicker" class="span12" value="13/06/1988" />
+													<span class="add-on glyphicons calendar"><i></i></span>
+												</div>
+											</div>
+										</div>
+										<!-- // Group END -->
+										
+									</div>
+									<!-- // Column END -->
+									
+									<!-- Column -->
+									<div class="span6">
+									
+										<!-- Group -->
+										<div class="control-group">
+											<label class="control-label">Gender</label>
+											<div class="controls">
+												<select class="span12">
+													<option>Male</option>
+													<option>Female</option>
+												</select>
+											</div>
+										</div>
+										<!-- // Group END -->
+										
+										<!-- Group -->
+										<div class="control-group">
+											<label class="control-label">Age</label>
+											<div class="controls">
+												<input type="text" value="25" class="input-mini" />
+											</div>
+										</div>
+										<!-- // Group END -->
+										
+									</div>
+									<!-- // Column END -->
+									
+								</div>
+								<!-- // Row END -->
+								
+								<div class="separator line bottom"></div>
+								
+								<!-- Group -->
+								<div class="control-group row-fluid">
+									<label class="control-label">About me</label>
+									<div class="controls">
+										<textarea id="mustHaveId" class="wysihtml5 span12" rows="5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</textarea>
+									</div>
+								</div>
+								<!-- // Group END -->
+								
+								<!-- Form actions -->
+								<div class="form-actions" style="margin: 0;">
+									<button type="submit" class="btn btn-icon btn-primary glyphicons circle_ok"><i></i>Save changes</button>
+									<button type="button" class="btn btn-icon btn-default glyphicons circle_remove"><i></i>Cancel</button>
+								</div>
+								<!-- // Form actions END -->
+								
+								</div>
+								<div class="tab-pane" id="account-settings">
+								
+									<!-- Row -->
+									<div class="row-fluid">
+									
+										<!-- Column -->
+										<div class="span3">
+											<strong>Change password</strong>
+											<p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										</div>
+										<!-- // Column END -->
+										
+										<!-- Column -->
+										<div class="span9">
+											<label for="inputUsername">Username</label>
+											<input type="text" id="inputUsername" class="span10" value="john.doe2012" disabled="disabled" />
+											<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Username can't be changed"><i></i></span>
+											<div class="separator"></div>
+													
+											<label for="inputPasswordOld">Old password</label>
+											<input type="password" id="inputPasswordOld" class="span10" value="" placeholder="Leave empty for no change" />
+											<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Leave empty if you don't wish to change the password"><i></i></span>
+											<div class="separator"></div>
+											
+											<label for="inputPasswordNew">New password</label>
+											<input type="password" id="inputPasswordNew" class="span12" value="" placeholder="Leave empty for no change" />
+											<div class="separator"></div>
+											
+											<label for="inputPasswordNew2">Repeat new password</label>
+											<input type="password" id="inputPasswordNew2" class="span12" value="" placeholder="Leave empty for no change" />
+											<div class="separator"></div>
+										</div>
+										<!-- // Column END -->
+										
+									</div>
+									<!-- // Row END -->
+									
+									<div class="separator line bottom"></div>
+									
+									<!-- Row -->
+									<div class="row-fluid">
+									
+										<!-- Column -->
+										<div class="span3">
+											<strong>Contact details</strong>
+											<p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										</div>
+										<!-- // Column END -->
+										
+										<!-- Column -->
+										<div class="span9">
+											<div class="row-fluid">
+												<div class="span6">
+													<label for="inputPhone">Phone</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons phone"><i></i></span>
+														<input type="text" id="inputPhone" class="input-large" placeholder="01234567897" />
+													</div>
+													<div class="separator"></div>
+														
+													<label for="inputEmail">E-mail</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons envelope"><i></i></span>
+														<input type="text" id="inputEmail" class="input-large" placeholder="contact@mosaicpro.biz" />
+													</div>
+													<div class="separator"></div>
+														
+													<label for="inputWebsite">Website</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons link"><i></i></span>
+														<input type="text" id="inputWebsite" class="input-large" placeholder="http://www.mosaicpro.biz" />
+													</div>
+													<div class="separator"></div>
+												</div>
+												<div class="span6">
+													<label for="inputFacebook">Facebook</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons facebook"><i></i></span>
+														<input type="text" id="inputFacebook" class="input-large" placeholder="/mosaicpro" />
+													</div>
+													<div class="separator"></div>
+													
+													<label for="inputTwitter">Twitter</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons twitter"><i></i></span>
+														<input type="text" id="inputTwitter" class="input-large" placeholder="/mosaicpro" />
+													</div>
+													<div class="separator"></div>
+													
+													<label for="inputSkype">Skype ID</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons skype"><i></i></span>
+														<input type="text" id="inputSkype" class="input-large" placeholder="mySkypeID" />
+													</div>
+													<div class="separator"></div>
+													
+													<label for="inputYahoo">Yahoo ID</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons yahoo"><i></i></span>
+														<input type="text" id="inputYahoo" class="input-large" placeholder="myYahooID" />
+													</div>
+													<div class="separator"></div>
+												</div>
+											</div>
+										</div>
+										<!-- // Column END -->
+										
+									</div>
+									<!-- // Row END -->
+									
+									<!-- Form actions -->
+									<div class="form-actions" style="margin: 0;">
+										<button type="submit" class="btn btn-icon btn-primary glyphicons circle_ok"><i></i>Save changes</button>
+									</div>
+									<!-- // Form actions END -->
+								
+								</div>
+								<div class="tab-pane" id="privacy-settings">
+									<div class="uniformjs">
+										<label class="checkbox"><input type="checkbox" checked="checked" /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</label>
+										<label class="checkbox"><input type="checkbox" /> Vivamus et risus vel metus feugiat semper at sed odio.</label>
+										<label class="checkbox"><input type="checkbox" /> Aenean bibendum faucibus tellus, et facilisis justo imperdiet vel.</label>
+										<div class="alert alert-primary">
+											<a class="close" data-dismiss="alert">&times;</a>
+											<p>Integer quis tempor mi. Donec venenatis dui in neque fringilla at iaculis libero ullamcorper. In velit sem, sodales id hendrerit ac, fringilla et est. Pellentesque at justo urna, eu pharetra tortor. Aenean aliquam, tellus vel suscipit luctus, risus enim ornare tellus, ac ultrices nisi enim sed magna.</p>
+										</div>
+									</div>
+								</div>
+								</div>
+							
+							</div>
+						</div>
+						
+					</div>
+					<!-- // Tab content END -->
+					
+					<!-- Tab content -->
+					<div class="tab-pane widget-body-regular" id="projects">
+					
+						<div class="well">
+							<button type="button" class="btn btn-primary btn-icon glyphicons circle_plus pull-right"><i></i>Add project</button>
+							<p class="lead margin-none">1024 sales this week</p>
+							<div class="clearfix"></div>
+						</div>
+						
+						<table class="table table-primary table-striped table-vertical-center table-projects">
+							<thead>
+								<tr>
+									<th colspan="2">Project</th>
+									<th width="100" class="center"></th>
+									<th width="100" class="center"></th>
+									<th width="140" class="center"></th>
+									<th width="120" class="center"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td width="80" class="center"><span class="thumb"><img src="http://2.s3.envato.com/files/50444644/80-avatar.jpg" alt="" /></span></td>
+									<td class="important">Smashing - Premium Admin Template</td>
+									<td class="center stats"><span>Sales today</span><span class="count">153</span></td>
+									<td class="center stats"><span>Sales total</span><span class="count">1,365</span></td>
+									<td class="center stats"><span>Earnings</span><span class="count">&dollar;25,356.00</span></td>
+									<td class="center"><button type="button" class="btn btn-default">Manage</button></td>
+								</tr>
+								<tr>
+									<td width="80" class="center"><span class="thumb"><img src="http://0.s3.envato.com/files/52347478/admin-avatar-12.jpg" alt="" /></span></td>
+									<td class="important">AdminPlus - Premium Bootstrap Admin Template</td>
+									<td class="center stats"><span>Sales today</span><span class="count">153</span></td>
+									<td class="center stats"><span>Sales total</span><span class="count">1,365</span></td>
+									<td class="center stats"><span>Earnings</span><span class="count">&dollar;25,356.00</span></td>
+									<td class="center"><button type="button" class="btn btn-default">Manage</button></td>
+								</tr>
+								<tr>
+									<td width="80" class="center"><span class="thumb"><img src="http://2.s3.envato.com/files/50868169/avatar80.jpg" alt="" /></span></td>
+									<td class="important">AIR - Responsive Bootstrap Admin Template</td>
+									<td class="center stats"><span>Sales today</span><span class="count">153</span></td>
+									<td class="center stats"><span>Sales total</span><span class="count">1,365</span></td>
+									<td class="center stats"><span>Earnings</span><span class="count">&dollar;25,356.00</span></td>
+									<td class="center"><button type="button" class="btn btn-default">Manage</button></td>
+								</tr>
+								<tr>
+									<td width="80" class="center"><span class="thumb"><img src="http://3.s3.envato.com/files/47008628/boot-admin-80_v13.jpg" alt="" /></span></td>
+									<td class="important">BootAdmin - All-In-One Admin Responsive Template</td>
+									<td class="center stats"><span>Sales today</span><span class="count">153</span></td>
+									<td class="center stats"><span>Sales total</span><span class="count">1,365</span></td>
+									<td class="center stats"><span>Earnings</span><span class="count">&dollar;25,356.00</span></td>
+									<td class="center"><button type="button" class="btn btn-default">Manage</button></td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</div>
+					<!-- // Tab content END -->
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- // Widget END -->
+	
+</div>	
+	
+		
+		</div>
+		<!-- // Content END -->
+		
+				</div>
+		<div class="clearfix"></div>
+		<!-- // Sidebar menu & content wrapper END -->
+				
+		<div id="footer" class="hidden-print">
+			
+			<!--  Copyright Line -->
+			<div class="copy">&copy; 2012 - 2013 - <a href="http://www.mosaicpro.biz">MosaicPro</a> - All Rights Reserved. <a href="http://themeforest.net/item/ergo-admin-ui-template/4602755?ref=mosaicpro" target="_blank">Purchase Ergo on ThemeForest</a> - Current version: v1.2 / <a target="_blank" href="http://demo.mosaicpro.biz/ergoadmin/CHANGELOG">changelog</a></div>
+			<!--  End Copyright Line -->
+	
+		</div>
+		<!-- // Footer END -->
+		
+	</div>
+	<!-- // Main Container Fluid END -->
+	
+
+<!-- Themer -->
+<div id="themer" class="collapse">
+	<div class="wrapper">
+		<span class="close2">&times; close</span>
+		<h4>Themer <span>color options</span></h4>
+		<ul>
+			<li>Theme: <select id="themer-theme" class="pull-right"></select><div class="clearfix"></div></li>
+			<li>Primary Color: <input type="text" data-type="minicolors" data-default="#ffffff" data-slider="hue" data-textfield="false" data-position="left" id="themer-primary-cp" /><div class="clearfix"></div></li>
+			<li>
+				<span class="link" id="themer-custom-reset">reset theme</span>
+				<span class="pull-right"><label>advanced <input type="checkbox" value="1" id="themer-advanced-toggle" /></label></span>
+			</li>
+		</ul>
+		<div id="themer-getcode" class="hide">
+			<hr class="separator" />
+			<button class="btn btn-primary btn-small pull-right btn-icon glyphicons download" id="themer-getcode-less"><i></i>Get LESS</button>
+			<button class="btn btn-inverse btn-small pull-right btn-icon glyphicons download" id="themer-getcode-css"><i></i>Get CSS</button>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- // Themer END -->
+
+	<!-- JQuery -->
+	<script src="../../../../common/theme/scripts/plugins/system/jquery.min.js"></script>
+	
+	<!-- JQueryUI -->
+	<script src="../../../../common/theme/scripts/plugins/system/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"></script>
+	
+	<!-- JQueryUI Touch Punch -->
+	<!-- small hack that enables the use of touch events on sites using the jQuery UI user interface library -->
+	<script src="../../../../common/theme/scripts/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	
+	
+	<!-- Modernizr -->
+	<script src="../../../../common/theme/scripts/plugins/system/modernizr.js"></script>
+	
+	<!-- Bootstrap -->
+	<script src="../../../../common/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- SlimScroll Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
+	
+	<!-- Common Demo Script -->
+	<script src="../../../../common/theme/scripts/demo/common.js?1369753444"></script>
+	
+	<!-- Holder Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/other/holder/holder.js"></script>
+	
+	<!-- Uniform Forms Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/forms/pixelmatrix-uniform/jquery.uniform.min.js"></script>
+
+	<!-- Global -->
+	<script>
+	var basePath = '../../../../common/';
+	</script>
+	
+	<!-- Bootstrap Extended -->
+	<script src="../../../../common/bootstrap/extend/bootstrap-select/bootstrap-select.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"></script>
+	<script src="../../../../common/bootstrap/extend/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+	<script src="../../../../common/bootstrap/extend/jasny-bootstrap/js/bootstrap-fileupload.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootbox.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootstrap-wysihtml5/js/wysihtml5-0.3.0_rc2.min.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootstrap-wysihtml5/js/bootstrap-wysihtml5-0.0.2.js"></script>
+	
+	<!-- Google Code Prettify -->
+	<script src="../../../../common/theme/scripts/plugins/other/google-code-prettify/prettify.js"></script>
+	
+	<!-- Gritter Notifications Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/notifications/Gritter/js/jquery.gritter.min.js"></script>
+	
+	<!-- Notyfy Notifications Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/notifications/notyfy/jquery.notyfy.js"></script>
+	
+	<!-- MiniColors Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.js"></script>
+	
+	<!-- DateTimePicker Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/forms/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Cookie Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/system/jquery.cookie.js"></script>
+	
+	<!-- Colors -->
+	<script>
+	var primaryColor = '#8ec657',
+		dangerColor = '#b55151',
+		successColor = '#609450',
+		warningColor = '#ab7a4b',
+		inverseColor = '#45484d';
+	</script>
+	
+	<!-- Themer -->
+	<script>
+	var themerPrimaryColor = primaryColor;
+	</script>
+	<script src="../../../../common/theme/scripts/demo/themer.js"></script>
+	
+	<!-- Twitter Feed -->
+	<script src="../../../../common/theme/scripts/demo/twitter.js"></script>
+	
+	<!-- Easy-pie Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/charts/easy-pie/jquery.easy-pie-chart.js"></script>
+	
+	<!-- Sparkline Charts Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/charts/sparkline/jquery.sparkline.min.js"></script>
+	
+	<!-- Ba-Resize Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/other/jquery.ba-resize.js"></script>
+	
+	
+	
+</body>
+</html>

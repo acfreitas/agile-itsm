@@ -1,0 +1,11 @@
+
+			#grupos ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			#grupos ul li {
+				float: left;
+				margin-right: 10px;
+			}
+		

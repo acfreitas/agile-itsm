@@ -1,0 +1,195 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>47</idVisao>
+  <descricao>$visao.categoriaSolucao</descricao>
+  <tipoVisao>ED</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>categoriaSolucao</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <idGrupoVisao>386</idGrupoVisao>
+      <idVisao>47</idVisao>
+      <descricaoGrupoVisao>$visao.categoriaSolucao</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>386</idGrupoVisao>
+          <idCamposObjetoNegocio>565</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.codigo</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDCATEGORIASOLUCAO</nomeDB>
+          <nomeTabelaDB>CATEGORIASOLUCAO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>386</idGrupoVisao>
+          <idCamposObjetoNegocio>567</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.categoriaSolucao</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>DESCRICAOCATEGORIASOLUCAO</nomeDB>
+          <nomeTabelaDB>CATEGORIASOLUCAO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>386</idGrupoVisao>
+          <idCamposObjetoNegocio>568</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.dataInicio</descricaoNegocio>
+          <tipoNegocio>DATE</tipoNegocio>
+          <ordem>3</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>0</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>DATAINICIO</nomeDB>
+          <nomeTabelaDB>CATEGORIASOLUCAO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>386</idGrupoVisao>
+          <idCamposObjetoNegocio>566</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.categoriaSolucaoPai</descricaoNegocio>
+          <tipoNegocio>RELATION</tipoNegocio>
+          <ordem>4</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>C</tipoLigacao>
+          <filtro>(deleted IS NULL OR deleted=&quot;N&quot;) ${TERMO_PESQUISA}</filtro>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <idObjetoNegocioLigacao>63</idObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacao>567</idCamposObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacaoVinc>565</idCamposObjetoNegocioLigacaoVinc>
+          <idCamposObjetoNegocioLigacaoOrder>567</idCamposObjetoNegocioLigacaoOrder>
+          <descricaoRelacionamento>$visao.categoriaSolucaoPai</descricaoRelacionamento>
+          <nomeDB>IDCATEGORIASOLUCAOPAI</nomeDB>
+          <nomeTabelaDB>CATEGORIASOLUCAO</nomeTabelaDB>
+          <nomeTabelaDBLigacao>CATEGORIASOLUCAO</nomeTabelaDBLigacao>
+          <nomeDBLigacao>DESCRICAOCATEGORIASOLUCAO</nomeDBLigacao>
+          <nomeDBLigacaoVinc>IDCATEGORIASOLUCAO</nomeDBLigacaoVinc>
+          <nomeDBLigacaoOrder>DESCRICAOCATEGORIASOLUCAO</nomeDBLigacaoOrder>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+  <colVisoesRelacionadas class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+      <idVisaoRelacionada>127</idVisaoRelacionada>
+      <idVisaoPai>47</idVisaoPai>
+      <idVisaoFilha>9</idVisaoFilha>
+      <ordem>0</ordem>
+      <titulo>$visao.pesquisaCategoriaSolucao</titulo>
+      <situacao>A</situacao>
+      <tipoVinculacao>1</tipoVinculacao>
+      <acaoEmSelecaoPesquisa>RP</acaoEmSelecaoPesquisa>
+      <identificacaoVisaoFilha>pesquisaCategoriaSolucao</identificacaoVisaoFilha>
+    </br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+  </colVisoesRelacionadas>
+  <colScripts class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>226</idScriptsVisao>
+      <idVisao>47</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONUPDATE                      </scryptType>
+      <script>var id = mapFields.get(&quot;IDCATEGORIASOLUCAO&quot;);
+var idPai = mapFields.get(&quot;IDCATEGORIASOLUCAOPAI&quot;);
+
+var importCategoriaSolucao= JavaImporter();
+importCategoriaSolucao.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+
+var categoriaSolucaoServiceEjb = new importCategoriaSolucao.CategoriaSolucaoServiceEjb();
+var descricaoValida = categoriaSolucaoServiceEjb.verificaDescricaoDuplicadaCategoriaAoAtualizar(mapFields);
+ if(descricaoValida==&quot;0&quot;){
+   dinamicViewDto.abortFuncaoPrincipal = true;
+   dinamicViewDto.msgRetorno = &quot;Descrição já existe&quot;;
+ }
+
+if(idPai != &quot;&quot;){
+  if(id == idPai){
+      dinamicViewDto.setMsgRetorno(&quot;Categoria Solução Pai é o mesmo que o atual. Favor, selecionar outra para prosseguir.&quot;);
+      dinamicViewDto.abortFuncaoPrincipal = true;
+   }
+}</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <idScriptsVisao>227</idScriptsVisao>
+      <idVisao>47</idVisao>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONCREATE                      </scryptType>
+      <script>var id = mapFields.get(&quot;IDCATEGORIASOLUCAO&quot;);
+var idPai = mapFields.get(&quot;IDCATEGORIASOLUCAOPAI&quot;);
+
+var importCategoriaSolucao= JavaImporter();
+importCategoriaSolucao.importPackage(Packages.br.com.centralit.citcorpore.negocio);
+
+var categoriaSolucaoServiceEjb = new importCategoriaSolucao.CategoriaSolucaoServiceEjb();
+var descricaoValida = categoriaSolucaoServiceEjb.verificaDescricaoDuplicadaCategoriaAoCriar(mapFields);
+ if(descricaoValida==&quot;0&quot;){
+   dinamicViewDto.abortFuncaoPrincipal = true;
+   dinamicViewDto.msgRetorno = &quot;Descrição já existe&quot;;
+ }
+
+if(idPai != &quot;&quot;){
+  if(id == idPai){
+      dinamicViewDto.setMsgRetorno(&quot;Categoria Solução Pai é o mesmo que o atual. Favor, selecionar outra para prosseguir.&quot;);
+      dinamicViewDto.abortFuncaoPrincipal = true;
+   }
+}</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+  </colScripts>
+  <colBotoes class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>256</idBotaoAcaoVisao>
+      <idVisao>47</idVisao>
+      <texto>$botaoacaovisao.gravar_dados</texto>
+      <acao>1</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>0</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>257</idBotaoAcaoVisao>
+      <idVisao>47</idVisao>
+      <texto>$botaoacaovisao.limpar_dados</texto>
+      <acao>2</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>1</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>258</idBotaoAcaoVisao>
+      <idVisao>47</idVisao>
+      <texto>$botaoacaovisao.excluir</texto>
+      <acao>3</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>2</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+  </colBotoes>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

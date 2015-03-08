@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<br.com.centralit.citcorpore.bean.IndexDTO.listRelease class="list">	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>VO4R0.0</versao>
+		<conteudo class="list">
+			<java.lang.String>Add field in Satisfaction Research report.</java.lang.String>
+			<java.lang.String>Assign a group or person responsible to the IC registration screen.</java.lang.String>
+			<java.lang.String>Update documentation (JavaDoc) of internal modules (HR / Travel).</java.lang.String>
+			<java.lang.String>New Request button for Parameter.</java.lang.String>
+			<java.lang.String>Client: INTO Portal leave default unchecked services in open requests.</java.lang.String>
+			<java.lang.String>Routes Configuration (Manager).</java.lang.String>
+			<java.lang.String>Report Creation 1.</java.lang.String>
+			<java.lang.String>Create Contributor / Unit report.</java.lang.String>
+			<java.lang.String>Decrease space from the top of the screen.</java.lang.String>
+			<java.lang.String>Approval flow.</java.lang.String>
+			<java.lang.String>Incident Management - Create button "View" on-screen prompts search Soli-quotes / incidents.</java.lang.String>
+			<java.lang.String>Incident Management - In "More filters" allow delete the re-gistro selected and copy and paste.</java.lang.String>
+			<java.lang.String>Incident Management - Send notifications to the requestor via occurrence.</java.lang.String>
+			<java.lang.String>Incident Management - Insert button to generate deta-report-sprayed in Advanced Search.</java.lang.String>
+			<java.lang.String>Incident Management - Insert the filter "No charge" on "More Filters".</java.lang.String>
+			<java.lang.String>Integration with Maps.</java.lang.String>
+			<java.lang.String>Request List.</java.lang.String>
+			<java.lang.String>Module Configuration - New fields / modification registration IC's.</java.lang.String>
+			<java.lang.String>Module Configuration - Remove mandatory fields.</java.lang.String>
+			<java.lang.String>Mobile - Answering a request.</java.lang.String>
+			<java.lang.String>Mobile - check-in cancellation.</java.lang.String>
+			<java.lang.String>Mobile - Check-in - get coordinated.</java.lang.String>
+			<java.lang.String>Mobile - Check in.</java.lang.String>
+			<java.lang.String>Mobile - Check Out.</java.lang.String>
+			<java.lang.String>Mobile - Request Details.</java.lang.String>
+			<java.lang.String>Mobile - Listing requests - view list.</java.lang.String>
+			<java.lang.String>Mobile - Listing requests - view map.</java.lang.String>
+			<java.lang.String>Mobile - Notification for new request.</java.lang.String>
+			<java.lang.String>Mobile - Notifications by proximity.</java.lang.String>
+			<java.lang.String>Mobile - View the route for a request.</java.lang.String>
+			<java.lang.String>Modify Label field CPF Register Contributor.</java.lang.String>
+			<java.lang.String>New implementations in the purchase module.</java.lang.String>
+			<java.lang.String>Get Coordinates of Contract Units (Check - in).</java.lang.String>
+			<java.lang.String>Hide parameter for the "Technical Name".</java.lang.String>
+			<java.lang.String>Parameter for Mobile.</java.lang.String>
+			<java.lang.String>Portal - Create dynamic forms for busi-cial services of the portal and attach files.</java.lang.String>
+			<java.lang.String>Portal - Customize the service line to improve the performance-and ease of use.</java.lang.String>
+			<java.lang.String>Portal - Insert the option to create instances in the Action button to the requestor.</java.lang.String>
+			<java.lang.String>Portal - Insert date of creation / opening in the service queue.</java.lang.String>
+			<java.lang.String>Portal - Optimize the ordination of requests.</java.lang.String>
+			<java.lang.String>Portal - Remove "Category" column of the service cart.</java.lang.String>
+			<java.lang.String>Portal - Remove the link "Access System" for the common user profile.</java.lang.String>
+			<java.lang.String>Portal / Service Management - prioritize the filter field "Unit" for advanced searches.</java.lang.String>
+			<java.lang.String>Enable monitoring of assets.</java.lang.String>
+			<java.lang.String>Mobile Project - Planning.</java.lang.String>
+			<java.lang.String>Tracking the attendant.</java.lang.String>
+			<java.lang.String>Reports - Set parameters extensive reporting queries (Re-gistros).</java.lang.String>
+			<java.lang.String>Management Reports.</java.lang.String>
+			<java.lang.String>Travel requests.</java.lang.String>
+			<java.lang.String>Viewing routes (Daily General).</java.lang.String>
+			<java.lang.String>View positioning attendant (Real Time).</java.lang.String>
+			<java.lang.String>Web Service - Check - in / Tip Check - in / Reject check -in.</java.lang.String>
+			<java.lang.String>Web Service - Check - out / Cancel check - out.</java.lang.String>
+			<java.lang.String>Web Service - Details Request.</java.lang.String>
+			<java.lang.String>Web Service - Get Coordinates of Units.</java.lang.String>
+			<java.lang.String>Web Service - See Destination.</java.lang.String>
+			<java.lang.String>Web Service - Viewing requests map.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>VO3R13.0</versao>
+		<conteudo class="list">			
+			<java.lang.String>Reports and graphs Cause and Solution.</java.lang.String>
+			<java.lang.String>Execution to use Selenium.</java.lang.String>
+			<java.lang.String>Provision of registration of resumes to the employees of Central IT.</java.lang.String>
+			<java.lang.String>Listed on the Service Portal of a button the screen to complete the application without requiring the user to go to the Shopping Services screen.</java.lang.String>
+			<java.lang.String>Adding MENSAGEM_TELA_INICIAL parameter setting for the message to be displayed in the Login screen.</java.lang.String>
+			<java.lang.String>Column hide price the user portal screen.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.10.0</versao>
+		<conteudo class="list">
+			<java.lang.String>Report OS - Configuration fields signatures.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.9.0</versao>
+		<conteudo class="list">
+			<java.lang.String>In the "Applicant Information - Step 2" screen of Incident Request / Request feature the "Unit" field is now auto complete.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.8.0</versao>
+		<conteudo class="list">
+			<java.lang.String>Error correction in the purchasing module, creating Web registration and creation of the delegation of the cost center responsible for the operation.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.7.0</versao>
+		<conteudo class="list">
+			<java.lang.String>Ger. Events - Integration (preliminary) of Citsmart with Nagios - PHASE 1. </java.lang.String>
+			<java.lang.String>Allows setting alerts in case of changes in the content of incidents. </java.lang.String>
+			<java.lang.String>Allow the generation of problems and change requests from an incident. </java.lang.String>
+			<java.lang.String>Allow act preemptively detect problems through the use of techniques for analyzing trends. </java.lang.String>
+			<java.lang.String>Enabling relationship problems with other incidents, "problems", changes or requests. </java.lang.String>
+			<java.lang.String>Allow abetura problems via email. </java.lang.String>
+			<java.lang.String>Allow closing a known error (knowledge base) and a problem when a related shift ends.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.6.0</versao>
+		<conteudo class="list">
+			<java.lang.String>Created parameter to allow release of earlier today at the launch of the calendar exceptions.</java.lang.String>
+			<java.lang.String>Coding of IN155. - Archiving Known Error gotten Change.</java.lang.String>
+			<java.lang.String>Improvements in reading emails in service request.</java.lang.String>
+			<java.lang.String>Addition of relationship to another problem, was added another tab to display registration problem.</java.lang.String>
+			<java.lang.String>Allow to act preemptively detect problems through the use of techniques for analyzing trends</java.lang.String>
+			<java.lang.String>The description of the service request came to be shown in the description of problem and change request when created inside the service request.</java.lang.String>
+			<java.lang.String>When creating a change or a problem within the service request, this it is automatically linked to the service request.</java.lang.String>
+			<java.lang.String>Created sending email requests when changes occur in the incident type.</java.lang.String>
+			<java.lang.String>Improvements in the internationalization of Citsmart</java.lang.String>
+			<java.lang.String>Integration with Citsmart Livestatus Nagios.</java.lang.String>
+			<java.lang.String>Redocumentation the event Nagios module.</java.lang.String>
+			<java.lang.String>Report Documents accessed the Knowledge Base</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.5.0</versao>
+		<conteudo class="list">
+			<java.lang.String>Correction restore the rating task.</java.lang.String>
+			<java.lang.String>Fix null pointer when loading charts and summaries of requests for service management.</java.lang.String>
+			<java.lang.String>Correction Request incorrect e-mail Trip</java.lang.String>
+			<java.lang.String>correction register of curriculum</java.lang.String>
+			<java.lang.String>Correction of the search screen of curricula</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.4.0</versao>
+		<conteudo class="list">
+			<java.lang.String>Correction of inconsistencies that were found in the OS module.</java.lang.String>
+			<java.lang.String>Improved incident report by priority.</java.lang.String>
+			<java.lang.String>Improvement in the service agreement screen.</java.lang.String>
+			<java.lang.String>Improved service request report by the performer.</java.lang.String>
+			<java.lang.String>Improved paging internationalization dictionary.</java.lang.String>
+			<java.lang.String>Subject field increased email.</java.lang.String>
+			<java.lang.String>Field size changed service.</java.lang.String>
+			<java.lang.String>Created reports for management and KPI survey of factory Goiania.</java.lang.String>
+			<java.lang.String>Import contract information.</java.lang.String>
+			<java.lang.String>Migrate solution given in Citsa�de for Citsmart.</java.lang.String>
+			<java.lang.String>Integration Systems Internal Citsmart with ERP Sankhya - Adaptation Tool Management Import Citsmart.</java.lang.String>
+			<java.lang.String>Created reopened requests report.</java.lang.String>
+			<java.lang.String>Improved visualization of the "Description" field.</java.lang.String>
+			<java.lang.String>Curriculum improvements - HR Module.</java.lang.String>
+			<java.lang.String>Developed in the HR module, a working history where individual information will be saved on all those who compete for jobs.</java.lang.String>
+			<java.lang.String>Request Function.</java.lang.String>
+			<java.lang.String>Manual Functions.</java.lang.String>
+			<java.lang.String>Improvements in Travel Module.</java.lang.String>
+			<java.lang.String>Improved presentation of the Service Management screen.</java.lang.String>
+			<java.lang.String>Integration with ERP Systems Internal Citsmart Sankhya - Generation Scritps.</java.lang.String>
+			<java.lang.String>Create formula module OS.</java.lang.String>
+			<java.lang.String>Mobile Application - Module reviews.</java.lang.String>
+			<java.lang.String>Improvements in the HR module.</java.lang.String>
+			<java.lang.String>Implementation of the new rules of jurisdiction for cases of Purchasing, Travel and HR.</java.lang.String>
+			<java.lang.String>Module OS - Change count calendar days.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.2.0</versao>
+		<conteudo class="list">
+			<java.lang.String>Validation of the generation routine backup and cleaning logDados table.</java.lang.String>
+			<java.lang.String>Push technology implemented in Asterisk functionality that enables higher performance while consuming less physical resources.</java.lang.String>
+			<java.lang.String>Phone number 0800 500 3030 has been included in the support button citsmart header.</java.lang.String>
+			<java.lang.String>A button was inserted into service requests, which when clicked will allow the user having permission in the group, to suspend or reactivate all requests from your group.</java.lang.String>
+			<java.lang.String>Creating reports for management and KPI survey of Central IT - Factory Goiania.</java.lang.String>
+			<java.lang.String>Filters were created for the Service Request screen and inserted over pagination options.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.1.0</versao>
+		<conteudo class="list">
+			<java.lang.String>Notifying users about the execution time of the requests. There will be a monitor that automatically rank the requests based on rules defined by the customer and notify the requesting user.</java.lang.String>
+			<java.lang.String>Possibility to insert Custom Logo on all system reports.</java.lang.String>
+			<java.lang.String>Creation of a new module Trips.</java.lang.String>
+			<java.lang.String>Greater control of the Head of request during all stages of the flow, so it is possible that the filter requests for service can be more efficient.</java.lang.String>
+			<java.lang.String>Treatment for cases of lack of sources for reporting. The Citsmart goes on to define a known source as standard.</java.lang.String>
+			<java.lang.String>Validation groups bond contracts at the time of exclusion contracts.</java.lang.String>
+			<java.lang.String>Verification of opening more than one call to the same user or device, avoiding the creation of duplicate calls.</java.lang.String>
+			<java.lang.String>Sending automatic alert to the manager of the help desk when a call is close to exceed a preset limit.</java.lang.String>
+			<java.lang.String>New report called "Change / Configuration Item" which is in Report -> Configuration -> Change / Configuration Item. This list is responsible for the configuration items registered on the requisition of the change that is in "Change Management -> Change Management -> Register New Change -> Relate ICs."</java.lang.String>
+			<java.lang.String>New routine for auditing configuration items automatically.</java.lang.String>
+			<java.lang.String>New button on the main screen Citsmart to inform the user that the extension is thus the CITSMart activates the scan task and only show call alerts when it is addressed to him.</java.lang.String>
+			<java.lang.String>Added on every screen registration treating quotes coming from Word (quotes curves or English).</java.lang.String>
+			<java.lang.String>If Citsmart is accessed by browser whose version is incompatible, it reports a message directing the user to perform the update, specifically for IE, the system will add a verification message Compatibility Mode, and prevent the user from performing in Login tool.</java.lang.String>
+			<java.lang.String>At the opening of Requests in Email Notification, the third option (Send mail in other shares service request / incident) now comes pre-selected. This follows the pattern of the other two options for E-mail notification.</java.lang.String>
+			<java.lang.String>On screen change request, tab Relate CI, was added one more button, which will bring a popup with all the information that the IC is bound to change, at any stage of change.</java.lang.String>
+			<java.lang.String>Now Citsmart allows the user logged can open a new request from an incoming call via Asterisk. When Citsmart identifies that there is a new link to the User logged in, a check is performed from Extension Telephone or that is linking the information obtained from the Contributor, such as Contract Name and E-mail.</java.lang.String>
+			<java.lang.String>In System -> Database -> Data Management, the option to export the data, and XML, is also available in the form of SQL.</java.lang.String>
+			<java.lang.String>The search system parameter is now returned to the ordering by id and the return column id is on the right side of the column marking.</java.lang.String>
+			<java.lang.String>The portal was created a button to direct the screen OS Arriving screen should now display the selected contract, and also appears div OS selected.</java.lang.String>
+			<java.lang.String>If the User choose to reclassify a Request, the Clear button is hidden to prevent the user attempts to write a Request with incomplete information.</java.lang.String>
+			<java.lang.String>Now Citsmart to work with e-mail protocol TLS / SSL. Changed the way authentication. Parameters changed: 11 - "requires authentication for sending email (eg S or N - Default: 'N'), 91 -" [Parameter Deprecated] GMAIL SMTP - Sending and receiving e-mails using GMAIL? (Ex: Y or N) "New parameters: 201 -" The Email Authentication Uses TLS / ssl? (Ex: Y or N - Default 'N'). "</java.lang.String>
+			<java.lang.String>In Search of Satisfaction: When viewing a message of thanks, close the search window.</java.lang.String>
+			<java.lang.String>Retrieved special character of the description of the problem to be created so automatically.</java.lang.String>
+			<java.lang.String>Standardization of the sources of the reports, all reports to the same source.</java.lang.String>
+			<java.lang.String>Add Internationalisation in Spanish.</java.lang.String>
+			<java.lang.String>Implemented a new parameter: Enable routine to read new emails automatically? (Eg, S or N - N Default is necessary to be enabled to function. A thread will check if the User has the java 7, it is necessary to work. After so she will check if imap or pop3, if it checks every second, for testing, but it should work every minute the email will verify the title of the email, and get the number, check for this solicitation and include the occurrence of this particular email solicitation. Later is necessary to make verification of the solicitation number in the email body.</java.lang.String>
+			<java.lang.String>New functionality in routine automatic execution of scripts made ​​by Citsmart. Now the system will validate if indeed the necessary negotiations were made with respect to the lack of permissions to the database and scripts not executed when running automatic. The validation does not happen until the negotiations needed to be made.</java.lang.String>
+			<java.lang.String>Improved performance of grid service management.</java.lang.String>
+			<java.lang.String>Clarification of e-mail submissions and finalization of actions that are only sent to the applicant and not to the group, and that the patterns of email use are defined in the screen "Edit Service" screen of Contract Administration.</java.lang.String>
+			<java.lang.String>Improvement - The parameters of the system are validating the enumerated types defined in the configuration (Routine internal system), eg if you set up the type number the system will only accept numbers in the value field of the configuration screen regalia.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.0.3</versao>
+		<conteudo class="list">
+			<java.lang.String>Creation of feature discovery Equipment and Inventory collection.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.0.2</versao>
+		<conteudo class="list">
+			<java.lang.String>Improvements implemented in lookups for the query to be performed disregarding accents. For example, to consult with the words data or information, the query should return the result information.</java.lang.String>
+			<java.lang.String>Was added in the registry and restore the group to wait a screen to prevent the User click more than once while the system is processing the information.</java.lang.String>
+			<java.lang.String>Solution of the following inconsistency: When the number of employees assigned to a group was too large, the system could present undesirable behavior with a possible buffer overflow.</java.lang.String>
+			<java.lang.String>Now you can have access to the JBoss log and also know which DBMS in the customer environment. On the System menu -> Environment Settings.</java.lang.String>
+			<java.lang.String>Added the screen origin of requests to the system menu path Process Management -> Incident Management -> Origin of requests withdrawal of permission to any user creation.</java.lang.String>
+			<java.lang.String>Added the ID column in the lookup search Origin onscreen Registration Request Service.</java.lang.String>
+			<java.lang.String>Created the field "Location" on the "Search Requests / Incidents" to filter searches by location.</java.lang.String>
+			<java.lang.String>The change was made to keep the formatting of the description field of the service request in the search screen prompts. But that was aligned to the report should not be changed due to performance.</java.lang.String>
+			<java.lang.String>Change in the way the attachments Knowledge Bases are recorded. Before the file name was not recorded, but the duplication of description. Now the file name is recorded and can be used in research knowledge.</java.lang.String>
+			<java.lang.String>Created one more column "Work by OS" screen linking resource planning / project schedule.</java.lang.String>
+			<java.lang.String>The report was made to inform all SLAs late and without delayed returning in percentage and in quantity by priority.</java.lang.String>
+			<java.lang.String>Added a new button on the screen of the Add Multiple Services Contract to assist the user of the system installation process. The user need not add one by one, with the option to add all Asset Services. In addition, we performed several improvements on the screen informing the user when the system is processing some information. Was also performed for improved LOOKUP_SERVICO that was only listed the services were not deleted.</java.lang.String>
+			<java.lang.String>Was performed for an improvement when the service request is closed and placed as Resolved, information description of the problem and solution / response will be sent to the knowledge base. PARAMETERS: id = 182 Description = Folder to be saved and solution description of the service request in the Knowledge Base.</java.lang.String>
+			<java.lang.String>At the request screen by the portal was added a button to link attachments.</java.lang.String>
+			<java.lang.String>Improvement in query screens Lookup. The query in the following screens are being carried out with or without words with accents (Example: information and information should bring the same result).</java.lang.String>
+			<java.lang.String>Standard sign in requests you can edit the contact information. The register of requests is the portal was not allowing these changes.</java.lang.String>
+			<java.lang.String>Was Created a new report called "Change / Configuration Item" which is in Report -> Configuration -> Change / Configuration Item. This list is responsible for the configuration items registered on the requisition of the change that is in "Change Management -> Change Management -> Register New Change -> Relate ICs."</java.lang.String>
+			<java.lang.String>Improved handling of queries Lookups. Queries that possessed by three conditions in WHERE, for example, were not performed correctly because of the absence of a parenthesis from the second condition as below. See (deleted IS NULL or deleted = 'N') is in parenthesis, it was previously and it caused a change in the return of the query.</java.lang.String>
+			<java.lang.String>She was treated Scape name Cargo that fills the combo positions.</java.lang.String>
+			<java.lang.String>Corrections accent the print template module projects undertaken.</java.lang.String>
+			<java.lang.String>Correction in the encoding display form satisfaction survey.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.0.1</versao>
+		<conteudo class="list">
+			<java.lang.String>Modification to the description field of the registration request. Now it is not removed the single quotes in the description field.</java.lang.String>		
+			<java.lang.String>The questionnaire (Checklist) that appears in the register of Change was not displaying the questions, only the field to answer.</java.lang.String>
+			<java.lang.String>Correcting the lack of validation of the required fields of the registration Change Questionnaire.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>3.0.0</versao>
+		<conteudo class="list">
+			<java.lang.String>New version with over three (3) processes approved by Pink Verify.</java.lang.String>		
+			<java.lang.String>Created the report to determine which requests were returned and who sent for testing, as well as the amount of time she returned.</java.lang.String>
+			<java.lang.String>Improvement made in the routine execution of scripts. Now routinely done by scripting system has the functionality of Dynamic interpretation keys that need to be auto incremented.</java.lang.String>
+			<java.lang.String>Improved screen contract administration. Was added in session, the last chosen contract when the person facilitating return to screen Contract Administration.</java.lang.String>
+			<java.lang.String>Improvement made in the screen service request.</java.lang.String>
+			<java.lang.String>Improvement made in contract administration screen. When you bind a service contract was increased character limit in the "Note".</java.lang.String>
+			<java.lang.String>Changes made on the screen to add multiple contracts. Now the screen is equal to the screen to add only one contract in Contract Administration.</java.lang.String>
+			<java.lang.String>Correction performed on messages from e-mail. Now the text is decoded avoiding special characters become incorrect when receiving emails.</java.lang.String>
+			<java.lang.String>Correction performed on screen service requests. When you open a new request the Source field was not being populated automatically.</java.lang.String>
+			<java.lang.String>Fix screen layout service request. The button has been repositioned scripts and was moved to right facilitating usability.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>2.0.9.2</versao>
+		<conteudo class="list">
+			<java.lang.String>Improved contract administration storing the last contract selected earlier.</java.lang.String>
+			<java.lang.String>Improved service catalog. Now you can search by short name.</java.lang.String>
+			<java.lang.String>Changes made in the system log. After changing the system does not generate log information repeated in Debug mode.</java.lang.String>
+			<java.lang.String>Modification at opening request. The source value is now set by default through parameter.</java.lang.String>
+			<java.lang.String>Changes made to improvements in performance.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>2.0.9.1</versao>
+		<conteudo class="list">
+			<java.lang.String>Changes made in the execution of the request. A change was made in reading the flow of contract services.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>2.0.9</versao>
+		<conteudo class="list">
+			<java.lang.String>New implementation. Creation of the registration screen and change currency.</java.lang.String>
+			<java.lang.String>Improvement made in the administration of contracts. Now is possible to activate and disable a service-level agreement-Global.</java.lang.String>
+			<java.lang.String>Improvement held in service management and may now perform linkages between requests and knowledge bases.</java.lang.String>
+			<java.lang.String>Improved installation Citsmart. Now displays a success message when installation is complete.</java.lang.String>
+			<java.lang.String>Improvement made in the satisfaction survey. Now research has not answered by the user should be adopted with a standard note informed automatically.</java.lang.String>
+			<java.lang.String>Improvement made in the layout of the screen for changing the password of the system homepage.</java.lang.String>
+			<java.lang.String>Improvement made in the presentation of the screen opening and called in search of configuration items. Also improving on the canvas service.</java.lang.String>
+			<java.lang.String>Improvement in the routine performed by AD login. Now you can connect to more than one server by separating the connections ";" (semicolon).</java.lang.String>
+			<java.lang.String>Improved visualization of items delivered the homepage. Now, the items are separated by a combo version.</java.lang.String>
+			<java.lang.String>Correction made ​​in the layout of the Change Password button.</java.lang.String>
+			<java.lang.String>Correction of fields phone registration screen Control Agreement.</java.lang.String>
+			<java.lang.String>Change in Control Agreement screen, the layout was reset.</java.lang.String>
+			<java.lang.String>Changes made in the registration request, the unit is kept informed.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>2.0.8.1</versao>
+		<conteudo class="list">
+			<java.lang.String>Correction made ​​in the layout of the screen service management. A problem occurred in the bottom tab to be clicked twice.</java.lang.String>
+			<java.lang.String>Correction made ​​to paste a value in the number of onscreen prompt service management.</java.lang.String>
+			<java.lang.String>Correction in the e-mail template. Now the key name of the caller is displayed correctly even if you do not have the same unit.</java.lang.String>
+			<java.lang.String>Correction performed in security filter. It has changed so that you can access the registration service contract with any profile than the administrator.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>2.0.8</versao>
+		<conteudo class="list">
+			<java.lang.String>Improvement made in contract administration screen. It created a new screen to manage SLA's Global can link them to contract services with greater ease.</java.lang.String>
+			<java.lang.String>Improvement made in the Report Control SLA. Was adding a field stating the period for compliance. Research was also adding the option to search for SLA and service name.</java.lang.String>
+			<java.lang.String>Improvement made on screen service management. Added a button to register the source of the request.</java.lang.String>
+			<java.lang.String>Improvement made in the Batch Processing screen. A change was made to facilitate the creation of expressions.</java.lang.String>
+			<java.lang.String>Improvement made in the resolution of the screen opening requests to suit the aspect ratio of the Tablets.</java.lang.String>
+			<java.lang.String>Improvement made on the opening screen of requests. Was created a field tells the user the weather forecast SLA before finalizing the opening.</java.lang.String> 
+			<java.lang.String>Improvement made in contract administration screen. Now it is also possible to search by Abbreviation service.</java.lang.String>
+			<java.lang.String>Improvement made in opening requests. A message is now displayed when selecting an applicant, if any other open requests for the same.</java.lang.String>
+			<java.lang.String>Changes made in the automatic update system. Now any user with profile set as the parameter of the system administrator can validate the upgrade.</java.lang.String>
+			<java.lang.String>Correction made ​​in the register of service activities.</java.lang.String>
+			<java.lang.String>Correction in change impact reports and update IC's unauthorized.</java.lang.String>
+			<java.lang.String>Correction performed at the opening of the Service Orders.</java.lang.String>
+			<java.lang.String>Fixed some cases where the SLA appears unconfigured (with exceeding 59 minutes).</java.lang.String>
+			<java.lang.String>Correction of the error when creating a purchase requisition.</java.lang.String>
+			<java.lang.String>Error correction to filter the report Requisition of Goods and Services by number and / or date.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>2.0.7</versao>
+		<conteudo class="list">
+			<java.lang.String>Improvement made in searches. We have implemented the pagination of results in the search system.</java.lang.String>
+			<java.lang.String>Improvement made in the report Quantitative Service (Analytical). Was added the name of the technician solver.</java.lang.String>
+			<java.lang.String> Implementation held, was added the possibility to enter a list of keys (licenses) the media
+			final. Configuration Item Relatorio Office Package: Binds the media have the ability to filter
+			ICs that have the Office suite installed and verify that the IC has a key
+			Office váilda, invalid or duplicate.</java.lang.String>
+			<java.lang.String>Implementation held, was placed verificaGrupoExecutor inserted in the onChange idServiço.</java.lang.String>
+			<java.lang.String>Implementation done, a screen was created for registration of risk.</java.lang.String>
+			<java.lang.String>Correction made, was routinely added to block the field when you click the button to display the Release.</java.lang.String>
+			<java.lang.String>Improvement made, the field was added in known error report Quantitative Knowledge Base.</java.lang.String>
+			<java.lang.String>Improvement made was implemented in the agent Citsmart silent.</java.lang.String>
+			<java.lang.String>Correction made in the editing screen work flow management contract.</java.lang.String>
+			<java.lang.String>Implementation held, was created chart type headlamp presented on screen service management.</java.lang.String>
+			<java.lang.String>Implementation held, was created icon for scheduling onscreen activity management service.</java.lang.String>
+			<java.lang.String>Implementation done by suspending a request is added a record of application containing the justification of the suspension, which user suspended and reactivated.</java.lang.String>
+			<java.lang.String>Improvement made was adding the total amount of calls presented evaluated at the end of the research report satisfaction.</java.lang.String>
+			<java.lang.String>Improvement made on screen service management. Implemented ascending sort by field "created by".</java.lang.String>
+			<java.lang.String>Correction performed in the search system. Now it is possible to search with accents and without getting the same result.</java.lang.String>
+			<java.lang.String>Improvement made in the home screen Citsmart. Now the information is displayed in the browser which will Citsmart best performace.</java.lang.String>
+			<java.lang.String>Implemented support for installing SQL Server database.</java.lang.String>
+			<java.lang.String>Implementation done, we created a screen to control contracts: Menu> System> Control Agreement.</java.lang.String>
+			<java.lang.String>Improvement made was added the date field in the last inventory report Configuration Item Package Office.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+	<br.com.centralit.citcorpore.bean.ReleaseDTO>
+		<versao>2.0.6.1</versao>
+		<conteudo class="list">
+			<java.lang.String>Correction made ​​in the report quantitative Request Incident / Service that occurred on base Postgres and Oracle.</java.lang.String>
+			<java.lang.String>Correction made in the report quantitative Knowledge Base that occurred based on Postgres.</java.lang.String>
+			<java.lang.String>Improvement made in our management services to chache is clean when rendering page.</java.lang.String>
+			<java.lang.String>Improvement made, created chart type lighthouse on screen service management.</java.lang.String>
+			<java.lang.String>Improvement made on screen service management. It created an icon for scheduling activity.</java.lang.String>
+			<java.lang.String>Improvement made in the report request service. Was adding the Unit field to be displayed in the same.</java.lang.String>
+			<java.lang.String>Improvement made. By suspending a request is added a record of application containing the justification of the suspension, which user
+			which suspended and reactivated.</java.lang.String>
+			<java.lang.String>Improvement made in the report of Satisfaction Survey. The total number of calls was evaluated by adding at the end.</java.lang.String>
+			<java.lang.String>Improvement made. Now in the register of occurrence is also presented the name.</java.lang.String>
+			<java.lang.String>Screen service management field created by ordered increasingly working properly.</java.lang.String>
+		</conteudo>
+	</br.com.centralit.citcorpore.bean.ReleaseDTO>
+	
+</br.com.centralit.citcorpore.bean.IndexDTO.listRelease>

@@ -1,0 +1,13 @@
+#barraFerramentasProblemas ul li.li_menu {
+	float: left;
+	width: 85px;
+	height: 50px;
+}
+
+.menu_horizontal {
+	left: 40;
+}
+
+div#main_container {
+	margin: 10px 10px 10px 10px;
+}

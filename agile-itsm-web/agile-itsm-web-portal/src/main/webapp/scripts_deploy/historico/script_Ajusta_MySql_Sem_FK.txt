@@ -1,0 +1,3541 @@
+ALTER TABLE acordonivelservico ENGINE = InnoDB;
+ALTER TABLE acordonivelservico_hist ENGINE = InnoDB;
+ALTER TABLE acordonivelservicocontrato ENGINE = InnoDB;
+ALTER TABLE acordoservicocontrato ENGINE = InnoDB;
+ALTER TABLE anexo ENGINE = InnoDB;
+ALTER TABLE anexobaseconhecimento ENGINE = InnoDB;
+ALTER TABLE anexoincidente ENGINE = InnoDB;
+ALTER TABLE apuracaovaloresrecurso ENGINE = InnoDB;
+ALTER TABLE atividadeperiodica ENGINE = InnoDB;
+ALTER TABLE atividades ENGINE = InnoDB;
+ALTER TABLE atividadesfluxos ENGINE = InnoDB;
+ALTER TABLE atividadesos ENGINE = InnoDB;
+ALTER TABLE atividadesservicocontrato ENGINE = InnoDB;
+ALTER TABLE auditoria ENGINE = InnoDB;
+ALTER TABLE auditoriaitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE baseconhecimento ENGINE = InnoDB;
+ALTER TABLE baseconhecimentorelacionado ENGINE = InnoDB;
+ALTER TABLE baseitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE bibliotecasexternas ENGINE = InnoDB;
+ALTER TABLE botaoacaovisao ENGINE = InnoDB;
+ALTER TABLE bpm_atribuicaofluxo ENGINE = InnoDB;
+ALTER TABLE bpm_elementofluxo ENGINE = InnoDB;
+ALTER TABLE bpm_fluxo ENGINE = InnoDB;
+ALTER TABLE bpm_historicoitemtrabalho ENGINE = InnoDB;
+ALTER TABLE bpm_instanciafluxo ENGINE = InnoDB;
+ALTER TABLE bpm_itemtrabalhofluxo ENGINE = InnoDB;
+ALTER TABLE bpm_objetoinstanciafluxo ENGINE = InnoDB;
+ALTER TABLE bpm_sequenciafluxo ENGINE = InnoDB;
+ALTER TABLE bpm_tipofluxo ENGINE = InnoDB;
+ALTER TABLE calendario ENGINE = InnoDB;
+ALTER TABLE campoobjrelacionado ENGINE = InnoDB;
+ALTER TABLE camposobjetonegocio ENGINE = InnoDB;
+ALTER TABLE caracteristica ENGINE = InnoDB;
+ALTER TABLE cargos ENGINE = InnoDB;
+ALTER TABLE catalogoservico ENGINE = InnoDB;
+ALTER TABLE categoriagaleriaimagem ENGINE = InnoDB;
+ALTER TABLE categoriamudanca ENGINE = InnoDB;
+ALTER TABLE categoriaocorrencia ENGINE = InnoDB;
+ALTER TABLE categoriapost ENGINE = InnoDB;
+ALTER TABLE categoriaproblema ENGINE = InnoDB;
+ALTER TABLE categoriaquestionario ENGINE = InnoDB;
+ALTER TABLE categoriaservico ENGINE = InnoDB;
+ALTER TABLE categoriasolucao ENGINE = InnoDB;
+ALTER TABLE causaincidente ENGINE = InnoDB;
+ALTER TABLE cidades ENGINE = InnoDB;
+ALTER TABLE clientes ENGINE = InnoDB;
+ALTER TABLE colecao ENGINE = InnoDB;
+ALTER TABLE comando ENGINE = InnoDB;
+ALTER TABLE comandosistemaoperacional ENGINE = InnoDB;
+ALTER TABLE comentarios ENGINE = InnoDB;
+ALTER TABLE complexidade ENGINE = InnoDB;
+ALTER TABLE condicaooperacao ENGINE = InnoDB;
+ALTER TABLE contadoracesso ENGINE = InnoDB;
+ALTER TABLE contatocliente ENGINE = InnoDB;
+ALTER TABLE contatosolicitacaoservico ENGINE = InnoDB;
+ALTER TABLE contratoquestionarios ENGINE = InnoDB;
+ALTER TABLE contratos ENGINE = InnoDB;
+ALTER TABLE contratos_hist ENGINE = InnoDB;
+ALTER TABLE contratoscolaboradores ENGINE = InnoDB;
+ALTER TABLE contratosgrupos ENGINE = InnoDB;
+ALTER TABLE contratosunidades ENGINE = InnoDB;
+ALTER TABLE controleged ENGINE = InnoDB;
+ALTER TABLE controlequestionarios ENGINE = InnoDB;
+ALTER TABLE demandas ENGINE = InnoDB;
+ALTER TABLE dicionario ENGINE = InnoDB;
+ALTER TABLE emailsolicitacaoservico ENGINE = InnoDB;
+ALTER TABLE empregadoitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE empregados ENGINE = InnoDB;
+ALTER TABLE empresa ENGINE = InnoDB;
+ALTER TABLE etapas ENGINE = InnoDB;
+ALTER TABLE evento ENGINE = InnoDB;
+ALTER TABLE eventoempregado ENGINE = InnoDB;
+ALTER TABLE eventogrupo ENGINE = InnoDB;
+ALTER TABLE eventoitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE eventomonitoramento ENGINE = InnoDB;
+ALTER TABLE eventounidade ENGINE = InnoDB;
+ALTER TABLE excecaocalendario ENGINE = InnoDB;
+ALTER TABLE excecaoempregado ENGINE = InnoDB;
+ALTER TABLE execucaoatividadeperiodica ENGINE = InnoDB;
+ALTER TABLE execucaobatch ENGINE = InnoDB;
+ALTER TABLE execucaodemanda ENGINE = InnoDB;
+ALTER TABLE execucaomudanca ENGINE = InnoDB;
+ALTER TABLE execucaosolicitacao ENGINE = InnoDB;
+ALTER TABLE faixavaloresrecurso ENGINE = InnoDB;
+ALTER TABLE faseservico ENGINE = InnoDB;
+ALTER TABLE fatura ENGINE = InnoDB;
+ALTER TABLE faturaapuracaoans ENGINE = InnoDB;
+ALTER TABLE faturaos ENGINE = InnoDB;
+ALTER TABLE feriado ENGINE = InnoDB;
+ALTER TABLE fluxo ENGINE = InnoDB;
+ALTER TABLE fluxos ENGINE = InnoDB;
+ALTER TABLE fluxoservico ENGINE = InnoDB;
+ALTER TABLE formula ENGINE = InnoDB;
+ALTER TABLE fornecedor ENGINE = InnoDB;
+ALTER TABLE galeriaimagens ENGINE = InnoDB;
+ALTER TABLE glosaos ENGINE = InnoDB;
+ALTER TABLE glosaservicocontrato ENGINE = InnoDB;
+ALTER TABLE grupo ENGINE = InnoDB;
+ALTER TABLE grupoatvperiodica ENGINE = InnoDB;
+ALTER TABLE grupoitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE grupoquestionario ENGINE = InnoDB;
+ALTER TABLE gruporecursos ENGINE = InnoDB;
+ALTER TABLE gruposemails ENGINE = InnoDB;
+ALTER TABLE gruposempregados ENGINE = InnoDB;
+ALTER TABLE grupovisao ENGINE = InnoDB;
+ALTER TABLE grupovisaocamposnegocio ENGINE = InnoDB;
+ALTER TABLE grupovisaocamposnegocioinfosql ENGINE = InnoDB;
+ALTER TABLE grupovisaocamposnegocioligacao ENGINE = InnoDB;
+ALTER TABLE hilosequences ENGINE = InnoDB;
+ALTER TABLE historicobaseconhecimento ENGINE = InnoDB;
+ALTER TABLE historicoexecucao ENGINE = InnoDB;
+ALTER TABLE historicoic ENGINE = InnoDB;
+ALTER TABLE historicotentativa ENGINE = InnoDB;
+ALTER TABLE historicovalor ENGINE = InnoDB;
+ALTER TABLE htmlcodevisao ENGINE = InnoDB;
+ALTER TABLE imagemhistorico ENGINE = InnoDB;
+ALTER TABLE imagemitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE importanciaconhecimentogrupo ENGINE = InnoDB;
+ALTER TABLE importanciaconhecimentousuario ENGINE = InnoDB;
+ALTER TABLE importancianegocio ENGINE = InnoDB;
+ALTER TABLE infocatalogoservico ENGINE = InnoDB;
+ALTER TABLE informacaoservico ENGINE = InnoDB;
+ALTER TABLE informacoescontratoconfig ENGINE = InnoDB;
+ALTER TABLE informacoescontratoperfseg ENGINE = InnoDB;
+ALTER TABLE inventarioxml ENGINE = InnoDB;
+ALTER TABLE itemcfgsolicitacaoserv ENGINE = InnoDB;
+ALTER TABLE itemconfiguracao ENGINE = InnoDB;
+ALTER TABLE itemconfiguracaoevento ENGINE = InnoDB;
+ALTER TABLE jornadatrabalho ENGINE = InnoDB;
+ALTER TABLE justificacaofalha ENGINE = InnoDB;
+ALTER TABLE justificativasolicitacao ENGINE = InnoDB;
+ALTER TABLE lingua ENGINE = InnoDB;
+ALTER TABLE localexecucaoservico ENGINE = InnoDB;
+ALTER TABLE localidade ENGINE = InnoDB;
+ALTER TABLE localidadeunidade ENGINE = InnoDB;
+ALTER TABLE logdados ENGINE = InnoDB;
+ALTER TABLE matrizvisao ENGINE = InnoDB;
+ALTER TABLE menu ENGINE = InnoDB;
+ALTER TABLE meucatalogo ENGINE = InnoDB;
+ALTER TABLE midia ENGINE = InnoDB;
+ALTER TABLE midiasoftware ENGINE = InnoDB;
+ALTER TABLE modelosemails ENGINE = InnoDB;
+ALTER TABLE moedas ENGINE = InnoDB;
+ALTER TABLE motivosuspensaoativid ENGINE = InnoDB;
+ALTER TABLE nagiosconexao ENGINE = InnoDB;
+ALTER TABLE netmap ENGINE = InnoDB;
+ALTER TABLE notificacao ENGINE = InnoDB;
+ALTER TABLE notificacaogrupo ENGINE = InnoDB;
+ALTER TABLE notificacaousuario ENGINE = InnoDB;
+ALTER TABLE objetonegocio ENGINE = InnoDB;
+ALTER TABLE ocorrenciamudanca ENGINE = InnoDB;
+ALTER TABLE ocorrencias ENGINE = InnoDB;
+ALTER TABLE ocorrenciasolicitacao ENGINE = InnoDB;
+ALTER TABLE opcaorespostaquestionario ENGINE = InnoDB;
+ALTER TABLE opiniao ENGINE = InnoDB;
+ALTER TABLE origematendimento ENGINE = InnoDB;
+ALTER TABLE origemocorrencia ENGINE = InnoDB;
+ALTER TABLE os ENGINE = InnoDB;
+ALTER TABLE osatividadeperiodica ENGINE = InnoDB;
+ALTER TABLE palavragemea ENGINE = InnoDB;
+ALTER TABLE parametrocorpore ENGINE = InnoDB;
+ALTER TABLE parametros ENGINE = InnoDB;
+ALTER TABLE parametroscontrato ENGINE = InnoDB;
+ALTER TABLE pasta ENGINE = InnoDB;
+ALTER TABLE perfilacesso ENGINE = InnoDB;
+ALTER TABLE perfilacessogrupo ENGINE = InnoDB;
+ALTER TABLE perfilacessomenu ENGINE = InnoDB;
+ALTER TABLE perfilacessopasta ENGINE = InnoDB;
+ALTER TABLE perfilacessosituacaofatura ENGINE = InnoDB;
+ALTER TABLE perfilacessosituacaoos ENGINE = InnoDB;
+ALTER TABLE perfilacessousuario ENGINE = InnoDB;
+ALTER TABLE perfilseguranca ENGINE = InnoDB;
+ALTER TABLE permissoesfluxo ENGINE = InnoDB;
+ALTER TABLE pesquisasatisfacao ENGINE = InnoDB;
+ALTER TABLE portal ENGINE = InnoDB;
+ALTER TABLE post ENGINE = InnoDB;
+ALTER TABLE prioridade ENGINE = InnoDB;
+ALTER TABLE prioridadeacordonivelservico ENGINE = InnoDB;
+ALTER TABLE prioridadeservicounidade ENGINE = InnoDB;
+ALTER TABLE problema ENGINE = InnoDB;
+ALTER TABLE problemaitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE problemamudanca ENGINE = InnoDB;
+ALTER TABLE procedimentotecnico ENGINE = InnoDB;
+ALTER TABLE processamentobatch ENGINE = InnoDB;
+ALTER TABLE programacaoatividade ENGINE = InnoDB;
+ALTER TABLE projetos ENGINE = InnoDB;
+ALTER TABLE questaoquestionario ENGINE = InnoDB;
+ALTER TABLE questionario ENGINE = InnoDB;
+ALTER TABLE reaberturasolicitacao ENGINE = InnoDB;
+ALTER TABLE recurso ENGINE = InnoDB;
+ALTER TABLE regioes ENGINE = InnoDB;
+ALTER TABLE relacobjetonegocio ENGINE = InnoDB;
+ALTER TABLE requisicaomudanca ENGINE = InnoDB;
+ALTER TABLE requisicaomudancaitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE requisicaomudancaservico ENGINE = InnoDB;
+ALTER TABLE requisitosla ENGINE = InnoDB;
+ALTER TABLE responsabilidade ENGINE = InnoDB;
+ALTER TABLE respostaitemquestionario ENGINE = InnoDB;
+ALTER TABLE respostaitemquestionarioanexos ENGINE = InnoDB;
+ALTER TABLE respostaitemquestionariocids ENGINE = InnoDB;
+ALTER TABLE respostaitemquestionarioopcoes ENGINE = InnoDB;
+ALTER TABLE resultadosesperados ENGINE = InnoDB;
+ALTER TABLE revisarsla ENGINE = InnoDB;
+ALTER TABLE scriptsvisao ENGINE = InnoDB;
+ALTER TABLE servcontratocatalogoserv ENGINE = InnoDB;
+ALTER TABLE servico ENGINE = InnoDB;
+ALTER TABLE servicocontrato ENGINE = InnoDB;
+ALTER TABLE servicos ENGINE = InnoDB;
+ALTER TABLE sistemaoperacional ENGINE = InnoDB;
+ALTER TABLE situacaodemanda ENGINE = InnoDB;
+ALTER TABLE situacaoservico ENGINE = InnoDB;
+ALTER TABLE slarequisitosla ENGINE = InnoDB;
+ALTER TABLE solicitacaoservico ENGINE = InnoDB;
+ALTER TABLE solicitacaoservicomudanca ENGINE = InnoDB;
+ALTER TABLE solicitacaoservicoproblema ENGINE = InnoDB;
+ALTER TABLE tabfederacaodados ENGINE = InnoDB;
+ALTER TABLE templatesolicitacaoservico ENGINE = InnoDB;
+ALTER TABLE tempoacordonivelservico ENGINE = InnoDB;
+ALTER TABLE teste ENGINE = InnoDB;
+ALTER TABLE testecitsmart ENGINE = InnoDB;
+ALTER TABLE timers ENGINE = InnoDB;
+ALTER TABLE timesheet ENGINE = InnoDB;
+ALTER TABLE tipocomplexidade ENGINE = InnoDB;
+ALTER TABLE tipodemanda ENGINE = InnoDB;
+ALTER TABLE tipodemandaservico ENGINE = InnoDB;
+ALTER TABLE tipoeventoservico ENGINE = InnoDB;
+ALTER TABLE tipoitemcfgcaracteristica ENGINE = InnoDB;
+ALTER TABLE tipoitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE tipoos ENGINE = InnoDB;
+ALTER TABLE tipoproblemaatendimento ENGINE = InnoDB;
+ALTER TABLE tiposatividades ENGINE = InnoDB;
+ALTER TABLE tiposervico ENGINE = InnoDB;
+ALTER TABLE tiposoftware ENGINE = InnoDB;
+ALTER TABLE tipounidade ENGINE = InnoDB;
+ALTER TABLE ufs ENGINE = InnoDB;
+ALTER TABLE unidade ENGINE = InnoDB;
+ALTER TABLE unidadebaseitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE unidadesaccservicos ENGINE = InnoDB;
+ALTER TABLE usuario ENGINE = InnoDB;
+ALTER TABLE usuarioitemconfiguracao ENGINE = InnoDB;
+ALTER TABLE valor ENGINE = InnoDB;
+ALTER TABLE valorajusteglosa ENGINE = InnoDB;
+ALTER TABLE valorservicocontrato ENGINE = InnoDB;
+ALTER TABLE valorvisaocamposnegocio ENGINE = InnoDB;
+ALTER TABLE view_ic ENGINE = InnoDB;
+ALTER TABLE vinculovisao ENGINE = InnoDB;
+ALTER TABLE visao ENGINE = InnoDB;
+ALTER TABLE visaorelacionada ENGINE = InnoDB;
+
+ALTER TABLE avaliacaopedido ENGINE = InnoDB;
+
+ALTER TABLE avaliacaoreferenciafornecedor ENGINE = InnoDB;
+
+ALTER TABLE categoriaproduto ENGINE = InnoDB;
+
+ALTER TABLE centroresultado ENGINE = InnoDB;
+
+ALTER TABLE coletapreco ENGINE = InnoDB;
+
+ALTER TABLE cotacao ENGINE = InnoDB;
+
+ALTER TABLE cotacaoitemrequisicao ENGINE = InnoDB;
+
+ALTER TABLE criterioavaliacao ENGINE = InnoDB;
+
+ALTER TABLE criterioavaliacaofornecedor ENGINE = InnoDB;
+
+ALTER TABLE criteriocotacao ENGINE = InnoDB;
+
+ALTER TABLE endereco ENGINE = InnoDB;
+
+ALTER TABLE fornecedorcotacao ENGINE = InnoDB;
+
+ALTER TABLE fornecedorproduto ENGINE = InnoDB;
+
+ALTER TABLE itemcotacao ENGINE = InnoDB;
+
+ALTER TABLE itempedidocompra ENGINE = InnoDB;
+
+ALTER TABLE itemrequisicaoproduto ENGINE = InnoDB;
+
+ALTER TABLE justificativaparecer ENGINE = InnoDB;
+
+ALTER TABLE limitealcada ENGINE = InnoDB;
+
+ALTER TABLE marca ENGINE = InnoDB;
+
+ALTER TABLE pais ENGINE = InnoDB;
+
+ALTER TABLE parecer ENGINE = InnoDB;
+
+ALTER TABLE pedidocompra ENGINE = InnoDB;
+
+ALTER TABLE produto ENGINE = InnoDB;
+
+ALTER TABLE relacionamentoproduto ENGINE = InnoDB;
+
+ALTER TABLE requisicaoproduto ENGINE = InnoDB;
+
+ALTER TABLE templatesolicitacaoservico ENGINE = InnoDB;
+
+ALTER TABLE tipoproduto ENGINE = InnoDB;
+
+ALTER TABLE unidademedida ENGINE = InnoDB;
+
+ALTER TABLE historicosituacaocotacao ENGINE = InnoDB;
+
+--CONSTRAINT fk_reference_33 da tabela permissoesfluxo alterada para fk_permissoesfluxo_33 
+--CONSTRAINT fk_reference_102 da tabela historicotentativa alterada para fk_historicotentativa_102
+--CONSTRAINT fk_reference_78 da tabela visaorelacionada alterada para fk_visaorelacionada_78
+--CONSTRAINT fk_solicitacaoservico_tipodemanda da tabela solicitacaoservico alterada para fk_solicitserv_tpdemanda 
+--CONSTRAINT fk_reference_90 da tabela visaorelacionada alterada para fk_visaorelacionada_90
+--CONSTRAINT fk_reference_44 da tabela imagemitemconfiguracao nao foi criada por já existir tal restricao
+--CONSTRAINT fk_reference_45 da tabela servicocontrato  nao foi criada por já existir tal restricao
+--CONSTRAINT fk_reference_46 da tabela informacaoservico  nao foi criada por já existir tal restricao
+--CONSTRAINT fk_reference_530 da tabela solicitacaoservico  nao foi criada por já existir tal restricao
+--CONSTRAINT fk_reference_546 da tabela usuario  nao foi criada por já existir tal restricao
+
+
+
+-- TOTAL DE 329 (-5) FOREIGN KEY
+
+--
+-- Name: dep_dep; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  unidade
+    ADD CONSTRAINT dep_dep FOREIGN KEY (idunidadepai) REFERENCES unidade(idunidade) ;
+
+
+--
+-- Name: fk_association12; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  itemconfiguracao
+    ADD CONSTRAINT fk_association12 FOREIGN KEY (iditemconfiguracaopai) REFERENCES itemconfiguracao(iditemconfiguracao) ;
+
+
+--
+-- Name: fk_comentario_baseconhecimento; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  comentarios
+    ADD CONSTRAINT fk_comentario_baseconhecimento FOREIGN KEY (idbaseconhecimento) REFERENCES baseconhecimento(idbaseconhecimento) ;
+
+
+--
+-- Name: fk_reference_1; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  justificacaofalha
+    ADD CONSTRAINT fk_reference_1 FOREIGN KEY (idhistoricotentativa) REFERENCES historicotentativa(idhistoricotentativa);
+
+
+--
+-- Name: fk_reference_100; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  baseitemconfiguracao
+    ADD CONSTRAINT fk_reference_100 FOREIGN KEY (idtipoitemconfiguracao) REFERENCES tipoitemconfiguracao(idtipoitemconfiguracao);
+
+
+--
+-- Name: fk_reference_101; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  itemconfiguracao
+    ADD CONSTRAINT fk_reference_101 FOREIGN KEY (idtipoitemconfiguracao) REFERENCES tipoitemconfiguracao(idtipoitemconfiguracao);
+
+
+--
+-- Name: fk_reference_102; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  acordonivelservico
+    ADD CONSTRAINT fk_reference_102 FOREIGN KEY (idprioridadepadrao) REFERENCES prioridade(idprioridade) ;
+
+
+--
+-- Name: fk_reference_102; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  historicotentativa
+    ADD CONSTRAINT fk_historicotentativa_102 FOREIGN KEY (idevento) REFERENCES evento(idevento);
+
+
+--
+-- Name: fk_reference_103; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  eventounidade
+    ADD CONSTRAINT fk_reference_103 FOREIGN KEY (idevento) REFERENCES evento(idevento);
+
+
+--
+-- Name: fk_reference_104; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  itemconfiguracaoevento
+    ADD CONSTRAINT fk_reference_104 FOREIGN KEY (idevento) REFERENCES evento(idevento);
+
+
+--
+-- Name: fk_reference_105; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  excecaoempregado
+    ADD CONSTRAINT fk_reference_105 FOREIGN KEY (idevento) REFERENCES evento(idevento);
+
+
+--
+-- Name: fk_reference_106; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  eventogrupo
+    ADD CONSTRAINT fk_reference_106 FOREIGN KEY (idevento) REFERENCES evento(idevento);
+
+
+--
+-- Name: fk_reference_107; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  justificacaofalha
+    ADD CONSTRAINT fk_reference_107 FOREIGN KEY (idevento) REFERENCES evento(idevento);
+
+
+--
+-- Name: fk_reference_108; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  eventoempregado
+    ADD CONSTRAINT fk_reference_108 FOREIGN KEY (idevento) REFERENCES evento(idevento);
+
+
+--
+-- Name: fk_reference_109; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  perfilacessomenu
+    ADD CONSTRAINT fk_reference_109 FOREIGN KEY (idmenu) REFERENCES menu(idmenu);
+
+
+--
+-- Name: fk_reference_110; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  imagemitemconfiguracao
+    ADD CONSTRAINT fk_reference_110 FOREIGN KEY (idservico) REFERENCES servico(idservico);
+
+
+
+--
+-- Name: fk_reference_111; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servicocontrato
+    ADD CONSTRAINT fk_reference_111 FOREIGN KEY (idservico) REFERENCES servico(idservico);
+
+
+--
+-- Name: fk_reference_112; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  informacaoservico
+    ADD CONSTRAINT fk_reference_112 FOREIGN KEY (idservico) REFERENCES servico(idservico);
+
+
+--
+-- Name: fk_reference_113; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  ufs
+    ADD CONSTRAINT fk_reference_113 FOREIGN KEY (idregioes) REFERENCES regioes(idregioes);
+
+
+--
+-- Name: fk_reference_115; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  respostaitemquestionarioopcoes
+    ADD CONSTRAINT fk_reference_115 FOREIGN KEY (idopcaorespostaquestionario) REFERENCES opcaorespostaquestionario(idopcaorespostaquestionario);
+
+
+--
+-- Name: fk_reference_116; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_itemtrabalhofluxo
+    ADD CONSTRAINT fk_reference_116 FOREIGN KEY (idinstancia) REFERENCES bpm_instanciafluxo(idinstancia);
+
+
+--
+-- Name: fk_reference_117; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_objetoinstanciafluxo
+    ADD CONSTRAINT fk_reference_117 FOREIGN KEY (idinstancia) REFERENCES bpm_instanciafluxo(idinstancia);
+
+
+--
+-- Name: fk_reference_118; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  unidade
+    ADD CONSTRAINT fk_reference_118 FOREIGN KEY (idtipounidade) REFERENCES tipounidade(idtipounidade);
+
+
+--
+-- Name: fk_reference_119; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_itemtrabalhofluxo
+    ADD CONSTRAINT fk_reference_119 FOREIGN KEY (idelemento) REFERENCES bpm_elementofluxo(idelemento);
+
+
+--
+-- Name: fk_reference_131; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  anexobaseconhecimento
+    ADD CONSTRAINT fk_reference_131 FOREIGN KEY (idbaseconhecimento) REFERENCES baseconhecimento(idbaseconhecimento);
+
+
+--
+-- Name: fk_reference_132; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  feriado
+    ADD CONSTRAINT fk_reference_132 FOREIGN KEY (iduf) REFERENCES ufs(iduf);
+
+
+--
+-- Name: fk_reference_134; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  cidades
+    ADD CONSTRAINT fk_reference_134 FOREIGN KEY (iduf) REFERENCES ufs(iduf);
+
+
+--
+-- Name: fk_reference_135; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaosolicitacao
+    ADD CONSTRAINT fk_reference_135 FOREIGN KEY (idfase) REFERENCES faseservico(idfase);
+
+
+--
+-- Name: fk_reference_136; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  tempoacordonivelservico
+    ADD CONSTRAINT fk_reference_136 FOREIGN KEY (idfase) REFERENCES faseservico(idfase);
+
+
+--
+-- Name: fk_reference_137; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  fluxoservico
+    ADD CONSTRAINT fk_reference_137 FOREIGN KEY (idfase) REFERENCES faseservico(idfase);
+
+
+--
+-- Name: fk_reference_154; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  valorvisaocamposnegocio
+    ADD CONSTRAINT fk_reference_154 FOREIGN KEY (idgrupovisao, idcamposobjetonegocio) REFERENCES grupovisaocamposnegocio(idgrupovisao, idcamposobjetonegocio);
+
+
+--
+-- Name: fk_reference_155; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupovisaocamposnegocioinfosql
+    ADD CONSTRAINT fk_reference_155 FOREIGN KEY (idgrupovisao, idcamposobjetonegocio) REFERENCES grupovisaocamposnegocio(idgrupovisao, idcamposobjetonegocio);
+
+
+--
+-- Name: fk_reference_156; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupovisaocamposnegocioligacao
+    ADD CONSTRAINT fk_reference_156 FOREIGN KEY (idgrupovisao, idcamposobjetonegocio) REFERENCES grupovisaocamposnegocio(idgrupovisao, idcamposobjetonegocio);
+
+
+--
+-- Name: fk_reference_157; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  perfilacessousuario
+    ADD CONSTRAINT fk_reference_157 FOREIGN KEY (idperfil) REFERENCES perfilacesso(idperfil);
+
+
+--
+-- Name: fk_reference_158; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  perfilacessopasta
+    ADD CONSTRAINT fk_reference_158 FOREIGN KEY (idperfil) REFERENCES perfilacesso(idperfil);
+
+
+--
+-- Name: fk_reference_159; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  perfilacessogrupo
+    ADD CONSTRAINT fk_reference_159 FOREIGN KEY (idperfil) REFERENCES perfilacesso(idperfil);
+
+
+--
+-- Name: fk_reference_16; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servico
+    ADD CONSTRAINT fk_reference_16 FOREIGN KEY (idtipoeventoservico) REFERENCES tipoeventoservico(idtipoeventoservico);
+
+
+--
+-- Name: fk_reference_160; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  historicotentativa
+    ADD CONSTRAINT fk_reference_160 FOREIGN KEY (idbaseitemconfiguracao) REFERENCES baseitemconfiguracao(idbaseitemconfiguracao);
+
+
+--
+-- Name: fk_reference_161; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  valor
+    ADD CONSTRAINT fk_reference_161 FOREIGN KEY (idbaseitemconfiguracao) REFERENCES baseitemconfiguracao(idbaseitemconfiguracao);
+
+
+--
+-- Name: fk_reference_162; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  itemconfiguracaoevento
+    ADD CONSTRAINT fk_reference_162 FOREIGN KEY (idbaseitemconfiguracao) REFERENCES baseitemconfiguracao(idbaseitemconfiguracao);
+
+
+--
+-- Name: fk_reference_163; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  justificacaofalha
+    ADD CONSTRAINT fk_reference_163 FOREIGN KEY (idbaseitemconfiguracao) REFERENCES baseitemconfiguracao(idbaseitemconfiguracao);
+
+
+--
+-- Name: fk_reference_164; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_164 FOREIGN KEY (idunidade, idservicocontrato) REFERENCES prioridadeservicounidade(idunidade, idservicocontrato);
+
+
+--
+-- Name: fk_reference_165; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  perfilacessousuario
+    ADD CONSTRAINT fk_reference_165 FOREIGN KEY (idusuario) REFERENCES usuario(idusuario);
+
+
+--
+-- Name: fk_reference_166; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  auditoria
+    ADD CONSTRAINT fk_reference_166 FOREIGN KEY (idusuario) REFERENCES usuario(idusuario);
+
+
+--
+-- Name: fk_reference_167; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_atribuicaofluxo
+    ADD CONSTRAINT fk_reference_167 FOREIGN KEY (idusuario) REFERENCES usuario(idusuario);
+
+
+--
+-- Name: fk_reference_168; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  usuarioitemconfiguracao
+    ADD CONSTRAINT fk_reference_168 FOREIGN KEY (idusuario) REFERENCES usuario(idusuario);
+
+
+--
+-- Name: fk_reference_169; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  empregadoitemconfiguracao
+    ADD CONSTRAINT fk_reference_169 FOREIGN KEY (idusuario) REFERENCES usuario(idusuario);
+
+
+--
+-- Name: fk_reference_170; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  itemconfiguracao
+    ADD CONSTRAINT fk_reference_170 FOREIGN KEY (idusuario) REFERENCES usuario(idusuario);
+
+
+--
+-- Name: fk_reference_171; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  informacoescontratoperfseg
+    ADD CONSTRAINT fk_reference_171 FOREIGN KEY (idperfilseguranca) REFERENCES perfilseguranca(idperfilseguranca);
+
+
+--
+-- Name: fk_reference_172; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  controleged
+    ADD CONSTRAINT fk_reference_172 FOREIGN KEY (id) REFERENCES comando(id);
+
+
+--
+-- Name: fk_reference_173; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  informacoescontratoperfseg
+    ADD CONSTRAINT fk_reference_173 FOREIGN KEY (idinformacoescontratoconfig) REFERENCES informacoescontratoconfig(idinformacoescontratoconfig);
+
+
+--
+-- Name: fk_reference_174; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  historicotentativa
+    ADD CONSTRAINT fk_reference_174 FOREIGN KEY (idevento, idempregado) REFERENCES excecaoempregado(idevento, idempregado);
+
+
+--
+-- Name: fk_reference_175; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  justificacaofalha
+    ADD CONSTRAINT fk_reference_175 FOREIGN KEY (idevento, idempregado) REFERENCES excecaoempregado(idevento, idempregado);
+
+
+--
+-- Name: fk_reference_176; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  opcaorespostaquestionario
+    ADD CONSTRAINT fk_reference_176 FOREIGN KEY (idquestaoquestionario) REFERENCES questaoquestionario(idquestaoquestionario);
+
+
+--
+-- Name: fk_reference_177; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  respostaitemquestionario
+    ADD CONSTRAINT fk_reference_177 FOREIGN KEY (idquestaoquestionario) REFERENCES questaoquestionario(idquestaoquestionario);
+
+
+--
+-- Name: fk_reference_178; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  tempoacordonivelservico
+    ADD CONSTRAINT fk_reference_178 FOREIGN KEY (idacordonivelservico) REFERENCES acordonivelservico(idacordonivelservico);
+
+
+--
+-- Name: fk_reference_179; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servico
+    ADD CONSTRAINT fk_reference_179 FOREIGN KEY (idtipodemandaservico) REFERENCES tipodemandaservico(idtipodemandaservico);
+
+
+--
+-- Name: fk_reference_180; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  valorvisaocamposnegocio
+    ADD CONSTRAINT fk_reference_180 FOREIGN KEY (idcamposobjetonegocio) REFERENCES camposobjetonegocio(idcamposobjetonegocio);
+
+
+--
+-- Name: fk_reference_181; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupovisaocamposnegocio
+    ADD CONSTRAINT fk_reference_181 FOREIGN KEY (idcamposobjetonegocio) REFERENCES camposobjetonegocio(idcamposobjetonegocio);
+
+
+--
+-- Name: fk_reference_182; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupovisaocamposnegocioinfosql
+    ADD CONSTRAINT fk_reference_182 FOREIGN KEY (idcamposobjetonegocio) REFERENCES camposobjetonegocio(idcamposobjetonegocio);
+
+
+--
+-- Name: fk_reference_183; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupovisaocamposnegocioligacao
+    ADD CONSTRAINT fk_reference_183 FOREIGN KEY (idcamposobjetonegocio) REFERENCES camposobjetonegocio(idcamposobjetonegocio);
+
+
+--
+-- Name: fk_reference_198; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  baseconhecimento
+    ADD CONSTRAINT fk_reference_198 FOREIGN KEY (idpasta) REFERENCES pasta(idpasta);
+
+
+--
+-- Name: fk_reference_199; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  perfilacessopasta
+    ADD CONSTRAINT fk_reference_199 FOREIGN KEY (idpasta) REFERENCES pasta(idpasta);
+
+
+--
+-- Name: fk_reference_2; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  os
+    ADD CONSTRAINT fk_reference_2 FOREIGN KEY (idclassificacaoos) REFERENCES tipoos(idclassificacaoos);
+
+
+--
+-- Name: fk_reference_200; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  controleged
+    ADD CONSTRAINT fk_reference_200 FOREIGN KEY (id) REFERENCES comandosistemaoperacional(id);
+
+
+--
+-- Name: fk_reference_208; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  demandas
+    ADD CONSTRAINT fk_reference_208 FOREIGN KEY (idprojeto) REFERENCES projetos(idprojeto);
+
+
+--
+-- Name: fk_reference_209; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  timesheet
+    ADD CONSTRAINT fk_reference_209 FOREIGN KEY (idprojeto) REFERENCES projetos(idprojeto);
+
+
+--
+-- Name: fk_reference_217; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  contratos
+    ADD CONSTRAINT fk_reference_217 FOREIGN KEY (idmoeda) REFERENCES moedas(idmoeda);
+
+
+--
+-- Name: fk_reference_232; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  demandas
+    ADD CONSTRAINT fk_reference_232 FOREIGN KEY (idsituacaodemanda) REFERENCES situacaodemanda(idsituacaodemanda);
+
+
+--
+-- Name: fk_reference_256; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servico
+    ADD CONSTRAINT fk_reference_256 FOREIGN KEY (idsituacaoservico) REFERENCES situacaoservico(idsituacaoservico);
+
+
+--
+-- Name: fk_reference_257; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  questaoquestionario
+    ADD CONSTRAINT fk_reference_257 FOREIGN KEY (idimagem) REFERENCES imagemhistorico(idimagem);
+
+
+--
+-- Name: fk_reference_258; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  contratoquestionarios
+    ADD CONSTRAINT fk_reference_258 FOREIGN KEY (idquestionario) REFERENCES questionario(idquestionario);
+
+
+--
+-- Name: fk_reference_259; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  informacoescontratoconfig
+    ADD CONSTRAINT fk_reference_259 FOREIGN KEY (idquestionario) REFERENCES questionario(idquestionario);
+
+
+--
+-- Name: fk_reference_260; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupoquestionario
+    ADD CONSTRAINT fk_reference_260 FOREIGN KEY (idquestionario) REFERENCES questionario(idquestionario);
+
+
+--
+-- Name: fk_reference_261; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  gruposempregados
+    ADD CONSTRAINT fk_reference_261 FOREIGN KEY (idgrupo) REFERENCES grupo(idgrupo);
+
+
+--
+-- Name: fk_reference_263; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  excecaoempregado
+    ADD CONSTRAINT fk_reference_263 FOREIGN KEY (idgrupo) REFERENCES grupo(idgrupo);
+
+
+--
+-- Name: fk_reference_265; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  perfilacessogrupo
+    ADD CONSTRAINT fk_reference_265 FOREIGN KEY (idgrupo) REFERENCES grupo(idgrupo);
+
+
+--
+-- Name: fk_reference_266; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  permissoesfluxo
+    ADD CONSTRAINT fk_reference_266 FOREIGN KEY (idgrupo) REFERENCES grupo(idgrupo);
+
+
+--
+-- Name: fk_reference_268; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  eventogrupo
+    ADD CONSTRAINT fk_reference_268 FOREIGN KEY (idgrupo) REFERENCES grupo(idgrupo);
+
+
+--
+-- Name: fk_reference_270; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  eventoempregado
+    ADD CONSTRAINT fk_reference_270 FOREIGN KEY (idgrupo) REFERENCES grupo(idgrupo);
+
+
+--
+-- Name: fk_reference_271; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  jms_roles
+    ADD CONSTRAINT fk_reference_271 FOREIGN KEY (userid) REFERENCES jms_users(userid);
+
+
+--
+-- Name: fk_reference_280; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaosolicitacao
+    ADD CONSTRAINT fk_reference_280 FOREIGN KEY (idsolicitacaoservico) REFERENCES solicitacaoservico(idsolicitacaoservico);
+
+
+--
+-- Name: fk_reference_295; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servico
+    ADD CONSTRAINT fk_reference_295 FOREIGN KEY (idcategoriaservico) REFERENCES categoriaservico(idcategoriaservico);
+
+
+--
+-- Name: fk_reference_296; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  valorvisaocamposnegocio
+    ADD CONSTRAINT fk_reference_296 FOREIGN KEY (idgrupovisao) REFERENCES grupovisao(idgrupovisao);
+
+
+--
+-- Name: fk_reference_297; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupovisaocamposnegocio
+    ADD CONSTRAINT fk_reference_297 FOREIGN KEY (idgrupovisao) REFERENCES grupovisao(idgrupovisao);
+
+
+--
+-- Name: fk_reference_298; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupovisaocamposnegocioinfosql
+    ADD CONSTRAINT fk_reference_298 FOREIGN KEY (idgrupovisao) REFERENCES grupovisao(idgrupovisao);
+
+
+--
+-- Name: fk_reference_299; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupovisaocamposnegocioligacao
+    ADD CONSTRAINT fk_reference_299 FOREIGN KEY (idgrupovisao) REFERENCES grupovisao(idgrupovisao);
+
+
+--
+-- Name: fk_reference_3; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividades
+    ADD CONSTRAINT fk_reference_3 FOREIGN KEY (idetapa) REFERENCES etapas(idetapa);
+
+
+--
+-- Name: fk_reference_300; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  vinculovisao
+    ADD CONSTRAINT fk_reference_300 FOREIGN KEY (idvisaorelacionada) REFERENCES visaorelacionada(idvisaorelacionada);
+
+
+--
+-- Name: fk_reference_308; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  tipoitemcfgcaracteristica
+    ADD CONSTRAINT fk_reference_308 FOREIGN KEY (idcaracteristica) REFERENCES caracteristica(idcaracteristica);
+
+
+--
+-- Name: fk_reference_309; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  valor
+    ADD CONSTRAINT fk_reference_309 FOREIGN KEY (idcaracteristica) REFERENCES caracteristica(idcaracteristica);
+
+
+--
+-- Name: fk_reference_31; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_fluxo
+    ADD CONSTRAINT fk_reference_31 FOREIGN KEY (idtipofluxo) REFERENCES bpm_tipofluxo(idtipofluxo);
+
+
+--
+-- Name: fk_reference_310; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  etapas
+    ADD CONSTRAINT fk_reference_310 FOREIGN KEY (idfluxo) REFERENCES fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_311; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  demandas
+    ADD CONSTRAINT fk_reference_311 FOREIGN KEY (idfluxo) REFERENCES fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_312; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaosolicitacao
+    ADD CONSTRAINT fk_reference_312 FOREIGN KEY (idfluxo) REFERENCES fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_313; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_instanciafluxo
+    ADD CONSTRAINT fk_reference_313 FOREIGN KEY (idfluxo) REFERENCES fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_314; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_elementofluxo
+    ADD CONSTRAINT fk_reference_314 FOREIGN KEY (idfluxo) REFERENCES fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_315; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_sequenciafluxo
+    ADD CONSTRAINT fk_reference_315 FOREIGN KEY (idfluxo) REFERENCES fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_316; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadesfluxos
+    ADD CONSTRAINT fk_reference_316 FOREIGN KEY (idfluxo) REFERENCES fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_317; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  questaoquestionario
+    ADD CONSTRAINT fk_reference_317 FOREIGN KEY (idgrupoquestionario) REFERENCES grupoquestionario(idgrupoquestionario);
+
+
+--
+-- Name: fk_reference_318; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  demandas
+    ADD CONSTRAINT fk_reference_318 FOREIGN KEY (idtipodemanda) REFERENCES tipodemanda(idtipodemanda);
+
+
+--
+-- Name: fk_reference_319; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  tipoos
+    ADD CONSTRAINT fk_reference_319 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato);
+
+
+--
+-- Name: fk_reference_32; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  fluxoservico
+    ADD CONSTRAINT fk_reference_32 FOREIGN KEY (idtipofluxo) REFERENCES bpm_tipofluxo(idtipofluxo);
+
+
+--
+-- Name: fk_reference_320; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  contratoquestionarios
+    ADD CONSTRAINT fk_reference_320 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato);
+
+
+--
+-- Name: fk_reference_321; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  demandas
+    ADD CONSTRAINT fk_reference_321 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato);
+
+
+--
+-- Name: fk_reference_322; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  responsabilidade
+    ADD CONSTRAINT fk_reference_322 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato);
+
+
+--
+-- Name: fk_reference_323; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servicocontrato
+    ADD CONSTRAINT fk_reference_323 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato);
+
+
+--
+-- Name: fk_reference_324; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  os
+    ADD CONSTRAINT fk_reference_324 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato);
+
+
+--
+-- Name: fk_reference_325; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  projetos
+    ADD CONSTRAINT fk_reference_325 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato);
+
+
+--
+-- Name: fk_reference_326; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  imagemhistorico
+    ADD CONSTRAINT fk_reference_326 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato);
+
+
+--
+-- Name: fk_reference_327; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadeperiodica
+    ADD CONSTRAINT fk_reference_327 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato);
+
+
+--
+-- Name: fk_reference_33; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  categoriaservico
+    ADD CONSTRAINT fk_reference_33 FOREIGN KEY (idcategoriaservicopai) REFERENCES categoriaservico(idcategoriaservico) ;
+
+
+--
+-- Name: fk_reference_33; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  permissoesfluxo
+    ADD CONSTRAINT fk_permissoesfluxo_33 FOREIGN KEY (idtipofluxo) REFERENCES bpm_tipofluxo(idtipofluxo);
+
+
+--
+-- Name: fk_reference_330; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  contratoquestionarios
+    ADD CONSTRAINT fk_reference_330 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_331; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  tiposervico
+    ADD CONSTRAINT fk_reference_331 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_332; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  tipoitemconfiguracao
+    ADD CONSTRAINT fk_reference_332 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_333; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  evento
+    ADD CONSTRAINT fk_reference_333 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_334; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servico
+    ADD CONSTRAINT fk_reference_334 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_335; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  tipounidade
+    ADD CONSTRAINT fk_reference_335 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_336; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  usuario
+    ADD CONSTRAINT fk_reference_336 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_337; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  informacoescontratoconfig
+    ADD CONSTRAINT fk_reference_337 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_338; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  parametrocorpore
+    ADD CONSTRAINT fk_reference_338 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_339; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  situacaoservico
+    ADD CONSTRAINT fk_reference_339 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_34; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  etapas
+    ADD CONSTRAINT fk_reference_34 FOREIGN KEY (idfluxo) REFERENCES bpm_fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_340; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  imagemhistorico
+    ADD CONSTRAINT fk_reference_340 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_341; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  questionario
+    ADD CONSTRAINT fk_reference_341 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_342; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupo
+    ADD CONSTRAINT fk_reference_342 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_343; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  categoriaservico
+    ADD CONSTRAINT fk_reference_343 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_344; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  caracteristica
+    ADD CONSTRAINT fk_reference_344 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_345; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  prioridade
+    ADD CONSTRAINT fk_reference_345 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_346; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  parametros
+    ADD CONSTRAINT fk_reference_346 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_347; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  importancianegocio
+    ADD CONSTRAINT fk_reference_347 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_348; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  unidade
+    ADD CONSTRAINT fk_reference_348 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_349; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  categoriaquestionario
+    ADD CONSTRAINT fk_reference_349 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_35; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  demandas
+    ADD CONSTRAINT fk_reference_35 FOREIGN KEY (idfluxo) REFERENCES bpm_fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_350; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  itemconfiguracao
+    ADD CONSTRAINT fk_reference_350 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_351; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  condicaooperacao
+    ADD CONSTRAINT fk_reference_351 FOREIGN KEY (idempresa) REFERENCES empresa(idempresa);
+
+
+--
+-- Name: fk_reference_352; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  respostaitemquestionarioopcoes
+    ADD CONSTRAINT fk_reference_352 FOREIGN KEY (idrespostaitemquestionario) REFERENCES respostaitemquestionario(idrespostaitemquestionario);
+
+
+--
+-- Name: fk_reference_353; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  respostaitemquestionariocids
+    ADD CONSTRAINT fk_reference_353 FOREIGN KEY (idrespostaitemquestionario) REFERENCES respostaitemquestionario(idrespostaitemquestionario);
+
+
+--
+-- Name: fk_reference_354; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  respostaitemquestionarioanexos
+    ADD CONSTRAINT fk_reference_354 FOREIGN KEY (idrespostaitemquestionario) REFERENCES respostaitemquestionario(idrespostaitemquestionario);
+
+
+--
+-- Name: fk_reference_355; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_355 FOREIGN KEY (idorigem) REFERENCES origematendimento(idorigem);
+
+
+--
+-- Name: fk_reference_364; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  historicotentativa
+    ADD CONSTRAINT fk_reference_364 FOREIGN KEY (idbaseitemconfiguracao) REFERENCES unidadebaseitemconfiguracao(idbaseitemconfiguracao);
+
+
+--
+-- Name: fk_reference_365; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  valor
+    ADD CONSTRAINT fk_reference_365 FOREIGN KEY (idbaseitemconfiguracao) REFERENCES unidadebaseitemconfiguracao(idbaseitemconfiguracao);
+
+
+--
+-- Name: fk_reference_366; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  itemconfiguracaoevento
+    ADD CONSTRAINT fk_reference_366 FOREIGN KEY (idbaseitemconfiguracao) REFERENCES unidadebaseitemconfiguracao(idbaseitemconfiguracao);
+
+
+--
+-- Name: fk_reference_367; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  justificacaofalha
+    ADD CONSTRAINT fk_reference_367 FOREIGN KEY (idbaseitemconfiguracao) REFERENCES unidadebaseitemconfiguracao(idbaseitemconfiguracao);
+
+
+--
+-- Name: fk_reference_375; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  tempoacordonivelservico
+    ADD CONSTRAINT fk_reference_375 FOREIGN KEY (idprioridade) REFERENCES prioridade(idprioridade);
+
+
+--
+-- Name: fk_reference_376; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  prioridadeservicounidade
+    ADD CONSTRAINT fk_reference_376 FOREIGN KEY (idprioridade) REFERENCES prioridade(idprioridade);
+
+
+--
+-- Name: fk_reference_377; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_377 FOREIGN KEY (idprioridade) REFERENCES prioridade(idprioridade);
+
+
+--
+-- Name: fk_reference_378; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  controleged
+    ADD CONSTRAINT fk_reference_378 FOREIGN KEY (id) REFERENCES sistemaoperacional(id);
+
+
+--
+-- Name: fk_reference_379; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servico
+    ADD CONSTRAINT fk_reference_379 FOREIGN KEY (idimportancianegocio) REFERENCES importancianegocio(idimportancianegocio);
+
+
+--
+-- Name: fk_reference_380; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  colecao
+    ADD CONSTRAINT fk_reference_380 FOREIGN KEY (idteste) REFERENCES teste(idteste);
+
+
+--
+-- Name: fk_reference_381; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividades
+    ADD CONSTRAINT fk_reference_381 FOREIGN KEY (idtipoatividade) REFERENCES tiposatividades(idtipoatividade);
+
+
+--
+-- Name: fk_reference_382; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  auditoria
+    ADD CONSTRAINT fk_reference_382 FOREIGN KEY (idusuario, iditemconfiguracao) REFERENCES usuarioitemconfiguracao(idusuario, iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_397; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  programacaoatividade
+    ADD CONSTRAINT fk_reference_397 FOREIGN KEY (idatividadeperiodica) REFERENCES atividadeperiodica(idatividadeperiodica);
+
+
+--
+-- Name: fk_reference_398; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaoatividadeperiodica
+    ADD CONSTRAINT fk_reference_398 FOREIGN KEY (idatividadeperiodica) REFERENCES atividadeperiodica(idatividadeperiodica);
+
+
+--
+-- Name: fk_reference_399; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  historicotentativa
+    ADD CONSTRAINT fk_reference_399 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_4; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  controleged
+    ADD CONSTRAINT fk_reference_4 FOREIGN KEY (id) REFERENCES tipoitemcfgcaracteristica(id);
+
+
+--
+-- Name: fk_reference_40; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadesfluxos
+    ADD CONSTRAINT fk_reference_40 FOREIGN KEY (idfluxo) REFERENCES bpm_fluxo(idfluxo);
+
+
+--
+-- Name: fk_reference_400; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  ocorrencias
+    ADD CONSTRAINT fk_reference_400 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_401; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  responsabilidade
+    ADD CONSTRAINT fk_reference_401 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_402; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  gruposempregados
+    ADD CONSTRAINT fk_reference_402 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_403; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaoatividadeperiodica
+    ADD CONSTRAINT fk_reference_403 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_404; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  usuario
+    ADD CONSTRAINT fk_reference_404 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_405; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  excecaoempregado
+    ADD CONSTRAINT fk_reference_405 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_406; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  empregadoitemconfiguracao
+    ADD CONSTRAINT fk_reference_406 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_407; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  auditoriaitemconfiguracao
+    ADD CONSTRAINT fk_reference_407 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_408; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  justificacaofalha
+    ADD CONSTRAINT fk_reference_408 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_409; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  timesheet
+    ADD CONSTRAINT fk_reference_409 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_41; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadeperiodica
+    ADD CONSTRAINT fk_reference_41 FOREIGN KEY (idgrupoatvperiodica) REFERENCES grupoatvperiodica(idgrupoatvperiodica);
+
+
+--
+-- Name: fk_reference_410; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  eventoempregado
+    ADD CONSTRAINT fk_reference_410 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado);
+
+
+--
+-- Name: fk_reference_418; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  auditoria
+    ADD CONSTRAINT fk_reference_418 FOREIGN KEY (idusuario, iditemconfiguracao) REFERENCES empregadoitemconfiguracao(idusuario, iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_42; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_42 FOREIGN KEY (idtipoproblema) REFERENCES tipoproblemaatendimento(idtipoproblema);
+
+
+--
+-- Name: fk_reference_422; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  eventounidade
+    ADD CONSTRAINT fk_reference_422 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade);
+
+
+--
+-- Name: fk_reference_423; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  prioridadeservicounidade
+    ADD CONSTRAINT fk_reference_423 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade);
+
+
+--
+-- Name: fk_reference_424; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  usuario
+    ADD CONSTRAINT fk_reference_424 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade);
+
+
+--
+-- Name: fk_reference_425; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  excecaoempregado
+    ADD CONSTRAINT fk_reference_425 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade);
+
+
+--
+-- Name: fk_reference_426; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_426 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade);
+
+
+--
+-- Name: fk_reference_427; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  unidadebaseitemconfiguracao
+    ADD CONSTRAINT fk_reference_427 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade);
+
+
+--
+-- Name: fk_reference_428; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  empregados
+    ADD CONSTRAINT fk_reference_428 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade);
+
+
+--
+-- Name: fk_reference_43; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servico
+    ADD CONSTRAINT fk_reference_43 FOREIGN KEY (idlocalexecucaoservico) REFERENCES localexecucaoservico(idlocalexecucaoservico);
+
+
+--
+-- Name: fk_reference_430; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  itemconfiguracao
+    ADD CONSTRAINT fk_reference_430 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade);
+
+
+--
+-- Name: fk_reference_431; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  eventoempregado
+    ADD CONSTRAINT fk_reference_431 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade);
+
+
+--
+-- Name: fk_reference_432; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  questionario
+    ADD CONSTRAINT fk_reference_432 FOREIGN KEY (idcategoriaquestionario) REFERENCES categoriaquestionario(idcategoriaquestionario);
+
+
+--
+-- Name: fk_reference_433; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  historicotentativa
+    ADD CONSTRAINT fk_reference_433 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_434; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  imagemitemconfiguracao
+    ADD CONSTRAINT fk_reference_434 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_435; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  valor
+    ADD CONSTRAINT fk_reference_435 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_436; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  itemconfiguracaoevento
+    ADD CONSTRAINT fk_reference_436 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_437; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  auditoria
+    ADD CONSTRAINT fk_reference_437 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_439; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  usuarioitemconfiguracao
+    ADD CONSTRAINT fk_reference_439 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_441; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  empregadoitemconfiguracao
+    ADD CONSTRAINT fk_reference_441 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_442; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  auditoriaitemconfiguracao
+    ADD CONSTRAINT fk_reference_442 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_443; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  justificacaofalha
+    ADD CONSTRAINT fk_reference_443 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao);
+
+
+--
+-- Name: fk_reference_444; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  historicoexecucao
+    ADD CONSTRAINT fk_reference_444 FOREIGN KEY (idexecucao) REFERENCES execucaodemanda(idexecucao);
+
+
+--
+-- Name: fk_reference_452; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servicocontrato
+    ADD CONSTRAINT fk_reference_452 FOREIGN KEY (idcondicaooperacao) REFERENCES condicaooperacao(idcondicaooperacao);
+
+
+
+--
+-- Name: fk_reference_47; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_atribuicaofluxo
+    ADD CONSTRAINT fk_reference_47 FOREIGN KEY (iditemtrabalho) REFERENCES bpm_itemtrabalhofluxo(iditemtrabalho);
+
+
+--
+-- Name: fk_reference_48; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_objetoinstanciafluxo
+    ADD CONSTRAINT fk_reference_48 FOREIGN KEY (iditemtrabalho) REFERENCES bpm_itemtrabalhofluxo(iditemtrabalho);
+
+
+--
+-- Name: fk_reference_481; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  htmlcodevisao
+    ADD CONSTRAINT fk_reference_481 FOREIGN KEY (idvisao) REFERENCES visao(idvisao);
+
+
+--
+-- Name: fk_reference_482; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  botaoacaovisao
+    ADD CONSTRAINT fk_reference_482 FOREIGN KEY (idvisao) REFERENCES visao(idvisao);
+
+
+--
+-- Name: fk_reference_483; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  grupovisao
+    ADD CONSTRAINT fk_reference_483 FOREIGN KEY (idvisao) REFERENCES visao(idvisao);
+
+
+--
+-- Name: fk_reference_484; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  scriptsvisao
+    ADD CONSTRAINT fk_reference_484 FOREIGN KEY (idvisao) REFERENCES visao(idvisao);
+
+
+--
+-- Name: fk_reference_485; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  feriado
+    ADD CONSTRAINT fk_reference_485 FOREIGN KEY (idcidade) REFERENCES cidades(idcidade);
+
+
+--
+-- Name: fk_reference_486; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  camposobjetonegocio
+    ADD CONSTRAINT fk_reference_486 FOREIGN KEY (idobjetonegocio) REFERENCES objetonegocio(idobjetonegocio);
+
+
+--
+-- Name: fk_reference_487; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_objetoinstanciafluxo
+    ADD CONSTRAINT fk_reference_487 FOREIGN KEY (idobjetonegocio) REFERENCES objetonegocio(idobjetonegocio);
+
+
+--
+-- Name: fk_reference_488; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  responsabilidade
+    ADD CONSTRAINT fk_reference_488 FOREIGN KEY (idcontatocliente) REFERENCES contatocliente(idcontatocliente);
+
+
+--
+-- Name: fk_reference_489; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  historicotentativa
+    ADD CONSTRAINT fk_reference_489 FOREIGN KEY (idevento, idempregado) REFERENCES eventoempregado(idevento, idempregado);
+
+
+--
+-- Name: fk_reference_49; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  inventarioxml
+    ADD CONSTRAINT fk_reference_49 FOREIGN KEY (idnetmap) REFERENCES netmap(idnetmap);
+
+
+--
+-- Name: fk_reference_490; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  justificacaofalha
+    ADD CONSTRAINT fk_reference_490 FOREIGN KEY (idevento, idempregado) REFERENCES eventoempregado(idevento, idempregado);
+
+
+--
+-- Name: fk_reference_491; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadesfluxos
+    ADD CONSTRAINT fk_reference_491 FOREIGN KEY (idatividade) REFERENCES atividades(idatividade);
+
+
+--
+-- Name: fk_reference_492; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaodemanda
+    ADD CONSTRAINT fk_reference_492 FOREIGN KEY (idatividade) REFERENCES atividades(idatividade);
+
+
+--
+-- Name: fk_reference_5; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  projetos
+    ADD CONSTRAINT fk_reference_5 FOREIGN KEY (idcliente) REFERENCES clientes(idcliente);
+
+
+--
+-- Name: fk_reference_50; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaoatividadeperiodica
+    ADD CONSTRAINT fk_reference_50 FOREIGN KEY (idprogramacaoatividade) REFERENCES programacaoatividade(idprogramacaoatividade);
+
+
+--
+-- Name: fk_reference_504; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  glosaos
+    ADD CONSTRAINT fk_reference_504 FOREIGN KEY (idos) REFERENCES os(idos) ;
+
+
+--
+-- Name: fk_reference_505; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  fatura
+    ADD CONSTRAINT fk_reference_505 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato) ;
+
+
+--
+-- Name: fk_reference_506; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadesos
+    ADD CONSTRAINT fk_reference_506 FOREIGN KEY (idos) REFERENCES os(idos) ;
+
+
+--
+-- Name: fk_reference_507; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  faturaos
+    ADD CONSTRAINT fk_reference_507 FOREIGN KEY (idfatura) REFERENCES fatura(idfatura) ;
+
+
+--
+-- Name: fk_reference_508; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  faturaos
+    ADD CONSTRAINT fk_reference_508 FOREIGN KEY (idos) REFERENCES os(idos) ;
+
+
+--
+-- Name: fk_reference_509; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  acordonivelservicocontrato
+    ADD CONSTRAINT fk_reference_509 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato) ;
+
+
+--
+-- Name: fk_reference_51; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  campoobjrelacionado
+    ADD CONSTRAINT fk_reference_51 FOREIGN KEY (idrelacobjetonegocio) REFERENCES relacobjetonegocio(idrelacobjetonegocio);
+
+
+--
+-- Name: fk_reference_510; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  faturaapuracaoans
+    ADD CONSTRAINT fk_reference_510 FOREIGN KEY (idfatura) REFERENCES fatura(idfatura) ;
+
+
+--
+-- Name: fk_reference_511; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  faturaapuracaoans
+    ADD CONSTRAINT fk_reference_511 FOREIGN KEY (idacordonivelservicocontrato) REFERENCES acordonivelservicocontrato(idacordonivelservicocontrato) ;
+
+
+--
+-- Name: fk_reference_512; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  parametroscontrato
+    ADD CONSTRAINT fk_reference_512 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato) ;
+
+
+--
+-- Name: fk_reference_515; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  perfilacessosituacaoos
+    ADD CONSTRAINT fk_reference_515 FOREIGN KEY (idperfil) REFERENCES perfilacesso(idperfil) ;
+
+
+--
+-- Name: fk_reference_516; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  perfilacessosituacaofatura
+    ADD CONSTRAINT fk_reference_516 FOREIGN KEY (idperfil) REFERENCES perfilacesso(idperfil) ;
+
+
+--
+-- Name: fk_reference_517; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaosolicitacao
+    ADD CONSTRAINT fk_reference_517 FOREIGN KEY (idinstanciafluxo) REFERENCES bpm_instanciafluxo(idinstancia) ;
+
+
+--
+-- Name: fk_reference_518; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_sequenciafluxo
+    ADD CONSTRAINT fk_reference_518 FOREIGN KEY (idelementoorigem) REFERENCES bpm_elementofluxo(idelemento) ;
+
+
+--
+-- Name: fk_reference_519; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_sequenciafluxo
+    ADD CONSTRAINT fk_reference_519 FOREIGN KEY (idelementodestino) REFERENCES bpm_elementofluxo(idelemento) ;
+
+
+--
+-- Name: fk_reference_520; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_sequenciafluxo
+    ADD CONSTRAINT fk_reference_520 FOREIGN KEY (idfluxo) REFERENCES bpm_fluxo(idfluxo) ;
+
+
+--
+-- Name: fk_reference_521; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaosolicitacao
+    ADD CONSTRAINT fk_reference_521 FOREIGN KEY (idfluxo) REFERENCES bpm_fluxo(idfluxo) ;
+
+
+--
+-- Name: fk_reference_522; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_elementofluxo
+    ADD CONSTRAINT fk_reference_522 FOREIGN KEY (idfluxo) REFERENCES bpm_fluxo(idfluxo) ;
+
+
+--
+-- Name: fk_reference_524; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_instanciafluxo
+    ADD CONSTRAINT fk_reference_524 FOREIGN KEY (idfluxo) REFERENCES bpm_fluxo(idfluxo) ;
+
+
+--
+-- Name: fk_reference_525; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_historicoitemtrabalho
+    ADD CONSTRAINT fk_reference_525 FOREIGN KEY (iditemtrabalho) REFERENCES bpm_itemtrabalhofluxo(iditemtrabalho) ;
+
+
+--
+-- Name: fk_reference_526; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_historicoitemtrabalho
+    ADD CONSTRAINT fk_reference_526 FOREIGN KEY (idusuario) REFERENCES usuario(idusuario) ;
+
+
+--
+-- Name: fk_reference_527; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_historicoitemtrabalho
+    ADD CONSTRAINT fk_reference_527 FOREIGN KEY (idresponsavel) REFERENCES usuario(idusuario) ;
+
+
+--
+-- Name: fk_reference_529; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_529 FOREIGN KEY (idservicocontrato) REFERENCES servicocontrato(idservicocontrato) ;
+
+
+
+--
+-- Name: fk_reference_531; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_531 FOREIGN KEY (idcausaincidente) REFERENCES causaincidente(idcausaincidente) ;
+
+
+--
+-- Name: fk_reference_532; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_532 FOREIGN KEY (idcategoriasolucao) REFERENCES categoriasolucao(idcategoriasolucao) ;
+
+
+--
+-- Name: fk_reference_533; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  calendario
+    ADD CONSTRAINT fk_reference_533 FOREIGN KEY (idjornadaseg) REFERENCES jornadatrabalho(idjornada) ;
+
+
+--
+-- Name: fk_reference_534; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  calendario
+    ADD CONSTRAINT fk_reference_534 FOREIGN KEY (idjornadater) REFERENCES jornadatrabalho(idjornada) ;
+
+
+--
+-- Name: fk_reference_535; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  calendario
+    ADD CONSTRAINT fk_reference_535 FOREIGN KEY (idjornadaqua) REFERENCES jornadatrabalho(idjornada) ;
+
+
+--
+-- Name: fk_reference_536; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  calendario
+    ADD CONSTRAINT fk_reference_536 FOREIGN KEY (idjornadaqui) REFERENCES jornadatrabalho(idjornada) ;
+
+
+--
+-- Name: fk_reference_537; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  calendario
+    ADD CONSTRAINT fk_reference_537 FOREIGN KEY (idjornadasex) REFERENCES jornadatrabalho(idjornada) ;
+
+
+--
+-- Name: fk_reference_538; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  calendario
+    ADD CONSTRAINT fk_reference_538 FOREIGN KEY (idjornadasab) REFERENCES jornadatrabalho(idjornada) ;
+
+
+--
+-- Name: fk_reference_539; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  calendario
+    ADD CONSTRAINT fk_reference_539 FOREIGN KEY (idjornadadom) REFERENCES jornadatrabalho(idjornada) ;
+
+
+--
+-- Name: fk_reference_540; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  excecaocalendario
+    ADD CONSTRAINT fk_reference_540 FOREIGN KEY (idcalendario) REFERENCES calendario(idcalendario) ;
+
+
+--
+-- Name: fk_reference_541; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  excecaocalendario
+    ADD CONSTRAINT fk_reference_541 FOREIGN KEY (idjornada) REFERENCES jornadatrabalho(idjornada) ;
+
+
+--
+-- Name: fk_reference_542; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  reaberturasolicitacao
+    ADD CONSTRAINT fk_reference_542 FOREIGN KEY (idresponsavel) REFERENCES usuario(idusuario) ;
+
+
+--
+-- Name: fk_reference_543; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  reaberturasolicitacao
+    ADD CONSTRAINT fk_reference_543 FOREIGN KEY (idsolicitacaoservico) REFERENCES solicitacaoservico(idsolicitacaoservico) ;
+
+
+--
+-- Name: fk_reference_544; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaosolicitacao
+    ADD CONSTRAINT fk_reference_544 FOREIGN KEY (idsolicitacaoservico, seqreabertura) REFERENCES reaberturasolicitacao(idsolicitacaoservico, seqreabertura) ;
+
+
+
+
+--
+-- Name: fk_reference_547; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servicocontrato
+    ADD CONSTRAINT fk_reference_547 FOREIGN KEY (idmodeloemailcriacao) REFERENCES modelosemails(idmodeloemail) ;
+
+
+--
+-- Name: fk_reference_548; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servicocontrato
+    ADD CONSTRAINT fk_reference_548 FOREIGN KEY (idmodeloemailfinalizacao) REFERENCES modelosemails(idmodeloemail) ;
+
+
+--
+-- Name: fk_reference_549; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servicocontrato
+    ADD CONSTRAINT fk_reference_549 FOREIGN KEY (idmodeloemailacoes) REFERENCES modelosemails(idmodeloemail) ;
+
+
+--
+-- Name: fk_reference_550; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_atribuicaofluxo
+    ADD CONSTRAINT fk_reference_550 FOREIGN KEY (idgrupo) REFERENCES grupo(idgrupo) ;
+
+
+--
+-- Name: fk_reference_551; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  pesquisasatisfacao
+    ADD CONSTRAINT fk_reference_551 FOREIGN KEY (idsolicitacaoservico) REFERENCES solicitacaoservico(idsolicitacaoservico) ;
+
+
+--
+-- Name: fk_reference_552; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_552 FOREIGN KEY (idsolicitante) REFERENCES empregados(idempregado) ;
+
+
+--
+-- Name: fk_reference_553; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_553 FOREIGN KEY (idgrupoatual) REFERENCES grupo(idgrupo) ;
+
+
+--
+-- Name: fk_reference_554; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_554 FOREIGN KEY (idresponsavel) REFERENCES usuario(idusuario) ;
+
+
+--
+-- Name: fk_reference_555; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_555 FOREIGN KEY (idfaseatual) REFERENCES faseservico(idfase) ;
+
+
+--
+-- Name: fk_reference_556; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_historicoitemtrabalho
+    ADD CONSTRAINT fk_reference_556 FOREIGN KEY (idgrupo) REFERENCES grupo(idgrupo) ;
+
+
+--
+-- Name: fk_reference_557; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  empregados
+    ADD CONSTRAINT fk_reference_557 FOREIGN KEY (idcargo) REFERENCES cargos(idcargo) ;
+
+
+--
+-- Name: fk_reference_558; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servicocontrato
+    ADD CONSTRAINT fk_reference_558 FOREIGN KEY (idgruponivel1) REFERENCES grupo(idgrupo) ;
+
+
+--
+-- Name: fk_reference_559; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servicocontrato
+    ADD CONSTRAINT fk_reference_559 FOREIGN KEY (idgrupoexecutor) REFERENCES grupo(idgrupo) ;
+
+
+--
+-- Name: fk_reference_560; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servicocontrato
+    ADD CONSTRAINT fk_reference_560 FOREIGN KEY (idcalendario) REFERENCES calendario(idcalendario) ;
+
+
+--
+-- Name: fk_reference_561; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_561 FOREIGN KEY (idcalendario) REFERENCES calendario(idcalendario) ;
+
+
+--
+-- Name: fk_reference_562; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  ocorrenciasolicitacao
+    ADD CONSTRAINT fk_reference_562 FOREIGN KEY (idjustificativa) REFERENCES justificativasolicitacao(idjustificativa) ;
+
+
+--
+-- Name: fk_reference_563; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadeperiodica
+    ADD CONSTRAINT fk_reference_563 FOREIGN KEY (idsolicitacaoservico) REFERENCES solicitacaoservico(idsolicitacaoservico) ;
+
+
+--
+-- Name: fk_reference_564; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  ocorrenciasolicitacao
+    ADD CONSTRAINT fk_reference_564 FOREIGN KEY (idsolicitacaoservico) REFERENCES solicitacaoservico(idsolicitacaoservico) ;
+
+
+--
+-- Name: fk_reference_565; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  ocorrenciasolicitacao
+    ADD CONSTRAINT fk_reference_565 FOREIGN KEY (iditemtrabalho) REFERENCES bpm_itemtrabalhofluxo(iditemtrabalho) ;
+
+
+--
+-- Name: fk_reference_567; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servico
+    ADD CONSTRAINT fk_reference_567 FOREIGN KEY (idbaseconhecimento) REFERENCES baseconhecimento(idbaseconhecimento) ;
+
+
+--
+-- Name: fk_reference_568; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  contratoscolaboradores
+    ADD CONSTRAINT fk_reference_568 FOREIGN KEY (idempregado) REFERENCES empregados(idempregado) ;
+
+
+--
+-- Name: fk_reference_569; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  contratoscolaboradores
+    ADD CONSTRAINT fk_reference_569 FOREIGN KEY (idcontrato) REFERENCES contratos(idcontrato) ;
+
+
+--
+-- Name: fk_reference_570; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  unidadesaccservicos
+    ADD CONSTRAINT fk_reference_570 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade) ;
+
+
+--
+-- Name: fk_reference_571; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  unidadesaccservicos
+    ADD CONSTRAINT fk_reference_571 FOREIGN KEY (idservico) REFERENCES servico(idservico) ;
+
+
+--
+-- Name: fk_reference_572; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  acordonivelservico
+    ADD CONSTRAINT fk_reference_572 FOREIGN KEY (idformula) REFERENCES formula(idformula) ;
+
+
+--
+-- Name: fk_reference_573; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  acordonivelservicocontrato
+    ADD CONSTRAINT fk_reference_573 FOREIGN KEY (idformula) REFERENCES formula(idformula) ;
+
+
+--
+-- Name: fk_reference_579; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  prioridadeacordonivelservico
+    ADD CONSTRAINT fk_reference_579 FOREIGN KEY (idacordonivelservico) REFERENCES acordonivelservico(idacordonivelservico) ;
+
+
+--
+-- Name: fk_reference_580; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  prioridadeacordonivelservico
+    ADD CONSTRAINT fk_reference_580 FOREIGN KEY (idprioridade) REFERENCES prioridade(idprioridade) ;
+
+
+--
+-- Name: fk_reference_581; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  prioridadeacordonivelservico
+    ADD CONSTRAINT fk_reference_581 FOREIGN KEY (idunidade) REFERENCES unidade(idunidade) ;
+
+
+--
+-- Name: fk_reference_59; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  etapas
+    ADD CONSTRAINT fk_reference_59 FOREIGN KEY (idfluxo) REFERENCES fluxos(idfluxo);
+
+
+--
+-- Name: fk_reference_6; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  contratos
+    ADD CONSTRAINT fk_reference_6 FOREIGN KEY (idcliente) REFERENCES clientes(idcliente);
+
+
+--
+-- Name: fk_reference_60; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  demandas
+    ADD CONSTRAINT fk_reference_60 FOREIGN KEY (idfluxo) REFERENCES fluxos(idfluxo);
+
+
+--
+-- Name: fk_reference_600; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  osatividadeperiodica
+    ADD CONSTRAINT fk_reference_600 FOREIGN KEY (idos) REFERENCES os(idos) ;
+
+
+--
+-- Name: fk_reference_601; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  osatividadeperiodica
+    ADD CONSTRAINT fk_reference_601 FOREIGN KEY (idatividadeperiodica) REFERENCES atividadeperiodica(idatividadeperiodica) ;
+
+
+--
+-- Name: fk_reference_602; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  programacaoatividade
+    ADD CONSTRAINT fk_reference_602 FOREIGN KEY (idatividadesos) REFERENCES atividadesos(idatividadesos) ;
+
+
+--
+-- Name: fk_reference_607; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_reference_607 FOREIGN KEY (idbaseconhecimento) REFERENCES baseconhecimento(idbaseconhecimento) ;
+
+
+--
+-- Name: fk_reference_61; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaosolicitacao
+    ADD CONSTRAINT fk_reference_61 FOREIGN KEY (idfluxo) REFERENCES fluxos(idfluxo);
+
+
+--
+-- Name: fk_reference_610; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  problemaitemconfiguracao
+    ADD CONSTRAINT fk_reference_610 FOREIGN KEY (iditemconfiguracao) REFERENCES itemconfiguracao(iditemconfiguracao) ;
+
+
+--
+-- Name: fk_reference_612; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  problema
+    ADD CONSTRAINT fk_reference_612 FOREIGN KEY (idproblemaitemconfiguracao) REFERENCES problemaitemconfiguracao(idproblemaitemconfiguracao) ;
+
+
+--
+-- Name: fk_reference_613; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  problemaitemconfiguracao
+    ADD CONSTRAINT fk_reference_613 FOREIGN KEY (idproblema) REFERENCES problema(idproblema) ;
+
+
+--
+-- Name: fk_reference_614; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  problema
+    ADD CONSTRAINT fk_reference_614 FOREIGN KEY (idproblemamudanca) REFERENCES problemamudanca(idproblemamudanca) ;
+
+
+--
+-- Name: fk_reference_615; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  problemamudanca
+    ADD CONSTRAINT fk_reference_615 FOREIGN KEY (idproblema) REFERENCES problema(idproblema) ;
+
+
+--
+-- Name: fk_reference_616; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  problema
+    ADD CONSTRAINT fk_reference_616 FOREIGN KEY (idcategoriaproblema) REFERENCES categoriaproblema(idcategoriaproblema) ;
+
+
+--
+-- Name: fk_reference_617; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  categoriaproblema
+    ADD CONSTRAINT fk_reference_617 FOREIGN KEY (cat_idcategoriaproblema) REFERENCES categoriaproblema(idcategoriaproblema) ;
+
+
+--
+-- Name: fk_reference_618; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  glosaos
+    ADD CONSTRAINT fk_reference_618 FOREIGN KEY (idacordonivelservico) REFERENCES acordonivelservico(idacordonivelservico) ;
+
+
+--
+-- Name: fk_reference_62; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_instanciafluxo
+    ADD CONSTRAINT fk_reference_62 FOREIGN KEY (idfluxo) REFERENCES fluxos(idfluxo);
+
+
+--
+-- Name: fk_reference_63; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_elementofluxo
+    ADD CONSTRAINT fk_reference_63 FOREIGN KEY (idfluxo) REFERENCES fluxos(idfluxo);
+
+
+--
+-- Name: fk_reference_64; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  bpm_sequenciafluxo
+    ADD CONSTRAINT fk_reference_64 FOREIGN KEY (idfluxo) REFERENCES fluxos(idfluxo);
+
+
+--
+-- Name: fk_reference_65; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadesfluxos
+    ADD CONSTRAINT fk_reference_65 FOREIGN KEY (idfluxo) REFERENCES fluxos(idfluxo);
+
+
+--
+-- Name: fk_reference_68; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadeperiodica
+    ADD CONSTRAINT fk_reference_68 FOREIGN KEY (idprocedimentotecnico) REFERENCES procedimentotecnico(idprocedimentotecnico);
+
+
+--
+-- Name: fk_reference_7; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  contatocliente
+    ADD CONSTRAINT fk_reference_7 FOREIGN KEY (idcliente) REFERENCES clientes(idcliente);
+
+
+--
+-- Name: fk_reference_73; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  relacobjetonegocio
+    ADD CONSTRAINT fk_reference_73 FOREIGN KEY (idobjetonegociopai) REFERENCES objetonegocio(idobjetonegocio) ;
+
+
+--
+-- Name: fk_reference_74; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  relacobjetonegocio
+    ADD CONSTRAINT fk_reference_74 FOREIGN KEY (idobjetonegociofilho) REFERENCES objetonegocio(idobjetonegocio) ;
+
+
+--
+-- Name: fk_reference_77; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  ocorrencias
+    ADD CONSTRAINT fk_reference_77 FOREIGN KEY (iddemanda) REFERENCES demandas(iddemanda);
+
+
+--
+-- Name: fk_reference_78; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  execucaodemanda
+    ADD CONSTRAINT fk_reference_78 FOREIGN KEY (iddemanda) REFERENCES demandas(iddemanda);
+
+
+--
+-- Name: fk_reference_78; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  visaorelacionada
+    ADD CONSTRAINT fk_visaorelacionada_78 FOREIGN KEY (idvisaopai) REFERENCES visao(idvisao) ;
+
+
+--
+-- Name: fk_reference_79; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  timesheet
+    ADD CONSTRAINT fk_reference_79 FOREIGN KEY (iddemanda) REFERENCES demandas(iddemanda);
+
+
+--
+-- Name: fk_reference_8; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadesos
+    ADD CONSTRAINT fk_reference_8 FOREIGN KEY (idatividadeservicocontrato) REFERENCES atividadesservicocontrato(idatividadeservicocontrato);
+
+
+--
+-- Name: fk_reference_81; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  campoobjrelacionado
+    ADD CONSTRAINT fk_reference_81 FOREIGN KEY (idcamposobjetonegociopai) REFERENCES camposobjetonegocio(idcamposobjetonegocio) ;
+
+
+--
+-- Name: fk_reference_82; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  campoobjrelacionado
+    ADD CONSTRAINT fk_reference_82 FOREIGN KEY (idcamposobjetonegociofilho) REFERENCES camposobjetonegocio(idcamposobjetonegocio) ;
+
+
+--
+-- Name: fk_reference_87; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  atividadesservicocontrato
+    ADD CONSTRAINT fk_reference_87 FOREIGN KEY (idservicocontrato) REFERENCES servicocontrato(idservicocontrato);
+
+
+--
+-- Name: fk_reference_88; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  responsabilidade
+    ADD CONSTRAINT fk_reference_88 FOREIGN KEY (idservicocontrato) REFERENCES servicocontrato(idservicocontrato);
+
+
+--
+-- Name: fk_reference_89; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  os
+    ADD CONSTRAINT fk_reference_89 FOREIGN KEY (idservicocontrato) REFERENCES servicocontrato(idservicocontrato);
+
+
+--
+-- Name: fk_reference_90; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  prioridadeservicounidade
+    ADD CONSTRAINT fk_reference_90 FOREIGN KEY (idservicocontrato) REFERENCES servicocontrato(idservicocontrato);
+
+
+--
+-- Name: fk_reference_90; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  visaorelacionada
+    ADD CONSTRAINT fk_visaorelacionada_90 FOREIGN KEY (idobjetonegocionn) REFERENCES objetonegocio(idobjetonegocio) ;
+
+
+--
+-- Name: fk_reference_91; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  acordonivelservico
+    ADD CONSTRAINT fk_reference_91 FOREIGN KEY (idservicocontrato) REFERENCES servicocontrato(idservicocontrato);
+
+
+--
+-- Name: fk_reference_93; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  fluxoservico
+    ADD CONSTRAINT fk_reference_93 FOREIGN KEY (idservicocontrato) REFERENCES servicocontrato(idservicocontrato);
+
+
+--
+-- Name: fk_reference_97; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  servico
+    ADD CONSTRAINT fk_reference_97 FOREIGN KEY (idtiposervico) REFERENCES tiposervico(idtiposervico);
+
+
+--
+-- Name: fk_reference_99; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  tipoitemcfgcaracteristica
+    ADD CONSTRAINT fk_reference_99 FOREIGN KEY (idtipoitemconfiguracao) REFERENCES tipoitemconfiguracao(idtipoitemconfiguracao);
+
+
+--
+-- Name: fk_solicitacaoserv_contato; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_solicitacaoserv_contato FOREIGN KEY (idcontatosolicitacaoservico) REFERENCES contatosolicitacaoservico(idcontatosolicitacaoservico) ;
+
+
+--
+-- Name: fk_solicitacaoservico_tipodemanda; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  solicitacaoservico
+    ADD CONSTRAINT fk_solicitserv_tpdemanda FOREIGN KEY (idtipodemandaservico) REFERENCES tipodemandaservico(idtipodemandaservico) ;
+
+
+--
+-- Name: fk_vinculov_ref1_camposob; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  vinculovisao
+    ADD CONSTRAINT fk_vinculov_ref1_camposob FOREIGN KEY (idcamposobjetonegociopainn) REFERENCES camposobjetonegocio(idcamposobjetonegocio) ;
+
+
+--
+-- Name: fk_vinculov_ref1_grupovis; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  vinculovisao
+    ADD CONSTRAINT fk_vinculov_ref1_grupovis FOREIGN KEY (idgrupovisaofilho, idcamposobjetonegociofilho) REFERENCES grupovisaocamposnegocio(idgrupovisao, idcamposobjetonegocio) ;
+
+
+--
+-- Name: fk_vinculov_ref2_camposob; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  vinculovisao
+    ADD CONSTRAINT fk_vinculov_ref2_camposob FOREIGN KEY (idcamposobjetonegociofilhonn) REFERENCES camposobjetonegocio(idcamposobjetonegocio) ;
+
+
+--
+-- Name: fk_vinculov_ref2_grupovis; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  vinculovisao
+    ADD CONSTRAINT fk_vinculov_ref2_grupovis FOREIGN KEY (idgrupovisaopai, idcamposobjetonegociopai) REFERENCES grupovisaocamposnegocio(idgrupovisao, idcamposobjetonegocio) ;
+
+
+--
+-- Name: fk_visaorel_ref2_visao; Type: FK CONSTRAINT; Schema: citsmart; Owner: postgres
+--
+
+ALTER TABLE  visaorelacionada
+    ADD CONSTRAINT fk_visaorel_ref2_visao FOREIGN KEY (idvisaofilha) REFERENCES visao(idvisao) ;
+
+
+alter table servicocontrato add constraint fk_reference_559 foreign key (idgrupoexecutor)
+      references grupo (idgrupo) ;
+	  
+alter table ocorrenciasolicitacao add constraint fk_ref_itemtrabalho foreign key (iditemtrabalho)
+      references bpm_itemtrabalhofluxo (iditemtrabalho) ;
+	  
+alter table servicocontrato add constraint fk_reference_560 foreign key (idcalendario)
+references calendario (idcalendario) ;
+
+alter table solicitacaoservico add constraint fk_reference_561 foreign key (idcalendario)
+      references calendario (idcalendario) ;
+	  
+alter table ocorrenciasolicitacao add constraint fk_reference_562 foreign key (idjustificativa)
+      references justificativasolicitacao (idjustificativa) ;
+	  
+alter table atividadeperiodica add constraint fk_reference_563 foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico) ;
+
+alter table ocorrenciasolicitacao add constraint fk_reference_562 foreign key (idjustificativa)
+      references justificativasolicitacao (idjustificativa) ;
+alter table ocorrenciasolicitacao add constraint fk_reference_564 foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico) ;
+alter table ocorrenciasolicitacao add constraint fk_reference_565 foreign key (iditemtrabalho)
+      references bpm_itemtrabalhofluxo (iditemtrabalho) ;
+
+alter table visaopersonalizada add constraint fk_reference_566 foreign key (idvisao)
+      references visao (idvisao) ;
+
+alter table contratoscolaboradores add constraint fk_reference_568 foreign key (idempregado)
+      references empregados (idempregado) ;
+
+alter table contratoscolaboradores add constraint fk_reference_569 foreign key (idcontrato)
+      references contratos (idcontrato) ;
+	  
+alter table unidadesaccservicos add constraint fk_reference_570 foreign key (idunidade)
+      references unidade (idunidade) ;
+
+alter table unidadesaccservicos add constraint fk_reference_571 foreign key (idservico)
+      references servico (idservico) ;
+
+alter table acordonivelservicocontrato add constraint fk_reference_573 foreign key (idformula)
+      references formula (idformula) ;
+
+alter table acordonivelservico add constraint fk_reference_572 foreign key (idformula)
+      references formula (idformula) ;
+
+alter table requisicaomudancaitemconfiguracao add constraint fk_reference_574 foreign key (idrequisicaomudanca)
+references requisicaomudanca (idrequisicaomudanca) ;
+alter table requisicaomudancaitemconfiguracao add constraint fk_reference_575 foreign key (iditemconfiguracao)
+references itemconfiguracao (iditemconfiguracao) ;
+
+alter table requisicaomudancaservico add constraint fk_reference_576 foreign key (idrequisicaomudanca)
+references requisicaomudanca (idrequisicaomudanca) ;
+alter table requisicaomudancaservico add constraint fk_reference_578 foreign key (idservico)
+references servico (idservico) ;
+
+alter table prioridadeacordonivelservico add constraint fk_ref2_579 foreign key (idacordonivelservico)
+      references acordonivelservico (idacordonivelservico) ;
+
+alter table prioridadeacordonivelservico add constraint fk_ref2_580 foreign key (idprioridade)
+      references prioridade (idprioridade) ;
+
+alter table prioridadeacordonivelservico add constraint fk_ref2_581 foreign key (idunidade)
+      references unidade (idunidade) ;
+
+alter table osatividadeperiodica add constraint fk_reference_579 foreign key (idatividadeperiodica)
+      references atividadeperiodica (idatividadeperiodica) ;
+
+alter table osatividadeperiodica add constraint fk_reference_580 foreign key (idos)
+      references os (idos) ;
+
+alter table recurso add constraint fk_reference_603 foreign key (idgruporecurso)
+      references gruporecursos (idgruporecurso) ;
+
+alter table recurso add constraint fk_reference_605 foreign key (idrecursopai)
+      references recurso (idrecurso) ;
+
+
+alter table osatividadeperiodica add constraint fk_reference_579 foreign key (idatividadeperiodica)
+      references atividadeperiodica (idatividadeperiodica) ;
+alter table osatividadeperiodica add constraint fk_reference_580 foreign key (idos)
+      references os (idos) ;
+
+alter table categoriaproblema add constraint fk_reference_617 foreign key (cat_idcategoriaproblema)
+      references categoriaproblema (idcategoriaproblema) ;
+
+alter table problema add constraint fk_reference_612 foreign key (idproblemaitemconfiguracao)
+      references problemaitemconfiguracao (idproblemaitemconfiguracao) ;
+alter table problema add constraint fk_reference_614 foreign key (idproblemamudanca)
+      references problemamudanca (idproblemamudanca) ;
+alter table problema add constraint fk_reference_616 foreign key (idcategoriaproblema)
+      references categoriaproblema (idcategoriaproblema) ;
+
+alter table problemaitemconfiguracao add constraint fk_reference_610 foreign key (iditemconfiguracao)
+      references itemconfiguracao (iditemconfiguracao) ;
+alter table problemaitemconfiguracao add constraint fk_reference_613 foreign key (idproblema)
+      references problema (idproblema) ;
+
+alter table problemamudanca add constraint fk_reference_611 foreign key (idrequisicaomudanca)
+      references requisicaomudanca (idrequisicaomudanca) ;
+alter table problemamudanca add constraint fk_reference_615 foreign key (idproblema)
+      references problema (idproblema) ;
+
+alter table contadoracesso add constraint fk_reference_608 foreign key (idusuario)
+      references usuario (idusuario) ;
+ 
+alter table contadoracesso add constraint fk_reference_609 foreign key (idbaseconhecimento)
+      references baseconhecimento (idbaseconhecimento) ;
+
+alter table os add constraint fk_reference_619 foreign key (idospai) references os (idos) ;
+
+alter table localidadeunidade  add constraint fk_localid_reference_unidade foreign key (idunidade)  
+references unidade (idunidade);
+
+alter table localidadeunidade add constraint fk_localida_reference_localida foreign key (idlocalidade) 
+references localidade (idlocalidade);
+
+alter table  requisicaomudancaservico 
+   add constraint fk_requisic_reference_servico foreign key ( idservico )
+      references  servico  ( idservico );
+
+alter table solicitacaoservicomudanca
+   add constraint fk_solicita_reference_requisic foreign key (idrequisicaomudanca)
+      references requisicaomudanca (idrequisicaomudanca);
+
+alter table solicitacaoservicomudanca
+   add constraint fk_solicita_reference_solmud foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico);
+
+alter table solicitacaoservicomudanca  add constraint fk_solicita_reference_requisic foreign key (idrequisicaomudanca)  references requisicaomudanca (idrequisicaomudanca);
+alter table solicitacaoservicomudanca add constraint fk_solicita_reference_solmud foreign key (idsolicitacaoservico) references solicitacaoservico (idsolicitacaoservico);
+
+alter table itemconfiguracao add foreign key (idgrupoitemconfiguracao) references grupoitemconfiguracao (idgrupoitemconfiguracao);
+alter table itemconfiguracao add constraint fk_grupoitemconfiguracao foreign key (idgrupoitemconfiguracao) references grupoitemconfiguracao (idgrupoitemconfiguracao);
+alter table matrizvisao add constraint fk_reference_620 foreign key (idvisao) references visao (idvisao) ;
+alter table matrizvisao add constraint fk_reference_621 foreign key (idobjetonegocio) references objetonegocio (idobjetonegocio) ;
+alter table matrizvisao add constraint fk_reference_622 foreign key (idcamposobjetonegocio1)references camposobjetonegocio (idcamposobjetonegocio) ;
+alter table matrizvisao add constraint fk_reference_623 foreign key (idcamposobjetonegocio2) references camposobjetonegocio (idcamposobjetonegocio) ;
+alter table matrizvisao add constraint fk_reference_624 foreign key (idcamposobjetonegocio3) references camposobjetonegocio (idcamposobjetonegocio) ;
+
+
+alter table acordoservicocontrato add constraint fk_reference_627 foreign key (idacordonivelservico) references acordonivelservico (idacordonivelservico) ;
+alter table acordoservicocontrato add constraint fk_reference_628 foreign key (idservicocontrato) references servicocontrato (idservicocontrato) ;
+
+alter table categoriamudanca   add constraint fk_categori_reference_bpm_tipo foreign key (idtipofluxo)      references bpm_tipofluxo (idtipofluxo);
+alter table categoriamudanca   add constraint fk_categori_reference_modelose foreign key (idmodeloemailcriacao)      references modelosemails (idmodeloemail);
+alter table categoriamudanca   add constraint fk_categori_reference_modelose_01 foreign key (idmodeloemailfinalizacao)     references modelosemails (idmodeloemail);
+alter table categoriamudanca   add constraint fk_categori_reference_modelose_02 foreign key (idmodeloemailacoes)      references modelosemails (idmodeloemail);
+alter table categoriamudanca   add constraint fk_categori_reference_grupo foreign key (idgruponivel1)      references grupo (idgrupo);
+alter table categoriamudanca   add constraint fk_categori_reference_grupo_01 foreign key (idgrupoexecutor)      references grupo (idgrupo);
+alter table categoriamudanca   add constraint fk_categori_reference_calendar foreign key (idcalendario)      references calendario (idcalendario);	 
+alter table requisicaomudanca   add constraint pk_requisicaomudanca primary key (idrequisicaomudanca);
+alter table requisicaomudanca   add constraint fk_requisic_reference_cat foreign key (idcategoriamudanca)      references categoriamudanca (idcategoriamudanca);
+alter table requisicaomudanca   add constraint fk_requisic_reference_grupo foreign key (idgruponivel1)      references grupo (idgrupo);
+alter table requisicaomudanca   add constraint fk_requisic_reference_grupo_01 foreign key (idgrupoatual)      references grupo (idgrupo);
+alter table requisicaomudanca   add constraint fk_requisic_reference_calendar foreign key (idcalendario)      references calendario (idcalendario);
+
+alter table execucaomudanca add constraint fk_execucao_reference_bpm_inst foreign key (idinstanciafluxo) references bpm_instanciafluxo (idinstancia);
+alter table execucaomudanca add constraint fk_execucao_reference_requisic foreign key (idrequisicaomudanca)  references requisicaomudanca (idrequisicaomudanca);
+alter table execucaomudanca add constraint fk_execucao_reference_bpm_flux foreign key (idfluxo) references bpm_fluxo (idfluxo);	 
+alter table  ocorrenciamudanca add constraint pk_ocorrenciamudanca primary key ( idocorrencia );
+alter table  ocorrenciamudanca add constraint fk_ocorrenc_reference_bpm_item foreign key ( iditemtrabalho )   references  bpm_itemtrabalhofluxo  ( iditemtrabalho );
+alter table  ocorrenciamudanca add constraint fk_ocorrenc_reference_justific foreign key ( idjustificativa )  references justificativasolicitacao  ( idjustificativa );
+alter table  ocorrenciamudanca add constraint fk_ocorrenc_reference_requisic foreign key ( idrequisicaomudanca )  references  requisicaomudanca  ( idrequisicaomudanca ); 
+alter table  requisicaomudancaitemconfiguracao  add constraint pk_requisicaomudancaitemconfig primary key ( idrequisicaomudancaitemconfiguracao );
+alter table  requisicaomudancaitemconfiguracao   add constraint fk_requisic_reference_req foreign key ( idrequisicaomudanca )   references  requisicaomudanca  ( idrequisicaomudanca );
+alter table  requisicaomudancaitemconfiguracao   add constraint fk_requisic_reference_itemconf foreign key ( iditemconfiguracao )   references  itemconfiguracao  ( iditemconfiguracao );
+alter table  requisicaomudancaservico  add constraint pk_requisicaomudancaservico primary key ( idrequisicaomudancaservico );
+alter table  requisicaomudancaservico    add constraint fk_requisic_reference_req foreign key ( idrequisicaomudanca )   references  requisicaomudanca  ( idrequisicaomudanca );
+alter table  requisicaomudancaservico  add constraint fk_requisic_reference_servico foreign key ( idservico )  references  servico  ( idservico );	 
+
+ALTER TABLE itemconfiguracao ADD CONSTRAINT fk_idproprietario foreign key (idproprietario) REFERENCES empregados (idempregado);
+
+alter table requisitosla add constraint fk_reference_552 foreign key (idempregado)
+      references empregados (idempregado) ;
+
+alter table slarequisitosla add constraint fk_reference_553 foreign key (idrequisitosla)
+      references requisitosla (idrequisitosla) ;
+
+alter table slarequisitosla add constraint fk_reference_554 foreign key (idacordonivelservico)
+      references acordonivelservico (idacordonivelservico) ;	
+
+alter table acordonivelservico_hist add constraint fk_reference_102 foreign key (idprioridadepadrao)
+      references prioridade (idprioridade) ;
+
+alter table acordonivelservico_hist add constraint fk_reference_91 foreign key (idservicocontrato)
+      references servicocontrato (idservicocontrato);
+
+alter table requisitosla add constraint fk_reference_552_x foreign key (idempregado)
+      references empregados (idempregado);
+
+alter table slarequisitosla add constraint fk_reference_553_x foreign key (idrequisitosla)
+      references requisitosla (idrequisitosla);
+
+alter table slarequisitosla add constraint fk_reference_554_x foreign key (idacordonivelservico)
+      references acordonivelservico (idacordonivelservico);
+
+alter table acordonivelservico_hist add constraint fk_reference_102_2 foreign key (idprioridadepadrao)
+      references prioridade (idprioridade);
+
+alter table acordonivelservico_hist add constraint fk_reference_91_2 foreign key (idservicocontrato)
+      references servicocontrato (idservicocontrato);
+
+alter table contratos_hist add constraint fk_reference_26_2 foreign key (idmoeda)
+      references MOEDAS (idmoeda);
+
+alter table contratos_hist add constraint fk_reference_3_2 foreign key (idcliente)
+      references CLIENTES (idcliente);
+
+alter table contratos_hist add constraint fk_reference_60_2 foreign key (idfornecedor)
+      references FORNECEDOR (idfornecedor);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_bpm_tipo foreign key (idtipofluxo)
+      references bpm_tipofluxo (idtipofluxo);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_modelose foreign key (idmodeloemailcriacao)
+      references modelosemails (idmodeloemail);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_modelose_01 foreign key (idmodeloemailfinalizacao)
+      references modelosemails (idmodeloemail);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_modelose_02 foreign key (idmodeloemailacoes)
+      references modelosemails (idmodeloemail);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_grupo foreign key (idgruponivel1)
+      references grupo (idgrupo);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_grupo_01 foreign key (idgrupoexecutor)
+      references grupo (idgrupo);
+
+alter table categoriamudanca
+   add constraint fk_categori_reference_calendar foreign key (idcalendario)
+      references calendario (idcalendario);	 
+
+
+alter table requisicaomudanca
+   add constraint fk_requisic_reference_categoria foreign key (idcategoriamudanca)
+      references categoriamudanca (idcategoriamudanca);
+
+alter table requisicaomudanca
+   add constraint fk_requisic_reference_grupo foreign key (idgruponivel1)
+      references grupo (idgrupo);
+
+alter table requisicaomudanca
+   add constraint fk_requisic_reference_grupo_01 foreign key (idgrupoatual)
+      references grupo (idgrupo);
+
+alter table requisicaomudanca
+   add constraint fk_requisic_reference_calendar foreign key (idcalendario)
+      references calendario (idcalendario);
+
+alter table execucaomudanca 
+add constraint fk_execucao_reference_bpm_inst foreign key (idinstanciafluxo) 
+references bpm_instanciafluxo (idinstancia);
+
+
+alter table execucaomudanca
+add constraint fk_execucao_reference_requisic foreign key (idrequisicaomudanca)
+  references requisicaomudanca (idrequisicaomudanca);
+
+alter table execucaomudanca
+add constraint fk_execucao_reference_bpm_flux foreign key (idfluxo)
+references bpm_fluxo (idfluxo);	
+
+alter table  ocorrenciamudanca 
+   add constraint fk_ocorrenc_reference_bpm_item foreign key ( iditemtrabalho )
+      references  bpm_itemtrabalhofluxo  ( iditemtrabalho );
+
+alter table  ocorrenciamudanca 
+   add constraint fk_ocorrenc_reference_justific foreign key ( idjustificativa )
+      references justificativasolicitacao  ( idjustificativa );
+
+alter table  ocorrenciamudanca 
+   add constraint fk_ocorrenc_reference_requisic foreign key ( idrequisicaomudanca )
+      references  requisicaomudanca  ( idrequisicaomudanca ); 
+
+alter table  requisicaomudancaitemconfiguracao 
+   add constraint fk_requisic_reference_requisic foreign key ( idrequisicaomudanca )
+      references  requisicaomudanca  ( idrequisicaomudanca );
+
+alter table  requisicaomudancaitemconfiguracao 
+   add constraint fk_requisic_reference_itemconf foreign key ( iditemconfiguracao )
+      references  itemconfiguracao  ( iditemconfiguracao );
+
+alter table  requisicaomudancaservico 
+   add constraint fk_requisic_reference_requisic foreign key ( idrequisicaomudanca )
+      references  requisicaomudanca  ( idrequisicaomudanca );
+
+alter table  requisicaomudancaservico 
+   add constraint fk_requisic_reference_servico foreign key ( idservico )
+      references  servico  ( idservico );	
+
+ALTER TABLE itemconfiguracao
+ADD CONSTRAINT fk_idproprietario foreign key (idproprietario)
+REFERENCES empregados (idempregado);
+
+alter table ocorrenciasolicitacao
+	add constraint fk_categoriaocorrencia foreign key(idcategoriaocorrencia) references categoriaocorrencia(id);
+
+alter table ocorrenciasolicitacao
+	add constraint fk_origemocorrencia foreign key(idorigemocorrencia) references origemocorrencia(id);
+
+alter table notificacaogrupo
+   add constraint fk_alertagr_reference_alerta foreign key (idnotificacao)
+      references notificacao (idnotificacao);
+
+alter table notificacaogrupo
+   add constraint fk_alertagr_reference_grupo foreign key (idgrupo)
+      references grupo (idgrupo);
+
+alter table notificacaousuario
+   add constraint fk_alertaus_reference_alerta foreign key (idnotificacao)
+      references notificacao (idnotificacao);
+
+alter table notificacaousuario
+   add constraint fk_alertaus_reference_usuario foreign key (idusuario)
+      references usuario (idusuario);
+
+ALTER TABLE requisicaomudanca ADD  CONSTRAINT fk_idbaseconhecimento 
+FOREIGN KEY (idbaseconhecimento) 
+REFERENCES baseconhecimento (idbaseconhecimento);
+
+alter table recurso add constraint fk_ref_rec_nagios foreign key (idnagiosconexao)
+      references nagiosconexao (idnagiosconexao) ;
+
+alter table recurso add constraint fk_ref_rec_calend foreign key (idCalendario)
+      references calendario (idCalendario) ;
+
+alter table recurso add constraint fk_ref_solic_rec foreign key (idsolicitante)
+      references empregados (idempregado);
+alter table recurso add constraint fk_ref_grp_rec foreign key (idgrupo)
+      references grupo (idgrupo);
+alter table recurso add constraint fk_ref_orig_rec foreign key (idorigem)
+      references origematendimento (idorigem);
+alter table recurso add constraint fk_ref_sc_rec foreign key (idservicocontrato)
+      references servicocontrato (idservicocontrato) ;
+alter table recurso add constraint fk_ref_evt_rec foreign key (ideventomonitoramento)
+      references eventomonitoramento (ideventomonitoramento) ;
+alter table recurso add constraint fk_ref_ic_rec foreign key (iditemconfiguracao)
+      references itemconfiguracao (iditemconfiguracao) ;
+
+alter table itemconfiguracao add constraint fk_idbaseconhecimento_itemconfiguracao foreign key (idbaseconhecimento)
+     references baseconhecimento (idbaseconhecimento) ;
+ALTER TABLE itemconfiguracao DROP FOREIGN KEY fk_grupoitemconfiguracao ;
+
+alter table itemcfgsolicitacaoserv
+  add constraint fk_itemcfgs_reference_itemconf foreign key (iditemconfiguracao)
+     references itemconfiguracao (iditemconfiguracao);
+
+alter table itemcfgsolicitacaoserv
+  add constraint fk_itemcfgs_reference_solicita foreign key (idsolicitacaoservico)
+     references solicitacaoservico (idsolicitacaoservico);
+
+alter table valorservicocontrato add constraint fk_reference_665 foreign key (idservicocontrato)
+     references servicocontrato (idservicocontrato) ;
+
+ALTER TABLE avaliacaofornecedor
+ADD CONSTRAINT fk_reference_678
+FOREIGN KEY (idFornecedor) references fornecedor(idFornecedor);
+
+ALTER TABLE avaliacaofornecedor
+ADD CONSTRAINT fk_reference_683
+FOREIGN KEY (idResponsavel) references empregados(idempregado);
+
+ALTER TABLE avaliacaoreferenciafornecedor
+ADD CONSTRAINT fk_reference_681
+FOREIGN KEY (idAvaliacaoFornecedor) references avaliacaofornecedor(idAvaliacaoFornecedor);
+
+ALTER TABLE avaliacaoreferenciafornecedor
+ADD CONSTRAINT fk_reference_682
+FOREIGN KEY (idAvaliacaoFornecedor) references empregados(idempregado);
+
+ALTER TABLE CriterioAvaliacaoFornecedor
+ADD CONSTRAINT fk_reference_679
+FOREIGN KEY (idAvaliacaoFornecedor) references avaliacaofornecedor(idAvaliacaoFornecedor);
+
+ALTER TABLE CriterioAvaliacaoFornecedor
+ADD CONSTRAINT fk_reference_680
+FOREIGN KEY (idCriterio) references criterioavaliacao(idCriterio);
+
+alter table itemcfgsolicitacaoserv
+   add constraint fk_itemcfgs_reference_itemconf foreign key (iditemconfiguracao)
+      references itemconfiguracao (iditemconfiguracao);
+
+alter table itemcfgsolicitacaoserv
+   add constraint fk_itemcfgs_reference_solicita foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico);
+
+alter table servcontratocatalagoserv
+   add constraint fk_servcont_servicoc foreign key (idservicocontrato)
+      references servicocontrato (idservicocontrato);
+
+alter table servcontratocatalagoserv
+   add constraint fk_servcont_reference_catalago foreign key (idcatalgoservico)
+      references catalagoservico (idcatalgoservico);
+
+alter table servcontratocatalagoserv
+   add constraint fk_servcont_reference_servicoc foreign key (idservicocontrato)
+      references servicocontrato (idservicocontrato);
+
+alter table servcontratocatalagoserv
+   add constraint fk_servcont_reference_catalago foreign key (idcatalgoservico)
+      references catalagoservico (idcatalgoservico);	  
+	  
+alter table alcadacentroresultado add constraint fk_reference_662 foreign key (idcentroresultado)
+      references centroresultado (idcentroresultado) on delete restrict on update restrict;
+
+alter table alcadacentroresultado add constraint fk_reference_663 foreign key (idempregado)
+      references empregados (idempregado) on delete restrict on update restrict;
+
+alter table alcadacentroresultado add constraint fk_reference_673 foreign key (idalcada)
+      references alcada (idalcada) on delete restrict on update restrict;
+
+alter table avaliacaocoletapreco add constraint fk_reference_36 foreign key (idcriterio)
+      references criterioavaliacao (idcriterio) on delete restrict on update restrict;
+
+alter table avaliacaocoletapreco add constraint fk_reference_689 foreign key (idcoletapreco)
+      references coletapreco (idcoletapreco) on delete restrict on update restrict;
+
+alter table avaliacaofornecedor add constraint fk_reference_678 foreign key (idfornecedor)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+alter table avaliacaofornecedor add constraint fk_reference_683 foreign key (idresponsavel)
+      references empregados (idempregado) on delete restrict on update restrict;
+
+alter table avaliacaopedido add constraint fk_reference_49 foreign key (idcriterio)
+      references criterioavaliacao (idcriterio) on delete restrict on update restrict;
+
+alter table avaliacaopedido add constraint fk_reference_701 foreign key (idpedido)
+      references pedidocompra (idpedido) on delete restrict on update restrict;
+
+alter table avaliacaopedido add constraint fk_reference_702 foreign key (idcoletapreco, iditemrequisicaoproduto)
+      references cotacaoitemrequisicao (idcoletapreco, iditemrequisicaoproduto) on delete restrict on update restrict;
+
+alter table avaliacaoreferenciafornecedor add constraint fk_reference_681 foreign key (idavaliacaofornecedor)
+      references avaliacaofornecedor (idavaliacaofornecedor) on delete restrict on update restrict;
+
+alter table avaliacaoreferenciafornecedor add constraint fk_reference_682 foreign key (idempregado)
+      references empregados (idempregado) on delete restrict on update restrict;
+
+alter table categoriaproduto add constraint fk_reference_670 foreign key (idcategoriapai)
+      references categoriaproduto (idcategoria) on delete restrict on update restrict;
+
+alter table coletapreco add constraint fk_reference_28 foreign key (iditemcotacao)
+      references itemcotacao (iditemcotacao) on delete restrict on update restrict;
+
+alter table coletapreco add constraint fk_reference_635 foreign key (idresponsavel)
+      references empregados (idempregado) on delete restrict on update restrict;
+
+alter table coletapreco add constraint fk_reference_636 foreign key (idfornecedor)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+alter table coletapreco add constraint fk_reference_695 foreign key (idrespresultado)
+      references empregados (idempregado) on delete restrict on update restrict;
+
+alter table coletapreco add constraint fk_reference_698 foreign key (idjustifresultado)
+      references justificativaparecer (idjustificativa) on delete restrict on update restrict;
+
+alter table cotacao add constraint fk_reference_633 foreign key (idempresa)
+      references empresa (idempresa) on delete restrict on update restrict;
+
+alter table cotacaoitemrequisicao add constraint fk_reference_687 foreign key (idcoletapreco)
+      references coletapreco (idcoletapreco) on delete restrict on update restrict;
+
+alter table cotacaoitemrequisicao add constraint fk_reference_693 foreign key (iditemrequisicaoproduto)
+      references itemrequisicaoproduto (iditemrequisicaoproduto) on delete restrict on update restrict;
+
+alter table cotacaoitemrequisicao add constraint fk_reference_694 foreign key (idparecer)
+      references parecer (idparecer) on delete restrict on update restrict;
+
+alter table cotacaoitemrequisicao add constraint fk_reference_699 foreign key (iditemtrabalho)
+      references bpm_itemtrabalhofluxo (iditemtrabalho) on delete restrict on update restrict;
+
+alter table cotacaoitemrequisicao add constraint fk_reference_700 foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico) on delete restrict on update restrict;
+
+alter table criterioavaliacaofornecedor add constraint fk_reference_679 foreign key (idavaliacaofornecedor)
+      references avaliacaofornecedor (idavaliacaofornecedor) on delete restrict on update restrict;
+
+alter table criterioavaliacaofornecedor add constraint fk_reference_680 foreign key (idcriterio)
+      references criterioavaliacao (idcriterio) on delete restrict on update restrict;
+
+alter table criteriocotacao add constraint fk_reference_24 foreign key (idcotacao)
+      references cotacao (idcotacao) on delete restrict on update restrict;
+
+alter table criteriocotacao add constraint fk_reference_33 foreign key (idcriterio)
+      references criterioavaliacao (idcriterio) on delete restrict on update restrict;
+
+alter table fornecedorcotacao add constraint fk_reference_684 foreign key (idcotacao)
+      references cotacao (idcotacao) on delete restrict on update restrict;
+
+alter table fornecedorcotacao add constraint fk_reference_685 foreign key (idfornecedor)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+alter table fornecedorproduto add constraint fk_reference_660 foreign key (idfornecedor)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+alter table fornecedorproduto add constraint fk_reference_665 foreign key (idtipoproduto)
+      references tipoproduto (idtipoproduto) on delete restrict on update restrict;
+
+alter table fornecedorproduto add constraint fk_reference_675 foreign key (idmarca)
+      references marca (idmarca) on delete restrict on update restrict;
+
+alter table itemcotacao add constraint fk_reference_25 foreign key (idcotacao)
+      references cotacao (idcotacao) on delete restrict on update restrict;
+
+alter table itemcotacao add constraint fk_reference_674 foreign key (idproduto)
+      references produto (idproduto) on delete restrict on update restrict;
+
+alter table itemcotacao add constraint fk_reference_690 foreign key (idunidademedida)
+      references unidademedida (idunidademedida) on delete restrict on update restrict;
+
+alter table itemcotacao add constraint fk_reference_691 foreign key (idcategoriaproduto)
+      references categoriaproduto (idcategoria) on delete restrict on update restrict;
+
+alter table itempedidocompra add constraint fk_reference_703 foreign key (idcoletapreco)
+      references coletapreco (idcoletapreco) on delete restrict on update restrict;
+
+alter table itempedidocompra add constraint fk_reference_704 foreign key (idpedido)
+      references pedidocompra (idpedido) on delete restrict on update restrict;
+
+alter table itempedidocompra add constraint fk_reference_705 foreign key (idproduto)
+      references produto (idproduto) on delete restrict on update restrict;
+
+alter table itemrequisicaoproduto add constraint fk_reference_625 foreign key (idsolicitacaoservico)
+      references requisicaoproduto (idsolicitacaoservico) on delete restrict on update restrict;
+
+alter table itemrequisicaoproduto add constraint fk_reference_643 foreign key (idparecervalidacao)
+      references parecer (idparecer) on delete restrict on update restrict;
+
+alter table itemrequisicaoproduto add constraint fk_reference_644 foreign key (idparecerautorizacao)
+      references parecer (idparecer) on delete restrict on update restrict;
+
+alter table itemrequisicaoproduto add constraint fk_reference_669 foreign key (idproduto)
+      references produto (idproduto) on delete restrict on update restrict;
+
+alter table itemrequisicaoproduto add constraint fk_reference_676 foreign key (idunidademedida)
+      references unidademedida (idunidademedida) on delete restrict on update restrict;
+
+alter table itemrequisicaoproduto add constraint fk_reference_677 foreign key (idcategoriaproduto)
+      references categoriaproduto (idcategoria) on delete restrict on update restrict;
+
+alter table itemrequisicaoproduto add constraint fk_reference_692 foreign key (iditemcotacao)
+      references itemcotacao (iditemcotacao) on delete restrict on update restrict;
+
+alter table limitealcada add constraint fk_reference_647 foreign key (idalcada)
+      references alcada (idalcada) on delete restrict on update restrict;
+
+alter table limitealcada add constraint fk_reference_649 foreign key (idgrupo)
+      references grupo (idgrupo) on delete restrict on update restrict;
+
+alter table marca add constraint fk_reference_661 foreign key (idfabricante)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+alter table parecer add constraint fk_reference_35 foreign key (idjustificativa)
+      references justificativaparecer (idjustificativa) on delete restrict on update restrict;
+
+alter table parecer add constraint fk_reference_650 foreign key (idalcada)
+      references alcada (idalcada) on delete restrict on update restrict;
+
+alter table pedidocompra add constraint fk_reference_638 foreign key (idfornecedor)
+      references fornecedor (idfornecedor) on delete restrict on update restrict;
+
+alter table pedidocompra add constraint fk_reference_706 foreign key (idcotacao)
+      references cotacao (idcotacao) on delete restrict on update restrict;
+
+alter table pedidocompra add constraint fk_reference_707 foreign key (idenderecoentrega)
+      references endereco (idendereco) on delete restrict on update restrict;
+
+alter table produto add constraint fk_reference_671 foreign key (idtipoproduto)
+      references tipoproduto (idtipoproduto) on delete restrict on update restrict;
+
+alter table produto add constraint fk_reference_672 foreign key (idmarca)
+      references marca (idmarca) on delete restrict on update restrict;
+
+alter table relacionamentoproduto add constraint fk_reference_654 foreign key (idtipoproduto)
+      references tipoproduto (idtipoproduto) on delete restrict on update restrict;
+
+alter table relacionamentoproduto add constraint fk_reference_655 foreign key (idtipoprodutorelacionado)
+      references tipoproduto (idtipoproduto) on delete restrict on update restrict;
+
+alter table requisicaoproduto add constraint fk_reference_622 foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico) on delete restrict on update restrict;
+
+alter table requisicaoproduto add constraint fk_reference_626 foreign key (idprojeto)
+      references projetos (idprojeto) on delete restrict on update restrict;
+
+alter table requisicaoproduto add constraint fk_reference_646 foreign key (idcentrocusto)
+      references centroresultado (idcentroresultado) on delete restrict on update restrict;
+
+alter table requisicaoproduto add constraint fk_reference_668 foreign key (idenderecoentrega)
+      references endereco (idendereco) on delete restrict on update restrict;
+
+alter table tipoproduto add constraint fk_reference_658 foreign key (idcategoria)
+      references categoriaproduto (idcategoria) on delete restrict on update restrict;
+
+alter table tipoproduto add constraint fk_reference_664 foreign key (idunidademedida)
+      references unidademedida (idunidademedida) on delete restrict on update restrict;	  
+	  
+alter table servico add constraint fk_reference_641 foreign key (idtemplatesolicitacao)
+      references citsmart.templatesolicitacaoservico (idtemplate) on delete restrict on update restrict;
+
+alter table servico add constraint fk_reference_642 foreign key (idtemplateacompanhamento)
+      references citsmart.templatesolicitacaoservico (idtemplate) on delete restrict on update restrict;
+alter table fornecedor add constraint fk_forn_end foreign key (idendereco)
+      references endereco (idendereco) on delete restrict on update restrict;
+alter table unidade add constraint fk_unid_end foreign key (idendereco)
+      references endereco (idendereco) on delete restrict on update restrict;
+alter table ufs add constraint fk_uf_pais foreign key (idpais)
+      references pais (idpais) on delete restrict on update restrict;	  
+	  
+alter table historicosituacaocotacao add constraint fk_reference_696 foreign key (idcotacao)
+      references cotacao (idcotacao) on delete restrict on update restrict;
+
+alter table historicosituacaocotacao add constraint fk_reference_697 foreign key (idresponsavel)
+      references empregados (idempregado) on delete restrict on update restrict;

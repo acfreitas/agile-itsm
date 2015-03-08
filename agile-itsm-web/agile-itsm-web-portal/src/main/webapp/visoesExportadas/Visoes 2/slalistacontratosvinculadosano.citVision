@@ -1,0 +1,17 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>25</idVisao>
+  <descricao>$sla.listacontratosvinculadosano</descricao>
+  <tipoVisao>EC</tipoVisao>
+  <situacao>A</situacao>
+  <classeName>br.com.centralit.citcorpore.metainfo.complementos.ComplementoSLA_MostrarContratosANO.class</classeName>
+  <identificador>ListaContratosANOSLA</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>$sla.listacontratosvinculadosano</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

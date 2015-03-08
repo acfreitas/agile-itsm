@@ -1,0 +1,598 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>0</idVisao>
+  <descricao>Acordo de Nível de Serviço (Contrato)</descricao>
+  <tipoVisao>ED</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>Acordo_Nivel_Servico</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>Acordo de Nível de Serviço (Contrato)</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1278</idCamposObjetoNegocio>
+          <descricaoNegocio>Código do Acordo de Nível de Serviço</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>1</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1279</idCamposObjetoNegocio>
+          <descricaoNegocio>Código do Serviço Contrato</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>1</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1289</idCamposObjetoNegocio>
+          <descricaoNegocio>Tipo de Acordo</descricaoNegocio>
+          <tipoNegocio>SELECT</tipoNegocio>
+          <ordem>3</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>400</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>#--Selecione--</string>
+            <string>D#Disponibilidade</string>
+            <string>T#Tempo (por fases)</string>
+            <string>V#Informações diversas capturadas de outras fontes</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>103</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1289</idCamposObjetoNegocio>
+              <valor>#--Selecione--</valor>
+              <situacao>A</situacao>
+              <descricao>--Selecione--</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>104</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1289</idCamposObjetoNegocio>
+              <valor>D#Disponibilidade</valor>
+              <situacao>A</situacao>
+              <descricao>Disponibilidade</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>105</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1289</idCamposObjetoNegocio>
+              <valor>T#Tempo (por fases)</valor>
+              <situacao>A</situacao>
+              <descricao>Tempo (por fases)</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>106</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1289</idCamposObjetoNegocio>
+              <valor>V#Informações diversas capturadas de outras fontes</valor>
+              <situacao>A</situacao>
+              <descricao>Informações diversas capturadas de outras fontes</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1282</idCamposObjetoNegocio>
+          <descricaoNegocio>Título do Acordo</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>4</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>A#Ativo</string>
+            <string>I#Inativo</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>107</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1282</idCamposObjetoNegocio>
+              <valor>A#Ativo</valor>
+              <situacao>A</situacao>
+              <descricao>Ativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>108</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1282</idCamposObjetoNegocio>
+              <valor>I#Inativo</valor>
+              <situacao>A</situacao>
+              <descricao>Inativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1280</idCamposObjetoNegocio>
+          <descricaoNegocio>Prioridade Padrão</descricaoNegocio>
+          <tipoNegocio>RELATION</tipoNegocio>
+          <ordem>5</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>40</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>C</tipoLigacao>
+          <filtro>${TERMO_PESQUISA}</filtro>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <idObjetoNegocioLigacao>177</idObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacao>1292</idCamposObjetoNegocioLigacao>
+          <idCamposObjetoNegocioLigacaoVinc>1290</idCamposObjetoNegocioLigacaoVinc>
+          <idCamposObjetoNegocioLigacaoOrder>1292</idCamposObjetoNegocioLigacaoOrder>
+          <descricaoRelacionamento>Prioridade</descricaoRelacionamento>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1284</idCamposObjetoNegocio>
+          <descricaoNegocio>Descrição do Acordo</descricaoNegocio>
+          <tipoNegocio>TEXTAREA</tipoNegocio>
+          <ordem>6</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>A#Ativo</string>
+            <string>I#Inativo</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>109</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1284</idCamposObjetoNegocio>
+              <valor>A#Ativo</valor>
+              <situacao>A</situacao>
+              <descricao>Ativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>110</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1284</idCamposObjetoNegocio>
+              <valor>I#Inativo</valor>
+              <situacao>A</situacao>
+              <descricao>Inativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1285</idCamposObjetoNegocio>
+          <descricaoNegocio>Escopo do Acordo</descricaoNegocio>
+          <tipoNegocio>TEXTAREA</tipoNegocio>
+          <ordem>7</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>A#Ativo</string>
+            <string>I#Inativo</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>111</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1285</idCamposObjetoNegocio>
+              <valor>A#Ativo</valor>
+              <situacao>A</situacao>
+              <descricao>Ativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>112</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1285</idCamposObjetoNegocio>
+              <valor>I#Inativo</valor>
+              <situacao>A</situacao>
+              <descricao>Inativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1286</idCamposObjetoNegocio>
+          <descricaoNegocio>Data de Início</descricaoNegocio>
+          <tipoNegocio>DATE</tipoNegocio>
+          <ordem>8</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>A#Ativo</string>
+            <string>I#Inativo</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>113</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1286</idCamposObjetoNegocio>
+              <valor>A#Ativo</valor>
+              <situacao>A</situacao>
+              <descricao>Ativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>114</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1286</idCamposObjetoNegocio>
+              <valor>I#Inativo</valor>
+              <situacao>A</situacao>
+              <descricao>Inativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1287</idCamposObjetoNegocio>
+          <descricaoNegocio>Data Fim</descricaoNegocio>
+          <tipoNegocio>DATE</tipoNegocio>
+          <ordem>9</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>A#Ativo</string>
+            <string>I#Inativo</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>115</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1287</idCamposObjetoNegocio>
+              <valor>A#Ativo</valor>
+              <situacao>A</situacao>
+              <descricao>Ativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>116</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1287</idCamposObjetoNegocio>
+              <valor>I#Inativo</valor>
+              <situacao>A</situacao>
+              <descricao>Inativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1288</idCamposObjetoNegocio>
+          <descricaoNegocio>Avaliar em</descricaoNegocio>
+          <tipoNegocio>DATE</tipoNegocio>
+          <ordem>10</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>A#Ativo</string>
+            <string>I#Inativo</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>117</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1288</idCamposObjetoNegocio>
+              <valor>A#Ativo</valor>
+              <situacao>A</situacao>
+              <descricao>Ativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>118</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1288</idCamposObjetoNegocio>
+              <valor>I#Inativo</valor>
+              <situacao>A</situacao>
+              <descricao>Inativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1281</idCamposObjetoNegocio>
+          <descricaoNegocio>Situação</descricaoNegocio>
+          <tipoNegocio>RADIO</tipoNegocio>
+          <ordem>11</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>S</obrigatorio>
+          <tamanho>40</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <valoresOpcoes>
+            <string>A#Ativo</string>
+            <string>I#Inativo</string>
+          </valoresOpcoes>
+          <colValores class="list">
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>119</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1281</idCamposObjetoNegocio>
+              <valor>A#Ativo</valor>
+              <situacao>A</situacao>
+              <descricao>Ativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+            <br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+              <idValorVisaoCamposNegocio>120</idValorVisaoCamposNegocio>
+              <idGrupoVisao>52</idGrupoVisao>
+              <idCamposObjetoNegocio>1281</idCamposObjetoNegocio>
+              <valor>I#Inativo</valor>
+              <situacao>A</situacao>
+              <descricao>Inativo</descricao>
+            </br.com.centralit.citcorpore.metainfo.bean.ValorVisaoCamposNegocioDTO>
+          </colValores>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>1283</idCamposObjetoNegocio>
+          <descricaoNegocio>Disponibilidade</descricaoNegocio>
+          <tipoNegocio>HTML</tipoNegocio>
+          <ordem>12</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode>loadHTML=/codigos-complementares/Acordo_Nivel_Servico.html</htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>2258</idCamposObjetoNegocio>
+          <descricaoNegocio>Valor Limite</descricaoNegocio>
+          <tipoNegocio>HTML</tipoNegocio>
+          <ordem>13</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>5</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>2259</idCamposObjetoNegocio>
+          <descricaoNegocio>Glosa</descricaoNegocio>
+          <tipoNegocio>HTML</tipoNegocio>
+          <ordem>14</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>5</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>2260</idCamposObjetoNegocio>
+          <descricaoNegocio>Limite Glosa</descricaoNegocio>
+          <tipoNegocio>HTML</tipoNegocio>
+          <ordem>15</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>5</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>67</idGrupoVisao>
+          <idCamposObjetoNegocio>2261</idCamposObjetoNegocio>
+          <descricaoNegocio>Unidade Valor Limite</descricaoNegocio>
+          <tipoNegocio>HTML</tipoNegocio>
+          <ordem>16</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>5</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+  <colVisoesRelacionadas class="list"/>
+  <colScripts class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <typeExecute>C</typeExecute>
+      <scryptType>LOAD</scryptType>
+      <script>layout.toggle(&quot;north&quot;);
+layout.close(&quot;west&quot;);
+layout.toggle(&quot;south&quot;);
+
+addEvent(document.form.TIPO, &quot;change&quot;, avaliaTipoSLA, false);</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONUPDATE</scryptType>
+      <script>mapFields.put(&quot;IDSERVICOCONTRATO&quot;, mapFields.get(&quot;SESSION.DINAMICVIEWS_SAVEINFO&quot;));</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <typeExecute>C</typeExecute>
+      <scryptType>ONRESTORE</scryptType>
+      <script>avaliaTipoSLA();</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONCREATE</scryptType>
+      <script>mapFields.put(&quot;IDSERVICOCONTRATO&quot;, mapFields.get(&quot;SESSION.DINAMICVIEWS_SAVEINFO&quot;));</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <typeExecute>S</typeExecute>
+      <scryptType>AFTERUPDATE</scryptType>
+      <script>var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.metainfo.complementos);
+
+var complUpdate = new importNames.ComplementoSLA_Update();
+var ret = complUpdate.execute(mapFields, transactionControler);</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <typeExecute>S</typeExecute>
+      <scryptType>ONRESTORE</scryptType>
+      <script>var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.metainfo.complementos);
+
+var complRestore = new importNames.ComplementoSLA_Restore();
+var ret = complRestore.execute(mapFields, null);</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+      <typeExecute>S</typeExecute>
+      <scryptType>AFTERCREATE</scryptType>
+      <script>var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.metainfo.complementos);
+
+var complInsert = new importNames.ComplementoSLA_Insert();
+var ret = complInsert.execute(mapFields, transactionControler);
+</script>
+      <scriptLanguage>JAVASCRIPT</scriptLanguage>
+    </br.com.centralit.citcorpore.metainfo.bean.ScriptsVisaoDTO>
+  </colScripts>
+  <colBotoes class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>69</idBotaoAcaoVisao>
+      <idVisao>26</idVisao>
+      <texto>Gravar Dados</texto>
+      <acao>1</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>0</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>70</idBotaoAcaoVisao>
+      <idVisao>26</idVisao>
+      <texto>Limpar Dados</texto>
+      <acao>2</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>1</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+    <br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+      <idBotaoAcaoVisao>71</idBotaoAcaoVisao>
+      <idVisao>26</idVisao>
+      <texto>Excluir</texto>
+      <acao>3</acao>
+      <script></script>
+      <hint></hint>
+      <ordem>2</ordem>
+    </br.com.centralit.citcorpore.metainfo.bean.BotaoAcaoVisaoDTO>
+  </colBotoes>
+  <colHtmlCode class="list"/>
+  <mapScripts>
+    <entry>
+      <string>C#LOAD</string>
+      <string>layout.toggle(&quot;north&quot;);
+layout.close(&quot;west&quot;);
+layout.toggle(&quot;south&quot;);
+
+addEvent(document.form.TIPO, &quot;change&quot;, avaliaTipoSLA, false);</string>
+    </entry>
+    <entry>
+      <string>S#ONUPDATE</string>
+      <string>mapFields.put(&quot;IDSERVICOCONTRATO&quot;, mapFields.get(&quot;SESSION.DINAMICVIEWS_SAVEINFO&quot;));</string>
+    </entry>
+    <entry>
+      <string>C#ONRESTORE</string>
+      <string>avaliaTipoSLA();</string>
+    </entry>
+    <entry>
+      <string>S#ONCREATE</string>
+      <string>mapFields.put(&quot;IDSERVICOCONTRATO&quot;, mapFields.get(&quot;SESSION.DINAMICVIEWS_SAVEINFO&quot;));</string>
+    </entry>
+    <entry>
+      <string>S#AFTERUPDATE</string>
+      <string>var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.metainfo.complementos);
+
+var complUpdate = new importNames.ComplementoSLA_Update();
+var ret = complUpdate.execute(mapFields, transactionControler);</string>
+    </entry>
+    <entry>
+      <string>S#ONRESTORE</string>
+      <string>var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.metainfo.complementos);
+
+var complRestore = new importNames.ComplementoSLA_Restore();
+var ret = complRestore.execute(mapFields, null);</string>
+    </entry>
+    <entry>
+      <string>S#AFTERCREATE</string>
+      <string>var importNames = JavaImporter();
+importNames.importPackage(Packages.br.com.centralit.citcorpore.metainfo.complementos);
+
+var complInsert = new importNames.ComplementoSLA_Insert();
+var ret = complInsert.execute(mapFields, transactionControler);
+</string>
+    </entry>
+  </mapScripts>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

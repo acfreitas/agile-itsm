@@ -1,0 +1,88 @@
+.destacado {
+    border:1px solid #ddd;
+    padding:4px 10px;
+    border-left:none;
+    background:#eee;
+    font-size: 14px;
+}
+
+table th{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 100px;
+	overflow: hidden;
+}
+
+table tr td{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 100px;
+	overflow: hidden;
+}
+.table {
+    width: 100%;
+}
+     
+ div#main_container {
+    margin: 0px 0px 0px 0px;
+} 
+        
+.container_16{
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    
+    letter-spacing: -4px;
+}
+	
+/* Desenvolvedor: Pedro Lino - Data: 31/10/2013 - Horário: 14:17 - ID Citsmart: 120948 - 
+* Motivo/Comentário: Paginação com layout antigo / Layout com as cores padrao */
+
+/* Paginação */
+
+#itenPaginacaoGerenciamento ul li {
+	padding:  0px!important;
+}
+
+#itenPaginacaoGerenciamento ul li font {
+	padding:  6px!important;
+	background-color: white!important;
+	border: 2px  solid #ddd!important;
+}
+
+#itenPaginacaoGerenciamento ul li font:HOVER {
+	border: 2px  solid #74AF3B!important;
+}
+
+#itenPaginacaoGerenciamento ul li font a{
+	color: #74AF3B!important;
+}
+
+.align{
+	text-align: center !important;
+}
+
+.input-container {
+    display: block;
+    overflow: hidden;
+}
+
+.btn-container {
+    float: right;
+    margin-left: 20px;
+    margin-top: 24px;
+}
+
+.radio, 
+.checkbox {
+    padding-left: 20px;
+}
+
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+    margin-left: 10px;
+}
+
+.radio.inline,
+.checkbox.inline {
+    padding-top: 0;
+}

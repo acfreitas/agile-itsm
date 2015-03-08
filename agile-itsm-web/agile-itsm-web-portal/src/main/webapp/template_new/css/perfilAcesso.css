@@ -1,0 +1,10 @@
+.labelCheck{
+	display: block !important;
+	float: left !important;
+	margin-left: 15px !important;
+	width: 99% !important;
+}
+br{
+	display: block !important;
+	width: 100% !important;
+}

@@ -1,0 +1,50 @@
+MYSQL
+
+/*==============================================================*/
+/* Table: "itemcfgsolicitacaoserv"                              */
+/*==============================================================*/
+create table itemcfgsolicitacaoserv  (
+   iditemconfiguracao integer,
+   idsolicitacaoservico integer,
+   datainicio        date,
+   datafim            date
+) 
+ENGINE=InnoDB;
+
+alter table itemcfgsolicitacaoserv
+   add constraint fk_itemcfgs_reference_itemconf foreign key (iditemconfiguracao)
+      references itemconfiguracao (iditemconfiguracao);
+
+alter table itemcfgsolicitacaoserv
+   add constraint fk_itemcfgs_reference_solicita foreign key (idsolicitacaoservico)
+      references solicitacaoservico (idsolicitacaoservico);
+      
+     
+     
+
+/*==============================================================*/
+/* 							  ORACLE                            */
+/*==============================================================*/
+
+/*==============================================================*/
+/* TABLE: "ITEMCFGSOLICITACAOSERV"                              */
+/*==============================================================*/
+CREATE TABLE ITEMCFGSOLICITACAOSERV  (
+   IDITEMCONFIGURACAO INTEGER,
+   IDSOLICITACAOSERVICO INTEGER,
+   DATAINICIO        DATE,
+   DATAFIM            DATE
+);
+
+ALTER TABLE ITEMCFGSOLICITACAOSERV
+   ADD CONSTRAINT FK_ITEMCFGS_REFERENCE_ITEMCONF FOREIGN KEY (IDITEMCONFIGURACAO)
+      REFERENCES ITEMCONFIGURACAO (IDITEMCONFIGURACAO);
+
+ALTER TABLE ITEMCFGSOLICITACAOSERV
+   ADD CONSTRAINT FK_ITEMCFGS_REFERENCE_SOLICITA FOREIGN KEY (IDSOLICITACAOSERVICO)
+      REFERENCES SOLICITACAOSERVICO (IDSOLICITACAOSERVICO);
+
+
+
+  
+  

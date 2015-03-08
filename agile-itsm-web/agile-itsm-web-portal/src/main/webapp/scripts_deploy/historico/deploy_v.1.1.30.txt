@@ -1,0 +1,347 @@
+ALTER TABLE grupoitemconfiguracao ADD COLUMN `emailgrupoitemconfiguracao` VARCHAR(256) NULL  AFTER `email` ;
+
+
+MYSQL
+>> Thays.araujo
+*************************************
+Mysql
+CREATE  TABLE notificacao (
+  idnotificacao INT NOT NULL ,
+  titulo VARCHAR(255) NULL ,
+  tiponotificacao CHAR(1) NULL ,
+  datainicio DATE NULL ,
+  datafim DATE NULL ,
+  PRIMARY KEY (idnotificacao) )
+
+ENGINE = InnoDB;
+
+
+ALTER TABLE `tipoitemconfiguracao` ADD COLUMN `categoria` INT NULL ;
+
+
+CREATE TABLE `midia` (
+  `idmidia` int(11) NOT NULL,
+  `nome` varchar(200) DEFAULT NULL,
+  `midiacol` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idmidia`)
+) ENGINE=InnoDB;
+
+
+
+
+CREATE TABLE `midiasoftware` (
+  `idmidiasoftware` int(11) NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `endfisico` varchar(500) DEFAULT NULL,
+  `versao` varchar(20) DEFAULT NULL,
+  `endlogico` varchar(200) DEFAULT NULL,
+  `licencas` int(11) DEFAULT NULL,
+  `idmidia` int(11) DEFAULT NULL,
+  `idtiposoftware` int(11) DEFAULT NULL,
+  `datainicio` date DEFAULT NULL,
+  `datafim` date DEFAULT NULL,
+  PRIMARY KEY (`idmidiasoftware`),
+  KEY `fk_midia` (`idmidia`),
+  KEY `fk_tiposoftware` (`idtiposoftware`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `tiposoftware` (
+  `idtiposoftware` int(11) NOT NULL,
+  `nome` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`idtiposoftware`)
+) ENGINE=InnoDB;
+
+
+
+*****************************************
+Mysql
+create table notificacaogrupo  (
+   idnotificacao           int,
+   idgrupo           integer
+)
+ENGINE = InnoDB;
+
+alter table notificacaogrupo
+   add constraint fk_alertagr_reference_alerta foreign key (idnotificacao)
+      references notificacao (idnotificacao);
+
+alter table notificacaogrupo
+   add constraint fk_alertagr_reference_grupo foreign key (idgrupo)
+      references grupo (idgrupo);
+	  
+	  
+
+*********************************************	
+Mysql  
+create table notificacaousuario  (
+   idnotificacao          int,
+   idusuario          int
+)
+ENGINE = InnoDB;
+
+alter table notificacaousuario
+   add constraint fk_alertaus_reference_alerta foreign key (idnotificacao)
+      references notificacao (idnotificacao);
+
+alter table notificacaousuario
+   add constraint fk_alertaus_reference_usuario foreign key (idusuario)
+      references usuario (idusuario);
+
+
+
+*********************************************************************
+Mysql
+
+ALTER TABLE baseconhecimento ADD COLUMN idnotificacao INT NULL, 
+
+  ADD CONSTRAINT idnotificacao
+
+  FOREIGN KEY (idnotificacao)
+
+  REFERENCES notificacao (idnotificacao );
+  
+
+  
+******************************************************************************
+  >>>>>>>>  valdoilo.damasceno  >>>>>>>>
+
+ALTER TABLE pasta ADD COLUMN idnotificacao INT NULL;
+  
+CREATE  TABLE importanciaconhecimentousuario (
+			  idbaseconhecimento INT(11) NOT NULL,
+			  idusuario INT(11) NOT NULL,
+			  grauimportanciausuario VARCHAR(45) NOT NULL,
+			  PRIMARY KEY (idbaseconhecimento, idusuario))ENGINE=InnoDB;
+			  
+ CREATE  TABLE importanciaconhecimentogrupo (
+			  idbaseconhecimento INT(11) NOT NULL,
+			  idgrupo INT(11) NOT NULL,
+			  grauimportanciagrupo VARCHAR(45) NOT NULL,
+			  PRIMARY KEY (idbaseconhecimento, idgrupo))ENGINE=InnoDB;
+			  
+CREATE  TABLE baseconhecimentorelacionado (
+		  	idbaseconhecimento INT(11) NOT NULL,
+			idbaseconhecimentorelacionado INT(11) NOT NULL,
+			PRIMARY KEY (idbaseconhecimento, idbaseconhecimentorelacionado))ENGINE=InnoDB;
+
+ALTER TABLE baseconhecimento ADD COLUMN justificativaobservacao VARCHAR(500) NULL;
+ALTER TABLE baseconhecimento ADD COLUMN datapublicacao DATE NULL;
+ALTER TABLE baseconhecimento ADD COLUMN fontereferencia VARCHAR(255);
+ALTER TABLE baseconhecimento ADD COLUMN faq VARCHAR(45) NULL;
+ALTER TABLE baseconhecimento ADD COLUMN arquivado VARCHAR(45) NULL;
+
+ALTER TABLE baseconhecimento
+			ADD COLUMN idusuarioautor INT(11) NULL, 
+			ADD COLUMN idusuarioaprovador INT(11) NULL;
+			
+ALTER TABLE perfilacessopasta 
+			ADD COLUMN permiteleitura CHAR(1) NULL, 
+			ADD COLUMN permiteleituragravacao CHAR(1) NULL;
+			
+ALTER TABLE pasta ADD COLUMN herdapermissoes CHAR(1) NULL;
+
+-- ATRIBUI PERMISSÃO DE LEITURA/GRAVAÇÃO PARA O PERFIL ADMINISTRADOR --
+update perfilacessopasta set permiteleitura = 'N', permiteleituragravacao = 'S' where idperfil = 1;
+
+-- ATRIBUI PERMISSÃO DE LEITURA PARA OS DEMAIS PERFIS --
+update perfilacessopasta set permiteleitura = 'S', permiteleituragravacao = 'N' where idperfil <> 1;
+
+
+CREATE TABLE  historicobaseconhecimento  (
+   idhistoricobaseconhecimento  int(11) NOT NULL,
+   idbaseconhecimento  int(11) NOT NULL,
+   idpasta  int(11) DEFAULT NULL,
+   datainicio  date DEFAULT NULL,
+   datafim  date DEFAULT NULL,
+   titulo  varchar(256) DEFAULT NULL,
+   conteudo  text,
+   status  char(1) DEFAULT NULL,
+   idbaseconhecimentopai  int(11) DEFAULT NULL,
+   dataexpiracao  date DEFAULT NULL,
+   versao  varchar(45) DEFAULT NULL,
+   idusuarioautor  int(11) DEFAULT NULL,
+   idusuarioaprovador  int(11) DEFAULT NULL,
+   fontereferencia  varchar(255) DEFAULT NULL,
+   idnotificacao  int(11) DEFAULT NULL,
+   datapublicacao  date DEFAULT NULL,
+   justificativaobservacao  varchar(500) DEFAULT NULL,
+   faq  varchar(45) DEFAULT NULL,
+   origem  char(1) DEFAULT NULL,
+   arquivado  varchar(45) DEFAULT NULL,
+   idusuarioalteracao  int(11) DEFAULT NULL,
+   datahoraalteracao  timestamp NULL DEFAULT NULL,
+  PRIMARY KEY ( idhistoricobaseconhecimento , idbaseconhecimento )
+) 
+ENGINE=InnoDB ;
+
+ALTER TABLE baseconhecimento ADD COLUMN idhistoricobaseconhecimento INT NULL, 
+
+  ADD CONSTRAINT idhistoricobaseconhecimento
+
+  FOREIGN KEY (idhistoricobaseconhecimento)
+
+  REFERENCES historicobaseconhecimento (idhistoricobaseconhecimento);
+
+******************************************************************************
+
+  -- rotina de mandar e-mail
+  
+  INSERT INTO processamentobatch
+(idprocessamentobatch, descricao, expressaocron, conteudo, tipo, situacao)
+VALUES
+(6, 'Verifica e avisa a data de expiração de um item de configuração', '0 03 09 * * ? *',
+ 'br.com.centralit.citcorpore.quartz.job.VerificaValidadeLicenca', 'C', 'A');
+ 
+ 
+ INSERT INTO modelosemails
+(idmodeloemail, titulo,
+texto, situacao, identificador)
+VALUES
+(7, 'Validade do documento - ${TITULO}',
+'Informamos que o documento titulado como ${TITULO} expirar&aacute; no dia&nbsp;${DATAEXPIRACAO}.<br /><br /><br />Atenciosamente,<br /><br />Central IT Tecnologia da Informa&ccedil;&atilde;o Ltda.<br />',
+'A', 'bc');
+ 
+ *********************************************************************************
+ RODRIGO
+ 
+ 
+ /*==============================================================*/
+/* Table: baseconhecimento */
+/*==============================================================*/
+
+
+
+ALTER TABLE baseconhecimento ADD COLUMN origem CHAR(1) NOT NULL;
+  
+  
+  *********************************************************************************
+CLEON
+ 
+ 
+ /*==============================================================*/
+/* Table: REQUISICAOMUDANCA */
+/*==============================================================*
+
+
+ALTER TABLE requisicaomudanca
+ADD COLUMN idbaseconhecimento int;
+
+ALTER TABLE requisicaomudanca ADD  CONSTRAINT fk_idbaseconhecimento 
+FOREIGN KEY (idbaseconhecimento) 
+REFERENCES baseconhecimento (idbaseconhecimento);
+
+ *******************************************************************************
+ORACLE
+
+
+
+CREATE  TABLE NOTIFICACAO (
+  IDNOTIFICACAO INT NOT NULL ,
+  TITULO VARCHAR(255) NULL ,
+  TIPOALERTA CHAR(1) NULL ,
+  DATAINICIO DATE NULL ,
+  DATAFIM DATE NULL ,
+  PRIMARY KEY (IDNOTIFICACAO) );
+  
+
+
+CREATE TABLE NOTIFICACAOGRUPO  (
+   IDNOTIFICACAO           INT,
+   IDGRUPO           INTEGER
+);
+
+ALTER TABLE NOTIFICACAOGRUPO
+   ADD CONSTRAINT FK_ALERTAGR_REFERENCE_ALERTA FOREIGN KEY (IDNOTIFICACAO)
+      REFERENCES NOTIFICACAO (IDNOTIFICACAO);
+	  
+ALTER TABLE NOTIFICACAOGRUPO
+   ADD CONSTRAINT FK_ALERTAGR_REFERENCE_GRUPO FOREIGN KEY (IDGRUPO)
+      REFERENCES GRUPO (IDGRUPO);
+
+	  
+
+
+CREATE TABLE NOTIFICACAOUSUARIO  (
+   IDNOTIFICACAO          INT,
+   IDUSUARIO          INT
+);
+
+ALTER TABLE NOTIFICACAOUSUARIO
+   ADD CONSTRAINT FK_ALERTAUS_REFERENCE_ALERTA FOREIGN KEY (IDNOTIFICACAO)
+      REFERENCES NOTIFICACAO (IDNOTIFICACAO);
+
+ALTER TABLE NOTIFICACAOUSUARIO
+   ADD CONSTRAINT FK_ALERTAUS_REFERENCE_USUARIO FOREIGN KEY (IDUSUARIO)
+      REFERENCES USUARIO (IDUSUARIO);
+	  
+
+
+ALTER TABLE BASECONHECIMENTO ADD  (IDNOTIFICACAO INT NULL); 
+
+ALTER TABLE BASECONHECIMENTO
+   ADD CONSTRAINT IDNOTIFICACAO FOREIGN KEY (IDNOTIFICACAO)
+      REFERENCES NOTIFICACAO (IDNOTIFICACAO);
+<valdoílo>
+ALTER TABLE PASTA ADD  (  IDNOTIFICACAO INT NULL);
+
+CREATE  TABLE IMPORTANCIACONHECIMENTOUSUARIO (
+			  IDBASECONHECIMENTO INT NOT NULL,
+			  IDUSUARIO INT NOT NULL,
+			  GRAUIMPORTANCIAUSUARIO VARCHAR(45) NOT NULL,
+			  PRIMARY KEY (IDBASECONHECIMENTO, IDUSUARIO));
+			  
+ CREATE  TABLE IMPORTANCIACONHECIMENTOGRUPO (
+			  IDBASECONHECIMENTO INT NOT NULL,
+			  IDGRUPO INT NOT NULL,
+			  GRAUIMPORTANCIAGRUPO VARCHAR(45) NOT NULL,
+			  PRIMARY KEY (IDBASECONHECIMENTO, IDGRUPO));
+			  
+CREATE  TABLE BASECONHECIMENTORELACIONADO (
+		  	IDBASECONHECIMENTO INT NOT NULL,
+			IDBASECONHECIMENTORELACIONADO INT NOT NULL,
+			PRIMARY KEY (IDBASECONHECIMENTO, IDBASECONHECIMENTORELACIONADO));
+			
+ALTER TABLE BASECONHECIMENTO ADD ( JUSTIFICATIVAOBSERVACAO VARCHAR(500) NULL);
+
+ALTER TABLE BASECONHECIMENTO ADD ( FONTEREFERENCIA VARCHAR(255));
+ALTER TABLE BASECONHECIMENTO ADD ( FAQ VARCHAR(45) NULL);
+ALTER TABLE BASECONHECIMENTO ADD ( ARQUIVADO VARCHAR(45) NULL);
+ALTER TABLE BASECONHECIMENTO ADD ( DATAPUBLICACAO DATE NULL);
+
+ALTER TABLE BASECONHECIMENTO
+	ADD ( IDUSUARIOAUTOR INT NULL,   IDUSUARIOAPROVADOR INT NULL);
+
+ALTER TABLE PERFILACESSOPASTA 
+			ADD (PERMITELEITURA CHAR(1) NULL, 
+			    PERMITELEITURAGRAVACAO CHAR(1) NULL);
+
+ALTER TABLE PASTA ADD ( HERDAPERMISSOES CHAR(1) NULL);
+
+-- ATRIBUI PERMISSÃO DE LEITURA/GRAVAÇÃO PARA O PERFIL ADMINISTRADOR --
+UPDATE PERFILACESSOPASTA SET PERMITELEITURA = 'N', PERMITELEITURAGRAVACAO = 'S' WHERE IDPERFIL = 1;
+
+-- ATRIBUI PERMISSÃO DE LEITURA PARA OS DEMAIS PERFIS --
+UPDATE PERFILACESSOPASTA SET PERMITELEITURA = 'S', PERMITELEITURAGRAVACAO = 'N' WHERE IDPERFIL <> 1;	
+
+INSERT INTO PROCESSAMENTOBATCH
+(IDPROCESSAMENTOBATCH, DESCRICAO, EXPRESSAOCRON, CONTEUDO, TIPO, SITUACAO)
+VALUES
+(5, 'VERIFICA E AVISA A DATA DE EXPIRAÇÃO DE UM ITEM DE CONFIGURAÇÃO', '0 03 09 * * ? *',
+ 'BR.COM.CENTRALIT.CITCORPORE.QUARTZ.JOB.VERIFICAVALIDADELICENCA', 'C', 'A');
+ 
+INSERT INTO MODELOSEMAILS
+(IDMODELOEMAIL, TITULO,TEXTO, SITUACAO, IDENTIFICADOR)
+VALUES
+(7, 'VALIDADE DO DOCUMENTO - ${TITULO}',
+'INFORMAMOS QUE O DOCUMENTO TITULADO COMO ${TITULO} EXPIRAR&AACUTE; NO DIA&NBSP;${DATAEXPIRACAO}.<BR /><BR /><BR />ATENCIOSAMENTE,<BR /><BR />CENTRAL IT TECNOLOGIA DA INFORMA&CCEDIL;&ATILDE;O LTDA.<BR />',
+'A', 'BC');
+
+ALTER TABLE BASECONHECIMENTO ADD ORIGEM CHAR(1) NOT NULL;
+
+ALTER TABLE REQUISICAOMUDANCA ADD IDBASECONHECIMENTO int;
+
+ALTER TABLE REQUISICAOMUDANCA ADD  CONSTRAINT FK_IDBASECONHECIMENTO 
+FOREIGN KEY (IDBASECONHECIMENTO) 
+REFERENCES BASECONHECIMENTO (IDBASECONHECIMENTO);
+			
+  

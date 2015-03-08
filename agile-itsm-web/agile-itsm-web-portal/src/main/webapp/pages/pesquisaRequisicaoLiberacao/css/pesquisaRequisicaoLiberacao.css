@@ -1,0 +1,25 @@
+.table {
+	border-left: 1px solid #ddd;
+}
+
+.table th {
+	border: 1px solid #ddd;
+	padding: 4px 10px;
+	border-left: none;
+	background: #eee;
+}
+
+.table td {
+	border: 1px solid #ddd !important;
+	padding: 4px 10px !important;
+	border-top: none !important;
+	border-left: none !important;
+}
+
+.ui-widget-header {
+	margin-bottom: 0 !important;
+}
+
+div.main_container .box {
+	margin-top: 0 !important;
+}

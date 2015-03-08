@@ -1,0 +1,100 @@
+#sortable {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#sortable li {
+	margin: 0 3px 3px 3px;
+	padding: 0.4em;
+	padding-left: 1.5em;
+	font-size: 1.4em;
+	height: 100%;
+}
+
+#sortable li span {
+	position: absolute;
+	margin-left: -1.3em;
+}
+
+#tabsAssociadas {
+	margin-top: 1em !important;
+}
+
+#tabsAssociadas li .ui-icon-close {
+	float: left !important;
+	margin: 0.4em 0.2em 0 0;
+	cursor: pointer;
+}
+
+.tabs li {
+	float: none !important;
+	display: block !important;
+}
+
+.tableLess {
+	font-family: arial, helvetica !important;
+	font-size: 10pt !important;
+	cursor: default !important;
+	margin: 0 !important;
+	background: white !important;
+	border-spacing: 0 !important;
+	width: 100% !important;
+}
+
+.tableLess tbody {
+	background: transparent !important;
+}
+
+.tableLess * {
+	margin: 0 !important;
+	vertical-align: middle !important;
+	padding: 2px !important;
+}
+
+.tableLess thead th {
+	font-weight: bold !important;
+	background: #fff url(../../imagens/title-bg.gif) repeat-x left bottom !important;
+	text-align: center !important;
+}
+
+.tableLess tbody tr:ACTIVE {
+	background-color: #fff !important;
+}
+
+.tableLess tbody tr:HOVER {
+	background-color: #e7e9f9;
+	cursor: pointer;
+}
+
+.tableLess th {
+	border: 1px solid #BBB !important;
+	padding: 6px !important;
+}
+
+.tableLess td {
+	border: 1px solid #BBB !important;
+	padding: 6px 10px !important;
+}
+
+#listaTodasVisoesTb {
+	margin: 30px 0;
+}
+
+.throbber {
+	background: url('/citsmart/imagens/ajax-loader.gif');
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+}
+
+#Throbber {
+	margin: 4px 10px;
+	vertical-align: middle;
+	visibility: hidden;
+}
+
+.barra {
+	margin: 10px 0;
+}

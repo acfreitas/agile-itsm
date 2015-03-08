@@ -1,0 +1,66 @@
+<br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>
+  <idVisao>15</idVisao>
+  <descricao>$visao.pesquisaCategoriaSolucao</descricao>
+  <tipoVisao>TS</tipoVisao>
+  <situacao>A</situacao>
+  <classeName></classeName>
+  <identificador>pesquisaCategoriaSolucao</identificador>
+  <filha>false</filha>
+  <colGrupos class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+      <descricaoGrupoVisao>$visao.pesquisaCategoriaSolucao</descricaoGrupoVisao>
+      <forma>1</forma>
+      <ordem>0</ordem>
+      <situacao>A</situacao>
+      <colCamposVisao class="list">
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>15</idGrupoVisao>
+          <idCamposObjetoNegocio>436</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.codigo</descricaoNegocio>
+          <tipoNegocio>HIDDEN</tipoNegocio>
+          <ordem>1</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>10</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>N</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>IDCATEGORIASOLUCAO</nomeDB>
+          <nomeTabelaDB>CATEGORIASOLUCAO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+        <br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+          <idGrupoVisao>15</idGrupoVisao>
+          <idCamposObjetoNegocio>438</idCamposObjetoNegocio>
+          <descricaoNegocio>$visao.categoriaSolucao</descricaoNegocio>
+          <tipoNegocio>TEXT</tipoNegocio>
+          <ordem>2</ordem>
+          <situacao>A</situacao>
+          <obrigatorio>N</obrigatorio>
+          <tamanho>100</tamanho>
+          <decimais>0</decimais>
+          <tipoLigacao>N</tipoLigacao>
+          <formula></formula>
+          <visivel>S</visivel>
+          <htmlCode></htmlCode>
+          <nomeDB>DESCRICAOCATEGORIASOLUCAO</nomeDB>
+          <nomeTabelaDB>CATEGORIASOLUCAO</nomeTabelaDB>
+        </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoCamposNegocioDTO>
+      </colCamposVisao>
+    </br.com.centralit.citcorpore.metainfo.bean.GrupoVisaoDTO>
+  </colGrupos>
+  <colVisoesRelacionadas class="list">
+    <br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+      <idVisaoRelacionada>1</idVisaoRelacionada>
+      <idVisaoPai>15</idVisaoPai>
+      <idVisaoFilha>41</idVisaoFilha>
+      <ordem>0</ordem>
+      <titulo></titulo>
+      <situacao>A</situacao>
+      <tipoVinculacao> </tipoVinculacao>
+      <acaoEmSelecaoPesquisa>  </acaoEmSelecaoPesquisa>
+      <identificacaoVisaoFilha>ATIVIDADESSERVICOCONTRATO</identificacaoVisaoFilha>
+    </br.com.centralit.citcorpore.metainfo.bean.VisaoRelacionadaDTO>
+  </colVisoesRelacionadas>
+</br.com.centralit.citcorpore.metainfo.bean.VisaoDTO>

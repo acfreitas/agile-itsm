@@ -1,0 +1,32 @@
+/* MYSQL */
+CREATE  TABLE contratosunidades (
+  idunidade INT NOT NULL ,
+  idcontrato INT NOT NULL DEFAULT 0 ,
+  contratosunidadescol VARCHAR(45) NULL ,
+  PRIMARY KEY (idunidade, idcontrato) )
+ENGINE = InnoDB;
+
+/* ORACLE */
+CREATE  TABLE contratosunidades (
+  idunidade INT NOT NULL ,
+  idcontrato INT NOT NULL,
+  contratosunidadescol VARCHAR(45) NULL ,
+  PRIMARY KEY (idunidade, idcontrato) );
+
+*Incluir no Menu*
+Pai: Relatório
+Nome: Quantitativo por Serviço
+Link: /relatorioQuantitativoPorServico/relatorioQuantitativoPorServico.load
+
+Pai: Relatório
+Nome: Base Conhecimento
+Link: /relatorioBaseConhecimento/relatorioBaseConhecimento.load
+
+Pai: Relatório
+Nome: Utilização de USTs
+Link: /relatorioOrdemServicoUst/relatorioOrdemServicoUst.load
+
+Criar Item de Menu
+Menu Pai: Relatório
+Menu Filho: Acompanhamento USTs
+Link: /relatorioAcompanhamento/relatorioAcompanhamento.load

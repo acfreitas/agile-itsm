@@ -1,0 +1,5 @@
+.campoObrigatorio:after {
+	color: #FF0000;
+	content: "*";
+}
+		 	

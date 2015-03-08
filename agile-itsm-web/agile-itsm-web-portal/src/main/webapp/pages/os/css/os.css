@@ -1,0 +1,24 @@
+		body {
+			border: black solid 1px ;
+			background-color: white;
+			vertical-align: middle;
+
+		}
+
+		#paginaTotal {
+			background-color: white;
+			background-image: url("");
+		}
+
+		.linhaGrid{
+			text-align: center;
+			border: 1px solid black;
+			background-color: white;
+			vertical-align: middle;
+		}
+
+		#GRID_ITENS_tblItens {
+			border: black solid 1px ;
+			margin-top: 3px;
+			margin-left: 2px;
+		}

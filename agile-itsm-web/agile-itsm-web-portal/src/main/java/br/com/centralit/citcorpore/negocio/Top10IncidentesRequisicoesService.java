@@ -1,0 +1,33 @@
+package br.com.centralit.citcorpore.negocio;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import br.com.centralit.citcorpore.bean.RelatorioTop10IncidentesRequisicoesDTO;
+import br.com.centralit.citcorpore.bean.SolicitacaoServicoDTO;
+import br.com.centralit.citcorpore.bean.Top10IncidentesRequisicoesDTO;
+import br.com.citframework.service.CrudService;
+
+public interface Top10IncidentesRequisicoesService extends CrudService {
+
+	ArrayList<Top10IncidentesRequisicoesDTO> listSolicitantesMaisAbriramIncSol(RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+
+	Collection<SolicitacaoServicoDTO> listDetalheSolicitanteMaisAbriuIncSol(Integer idSolicitante, RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+
+	ArrayList<Top10IncidentesRequisicoesDTO> listGruposMaisResolveramIncSol(RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+	
+	Collection<SolicitacaoServicoDTO> listDetalheGruposMaisResolveramIncSol(Integer idGrupo, RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+
+	ArrayList<Top10IncidentesRequisicoesDTO> listReqIncMaisSolicitados(RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+	
+	Collection<SolicitacaoServicoDTO> listDetalheReqIncMaisSolicitados(Integer idTipoDemanda, Integer idServico, RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+
+	ArrayList<Top10IncidentesRequisicoesDTO> listUnidadesMaisAbriramReqInc(RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+
+	Collection<SolicitacaoServicoDTO> listDetalheUnidadesMaisAbriramReqInc(Integer id, RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+
+	ArrayList<Top10IncidentesRequisicoesDTO> listLocMaisAbriramReqInc(RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+
+	Collection<SolicitacaoServicoDTO> listDetalheLocMaisAbriramReqInc(Integer id, RelatorioTop10IncidentesRequisicoesDTO relatorioTop10IncidentesRequisicoesDTO);
+
+}

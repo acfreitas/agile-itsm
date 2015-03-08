@@ -1,0 +1,32 @@
+
+			.table {
+			border-left:1px solid #ddd;
+			}
+
+			.table th {
+			border:1px solid #ddd;
+			padding:4px 10px;
+			border-left:none;
+			background:#eee;
+			}
+
+			.table td {
+			border:1px solid #ddd;
+			padding:4px 10px;
+			border-top:none;
+			border-left:none;
+			}
+			#imagens {
+				margin: 10px 0;
+				display: inline-block;
+			}
+			#imagens  label {
+				display: inline-block !important;
+				float: left;
+				display: inline-block;
+			}
+			#imagens  label img, input {
+				vertical-align: middle !important;
+			}
+			
+		

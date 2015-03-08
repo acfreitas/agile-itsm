@@ -1,0 +1,117 @@
+/*  ============ MySQL  ============*/
+/*==============================================================*/
+/* Table: "catalogoservico" */
+/*==============================================================*/
+CREATE TABLE catalogoservico (
+  idcatalogoservico int(11) NOT NULL DEFAULT '0',
+  idcontrato int(11) DEFAULT NULL,
+  datainicio date DEFAULT NULL,
+  datafim date DEFAULT NULL,
+  obs text,
+  nomeservico char(150) DEFAULT NULL,
+  titulocatalogoservico varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`idcatalogoservico`),
+  UNIQUE KEY `ak_key_1_catalago` (`idcatalogoservico`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+alter table catalogoservico
+add constraint pk_catalogoservico primary key (idcatalogoservico);
+
+alter table catalogoservico
+add constraint fk_infocata_reference_contratos 
+foreign key (idcontrato)
+references contratos (idcontrato);
+
+/*==============================================================*/
+/* Table: "infocatalogoservico" */
+/*==============================================================*/
+create table infocatalogoservico (
+idinfocatalogoservico integer not null,
+idcatalogoservico integer,
+descinfocatalogoservico text
+);
+
+alter table infocatalogoservico
+add constraint pk_infocatalogoservico 
+primary key (idinfocatalogoservico);
+
+alter table infocatalogoservico
+add constraint fk_infocata_reference_catalago 
+foreign key (idcatalogoservico)
+references catalagoservico (idcatalogoservico);
+
+/*==============================================================*/
+/* Table: "servcontratocatalogoserv" */
+/*==============================================================*/
+
+CREATE TABLE servcontratocatalogoserv (
+  idservicocontrato int(11) DEFAULT NULL,
+  idcatalogoservico int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+alter table  servcontratocatalogoserv   add constraint fk_servcontr_reference_servico 
+foreign key ( idservicocontrato )  
+references  servico  ( idservico );
+alter table  servcontratocatalogoserv   add constraint fk_servcontr_reference_catalogoservico 
+foreign key ( idcatalogoservico )  
+references  catalogoservico  ( idcatalogoservico );
+
+
+
+
+/* ============ ORACLE ============*/
+
+
+
+
+
+/*==============================================================*/
+/* TABLE: "CATALOGOSERVICO" */
+/*==============================================================*/
+CREATE TABLE CATALOGOSERVICO (
+  IDCATALOGOSERVICO INT NOT NULL ,
+  IDCONTRATO INT DEFAULT NULL,
+  DATAINICIO DATE DEFAULT NULL,
+  DATAFIM DATE DEFAULT NULL,
+  OBS CLOB,
+  NOMESERVICO CHAR(150) DEFAULT NULL,
+  TITULOCATALOGOSERVICO VARCHAR(256) DEFAULT NULL
+  );
+ALTER TABLE CATALOGOSERVICO
+ADD CONSTRAINT PK_CATALOGOSERVICO PRIMARY KEY (IDCATALOGOSERVICO);
+
+ALTER TABLE CATALOGOSERVICO ADD CONSTRAINT FK_INFO_REFE_CONT
+FOREIGN KEY (IDCONTRATO) REFERENCES CONTRATOS (IDCONTRATO);
+
+/*==============================================================*/
+/* TABLE: "INFOCATALOGOSERVICO" */
+/*==============================================================*/
+CREATE TABLE INFOCATALOGOSERVICO (
+IDINFOCATALOGOSERVICO INTEGER NOT NULL,
+IDCATALOGOSERVICO INTEGER,
+DESCINFOCATALOGOSERVICO CLOB
+);
+
+ALTER TABLE INFOCATALOGOSERVICO
+ADD CONSTRAINT PK_INFOCATALOGOSERVICO 
+PRIMARY KEY (IDINFOCATALOGOSERVICO);
+
+ALTER TABLE INFOCATALOGOSERVICO
+ADD CONSTRAINT FK_INFOCATA_RECE_CAT 
+FOREIGN KEY (IDCATALOGOSERVICO)
+REFERENCES CATALAGOSERVICO (IDCATALOGOSERVICO);
+
+/*==============================================================*/
+/* TABLE: "SERVCONTRATOCATALOGOSERV" */
+/*==============================================================*/
+
+CREATE TABLE SERVCONTRATOCATALOGOSERV (
+  IDSERVICOCONTRATO INT DEFAULT NULL,
+  IDCATALOGOSERVICO INT DEFAULT NULL
+) ;
+ALTER TABLE  SERVCONTRATOCATALOGOSERV   ADD CONSTRAINT FK_SERVCONTR_REF_SERV 
+FOREIGN KEY ( IDSERVICOCONTRATO )  
+REFERENCES  SERVICO  ( IDSERVICO );
+ALTER TABLE  SERVCONTRATOCATALOGOSERV   ADD CONSTRAINT FK_SERVCONTR_REF_CAT
+FOREIGN KEY ( IDCATALOGOSERVICO )  
+REFERENCES  CATALOGOSERVICO  ( IDCATALOGOSERVICO );
+
