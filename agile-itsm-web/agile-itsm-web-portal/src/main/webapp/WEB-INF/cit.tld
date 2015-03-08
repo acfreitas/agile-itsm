@@ -727,10 +727,6 @@
         </attribute>
     </tag>
 
-    <!-- <tag> <name>janelaPopup</name> <tag-class>br.com.citframework.tld.JanelaPopup2</tag-class> <body-content>JSP</body-content>
-        <attribute> <name>id</name> <required>true</required> <rtexprvalue>true</rtexprvalue> </attribute> <attribute> <name>titulo</name>
-        <required>true</required> <rtexprvalue>true</rtexprvalue> </attribute> </tag> -->
-
     <tag>
         <name>janelaAguarde</name>
         <tag-class>br.com.citframework.tld.JanelaAguarde</tag-class>

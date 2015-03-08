@@ -1,2 +1,0 @@
---valdoilo20092012 -- Script já foi aplicado em 10.2.1.7, 10.100.100.34 e 10.100.100.36
-ALTER TABLE contratos ADD COLUMN datafimcontrato DATE NULL  AFTER idgruposolicitante;
