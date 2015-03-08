@@ -386,28 +386,6 @@
             <version>2.0</version>
         </dependency>
 
-        <!-- centralit dependencies -->
-        <dependency>
-            <groupId>br.com.citsmart.cliente</groupId>
-            <artifactId>CriptoUtil</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>br.com.citsmart.libcitcorpore</groupId>
-            <artifactId>LIBEXTCITCORPORE_1</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>br.com.citsmart.libcitcorpore</groupId>
-            <artifactId>LIBCITCORPORE</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>br.com.centralit</groupId>
-            <artifactId>citcertdigital</artifactId>
-            <version>1.0</version>
-        </dependency>
-
         <!-- report dependencies -->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>

@@ -27,8 +27,8 @@ import br.com.citframework.excecao.LogicException;
 import br.com.citframework.excecao.ServiceException;
 import br.com.citframework.service.ServiceLocator;
 import br.com.citframework.util.UtilDatas;
-import br.com.citsmart.cliente.CriptoSignedUtil;
-import br.com.citsmart.cliente.SignedInfo;
+import br.com.citframework.util.cripto.CriptoSignedUtil;
+import br.com.citframework.util.cripto.SignedInfo;
 
 public class Servidor implements Runnable, ClientServer {
 
@@ -43,7 +43,8 @@ public class Servidor implements Runnable, ClientServer {
     public Servidor(final NetMapDTO netMapDTO) {
         this.netMapDTO = netMapDTO;
         try {
-            diretorioXmlAgente = ParametroUtil.getValorParametroCitSmartHashMap(Enumerados.ParametroSistema.DiretorioXmlAgente, " ");
+            diretorioXmlAgente = ParametroUtil.getValorParametroCitSmartHashMap(
+                    Enumerados.ParametroSistema.DiretorioXmlAgente, " ");
         } catch (final Exception e) {
             e.printStackTrace();
         }
@@ -72,7 +73,8 @@ public class Servidor implements Runnable, ClientServer {
     public static void executarPesquisaIPGerarInvenario() throws ServiceException, Exception {
         final NetMapService netMapService = serviceNetMapService();
         Integer dias = 0;
-        final String diasInventario = ParametroUtil.getValorParametroCitSmartHashMap(Enumerados.ParametroSistema.DiasInventario, " ");
+        final String diasInventario = ParametroUtil.getValorParametroCitSmartHashMap(
+                Enumerados.ParametroSistema.DiasInventario, " ");
 
         try {
             dias = Integer.parseInt(diasInventario);
@@ -80,7 +82,8 @@ public class Servidor implements Runnable, ClientServer {
             System.err.println(ex);
         }
 
-        final Date dataInventario = UtilDatas.getSqlDate(UtilDatas.incrementaDiasEmData(Util.getDataAtual(), -new Integer(dias)));
+        final Date dataInventario = UtilDatas.getSqlDate(UtilDatas.incrementaDiasEmData(Util.getDataAtual(),
+                -new Integer(dias)));
         // Pesquisa ips para geracao de iventario, passa data como
         // parametro, para identificar apartir de que data será iventariado.
         listnetMap = netMapService.listIpByDataInventario(dataInventario);
@@ -92,7 +95,8 @@ public class Servidor implements Runnable, ClientServer {
     }
 
     private static NetMapService serviceNetMapService() throws ServiceException, Exception {
-        final NetMapService netMapService = (NetMapService) ServiceLocator.getInstance().getService(NetMapService.class, null);
+        final NetMapService netMapService = (NetMapService) ServiceLocator.getInstance().getService(
+                NetMapService.class, null);
         return netMapService;
     }
 
@@ -116,8 +120,9 @@ public class Servidor implements Runnable, ClientServer {
                 parametrosEvento.add("INVENTORY");
 
                 // Imprime uma linha para a stream de saída de dados
-                SignedInfo signedInfo = CriptoSignedUtil.generateStringToSend(CITCorporeUtil.CAMINHO_REAL_APP + "/keysSec/citsmart.jks", CITCorporeUtil.CAMINHO_REAL_APP
-                        + "/keysSec/citsmartcripto.jks", parametrosEvento.toString());
+                SignedInfo signedInfo = CriptoSignedUtil.generateStringToSend(CITCorporeUtil.CAMINHO_REAL_APP
+                        + "/keysSec/citsmart.jks", CITCorporeUtil.CAMINHO_REAL_APP + "/keysSec/citsmartcripto.jks",
+                        parametrosEvento.toString());
 
                 outObjects.writeObject(signedInfo);
                 outObjects.flush();
@@ -137,7 +142,8 @@ public class Servidor implements Runnable, ClientServer {
                     }
                     String dadoRecebidoAux = "";
                     try {
-                        dadoRecebidoAux = CriptoSignedUtil.translateStringReceive(CITCorporeUtil.CAMINHO_REAL_APP + "/keysSec/citsmart.jks", CITCorporeUtil.CAMINHO_REAL_APP
+                        dadoRecebidoAux = CriptoSignedUtil.translateStringReceive(CITCorporeUtil.CAMINHO_REAL_APP
+                                + "/keysSec/citsmart.jks", CITCorporeUtil.CAMINHO_REAL_APP
                                 + "/keysSec/citsmartcripto.jks", signedInfo.getStrCripto(), signedInfo.getStrSigned());
                     } catch (final Exception e) {
                         System.out.println("Problema ao descriptografar o texto de inventario: " + e);
@@ -149,13 +155,14 @@ public class Servidor implements Runnable, ClientServer {
                     dadoRecebido = dadoRecebidoAux != null ? new String(dadoRecebidoAux.getBytes()) : null;
                     if (dadoRecebido != null) {
                         try {
-                            this.getGravarItemConfiguracao(dadoRecebido);
-                            this.getGravarInventarioXml(dadoRecebido);
+                            getGravarItemConfiguracao(dadoRecebido);
+                            getGravarInventarioXml(dadoRecebido);
                         } catch (final Exception e) {
                             System.out.println("Problema ao gravar o inventario: " + e);
                             e.printStackTrace();
                             listNetMapErro.add(netMapDTO);
-                            final BufferedWriter br = new BufferedWriter(new FileWriter(new File(diretorioXmlAgente + this.getNomeArquivo() + ".xml")));
+                            final BufferedWriter br = new BufferedWriter(new FileWriter(new File(diretorioXmlAgente
+                                    + getNomeArquivo() + ".xml")));
                             br.write(dadoRecebido);
                             br.close();
                             running = false;
@@ -190,13 +197,14 @@ public class Servidor implements Runnable, ClientServer {
     private void getGravarInventarioXml(final String dadoRecebido) {
         try {
             InventarioXMLDTO inventarioXMLDTO = new InventarioXMLDTO();
-            final InventarioXMLService inventarioXmlService = (InventarioXMLService) ServiceLocator.getInstance().getService(InventarioXMLService.class, null);
+            final InventarioXMLService inventarioXmlService = (InventarioXMLService) ServiceLocator.getInstance()
+                    .getService(InventarioXMLService.class, null);
             inventarioXMLDTO.setIdNetMap(netMapDTO.getIdNetMap());
             inventarioXMLDTO.setConteudo(dadoRecebido);
             inventarioXMLDTO.setDatainicial(UtilDatas.getDataAtual());
-            inventarioXMLDTO.setNome(this.getNomeArquivo());
+            inventarioXMLDTO.setNome(getNomeArquivo());
             // Grava Xml Completo.
-            inventarioXMLDTO = (InventarioXMLDTO) inventarioXmlService.create(inventarioXMLDTO);
+            inventarioXMLDTO = inventarioXmlService.create(inventarioXMLDTO);
         } catch (final Exception e) {
             System.out.println("Problema ao gravar o inventario: " + e);
             e.printStackTrace();
@@ -206,14 +214,16 @@ public class Servidor implements Runnable, ClientServer {
     public void getGravarItemConfiguracao(final String dadoRecebido) throws ServiceException, LogicException, Exception {
         final XmlReadDtdAgente xmlReadDtdAgente = new XmlReadDtdAgente();
         final List<ItemConfiguracaoDTO> list = xmlReadDtdAgente.XmlReadDtdAgent(dadoRecebido);
-        final ItemConfiguracaoService serviceItem = (ItemConfiguracaoService) ServiceLocator.getInstance().getService(ItemConfiguracaoService.class, null);
-			for (ItemConfiguracaoDTO itemConfiguracaoDTO : list) {
-				serviceItem.createItemConfiguracao(itemConfiguracaoDTO, null);
-			}
-	}
+        final ItemConfiguracaoService serviceItem = (ItemConfiguracaoService) ServiceLocator.getInstance().getService(
+                ItemConfiguracaoService.class, null);
+        for (final ItemConfiguracaoDTO itemConfiguracaoDTO : list) {
+            serviceItem.createItemConfiguracao(itemConfiguracaoDTO, null);
+        }
+    }
 
     private String getNomeArquivo() {
-        String nomeArquivo = netMapDTO.getIp() + "__" + netMapDTO.getMac() + "__" + UtilDatas.getDataAtual() + "__" + UtilDatas.getHoraAtual();
+        String nomeArquivo = netMapDTO.getIp() + "__" + netMapDTO.getMac() + "__" + UtilDatas.getDataAtual() + "__"
+                + UtilDatas.getHoraAtual();
         nomeArquivo = nomeArquivo.replace(".", "-");
         nomeArquivo = nomeArquivo.replace(":", "-");
         nomeArquivo = nomeArquivo.replace("-", "-");
