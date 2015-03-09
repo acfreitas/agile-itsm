@@ -1,876 +1,866 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <menus>
-	<menuSuperior>
-		<menu>
-			<nome>$menu.nome.cadastroGerais</nome>
-			<descricao>Cadastros do CITSmart</descricao>
-			<ordem>2</ordem>
-			<menuRapido>null</menuRapido>
-			<link />
-			<imagem>list_w_images.png</imagem>
-			<horizontal />
-			<subMenu0>
-				<menu>
-					<nome>$menu.nome.Menu</nome>
-					<descricao>Cadastro de Menu</descricao>
-					<ordem>3</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/menu/menu.load</link>
-					<imagem>list_w_images.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.empresa</nome>
-					<descricao>Cadastro de Empresa</descricao>
-					<ordem>4</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/empresa/empresa.load</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.clientes</nome>
-					<descricao>Cadastro de Clientes</descricao>
-					<ordem>9</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/dinamicViews/dinamicViews.load?identificacao=Clientes</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.Fornecedor</nome>
-					<descricao>Cadastro de Fornecedores</descricao>
-					<ordem>10</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/fornecedor/fornecedor.load</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.gerenciaPessoal</nome>
-					<descricao>Gerência de Pessoal</descricao>
-					<ordem>1</ordem>
-					<menuRapido>null</menuRapido>
-					<link />
-					<imagem>users.png</imagem>
-					<horizontal />
-					<subMenu1>
-						<menu>
-							<nome>$menu.nome.perfilAcesso</nome>
-							<descricao>Cadastro de Perfil de Acesso</descricao>
-							<ordem>1</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/perfilAcesso/perfilAcesso.load</link>
-							<imagem>users.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.tipoUnidade</nome>
-							<descricao>Cadastro de Tipo de Unidade</descricao>
-							<ordem>3</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/tipoUnidade/tipoUnidade.load</link>
-							<imagem>users.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.unidade</nome>
-							<descricao>Cadastro de Unidade</descricao>
-							<ordem>4</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/unidade/unidade.load</link>
-							<imagem>users.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.grupo</nome>
-							<descricao>Cadastro de Grupo</descricao>
-							<ordem>8</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/grupo/grupo.load</link>
-							<imagem>users.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.usuario</nome>
-							<descricao>Cadastro de Usuário</descricao>
-							<ordem>7</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/usuario/usuario.load</link>
-							<imagem>users.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.colaborador</nome>
-							<descricao>Cadastro de Colaborador</descricao>
-							<ordem>6</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/empregado/empregado.load</link>
-							<imagem>users.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.jornadaTrabalho</nome>
-							<descricao>Jornada de Trabalho</descricao>
-							<ordem>11</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/jornadaTrabalho/jornadaTrabalho.load</link>
-							<imagem>users.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.calendario</nome>
-							<descricao>Calendário</descricao>
-							<ordem>12</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/calendario/calendario.load</link>
-							<imagem>users.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.cargos</nome>
-							<descricao>Cadastro de Cargos</descricao>
-							<ordem>5</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/cargos/cargos.load</link>
-							<imagem>users.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.localidade</nome>
-							<descricao>Localidade</descricao>
-							<ordem>2</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/localidade/localidade.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-					</subMenu1>
-				</menu>
-			</subMenu0>
-		</menu>
-		<menu>
-			<nome>$menu.nome.relatorio</nome>
-			<descricao>Relatórios do CITSmart</descricao>
-			<ordem>4</ordem>
-			<menuRapido>null</menuRapido>
-			<link />
-			<imagem>graph.png</imagem>
-			<horizontal />
-			<subMenu0>
-				<menu>
-					<nome>$menu.nome.Gantt</nome>
-					<descricao>Gantt de Solicitações</descricao>
-					<ordem>52</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/ganttSolicitacaoServico/ganttSolicitacaoServico.load</link>
-					<imagem>graph.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.graficosRelatorios(Painel)</nome>
-					<descricao>Gráficos e Relatórios (Painel)</descricao>
-					<ordem>53</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/painel/painel.load</link>
-					<imagem>graph.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.graficoTempoReal</nome>
-					<descricao>Gráfico em Tempo Real</descricao>
-					<ordem>54</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/monitoramentoServicos/monitoramentoServicos.load</link>
-					<imagem>graph.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.quantitativo</nome>
-					<descricao>Quantitativo</descricao>
-					<ordem>55</ordem>
-					<menuRapido>null</menuRapido>
-					<link>pages/relatorioQuantitativo/relatorioQuantitativo.load</link>
-					<imagem>documents.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.quantitativoPorServico</nome>
-					<descricao>Relatório Quantitativo de Serviço</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/relatorioQuantitativoPorServico/relatorioQuantitativoPorServico.load
-					</link>
-					<imagem>books_2.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.baseConhecimento</nome>
-					<descricao>Relatório de Base de Conhecimento</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/relatorioBaseConhecimento/relatorioBaseConhecimento.load
-					</link>
-					<imagem>books_2.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.utilizacaoUSTs</nome>
-					<descricao>Relatório de Utilização de UTSs</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/relatorioOrdemServicoUst/relatorioOrdemServicoUst.load
-					</link>
-					<imagem>books_2.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.acompanhamentoUSTs</nome>
-					<descricao>Relatório de Acompanhamento USTs</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/relatorioAcompanhamento/relatorioAcompanhamento.load</link>
-					<imagem>books_2.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.pesquisaSatisfacao</nome>
-					<descricao>Pesquisa Satisfação</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/relatorioPesquisaSatisfacao/relatorioPesquisaSatisfacao.load
-					</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.valorServicoContrato</nome>
-					<descricao>Valor do Serviço de Contrato</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/relatorioValorServicoContrato/relatorioValorServicoContrato.load
-					</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-			</subMenu0>
-		</menu>
-		<menu>
-			<nome>$menu.nome.gerenciaContratos</nome>
-			<descricao>Contratos</descricao>
-			<ordem>1</ordem>
-			<menuRapido>null</menuRapido>
-			<link />
-			<imagem>documents.png</imagem>
-			<horizontal />
-			<subMenu0>
-				<menu>
-					<nome>$menu.nome.atividadePeriodica</nome>
-					<descricao>Cadastro de Atividades Periódicas</descricao>
-					<ordem>3</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/atividadePeriodica/atividadePeriodica.load</link>
-					<imagem>list_w_images.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.cadastroContratos</nome>
-					<descricao>Cadastro de Contratos</descricao>
-					<ordem>1</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/dinamicViews/dinamicViews.load?identificacao=Contratos</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.administracaoContratos</nome>
-					<descricao>Administração de Contratos</descricao>
-					<ordem>2</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/informacoesContrato/informacoesContrato.load</link>
-					<imagem>box_outgoing_2.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.formula</nome>
-					<descricao>Fórmula</descricao>
-					<ordem>4</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/formula/formula.load</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-			</subMenu0>
-		</menu>
-		<menu>
-			<nome>$menu.nome.sistema</nome>
-			<descricao>Configuração e Parametrização do Sistema</descricao>
-			<ordem>61</ordem>
-			<menuRapido>null</menuRapido>
-			<link />
-			<imagem>alert_2.png</imagem>
-			<horizontal />
-			<subMenu0>
-				<menu>
-					<nome>$menu.nome.parametrosCITSmart</nome>
-					<descricao>Cadastro de Parâmetros do CITSmart</descricao>
-					<ordem>63</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/parametroCorpore/parametroCorpore.load</link>
-					<imagem>alert_2.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.modeloE-mail</nome>
-					<descricao>Modelo de E-mail</descricao>
-					<ordem>2</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/modeloEmail/modeloEmail.load</link>
-					<imagem>cog_3.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.visoesMetadados</nome>
-					<descricao>Visões e Meta dados</descricao>
-					<ordem>40</ordem>
-					<menuRapido>null</menuRapido>
-					<link />
-					<imagem>strategy.png</imagem>
-					<horizontal />
-					<subMenu1>
-						<menu>
-							<nome>$menu.nome.manutencaoVisoes</nome>
-							<descricao>Manutenção de Visões</descricao>
-							<ordem>41</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/visaoAdm/visaoAdm.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.carregaMetaDados</nome>
-							<descricao>Carrega Meta Dados</descricao>
-							<ordem>42</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/dataBaseMetaDados/dataBaseMetaDados.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.questionario</nome>
-							<descricao>Questionário</descricao>
-							<ordem>43</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/questionario/questionario.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-					</subMenu1>
-				</menu>
-				<menu>
-					<nome>$menu.nome.processamentoBatch</nome>
-					<descricao>Processamento de Arquivo Batch</descricao>
-					<ordem>62</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/processamentoBatch/processamentoBatch.load</link>
-					<imagem>alert_2.png</imagem>
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.gerenciamentoDados</nome>
-					<descricao>Gerenciamento de Dados</descricao>
-					<ordem>11</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/dataManager/dataManager.load</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.ligacoesExternas</nome>
-					<descricao>Ligações externas</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/dinamicViews/dinamicViews.load?identificacao=ExternalConnection
-					</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.idioma</nome>
-					<descricao>Idioma</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/lingua/lingua.load</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.templateSolicitacaoServico</nome>
-					<descricao>Template de solicitação de serviço</descricao>
-					<ordem>12</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/templateSolicitacaoServico//templateSolicitacaoServico.load
-					</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.desenhoFluxo</nome>
-					<descricao>Desenho Fluxo</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/desenhoFluxo/desenhoFluxo.load</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.gerenciaImportacao</nome>
-					<descricao>Gerenciamento de Importação</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/importManager/importManager.load</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$ldap.configuracao</nome>
-					<descricao>Configuração LDAP</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/pages/ldap/ldap.load</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-				<menu>
-					<nome>$menu.nome.bancoDados</nome>
-					<descricao>Banco de Dados</descricao>
-					<ordem>41</ordem>
-					<menuRapido>null</menuRapido>
-					<link />
-					<imagem />
-					<horizontal />
-					<subMenu1>
-						<menu>
-							<nome>$menu.nome.execucaoScripts</nome>
-							<descricao>Execução de Scripts</descricao>
-							<ordem>2</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/scripts/scripts.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-					</subMenu1>
-				</menu>
-			</subMenu0>
-		</menu>
-		<menu>
-			<nome>$menu.gerencia.processos</nome>
-			<descricao>Gerência de Processos</descricao>
-			<ordem>0</ordem>
-			<menuRapido>null</menuRapido>
-			<link />
-			<imagem>list_w_images.png</imagem>
-			<horizontal />
-			<subMenu0>
-				<menu>
-					<nome>$menu.nome.gerenciaIncidentes</nome>
-					<descricao>Gerência de Catálogo de Serviço</descricao>
-					<ordem>1</ordem>
-					<menuRapido>null</menuRapido>
-					<link />
-					<imagem>strategy.png</imagem>
-					<horizontal />
-					<subMenu1>
-						<menu>
-							<nome>$menu.nome.registroIncidentes/ReqServicos</nome>
-							<descricao>Registro de Incidentes e Requisições de Serviço
-							</descricao>
-							<ordem>0</ordem>
-							<menuRapido>S</menuRapido>
-							<link>/gerenciamentoServicos/gerenciamentoServicos.load</link>
-							<imagem>pencil.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.pesquisaSolicitacoes/Incidentes</nome>
-							<descricao>Pesquisa de Solicitações / Incidentes</descricao>
-							<ordem>1</ordem>
-							<menuRapido>S</menuRapido>
-							<link>/pesquisaSolicitacoesServicos/pesquisaSolicitacoesServicos.load
-							</link>
-							<imagem>magnifying_glass.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.minhasRequisicoes</nome>
-							<descricao>Acompanhamento de Suas Requisições</descricao>
-							<ordem>7</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/resumoSolicitacoesServicos/resumoSolicitacoesServicos.load
-							</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.agendaAtivPeriodicas</nome>
-							<descricao>Atividades Periódicas</descricao>
-							<ordem>34</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/agendaAtvPeriodicas/agendaAtvPeriodicas.load</link>
-							<imagem>documents.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-					</subMenu1>
-				</menu>
-				<menu>
-					<nome>$menu.nome.gerenciaServicos</nome>
-					<descricao>Gerência de Pessoal</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link />
-					<imagem>cog_3.png</imagem>
-					<horizontal />
-					<subMenu1>
-						<menu>
-							<nome>$menu.nome.categoriaServico</nome>
-							<descricao>Cadastro de Categoria de Serviço</descricao>
-							<ordem>11</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/categoriaServico/categoriaServico.load</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.condicaoOperacao</nome>
-							<descricao>Cadastro da Condição Operação</descricao>
-							<ordem>4</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/condicaoOperacao/condicaoOperacao.load</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.importanciaNegocio</nome>
-							<descricao>Cadastro de Importância Negócio</descricao>
-							<ordem>3</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/importanciaNegocio/importanciaNegocio.load</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.prioridade</nome>
-							<descricao>Cadastro de Prioridade</descricao>
-							<ordem>1</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/prioridade/prioridade.load</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.catalogoServicos</nome>
-							<descricao>Cadastro de Serviços</descricao>
-							<ordem>14</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/dinamicViews/dinamicViews.load?identificacao=CadastroServico
-							</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.justificacaoFalhas</nome>
-							<descricao>Justificativa das Falhas dos Itens de Configuração
-							</descricao>
-							<ordem>20</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/justificacaoFalhas/justificacaoFalhas.load</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.mapaDesenhoServico</nome>
-							<descricao>Mapa Desenho Serviço</descricao>
-							<ordem>15</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/mapaDesenhoServico/mapaDesenhoServico.load</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.tipoServico</nome>
-							<descricao>Cadastro de tipo de serviço</descricao>
-							<ordem>10</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/tipoServico/tipoServico.load</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.localExecServico</nome>
-							<descricao>Local de Execução do Serviço</descricao>
-							<ordem>8</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/dinamicViews/dinamicViews.load?identificacao=LocalExecucaoServicos
-							</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.tipoSolicitacaoServico</nome>
-							<descricao>Tipo de Solicitação de Serviço</descricao>
-							<ordem>7</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/dinamicViews/dinamicViews.load?identificacao=TipoSolicitacaoServico
-							</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.justificativaSolicitacao</nome>
-							<descricao>Justificativa Solicitação</descricao>
-							<ordem>9</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/dinamicViews.load?identificacao=justificativaSolicitacao
-							</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.causaIncidentes</nome>
-							<descricao>Causa de Incidentes</descricao>
-							<ordem>5</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/dinamicViews/dinamicViews.load?identificacao=causaIncidente
-							</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.categoriaSolucao</nome>
-							<descricao>Categoria de Solução</descricao>
-							<ordem>4</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/dinamicViews/dinamicViews.load?identificacao=categoriaSolucao
-							</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.grupoAtiv.Periodica</nome>
-							<descricao>Grupo Atividade Periódica</descricao>
-							<ordem>15</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/dinamicViews.load?identificacao=grupoAtividadePeriodica
-							</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.catalogoNegocio</nome>
-							<descricao>Catálogo de Negócio</descricao>
-							<ordem>21</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/catalogoServico/catalogoServico.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.situacaoServico</nome>
-							<descricao>Situação de Serviços</descricao>
-							<ordem>3</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/situacaoServico/situacaoServico.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.tipoEventoServico</nome>
-							<descricao>Tipo de Eventos do Serviço</descricao>
-							<ordem>6</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/dinamicViews/dinamicViews.load?identificacao=CadastroTipoEventoServico
-							</link>
-							<imagem>cog_3.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.prioridadeSolicitacoes</nome>
-							<descricao>Prioridade Solicitações Serviço</descricao>
-							<ordem>2</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/prioridadeSolicitacoes/prioridadeSolicitacoes.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-					</subMenu1>
-				</menu>
-				<menu>
-					<nome>$menu.nome.gerenciaConhecimento</nome>
-					<descricao>Gerenciamento de Conhecimento</descricao>
-					<ordem>5</ordem>
-					<menuRapido>null</menuRapido>
-					<link />
-					<imagem>user_comment.png</imagem>
-					<horizontal />
-					<subMenu1>
-						<menu>
-							<nome>$menu.nome.pasta</nome>
-							<descricao>Cadastro de Pasta</descricao>
-							<ordem>1</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/pasta/pasta.load</link>
-							<imagem>documents.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.baseDeConhecimento</nome>
-							<descricao>Base de Conhecimento</descricao>
-							<ordem>3</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/baseConhecimento/baseConhecimento.load</link>
-							<imagem>documents.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.palavrasGemeas</nome>
-							<descricao>Cadastro de Palavras Correspondentes</descricao>
-							<ordem>2</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/palavraGemea/palavraGemea.load</link>
-							<imagem>user_comment.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.pesquisaBaseConhecimento</nome>
-							<descricao>pesquisa base de conhecimento</descricao>
-							<ordem>4</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/baseConhecimentoView/baseConhecimentoView.load</link>
-							<imagem>user_comment.png</imagem>
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.pesquisaFAQ</nome>
-							<descricao>Pesquisa FAQ</descricao>
-							<ordem>6</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/pesquisaFaq/pesquisaFaq.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.galeriaImagens</nome>
-							<descricao>Galeria de Imagens</descricao>
-							<ordem>7</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/galeriaImagens/galeriaImagens.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-						<menu>
-							<nome>$menu.nome.categoriaGaleriaImagens</nome>
-							<descricao>Categorias Galerias de Imagens</descricao>
-							<ordem>8</ordem>
-							<menuRapido>null</menuRapido>
-							<link>/categoriaGaleriaImagem/categoriaGaleriaImagem.load</link>
-							<imagem />
-							<horizontal />
-							<subMenu2 />
-						</menu>
-					</subMenu1>
-				</menu>
-			</subMenu0>
-		</menu>
-		<menu>
-			<nome>$menu.nome.trilhaAuditoria</nome>
-			<descricao>Trilha de Auditoria</descricao>
-			<ordem>5</ordem>
-			<menuRapido>null</menuRapido>
-			<link />
-			<imagem>alert_2.png</imagem>
-			<horizontal />
-			<subMenu0>
-				<menu>
-					<nome>$menu.nome.logsSistema</nome>
-					<descricao>Logs do Sistema</descricao>
-					<ordem>0</ordem>
-					<menuRapido>null</menuRapido>
-					<link>/logController/logController.load</link>
-					<imagem />
-					<horizontal />
-					<subMenu1 />
-				</menu>
-			</subMenu0>
-		</menu>
-	</menuSuperior>
+    <menuSuperior>
+        <menu>
+            <nome>$menu.nome.cadastroGerais</nome>
+            <descricao>Cadastros do CITSmart</descricao>
+            <ordem>2</ordem>
+            <menuRapido>null</menuRapido>
+            <link />
+            <imagem>list_w_images.png</imagem>
+            <horizontal />
+            <subMenu0>
+                <menu>
+                    <nome>$menu.nome.Menu</nome>
+                    <descricao>Cadastro de Menu</descricao>
+                    <ordem>3</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/menu/menu.load</link>
+                    <imagem>list_w_images.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.empresa</nome>
+                    <descricao>Cadastro de Empresa</descricao>
+                    <ordem>4</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/empresa/empresa.load</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.clientes</nome>
+                    <descricao>Cadastro de Clientes</descricao>
+                    <ordem>9</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/dinamicViews/dinamicViews.load?identificacao=Clientes</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.Fornecedor</nome>
+                    <descricao>Cadastro de Fornecedores</descricao>
+                    <ordem>10</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/fornecedor/fornecedor.load</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.gerenciaPessoal</nome>
+                    <descricao>Gerência de Pessoal</descricao>
+                    <ordem>1</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link />
+                    <imagem>users.png</imagem>
+                    <horizontal />
+                    <subMenu1>
+                        <menu>
+                            <nome>$menu.nome.perfilAcesso</nome>
+                            <descricao>Cadastro de Perfil de Acesso</descricao>
+                            <ordem>1</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/perfilAcesso/perfilAcesso.load</link>
+                            <imagem>users.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.tipoUnidade</nome>
+                            <descricao>Cadastro de Tipo de Unidade</descricao>
+                            <ordem>3</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/tipoUnidade/tipoUnidade.load</link>
+                            <imagem>users.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.unidade</nome>
+                            <descricao>Cadastro de Unidade</descricao>
+                            <ordem>4</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/unidade/unidade.load</link>
+                            <imagem>users.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.grupo</nome>
+                            <descricao>Cadastro de Grupo</descricao>
+                            <ordem>8</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/grupo/grupo.load</link>
+                            <imagem>users.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.usuario</nome>
+                            <descricao>Cadastro de Usuário</descricao>
+                            <ordem>7</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/usuario/usuario.load</link>
+                            <imagem>users.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.colaborador</nome>
+                            <descricao>Cadastro de Colaborador</descricao>
+                            <ordem>6</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/empregado/empregado.load</link>
+                            <imagem>users.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.jornadaTrabalho</nome>
+                            <descricao>Jornada de Trabalho</descricao>
+                            <ordem>11</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/jornadaTrabalho/jornadaTrabalho.load</link>
+                            <imagem>users.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.calendario</nome>
+                            <descricao>Calendário</descricao>
+                            <ordem>12</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/calendario/calendario.load</link>
+                            <imagem>users.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.localidade</nome>
+                            <descricao>Localidade</descricao>
+                            <ordem>2</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/localidade/localidade.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                    </subMenu1>
+                </menu>
+            </subMenu0>
+        </menu>
+        <menu>
+            <nome>$menu.nome.relatorio</nome>
+            <descricao>Relatórios do CITSmart</descricao>
+            <ordem>4</ordem>
+            <menuRapido>null</menuRapido>
+            <link />
+            <imagem>graph.png</imagem>
+            <horizontal />
+            <subMenu0>
+                <menu>
+                    <nome>$menu.nome.Gantt</nome>
+                    <descricao>Gantt de Solicitações</descricao>
+                    <ordem>52</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/ganttSolicitacaoServico/ganttSolicitacaoServico.load</link>
+                    <imagem>graph.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.graficosRelatorios(Painel)</nome>
+                    <descricao>Gráficos e Relatórios (Painel)</descricao>
+                    <ordem>53</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/painel/painel.load</link>
+                    <imagem>graph.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.graficoTempoReal</nome>
+                    <descricao>Gráfico em Tempo Real</descricao>
+                    <ordem>54</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/monitoramentoServicos/monitoramentoServicos.load</link>
+                    <imagem>graph.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.quantitativo</nome>
+                    <descricao>Quantitativo</descricao>
+                    <ordem>55</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>pages/relatorioQuantitativo/relatorioQuantitativo.load</link>
+                    <imagem>documents.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.quantitativoPorServico</nome>
+                    <descricao>Relatório Quantitativo de Serviço</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/relatorioQuantitativoPorServico/relatorioQuantitativoPorServico.load
+                    </link>
+                    <imagem>books_2.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.baseConhecimento</nome>
+                    <descricao>Relatório de Base de Conhecimento</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/relatorioBaseConhecimento/relatorioBaseConhecimento.load
+                    </link>
+                    <imagem>books_2.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.utilizacaoUSTs</nome>
+                    <descricao>Relatório de Utilização de UTSs</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/relatorioOrdemServicoUst/relatorioOrdemServicoUst.load
+                    </link>
+                    <imagem>books_2.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.acompanhamentoUSTs</nome>
+                    <descricao>Relatório de Acompanhamento USTs</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/relatorioAcompanhamento/relatorioAcompanhamento.load</link>
+                    <imagem>books_2.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.pesquisaSatisfacao</nome>
+                    <descricao>Pesquisa Satisfação</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/relatorioPesquisaSatisfacao/relatorioPesquisaSatisfacao.load
+                    </link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.valorServicoContrato</nome>
+                    <descricao>Valor do Serviço de Contrato</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/relatorioValorServicoContrato/relatorioValorServicoContrato.load
+                    </link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+            </subMenu0>
+        </menu>
+        <menu>
+            <nome>$menu.nome.gerenciaContratos</nome>
+            <descricao>Contratos</descricao>
+            <ordem>1</ordem>
+            <menuRapido>null</menuRapido>
+            <link />
+            <imagem>documents.png</imagem>
+            <horizontal />
+            <subMenu0>
+                <menu>
+                    <nome>$menu.nome.atividadePeriodica</nome>
+                    <descricao>Cadastro de Atividades Periódicas</descricao>
+                    <ordem>3</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/atividadePeriodica/atividadePeriodica.load</link>
+                    <imagem>list_w_images.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.cadastroContratos</nome>
+                    <descricao>Cadastro de Contratos</descricao>
+                    <ordem>1</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/dinamicViews/dinamicViews.load?identificacao=Contratos</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.administracaoContratos</nome>
+                    <descricao>Administração de Contratos</descricao>
+                    <ordem>2</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/informacoesContrato/informacoesContrato.load</link>
+                    <imagem>box_outgoing_2.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.formula</nome>
+                    <descricao>Fórmula</descricao>
+                    <ordem>4</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/formula/formula.load</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+            </subMenu0>
+        </menu>
+        <menu>
+            <nome>$menu.nome.sistema</nome>
+            <descricao>Configuração e Parametrização do Sistema</descricao>
+            <ordem>61</ordem>
+            <menuRapido>null</menuRapido>
+            <link />
+            <imagem>alert_2.png</imagem>
+            <horizontal />
+            <subMenu0>
+                <menu>
+                    <nome>$menu.nome.parametrosCITSmart</nome>
+                    <descricao>Cadastro de Parâmetros do CITSmart</descricao>
+                    <ordem>63</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/parametroCorpore/parametroCorpore.load</link>
+                    <imagem>alert_2.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.modeloE-mail</nome>
+                    <descricao>Modelo de E-mail</descricao>
+                    <ordem>2</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/modeloEmail/modeloEmail.load</link>
+                    <imagem>cog_3.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.visoesMetadados</nome>
+                    <descricao>Visões e Meta dados</descricao>
+                    <ordem>40</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link />
+                    <imagem>strategy.png</imagem>
+                    <horizontal />
+                    <subMenu1>
+                        <menu>
+                            <nome>$menu.nome.manutencaoVisoes</nome>
+                            <descricao>Manutenção de Visões</descricao>
+                            <ordem>41</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/visaoAdm/visaoAdm.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.carregaMetaDados</nome>
+                            <descricao>Carrega Meta Dados</descricao>
+                            <ordem>42</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/dataBaseMetaDados/dataBaseMetaDados.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.questionario</nome>
+                            <descricao>Questionário</descricao>
+                            <ordem>43</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/questionario/questionario.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                    </subMenu1>
+                </menu>
+                <menu>
+                    <nome>$menu.nome.processamentoBatch</nome>
+                    <descricao>Processamento de Arquivo Batch</descricao>
+                    <ordem>62</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/processamentoBatch/processamentoBatch.load</link>
+                    <imagem>alert_2.png</imagem>
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.gerenciamentoDados</nome>
+                    <descricao>Gerenciamento de Dados</descricao>
+                    <ordem>11</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/dataManager/dataManager.load</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.ligacoesExternas</nome>
+                    <descricao>Ligações externas</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/dinamicViews/dinamicViews.load?identificacao=ExternalConnection
+                    </link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.idioma</nome>
+                    <descricao>Idioma</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/lingua/lingua.load</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.templateSolicitacaoServico</nome>
+                    <descricao>Template de solicitação de serviço</descricao>
+                    <ordem>12</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/templateSolicitacaoServico//templateSolicitacaoServico.load
+                    </link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.desenhoFluxo</nome>
+                    <descricao>Desenho Fluxo</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/desenhoFluxo/desenhoFluxo.load</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.gerenciaImportacao</nome>
+                    <descricao>Gerenciamento de Importação</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/importManager/importManager.load</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$ldap.configuracao</nome>
+                    <descricao>Configuração LDAP</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/pages/ldap/ldap.load</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+                <menu>
+                    <nome>$menu.nome.bancoDados</nome>
+                    <descricao>Banco de Dados</descricao>
+                    <ordem>41</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link />
+                    <imagem />
+                    <horizontal />
+                    <subMenu1>
+                        <menu>
+                            <nome>$menu.nome.execucaoScripts</nome>
+                            <descricao>Execução de Scripts</descricao>
+                            <ordem>2</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/scripts/scripts.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                    </subMenu1>
+                </menu>
+            </subMenu0>
+        </menu>
+        <menu>
+            <nome>$menu.gerencia.processos</nome>
+            <descricao>Gerência de Processos</descricao>
+            <ordem>0</ordem>
+            <menuRapido>null</menuRapido>
+            <link />
+            <imagem>list_w_images.png</imagem>
+            <horizontal />
+            <subMenu0>
+                <menu>
+                    <nome>$menu.nome.gerenciaIncidentes</nome>
+                    <descricao>Gerência de Catálogo de Serviço</descricao>
+                    <ordem>1</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link />
+                    <imagem>strategy.png</imagem>
+                    <horizontal />
+                    <subMenu1>
+                        <menu>
+                            <nome>$menu.nome.registroIncidentes/ReqServicos</nome>
+                            <descricao>Registro de Incidentes e Requisições de Serviço
+                            </descricao>
+                            <ordem>0</ordem>
+                            <menuRapido>S</menuRapido>
+                            <link>/gerenciamentoServicos/gerenciamentoServicos.load</link>
+                            <imagem>pencil.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.pesquisaSolicitacoes/Incidentes</nome>
+                            <descricao>Pesquisa de Solicitações / Incidentes</descricao>
+                            <ordem>1</ordem>
+                            <menuRapido>S</menuRapido>
+                            <link>/pesquisaSolicitacoesServicos/pesquisaSolicitacoesServicos.load
+                            </link>
+                            <imagem>magnifying_glass.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.minhasRequisicoes</nome>
+                            <descricao>Acompanhamento de Suas Requisições</descricao>
+                            <ordem>7</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/resumoSolicitacoesServicos/resumoSolicitacoesServicos.load
+                            </link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.agendaAtivPeriodicas</nome>
+                            <descricao>Atividades Periódicas</descricao>
+                            <ordem>34</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/agendaAtvPeriodicas/agendaAtvPeriodicas.load</link>
+                            <imagem>documents.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                    </subMenu1>
+                </menu>
+                <menu>
+                    <nome>$menu.nome.gerenciaServicos</nome>
+                    <descricao>Gerência de Pessoal</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link />
+                    <imagem>cog_3.png</imagem>
+                    <horizontal />
+                    <subMenu1>
+                        <menu>
+                            <nome>$menu.nome.categoriaServico</nome>
+                            <descricao>Cadastro de Categoria de Serviço</descricao>
+                            <ordem>11</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/categoriaServico/categoriaServico.load</link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.condicaoOperacao</nome>
+                            <descricao>Cadastro da Condição Operação</descricao>
+                            <ordem>4</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/condicaoOperacao/condicaoOperacao.load</link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.importanciaNegocio</nome>
+                            <descricao>Cadastro de Importância Negócio</descricao>
+                            <ordem>3</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/importanciaNegocio/importanciaNegocio.load</link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.prioridade</nome>
+                            <descricao>Cadastro de Prioridade</descricao>
+                            <ordem>1</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/prioridade/prioridade.load</link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.catalogoServicos</nome>
+                            <descricao>Cadastro de Serviços</descricao>
+                            <ordem>14</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/dinamicViews/dinamicViews.load?identificacao=CadastroServico
+                            </link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.justificacaoFalhas</nome>
+                            <descricao>Justificativa das Falhas dos Itens de Configuração
+                            </descricao>
+                            <ordem>20</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/justificacaoFalhas/justificacaoFalhas.load</link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.mapaDesenhoServico</nome>
+                            <descricao>Mapa Desenho Serviço</descricao>
+                            <ordem>15</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/mapaDesenhoServico/mapaDesenhoServico.load</link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.tipoServico</nome>
+                            <descricao>Cadastro de tipo de serviço</descricao>
+                            <ordem>10</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/tipoServico/tipoServico.load</link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.localExecServico</nome>
+                            <descricao>Local de Execução do Serviço</descricao>
+                            <ordem>8</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/dinamicViews/dinamicViews.load?identificacao=LocalExecucaoServicos
+                            </link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.tipoSolicitacaoServico</nome>
+                            <descricao>Tipo de Solicitação de Serviço</descricao>
+                            <ordem>7</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/dinamicViews/dinamicViews.load?identificacao=TipoSolicitacaoServico
+                            </link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.justificativaSolicitacao</nome>
+                            <descricao>Justificativa Solicitação</descricao>
+                            <ordem>9</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/dinamicViews.load?identificacao=justificativaSolicitacao
+                            </link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.causaIncidentes</nome>
+                            <descricao>Causa de Incidentes</descricao>
+                            <ordem>5</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/dinamicViews/dinamicViews.load?identificacao=causaIncidente
+                            </link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.categoriaSolucao</nome>
+                            <descricao>Categoria de Solução</descricao>
+                            <ordem>4</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/dinamicViews/dinamicViews.load?identificacao=categoriaSolucao
+                            </link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.grupoAtiv.Periodica</nome>
+                            <descricao>Grupo Atividade Periódica</descricao>
+                            <ordem>15</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/dinamicViews.load?identificacao=grupoAtividadePeriodica
+                            </link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.catalogoNegocio</nome>
+                            <descricao>Catálogo de Negócio</descricao>
+                            <ordem>21</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/catalogoServico/catalogoServico.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.situacaoServico</nome>
+                            <descricao>Situação de Serviços</descricao>
+                            <ordem>3</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/situacaoServico/situacaoServico.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.tipoEventoServico</nome>
+                            <descricao>Tipo de Eventos do Serviço</descricao>
+                            <ordem>6</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/dinamicViews/dinamicViews.load?identificacao=CadastroTipoEventoServico
+                            </link>
+                            <imagem>cog_3.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.prioridadeSolicitacoes</nome>
+                            <descricao>Prioridade Solicitações Serviço</descricao>
+                            <ordem>2</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/prioridadeSolicitacoes/prioridadeSolicitacoes.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                    </subMenu1>
+                </menu>
+                <menu>
+                    <nome>$menu.nome.gerenciaConhecimento</nome>
+                    <descricao>Gerenciamento de Conhecimento</descricao>
+                    <ordem>5</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link />
+                    <imagem>user_comment.png</imagem>
+                    <horizontal />
+                    <subMenu1>
+                        <menu>
+                            <nome>$menu.nome.pasta</nome>
+                            <descricao>Cadastro de Pasta</descricao>
+                            <ordem>1</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/pasta/pasta.load</link>
+                            <imagem>documents.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.baseDeConhecimento</nome>
+                            <descricao>Base de Conhecimento</descricao>
+                            <ordem>3</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/baseConhecimento/baseConhecimento.load</link>
+                            <imagem>documents.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.palavrasGemeas</nome>
+                            <descricao>Cadastro de Palavras Correspondentes</descricao>
+                            <ordem>2</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/palavraGemea/palavraGemea.load</link>
+                            <imagem>user_comment.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.pesquisaBaseConhecimento</nome>
+                            <descricao>pesquisa base de conhecimento</descricao>
+                            <ordem>4</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/baseConhecimentoView/baseConhecimentoView.load</link>
+                            <imagem>user_comment.png</imagem>
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.pesquisaFAQ</nome>
+                            <descricao>Pesquisa FAQ</descricao>
+                            <ordem>6</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/pesquisaFaq/pesquisaFaq.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.galeriaImagens</nome>
+                            <descricao>Galeria de Imagens</descricao>
+                            <ordem>7</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/galeriaImagens/galeriaImagens.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                        <menu>
+                            <nome>$menu.nome.categoriaGaleriaImagens</nome>
+                            <descricao>Categorias Galerias de Imagens</descricao>
+                            <ordem>8</ordem>
+                            <menuRapido>null</menuRapido>
+                            <link>/categoriaGaleriaImagem/categoriaGaleriaImagem.load</link>
+                            <imagem />
+                            <horizontal />
+                            <subMenu2 />
+                        </menu>
+                    </subMenu1>
+                </menu>
+            </subMenu0>
+        </menu>
+        <menu>
+            <nome>$menu.nome.trilhaAuditoria</nome>
+            <descricao>Trilha de Auditoria</descricao>
+            <ordem>5</ordem>
+            <menuRapido>null</menuRapido>
+            <link />
+            <imagem>alert_2.png</imagem>
+            <horizontal />
+            <subMenu0>
+                <menu>
+                    <nome>$menu.nome.logsSistema</nome>
+                    <descricao>Logs do Sistema</descricao>
+                    <ordem>0</ordem>
+                    <menuRapido>null</menuRapido>
+                    <link>/logController/logController.load</link>
+                    <imagem />
+                    <horizontal />
+                    <subMenu1 />
+                </menu>
+            </subMenu0>
+        </menu>
+    </menuSuperior>
 </menus>

@@ -160,16 +160,6 @@
                      <subMenu2 />
                   </menu>
                   <menu>
-                     <nome>$menu.nome.cargos</nome>
-                     <descricao>Cadastro de Cargos</descricao>
-                     <ordem>5</ordem>
-                     <menuRapido>null</menuRapido>
-                     <link>/cargos/cargos.load</link>
-                     <imagem>users.png</imagem>
-                     <horizontal />
-                     <subMenu2 />
-                  </menu>
-                  <menu>
                      <nome>$menu.nome.localidade</nome>
                      <descricao>Localidade</descricao>
                      <ordem>2</ordem>
@@ -223,27 +213,27 @@
          <horizontal />
          <subMenu0>
             <menu>
-				<nome>$menu.nome.relGerenciaPessoal</nome>
-				<descricao>Gerência de Pessoal</descricao>
-				<ordem>1</ordem>
-				<menuRapido>null</menuRapido>
-				<link />
-				<imagem />
-				<horizontal />
-				<subMenu1>
-					<menu>
-						<nome>$menu.nome.relatorioUnidadeColaborador</nome>
-						<descricao>Relatório de Unidade e Colaborador</descricao>
-						<ordem>0</ordem>
-						<menuRapido>null</menuRapido>
-						<link>/relatorioColaboradorUnidade/relatorioColaboradorUnidade.load
-						</link>
-						<imagem />
-						<horizontal />
-						<subMenu2 />
-					</menu>
-				</subMenu1>
-			</menu>
+                <nome>$menu.nome.relGerenciaPessoal</nome>
+                <descricao>Gerência de Pessoal</descricao>
+                <ordem>1</ordem>
+                <menuRapido>null</menuRapido>
+                <link />
+                <imagem />
+                <horizontal />
+                <subMenu1>
+                    <menu>
+                        <nome>$menu.nome.relatorioUnidadeColaborador</nome>
+                        <descricao>Relatório de Unidade e Colaborador</descricao>
+                        <ordem>0</ordem>
+                        <menuRapido>null</menuRapido>
+                        <link>/relatorioColaboradorUnidade/relatorioColaboradorUnidade.load
+                        </link>
+                        <imagem />
+                        <horizontal />
+                        <subMenu2 />
+                    </menu>
+                </subMenu1>
+            </menu>
             <menu>
                <nome>$menu.nome.quantitativoMudanca</nome>
                <descricao>Relat?rio Quantitativo de Mudan?a</descricao>
@@ -264,15 +254,15 @@
                <horizontal />
                <subMenu1>
                    <menu>
-					 <nome>$menu.relatorio.causaSolucao</nome>
-					 <descricao>Relatório de Causa e Solução</descricao>
-					 <ordem>8</ordem>
-					 <menuRapido>null</menuRapido>
-					 <link>/relatorioCausaSolucao/relatorioCausaSolucao.load</link>
-					 <imagem>documents.png</imagem>
-					 <horizontal />
-					 <subMenu1 />
-				  </menu>
+                     <nome>$menu.relatorio.causaSolucao</nome>
+                     <descricao>Relatório de Causa e Solução</descricao>
+                     <ordem>8</ordem>
+                     <menuRapido>null</menuRapido>
+                     <link>/relatorioCausaSolucao/relatorioCausaSolucao.load</link>
+                     <imagem>documents.png</imagem>
+                     <horizontal />
+                     <subMenu1 />
+                  </menu>
                   <menu>
                      <nome>$menu.nome.Gantt</nome>
                      <descricao>Gantt Incidentes/Requisições</descricao>
@@ -466,16 +456,16 @@
                      <subMenu2 />
                   </menu>
                   <menu>
-						<nome>$menu.nome.relatorioDocumentosAcessados</nome>
-						<descricao>Documentos Acessados</descricao>
-						<ordem>2</ordem>
-						<menuRapido>null</menuRapido>
-						<link>/relatorioDocumentosAcessadosBaseConhecimento/relatorioDocumentosAcessadosBaseConhecimento.load
-						</link>
-						<imagem>books_2.png</imagem>
-						<horizontal />
-						<subMenu1 />
-					</menu>
+                        <nome>$menu.nome.relatorioDocumentosAcessados</nome>
+                        <descricao>Documentos Acessados</descricao>
+                        <ordem>2</ordem>
+                        <menuRapido>null</menuRapido>
+                        <link>/relatorioDocumentosAcessadosBaseConhecimento/relatorioDocumentosAcessadosBaseConhecimento.load
+                        </link>
+                        <imagem>books_2.png</imagem>
+                        <horizontal />
+                        <subMenu1 />
+                    </menu>
                </subMenu1>
             </menu>
             <menu>

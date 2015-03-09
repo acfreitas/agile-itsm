@@ -10,10 +10,8 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 import br.com.centralit.citcorpore.bean.CargaSmartDTO;
-import br.com.centralit.citcorpore.bean.CargosDTO;
 import br.com.centralit.citcorpore.bean.EmpregadoDTO;
 import br.com.centralit.citcorpore.bean.UnidadeDTO;
-import br.com.centralit.citcorpore.integracao.CargosDao;
 import br.com.centralit.citcorpore.integracao.EmpregadoDao;
 import br.com.centralit.citcorpore.integracao.UnidadeDao;
 import br.com.centralit.citcorpore.util.Util;
@@ -37,13 +35,11 @@ public class CargaSmartServiceEjb extends CrudServiceImpl implements CargaSmartS
     @Override
     public List<CargaSmartDTO> gerarCarga(final File carga, final Integer idEmpresa) throws Exception {
         final EmpregadoDao empregadoDao = new EmpregadoDao();
-        final CargosDao cargosDao = new CargosDao();
         final UnidadeDao unidadeDao = new UnidadeDao();
 
         final TransactionControler tc = new TransactionControlerImpl(empregadoDao.getAliasDB());
         try (BufferedReader arq = new BufferedReader(new InputStreamReader(new FileInputStream(carga), "WINDOWS-1252"))) {
             empregadoDao.setTransactionControler(tc);
-            cargosDao.setTransactionControler(tc);
             unidadeDao.setTransactionControler(tc);
 
             tc.start();
@@ -52,7 +48,6 @@ public class CargaSmartServiceEjb extends CrudServiceImpl implements CargaSmartS
 
             while (arq.ready()) {
                 EmpregadoDTO empregadoDTO = new EmpregadoDTO();
-                CargosDTO cargosDTO = new CargosDTO();
                 UnidadeDTO unidadeDTO = new UnidadeDTO();
                 UnidadeDTO unidadeFilhaDTO = new UnidadeDTO();
                 final String linhaAux = arq.readLine();
@@ -78,19 +73,18 @@ public class CargaSmartServiceEjb extends CrudServiceImpl implements CargaSmartS
                             int j = 0;
                             for (final String coluna : colunasArray) {
                                 UnidadeDTO beanUnidadeDTO = null;
-                                CargosDTO beanCargosDTO = null;
                                 if (coluna.equals("")) {
                                     j++;
                                 } else {
                                     if (j == 0) {
                                         beanUnidadeDTO = new UnidadeDTO();
-                                        beanUnidadeDTO = this.existeUnidadePorNome(coluna, unidadeDao);
+                                        beanUnidadeDTO = existeUnidadePorNome(coluna, unidadeDao);
                                         if (beanUnidadeDTO.getIdUnidade() == null) {
                                             beanUnidadeDTO.setIdEmpresa(idEmpresa);
                                             beanUnidadeDTO.setIdUnidade(unidadeDTO.getIdUnidade());
                                             beanUnidadeDTO.setNome(coluna);
                                             beanUnidadeDTO.setDataInicio(Util.getSqlDataAtual());
-                                            unidadeDTO = this.criaUnidadeDTO(beanUnidadeDTO, unidadeDao);
+                                            unidadeDTO = criaUnidadeDTO(beanUnidadeDTO, unidadeDao);
                                         } else {
                                             unidadeDTO = beanUnidadeDTO;
                                         }
@@ -99,7 +93,7 @@ public class CargaSmartServiceEjb extends CrudServiceImpl implements CargaSmartS
 
                                     else if (j == 1) {
                                         beanUnidadeDTO = new UnidadeDTO();
-                                        beanUnidadeDTO = this.existeUnidadePorNome(coluna, unidadeDao);
+                                        beanUnidadeDTO = existeUnidadePorNome(coluna, unidadeDao);
                                         if (beanUnidadeDTO.getIdUnidade() == null) {
                                             beanUnidadeDTO.setIdEmpresa(idEmpresa);
                                             beanUnidadeDTO.setNome(coluna);
@@ -107,7 +101,7 @@ public class CargaSmartServiceEjb extends CrudServiceImpl implements CargaSmartS
                                                 beanUnidadeDTO.setIdUnidadePai(unidadeDTO.getIdUnidade());
                                             }
                                             beanUnidadeDTO.setDataInicio(Util.getSqlDataAtual());
-                                            unidadeFilhaDTO = this.criaUnidadeDTO(beanUnidadeDTO, unidadeDao);
+                                            unidadeFilhaDTO = criaUnidadeDTO(beanUnidadeDTO, unidadeDao);
 
                                         } else {
                                             if (unidadeDTO.getIdUnidade() != null) {
@@ -118,32 +112,15 @@ public class CargaSmartServiceEjb extends CrudServiceImpl implements CargaSmartS
                                             unidadeDao.update(unidadeFilhaDTO);
                                         }
                                         j++;
-                                    } else if (j == 2) {
-                                        beanCargosDTO = new CargosDTO();
-                                        beanCargosDTO = this.existeCargosPorNome(coluna, cargosDao);
-                                        if (beanCargosDTO.getIdCargo() == null) {
-                                            beanCargosDTO.setNomeCargo(coluna);
-                                            beanCargosDTO.setDataInicio(Util.getSqlDataAtual());
-                                            cargosDTO = this.criaCargosDTO(beanCargosDTO, cargosDao);
-
-                                        } else {
-                                            cargosDTO = beanCargosDTO;
-                                        }
-                                        j++;
                                     } else if (j == 3) {
                                         beanEmpregadoDTO = new EmpregadoDTO();
-                                        beanEmpregadoDTO = this.existeEmpregadoPorNome(coluna, empregadoDao);
+                                        beanEmpregadoDTO = existeEmpregadoPorNome(coluna, empregadoDao);
                                         if (beanEmpregadoDTO.getIdEmpregado() == null) {
                                             beanEmpregadoDTO.setNome(coluna);
                                             beanEmpregadoDTO.setNomeProcura(coluna);
-                                            beanEmpregadoDTO.setIdCargo(cargosDTO.getIdCargo());
                                             beanEmpregadoDTO.setIdUnidade(unidadeFilhaDTO.getIdUnidade());
                                             beanEmpregadoDTO.setIdSituacaoFuncional(1);
-                                            if (cargosDTO.getIdCargo() != null && unidadeFilhaDTO.getIdUnidade() != null) {
-                                                empregadoDTO = this.criaEmpregadoDTO(beanEmpregadoDTO, empregadoDao);
-                                            }
                                         } else {
-                                            beanEmpregadoDTO.setIdCargo(cargosDTO.getIdCargo());
                                             beanEmpregadoDTO.setIdUnidade(unidadeFilhaDTO.getIdUnidade());
                                             empregadoDTO = beanEmpregadoDTO;
                                         }
@@ -189,7 +166,8 @@ public class CargaSmartServiceEjb extends CrudServiceImpl implements CargaSmartS
                                     else if (j == 7) {
                                         empregadoDTO.setTelefone(coluna);
                                         if (empregadoDTO.getIdEmpregado() != null) {
-                                            if (empregadoDTO.getIdCargo() != null && empregadoDTO.getIdUnidade() != null) {
+                                            if (empregadoDTO.getIdCargo() != null
+                                                    && empregadoDTO.getIdUnidade() != null) {
                                                 empregadoDao.update(empregadoDTO);
                                             }
                                         }
@@ -205,16 +183,12 @@ public class CargaSmartServiceEjb extends CrudServiceImpl implements CargaSmartS
             tc.commit();
 
         } catch (final PersistenceException e) {
-            this.rollbackTransaction(tc, e);
+            rollbackTransaction(tc, e);
             e.printStackTrace();
         } finally {
             tc.closeQuietly();
         }
         return null;
-    }
-
-    private CargosDTO criaCargosDTO(final CargosDTO cargosDTO, final CargosDao dao) throws Exception {
-        return (CargosDTO) dao.create(cargosDTO);
     }
 
     private EmpregadoDTO criaEmpregadoDTO(final EmpregadoDTO empregadoDTO, final EmpregadoDao dao) throws Exception {
@@ -247,16 +221,6 @@ public class CargaSmartServiceEjb extends CrudServiceImpl implements CargaSmartS
     private UnidadeDTO criaUnidadeDTO(final UnidadeDTO unidadeDTO, final UnidadeDao dao) throws Exception {
         return (UnidadeDTO) dao.create(unidadeDTO);
 
-    }
-
-    private CargosDTO existeCargosPorNome(final String coluna, final CargosDao cargosDao) throws Exception {
-        final CargosDTO cargosDTO = new CargosDTO();
-        cargosDTO.setNomeCargo(coluna);
-        final List<CargosDTO> listCargos = (List<CargosDTO>) cargosDao.findByNomeCargos(cargosDTO);
-        if (listCargos != null) {
-            return listCargos.get(0);
-        }
-        return cargosDTO;
     }
 
 }

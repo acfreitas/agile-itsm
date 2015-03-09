@@ -1,33 +1,13 @@
 
 -- INICIO - Bruno Aquino - 11/04/2014
 
-CREATE  TABLE rh_requisicaofuncao (
-idsolicitacaoservico INT NOT NULL ,
-nomefuncao VARCHAR(200) NULL ,
-numeropessoas INT NULL ,
-possuisubordinados VARCHAR(45) NULL ,
-justificativafuncao VARCHAR(500) NULL ,
-resumoatividades VARCHAR(500) NULL ,
-requisicaovalida VARCHAR(45) NULL ,
-justificativavalidacao VARCHAR(45) NULL ,
-complementojustificativavalidacao VARCHAR(500) NULL ,
-idcargo INT NULL ,
-funcao VARCHAR(100) NULL ,
-resumofuncao VARCHAR(500) NULL ,
-descricaovalida VARCHAR(45) NULL ,
-justificativadescricaofuncao VARCHAR(45) NULL ,
-complementojustificativadescricaofuncao VARCHAR(500) NULL ,
-fase VARCHAR(45) NULL ,
-PRIMARY KEY (idsolicitacaoservico) 
-);
 
 CREATE TABLE rh_perspectivacomportamentalfuncao (
 idperspectivacomportamental int NOT NULL,
 descricaoperspectivacomportamental varchar(200) DEFAULT NULL,
 detalhePerspectivaComportamental varchar(500) DEFAULT NULL,
 idsolicitacaoservico int DEFAULT NULL,
-PRIMARY KEY (idperspectivacomportamental),
-CONSTRAINT idsolicitacaoservico_comportamental FOREIGN KEY (idsolicitacaoservico) REFERENCES rh_requisicaofuncao (idsolicitacaoservico) 
+PRIMARY KEY (idperspectivacomportamental)
 ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
@@ -36,8 +16,7 @@ idperspectivacomplexidade int NOT NULL,
 descricaoperspectivacomplexidade varchar(200) DEFAULT NULL,
 nivelperspectivacomplexidade int DEFAULT NULL,
 idsolicitacaoservico int DEFAULT NULL,
-PRIMARY KEY (idperspectivacomplexidade),
-CONSTRAINT idsolicitacaoservico_compl FOREIGN KEY (idsolicitacaoservico) REFERENCES rh_requisicaofuncao (idsolicitacaoservico) 
+PRIMARY KEY (idperspectivacomplexidade)
 ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
@@ -47,8 +26,7 @@ descricaoformacaoacademica varchar(200) DEFAULT NULL,
 detalheformacaoacademica varchar(500) DEFAULT NULL,
 obrigatorioformacaoacademica varchar(1) DEFAULT NULL,	
 idsolicitacaoservico int DEFAULT NULL,
-PRIMARY KEY (idperspectivatecnicaformacaoacademica),
-CONSTRAINT idsolicitacaoservico_form FOREIGN KEY (idsolicitacaoservico) REFERENCES rh_requisicaofuncao (idsolicitacaoservico) 
+PRIMARY KEY (idperspectivatecnicaformacaoacademica) 
 ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
@@ -58,8 +36,7 @@ descricaocertificacao varchar(200) DEFAULT NULL,
 versaocertificacao varchar(500) DEFAULT NULL,
 obrigatoriocertificacao varchar(1) DEFAULT NULL,	
 idsolicitacaoservico int DEFAULT NULL,
-PRIMARY KEY (idperspectivatecnicacertificacao),
-CONSTRAINT idsolicitacaoservico_cert FOREIGN KEY (idsolicitacaoservico) REFERENCES rh_requisicaofuncao (idsolicitacaoservico) 
+PRIMARY KEY (idperspectivatecnicacertificacao)
 ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
@@ -69,8 +46,7 @@ descricaocurso varchar(200) DEFAULT NULL,
 detalhecurso varchar(500) DEFAULT NULL,
 obrigatoriocurso varchar(1) DEFAULT NULL,	
 idsolicitacaoservico int DEFAULT NULL,
-PRIMARY KEY (idperspectivatecnicacurso),
-CONSTRAINT idsolicitacaoservico_curs FOREIGN KEY (idsolicitacaoservico) REFERENCES rh_requisicaofuncao (idsolicitacaoservico) 
+PRIMARY KEY (idperspectivatecnicacurso)
 ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
@@ -80,8 +56,7 @@ descricaoidioma varchar(200) DEFAULT NULL,
 detalheidioma varchar(500) DEFAULT NULL,
 obrigatorioidioma varchar(1) DEFAULT NULL,	
 idsolicitacaoservico int DEFAULT NULL,
-PRIMARY KEY (idperspectivatecnicaidioma),
-CONSTRAINT idsolicitacaoservico_idio FOREIGN KEY (idsolicitacaoservico) REFERENCES rh_requisicaofuncao (idsolicitacaoservico) 
+PRIMARY KEY (idperspectivatecnicaidioma)
 ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
@@ -91,18 +66,7 @@ descricaoexperiencia varchar(200) DEFAULT NULL,
 detalheexperiencia varchar(500) DEFAULT NULL,
 obrigatorioexperiencia varchar(1) DEFAULT NULL,	
 idsolicitacaoservico int DEFAULT NULL,
-PRIMARY KEY (idperspectivatecnicaexperiencia),
-CONSTRAINT idsolicitacaoservico_exper FOREIGN KEY (idsolicitacaoservico) REFERENCES rh_requisicaofuncao (idsolicitacaoservico) 
-ON DELETE NO ACTION ON UPDATE NO ACTION
-);
-
-CREATE TABLE rh_competenciatecnica (
-idcompetenciastecnicas int NOT NULL,
-descricaocompetenciastecnicas varchar(200) DEFAULT NULL,
-nivelcompetenciastecnicas int DEFAULT NULL,
-idsolicitacaoservico int DEFAULT NULL,
-PRIMARY KEY (idcompetenciastecnicas),
-CONSTRAINT idsolicitacaoservico_comp FOREIGN KEY (idsolicitacaoservico) REFERENCES rh_requisicaofuncao (idsolicitacaoservico) 
+PRIMARY KEY (idperspectivatecnicaexperiencia)
 ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
@@ -187,11 +151,7 @@ alter table "itemcontrolefinanceiroviagem"
 
 ALTER TABLE itemcontrolefinanceiroviagem DROP INDEX fk_itemcontrolefinaceiroviagem_fornecedor ;
 
-alter table rh_experienciaprofissionalcurriculo alter column funcao type text;
-
 alter table rh_funcionario ADD idempregado integer NULL;
-
-ALTER TABLE rh_requisicaopessoal ADD idlotacao integer NULL DEFAULT NULL;
 
 alter table rh_cargahoraria drop column entrada;
 alter table rh_cargahoraria drop column saida;
@@ -242,27 +202,11 @@ PRIMARY KEY (idcandidato)
 
 -- FIM - THIAGO BORGES DA SILVA - 24/02/2014
 
--- INICIO - THIAGO BORGES DA SILVA - 11/03/2014
-
-CREATE  TABLE rh_funcaoexperienciaprofissionalcurriculo (
-idfuncao INTEGER NOT NULL ,
-idexperienciaprofissionalcurriculo INTEGER NOT NULL ,
-nomefuncao VARCHAR(100) NULL ,
-descricaofuncao VARCHAR(500) NULL ,
-PRIMARY KEY (idfuncao),
-CONSTRAINT fk_idexperienciaprofissionalcurriculo
-FOREIGN KEY (idexperienciaprofissionalcurriculo)
-REFERENCES rh_experienciaprofissionalcurriculo (idexperienciaprofissional)
-ON DELETE NO ACTION ON UPDATE NO ACTION);
-
--- FIM - THIAGO BORGES DA SILVA - 11/03/2014
-
 -- INICIO - DAVID RODRIGUES DA SILVA - 24/03/2014
 
 CREATE TABLE  rh_historicofuncional  (
      idhistoricofuncional  INTEGER NOT NULL,
      idcandidato  INTEGER REFERENCES rh_candidato (idcandidato),
-     idcurriculo  INTEGER REFERENCES rh_curriculo (idcurriculo),
      dtcriacao  DATE,
     PRIMARY KEY ( idhistoricofuncional )
 );
@@ -300,14 +244,6 @@ CREATE TABLE  rh_listanegra  (
 
 -- FIM - DAVID RODRIGUES DA SILVA - 24/03/2014
 
--- INICIO - valdoilo.damasceno - 11/04/2014
-
-alter table rh_curriculo rename column idnaturalidade to idnacionalidade;
-alter table rh_enderecocurriculo drop column idbairro;
-alter table rh_experienciaprofissionalcurriculo drop column idrequisicaomudanca;
-
--- FIM - valdoilo.damasceno - 11/04/2014
-
 -- INICIO - Mário Hayasaki Júnior - 11/04/2014
 
 alter table rh_candidato add column autenticado char(1);
@@ -315,29 +251,10 @@ alter table rh_candidato add column hashID varchar(255);
 
 -- FIM - Mário Hayasaki Júnior - 11/04/2014
 
--- INICIO - cleison.ferreira - 11/04/2014
-
-CREATE TABLE rh_idiomacurriculo (
-  ididioma INTEGER NOT NULL,
-  idcurriculo INTEGER NOT NULL,
-  idnivelconversa INTEGER NOT NULL,
-  idnivelescrita INTEGER NOT NULL,
-  idnivelleitura INTEGER NOT NULL,
-  PRIMARY KEY (ididioma,idcurriculo)
-);
-
--- FIM - cleison.ferreira - 11/04/2014
-
 -- INICIO - RODRIGO PECCI ACORSE - 09/11/2013
 
 ALTER TABLE atividadeperiodica ALTER COLUMN criadopor TYPE varchar(256);
 ALTER TABLE atividadeperiodica ALTER COLUMN alteradopor TYPE varchar(256);
-
-ALTER TABLE rh_experienciaprofissionalcurriculo ALTER COLUMN idcurriculo TYPE int4 USING (trim(idcurriculo)::integer);
-ALTER TABLE  rh_experienciaprofissionalcurriculo ADD CONSTRAINT FK_curriculo FOREIGN KEY (idcurriculo) REFERENCES rh_curriculo (idcurriculo) ON DELETE NO ACTION ON UPDATE NO ACTION;
-CREATE INDEX FK_curriculo_idx ON rh_experienciaprofissionalcurriculo (idcurriculo);
-
-ALTER TABLE rh_curriculo ADD COLUMN pretensaosalarial decimal(8,2);
 
 -- FIM - RODRIGO PECCI ACORSE - 09/11/2013
 
@@ -390,19 +307,6 @@ values
 insert into rh_descricao_atruibuicaoresponsabilidade(iddescricao,descricao,situacao) 
 values
 (4,'Representar a área administrativa perante a diretoria','A');
-
-create table rh_competenciatecnica_(
-	idcompetencia integer not null,
-	descricao varchar(256) not null,
-	situacao char(1) not null,
-	primary key(idcompetencia)
-);
-
-insert into rh_competenciatecnica_ (idcompetencia,descricao,situacao) values (1,'ITIL','A');
-insert into rh_competenciatecnica_ (idcompetencia,descricao,situacao) values (2,'COBIT','A');
-insert into rh_competenciatecnica_ (idcompetencia,descricao,situacao) values (3,'ISO 20000','A');
-insert into rh_competenciatecnica_ (idcompetencia,descricao,situacao) values (4,'ISO 27002','A');
-insert into rh_competenciatecnica_ (idcompetencia,descricao,situacao) values (5,'Gestão de Projetos','A');
 
 create table rh_comportamento(
 	idcomportamento integer not null,
@@ -489,20 +393,6 @@ CREATE TABLE rh_manualcompetenciatecnica (
 );
 
 -- Fim David - 14-04-2014
-
--- INICIO - EULER RAMOS - 13/04/2014
-
-alter table rh_requisicaopessoal add justificativarejeicao text;
-alter table rh_entrevistacandidato add observacaogestor text;
-alter table rh_entrevistacandidato add notagestor decimal(6,2);
-alter table rh_requisicaopessoal add motivodesistenciacandidato text;
-alter table rh_requisicaopessoal add idjornada integer;
-alter table rh_requisicaopessoal add idcidade integer;
-alter table rh_requisicaopessoal add idunidade integer;
-alter table rh_requisicaopessoal alter column dataabertura drop not null;
-alter table rh_requisicaopessoal alter column salario drop not null;
-
--- FIM - EULER RAMOS - 13/04/2014
 
 -- Inicio - DAVID 14/04/2014
 
@@ -780,35 +670,11 @@ alter table rh_perspectivacomportamental add detalheperspectivacomportamental te
 
 -- FIM - RODRIGO PECCI ACORSE 17/04/2014
 
--- INÍCIO - EULER RAMOS 17/04/2014
-
-alter table rh_requisicaopessoal add idfuncao int;
-
--- FIM - EULER RAMOS
 --Inicio - euler.ramos 21/04/2014
 
 ALTER TABLE rh_requisicaopessoal ALTER COLUMN idcargo DROP NOT NULL;
 
 -- FIM - euler.ramos 21/04/2014
-
--- Inicio - mario.haysaki 30/04/20014
-
-ALTER TABLE rh_curriculo add COLUMN nacionalidade varchar(100);
-
-ALTER TABLE rh_curriculo add COLUMN idcidadenatal int;
-
-ALTER TABLE rh_curriculo add COLUMN idestadonatal int;
-
-ALTER TABLE rh_curriculo ALTER COLUMN cidadenatal DROP NOT NULL;
-
--- Fim - mario.haysaki 30/04/2014
-
---Inicio - renato.jesus 30/04/2014
-
-ALTER TABLE rh_certificacaocurriculo ALTER COLUMN versao DROP NOT NULL;
-ALTER TABLE rh_certificacaocurriculo ALTER COLUMN validade DROP NOT NULL;
-
--- FIM - renato.jesus 30/04/2014
 
 -- FIM - euler.ramos 21/04/2014
 
@@ -852,23 +718,6 @@ INSERT INTO contratoformulaos (idcontratoformulaos,idcontrato,idformulaos,delete
 INSERT INTO contratoformulaos (idcontratoformulaos,idcontrato,idformulaos,deleted) VALUES (6,1,6,'N');
 
 -- Fim - Bruno.aquino - 25/04/2014
-
--- Inicio - thiago.borges 07/05/2014
-CREATE  TABLE rh_treinamentocurriculo(
-idtreinamento INT NOT NULL ,
-idcurso INT NOT NULL ,
-idcurriculo INT NOT NULL ,
-PRIMARY KEY (idtreinamento) ,
-CONSTRAINT idcursofk FOREIGN KEY (idcurso) REFERENCES rh_curso (idcurso)
-ON DELETE NO ACTION ON UPDATE NO ACTION,
-CONSTRAINT idcurriculofk FOREIGN KEY (idcurriculo) REFERENCES rh_curriculo (idcurriculo)
-ON DELETE NO ACTION ON UPDATE NO ACTION);
--- Fim - thiago.borges 07/05/2014
-
--- Inicio - mario.haysaki 07/05/20014
-ALTER TABLE rh_experienciaprofissionalcurriculo ALTER COLUMN funcao DROP NOT NULL;
-ALTER TABLE rh_curriculo ALTER COLUMN idnacionalidade DROP NOT NULL;
--- Fim - mario.haysaki 07/05/2014
 
 -- inicio - maycon 09/05/20014
 

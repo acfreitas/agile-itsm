@@ -1,8 +1,3 @@
-
--- Inicio - thiago.borges 16/05/2014
-alter table rh_formacaocurriculo alter column descricao type varchar(1000);
--- FIM - thiago.borges 16/05/2014
-
 -- INICIO - david.silva 16/05/2014
 alter table rh_atitudeindividual alter column descricao type varchar(100);
 alter table rh_atitudeindividual alter column detalhe type varchar(1000);

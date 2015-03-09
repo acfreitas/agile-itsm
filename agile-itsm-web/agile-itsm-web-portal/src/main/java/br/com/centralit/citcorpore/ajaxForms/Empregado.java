@@ -12,7 +12,6 @@ import br.com.centralit.citajax.html.AjaxFormAction;
 import br.com.centralit.citajax.html.DocumentHTML;
 import br.com.centralit.citajax.html.HTMLForm;
 import br.com.centralit.citajax.html.HTMLSelect;
-import br.com.centralit.citcorpore.bean.CargosDTO;
 import br.com.centralit.citcorpore.bean.ContratoDTO;
 import br.com.centralit.citcorpore.bean.EmpregadoDTO;
 import br.com.centralit.citcorpore.bean.GrupoDTO;
@@ -20,7 +19,6 @@ import br.com.centralit.citcorpore.bean.GrupoEmpregadoDTO;
 import br.com.centralit.citcorpore.bean.ParametroCorporeDTO;
 import br.com.centralit.citcorpore.bean.UnidadeDTO;
 import br.com.centralit.citcorpore.bean.UsuarioDTO;
-import br.com.centralit.citcorpore.negocio.CargosService;
 import br.com.centralit.citcorpore.negocio.ContratoService;
 import br.com.centralit.citcorpore.negocio.EmpregadoService;
 import br.com.centralit.citcorpore.negocio.GrupoEmpregadoService;
@@ -46,13 +44,14 @@ public class Empregado extends AjaxFormAction {
 
     private EmpregadoDTO empregadoBean;
 
+    @Override
     public void load(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        this.setEmpregadoBean((EmpregadoDTO) document.getBean());
-        HTMLSelect comboUfOrgaoExpedidor = (HTMLSelect) document.getSelectById("idUFOrgExpedidor");
-        HTMLSelect comboCtpsIdUf = (HTMLSelect) document.getSelectById("ctpsIdUf");
-        HTMLSelect comboIdSituacaoFuncional = (HTMLSelect) document.getSelectById("idSituacaoFuncional");
-        HTMLSelect comboTipo = (HTMLSelect) document.getSelectById("tipo");
-        HTMLSelect comboEstadoCivil = (HTMLSelect) document.getSelectById("estadoCivil");
+        setEmpregadoBean((EmpregadoDTO) document.getBean());
+        final HTMLSelect comboUfOrgaoExpedidor = document.getSelectById("idUFOrgExpedidor");
+        final HTMLSelect comboCtpsIdUf = document.getSelectById("ctpsIdUf");
+        final HTMLSelect comboIdSituacaoFuncional = document.getSelectById("idSituacaoFuncional");
+        final HTMLSelect comboTipo = document.getSelectById("tipo");
+        final HTMLSelect comboEstadoCivil = document.getSelectById("estadoCivil");
 
         comboTipo.removeAllOptions();
         comboTipo.addOption("", UtilI18N.internacionaliza(request, "citcorpore.comum.selecione"));
@@ -65,9 +64,9 @@ public class Empregado extends AjaxFormAction {
         comboTipo.addOption("X", UtilI18N.internacionaliza(request, "colaborador.socio"));
         comboTipo.addOption("S", UtilI18N.internacionaliza(request, "colaborador.solicitante"));
 
-        UfService ufService = (UfService) ServiceLocator.getInstance().getService(UfService.class, null);
+        final UfService ufService = (UfService) ServiceLocator.getInstance().getService(UfService.class, null);
 
-        Collection colUfs = ufService.list();
+        final Collection colUfs = ufService.list();
 
         comboUfOrgaoExpedidor.removeAllOptions();
         comboUfOrgaoExpedidor.addOption("", "--");
@@ -88,7 +87,8 @@ public class Empregado extends AjaxFormAction {
         comboEstadoCivil.addOption("5", UtilI18N.internacionaliza(request, "colaborador.separadoJudicialmente"));
         comboEstadoCivil.addOption("1", UtilI18N.internacionaliza(request, "colaborador.solteiro"));
         comboEstadoCivil.addOption("4", UtilI18N.internacionaliza(request, "colaborador.viuvo"));
-        String validarComboUnidade = ParametroUtil.getValorParametroCitSmartHashMap(Enumerados.ParametroSistema.UNIDADE_VINC_CONTRATOS, "N");
+        final String validarComboUnidade = ParametroUtil.getValorParametroCitSmartHashMap(
+                Enumerados.ParametroSistema.UNIDADE_VINC_CONTRATOS, "N");
 
         if (validarComboUnidade.trim().equalsIgnoreCase("S")) {
             if (empregadoBean.getIdContrato() != null) {
@@ -100,7 +100,7 @@ public class Empregado extends AjaxFormAction {
             preencherComboUnidade(document, request, response);
         }
         preencherComboCargos(document, request, response);
-        preencherComboGrupos(document, request, response, this.getEmpregadoBean().getIdContrato());
+        preencherComboGrupos(document, request, response, getEmpregadoBean().getIdContrato());
         document.focusInFirstActivateField(document.getForm("form"));
     }
 
@@ -113,59 +113,59 @@ public class Empregado extends AjaxFormAction {
      * @throws Exception
      */
     public void save(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        this.setEmpregadoBean((EmpregadoDTO) document.getBean());
+        setEmpregadoBean((EmpregadoDTO) document.getBean());
 
-        if (this.getEmpregadoService().verificarEmpregadosAtivos(this.getEmpregadoBean())) {
+        if (getEmpregadoService().verificarEmpregadosAtivos(getEmpregadoBean())) {
             document.alert(UtilI18N.internacionaliza(request, "citcorpore.comum.registroJaCadastrado"));
             return;
         }
 
-        if (this.getEmpregadoBean().getIdEmpregado() == null || this.getEmpregadoBean().getIdEmpregado().intValue() == 0) {
-            this.getEmpregadoBean().setNomeProcura(this.getEmpregadoBean().getNome().trim());
-            this.getEmpregadoBean().setNome(this.getEmpregadoBean().getNome().trim());
-			this.getEmpregadoBean().setEmail(this.getEmpregadoBean().getEmail().trim());
-            this.getEmpregadoBean().setDataCadastro(UtilDatas.getDataAtual());
-            if (this.getEmpregadoBean().getValorSalario() != null) {
-                this.getEmpregadoService().calcularCustos(this.getEmpregadoBean());
+        if (getEmpregadoBean().getIdEmpregado() == null || getEmpregadoBean().getIdEmpregado().intValue() == 0) {
+            getEmpregadoBean().setNomeProcura(getEmpregadoBean().getNome().trim());
+            getEmpregadoBean().setNome(getEmpregadoBean().getNome().trim());
+            getEmpregadoBean().setEmail(getEmpregadoBean().getEmail().trim());
+            getEmpregadoBean().setDataCadastro(UtilDatas.getDataAtual());
+            if (getEmpregadoBean().getValorSalario() != null) {
+                getEmpregadoService().calcularCustos(getEmpregadoBean());
             }
 
-            EmpregadoDTO empregadoDto = (EmpregadoDTO) this.getEmpregadoService().create(this.getEmpregadoBean());
+            final EmpregadoDTO empregadoDto = getEmpregadoService().create(getEmpregadoBean());
 
-            if (this.getEmpregadoBean().getIdGrupo() != null) {
-                GrupoEmpregadoDTO grupoEmpregadoDto = new GrupoEmpregadoDTO();
+            if (getEmpregadoBean().getIdGrupo() != null) {
+                final GrupoEmpregadoDTO grupoEmpregadoDto = new GrupoEmpregadoDTO();
 
                 grupoEmpregadoDto.setIdEmpregado(empregadoDto.getIdEmpregado());
-                grupoEmpregadoDto.setIdGrupo(this.getEmpregadoBean().getIdGrupo());
-                if (this.getEmpregadoBean().getCpf() != null && !this.getEmpregadoBean().getCpf().equalsIgnoreCase("")) {
-                    this.getEmpregadoBean().setCpf(this.getEmpregadoBean().getCpf().replace("-", "").replace(".", ""));
+                grupoEmpregadoDto.setIdGrupo(getEmpregadoBean().getIdGrupo());
+                if (getEmpregadoBean().getCpf() != null && !getEmpregadoBean().getCpf().equalsIgnoreCase("")) {
+                    getEmpregadoBean().setCpf(getEmpregadoBean().getCpf().replace("-", "").replace(".", ""));
                 }
-                this.getEmpregadoBean().setCpf(this.getEmpregadoBean().getCpf().replace("-", "").replace(".", ""));
+                getEmpregadoBean().setCpf(getEmpregadoBean().getCpf().replace("-", "").replace(".", ""));
                 getGrupoEmpregadoService().create(grupoEmpregadoDto);
 
             }
-            HTMLForm form = document.getForm("form");
+            final HTMLForm form = document.getForm("form");
             form.clear();
             document.alert(UtilI18N.internacionaliza(request, "MSG05"));
         } else {
-            this.getEmpregadoBean().setNomeProcura(this.getEmpregadoBean().getNome());
-			this.getEmpregadoBean().setEmail(this.getEmpregadoBean().getEmail().trim());
-            if (this.getEmpregadoBean().getValorSalario() != null) {
-                this.getEmpregadoService().calcularCustos(this.getEmpregadoBean());
+            getEmpregadoBean().setNomeProcura(getEmpregadoBean().getNome());
+            getEmpregadoBean().setEmail(getEmpregadoBean().getEmail().trim());
+            if (getEmpregadoBean().getValorSalario() != null) {
+                getEmpregadoService().calcularCustos(getEmpregadoBean());
             }
-            if (this.getEmpregadoBean().getCpf() != null && !this.getEmpregadoBean().getCpf().equalsIgnoreCase("")) {
-                this.getEmpregadoBean().setCpf(this.getEmpregadoBean().getCpf().replace("-", "").replace(".", ""));
+            if (getEmpregadoBean().getCpf() != null && !getEmpregadoBean().getCpf().equalsIgnoreCase("")) {
+                getEmpregadoBean().setCpf(getEmpregadoBean().getCpf().replace("-", "").replace(".", ""));
             }
             // this.getEmpregadoBean().getNome().trim();
-            this.getEmpregadoService().update(this.getEmpregadoBean());
-            HTMLForm form = document.getForm("form");
+            getEmpregadoService().update(getEmpregadoBean());
+            final HTMLForm form = document.getForm("form");
             form.clear();
             document.alert(UtilI18N.internacionaliza(request, "MSG06"));
         }
 
-        if (this.getEmpregadoBean().getIframe() != null && this.getEmpregadoBean().getIframe().equalsIgnoreCase("true")) {
+        if (getEmpregadoBean().getIframe() != null && getEmpregadoBean().getIframe().equalsIgnoreCase("true")) {
             document.executeScript("parent.fecharAddSolicitante()");
         } else {
-            HTMLForm form = document.getForm("form");
+            final HTMLForm form = document.getForm("form");
             form.clear();
         }
     }
@@ -178,43 +178,50 @@ public class Empregado extends AjaxFormAction {
      * @param response
      * @throws Exception
      */
-    public void delete(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void delete(DocumentHTML document, HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
         Integer idEmpregado = 0;
-        this.setEmpregadoBean((EmpregadoDTO) document.getBean());
+        setEmpregadoBean((EmpregadoDTO) document.getBean());
 
-        GrupoEmpregadoDTO grupoEmpregadoDTO = new GrupoEmpregadoDTO();
-        UsuarioService usuarioService = (UsuarioService) ServiceLocator.getInstance().getService(UsuarioService.class, null);
-        ParametroCorporeService parametroService = (ParametroCorporeService) ServiceLocator.getInstance().getService(ParametroCorporeService.class, null);
-        ParametroCorporeDTO parametroCITSmart = parametroService.getParamentroAtivo(ParametroSistema.METODO_AUTENTICACAO_Pasta.id());
+        final GrupoEmpregadoDTO grupoEmpregadoDTO = new GrupoEmpregadoDTO();
+        final UsuarioService usuarioService = (UsuarioService) ServiceLocator.getInstance().getService(
+                UsuarioService.class, null);
+        final ParametroCorporeService parametroService = (ParametroCorporeService) ServiceLocator.getInstance()
+                .getService(ParametroCorporeService.class, null);
+        final ParametroCorporeDTO parametroCITSmart = parametroService
+                .getParamentroAtivo(ParametroSistema.METODO_AUTENTICACAO_Pasta.id());
 
-        if (this.getEmpregadoBean().getIdEmpregado() != null) {
+        if (getEmpregadoBean().getIdEmpregado() != null) {
             if (parametroCITSmart != null && parametroCITSmart.getValor().trim().equalsIgnoreCase("2")) {
                 UsuarioDTO usuarioDto = new UsuarioDTO();
-                usuarioDto = (UsuarioDTO) usuarioService.restoreByIdEmpregadosDeUsuarios(this.getEmpregadoBean().getIdEmpregado());
+                usuarioDto = usuarioService.restoreByIdEmpregadosDeUsuarios(getEmpregadoBean().getIdEmpregado());
 
                 if (usuarioDto != null) {
                     if (usuarioDto.getStatus() != null && usuarioDto.getStatus().equalsIgnoreCase("A")) {
-                        document.alert(UtilI18N.internacionaliza(request, "colaborador.mensagensDeAutenticacaoLDAPColaboradorAtivo"));
+                        document.alert(UtilI18N.internacionaliza(request,
+                                "colaborador.mensagensDeAutenticacaoLDAPColaboradorAtivo"));
                         return;
                     }
                 }
             }
 
-            if (this.getEmpregadoBean().getIdEmpregado().intValue() > 0) {
+            if (getEmpregadoBean().getIdEmpregado().intValue() > 0) {
                 grupoEmpregadoDTO.setIdEmpregado(getEmpregadoBean().getIdEmpregado());
                 idEmpregado = grupoEmpregadoDTO.getIdEmpregado();
-                Collection<GrupoEmpregadoDTO> empregadosDeGrupo = (Collection<GrupoEmpregadoDTO>) getGrupoEmpregadoService().findByIdEmpregado(idEmpregado);
+                final Collection<GrupoEmpregadoDTO> empregadosDeGrupo = getGrupoEmpregadoService().findByIdEmpregado(
+                        idEmpregado);
 
                 if (empregadosDeGrupo != null) {
-                    for (GrupoEmpregadoDTO grupoEmpregado : empregadosDeGrupo) {
-                        getGrupoEmpregadoService().deleteByIdGrupoAndEmpregado(grupoEmpregado.getIdGrupo(), grupoEmpregado.getIdEmpregado());
+                    for (final GrupoEmpregadoDTO grupoEmpregado : empregadosDeGrupo) {
+                        getGrupoEmpregadoService().deleteByIdGrupoAndEmpregado(grupoEmpregado.getIdGrupo(),
+                                grupoEmpregado.getIdEmpregado());
                     }
                 }
                 /* Usado assim pois nao funciona o i18n no serviceEJB sem passar o usuario da sessao. */
                 getEmpregadoService().deleteEmpregado(getEmpregadoBean());
             }
 
-            HTMLForm form = document.getForm("form");
+            final HTMLForm form = document.getForm("form");
             form.clear();
             document.executeScript("limpar_LOOKUP_EMPREGADO()");
             document.alert(UtilI18N.internacionaliza(request, "MSG07"));
@@ -232,12 +239,13 @@ public class Empregado extends AjaxFormAction {
      * @param response
      * @throws Exception
      */
-    public void restore(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        this.setEmpregadoBean((EmpregadoDTO) document.getBean());
-        this.setEmpregadoBean(this.getEmpregadoService().restore(getEmpregadoBean()));
-        HTMLForm form = document.getForm("form");
+    public void restore(DocumentHTML document, HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        setEmpregadoBean((EmpregadoDTO) document.getBean());
+        setEmpregadoBean(getEmpregadoService().restore(getEmpregadoBean()));
+        final HTMLForm form = document.getForm("form");
         form.clear();
-        form.setValues(this.getEmpregadoBean());
+        form.setValues(getEmpregadoBean());
     }
 
     /**
@@ -260,32 +268,42 @@ public class Empregado extends AjaxFormAction {
      * @throws Exception
      * @author thays.araujo
      */
-    public void preencherComboUnidade(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        UnidadeService unidadeService = (UnidadeService) ServiceLocator.getInstance().getService(UnidadeService.class, null);
-        HTMLSelect comboUnidade = (HTMLSelect) document.getSelectById("idUnidade");
-        ArrayList<UnidadeDTO> unidades = (ArrayList) unidadeService.listHierarquia();
+    public void preencherComboUnidade(DocumentHTML document, HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        final UnidadeService unidadeService = (UnidadeService) ServiceLocator.getInstance().getService(
+                UnidadeService.class, null);
+        final HTMLSelect comboUnidade = document.getSelectById("idUnidade");
+        final ArrayList<UnidadeDTO> unidades = (ArrayList) unidadeService.listHierarquia();
 
         inicializarCombo(comboUnidade, request);
         if (unidades != null) {
-            for (UnidadeDTO unidade : unidades)
-                if (unidade.getDataFim() == null)
-                    comboUnidade.addOption(unidade.getIdUnidade().toString(), StringEscapeUtils.escapeJavaScript(unidade.getNomeNivel()));
+            for (final UnidadeDTO unidade : unidades) {
+                if (unidade.getDataFim() == null) {
+                    comboUnidade.addOption(unidade.getIdUnidade().toString(),
+                            StringEscapeUtils.escapeJavaScript(unidade.getNomeNivel()));
+                }
+            }
         }
 
     }
 
-    public void carregaUnidade(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        UnidadeService unidadeService = (UnidadeService) ServiceLocator.getInstance().getService(UnidadeService.class, null);
-        EmpregadoDTO empregadoDTO = empregadoBean;
-        HTMLSelect comboUnidade = (HTMLSelect) document.getSelectById("idUnidade");
-        Integer idContrato = empregadoDTO.getIdContrato();
-        ArrayList<UnidadeDTO> unidades = (ArrayList) unidadeService.listHierarquiaMultiContratos(idContrato);
+    public void carregaUnidade(DocumentHTML document, HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        final UnidadeService unidadeService = (UnidadeService) ServiceLocator.getInstance().getService(
+                UnidadeService.class, null);
+        final EmpregadoDTO empregadoDTO = empregadoBean;
+        final HTMLSelect comboUnidade = document.getSelectById("idUnidade");
+        final Integer idContrato = empregadoDTO.getIdContrato();
+        final ArrayList<UnidadeDTO> unidades = (ArrayList) unidadeService.listHierarquiaMultiContratos(idContrato);
 
         inicializarCombo(comboUnidade, request);
         if (unidades != null) {
-            for (UnidadeDTO unidade : unidades)
-                if (unidade.getDataFim() == null)
-                    comboUnidade.addOption(unidade.getIdUnidade().toString(), StringEscapeUtils.escapeJavaScript(unidade.getNomeNivel()));
+            for (final UnidadeDTO unidade : unidades) {
+                if (unidade.getDataFim() == null) {
+                    comboUnidade.addOption(unidade.getIdUnidade().toString(),
+                            StringEscapeUtils.escapeJavaScript(unidade.getNomeNivel()));
+                }
+            }
         }
 
     }
@@ -298,14 +316,18 @@ public class Empregado extends AjaxFormAction {
      * @param response
      * @throws Exception
      */
-    public void preencherComboGrupo(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        GrupoService grupoService = (GrupoService) ServiceLocator.getInstance().getService(GrupoService.class, null);
-        HTMLSelect comboGrupo = (HTMLSelect) document.getSelectById("idGrupo");
-        ArrayList<GrupoDTO> grupos = (ArrayList) grupoService.list();
+    public void preencherComboGrupo(DocumentHTML document, HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        final GrupoService grupoService = (GrupoService) ServiceLocator.getInstance().getService(GrupoService.class,
+                null);
+        final HTMLSelect comboGrupo = document.getSelectById("idGrupo");
+        final ArrayList<GrupoDTO> grupos = (ArrayList) grupoService.list();
         inicializarCombo(comboGrupo, request);
-        for (GrupoDTO grupo : grupos)
-            if (grupo.getDataFim() == null)
+        for (final GrupoDTO grupo : grupos) {
+            if (grupo.getDataFim() == null) {
                 comboGrupo.addOption(grupo.getIdGrupo().toString(), grupo.getNome());
+            }
+        }
     }
 
     /**
@@ -316,14 +338,9 @@ public class Empregado extends AjaxFormAction {
      * @param response
      * @throws Exception
      */
-    public void preencherComboCargos(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        CargosService cargosService = (CargosService) ServiceLocator.getInstance().getService(CargosService.class, null);
-        HTMLSelect comboCargos = (HTMLSelect) document.getSelectById("idCargo");
-        ArrayList<CargosDTO> cargos = (ArrayList) cargosService.list();
-        inicializarCombo(comboCargos, request);
-        for (CargosDTO cargo : cargos)
-            if (cargo.getDataFim() == null)
-                comboCargos.addOption(cargo.getIdCargo().toString(), StringEscapeUtils.escapeJavaScript(cargo.getNomeCargo()));
+    public void preencherComboCargos(DocumentHTML document, HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+
     }
 
     /**
@@ -335,11 +352,13 @@ public class Empregado extends AjaxFormAction {
      * @param idContrato
      * @throws Exception
      */
-    public void preencherComboGrupos(DocumentHTML document, HttpServletRequest request, HttpServletResponse response, Integer idContrato) throws Exception {
+    public void preencherComboGrupos(DocumentHTML document, HttpServletRequest request, HttpServletResponse response,
+            Integer idContrato) throws Exception {
 
         if (idContrato != null) {
             document.executeScript("exibirDivGruposContrato();");
-            ContratoService contratoService = (ContratoService) ServiceLocator.getInstance().getService(ContratoService.class, null);
+            final ContratoService contratoService = (ContratoService) ServiceLocator.getInstance().getService(
+                    ContratoService.class, null);
 
             ContratoDTO contratroDTO = new ContratoDTO();
             contratroDTO.setIdContrato(idContrato);
@@ -352,9 +371,10 @@ public class Empregado extends AjaxFormAction {
 
                 grupoDto.setIdGrupo(contratroDTO.getIdGrupoSolicitante());
 
-                GrupoService grupoService = (GrupoService) ServiceLocator.getInstance().getService(GrupoService.class, null);
+                final GrupoService grupoService = (GrupoService) ServiceLocator.getInstance().getService(
+                        GrupoService.class, null);
 
-                HTMLSelect comboGrupo = (HTMLSelect) document.getSelectById("idGrupo");
+                final HTMLSelect comboGrupo = document.getSelectById("idGrupo");
 
                 inicializarCombo(comboGrupo, request);
 
@@ -372,6 +392,7 @@ public class Empregado extends AjaxFormAction {
 
     }
 
+    @Override
     public Class<EmpregadoDTO> getBeanClass() {
         return EmpregadoDTO.class;
     }
@@ -389,17 +410,18 @@ public class Empregado extends AjaxFormAction {
 
     private GrupoEmpregadoService getGrupoEmpregadoService() throws Exception {
         if (grupoEmpregadoService == null) {
-            grupoEmpregadoService = (GrupoEmpregadoService) ServiceLocator.getInstance().getService(GrupoEmpregadoService.class, null);
+            grupoEmpregadoService = (GrupoEmpregadoService) ServiceLocator.getInstance().getService(
+                    GrupoEmpregadoService.class, null);
         }
         return grupoEmpregadoService;
     }
 
     private void setEmpregadoBean(IDto empregado) {
-        this.empregadoBean = (EmpregadoDTO) empregado;
+        empregadoBean = (EmpregadoDTO) empregado;
     }
 
     private EmpregadoDTO getEmpregadoBean() {
-        return this.empregadoBean;
+        return empregadoBean;
     }
 
 }

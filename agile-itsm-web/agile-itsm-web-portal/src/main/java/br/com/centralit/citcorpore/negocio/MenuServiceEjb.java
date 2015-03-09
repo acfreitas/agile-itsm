@@ -38,38 +38,39 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
 
     @Override
     public void updateNotNull(final Collection<MenuDTO> menus) {
-        this.getDao().updateNotNull(menus);
+        getDao().updateNotNull(menus);
     }
 
     @Override
     public Collection listarMenus() throws Exception {
-        return this.getDao().listarMenus();
+        return getDao().listarMenus();
     }
 
     @Override
     public Collection<MenuDTO> listarSubMenus(final MenuDTO submenu) throws Exception {
-        return this.getDao().listarSubMenus(submenu);
+        return getDao().listarSubMenus(submenu);
     }
 
     @Override
     public Collection<MenuDTO> listarMenusPorPerfil(final UsuarioDTO usuario, final Integer idMenuPai) throws Exception {
-        return this.getDao().listarMenusPorPerfil(usuario, idMenuPai, false);
+        return getDao().listarMenusPorPerfil(usuario, idMenuPai, false);
     }
 
     @Override
-    public Collection<MenuDTO> listarMenusPorPerfil(final UsuarioDTO usuario, final Integer idMenuPai, final boolean menuRapido) throws Exception {
-        final TransactionControler tc = new TransactionControlerImpl(this.getDao().getAliasDB());
+    public Collection<MenuDTO> listarMenusPorPerfil(final UsuarioDTO usuario, final Integer idMenuPai,
+            final boolean menuRapido) throws Exception {
+        final TransactionControler tc = new TransactionControlerImpl(getDao().getAliasDB());
         Collection<MenuDTO> collection = null;
         try {
             tc.start();
 
-            this.getDao().setTransactionControler(tc);
+            getDao().setTransactionControler(tc);
 
-            collection = this.getDao().listarMenusPorPerfil(usuario, idMenuPai, menuRapido);
+            collection = getDao().listarMenusPorPerfil(usuario, idMenuPai, menuRapido);
 
             tc.commit();
         } catch (final Exception e) {
-            this.rollbackTransaction(tc, e);
+            rollbackTransaction(tc, e);
         } finally {
             tc.close();
         }
@@ -82,22 +83,26 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
         final PerfilAcessoMenuDao perfilAcessoMenuDao = new PerfilAcessoMenuDao();
         final PerfilAcessoUsuarioDTO perfilAcessoUsuarioDto = new PerfilAcessoUsuarioDTO();
 
-        final Collection listaMenus = this.getDao().list();
+        final Collection listaMenus = getDao().list();
         if (listaMenus == null || listaMenus.size() == 0) {
-            final String[] paiNome = {"Gerência Conhecimento", "Gerência Configuração", "Gerência Serviços", "Gerência Contratos", "Gerência de Pessoal", "Relatório", "Cadastros",
-                    "Visões e Meta Dados", "Sistema", "Justificação de Falhas", "Inventário", "Eventos", "Incidentes/Serviços"};
+            final String[] paiNome = {"Gerência Conhecimento", "Gerência Configuração", "Gerência Serviços",
+                    "Gerência Contratos", "Gerência de Pessoal", "Relatório", "Cadastros", "Visões e Meta Dados",
+                    "Sistema", "Justificação de Falhas", "Inventário", "Eventos", "Incidentes/Serviços"};
 
-            final String[] paiDescricao = {"Gerenciamento de Conhecimento", "Gerenciamento de Configuração", "Gerenciamento de Serviços", "Gerenciamento de Contratos",
-                    "Gerenciamento de Pessoal", "Relatórios", "Cadastros", "Visões e Meta Dados", "Sistema", "Justificação de Falhas", "Levantamento de Inventário",
-                    "Execução de Eventos", "Abertura de Incidentes e Serviços"};
+            final String[] paiDescricao = {"Gerenciamento de Conhecimento", "Gerenciamento de Configuração",
+                    "Gerenciamento de Serviços", "Gerenciamento de Contratos", "Gerenciamento de Pessoal",
+                    "Relatórios", "Cadastros", "Visões e Meta Dados", "Sistema", "Justificação de Falhas",
+                    "Levantamento de Inventário", "Execução de Eventos", "Abertura de Incidentes e Serviços"};
 
-            final String[] paiLink = {"", "", "", "", "", "", "", "", "", "/justificacaoFalhas/justificacaoFalhas.load", "/inventario/inventario.load",
+            final String[] paiLink = {"", "", "", "", "", "", "", "", "",
+                    "/justificacaoFalhas/justificacaoFalhas.load", "/inventario/inventario.load",
                     "/eventoItemConfig/eventoItemConfig.load", "/gerenciamentoServicos/gerenciamentoServicos.load"};
 
             final String[] paiOrdem = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
 
-            final String[] paiImagem = {"user_comment.png", "books_2.png", "cog_3.png", "documents.png", "users.png", "graph.png", "list_w_images.png", "strategy.png",
-                    "alert_2.png", "alert_2.png", "hard_disk.png", "month_calendar.png", "strategy.png"};
+            final String[] paiImagem = {"user_comment.png", "books_2.png", "cog_3.png", "documents.png", "users.png",
+                    "graph.png", "list_w_images.png", "strategy.png", "alert_2.png", "alert_2.png", "hard_disk.png",
+                    "month_calendar.png", "strategy.png"};
 
             final String[] paiHorizontal = {"N", "N", "N", "N", "N", "N", "N", "N", "N", "S", "S", "S", "S"};
 
@@ -106,7 +111,8 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
 
             final String[] filhoDescricaoGerenciaConhecimento = {"Base de Conhecimento", "Pasta"};
 
-            final String[] filhoLinkGerenciaConhecimento = {"/baseConhecimento/baseConhecimento.load", "/pasta/pasta.load"};
+            final String[] filhoLinkGerenciaConhecimento = {"/baseConhecimento/baseConhecimento.load",
+                    "/pasta/pasta.load"};
 
             final String[] filhoOrdemGerenciaConhecimento = {"0", "1"};
 
@@ -115,106 +121,133 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
             final String[] filhoHorizontalGerenciaConhecimento = {"N", "N"};
 
             // FILHOS GERÊNCIA CONFIGURAÇÃO
-            final String[] filhoNomeGerenciaConfiguracao = {"Pesquisa Item Config.", "Tipo Item Configuração", "Característica", "Softwares Inst/Des.", "Item de Configuração"};
+            final String[] filhoNomeGerenciaConfiguracao = {"Pesquisa Item Config.", "Tipo Item Configuração",
+                    "Característica", "Softwares Inst/Des.", "Item de Configuração"};
 
-            final String[] filhoDescricaoGerenciaConfiguracao = {"Pesquisa de Item de Configuração", "Tipo de Item Configuração", "Característica dos Itens de Configuração",
+            final String[] filhoDescricaoGerenciaConfiguracao = {"Pesquisa de Item de Configuração",
+                    "Tipo de Item Configuração", "Característica dos Itens de Configuração",
                     "Softwares para Instalação/Desinstalação", "Item de Configuração"};
 
-            final String[] filhoLinkGerenciaConfiguracao = {"/pesquisaItemConfiguracao/pesquisaItemConfiguracao.load", "/tipoItemConfiguracao/tipoItemConfiguracao.load",
-                    "/caracteristica/caracteristica.load", "/baseItemConfiguracao/baseItemConfiguracao.load", "/itemConfiguracao/itemConfiguracao.load"};
+            final String[] filhoLinkGerenciaConfiguracao = {"/pesquisaItemConfiguracao/pesquisaItemConfiguracao.load",
+                    "/tipoItemConfiguracao/tipoItemConfiguracao.load", "/caracteristica/caracteristica.load",
+                    "/baseItemConfiguracao/baseItemConfiguracao.load", "/itemConfiguracao/itemConfiguracao.load"};
 
             final String[] filhoOrdemGerenciaConfiguracao = {"0", "1", "2", "3", "4"};
 
-            final String[] filhoImagemGerenciaConfiguracao = {"books_2.png", "books_2.png", "books_2.png", "books_2.png", "books_2.png"};
+            final String[] filhoImagemGerenciaConfiguracao = {"books_2.png", "books_2.png", "books_2.png",
+                    "books_2.png", "books_2.png"};
 
             final String[] filhoHorizontalGerenciaConfiguracao = {"N", "N", "N", "N", "N"};
 
             // FILHOS GERÊNCIA SERVIÇOS
-            final String[] filhoNomeGerenciaServico = {"Minhas Requisições", "Mapa Desenho Serviço", "Modelo de Email", "Serviços", "Situação de Serviço", "Prioridade",
-                    "Condição de Operação", "Importância Negócio", "Categoria Serviço", "Tipo Serviço", "Pesquisa Sol. Serviço"};
+            final String[] filhoNomeGerenciaServico = {"Minhas Requisições", "Mapa Desenho Serviço", "Modelo de Email",
+                    "Serviços", "Situação de Serviço", "Prioridade", "Condição de Operação", "Importância Negócio",
+                    "Categoria Serviço", "Tipo Serviço", "Pesquisa Sol. Serviço"};
 
-            final String[] filhoDescricaoGerenciaServico = {"Minhas Requisições", "Mapa Desenho Serviço", "Modelo de Email", "Serviços", "Situação de Serviço", "Prioridade",
-                    "Condição de Operação", "Importância Negócio", "Categoria Serviço", "Tipo Serviço", "Pesquisa Sol. Serviço"};
+            final String[] filhoDescricaoGerenciaServico = {"Minhas Requisições", "Mapa Desenho Serviço",
+                    "Modelo de Email", "Serviços", "Situação de Serviço", "Prioridade", "Condição de Operação",
+                    "Importância Negócio", "Categoria Serviço", "Tipo Serviço", "Pesquisa Sol. Serviço"};
 
-            final String[] filhoLinkGerenciaServico = {"/resumoSolicitacoesServicos/resumoSolicitacoesServicos.load", "/mapaDesenhoServico/mapaDesenhoServico.load",
-                    "/modeloEmail/modeloEmail.load", "/dinamicViews/dinamicViews.load?idVisao=17", "/situacaoServico/situacaoServico.load", "/prioridade/prioridade.load",
-                    "/condicaoOperacao/condicaoOperacao.load", "/importanciaNegocio/importanciaNegocio.load", "/categoriaServico/categoriaServico.load",
+            final String[] filhoLinkGerenciaServico = {"/resumoSolicitacoesServicos/resumoSolicitacoesServicos.load",
+                    "/mapaDesenhoServico/mapaDesenhoServico.load", "/modeloEmail/modeloEmail.load",
+                    "/dinamicViews/dinamicViews.load?idVisao=17", "/situacaoServico/situacaoServico.load",
+                    "/prioridade/prioridade.load", "/condicaoOperacao/condicaoOperacao.load",
+                    "/importanciaNegocio/importanciaNegocio.load", "/categoriaServico/categoriaServico.load",
                     "/tipoServico/tipoServico.load", "/pesquisaSolicitacoesServicos/pesquisaSolicitacoesServicos.load"};
 
             final String[] filhoOrdemGerenciaServico = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
-            final String[] filhoImagemGerenciaServico = {"cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png",
-                    "cog_3.png", "cog_3.png"};
+            final String[] filhoImagemGerenciaServico = {"cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png",
+                    "cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png", "cog_3.png"};
 
             final String[] filhoHorizontalGerenciaServico = {"N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N"};
 
             // FILHOS GERÊNCIA CONTRATOS
-            final String[] filhoNomeGerenciaContrato = {"Administração de Contratos", "Agenda Ativ. Periódicas", "Cadastro de Contratos", "Atividade Periódica"};
+            final String[] filhoNomeGerenciaContrato = {"Administração de Contratos", "Agenda Ativ. Periódicas",
+                    "Cadastro de Contratos", "Atividade Periódica"};
 
-            final String[] filhoDescricaoGerenciaContrato = {"Administração de Contratos", "Agenda Atividades Periódicas", "Cadastro de Contratos", "Atividade Periódica"};
+            final String[] filhoDescricaoGerenciaContrato = {"Administração de Contratos",
+                    "Agenda Atividades Periódicas", "Cadastro de Contratos", "Atividade Periódica"};
 
-            final String[] filhoLinkGerenciaContrato = {"/informacoesContrato/informacoesContrato.load", "/agendaAtvPeriodicas/agendaAtvPeriodicas.load",
-                    "/dinamicViews/dinamicViews.load?idVisao=20", "/atividadePeriodica/atividadePeriodica.load"};
+            final String[] filhoLinkGerenciaContrato = {"/informacoesContrato/informacoesContrato.load",
+                    "/agendaAtvPeriodicas/agendaAtvPeriodicas.load", "/dinamicViews/dinamicViews.load?idVisao=20",
+                    "/atividadePeriodica/atividadePeriodica.load"};
 
             final String[] filhoOrdemGerenciaContrato = {"0", "1", "2", "3"};
 
-            final String[] filhoImagemGerenciaContrato = {"documents.png", "documents.png", "documents.png", "documents.png"};
+            final String[] filhoImagemGerenciaContrato = {"documents.png", "documents.png", "documents.png",
+                    "documents.png"};
 
             final String[] filhoHorizontalGerenciaContrato = {"N", "N", "N", "N"};
 
             // FILHOS GERÊNCIA DE PESSOAL
-            final String[] filhoNomeGerenciaPessoal = {"Calendário", "Jornada de Trabalho", "Colaborador", "Grupo", "Usuário", "Unidade", "Tipo de Unidade", "Perfil Acesso",
-                    "Cargos"};
+            final String[] filhoNomeGerenciaPessoal = {"Calendário", "Jornada de Trabalho", "Colaborador", "Grupo",
+                    "Usuário", "Unidade", "Tipo de Unidade", "Perfil Acesso", "Cargos"};
 
-            final String[] filhoDescricaoGerenciaPessoal = {"Calendário", "Jornada de Trabalho", "Colaborador", "Grupo", "Usuário", "Unidade", "Tipo de Unidade", "Perfil Acesso",
-                    "Cargos"};
+            final String[] filhoDescricaoGerenciaPessoal = {"Calendário", "Jornada de Trabalho", "Colaborador",
+                    "Grupo", "Usuário", "Unidade", "Tipo de Unidade", "Perfil Acesso", "Cargos"};
 
-            final String[] filhoLinkGerenciaPessoal = {"/calendario/calendario.load", "/jornadaTrabalho/jornadaTrabalho.load", "/empregado/empregado.load", "/grupo/grupo.load",
-                    "/usuario/usuario.load", "/unidade/unidade.load", "/tipoUnidade/tipoUnidade.load", "/perfilAcesso/perfilAcesso.load", "/cargos/cargos.load"};
+            final String[] filhoLinkGerenciaPessoal = {"/calendario/calendario.load",
+                    "/jornadaTrabalho/jornadaTrabalho.load", "/empregado/empregado.load", "/grupo/grupo.load",
+                    "/usuario/usuario.load", "/unidade/unidade.load", "/tipoUnidade/tipoUnidade.load",
+                    "/perfilAcesso/perfilAcesso.load"};
 
             final String[] filhoOrdemGerenciaPessoal = {"0", "1", "2", "3", "4", "5", "6", "7", "8"};
 
-            final String[] filhoImagemGerenciaPessoal = {"users.png", "users.png", "users.png", "users.png", "users.png", "users.png", "users.png", "users.png", "users.png"};
+            final String[] filhoImagemGerenciaPessoal = {"users.png", "users.png", "users.png", "users.png",
+                    "users.png", "users.png", "users.png", "users.png", "users.png"};
 
             final String[] filhoHorizontalGerenciaPessoal = {"N", "N", "N", "N", "N", "N", "N", "N", "N"};
 
             // FILHOS RELATÓRIO
-            final String[] filhoNomeGerenciaRelatorio = {"Gantt", "Gráficos", "Gráfico Tempo Real", "Quantitativo de Incidentes / Solicitações", "Relatório Base de Conhecimento",
-                    "Utilização das USTs"};
+            final String[] filhoNomeGerenciaRelatorio = {"Gantt", "Gráficos", "Gráfico Tempo Real",
+                    "Quantitativo de Incidentes / Solicitações", "Relatório Base de Conhecimento",
+            "Utilização das USTs"};
 
-            final String[] filhoDescricaoGerenciaRelatorio = {"Gantt", "Gráficos", "Gráfico Tempo Real", "Relatório Quantitativo de Incidentes / Solicitações",
-                    "Relatório Base de Conhecimento", "Relatório de Utilização das USTs"};
+            final String[] filhoDescricaoGerenciaRelatorio = {"Gantt", "Gráficos", "Gráfico Tempo Real",
+                    "Relatório Quantitativo de Incidentes / Solicitações", "Relatório Base de Conhecimento",
+                    "Relatório de Utilização das USTs"};
 
-            final String[] filhoLinkGerenciaRelatorio = {"/ganttSolicitacaoServico/ganttSolicitacaoServico.load", "/painel/painel.load", "/graficos/graficos.load",
-                    "/relatorioQuantitativo/relatorioQuantitativo.load", "/relatorioBaseConhecimento/relatorioBaseConhecimento.load",
-                    "/relatorioOrdemServicoUst/relatorioOrdemServicoUst.load"};
+            final String[] filhoLinkGerenciaRelatorio = {"/ganttSolicitacaoServico/ganttSolicitacaoServico.load",
+                    "/painel/painel.load", "/graficos/graficos.load",
+                    "/relatorioQuantitativo/relatorioQuantitativo.load",
+                    "/relatorioBaseConhecimento/relatorioBaseConhecimento.load",
+            "/relatorioOrdemServicoUst/relatorioOrdemServicoUst.load"};
 
             final String[] filhoOrdemGerenciaRelatorio = {"0", "1", "2", "3", "4", "5"};
 
-            final String[] filhoImagemGerenciaRelatorio = {"graph.png", "graph.png", "graph.png", "documents.png", "documents.png", "documents.png"};
+            final String[] filhoImagemGerenciaRelatorio = {"graph.png", "graph.png", "graph.png", "documents.png",
+                    "documents.png", "documents.png"};
 
             final String[] filhoHorizontalGerenciaRelatorio = {"N", "N", "N", "N", "N", "N"};
 
             // FILHOS CADASTROS
-            final String[] filhoNomeGerenciaCadastro = {"Administração de Contratos", "Agenda Ativ. Periódicas", "Cadastro de Contratos", "Atividade Periódica"};
+            final String[] filhoNomeGerenciaCadastro = {"Administração de Contratos", "Agenda Ativ. Periódicas",
+                    "Cadastro de Contratos", "Atividade Periódica"};
 
-            final String[] filhoDescricaoGerenciaCadastro = {"Administração de Contratos", "Agenda Atividades Periódicas", "Cadastro de Contratos", "Atividade Periódica"};
+            final String[] filhoDescricaoGerenciaCadastro = {"Administração de Contratos",
+                    "Agenda Atividades Periódicas", "Cadastro de Contratos", "Atividade Periódica"};
 
-            final String[] filhoLinkGerenciaCadastro = {"/informacoesContrato/informacoesContrato.load", "/agendaAtvPeriodicas/agendaAtvPeriodicas.load",
-                    "/dinamicViews/dinamicViews.load?idVisao=20", "/atividadePeriodica/atividadePeriodica.load"};
+            final String[] filhoLinkGerenciaCadastro = {"/informacoesContrato/informacoesContrato.load",
+                    "/agendaAtvPeriodicas/agendaAtvPeriodicas.load", "/dinamicViews/dinamicViews.load?idVisao=20",
+                    "/atividadePeriodica/atividadePeriodica.load"};
 
             final String[] filhoOrdemGerenciaCadastro = {"0", "1", "2", "3"};
 
-            final String[] filhoImagemGerenciaCadastro = {"documents.png", "documents.png", "documents.png", "documents.png"};
+            final String[] filhoImagemGerenciaCadastro = {"documents.png", "documents.png", "documents.png",
+                    "documents.png"};
 
             final String[] filhoHorizontalGerenciaCadastro = {"N", "N", "N", "N"};
 
             // FILHOS VISÕES E META DADOS
-            final String[] filhoNomeGerenciaVisoesMetaDados = {"Questionário", "Carrega Meta Dados", "Manutenção de Visões"};
+            final String[] filhoNomeGerenciaVisoesMetaDados = {"Questionário", "Carrega Meta Dados",
+                    "Manutenção de Visões"};
 
-            final String[] filhoDescricaoGerenciaVisoesMetaDados = {"Questionário", "Carrega Meta Dados", "Manutenção de Visões"};
+            final String[] filhoDescricaoGerenciaVisoesMetaDados = {"Questionário", "Carrega Meta Dados",
+                    "Manutenção de Visões"};
 
-            final String[] filhoLinkGerenciaVisoesMetaDados = {"/questionario/questionario.load", "/dataBaseMetaDados/dataBaseMetaDados.load", "/visaoAdm/visaoAdm.load"};
+            final String[] filhoLinkGerenciaVisoesMetaDados = {"/questionario/questionario.load",
+                    "/dataBaseMetaDados/dataBaseMetaDados.load", "/visaoAdm/visaoAdm.load"};
 
             final String[] filhoOrdemGerenciaVisoesMetaDados = {"0", "1", "2"};
 
@@ -254,7 +287,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                 dto.setLink(paiLink[i]);
                 dto.setHorizontal(paiHorizontal[i]);
                 i++;
-                dto = (MenuDTO) this.getDao().create(dto);
+                dto = (MenuDTO) getDao().create(dto);
 
                 perfilAcessoMenuDTOPai.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                 perfilAcessoMenuDTOPai.setIdMenu(dto.getIdMenu());
@@ -279,7 +312,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         dtoFilho.setHorizontal(filhoHorizontalGerenciaConhecimento[y]);
                         dtoFilho.setIdMenuPai(dto.getIdMenu());
                         y++;
-                        dtoFilho = (MenuDTO) this.getDao().create(dtoFilho);
+                        dtoFilho = (MenuDTO) getDao().create(dtoFilho);
 
                         perfilAcessoMenuDTOFilho.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                         perfilAcessoMenuDTOFilho.setIdMenu(dtoFilho.getIdMenu());
@@ -307,7 +340,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         dtoFilho.setHorizontal(filhoHorizontalGerenciaConfiguracao[y]);
                         dtoFilho.setIdMenuPai(dto.getIdMenu());
                         y++;
-                        dtoFilho = (MenuDTO) this.getDao().create(dtoFilho);
+                        dtoFilho = (MenuDTO) getDao().create(dtoFilho);
 
                         perfilAcessoMenuDTOFilho.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                         perfilAcessoMenuDTOFilho.setIdMenu(dtoFilho.getIdMenu());
@@ -335,7 +368,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         dtoFilho.setHorizontal(filhoHorizontalGerenciaServico[y]);
                         dtoFilho.setIdMenuPai(dto.getIdMenu());
                         y++;
-                        dtoFilho = (MenuDTO) this.getDao().create(dtoFilho);
+                        dtoFilho = (MenuDTO) getDao().create(dtoFilho);
 
                         perfilAcessoMenuDTOFilho.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                         perfilAcessoMenuDTOFilho.setIdMenu(dtoFilho.getIdMenu());
@@ -363,7 +396,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         dtoFilho.setHorizontal(filhoHorizontalGerenciaContrato[y]);
                         dtoFilho.setIdMenuPai(dto.getIdMenu());
                         y++;
-                        dtoFilho = (MenuDTO) this.getDao().create(dtoFilho);
+                        dtoFilho = (MenuDTO) getDao().create(dtoFilho);
 
                         perfilAcessoMenuDTOFilho.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                         perfilAcessoMenuDTOFilho.setIdMenu(dtoFilho.getIdMenu());
@@ -391,7 +424,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         dtoFilho.setHorizontal(filhoHorizontalGerenciaPessoal[y]);
                         dtoFilho.setIdMenuPai(dto.getIdMenu());
                         y++;
-                        dtoFilho = (MenuDTO) this.getDao().create(dtoFilho);
+                        dtoFilho = (MenuDTO) getDao().create(dtoFilho);
 
                         perfilAcessoMenuDTOFilho.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                         perfilAcessoMenuDTOFilho.setIdMenu(dtoFilho.getIdMenu());
@@ -419,7 +452,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         dtoFilho.setHorizontal(filhoHorizontalGerenciaRelatorio[y]);
                         dtoFilho.setIdMenuPai(dto.getIdMenu());
                         y++;
-                        dtoFilho = (MenuDTO) this.getDao().create(dtoFilho);
+                        dtoFilho = (MenuDTO) getDao().create(dtoFilho);
 
                         perfilAcessoMenuDTOFilho.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                         perfilAcessoMenuDTOFilho.setIdMenu(dtoFilho.getIdMenu());
@@ -447,7 +480,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         dtoFilho.setHorizontal(filhoHorizontalGerenciaCadastro[y]);
                         dtoFilho.setIdMenuPai(dto.getIdMenu());
                         y++;
-                        dtoFilho = (MenuDTO) this.getDao().create(dtoFilho);
+                        dtoFilho = (MenuDTO) getDao().create(dtoFilho);
 
                         perfilAcessoMenuDTOFilho.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                         perfilAcessoMenuDTOFilho.setIdMenu(dtoFilho.getIdMenu());
@@ -475,7 +508,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         dtoFilho.setHorizontal(filhoHorizontalGerenciaVisoesMetaDados[y]);
                         dtoFilho.setIdMenuPai(dto.getIdMenu());
                         y++;
-                        dtoFilho = (MenuDTO) this.getDao().create(dtoFilho);
+                        dtoFilho = (MenuDTO) getDao().create(dtoFilho);
 
                         perfilAcessoMenuDTOFilho.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                         perfilAcessoMenuDTOFilho.setIdMenu(dtoFilho.getIdMenu());
@@ -503,7 +536,7 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         dtoFilho.setHorizontal(filhoHorizontalGerenciaSistema[y]);
                         dtoFilho.setIdMenuPai(dto.getIdMenu());
                         y++;
-                        dtoFilho = (MenuDTO) this.getDao().create(dtoFilho);
+                        dtoFilho = (MenuDTO) getDao().create(dtoFilho);
 
                         perfilAcessoMenuDTOFilho.setIdPerfilAcesso(perfilAcessoDTO.getIdPerfilAcesso());
                         perfilAcessoMenuDTOFilho.setIdMenu(dtoFilho.getIdMenu());
@@ -521,27 +554,27 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
 
     @Override
     public Collection<MenuDTO> listaMenuByUsr(final UsuarioDTO usuario) throws Exception {
-        return this.getDao().listaMenuByUsr(usuario);
+        return getDao().listaMenuByUsr(usuario);
     }
 
     @Override
     public boolean verificaSeExisteMenu(final MenuDTO menuDTO) throws Exception {
-        return this.getDao().verificaSeExisteMenu(menuDTO);
+        return getDao().verificaSeExisteMenu(menuDTO);
     }
 
     @Override
     public Integer buscarIdMenu(final String link) throws Exception {
-        return this.getDao().buscarIdMenu(link);
+        return getDao().buscarIdMenu(link);
     }
 
     @Override
     public Collection<MenuDTO> listarMenusPais() throws Exception {
-        return this.getDao().listarMenusPais();
+        return getDao().listarMenusPais();
     }
 
     @Override
     public Collection<MenuDTO> listarMenusFilhos(final Integer idMenuPai) throws Exception {
-        return this.getDao().listarMenusFilhos(idMenuPai);
+        return getDao().listarMenusFilhos(idMenuPai);
     }
 
     @Override
@@ -580,8 +613,10 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
 
                     for (final MenuDTO menuDoBancoDTO : menusPais) {
                         if (menuCarregadoXmlDTO.getNome() != null && menuDoBancoDTO.getNome() != null) {
-                            if (menuDoBancoDTO.getNome().trim().replaceAll(" ", "").equalsIgnoreCase(menuCarregadoXmlDTO.getNome().trim().replaceAll(" ", ""))
-                                    && menuDoBancoDTO.getLink().trim().equalsIgnoreCase(menuCarregadoXmlDTO.getLink().trim())) {
+                            if (menuDoBancoDTO.getNome().trim().replaceAll(" ", "")
+                                    .equalsIgnoreCase(menuCarregadoXmlDTO.getNome().trim().replaceAll(" ", ""))
+                                    && menuDoBancoDTO.getLink().trim()
+                                            .equalsIgnoreCase(menuCarregadoXmlDTO.getLink().trim())) {
                                 menuCarregadoXmlDTO.setIdMenu(menuDoBancoDTO.getIdMenu());
                                 menuCarregadoXmlDTO.setDataFim(null);
                                 menuDoBancoDTO.setDescricao(menuCarregadoXmlDTO.getDescricao());
@@ -611,14 +646,15 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                         perfilAcessoMenuDao.create(perfilAcessoMenuDTO);
                     }
                     if (!menuCarregadoXMLElement.getChild("subMenu" + j).getChildren().isEmpty()) {
-                        this.importarFilhos(menuCarregadoXMLElement, j, menuDtoAux, menuDao, idPerfilAcesso, perfilAcessoMenuDao);
+                        importarFilhos(menuCarregadoXMLElement, j, menuDtoAux, menuDao, idPerfilAcesso,
+                                perfilAcessoMenuDao);
                     }
                 }
 
                 tc.commit();
                 tc.close();
             } catch (final ServiceException e) {
-                this.rollbackTransaction(tc, e);
+                rollbackTransaction(tc, e);
                 e.printStackTrace();
             }
         }
@@ -626,17 +662,19 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
 
     @Override
     public void deletaMenusSemReferencia() throws Exception {
-        final List<MenuDTO> menusPaisAtualizados = (List) this.getDao().listarMenusPais();
+        final List<MenuDTO> menusPaisAtualizados = (List) getDao().listarMenusPais();
         for (final MenuDTO menuDoBancoAtualizadoDTO : menusPaisAtualizados) {
-            final List<MenuDTO> menuFilho = (List) this.getDao().listarMenusFilhoByIdMenuPai(menuDoBancoAtualizadoDTO.getIdMenu());
-            if ((menuDoBancoAtualizadoDTO.getLink() == null || menuDoBancoAtualizadoDTO.getLink().equalsIgnoreCase("")) && (menuFilho == null || menuFilho.isEmpty())) {
-                this.getDao().deleteMenu(menuDoBancoAtualizadoDTO.getIdMenu());
+            final List<MenuDTO> menuFilho = (List) getDao().listarMenusFilhoByIdMenuPai(
+                    menuDoBancoAtualizadoDTO.getIdMenu());
+            if ((menuDoBancoAtualizadoDTO.getLink() == null || menuDoBancoAtualizadoDTO.getLink().equalsIgnoreCase(""))
+                    && (menuFilho == null || menuFilho.isEmpty())) {
+                getDao().deleteMenu(menuDoBancoAtualizadoDTO.getIdMenu());
             }
         }
     }
 
-    private void importarFilhos(final Element menus, int j, final MenuDTO menuDtoAux, final MenuDao menuDao, final Integer idPerfilAcesso,
-            final PerfilAcessoMenuDao perfilAcessoMenuDao) throws Exception {
+    private void importarFilhos(final Element menus, int j, final MenuDTO menuDtoAux, final MenuDao menuDao,
+            final Integer idPerfilAcesso, final PerfilAcessoMenuDao perfilAcessoMenuDao) throws Exception {
         final List<Element> subMenu = menus.getChild("subMenu" + j).getChildren();
         final List<MenuDTO> menusFilhos = (List) menuDao.listarMenusFilhos(menuDtoAux.getIdMenu());
         /* menus filhos */
@@ -658,7 +696,8 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
             menuDTO.setDataInicio(UtilDatas.getDataAtual());
             for (final MenuDTO menusDTO : menusFilhos) {
                 if (menuDTO.getNome() != null && menusDTO.getNome() != null) {
-                    if (menusDTO.getNome().trim().replaceAll(" ", "").equalsIgnoreCase(menuDTO.getNome().trim().replaceAll(" ", ""))
+                    if (menusDTO.getNome().trim().replaceAll(" ", "")
+                            .equalsIgnoreCase(menuDTO.getNome().trim().replaceAll(" ", ""))
                             && menusDTO.getLink().trim().equalsIgnoreCase(menuDTO.getLink().trim())) {
                         menuDTO.setIdMenu(menusDTO.getIdMenu());
                         menuDTO.setDataFim(null);
@@ -687,23 +726,24 @@ public class MenuServiceEjb extends CrudServiceImpl implements MenuService {
                 perfilAcessoMenuDao.create(perfilAcessoMenuDTO);
             }
             if (subMenus.getChild("subMenu" + (j + 1)) != null) {
-                this.importarFilhos(subMenus, j + 1, menuDtoAux1, menuDao, idPerfilAcesso, perfilAcessoMenuDao);
+                importarFilhos(subMenus, j + 1, menuDtoAux1, menuDao, idPerfilAcesso, perfilAcessoMenuDao);
             }
         }
         j++;
     }
-    
+
     /**
      * Método para obter um mapa com todos os menus que o usuário pode acessar
-	 * @author thyen.chang
-	 * @since 16/01/2015 - OPERAÇÃO USAIN BOLT
-	 * @param usuario
-	 * @return
-	 * @throws Exception
+     * 
+     * @author thyen.chang
+     * @since 16/01/2015 - OPERAÇÃO USAIN BOLT
+     * @param usuario
+     * @return
+     * @throws Exception
      */
     @Override
-    public Map<Integer, List<MenuDTO> > listaMenuPorUsuario(UsuarioDTO usuario) throws Exception{
-    	return getDao().listaMenuPorUsuario(usuario);
+    public Map<Integer, List<MenuDTO>> listaMenuPorUsuario(UsuarioDTO usuario) throws Exception {
+        return getDao().listaMenuPorUsuario(usuario);
     }
 
 }

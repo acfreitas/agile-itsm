@@ -2,7 +2,6 @@
 -- INICIO - david.silva 27/06/2014
 
 ALTER TABLE rh_perspectivatecnicaformacaoacademica ADD idformacaoacademica INTEGER NOT NULL;
-ALTER TABLE rh_perspectivatecnicaformacaoacademica ADD CONSTRAINT fk_formacaoacademica FOREIGN KEY (idformacaoacademica) REFERENCES rh_formacaoacademica (idformacaoacademica);
 
 ALTER TABLE rh_perspectivatecnicacertificacao ADD idcertificacao INTEGER NOT NULL;
 ALTER TABLE rh_perspectivatecnicacertificacao ADD CONSTRAINT fk_certificacao FOREIGN KEY (idcertificacao) REFERENCES rh_certificacao (idcertificacao);
@@ -27,17 +26,6 @@ ALTER TABLE integranteviagem ADD COLUMN idtarefa int NULL;
 
 -- FIM - thiago.borges - 30/06/2014
 
--- INICIO - renato.jesus - 27/06/2014
-ALTER TABLE rh_funcaoexperienciaprofissionalcurriculo ALTER COLUMN descricaofuncao TYPE VARCHAR(600);
--- FIM - renato.jesus - 27/06/2014
-
--- INICIO - renato.jesus - 02/07/2014
-alter table rh_experienciaprofissionalcurriculo drop column funcao;
-alter table rh_experienciaprofissionalcurriculo drop column periodo;
-alter table rh_funcaoexperienciaprofissionalcurriculo add iniciofuncao date null;
-alter table rh_funcaoexperienciaprofissionalcurriculo add fimfuncao date null;
--- FIM - renato.jesus - 02/07/2014
-
 -- INICIO - euler.ramos - 11/07/2014
 delete from menu where link = '/relatorioEficaciaNaDocumentacao/relatorioEficaciaNaDocumentacao.load';
 delete from menu where link = '/relatorioEficaciaDoSoftware/relatorioEficaciaDoSoftware.load';
@@ -58,20 +46,6 @@ alter table servicocontrato add expandir char(1);
 ALTER TABLE rh_candidato ADD idempregado INTEGER NULL DEFAULT NULL;
 ALTER TABLE rh_candidato ALTER COLUMN cpf DROP NOT NULL;
 -- FIM - renato.jesus 22/07/2014
-
--- INICIO - renato.jesus 29/07/2014
-ALTER TABLE rh_competencia ADD nivelcompetencia INTEGER NULL;
--- FIM - renato.jesus 29/07/2014
-
--- INICIO - renato.jesus 04/08/2014
-ALTER TABLE rh_certificacaocurriculo ADD CONSTRAINT fk_rh_certificacao_curriculo FOREIGN KEY (idcurriculo) REFERENCES rh_curriculo ( idcurriculo ) ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE rh_competencia ADD CONSTRAINT fk_rh_competencia_curriculo FOREIGN KEY (idcurriculo) REFERENCES rh_curriculo ( idcurriculo ) ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE rh_emailcurriculo ADD CONSTRAINT fk_rh_email_curriculo FOREIGN KEY (idcurriculo) REFERENCES rh_curriculo ( idcurriculo ) ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE rh_enderecocurriculo ADD CONSTRAINT fk_rh_endereco_curriculo FOREIGN KEY (idcurriculo) REFERENCES rh_curriculo ( idcurriculo ) ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE rh_formacaocurriculo ADD CONSTRAINT fk_rh_formacao_curriculo FOREIGN KEY (idcurriculo) REFERENCES rh_curriculo ( idcurriculo ) ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE rh_idiomacurriculo ADD CONSTRAINT fk_rh_idioma_curriculo FOREIGN KEY (idcurriculo) REFERENCES rh_curriculo ( idcurriculo ) ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE rh_telefonecurriculo ADD CONSTRAINT fk_rh_telefone_curriculo FOREIGN KEY (idcurriculo) REFERENCES rh_curriculo ( idcurriculo ) ON DELETE NO ACTION ON UPDATE NO ACTION;
--- FIM - renato.jesus 04/08/2014
 
 -- INICIO - david.silva 08/08/2014
 update menu set datafim = '2014-08-08' where link = '/atitudeIndividual/atitudeIndividual.load' and nome = '$menu.nome.atitudeIndividual';
@@ -102,7 +76,3 @@ WHERE  idmenu = (SELECT menu.idmenu
                  FROM   menu  
                  WHERE  menu.nome LIKE '$menu.nome.recursosHumanos'); 
 -- FIM - david.silva 12/08/2014-- FIM - renato.jesus 04/08/2014
-
--- INICIO - renato.jesus 14/08/2014
-ALTER TABLE rh_enderecocurriculo ALTER COLUMN logradouro TYPE VARCHAR(100);
--- FIM - renato.jesus 14/08/2014

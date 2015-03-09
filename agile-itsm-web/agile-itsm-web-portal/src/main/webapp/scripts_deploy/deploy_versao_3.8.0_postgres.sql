@@ -6,12 +6,6 @@ update rest_operation set generatelog = 'Y';
 
 -- FIM
 
--- INICIO - DAVID RODRIGUES DA SILVA 
-
-ALTER TABLE rh_enderecocurriculo ALTER COLUMN iduf DROP NOT NULL;
-
--- FIM
-
 -- INICIO - EULER JOSE RAMOS 19/08/2014
 
 CREATE TABLE grupoassinatura (

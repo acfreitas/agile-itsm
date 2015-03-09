@@ -438,10 +438,6 @@ alter table origematendimento add column datafim date;
 CREATE INDEX INDEX_EMP_NOMEPROC ON empregados USING btree (nomeprocura);
 -- Fim
 
--- Carlos Santos - 09/06/2013
-alter table cargos add column iddescricaocargo int;
--- Fim
-
 -- Início rodrigo.oliveira - 14/06/2013
 
 CREATE TABLE prioridadeservicousuario (

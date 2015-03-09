@@ -14,24 +14,23 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
+
 import br.com.centralit.citcorpore.bean.MenuDTO;
 import br.com.centralit.citcorpore.bean.UsuarioDTO;
 import br.com.centralit.citcorpore.negocio.MenuService;
-import br.com.centralit.citcorpore.negocio.ParametroCorporeService;
 import br.com.centralit.citcorpore.negocio.VersaoService;
 import br.com.centralit.citcorpore.util.Enumerados.ParametroSistema;
-import br.com.citframework.excecao.ServiceException;
 import br.com.citframework.service.ServiceLocator;
 import br.com.citframework.util.Constantes;
 
-@SuppressWarnings({"unchecked", "rawtypes", "unused"})
+@SuppressWarnings({"unchecked", "rawtypes"})
 public class FiltroSegurancaCITSmart implements Filter {
 
     private static final int ACESSO_NEGADO = 403;
     private static Collection colLivres = new ArrayList();
     private static Boolean haVersoesSemValidacao = null;
     private static final String INTERROGACAO = "?";
-    private static final int PROBLEMAS = 999;
 
     public static Boolean getHaVersoesSemValidacao() {
         try {
@@ -83,21 +82,12 @@ public class FiltroSegurancaCITSmart implements Filter {
             return;
         }
 
-        ParametroCorporeService parametroService;
         String CAMINHO_RELATIVO_PAGINA_LOGIN = Constantes.getValue("CAMINHO_RELATIVO_PAGINA_LOGIN");
-        try {
-            CAMINHO_RELATIVO_PAGINA_LOGIN = Constantes.getValue("CAMINHO_RELATIVO_PAGINA_LOGIN");
-            if (CAMINHO_RELATIVO_PAGINA_LOGIN == null || CAMINHO_RELATIVO_PAGINA_LOGIN.trim().equalsIgnoreCase("")) {
-                parametroService = (ParametroCorporeService) ServiceLocator.getInstance().getService(
-                        ParametroCorporeService.class, null);
-                CAMINHO_RELATIVO_PAGINA_LOGIN = Constantes.getValue("SERVER_ADDRESS")
-                        + Constantes.getValue("CONTEXTO_APLICACAO") + "/login/login.load";
-            }
-        } catch (final ServiceException e1) {
-            e1.printStackTrace();
-        } catch (final Exception e1) {
-            e1.printStackTrace();
+        if (CAMINHO_RELATIVO_PAGINA_LOGIN == null || CAMINHO_RELATIVO_PAGINA_LOGIN.trim().equalsIgnoreCase("")) {
+            CAMINHO_RELATIVO_PAGINA_LOGIN = Constantes.getValue("SERVER_ADDRESS")
+                    + Constantes.getValue("CONTEXTO_APLICACAO") + "/login/login.load";
         }
+
         if (path.equalsIgnoreCase("") || path.equalsIgnoreCase("/")) {
             if (CAMINHO_RELATIVO_PAGINA_LOGIN == null || CAMINHO_RELATIVO_PAGINA_LOGIN.trim().equalsIgnoreCase("")) {
                 CAMINHO_RELATIVO_PAGINA_LOGIN = Constantes.getValue("SERVER_ADDRESS")
@@ -118,26 +108,20 @@ public class FiltroSegurancaCITSmart implements Filter {
                 CAMINHO_RELATIVO_PAGINA_LOGIN = Constantes.getValue("SERVER_ADDRESS")
                         + Constantes.getValue("CONTEXTO_APLICACAO") + "/login/login.load";
             }
-            final CharSequence s = new String(path);
-            if (CAMINHO_RELATIVO_PAGINA_LOGIN.contains(s)) { // Verifica se eh a
-                // // pagina
-                // de// login
-                // para // nao
-                // ficar em //
-                // redirect //
-                // infinito.
+
+            // Verifica se eh a pagina de login para nao ficar em redirect infinito.
+            if (CAMINHO_RELATIVO_PAGINA_LOGIN.contains(path)) {
                 chain.doFilter(request, response);
                 return;
             }
-            if (path.endsWith("/login.save")) { // Deixa passar,// se nao nem//
-                // loga.
+            // Deixa passar, se nao nem loga.
+            if (path.endsWith("/login.save")) {
                 chain.doFilter(request, response);
                 return;
             }
-            if (path.equalsIgnoreCase("/ActionServletMarcacao")) { // Deixa //
-                // passar,//
-                // se nao//
-                // nem loga.
+
+            // Deixa passar, se nao nem loga.
+            if (path.equalsIgnoreCase("/ActionServletMarcacao")) {
                 chain.doFilter(request, response);
                 return;
             }
@@ -177,10 +161,9 @@ public class FiltroSegurancaCITSmart implements Filter {
         if (SEGURANCA_HABILITADA == null) {
             SEGURANCA_HABILITADA = "N";
         }
-        if (!SEGURANCA_HABILITADA.equalsIgnoreCase("S")) { // Se nao estiver//
-            // setado como "S"
-            // -/ Sim, entao
-            // esta// livre.
+
+        // Se nao estiver setado como "S", entao esta livre.
+        if (!SEGURANCA_HABILITADA.equalsIgnoreCase("S")) {
             chain.doFilter(request, response);
             return;
         }
@@ -191,8 +174,9 @@ public class FiltroSegurancaCITSmart implements Filter {
                 return;
             }
             Collection col = (Collection) request.getSession(true).getAttribute("acessosUsuario");
-            if (col == null) { // Caso ainda nao tenha carregado a colecao com//
-                // as autorizações, entao carrega.
+
+            // Caso ainda nao tenha carregado a colecao com as autorizações, entao carrega.
+            if (col == null) {
                 final Collection colPathsAutorizadosUsuario = new ArrayList();
                 final MenuService menuService = (MenuService) ServiceLocator.getInstance().getService(
                         MenuService.class, null);
@@ -217,10 +201,9 @@ public class FiltroSegurancaCITSmart implements Filter {
             } else {
                 if (path.startsWith("/")) {
                     path = path.substring(1);
-                    bAutorizado = col.contains(path); // Faz mais uma
-                    // tentativa,// mas
-                    // agora sem a barra//
-                    // que havia.
+
+                    // Faz mais uma tentativa, mas agora sem a barra que havia.
+                    bAutorizado = col.contains(path);
                     if (bAutorizado) {
                         chain.doFilter(request, response);
                         return;
@@ -306,9 +289,7 @@ public class FiltroSegurancaCITSmart implements Filter {
         if (requestedPath.endsWith("svg-editor.jsp")) {
             return true;
         }
-        if (requestedPath.endsWith("autoCompletePessoa.load")) {
-            return true;
-        }
+
         requestedPath = requestedPath.toUpperCase();
         if (requestedPath.endsWith(".JS")) {
             return true;
@@ -358,20 +339,10 @@ public class FiltroSegurancaCITSmart implements Filter {
     }
 
     private boolean isRecursoLivre(String requestedPath) {
-        // System.out.println(requestedPath);
         if (requestedPath.endsWith("/pesquisaRequisicaoLiberacao.load")) {
             return true;
         }
         if (requestedPath.endsWith("/login.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/modalCurriculo/modalCurriculo.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/autoCompleteParceiro.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/autoCompleteFuncionario.load")) {
             return true;
         }
         if (requestedPath.endsWith("/pages/refreshuploadAnexos/refreshuploadAnexos.load")) {
@@ -517,11 +488,6 @@ public class FiltroSegurancaCITSmart implements Filter {
         if (requestedPath.endsWith("suspensaoSolicitacao.load")) {
             return true;
         }
-        /*
-         * if (requestedPath.endsWith("origemAtendimento/origemAtendimento.load")) {
-         * return true;
-         * }
-         */
         if (requestedPath.endsWith("/pages/baseConhecimentoView/modalBaseConhecimento.load")) {
             return true;
         }
@@ -746,9 +712,6 @@ public class FiltroSegurancaCITSmart implements Filter {
         if (requestedPath.endsWith("/pages/template/template.load")) {
             return true;
         }
-        if (requestedPath.endsWith("/pages/alterarSenha2/alterarSenha2.load")) {
-            return true;
-        }
 
         if (requestedPath
                 .endsWith("/solicitacaoServicoMultiContratosPortal2/solicitacaoServicoMultiContratosPortal2.load")) {
@@ -815,32 +778,10 @@ public class FiltroSegurancaCITSmart implements Filter {
         /*
          * ######################################### INICIO FILTRO DE RH
          */
-        if (requestedPath.endsWith("/triagemRequisicaoPessoal/triagemRequisicaoPessoal.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/solicitacaoCargo/solicitacaoCargo.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/requisicaoPessoal/requisicaoPessoal.load")) {
-            return true;
-        }
         if (requestedPath.endsWith("/entrevistaRequisicaoPessoal/entrevistaRequisicaoPessoal.load")) {
             return true;
         }
-        if (requestedPath.endsWith("/analiseSolicitacaoCargo/analiseSolicitacaoCargo.load")) {
-            return true;
-        }
         if (requestedPath.endsWith("/analiseRequisicaoPessoal/analiseRequisicaoPessoal.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/curriculo/curriculo.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/entrevistaCandidato/entrevistaCandidato.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/pages/entrevistaRequisicaoPessoal/entrevistaRequisicaoPessoal.load")) {
             return true;
         }
 
@@ -852,28 +793,11 @@ public class FiltroSegurancaCITSmart implements Filter {
             return true;
         }
 
-        if (requestedPath.endsWith("/pages/classificacaoRequisicaoPessoal/classificacaoRequisicaoPessoal.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/pages/movimentacaoColaborador/movimentacaoColaborador.load")) {
-            return true;
-        }
-
         if (requestedPath.endsWith("pages/triagemRequisicaoPessoal/triagemRequisicaoPessoal.load")) {
             return true;
         }
 
-        if (requestedPath.endsWith("pages/templatePesquisaCurriculo/templatePesquisaCurriculo.load")) {
-            return true;
-        }
         if (requestedPath.endsWith("pages/pesquisaCurriculo/pesquisaCurriculo.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/historicoAcaoCurriculo/historicoAcaoCurriculo.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("pages/historicoCandidato/historicoCandidato.load")) {
             return true;
         }
         if (requestedPath.endsWith("pages/visualizarHistoricoFuncional/visualizarHistoricoFuncional.load")) {
@@ -898,39 +822,7 @@ public class FiltroSegurancaCITSmart implements Filter {
             return true;
         }
 
-        if (requestedPath.endsWith("/autoCompleteServico/autoCompleteServico.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/autoCompleteSolicitante/autoCompleteSolicitante.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/autoCompleteTarefaAtual/autoCompleteTarefaAtual.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/autoCompleteCidade/autoCompleteCidade.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/autoCompleteEmpregado/autoCompleteEmpregado.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/autoCompleteNaoEmpregado/autoCompleteNaoEmpregado.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/autoCompleteFornecedor/autoCompleteFornecedor.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/autoCompleteFormacaoAcademica/autoCompleteFormacaoAcademica.load")) {
-            return true;
-        }
-
-        if (requestedPath.indexOf("autoComplete") > 0) {
+        if (StringUtils.containsIgnoreCase(requestedPath, "autoComplete")) {
             return true;
         }
 
@@ -938,11 +830,6 @@ public class FiltroSegurancaCITSmart implements Filter {
          * ############################## FIM FILTRO DE RH
          */
 
-        // if
-        // (requestedPath.endsWith("/pages/relatorioAcompanhamento/relatorioAcompanhamento.load"))
-        // {
-        // return true;
-        // }
         if (requestedPath.endsWith("/pages/relatorioQuantitativoPorServico/relatorioQuantitativoPorServico.load")) {
             return true;
         }
@@ -955,62 +842,9 @@ public class FiltroSegurancaCITSmart implements Filter {
         if (requestedPath.endsWith("pages/relatorioCargaHoraria/relatorioCargaHoraria.load")) {
             return true;
         }
-        // if (requestedPath.endsWith("/pages/slaAvaliacao/slaAvaliacao.load"))
-        // {
-        // return true;
-        // }
-        // if
-        // (requestedPath.endsWith("/pages/planoMelhoria/planoMelhoria.load")) {
-        // return true;
-        // }
-        // if
-        // (requestedPath.endsWith("pages/gerenciaConfiguracaoTree/gerenciaConfiguracaoTree.load"))
-        // {
-        // return true;
-        // }
-        // if
-        // (requestedPath.endsWith("pages/grupoItemConfiguracao/grupoItemConfiguracao.load"))
-        // {
-        // return true;
-        // }
         if (requestedPath.endsWith("/pages/pesquisaFaq/pesquisaFaq.load")) {
             return true;
         }
-        // if
-        // (requestedPath.endsWith("/pages/eventoMonitoramento/eventoMonitoramento.load"))
-        // {
-        // return true;
-        // }
-        // if (requestedPath.endsWith("/pages/localidade/localidade.load")) {
-        // return true;
-        // }
-        // if
-        // (requestedPath.endsWith("/pages/relatorioPesquisaSatisfacao/relatorioPesquisaSatisfacao.load"))
-        // {
-        // return true;
-        // }
-        // if
-        // (requestedPath.endsWith("pages/relatorioValorServicoContrato/relatorioValorServicoContrato.load"))
-        // {
-        // return true;
-        // }
-        // if
-        // (requestedPath.endsWith("/pages/logController/logController.load")) {
-        // return true;
-        // }
-        // if (requestedPath.endsWith("/pages/dicionario/dicionario.load")) {
-        // return true;
-        // }
-        // if (requestedPath.endsWith("/pages/lingua/lingua.load")) {
-        // return true;
-        // }
-        // if (requestedPath.endsWith("gerenciamentoMudancas.load")) {
-        // return true;
-        // }
-        // if
-        // (requestedPath.endsWith("/pages/midiaSoftware/midiaSoftware.load")) {
-        // return true;
-        // }
 
         if (requestedPath.endsWith("/aprovacaoSolicitacaoServico.load")) {
             return true;
@@ -1264,10 +1098,6 @@ public class FiltroSegurancaCITSmart implements Filter {
             return true;
         }
 
-        if (requestedPath.endsWith("/pages/requisicaoFuncao/requisicaoFuncao.load")) {
-            return true;
-        }
-
         if (requestedPath.endsWith("listagemConsultas.load")) {
             return true;
         }
@@ -1332,16 +1162,6 @@ public class FiltroSegurancaCITSmart implements Filter {
             return true;
         }
 
-        /* Inicio dos autocompletes mapeados que não estavam no filtro de segurança. */
-
-        if (requestedPath.endsWith("/pages/autoCompleteServicoBI/autoCompleteServicoBI.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/autoCompleteServicoCorporeBI/autoCompleteServicoCorporeBI.load")) {
-            return true;
-        }
-
         if (requestedPath.endsWith("/pages/loginCandidato/loginCandidato.load")) {
             return true;
         }
@@ -1359,56 +1179,13 @@ public class FiltroSegurancaCITSmart implements Filter {
             return true;
         }
 
-        if (requestedPath.endsWith("/pages/templateCurriculoTrabalheConosco/templateCurriculoTrabalheConosco.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/pages/visualizarCurriculoTrabalheConosco/visualizarCurriculoTrabalheConosco.load")) {
-            return true;
-        }
-
         if (requestedPath.endsWith("/pages/uploadFile/uploadFile.load")) {
-            return true;
-        }
-
-        if (requestedPath
-                .endsWith("/autoCompleteDescricaoAtribuicaoResponsabilidade/autoCompleteDescricaoAtribuicaoResponsabilidade.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/autoCompleteCausa/autoCompleteCausa.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/autoCompleteAtitudeIndividual/autoCompleteAtitudeIndividual.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/autoCompleteCurso/autoCompleteCurso.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/autoCompleteCertificacao/autoCompleteCertificacao.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/autoCompleteCompetenciaTecnica/autoCompleteCompetenciaTecnica.load")) {
-            return true;
-        }
-
-        if (requestedPath.endsWith("/autoCompleteFuncao/autoCompleteFuncao.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/autoCompleteIdioma/autoCompleteIdioma.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("autoCompleteExperiencia/autoCompleteExperiencia.load")) {
-            return true;
-        }
-        if (requestedPath.endsWith("/autoCompletePerspectivaComportamental/autoCompletePerspectivaComportamental.load")) {
             return true;
         }
 
         if (requestedPath.endsWith("/dropzone/")) {
             return true;
         }
-
-        /* Fim dos autocompletes mapeados que não estavam no filtro de segurança. */
 
         if (colLivres != null) {
             if (requestedPath.startsWith("/")) {
