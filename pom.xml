@@ -1,16 +1,16 @@
-<!--    Copyright 2014 Modo Ágil                                                 -->
+<!-- Copyright 2014 Modo Ágil -->
 
-<!--    Licensed under the Apache License, Version 2.0 (the "License");          -->
-<!--    you may not use this file except in compliance with the License.         -->
-<!--    You may obtain a copy of the License at                                  -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
 
-<!--        http://www.apache.org/licenses/LICENSE-2.0                           -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
 
-<!--    Unless required by applicable law or agreed to in writing, software      -->
-<!--    distributed under the License is distributed on an "AS IS" BASIS,        -->
-<!--    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
-<!--    See the License for the specific language governing permissions and      -->
-<!--    limitations under the License.                                           -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -33,7 +33,7 @@
     </scm>
 
     <organization>
-        <name>Modo Ágil</name>
+        <name>Modo Ágil - Agilidade e Inovação em Software</name>
         <url>http://www.modoagil.com.br</url>
     </organization>
 
@@ -66,31 +66,40 @@
         <java.source.version>1.7</java.source.version>
         <java.target.version>${java.source.version}</java.target.version>
         <java.compiler.version>${java.target.version}</java.compiler.version>
-		
-		<fail.on.violation>false</fail.on.violation>
+
+        <fail.on.violation>false</fail.on.violation>
+        <fail.on.missing.web-xml>false</fail.on.missing.web-xml>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
 
         <!-- dependencies version -->
+        <closurecompiler.version>r2388</closurecompiler.version>
         <commons-lang.version>3.3.2</commons-lang.version>
         <dozer.version>5.4.0</dozer.version>
         <flyway.version>3.1</flyway.version>
+        <guava.version>18.0</guava.version>
+        <htmlcompressor.version>1.5.2</htmlcompressor.version>
         <jsp-api.version>2.2</jsp-api.version>
         <jstl.version>1.2</jstl.version>
         <log4j.version>2.1</log4j.version>
         <lombok.version>1.14.8</lombok.version>
+        <rest-easy.version>3.0.6.Final</rest-easy.version>
         <servlet-api.version>2.5</servlet-api.version>
         <slf4j.version>1.7.7</slf4j.version>
+        <wro4j.version>1.7.7</wro4j.version>
+        <yuicompressor.version>2.4.8</yuicompressor.version>
 
         <!-- test dependencies version -->
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
         <mockito.version>1.10.14</mockito.version>
         <hamcrest-all.version>1.3</hamcrest-all.version>
 
         <!-- plugins version -->
         <cobertura-maven-plugin.version>2.6</cobertura-maven-plugin.version>
+        <exec-maven-plugin.version>1.3.2</exec-maven-plugin.version>
         <findbugs-maven-plugin.version>3.0.0</findbugs-maven-plugin.version>
+        <jboss-as-maven-plugin.version>7.5.Final</jboss-as-maven-plugin.version>
         <maven-changes-plugin.version>2.11</maven-changes-plugin.version>
         <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
         <maven-checkstyle-plugin.version>2.13</maven-checkstyle-plugin.version>
@@ -108,6 +117,7 @@
         <maven-war-plugin.version>2.5</maven-war-plugin.version>
         <sonar-maven-plugin.version>2.4</sonar-maven-plugin.version>
         <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
+        <wro4j-maven-plugin.version>${wro4j.version}</wro4j-maven-plugin.version>
     </properties>
 
     <profiles>
@@ -151,11 +161,11 @@
                         </configuration>
                         <executions>
                             <execution>
-                            <id>analyze-compile</id>
-                            <phase>compile</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
+                                <id>analyze-compile</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
@@ -238,6 +248,13 @@
 
         <pluginManagement>
             <plugins>
+                <!-- http://mojo.codehaus.org/exec-maven-plugin/ -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${exec-maven-plugin.version}</version>
+                </plugin>
+
                 <!-- http://maven.apache.org/plugins/maven-war-plugin/ -->
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
@@ -245,7 +262,7 @@
                     <configuration>
                         <archiveClasses>true</archiveClasses>
                         <resourceEncoding>${project.build.sourceEncoding}</resourceEncoding>
-                        <failOnMissingWebXml>false</failOnMissingWebXml> <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
+                        <failOnMissingWebXml>${fail.on.missing.web-xml}</failOnMissingWebXml> <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
                         <webResources>
                             <resource>
                                 <directory>src/main/resources</directory>
@@ -262,6 +279,13 @@
                     </configuration>
                 </plugin>
 
+                <!-- https://code.google.com/p/wro4j/wiki/MavenPlugin -->
+                <plugin>
+                    <groupId>ro.isdc.wro4j</groupId>
+                    <artifactId>wro4j-maven-plugin</artifactId>
+                    <version>${wro4j-maven-plugin.version}</version>
+                </plugin>
+
                 <plugin>
                     <groupId>org.eclipse.m2e</groupId>
                     <artifactId>lifecycle-mapping</artifactId>
@@ -269,6 +293,22 @@
                     <configuration>
                         <lifecycleMappingMetadata>
                             <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.codehaus.mojo</groupId>
+                                        <artifactId>exec-maven-plugin</artifactId>
+                                        <versionRange>[${exec-maven-plugin.version},)</versionRange>
+                                        <goals>
+                                            <goal>java</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <execute>
+                                            <runOnIncremental>false</runOnIncremental>
+                                        </execute>
+                                    </action>
+                                </pluginExecution>
+
                                 <pluginExecution>
                                     <pluginExecutionFilter>
                                         <groupId>org.codehaus.mojo</groupId>
@@ -523,7 +563,7 @@
             <id>jcenter</id>
             <name>bintray-jcenter-plugins</name>
             <url>http://jcenter.bintray.com</url>
-            </pluginRepository>
+        </pluginRepository>
     </pluginRepositories>
 
 </project>

@@ -9,7 +9,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.resource.ResourceException;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Recupera recurso publicados na JNDI
@@ -55,9 +55,10 @@ public final class JNDIFactory implements IContextFactory<Object> {
     @Override
     public Object getResource(final String resourceName) throws ResourceException {
         try {
-            return context.lookup(this.normalizeJNDIResourceName(resourceName));
+            return context.lookup(normalizeJNDIResourceName(resourceName));
         } catch (final NamingException e) {
-            final String mensagem = "Ocorreu um erro ao tentar localizar objeto na referência " + resourceName + " no servidor: " + e.getMessage();
+            final String mensagem = "Ocorreu um erro ao tentar localizar objeto na referência " + resourceName
+                    + " no servidor: " + e.getMessage();
             LOGGER.log(Level.SEVERE, mensagem, e);
             throw new ResourceException(mensagem, e);
         }

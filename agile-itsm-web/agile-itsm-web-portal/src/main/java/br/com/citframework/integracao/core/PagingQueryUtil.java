@@ -1,6 +1,7 @@
 package br.com.citframework.integracao.core;
 
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 
 import br.com.citframework.util.Assert;
 
@@ -122,7 +123,7 @@ public final class PagingQueryUtil {
         case POSTGRESQL:
             sql.append(String.format(PAGINATION_POSTGRES_PATTERN, pageSize, offset));
             break;
-        case MYSQL:
+        default:
             sql.append(String.format(PAGINATION_MYSQL_PATTERN, offset, pageSize));
             break;
         }
