@@ -8,32 +8,30 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.centralit.bpm.dto.ElementoFluxoDTO;
 import br.com.centralit.bpm.integracao.ElementoFluxoDao;
-import br.com.centralit.citajax.html.AjaxFormAction;
 import br.com.centralit.citajax.html.DocumentHTML;
 
-import com.google.gson.Gson;
+public class AutoCompleteTarefaAtual extends AbstractAutoComplete {
 
-public class AutoCompleteTarefaAtual extends AjaxFormAction {
-	
-	@SuppressWarnings("rawtypes")
-	public Class getBeanClass() {
-		return ElementoFluxoDTO.class;
-	}
+    @Override
+    public Class<ElementoFluxoDTO> getBeanClass() {
+        return ElementoFluxoDTO.class;
+    }
 
-	public void load(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//Corrige o enconding do parâmetro desejado.
-		String consulta = new String(request.getParameter("query").getBytes("ISO-8859-1"), "UTF-8");
-		ElementoFluxoDao elementoFluxoDao = new ElementoFluxoDao();
-		Gson gson = new Gson();
-		String json = "";
-		
-		List<ElementoFluxoDTO> lista;
-		lista = elementoFluxoDao.listaElementoFluxo(consulta);
-		if(lista == null)
-			lista = new ArrayList<ElementoFluxoDTO>();
+    @Override
+    public void load(final DocumentHTML document, final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        // Corrige o enconding do parâmetro desejado.
+        final String consulta = new String(request.getParameter("query").getBytes("ISO-8859-1"), "UTF-8");
+        final ElementoFluxoDao elementoFluxoDao = new ElementoFluxoDao();
 
-		json = gson.toJson(lista);
-		
-		request.setAttribute("json_response", json);
-	}
+        List<ElementoFluxoDTO> lista;
+        lista = elementoFluxoDao.listaElementoFluxo(consulta);
+        if (lista == null) {
+            lista = new ArrayList<ElementoFluxoDTO>();
+        }
+
+        final String json = getGSON().toJson(lista);
+
+        request.setAttribute("json_response", json);
+    }
+
 }

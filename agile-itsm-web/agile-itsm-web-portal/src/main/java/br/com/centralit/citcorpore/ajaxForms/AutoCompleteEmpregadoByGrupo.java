@@ -9,15 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 
-import br.com.centralit.citajax.html.AjaxFormAction;
 import br.com.centralit.citajax.html.DocumentHTML;
 import br.com.centralit.citcorpore.bean.AutoCompleteDTO;
 import br.com.centralit.citcorpore.bean.EmpregadoDTO;
 import br.com.centralit.citcorpore.bean.GrupoDTO;
 import br.com.centralit.citcorpore.negocio.EmpregadoService;
 import br.com.citframework.service.ServiceLocator;
-
-import com.google.gson.Gson;
 
 /**
  * AutoComplete para {@link EmpregadoDTO} que considera na consulta o {@link GrupoDTO}
@@ -26,9 +23,7 @@ import com.google.gson.Gson;
  * @since 31/10/2014
  *
  */
-public class AutoCompleteEmpregadoByGrupo extends AjaxFormAction {
-
-    private static final Gson GSON = new Gson();
+public class AutoCompleteEmpregadoByGrupo extends AbstractAutoComplete {
 
     @Override
     public Class<EmpregadoDTO> getBeanClass() {
@@ -41,7 +36,7 @@ public class AutoCompleteEmpregadoByGrupo extends AjaxFormAction {
         final String idGrupoStr = request.getParameter("idGrupo");
         final Integer idGrupo = StringUtils.isNotBlank(idGrupoStr) ? Integer.parseInt(idGrupoStr.trim()) : 0;
 
-        final Collection<EmpregadoDTO> empregados = this.getService().findByNomeEmpregadoAndGrupo(nomeEmpregado, idGrupo);
+        final Collection<EmpregadoDTO> empregados = getService().findByNomeEmpregadoAndGrupo(nomeEmpregado, idGrupo);
 
         final List<Integer> listIDs = new ArrayList<>();
         final List<String> listNames = new ArrayList<>();
@@ -56,7 +51,7 @@ public class AutoCompleteEmpregadoByGrupo extends AjaxFormAction {
         autoCompleteDTO.setSuggestions(listNames);
         autoCompleteDTO.setData(listIDs);
 
-        request.setAttribute("json_response", GSON.toJson(autoCompleteDTO));
+        request.setAttribute("json_response", getGSON().toJson(autoCompleteDTO));
     }
 
     private static EmpregadoService service;

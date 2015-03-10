@@ -9,84 +9,79 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 
-import br.com.centralit.citajax.html.AjaxFormAction;
 import br.com.centralit.citajax.html.DocumentHTML;
 import br.com.centralit.citcorpore.bean.AutoCompleteDTO;
 import br.com.centralit.citcorpore.bean.EmpregadoDTO;
 import br.com.centralit.citcorpore.negocio.EmpregadoService;
 import br.com.citframework.service.ServiceLocator;
 
-import com.google.gson.Gson;
+public class AutoCompleteSolicitante extends AbstractAutoComplete {
 
-public class AutoCompleteSolicitante extends AjaxFormAction {
+    @Override
+    public Class<EmpregadoDTO> getBeanClass() {
+        return EmpregadoDTO.class;
+    }
 
-	private final Gson gson = new Gson();
+    @Override
+    public void load(final DocumentHTML document, final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        // Corrige o enconding do parâmetro desejado.
+        if (request.getParameter("query") != null) {
+            final String consulta = new String(request.getParameter("query").getBytes("ISO-8859-1"), "UTF-8");
 
-	@Override
-	public Class<EmpregadoDTO> getBeanClass() {
-		return EmpregadoDTO.class;
-	}
+            final String idContratoStr = request.getParameter("contrato");
+            Integer idContrato = null;
+            if (StringUtils.isNotBlank(idContratoStr) && !idContratoStr.equals("-1")) {
+                idContrato = Integer.parseInt(idContratoStr);
+            }
 
-	@Override
-	public void load(final DocumentHTML document, final HttpServletRequest request, final HttpServletResponse response) throws Exception {
-		// Corrige o enconding do parâmetro desejado.
-		if (request.getParameter("query") != null) {
-			final String consulta = new String(request.getParameter("query").getBytes("ISO-8859-1"), "UTF-8");
+            Collection<EmpregadoDTO> listEmpregadoDto = new ArrayList<>();
 
-			final String idContratoStr = request.getParameter("contrato");
-			Integer idContrato = null;
-			if (StringUtils.isNotBlank(idContratoStr) && !idContratoStr.equals("-1")) {
-				idContrato = Integer.parseInt(idContratoStr);
-			}
+            final String idUnidadeStr = request.getParameter("unidade");
+            Integer idUnidade = null;
+            if (StringUtils.isNotBlank(idUnidadeStr) && !idUnidadeStr.equals("-1")) {
+                idUnidade = Integer.parseInt(idUnidadeStr);
+            }
 
-			Collection<EmpregadoDTO> listEmpregadoDto = new ArrayList<>();
+            if (idContrato != null) {
+                listEmpregadoDto = getEmpregadoService().findSolicitanteByNomeAndIdContratoAndIdUnidade(consulta, idContrato, idUnidade);
+            }
 
-			String idUnidadeStr = request.getParameter("unidade");
-			Integer idUnidade = null;
-			if (StringUtils.isNotBlank(idUnidadeStr) && !idUnidadeStr.equals("-1")) {
-				idUnidade = Integer.parseInt(idUnidadeStr);
-			}
+            final AutoCompleteDTO autoCompleteDTO = new AutoCompleteDTO();
 
-			if (idContrato != null) {
-				listEmpregadoDto = this.getEmpregadoService().findSolicitanteByNomeAndIdContratoAndIdUnidade(consulta, idContrato, idUnidade);
-			}
+            final List<String> listNome = new ArrayList<>();
+            final List<Integer> listIdEmpregado = new ArrayList<>();
 
-			final AutoCompleteDTO autoCompleteDTO = new AutoCompleteDTO();
+            if (listEmpregadoDto != null && !listEmpregadoDto.isEmpty()) {
+                for (final EmpregadoDTO empregadoDto : listEmpregadoDto) {
+                    if (empregadoDto.getIdEmpregado() != null) {
+                        listNome.add(empregadoDto.getNome());
+                        listIdEmpregado.add(empregadoDto.getIdEmpregado());
+                    }
+                }
+            }
+            autoCompleteDTO.setQuery(consulta);
+            autoCompleteDTO.setSuggestions(listNome);
+            autoCompleteDTO.setData(listIdEmpregado);
 
-			final List<String> listNome = new ArrayList<>();
-			final List<Integer> listIdEmpregado = new ArrayList<>();
+            String json = "";
 
-			if (listEmpregadoDto != null && !listEmpregadoDto.isEmpty()) {
-				for (final EmpregadoDTO empregadoDto : listEmpregadoDto) {
-					if (empregadoDto.getIdEmpregado() != null) {
-						listNome.add(empregadoDto.getNome());
-						listIdEmpregado.add(empregadoDto.getIdEmpregado());
-					}
-				}
-			}
-			autoCompleteDTO.setQuery(consulta);
-			autoCompleteDTO.setSuggestions(listNome);
-			autoCompleteDTO.setData(listIdEmpregado);
+            if (request.getParameter("colection") != null) {
+                json = getGSON().toJson(listEmpregadoDto);
+            } else {
+                json = getGSON().toJson(autoCompleteDTO);
+            }
 
-			String json = "";
+            request.setAttribute("json_response", json);
+        }
+    }
 
-			if (request.getParameter("colection") != null) {
-				json = gson.toJson(listEmpregadoDto);
-			} else {
-				json = gson.toJson(autoCompleteDTO);
-			}
+    private EmpregadoService empregadoService;
 
-			request.setAttribute("json_response", json);
-		}
-	}
-
-	private EmpregadoService empregadoService;
-
-	private EmpregadoService getEmpregadoService() throws Exception {
-		if (empregadoService == null) {
-			empregadoService = (EmpregadoService) ServiceLocator.getInstance().getService(EmpregadoService.class, null);
-		}
-		return empregadoService;
-	}
+    private EmpregadoService getEmpregadoService() throws Exception {
+        if (empregadoService == null) {
+            empregadoService = (EmpregadoService) ServiceLocator.getInstance().getService(EmpregadoService.class, null);
+        }
+        return empregadoService;
+    }
 
 }

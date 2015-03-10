@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 
-import br.com.centralit.citajax.html.AjaxFormAction;
 import br.com.centralit.citajax.html.DocumentHTML;
 import br.com.centralit.citcorpore.bean.AutoCompleteDTO;
 import br.com.centralit.citcorpore.bean.EmpregadoDTO;
@@ -18,11 +17,7 @@ import br.com.centralit.citcorpore.bean.ServicoDTO;
 import br.com.centralit.citcorpore.negocio.ServicoService;
 import br.com.citframework.service.ServiceLocator;
 
-import com.google.gson.Gson;
-
-public class AutoCompleteServico extends AjaxFormAction {
-
-    private final Gson gson = new Gson();
+public class AutoCompleteServico extends AbstractAutoComplete {
 
     @Override
     public Class<EmpregadoDTO> getBeanClass() {
@@ -52,7 +47,7 @@ public class AutoCompleteServico extends AjaxFormAction {
             idCategoria = Integer.parseInt(categoria);
         }
 
-        final Collection colRetorno = this.getServicoService().findByNomeAndContratoAndTipoDemandaAndCategoria(idTipoDemanda, idContrato, idCategoria, consulta);
+        final Collection colRetorno = getServicoService().findByNomeAndContratoAndTipoDemandaAndCategoria(idTipoDemanda, idContrato, idCategoria, consulta);
         final AutoCompleteDTO autoCompleteDTO = new AutoCompleteDTO();
 
         final List<String> lst = new ArrayList<>();
@@ -71,7 +66,7 @@ public class AutoCompleteServico extends AjaxFormAction {
         autoCompleteDTO.setSuggestions(lst);
         autoCompleteDTO.setData(lstVal);
 
-        final String json = gson.toJson(autoCompleteDTO);
+        final String json = getGSON().toJson(autoCompleteDTO);
         request.setAttribute("json_response", json);
     }
 

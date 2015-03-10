@@ -4,7 +4,7 @@ import java.util.List;
 
 public class AutoCompleteReturn {
 
-    private List lstRetorno;
+    private List<?> lstRetorno;
     private String[] columnsReturn;
     private String columnId;
     private String columnDescription;
@@ -17,11 +17,11 @@ public class AutoCompleteReturn {
         this.columnsReturn = columnsReturn;
     }
 
-    public List getLstRetorno() {
+    public List<?> getLstRetorno() {
         return lstRetorno;
     }
 
-    public void setLstRetorno(final List lstRetorno) {
+    public void setLstRetorno(final List<?> lstRetorno) {
         this.lstRetorno = lstRetorno;
     }
 

@@ -7,50 +7,43 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.centralit.citajax.html.AjaxFormAction;
 import br.com.centralit.citajax.html.DocumentHTML;
 import br.com.centralit.citcorpore.bean.AutoCompleteDTO;
 import br.com.centralit.citcorpore.rh.bean.AtitudeIndividualDTO;
 import br.com.centralit.citcorpore.rh.negocio.AtitudeIndividualService;
 import br.com.citframework.service.ServiceLocator;
 
-import com.google.gson.Gson;
+public class AutoCompleteAtitudeIndividual extends AbstractAutoComplete {
 
-@SuppressWarnings({ "rawtypes", "unchecked" })
-public class AutoCompleteAtitudeIndividual extends AjaxFormAction {
-	@Override
-	public void load(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String consulta = request.getParameter("query");
-		AtitudeIndividualService service = (AtitudeIndividualService) ServiceLocator.getInstance().getService(AtitudeIndividualService.class, null);
+    @Override
+    public Class<AtitudeIndividualDTO> getBeanClass() {
+        return AtitudeIndividualDTO.class;
+    }
 
-		Collection<AtitudeIndividualDTO> atitudesIndividuais = new ArrayList<AtitudeIndividualDTO>();
-		atitudesIndividuais = service.findByNome(consulta);
+    @Override
+    public void load(final DocumentHTML document, final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        final String consulta = request.getParameter("query");
+        final AtitudeIndividualService service = (AtitudeIndividualService) ServiceLocator.getInstance().getService(AtitudeIndividualService.class, null);
 
-		AutoCompleteDTO autoCompleteDTO = new AutoCompleteDTO();
-		Gson gson = new Gson();
-		List lst = new ArrayList();
-		List lstVal = new ArrayList();
+        final Collection<AtitudeIndividualDTO> atitudesIndividuais = service.findByNome(consulta);
 
-		if (atitudesIndividuais != null && !atitudesIndividuais.isEmpty()) {
+        final AutoCompleteDTO autoCompleteDTO = new AutoCompleteDTO();
+        final List<String> lst = new ArrayList<>();
+        final List<Integer> lstVal = new ArrayList<>();
 
-			for (AtitudeIndividualDTO atitude : atitudesIndividuais) {
-				lst.add(atitude.getDescricao());
-				lstVal.add(atitude.getIdAtitudeIndividual());
-			}
+        if (atitudesIndividuais != null && !atitudesIndividuais.isEmpty()) {
+            for (final AtitudeIndividualDTO atitude : atitudesIndividuais) {
+                lst.add(atitude.getDescricao());
+                lstVal.add(atitude.getIdAtitudeIndividual());
+            }
+        }
 
-		}
+        autoCompleteDTO.setQuery(consulta);
+        autoCompleteDTO.setSuggestions(lst);
+        autoCompleteDTO.setData(lstVal);
 
-		autoCompleteDTO.setQuery(consulta);
-		autoCompleteDTO.setSuggestions(lst);
-		autoCompleteDTO.setData(lstVal);
-
-		String json = gson.toJson(autoCompleteDTO);
-		request.setAttribute("json_response", json);
-	}
-
-	@Override
-	public Class getBeanClass() {
-		return AtitudeIndividualDTO.class;
-	}
+        final String json = getGSON().toJson(autoCompleteDTO);
+        request.setAttribute("json_response", json);
+    }
 
 }

@@ -7,53 +7,43 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.centralit.citajax.html.AjaxFormAction;
 import br.com.centralit.citajax.html.DocumentHTML;
 import br.com.centralit.citcorpore.bean.AutoCompleteDTO;
 import br.com.centralit.citcorpore.rh.bean.CertificacaoDTO;
 import br.com.centralit.citcorpore.rh.negocio.CertificacaoService;
 import br.com.citframework.service.ServiceLocator;
 
-import com.google.gson.Gson;
+public class AutoCompleteCertificacao extends AbstractAutoComplete {
 
-@SuppressWarnings({"rawtypes","unchecked"})
-public class AutoCompleteCertificacao extends AjaxFormAction{
+    @Override
+    public Class<CertificacaoDTO> getBeanClass() {
+        return CertificacaoDTO.class;
+    }
 
-	@Override
-	public void load(DocumentHTML document, HttpServletRequest request,	HttpServletResponse response) throws Exception {
-		String consulta = request.getParameter("query");
-		CertificacaoService service = (CertificacaoService) ServiceLocator.getInstance().getService(CertificacaoService.class, null);
-		
-		Collection<CertificacaoDTO> certificacoes =  new ArrayList<CertificacaoDTO>();
-		certificacoes = service.findByNome(consulta);
-		
-		AutoCompleteDTO autoCompleteDTO = new AutoCompleteDTO();
-		Gson gson = new Gson();
-		List lst = new ArrayList();
-		List lstVal = new ArrayList();
-		
-		if (certificacoes != null && !certificacoes.isEmpty()){
+    @Override
+    public void load(final DocumentHTML document, final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        final String consulta = request.getParameter("query");
+        final CertificacaoService service = (CertificacaoService) ServiceLocator.getInstance().getService(CertificacaoService.class, null);
 
-			for(CertificacaoDTO certificacao : certificacoes) {
-				lst.add(certificacao.getDescricao()); 
-				lstVal.add(certificacao.getIdCertificacao());
-			}
-				
-		}
-		
-		autoCompleteDTO.setQuery(consulta);
-		autoCompleteDTO.setSuggestions(lst);
-		autoCompleteDTO.setData(lstVal);
-		
-		String json = gson.toJson(autoCompleteDTO);
-		request.setAttribute("json_response", json);
-		
-	}
+        final Collection<CertificacaoDTO> certificacoes = service.findByNome(consulta);
 
+        final AutoCompleteDTO autoCompleteDTO = new AutoCompleteDTO();
+        final List<String> lst = new ArrayList<>();
+        final List<Integer> lstVal = new ArrayList<>();
 
-	@Override
-	public Class getBeanClass() {
-		return CertificacaoDTO.class;
-	}
+        if (certificacoes != null && !certificacoes.isEmpty()) {
+            for (final CertificacaoDTO certificacao : certificacoes) {
+                lst.add(certificacao.getDescricao());
+                lstVal.add(certificacao.getIdCertificacao());
+            }
+        }
+
+        autoCompleteDTO.setQuery(consulta);
+        autoCompleteDTO.setSuggestions(lst);
+        autoCompleteDTO.setData(lstVal);
+
+        final String json = getGSON().toJson(autoCompleteDTO);
+        request.setAttribute("json_response", json);
+    }
 
 }

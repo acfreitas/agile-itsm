@@ -90,18 +90,17 @@ public class CITAutoCompleteProcess {
             return "";
         }
         final AutoCompleteReturn ret = (AutoCompleteReturn) retorno;
-        final List lst = ret.getLstRetorno();
+        final List<?> lst = ret.getLstRetorno();
         if (lst == null || lst.size() == 0) {
             return "";
         }
         if (ret.getColumnsReturn() == null || ret.getColumnsReturn().length == 0) {
             return "";
         }
-        Object obj = null;
 
         String strRetorno = "";
         for (int i = 0; i < lst.size(); i++) {
-            obj = lst.get(i);
+            final Object obj = lst.get(i);
             final Method mtdId = CitAjaxReflexao.findMethod(ret.getColumnId(), obj);
             final Object retornoId = mtdId.invoke(obj);
             final Method mtdDesc = CitAjaxReflexao.findMethod(ret.getColumnDescription(), obj);

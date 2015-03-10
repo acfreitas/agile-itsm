@@ -7,52 +7,44 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.centralit.citajax.html.AjaxFormAction;
 import br.com.centralit.citajax.html.DocumentHTML;
 import br.com.centralit.citcorpore.bean.AutoCompleteDTO;
 import br.com.centralit.citcorpore.bean.FornecedorDTO;
 import br.com.centralit.citcorpore.negocio.FornecedorService;
 import br.com.citframework.service.ServiceLocator;
 
-import com.google.gson.Gson;
+public class AutoCompleteFornecedor extends AbstractAutoComplete {
 
-@SuppressWarnings("rawtypes")
-public class AutoCompleteFornecedor extends AjaxFormAction {
-	
-	public Class getBeanClass() {
-		return FornecedorDTO.class;
-	}
+    @Override
+    public Class<FornecedorDTO> getBeanClass() {
+        return FornecedorDTO.class;
+    }
 
-	
-	@SuppressWarnings("unchecked")
-	public void load(DocumentHTML document, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		String consulta = request.getParameter("query");
-		FornecedorService fornecedorService = (FornecedorService) ServiceLocator.getInstance().getService(FornecedorService.class, null);
-		
-		Collection<FornecedorDTO> fornecedores =  new ArrayList<FornecedorDTO>();
-		fornecedores = fornecedorService.consultarFornecedorPorRazaoSocialAutoComplete(consulta);
-		
-		AutoCompleteDTO autoCompleteDTO = new AutoCompleteDTO();
-		Gson gson = new Gson();
-		List lst = new ArrayList();
-		List lstVal = new ArrayList();
-		
-		if (fornecedores != null && !fornecedores.isEmpty()){
+    @Override
+    @SuppressWarnings("unchecked")
+    public void load(final DocumentHTML document, final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        final String consulta = request.getParameter("query");
+        final FornecedorService fornecedorService = (FornecedorService) ServiceLocator.getInstance().getService(FornecedorService.class, null);
 
-			for(FornecedorDTO fornecedor : fornecedores) {
-				lst.add(fornecedor.getRazaoSocial()); 
-				lstVal.add(fornecedor.getIdFornecedor());
-			}
-				
-		}
-		
-		autoCompleteDTO.setQuery(consulta);
-		autoCompleteDTO.setSuggestions(lst);
-		autoCompleteDTO.setData(lstVal);
-		
-		String json = gson.toJson(autoCompleteDTO);
-		request.setAttribute("json_response", json);
-		
-	}
+        final Collection<FornecedorDTO> fornecedores = fornecedorService.consultarFornecedorPorRazaoSocialAutoComplete(consulta);
+
+        final AutoCompleteDTO autoCompleteDTO = new AutoCompleteDTO();
+        final List<String> lst = new ArrayList<>();
+        final List<Integer> lstVal = new ArrayList<>();
+
+        if (fornecedores != null && !fornecedores.isEmpty()) {
+            for (final FornecedorDTO fornecedor : fornecedores) {
+                lst.add(fornecedor.getRazaoSocial());
+                lstVal.add(fornecedor.getIdFornecedor());
+            }
+        }
+
+        autoCompleteDTO.setQuery(consulta);
+        autoCompleteDTO.setSuggestions(lst);
+        autoCompleteDTO.setData(lstVal);
+
+        final String json = getGSON().toJson(autoCompleteDTO);
+        request.setAttribute("json_response", json);
+    }
+
 }
