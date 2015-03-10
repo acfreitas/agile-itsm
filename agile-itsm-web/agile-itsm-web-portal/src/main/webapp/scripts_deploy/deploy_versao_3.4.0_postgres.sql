@@ -24,9 +24,9 @@ CREATE TABLE rh_perspectivatecnicaformacaoacademica (
 idperspectivatecnicaformacaoacademica int NOT NULL,
 descricaoformacaoacademica varchar(200) DEFAULT NULL,
 detalheformacaoacademica varchar(500) DEFAULT NULL,
-obrigatorioformacaoacademica varchar(1) DEFAULT NULL,	
+obrigatorioformacaoacademica varchar(1) DEFAULT NULL,
 idsolicitacaoservico int DEFAULT NULL,
-PRIMARY KEY (idperspectivatecnicaformacaoacademica) 
+PRIMARY KEY (idperspectivatecnicaformacaoacademica)
 ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
@@ -34,7 +34,7 @@ CREATE TABLE rh_perspectivatecnicacertificacao (
 idperspectivatecnicacertificacao int NOT NULL,
 descricaocertificacao varchar(200) DEFAULT NULL,
 versaocertificacao varchar(500) DEFAULT NULL,
-obrigatoriocertificacao varchar(1) DEFAULT NULL,	
+obrigatoriocertificacao varchar(1) DEFAULT NULL,
 idsolicitacaoservico int DEFAULT NULL,
 PRIMARY KEY (idperspectivatecnicacertificacao)
 ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -44,7 +44,7 @@ CREATE TABLE rh_perspectivatecnicacurso (
 idperspectivatecnicacurso int NOT NULL,
 descricaocurso varchar(200) DEFAULT NULL,
 detalhecurso varchar(500) DEFAULT NULL,
-obrigatoriocurso varchar(1) DEFAULT NULL,	
+obrigatoriocurso varchar(1) DEFAULT NULL,
 idsolicitacaoservico int DEFAULT NULL,
 PRIMARY KEY (idperspectivatecnicacurso)
 ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -54,7 +54,7 @@ CREATE TABLE rh_perspectivatecnicaidioma (
 idperspectivatecnicaidioma int NOT NULL,
 descricaoidioma varchar(200) DEFAULT NULL,
 detalheidioma varchar(500) DEFAULT NULL,
-obrigatorioidioma varchar(1) DEFAULT NULL,	
+obrigatorioidioma varchar(1) DEFAULT NULL,
 idsolicitacaoservico int DEFAULT NULL,
 PRIMARY KEY (idperspectivatecnicaidioma)
 ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -64,7 +64,7 @@ CREATE TABLE rh_perspectivatecnicaexperiencia (
 idperspectivatecnicaexperiencia int NOT NULL,
 descricaoexperiencia varchar(200) DEFAULT NULL,
 detalheexperiencia varchar(500) DEFAULT NULL,
-obrigatorioexperiencia varchar(1) DEFAULT NULL,	
+obrigatorioexperiencia varchar(1) DEFAULT NULL,
 idsolicitacaoservico int DEFAULT NULL,
 PRIMARY KEY (idperspectivatecnicaexperiencia)
 ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -74,7 +74,7 @@ CREATE  TABLE justificativarequisicaofuncao (
 idjustificativa INT NOT NULL ,
 descricao VARCHAR(100) NULL ,
 situacao VARCHAR(1) NULL ,
-PRIMARY KEY (idjustificativa) 
+PRIMARY KEY (idjustificativa)
 );
 
 CREATE  TABLE rh_atribuicao(
@@ -83,7 +83,7 @@ descricao VARCHAR(100) NULL ,
 detalhe VARCHAR(500) NULL ,
 datainicio DATE NULL ,
 datafim DATE NULL ,
-PRIMARY KEY (idatribuicao) 
+PRIMARY KEY (idatribuicao)
 );
 
 -- FIM -Bruno Aquino
@@ -143,7 +143,7 @@ create table histitemcontrolefinanceiroviagem (
                 idintegranteviagem int(11),
                 idusuarioalteracao int(11),
                 nomenaofuncionario varchar(255) NULL
-                
+
 );
 
 alter table "itemcontrolefinanceiroviagem"
@@ -158,10 +158,6 @@ alter table rh_cargahoraria drop column saida;
 
 alter table rh_cargahoraria ADD entrada integer NULL DEFAULT NULL;
 alter table rh_cargahoraria ADD saida integer NULL DEFAULT NULL;
-
-
-insert into externalconnection (idexternalconnection,nome,tipo,urljdbc,jdbcdbname,jdbcdriver,jdbcuser,jdbcpassword,filename,schemadb,deleted)
-values ('1', 'SQL Server Sankhya', 'J', 'jdbc:sqlserver://0.0.0.0:1433;', 'MGE_CENTRALIT', 'com.microsoft.sqlserver.jdbc.SQLServerDriver', 'sa', 'senhadosankhya', '', '[MGE_CENTRALIT].sankhya', NULL);
 
 insert into importardados (idimportardados,idexternalconnection,importarpor,tipo,nome,script,agendarrotina,executarpor,horaexecucao,periodohora,datafim,tabelaorigem,tabeladestino,jsonmatriz)
 values ('1', '1', 'S', 'J', 'importar funcionario - rh_funcionario', 'var importNames = JavaImporter();\n \nimportNames.importPackage(java.sql);\nimportNames.importPackage(java.util);\nimportNames.importPackage(Packages.br.com.citframework.integracao);\nimportNames.importPackage(Packages.br.com.centralit.citcorpore.bean);\n \njava.lang.Class.forName(driver);\n \nvar conn = java.sql.DriverManager.getConnection(url, user, password);\n  \nvar stmt = conn.createStatement();\nvar stmt2 = conn.createStatement();\n \nvar sql = \"select idfuncionario from rh_funcionario where idfuncionario >= ?\";\nvar sql_consulta_empregado;\n \nvar objs =  new Array();\nobjs[0]= 1;\n \nvar objs2;\n \nvar funcs = jdbcEngine.execSQL(sql, objs, 0);\nvar emps;\n \nvar rs;\nvar rs2;\nvar meta;\nvar aux;\nvar idFuncionario = 1;\nvar idEmpregado;\n\nvar str = \"\"; \nvar res = \"\";\n\nvar auxEmp; \n\n//Valida se a tabela esta vazia\nif(funcs == null || funcs.isEmpty()){\n \n	//Tabela vazia, popula a tabela com todos os dados\n \n 	sql = \"select distinct (CPF) CPF, NOMEFUNC FROM [MGE_CENTRALIT].[sankhya].[TFPFUN] where CODEMP in (1,5,6) and CPF is not null and DTDEM is null order by NOMEFUNC\";\n \n 	rs = stmt.executeQuery(sql);\n 	meta = rs.getMetaData();\n \n 	while(rs.next()) {\n \n 		objs = new Array();\n \n 		objs[0] = idFuncionario;\n 		\n 		for(var i = 1; i <= meta.getColumnCount(); i++) {\n 			objs[i] = rs.getObject(i);\n 		}\n \n 		objs.push(dataAtual);\n\n		str = objs[2]; \n		\n		//Remove os espaços em branco\n		res = str.trim();\n		res = res.replace(\" \", \"\");\n		\n		res = res.toLowerCase();\n	\n		sql_consulta_empregado = \" select usr.idempregado from usuario usr join empregados emp on emp.idempregado = usr.idempregado \"\n		sql_consulta_empregado += \" where lcase(replace(trim(emp.nome), '' '', '''')) like ''\" + res + \"'' order by usr.idempregado limit 1;\"\n		\n		emps = jdbcEngine.execSQL(sql_consulta_empregado, null, 0);\n	 \n		if(emps != null && !emps.isEmpty()){\n		\n			var auxEmp = emps.get(0);\n			\n			idEmpregado = Number(auxEmp[0]);\n			\n			objs[4] = idEmpregado;\n\n			sql = \"insert into rh_funcionario (idfuncionario, cpf, nome, datainicio, datafim, idempregado) values (?,?,?,?, null,?) \";\n	 \n			//Inserir registro\n			jdbcEngine.execUpdate(sql, objs);\n			\n		}\n\n 		idFuncionario += 1;\n \n 	}\n \n } else {\n \n	//Tabela ja contem dados, realiza update\n	\n 	sql = \"select NOMEFUNC, DTDEM, CPF FROM [MGE_CENTRALIT].[sankhya].[TFPFUN] where CODEMP in (1,5,6) and CPF is not null and DTALTER >= ''\";\n 	sql = sql + dataAtualFormatada + \"'' order by DTALTER\";\n \n 	rs = stmt.executeQuery(sql);\n 	objs = new Array();\n 	meta = rs.getMetaData();\n \n 	while(rs.next()) {\n \n 		sql = \"update rh_funcionario set nome = ?, datafim = ? where cpf = ?\";\n 		objs = new Array();\n \n 		for(var i = 1; i <= meta.getColumnCount(); i++) {\n \n 			if(i == 2){\n \n 				if(rs.getObject(i) == null || rs.getObject(i).equals(\"\"))\n 					objs[i-1] = null;\n 				else \n 					objs[i-1] = rs.getObject(i).toString().substring(0, 10);\n \n 			}else\n 				objs[i-1] = rs.getObject(i);\n \n 		}\n		\n		//Executa update(Retorna 1: atualizou o registro ou 0 caso não encontrou o registro)\n		// Se não eencontrou o registro, realiza insert\n 		if(jdbcEngine.execUpdate(sql, objs) == 0){\n \n			str = objs[0]; \n			\n			//Remove os espaços em branco\n			res = str.trim();\n			res = res.replace(\" \", \"\");\n			\n			res = res.toLowerCase();\n		\n			sql_consulta_empregado = \" select usr.idempregado from usuario usr join empregados emp on emp.idempregado = usr.idempregado \"\n			sql_consulta_empregado += \" where lcase(replace(trim(emp.nome), '' '', '''')) like ''\" + res + \"'' order by usr.idempregado limit 1; \"\n			\n			emps = jdbcEngine.execSQL(sql_consulta_empregado, null, 0);\n	 \n			if(emps != null && !emps.isEmpty()){\n		\n				var auxEmp = emps.get(0);\n				\n				idEmpregado = Number(auxEmp[0]);\n				\n				objs2 =  new Array();\n	 \n				sql = \"select idfuncionario from rh_funcionario order by idfuncionario desc limit 1\";\n	 \n				funcs = jdbcEngine.execSQL(sql, objs2, 0);\n	 \n				var aux = funcs.get(0);\n				\n				idFuncionario = Number(aux[0]);\n				\n				objs2.push(idFuncionario + 1);\n				objs2.push(objs[0]);\n				objs2.push(objs[2]);\n				objs2.push(dataAtual);\n				objs2.push(objs[1]);\n				objs2.push(idEmpregado);\n\n				sql = \"insert into rh_funcionario (idfuncionario, nome, cpf, datainicio, datafim, idempregado) values (?,?,?,?,?,?)\";\n				\n				jdbcEngine.execUpdate(sql, objs2);\n			\n			}\n 			\n 		}\n 	}\n \n }\n \n //Fecha conexão\n rs.close();\n stmt.close();\n conn.close();', 'S', 'H', '00:00', NULL, NULL, NULL, NULL, ''),
@@ -218,7 +214,7 @@ CREATE TABLE  rh_itemhistoricofuncional (
     descricao  VARCHAR(500) NOT NULL,
     dtcriacao  DATE,
     idresponsavel INTEGER REFERENCES usuario  ( idusuario ),
-    PRIMARY KEY ( iditemhistorico )    
+    PRIMARY KEY ( iditemhistorico )
 );
 
 ALTER TABLE  rh_itemhistoricofuncional  ADD COLUMN  tipo  CHAR(1);
@@ -261,11 +257,11 @@ ALTER TABLE atividadeperiodica ALTER COLUMN alteradopor TYPE varchar(256);
 -- Inicio David - 14-04-2014
 
 create table rh_complexidade(
-	idcomplexidade integer not null,
-	nivel integer not null,
-	descricao varchar(500) not null,
-	situacao char(1) not null,
-	primary key(idcomplexidade)
+    idcomplexidade integer not null,
+    nivel integer not null,
+    descricao varchar(500) not null,
+    situacao char(1) not null,
+    primary key(idcomplexidade)
 );
 
 insert into rh_complexidade (idcomplexidade, nivel, descricao, situacao) values (1,1,'Baixa','A');
@@ -275,11 +271,11 @@ insert into rh_complexidade (idcomplexidade, nivel, descricao, situacao) values 
 insert into rh_complexidade (idcomplexidade, nivel, descricao, situacao) values (5,5,'Especialista','A');
 
 create table rh_nivelcompetencia(
-	idnivelcompetencia integer not null,
-	nivel integer not null,
-	descricao varchar(500) not null,
-	situacao char(1) not null,
-	primary key(idnivelcompetencia)
+    idnivelcompetencia integer not null,
+    nivel integer not null,
+    descricao varchar(500) not null,
+    situacao char(1) not null,
+    primary key(idnivelcompetencia)
 );
 
 insert into rh_nivelcompetencia (idnivelcompetencia, nivel, descricao, situacao) values (1,0,'Não Tem Conhecimento','A');
@@ -290,29 +286,29 @@ insert into rh_nivelcompetencia (idnivelcompetencia, nivel, descricao, situacao)
 insert into rh_nivelcompetencia (idnivelcompetencia, nivel, descricao, situacao) values (6,5,'É Multiplicador','A');
 
 create table rh_descricao_atruibuicaoresponsabilidade(
-	iddescricao integer not null,
-	descricao varchar(256) not null,
-	situacao char(1) not null,
-	primary key(iddescricao)
+    iddescricao integer not null,
+    descricao varchar(256) not null,
+    situacao char(1) not null,
+    primary key(iddescricao)
 );
 
-insert into rh_descricao_atruibuicaoresponsabilidade(iddescricao,descricao,situacao) 
+insert into rh_descricao_atruibuicaoresponsabilidade(iddescricao,descricao,situacao)
 values (1,'Definir ações administrativas para o gerentes responsáveis','A');
-insert into rh_descricao_atruibuicaoresponsabilidade(iddescricao,descricao,situacao) 
+insert into rh_descricao_atruibuicaoresponsabilidade(iddescricao,descricao,situacao)
 values
 (2,'Explicar as determinações da diretoria para os gerentes','A');
-insert into rh_descricao_atruibuicaoresponsabilidade(iddescricao,descricao,situacao) 
+insert into rh_descricao_atruibuicaoresponsabilidade(iddescricao,descricao,situacao)
 values
 (3,'Orientar os gerentes nas atividades cotidianas para a execução dos processos administrativos','A');
-insert into rh_descricao_atruibuicaoresponsabilidade(iddescricao,descricao,situacao) 
+insert into rh_descricao_atruibuicaoresponsabilidade(iddescricao,descricao,situacao)
 values
 (4,'Representar a área administrativa perante a diretoria','A');
 
 create table rh_comportamento(
-	idcomportamento integer not null,
-	descricao varchar(256) not null,
-	situacao char(1) not null,
-	primary key(idcomportamento)
+    idcomportamento integer not null,
+    descricao varchar(256) not null,
+    situacao char(1) not null,
+    primary key(idcomportamento)
 );
 
 insert into rh_comportamento (idcomportamento,descricao,situacao) values (1,'Cumpre prazos dos trabalhos acordados, consideradando o impacto das atividades na organização','A');
@@ -329,14 +325,14 @@ CREATE TABLE rh_manualFuncao (
   idFormacaoRA varchar(255),
   idIdiomaRA varchar(255),
   idNivelEscritaRA varchar(255),
-  idNivelLeituraRA varchar(255),  
+  idNivelLeituraRA varchar(255),
   idNivelConversaRA varchar(255),
   expAnteriorRA varchar(255),
 
   idFormacaoRF varchar(255),
   idIdiomaRF varchar(255),
   idNivelEscritaRF varchar(255),
-  idNivelLeituraRF varchar(255),  
+  idNivelLeituraRF varchar(255),
   idNivelConversaRF varchar(255),
   expAnteriorRF varchar(255),
 
@@ -396,7 +392,7 @@ CREATE TABLE rh_manualcompetenciatecnica (
 
 -- Inicio - DAVID 14/04/2014
 
-ALTER TABLE rh_perspectivacomportamental 
+ALTER TABLE rh_perspectivacomportamental
 ADD CONSTRAINT fk_manualFuncao
   FOREIGN KEY (idManualFuncao)
   REFERENCES rh_manualfuncao (idManualFuncao)
@@ -681,22 +677,22 @@ ALTER TABLE rh_requisicaopessoal ALTER COLUMN idcargo DROP NOT NULL;
 -- INICIO - renato.jesus - 25/04/2014
 
 CREATE TABLE formulaos (
-	idformulaos INT,
-	descricao VARCHAR (254),
-	formula VARCHAR (254),
-	situacao CHAR(1) DEFAULT 'A',
-	PRIMARY KEY (idformulaos)
+    idformulaos INT,
+    descricao VARCHAR (254),
+    formula VARCHAR (254),
+    situacao CHAR(1) DEFAULT 'A',
+    PRIMARY KEY (idformulaos)
 );
 
 ALTER TABLE atividadesservicocontrato ADD estruturaformulaos VARCHAR(254);
 ALTER TABLE atividadesservicocontrato ADD formulacalculofinal VARCHAR (254);
 
 CREATE TABLE contratoformulaos (
-	idcontratoformulaos INT,
-	idcontrato INT,
-	idformulaos INT,
-	deleted char(1) DEFAULT 'N',
-	PRIMARY KEY (idcontratoformulaos)
+    idcontratoformulaos INT,
+    idcontrato INT,
+    idformulaos INT,
+    deleted char(1) DEFAULT 'N',
+    PRIMARY KEY (idcontratoformulaos)
 );
 
 -- FIM - renato.jesus - 25/04/2014
@@ -745,7 +741,7 @@ create table bi_dashboard (
 );
 
 create  index ix_ident_dash on bi_dashboard (
-	identificacao
+    identificacao
 );
 
 create table bi_itemdashboard (
@@ -763,19 +759,19 @@ create table bi_itemdashboard (
 );
 
 create  index ix_id_dash on bi_itemdashboard (
-	iddashboard
+    iddashboard
 );
 
 alter table bi_itemdashboard
    add constraint fk_bi_itemd_reference_bi_dashb foreign key (iddashboard)
       references bi_dashboard (iddashboard)
       on delete restrict on update restrict;
-      
+
 alter table bi_itemdashboard
    add constraint fk_bi_itemd_reference_bi_consu foreign key (idconsulta)
       references bi_consulta (idconsulta)
       on delete restrict on update restrict;
-      
+
 create table bi_dashboardsegur (
    iddashboard          int8                 not null,
    idgrupo              int4                 not null,
@@ -786,10 +782,10 @@ alter table bi_dashboardsegur
    add constraint fk_bi_dashb_reference_bi_dashb foreign key (iddashboard)
       references bi_dashboard (iddashboard)
       on delete restrict on update restrict;
-      
+
 alter table bi_dashboardsegur
    add constraint fk_bi_dashb_reference_grupo foreign key (idgrupo)
       references grupo (idgrupo)
       on delete restrict on update restrict;
-      
+
 -- fim - flavio.santana
