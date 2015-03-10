@@ -1,16 +1,16 @@
-<!-- Copyright 2014 Modo Ágil -->
+<!--    Copyright 2014 Modo Ágil                                                 -->
 
-<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
-<!-- you may not use this file except in compliance with the License. -->
-<!-- You may obtain a copy of the License at -->
+<!--    Licensed under the Apache License, Version 2.0 (the "License");          -->
+<!--    you may not use this file except in compliance with the License.         -->
+<!--    You may obtain a copy of the License at                                  -->
 
-<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!--        http://www.apache.org/licenses/LICENSE-2.0                           -->
 
-<!-- Unless required by applicable law or agreed to in writing, software -->
-<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
-<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
-<!-- See the License for the specific language governing permissions and -->
-<!-- limitations under the License. -->
+<!--    Unless required by applicable law or agreed to in writing, software      -->
+<!--    distributed under the License is distributed on an "AS IS" BASIS,        -->
+<!--    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!--    See the License for the specific language governing permissions and      -->
+<!--    limitations under the License.                                           -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -80,6 +80,7 @@
         <flyway.version>3.1</flyway.version>
         <guava.version>18.0</guava.version>
         <htmlcompressor.version>1.5.2</htmlcompressor.version>
+        <javaee-web-api.version>7.0</javaee-web-api.version>
         <jsp-api.version>2.2</jsp-api.version>
         <jstl.version>1.2</jstl.version>
         <log4j.version>2.1</log4j.version>
@@ -485,6 +486,14 @@
 
     <!-- projects common dependencies -->
     <dependencies>
+        <!-- meta-programming -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
@@ -504,33 +513,6 @@
             <version>${hamcrest-all.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- log dependencies -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-
-        <!-- meta-programming -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- apache commons dependencies -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang.version}</version>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -539,7 +521,25 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>${servlet-api.version}</version>
-                <scope>provided</scope>
+            </dependency>
+
+            <!-- apache commons dependencies -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+
+            <!-- log dependencies -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
